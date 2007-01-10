@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Maxine Chappell (Maxxml Limited) -->
+<xs:schema targetNamespace="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_1_Types" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_1_Types" schemaLocation="..\Version_1_2\JDFTypes.xsd"/>
+	<xs:element name="JDF_Types">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="Colors" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:element name="CMYKColor" type="jdftyp:CMYKColor" minOccurs="0"/>
+							<xs:element name="LabColor" type="jdftyp:LabColor" minOccurs="0"/>
+							<xs:element name="NamedColor" type="jdftyp:NamedColor" minOccurs="0"/>
+							<xs:element name="sRGBColor" type="jdftyp:sRGBColor" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Integers" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="integer" type="jdftyp:Integer" minOccurs="0"/>
+							<xs:element name="IntegerList" type="jdftyp:IntegerList" minOccurs="0"/>
+							<xs:element name="IntegerRange" minOccurs="0">
+								<xs:simpleType>
+									<xs:restriction base="jdftyp:IntegerRange"/>
+								</xs:simpleType>
+							</xs:element>
+							<xs:element name="IntegerRangeList" type="jdftyp:IntegerRangeList" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Numbers" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="double" type="jdftyp:double" minOccurs="0"/>
+							<xs:element name="DoubleList" type="jdftyp:DoubleList" minOccurs="0"/>
+							<xs:element name="DoubleRange" type="jdftyp:DoubleRange" minOccurs="0"/>
+							<xs:element name="DoubleRangeList" type="jdftyp:DoubleRangeList" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="NumberLists" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="matrix" type="jdftyp:matrix" minOccurs="0"/>
+							<xs:element name="rectangle" type="jdftyp:rectangle" minOccurs="0"/>
+							<xs:element name="RectangleRange" type="jdftyp:RectangleRange" minOccurs="0"/>
+							<xs:element name="RectangleRangeList" type="jdftyp:RectangleRangeList" minOccurs="0"/>
+							<xs:element name="shape" type="jdftyp:shape" minOccurs="0"/>
+							<xs:element name="ShapeRange" type="jdftyp:ShapeRange" minOccurs="0"/>
+							<xs:element name="ShapeRangeList" type="jdftyp:ShapeRangeList" minOccurs="0"/>
+							<xs:element name="TransferFunction" type="jdftyp:TransferFunction" minOccurs="0"/>
+							<xs:element name="XYPair" type="jdftyp:XYPair" minOccurs="0"/>
+							<xs:element name="XYPairRange" type="jdftyp:XYPairRange" minOccurs="0"/>
+							<xs:element name="XYPairRangeList" type="jdftyp:XYPairRangeList" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Names" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="Name" type="jdftyp:name" minOccurs="0"/>
+							<xs:element name="NameRange" type="jdftyp:NameRange" minOccurs="0"/>
+							<xs:element name="NameRangeList" type="jdftyp:NameRangeList" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Nmtokens" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="ID" type="xs:ID" minOccurs="0"/>
+							<xs:element name="IDREF" type="xs:IDREF" minOccurs="0"/>
+							<xs:element name="IDREFS" type="xs:IDREFS" minOccurs="0"/>
+							<xs:element name="Nmtoken" type="xs:NMTOKEN" minOccurs="0"/>
+							<xs:element name="Nmtokens" type="xs:NMTOKENS" minOccurs="0"/>
+							<xs:element name="QName" type="jdftyp:QName" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="Specials" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="boolean" type="jdftyp:boolean" minOccurs="0"/>
+							<xs:element name="hexBinary" type="jdftyp:hexBinary" minOccurs="0"/>
+							<xs:element name="language" type="jdftyp:language" minOccurs="0"/>
+							<xs:element name="languages" type="jdftyp:languages" minOccurs="0"/>
+							<xs:element name="regexp" type="jdftyp:regExp" minOccurs="0"/>
+							<xs:element name="PDFPath" type="jdftyp:PDFPath" minOccurs="0"/>
+							<xs:element name="XYRelation" type="jdftyp:XYRelation" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="DatesAndTime" minOccurs="0">
+					<xs:complexType>
+						<xs:sequence maxOccurs="unbounded">
+							<xs:element name="date" type="jdftyp:date" minOccurs="0"/>
+							<xs:element name="dateTime" type="jdftyp:dateTime" minOccurs="0"/>
+							<xs:element name="DateTimeRange" type="jdftyp:DateTimeRange" minOccurs="0"/>
+							<xs:element name="DateTimeRangeList" type="jdftyp:DateTimeRangeList" minOccurs="0"/>
+							<xs:element name="duration" type="jdftyp:duration" minOccurs="0"/>
+							<xs:element name="DurationRange" type="jdftyp:DurationRange" minOccurs="0"/>
+							<xs:element name="DurationRangeList" type="jdftyp:DurationRangeList" minOccurs="0"/>
+							<xs:element name="gYearMonth" type="jdftyp:gYearMonth" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+				<xs:element name="FAILURES" minOccurs="0">
+					<xs:complexType mixed="true">
+						<xs:sequence minOccurs="0" maxOccurs="unbounded">
+							<xs:any namespace="##any" minOccurs="0"/>
+						</xs:sequence>
+					</xs:complexType>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

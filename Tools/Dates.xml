@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Test xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="D:\JDF\CIP4\jdf\schema\Tools\Dates.xsd">
+	<DateTime>2000-01-20T12:00:00</DateTime>
+	<DateAndSeparator>2000-01-20T12:00:00</DateAndSeparator>
+	<DatesAndSeparators>2000-01-20T12:00:00 ~ ~ 2000-01-20T12:00:00 2000-01-20T12:00:00</DatesAndSeparators>
+	<AnythingWihTilda>2asdfa~asdfad</AnythingWihTilda>
+	<DateRange>2000-01-20T12:00:00 ~ 2000-01-20T12:00:00</DateRange>
+	<DateRangeList>2000-01-20T12:00:00 ~ 2000-01-20T12:00:00 2000-01-20T12:00:00 ~ 2000-01-20T12:00:00</DateRangeList>
+</Test>

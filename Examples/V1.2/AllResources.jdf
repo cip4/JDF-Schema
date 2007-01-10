@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.CIP4.org/JDFSchema_1_1
+..\..\Version_1_3\JDF.xsd" ID="Test19" Status="Waiting" Type="Product">
+	<Comment>This could be the first working comment</Comment>
+	<CustomerInfo>
+		<Company OrganizationName=""/>
+	</CustomerInfo>
+	<ResourceLinkPool/>
+	<ResourcePool>
+		<Comment Path="0 0 m 1 99 l 1.1 99.99 l" Box="-1 2 3 4.99">The body of the comment</Comment>
+		<FoldingParams Class="Parameter" ID="Param1" Status="Incomplete" DescriptionType="FoldProc" SheetLay="Left"/>
+		<RunList ID="Link0003" Class="Parameter" Status="Available" PartIDKeys="Run">
+			<RunList Run="1" Pages="0  ~  -1">
+				<LayoutElement>
+					<FileSpec URL="file://File1.pdf"/>
+				</LayoutElement>
+			</RunList>
+			<RunList Run="2" Pages="0  ~  -1">
+				<LayoutElement>
+					<FileSpec URL="file://File2.pdf"/>
+				</LayoutElement>
+			</RunList>
+		</RunList>
+		<DeliveryParams Class="Parameter" ID="DP_001" Status="Incomplete">
+			<Company OrganizationName="">
+				<Contact ContactTypes="Driver">
+					<PersonRef rRef="Param1"/>
+				</Contact>
+				<ContactRef rRef="DP_001"/>
+				<ContactRef rRef="DP_001"/>
+			</Company>
+			<Drop>
+				<Company OrganizationName=""/>
+				<DropItem Amount="42" Unit="">
+					<Component ID="Component_001" ComponentType="Sheet"/>
+				</DropItem>
+			</Drop>
+		</DeliveryParams>
+		<InsertSheet Class="Parameter" ID="Sheet_001" Status="Incomplete" Usage="Header" SheetUsage="Header" SheetType="FillSheet">
+			<RunList ID="RunList_002" CommentURL="http://comments.are.us"/>
+			<SheetRef rRef="Sheet_001"/>
+		</InsertSheet>
+		<Surface Class="Parameter" ID="Surface_001" Status="Incomplete" Side="Front">
+			<MarkObject CTM="0 1 0 1 0 1" Type="Mark"/>
+		</Surface>
+		<TransferCurvePool Class="Parameter" ID="TransferCurvePool_001" Status="Incomplete">
+			<TransferCurveSet Name="Laser"/>
+		</TransferCurvePool>
+		<TrappingParams Class="Parameter" ID="TrappingParams_001" Status="Incomplete" BlackColorLimit="0.5" BlackDensityLimit="5" Enabled="true" HalftoneName="Someones halftone">
+			<ColorantZoneDetails Colorant="Colorant Name" StepLimit="0.5" TrapColorScaling="0.5"/>
+		</TrappingParams>
+		<TrapRegion Class="Parameter" ID="TrapRegion_001" Status="Incomplete" Pages="">
+			<TrappingParams ID="TrappingParams_002" BlackColorLimit="0.5" BlackDensityLimit="54" Enabled="true" HalftoneName="A name that identifies a halftone object">
+				<ColorantZoneDetails Colorant="The colorant name" StepLimit="0.5" TrapColorScaling="0.75"/>
+			</TrappingParams>
+		</TrapRegion>
+		<TrapRegion Class="Parameter" ID="TrapRegion_002" Status="Incomplete" Pages="">
+			<TrappingParamsRef rRef="TrappingParams_001"/>
+		</TrapRegion>
+		<DeliveryIntent ID="DI_001" Status="Incomplete" Class="Intent">
+			<Overage DataType="NumberSpan" Actual="1.5" Preferred="1.9" Range="-1  ~  -6 0.75  ~  1 3.14  ~  5.13 7 9  ~  138 131"/>
+		</DeliveryIntent>
+		<AdhesiveBindingParams Class="Parameter" ID="ADBinding_001" Status="Incomplete"/>
+		<ApprovalParams Class="Parameter" ID="Approooooval_from_norfolk" Status="Incomplete">
+			<ApprovalPerson>
+				<Contact ContactTypes="BIgShot"/>
+			</ApprovalPerson>
+			<ApprovalPerson>
+				<ContactRef rRef="Test19"/>
+			</ApprovalPerson>
+		</ApprovalParams>
+		<ApprovalSuccess Class="Parameter" ID="ApprooovalSuccess" Status="Incomplete">
+			<FileSpec/>
+		</ApprovalSuccess>
+		<BinderySignature ID="B4x2" Status="Draft" Class="Parameter" NumberUp="1 1" BindingEdge="Left" FoldCatalog="Fx-y">
+			<Fold From="Front" To="Up" Travel="0.123" RelativeTravel="0.2259"/>
+			<SignatureCell BackFacePages="1 2 3 4 " BackPages="34 44 55" BottleAngle="15.001"/>
+		</BinderySignature>
+		<ChannelBindingParams Class="Parameter" ID="Channel_002" Status="Incomplete" Brand="Name of the clamp" ClampColor="Orange" ClampD="1.234" ClampSize="1 3 6" ClampSystem="false"/>
+		<CoilBindingParams Class="Parameter" ID="Coil" Status="Incomplete" Material="LaqueredSteel" Tucked="false"/>
+		<Color ID="Color_001" Status="Incomplete" Name="Light Purple" CMYK="0.1 0 0.01 0.99" sRGB="0.3 0 1.0000" Class="Parameter">
+			<TransferCurve Curve="0 0 1 1 2 2 3 3 4 4" Separation=""/>
+		</Color>
+		<ColorPool Class="Parameter" ID="ColorPool_001" Status="Incomplete">
+			<Color Name="Fudge"/>
+		</ColorPool>
+		<ColorantAlias ID="CA_001" Status="Available" Class="Parameter" ReplacementColorantName="Purple People Eater"/>
+		<ColorantControl Class="Parameter" ID="ColorantControl_001" Status="Incomplete" ProcessColorModel="DeviceCMYK" ForceSeparations="false">
+			<ColorantAlias ReplacementColorantName=""/>
+			<ColorantOrder/>
+			<ColorantParams/>
+			<ColorPoolRef rRef="ColorPool_001"/>
+			<ColorSpaceSubstitute>
+				<PDLResourceAlias ID="PDLResAlias_001" ResourceType=""/>
+				<SeparationSpec Name="BlackGold"/>
+			</ColorSpaceSubstitute>
+			<DeviceColorantOrder/>
+			<DeviceNSpace N="4"/>
+		</ColorantControl>
+		<ColorCorrectionParams Class="Parameter" ID="CCP_001" Status="Incomplete">
+			<ColorCorrectionOp SourceObjects="All"/>
+			<ColorCorrectionOp SourceObjects="Text"/>
+		</ColorCorrectionParams>
+		<!--
+		<ColorSpaceConversionParams Class="Parameter" ID="CSCP_001" Status="Incomplete" SheetName="TopSheet">
+			<ColorSpaceConversionOp Operation="Convert" SourceCS="CMTK" SourceObjects="All"/>
+			<FileSpecRef rRef="FileID_001"/>
+		</ColorSpaceConversionParams>
+		-->
+		<Component Class="Quantity" ID="Component_002" Status="Incomplete" ComponentType="Sheet">
+			<Disjointing>
+				<IdentificationField Encoding="ASCII" EncodingDetails="Code39" Position="Header" Purpose="Verification"/>
+			</Disjointing>
+			<Sheet ID="Sheet_002" Name="TopSheet">
+				<Surface ID="Surface_002" Side="Front"/>
+				<SurfaceRef rRef="Surface_001"/>
+			</Sheet>
+		</Component>
+		<ConventionalPrintingParams Class="Parameter" ID="ConvPP_001" Status="Incomplete" DirectProof="true" Drying="UV" FirstSurface="Either" FountainSolution="Off" MediaLocation="In the bin" ModuleDrying="Off" ModuleIndex="-7  ~  3" Powder="1.745" PrintingType="SheetFed" SheetLay="Left" Speed="23" WorkStyle="Simplex"/>
+		<CreasingParams ID="CreasingParams_01" Status="Incomplete" Class="Parameter">
+			<Crease StartPosition="1.2 2.4" WorkingPath="3.6 99.9" WorkingDirection="Top"/>
+		</CreasingParams>
+		<CuttingParams ID="CuttingParams_01" Status="Complete" Class="Parameter">
+			<Cut StartPosition="0 0" WorkingPath="19 3.14159" WorkingDirection="Top"/>
+		</CuttingParams>
+		<DBMergeParams Class="Parameter" ID="DBMerge_001" Status="Incomplete"/>
+		<DBRules Class="Parameter" ID="DBRules_001" Status="Incomplete">
+			<Comment>Have we got text?
+And another thing...</Comment>
+		</DBRules>
+		<DBSchema Class="Parameter" ID="DBSchema_001" Status="Incomplete" DBSchemaType="CommaDelimited">
+			<Comment>The comment is forced - but filling it in isn't!</Comment>
+		</DBSchema>
+		<DBSelection Class="Parameter" ID="DBSelection" Status="Incomplete" DataBase="file://D:/database"/>
+		<DeliveryParams Class="Parameter" ID="DP_002" Status="Incomplete">
+			<CompanyRef rRef="DP_001"/>
+			<Drop>
+				<DropItem Amount="7" Unit="oranges/Sq Yard">
+					<ComponentRef rRef="Component_001"/>
+				</DropItem>
+			</Drop>
+		</DeliveryParams>
+		<Device Class="Implementation" ID="Device_001" Status="Incomplete" DeviceID="My Device Name">
+			<Comment>Just because I can</Comment>
+			<CostCenter CostCenterID="Huge Costs"/>
+		</Device>
+		<DigitalPrintingParams Class="Parameter" ID="Digital_Params_001" Status="Incomplete" PrintingType="SheetFed">
+			<MediaSource LeadingEdge="23" ManualFeed="true" MediaLocation="FrontOffice"/>
+		</DigitalPrintingParams>
+		<Employee Class="Implementation" ID="Employee_001" Status="Incomplete">
+			<CostCenter CostCenterID=""/>
+			<Person AdditionalNames="Mahalape" FamilyName="Swana" FirstName="Bot" JobTitle="Banker" NamePrefix="Sir" NameSuffix="Thanks">
+				<ComChannel ChannelType="Phone" Locator="On the map of Cental Africa"/>
+			</Person>
+		</Employee>
+		<ExposedMedia Class="Handling" ID="ExposedMedia_001" Status="Incomplete" ColorType="Color" Polarity="true" ProofQuality="None" ProofType="Page" PunchType="Bacher">
+			<Media Dimension="7 7" MediaType="Film"/>
+		</ExposedMedia>
+		<Media Class="Consumable" ID="Media_001" Status="Available" Dimension="123 456" MediaType="Film"/>
+		<FileSpec ID="FileID_001" URL="file:///NotHere" MimeType="Unknown" Class="Parameter" Status="Available"/>
+		<FileSpec ID="FileID_001_Escaped" URL="http://www.w3.org/People/D%FCrst/" MimeType="Unknown" Class="Parameter" Status="Available"/>
+		<FileSpec ID="FileID_001_IRI" URL="http://www.w3.org/People/D%FCrst/öäß.pdf" MimeType="Unknown" Class="Parameter" Status="Available"/>
+		<Fold ID="Fold" Status="Complete" Class="Parameter" From="Front" To="Down" Travel="1E23" RelativeTravel="1.0000"/>
+		<FoldingParams Class="Parameter" ID="Folding_001" Status="Incomplete" DescriptionType="FoldProc" SheetLay="Left">
+			<Fold From="Front" To="Up" Travel="1.2"/>
+		</FoldingParams>
+		<FontParams Class="Parameter" ID="FontParams" Status="Incomplete"/>
+		<GatheringParams Class="Parameter" ID="GatheringParams_001" Status="Incomplete">
+			<Disjointing>
+				<IdentificationField Encoding="ASCII" EncodingDetails="SOME_DETAILS" Position="Header" Purpose="Verification"/>
+			</Disjointing>
+		</GatheringParams>
+		<GluingParams ID="GlueParams_01" Status="InUse" Class="Parameter">
+			<Glue WorkingDirection="Top">
+				<GlueApplication GluingTechnique="SideGluingBack">
+					<GlueLine StartPosition="1 2" WorkingPath="2 4" GlueBrand="The really Sticky stuff"/>
+				</GlueApplication>
+			</Glue>
+		</GluingParams>
+		<HoleMakingParams Class="Parameter" ID="Holes_001" Status="Incomplete" HoleType="R2m-DIN">
+			<Hole Shape="Round" Center="1.2 1.2" Extent="39 39"/>
+		</HoleMakingParams>
+		<IDPrintingParams Class="Parameter" ID="IDPrintingParams_001" Status="Incomplete" AttributesNaturalLang="uk" IDPAttributeFidelity="true">
+			<Cover/>
+			<IDPFinishing Finishings="3">
+				<IDPHoleMaking>
+					<HoleMakingParams ID="Another_0099" HoleType="R2-generic">
+						<Hole Shape="Round" Center="2.4 3.6" Extent="-3.14159 -3.14159"/>
+					</HoleMakingParams>
+				</IDPHoleMaking>
+			</IDPFinishing>
+			<IDPLayout Border="0" FinishedPageOrientation="Portrait" ForceFrontSide="1 2 3" NumberUp="9 9" PresentationDirection="ToLeftToTop" Rotate="0" Sides="OneSided">
+				<ImageShift PositionX="Center" PositionY="Bottom" ShiftX="1" ShiftXSide1="2" ShiftXSide2="3" ShiftY="4" ShiftYSide1="5" ShiftYSide2="6"/>
+			</IDPLayout>
+		</IDPrintingParams>
+		<ImageCompressionParams Class="Parameter" ID="ICP_001" Status="Incomplete">
+			<ImageCompression ImageType="Color" AntiAliasImages="false" AutoFilterImages="true" ConvertImagesToIndexed="false" DCTQuality="0.666666" DownsampleImages="false" EncodeColorImages="true" ImageDepth="8" ImageDownsampleThreshold="1.5" ImageDownsampleType="Average" ImageFilter="CCITTFaxEncode" ImageResolution="34"/>
+		</ImageCompressionParams>
+		<ImageReplacementParams Class="Parameter" ID="IRP_007" Status="Incomplete" ImageReplacementStrategy="Omit" IgnoreExtensions=".exe">
+			<SearchPath>A:/Path/To/look_For</SearchPath>
+		</ImageReplacementParams>
+		<ImageSetterParams Class="Parameter" ID="ISP_001" Status="Incomplete" AdvanceDistance="4545" CenterAcross="None" CutMedia="false" MirrorAround="None" Polarity="Positive" Punch="false" PunchType="Judy" Resolution="1200 2400" RollCut="123.456" TransferCurve="0 1 2 3.9"/>
+		<Ink Class="Consumable" ID="Ink_001" Status="Incomplete" InkName="Chartreause" ColorName="JustPeachy"/>
+		<InkZoneCalculationParams Class="Parameter" ID="IZCP_001" Status="Incomplete" ZoneWidth="12" Zones="5"/>
+		<InkZoneProfile Class="Parameter" ID="IZP_001" Status="Incomplete" ZoneSettingsX="1 2 3 4" ZoneWidth="0.234"/>
+		<InsertingParams Class="Parameter" ID="IP_001" Status="Incomplete" SheetOffset="0 0" InsertLocation="Front"/>
+		<InsertSheet Class="Parameter" ID="InsertSheet_001" Status="Incomplete" Usage="Header" SheetType="AccountingSheet" SheetUsage="FillSignature"/>
+		<InterpretedPDLData Class="Parameter" ID="_OH_YEAH" Status="Incomplete"/>
+		<InterpretingParams Class="Parameter" ID="SomePDFID" Status="Incomplete" FitToPage="false" MirrorAround="FeedDirection" Polarity="Negative" Poster="49.74 12000" PosterOverlap="-0.1 -0.9" PrintQuality="Normal" Scaling="1.01 1.01" ScalingOrigin="0 0" Center="true">
+			<PDFInterpretingParams EmitPDFBG="false" EmitPDFHalftones="false" EmitPDFTransfers="false" EmitPDFUCR="false" HonorPDFOverprint="false" ICCColorAsDeviceColor="false" PrintPDFAnnotations="false" TransparencyRenderingQuality="23"/>
+		</InterpretingParams>
+		<PerforatingParams ID="Perforating_01" Status="Rejected" Class="Parameter">
+			<Perforate StartPosition="1 1" WorkingPath="9 99" WorkingDirection="Top" TeethPerDimension="1.2"/>
+		</PerforatingParams>
+		<Layout Class="Parameter" ID="Layout_001" Status="Incomplete">
+			<InsertSheet SheetType="InsertSheet" SheetUsage="FillSignature"/>
+			<Signature Name="A_Simple_Signature">
+				<InsertSheet SheetType="AccountingSheet" SheetUsage="OnError"/>
+				<InsertSheetRef rRef="InsertSheet_001"/>
+				<Sheet ID="Sheet_004" Name="SomeSheetName"/>
+				<SheetRef rRef="Sheet_001"/>
+			</Signature>
+			<InsertSheet SheetType="AccountingSheet" SheetUsage="OnError"/>
+			<InsertSheetRef rRef="InsertSheet_001"/>
+		</Layout>
+		<LayoutElement Class="Parameter" ID="LayoutElement_001" Status="Incomplete">
+			<FileSpecRef rRef="CCP_001"/>
+		</LayoutElement>
+		<LongitudinalRibbonOperationParams Class="Parameter" ID="LongRibbonOpParams_001" Status="Incomplete">
+			<LongFold XOffset="21" WorkingList="34"/>
+			<LongGlue XOffset="21" WorkingList="34" GlueBrand="StickyStuffLtd" GlueType="Hotmelt" LineWidth="1.5" MeltingTemperature="-274"/>
+			<LongPerforate XOffset="21" WorkingList="34" TeethPerDimension="1000"/>
+			<LongSlit XOffset="21" WorkingList="34"/>
+		</LongitudinalRibbonOperationParams>
+		<NumberingParams Class="Parameter" ID="NumberingParams" Status="Incomplete">
+			<NumberingParam StartValue="ShouldThisbe a string" XPosition="2.4" YPosition="3.2" Orientation="90" Step="1"/>
+		</NumberingParams>
+		<OrderingParams Class="Parameter" ID="OrderingParams" Status="Incomplete" Amount="36.9" Unit="Oranges">
+			<Comment/>
+		</OrderingParams>
+		<PackingParams Class="Parameter" ID="Packing_001" Status="Incomplete" BoxedQuantity="20" BoxShape="12 24 36" CartonQuantity="200" CartonShape="24 36 48" CartonMaxWeight="500" CartonStrength="4.9" PalletMaxHeight="1.3" PalletMaxWeight="20000" PalletQuantity="5000" PalletSize="23123 25000" PalletType="2Way" PalletWrapping="None" WrappedQuantity="1" WrappingMaterial="None"/>
+		<PDFToPSConversionParams Class="Parameter" ID="PDFToPSConversionParams_001" Status="Incomplete" BinaryOK="true" BoundingBox="0 0 0 0" CenterCropBox="true" IgnoreAnnotForms="true" IgnoreColorSeps="false" IgnoreDeviceExtGState="true" IgnoreDSC="true" IgnoreExternStreamRef="false" IgnoreHalftones="false" IgnorePageRotation="false" IgnoreRawData="false" IgnoreSeparableImagesOnly="false" IgnoreShowPage="true" IgnoreTTFontsFirst="false" GeneratePageStreams="false" IncludeBaseFonts="IncludeNever" IncludeType3Fonts="IncludeOncePerPage" IncludeType1Fonts="IncludeOncePerDoc" IncludeTrueTypeFonts="IncludeOncePerDoc" IncludeProcSets="IncludeOncePerDoc" IncludeOtherResources="IncludeOncePerDoc" IncludeEmbeddedFonts="IncludeOncePerDoc" IncludeCIDFonts="IncludeOncePerDoc" OutputType="PostScript" PSLevel="2" Scale="100" SetPageSize="false" SetupProcsets="true" ShrinkToFit="false" SuppressCenter="false" SuppressRotate="false" TTasT42="false" UseFontAliasNames="false"/>
+		<PDLResourceAlias Class="Parameter" ID="PDLResourceAlias_001" Status="Incomplete" ResourceType="Type of PDL" SourceName="Resource name">
+			<FileSpecRef rRef="RunList_001"/>
+		</PDLResourceAlias>
+		<PlasticCombBindingParams Class="Parameter" ID="PlasticComb" Status="Incomplete" Brand="BugRake" Color="NoColor" Diameter="52" Thickness="1000" Type="P16_9i-rect-0t"/>
+		<PlateCopyParams Class="Parameter" ID="WillowPattern" Status="Incomplete" Cycle="3" Diffusion="Off" Vacuum="24.5"/>
+		<PreflightAnalysis Class="Parameter" ID="Preflight_001" Status="Incomplete">
+			<ColorsResultsPool>
+				<PreflightDetail PageRefs=""/>
+				<PreflightInstance PageRefs=""/>
+				<PreflightDetail PageRefs=""/>
+				<PreflightInstance PageRefs=""/>
+			</ColorsResultsPool>
+			<DocumentResultsPool/>
+			<FontsResultsPool/>
+			<FileTypeResultsPool/>
+			<ImagesResultsPool/>
+			<PagesResultsPool/>
+		</PreflightAnalysis>
+		<PreflightInventory Class="Parameter" ID="pREfLIGHTpROFILE_001" Status="Incomplete">
+			<ColorsResultsPool/>
+			<DocumentResultsPool/>
+			<FileTypeResultsPool/>
+			<ImagesResultsPool/>
+			<PagesResultsPool/>
+		</PreflightInventory>
+		<PreflightProfile Class="Parameter" ID="Profile_002" Status="Incomplete">
+			<ColorsConstraintsPool>
+				<PreflightConstraint Status="Error" AttemptFixupErrors="true" AttemptFixupWarnings="false" Constraint="None"/>
+			</ColorsConstraintsPool>
+			<DocumentConstraintsPool/>
+			<FontsConstraintsPool/>
+			<FileTypeConstraintsPool>
+				<PreflightConstraint Status="Error"/>
+			</FileTypeConstraintsPool>
+			<ImagesConstraintsPool/>
+			<PagesConstraintsPool/>
+		</PreflightProfile>
+		<Preview Class="Parameter" ID="Preview" Status="Incomplete" PreviewType="Separation" URL="http://fred"/>
+		<RunList ID="RunList_001" Class="Parameter" Status="Available" PartIDKeys="Run">
+			<RunList Run="1" Pages="0  ~  4">
+				<LayoutElement>
+					<FileSpec URL="file://File1.pdf"/>
+				</LayoutElement>
+			</RunList>
+			<RunList Run="2" SpawnStatus="SpawnedRW" Pages="0  ~  -1">
+				<LayoutElement>
+					<FileSpec URL="file://File2.pdf"/>
+				</LayoutElement>
+			</RunList>
+		</RunList>
+		<StrippingParams ID="Res05" Class="Parameter" Status="Available" Locked="false" PartIDKeys="SignatureName">
+			<StripCellParams TrimSize="595.27501 841.88894" TrimFace="14.17321" TrimHead="14.17321" TrimFoot="14.17321" FrontOverfold="0.00000" MillingDepth="7.08661" Spine="0.00000"/>
+			<!--TrimSize en millimètres : 210 x 297-->
+			<StrippingParams SignatureName="Signature 1" WorkStyle="WorkAndBack">
+				<Media MediaType="Paper" Brand="PERIGORD BRILLANT" DescriptiveName="COUCHE MODERNE BRILLANT" Weight="80.00000" Dimension="1842.51788 2607.87146"/>
+				<!--Taille du papier en millimètre : 650 x 920-->
+				<Device DeviceID="ID_1_70/102 4C" FriendlyName="70/102 4C"/>
+				<StrippingParams SheetName=" 16 pages en 1 pose ">
+					<StrippingParams BinderySignatureName="B4x2">
+						<BinderySignatureRef rRef="B4x2"/>
+						<Position RelativeBox="0.00000000 
+0.00000000 1.00000000 1.00000000" Orientation="Rotate0"/>
+					</StrippingParams>
+				</StrippingParams>
+			</StrippingParams>
+		</StrippingParams>
+		<ThreadSealingParams Class="Parameter" Status="Available" ID="ThreadSealing_01" ThreadPositions="1.2" ThreadLength="1.2" ThreadStitchWidth="1.2"/>
+	</ResourcePool>
+</JDF>

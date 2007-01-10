@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.CIP4.org/JDFSchema_1_1
+JDF.xsd" ID="Test19" Status="Waiting" Type="Product">
+	<Comment>This could be the first working comment</Comment>
+	<CustomerInfo>
+		<Company OrganizationName=""/>
+	</CustomerInfo>
+	<ResourceLinkPool/>
+	<ResourcePool>
+		<Comment Path="0 0 m 1 99 l 1.1 99.99 l" Box="-1 2 3 4.99">The body of the comment</Comment>
+		<Address ID="AI001" Class="Parameter" Status="Draft"/>
+		<ArtDeliveryIntent ID="ADI001" Status="Available" Class="Intent" PreflightStatus="NotPerformed" ReturnList="None">
+			<ArtDelivery ArtDeliveryType="Conceptual" HasBleeds="false" IsTrapped="false"/>
+		</ArtDeliveryIntent>
+		<AdhesiveBindingParams Class="Parameter" ID="ADBinding_001" Status="Incomplete"/>
+		<ApprovalParams Class="Parameter" ID="Approooooval_from_norfolk" Status="Incomplete" MinApprovals="1">
+			<ApprovalPerson ApprovalRole="Group">
+				<ContactRef rRef="Approooooval_from_norfolk"/>
+				<Contact ContactTypes="BIgShot"/>
+			</ApprovalPerson>
+			<ApprovalPerson ApprovalRole="Informative">
+				<ContactRef rRef="Test19"/>
+			</ApprovalPerson>
+		</ApprovalParams>
+		<ApprovalSuccess Class="Parameter" ID="ApprooovalSuccess" Status="Incomplete">
+			<FileSpec/>
+		</ApprovalSuccess>
+<<<<<<< AllResources.jdf
+		<Assembly ID="ass1" Class="Parameter" Status="Available" BindingSide="Bottom" Order="Collecting"/>
+		<AssetListCreationParams ID="asset1" Class="Parameter" Status="Incomplete" ListPolicy="All"/>
+		<AutomatedOverprintParams ID="au1" Class="Parameter" Status="Draft" OverPrintBlackLineArt="false" OverPrintBlackText="false" TextBlackLevel="1"/>
+		<BinderySignature ID="BS001" Class="Parameter" Status="Available" NumberUp="1 1" BindingEdge="Left"/>
+		<BindingIntent ID="BI001" Status="Draft" Class="Intent" BindingOrder="Collecting"/>
+		<BlockPreparationParams ID="BP001" Class="Parameter" Status="Draft"/>
+		<BoxPackingParams ID="BPP001" Class="Parameter" Status="Incomplete"/>
+		<BufferParams ID="BUP001" Class="Parameter" Status="Draft"/>
+		<Bundle ID="BUN001" Class="Quantity" Status="Incomplete" BundleType="Box"/>
+		<BundlingParams ID="BUNP001" Class="Parameter" Status="Draft"/>
+		<ByteMap ID="BM001" Class="Parameter" Status="Unavailable" BandOrdering="BandMajor" FrameHeight="20" FrameWidth="10" Halftoned="false" Interleaved="false" Resolution="7 6">
+			<Band Data="Temp.bmp" Height="20" WasMarked="true" Width="5"/>
+			<FileSpec ResourceUsage="RasterFileLocation" Compression="None"/>
+			<PixelColorant ColorantName="Blue" PixelDepth="20"/>
+		</ByteMap>
+		<CaseMakingParams ID="CMP001" Class="Parameter" Status="Incomplete"/>
+		<CasingInParams ID="CIP001" Class="Parameter" Status="Complete">
+			<GlueLine ID="GL001" AreaGlue="false"/>
+		</CasingInParams>
+=======
+		<BinderySignature ID="B4x2" Status="Draft" Class="Parameter" NumberUp="1 1" BindingEdge="Left" FoldCatalog="Fx-y">
+			<Fold From="Front" To="Up" Travel="0.123" RelativeTravel="49E3"/>
+			<SignatureCell BackFacePages="1 2 3 4 " BackPages="34 44 55" BottleAngle="15.001"/>
+		</BinderySignature>
+>>>>>>> 1.2
+		<ChannelBindingParams Class="Parameter" ID="Channel_002" Status="Incomplete" Brand="Name of the clamp" ClampColor="Orange" ClampD="1.234" ClampSize="1 3 6" ClampSystem="false"/>
+		<CIELABMeasuringField ID="CM001" Class="Parameter" Status="Incomplete" Center="1 1" CIELab="1 3 5"/>
+		<CoilBindingParams Class="Parameter" ID="Coil" Status="Incomplete" Material="LaqueredSteel" Tucked="false"/>
+		<CollectingParams ID="COL001" Class="Parameter" Status="Complete"/>
+		<Color ID="Color_001" Status="Incomplete" Name="Light Purple" CMYK="0.1 0 0.01 0.99" sRGB="0.3 0 1.0000" Class="Parameter" MappingSelection="UseLocalPrinterValues">
+			<TransferCurve Curve="0 0 1 1 2 2 3 3 4 4" Separation="blah"/>
+		</Color>
+		<ColorantAlias ID="CA001" Class="Parameter" Status="Draft" ReplacementColorantName="light green">
+			<SeparationSpec ID="SS002" Name="like green"/>
+		</ColorantAlias>
+		<ColorantControl Class="Parameter" ID="ColorantControl_001" Status="Incomplete" ProcessColorModel="DeviceCMYK" ForceSeparations="false">
+			<ColorantAlias ReplacementColorantName=""/>
+			<ColorantOrder/>
+			<ColorantParams/>
+			<ColorPoolRef rRef="ColorPool_001"/>
+			<ColorSpaceSubstitute>
+				<PDLResourceAlias ID="PDLResAlias_001" ResourceType="groovy"/>
+				<SeparationSpec Name="BlackGold"/>
+			</ColorSpaceSubstitute>
+			<DeviceColorantOrder/>
+			<DeviceNSpace N="4"/>
+		</ColorantControl>
+		<ColorControlStrip ID="CCS001" Class="Parameter" Status="Draft" Center="1 1" Size="2 2"/>
+		<ColorIntent ID="CI001" Status="Incomplete" Class="Intent"/>
+		<ColorPool Class="Parameter" ID="ColorPool_001" Status="Incomplete">
+			<Color Name="Fudge" MappingSelection="UseLocalPrinterValues"/>
+		</ColorPool>
+		<ColorCorrectionParams Class="Parameter" ID="CCP_001" Status="Incomplete">
+			<FileSpec ID="FS010" Compression="None" ResourceUsage="FinalTargetDevice"/>
+			<ColorCorrectionOp SourceObjects="All"/>
+			<ColorCorrectionOp SourceObjects="Text"/>
+		</ColorCorrectionParams>
+		<ColorMeasurementConditions ID="CMC001" Class="Parameter" Status="Complete" DensityStandard="ANSIA" Illumination="D50" Observer="2"/>
+		<ComChannel ID="CCH001" Class="Parameter" Status="Draft" ChannelType="Email" Locator="Office Park, IHIO"/>
+		<Company ID="COMP001" Class="Parameter" Status="Available" OrganizationName="CIP4"/>
+		<Component Class="Quantity" ID="Component_002" Status="Incomplete" ComponentType="Sheet">
+			<Disjointing>
+				<IdentificationField Encoding="ASCII" EncodingDetails="Code39" Position="Header" Purpose="Verification"/>
+			</Disjointing>
+			<Sheet ID="Sheet_002" Name="TopSheet">
+				<Surface ID="Surface_002" Side="Front"/>
+				<SurfaceRef rRef="Surface_001"/>
+			</Sheet>
+		</Component>
+		<Contact ID="CON001" Class="Parameter" Status="Complete" ContactTypes="Accounting"/>
+		<ContactCopyParams ID="CONCP001" Class="Parameter" Status="Incomplete" ContactScreen="false" PolarityChange="false" RepeatStep="1 1"/>
+		<ConventionalPrintingParams Class="Parameter" ID="ConvPP_001" Status="Incomplete" DirectProof="true" Drying="UV" FirstSurface="Either" FountainSolution="Off" MediaLocation="In the bin" ModuleDrying="Off" ModuleIndex="-7  ~  3" Powder="1.745" PrintingType="SheetFed" SheetLay="Left" Speed="23" WorkStyle="Simplex"/>
+		<CoverApplicationParams ID="COV001" Class="Parameter" Status="Incomplete"/>
+		<CreasingParams ID="CreasingParams_01" Status="Incomplete" Class="Parameter">
+			<Crease StartPosition="1.2 2.4" WorkingPath="3.6 99.9" WorkingDirection="Top"/>
+		</CreasingParams>
+		<CutBlock ID="CUTB001" Class="Parameter" Status="Draft" BlockName="First" BlockSize="2 2" BlockSubdivision="1 1" BlockTrf="1 0 0 1 0 0" BlockElementType="CutElement" BlockType="CutBlock"/>
+		<CutMark ID="CMA001" Class="Parameter" Status="Draft" MarkType="BottomVerticalCutMark" Position="2 2"/>
+		<CuttingParams ID="CuttingParams_01" Status="Complete" Class="Parameter">
+			<Cut StartPosition="0 0" WorkingPath="19 3.14159" WorkingDirection="Top"/>
+		</CuttingParams>
+		<DBMergeParams Class="Parameter" ID="DBMerge_001" Status="Incomplete"/>
+		<DBRules Class="Parameter" ID="DBRules_001" Status="Incomplete">
+			<Comment>Have we got text?
+And another thing...</Comment>
+		</DBRules>
+		<DBSchema Class="Parameter" ID="DBSchema_001" Status="Incomplete" DBSchemaType="CommaDelimited">
+			<Comment>The comment is forced - but filling it in isn't!</Comment>
+		</DBSchema>
+		<DBSelection Class="Parameter" ID="DBSelection" Status="Incomplete" DataBase="file://D:/database"/>
+		<DeliveryIntent ID="DI_001" Status="Incomplete" Class="Intent">
+			<Overage DataType="NumberSpan" Actual="1.5" Preferred="1.9" Range="-1  ~  -6 0.75  ~  1 3.14  ~  5.13 7 9  ~  138 131"/>
+			<DropIntent AdditionalAmount="80">
+				<DropItemIntent Amount="6"/>
+			</DropIntent>
+		</DeliveryIntent>
+		<DeliveryParams Class="Parameter" ID="DP_001" Status="Incomplete">
+			<Company OrganizationName="">
+				<Contact ContactTypes="Driver">
+					<PersonRef rRef="Param1"/>
+				</Contact>
+				<ContactRef rRef="DP_001"/>
+				<ContactRef rRef="DP_001"/>
+			</Company>
+			<Drop>
+				<Company OrganizationName=""/>
+				<DropItem Amount="42" Unit="">
+					<Component ID="Component_001" ComponentType="Sheet"/>
+				</DropItem>
+			</Drop>
+		</DeliveryParams>
+		<DeliveryParams Class="Parameter" ID="DP_002" Status="Incomplete">
+			<CompanyRef rRef="DP_001"/>
+			<Drop>
+				<DropItem Amount="7" Unit="oranges/Sq Yard">
+					<ComponentRef rRef="Component_001"/>
+				</DropItem>
+			</Drop>
+		</DeliveryParams>
+		<DensityMeasuringField ID="DMF001" Class="Parameter" Status="Incomplete" Center="1 1" Density=" 3 3 3 3" Diameter="3" DotGain="3" Percentage="30" Screen="test" Separation="dunno" ToleranceBlack="0 0" ToleranceCyan="2 2" ToleranceDotGain="3 3" ToleranceMagenta="3 3" ToleranceYellow="6 6"/>
+		<DevelopingParams ID="DEV001" Class="Parameter" Status="Draft"/>
+		<Device Class="Implementation" ID="Device_001" Status="Incomplete" DeviceID="My Device Name">
+			<Comment>Just because I can</Comment>
+			<CostCenter CostCenterID="Huge Costs"/>
+		</Device>
+		<DeviceMark ID="DEVM001" Class="Parameter" Status="Incomplete"/>
+		<DeviceNSpace ID="DEVNS001" Class="Parameter" Status="Draft" N="40"/>
+		<DigitalDeliveryParams ID="DDP001" Class="Parameter" Status="Draft"/>
+		<DigitalMedia ID="DM001" Class="Handling" Status="Incomplete" MediaType="CD"/>
+		<DigitalPrintingParams Class="Parameter" ID="Digital_Params_001" Status="Incomplete" PrintingType="SheetFed" DirectProofAmount="6" ManualFeed="true">
+			<MediaSource LeadingEdge="23" ManualFeed="true" MediaLocation="FrontOffice"/>
+		</DigitalPrintingParams>
+		<ElementColorParams ID="ECP001" Class="Parameter" Status="Draft"/>
+		<EmbossingIntent ID="EI001" Status="Draft" Class="Intent">
+			<EmbossingItem>
+				<Direction DataType="EnumerationSpan"/>
+				<EmbossingType DataType="StringSpan"/>
+			</EmbossingItem>
+		</EmbossingIntent>
+		<EmbossingParams ID="EP001" Class="Parameter" Status="Incomplete">
+			<Emboss Direction="Depressed" EmbossingType="EmbossedFinish"/>
+		</EmbossingParams>
+		<Employee Class="Implementation" ID="Employee_001" Status="Incomplete">
+			<CostCenter CostCenterID=""/>
+			<Person AdditionalNames="Mahalape" FamilyName="Swana" FirstName="Bot" JobTitle="Banker" NamePrefix="Sir" NameSuffix="Thanks">
+				<ComChannel ChannelType="Phone" Locator="On the map of Cental Africa"/>
+			</Person>
+		</Employee>
+		<EndSheetGluingParams ID="ESGP001" Class="Parameter" Status="Unavailable">
+			<EndSheet Side="Back">
+				<GlueLine AreaGlue="false"/>
+			</EndSheet>
+			<EndSheet Side="Front">
+				<GlueLine AreaGlue="true"/>
+			</EndSheet>
+		</EndSheetGluingParams>
+		<ExposedMedia Class="Handling" ID="ExposedMedia_001" Status="Incomplete" ColorType="Color" Polarity="true" ProofQuality="None" ProofType="Page" PunchType="Bacher">
+			<Media Dimension="7 7" MediaType="Film"/>
+		</ExposedMedia>
+		<Media Class="Consumable" ID="Media_001" Status="Available" Dimension="123 456" MediaType="Film"/>
+		<FeedingParams ID="FP001" Class="Parameter" Status="Draft"/>
+		<FileSpec ID="FileID_001" URL="file:///NotHere" MimeType="Unknown" Class="Parameter" Status="Available"/>
+		<FitPolicy ID="FITP001" Class="Parameter" Status="Draft" GutterPolicy="Fixed"/>
+		<Fold ID="F001" Class="Parameter" Status="Incomplete" From="Front" To="Down"/>
+		<FoldingIntent ID="FI001" Status="Incomplete" Class="Intent">
+			<FoldingCatalog DataType="NameSpan"/>
+		</FoldingIntent>
+		<FoldingParams Class="Parameter" ID="Param1" Status="Incomplete" DescriptionType="FoldProc" SheetLay="Left"/>
+		<FoldingParams Class="Parameter" ID="Folding_001" Status="Incomplete" DescriptionType="FoldProc" SheetLay="Left">
+			<Fold From="Front" To="Up" Travel="1.2"/>
+		</FoldingParams>
+		<FontParams Class="Parameter" ID="FontParams" Status="Incomplete"/>
+		<FormatConversionParams ID="FCP001" Class="Parameter" Status="Draft"/>
+		<GatheringParams Class="Parameter" ID="GatheringParams_001" Status="Incomplete">
+			<Disjointing>
+				<IdentificationField Encoding="ASCII" EncodingDetails="SOME_DETAILS" Position="Header" Purpose="Verification"/>
+			</Disjointing>
+		</GatheringParams>
+		<GlueApplication ID="GA001" Class="Parameter" Status="Draft" GluingTechnique="SideGluingBack">
+			<GlueLine AreaGlue="false"/>
+		</GlueApplication>
+		<GluingParams ID="GlueParams_01" Status="InUse" Class="Parameter">
+			<Glue WorkingDirection="Top">
+				<GlueApplication GluingTechnique="SideGluingBack">
+					<GlueLine StartPosition="1 2" WorkingPath="2 4" GlueBrand="The really Sticky stuff" AreaGlue="false"/>
+				</GlueApplication>
+			</Glue>
+		</GluingParams>
+		<GlueLine ID="GLUEL001" Class="Parameter" Status="Unavailable" AreaGlue="false"/>
+		<HeadBandApplicationParams ID="HBAP001" Class="Parameter" Status="Unavailable"/>
+		<Hole ID="HOLE001" Class="Parameter" Status="Draft" Center="1 1" Extent="2 2" Shape="Eliptical"/>
+		<HoleLine ID="HLN001" Class="Parameter" Status="Draft" Pitch="30">
+			<Hole ID="HOLE002" Center="2 2" Extent="1 1" Shape="Rectangular"/>
+		</HoleLine>
+		<HoleList ID="HLST001" Class="Parameter" Status="Draft"/>
+		<HoleMakingIntent ID="HMI001" Status="Draft" Class="Intent">
+			<HoleType DataType="StringSpan"/>
+		</HoleMakingIntent>
+		<HoleMakingParams Class="Parameter" ID="Holes_001" Status="Incomplete" HoleType="P12m-rect-0t">
+			<Hole Shape="Round" Center="1.2 1.2" Extent="39 39"/>
+		</HoleMakingParams>
+		<IdentificationField ID="IDENTP001" Class="Parameter" Status="Draft" Encoding="ASCII" EncodingDetails="Code39"/>
+		<IDPrintingParams Class="Parameter" ID="IDPrintingParams_001" Status="Incomplete" AttributesNaturalLang="uk" IDPAttributeFidelity="true">
+			<Cover/>
+			<IDPFinishing Finishings="3">
+				<IDPHoleMaking>
+					<HoleMakingParams ID="Another_0099" HoleType="R2i-US-a">
+						<Hole Shape="Round" Center="2.4 3.6" Extent="-3.14159 -3.14159"/>
+					</HoleMakingParams>
+				</IDPHoleMaking>
+			</IDPFinishing>
+			<IDPLayout Border="0" FinishedPageOrientation="Portrait" ForceFrontSide="1 2 3" NumberUp="9 9" PresentationDirection="ToLeftToTop" Rotate="0" Sides="OneSided">
+				<ImageShift PositionX="Center" PositionY="Bottom" ShiftX="1" ShiftXSide1="2" ShiftXSide2="3" ShiftY="4" ShiftYSide1="5" ShiftYSide2="6"/>
+			</IDPLayout>
+		</IDPrintingParams>
+		<ImageCompressionParams Class="Parameter" ID="ICP_001" Status="Incomplete">
+			<ImageCompression ImageType="Color" AntiAliasImages="false" AutoFilterImages="true" ConvertImagesToIndexed="false" DCTQuality="0.666666" DownsampleImages="false" EncodeColorImages="true" ImageDepth="8" ImageDownsampleThreshold="1.5" ImageDownsampleType="Average" ImageFilter="CCITTFaxEncode" ImageResolution="34"/>
+		</ImageCompressionParams>
+		<ImageReplacementParams Class="Parameter" ID="IRP_007" Status="Incomplete" ImageReplacementStrategy="Omit" IgnoreExtensions=".exe">
+			<FileSpec Compression="None"/>
+			<SearchPath>A:/Path/To/look_For</SearchPath>
+		</ImageReplacementParams>
+		<ImageSetterParams Class="Parameter" ID="ISP_001" Status="Incomplete" AdvanceDistance="4545" CenterAcross="None" CutMedia="false" MirrorAround="None" Polarity="Positive" Punch="false" PunchType="Judy" Resolution="1200 2400" RollCut="123.456" TransferCurve="0 1 2 3.9"/>
+		<Ink Class="Consumable" ID="Ink_001" Status="Incomplete" InkName="Chartreause" ColorName="JustPeachy"/>
+		<InkZoneCalculationParams Class="Parameter" ID="IZCP_001" Status="Incomplete" ZoneWidth="12" Zones="5"/>
+		<InsertingIntent ID="II001" Class="Intent" Status="Incomplete">
+			<InsertList>
+				<Insert Folio="40 ~ 60"/>
+			</InsertList>
+		</InsertingIntent>
+		<InsertingParams Class="Parameter" ID="IP_001" Status="Incomplete" SheetOffset="0 0" InsertLocation="Front" Method="BindIn"/>
+		<InsertSheet Class="Parameter" ID="InsertSheet_001" Status="Incomplete" Usage="Header" SheetType="AccountingSheet" SheetUsage="Header"/>
+		<InsertSheet Class="Parameter" ID="Sheet_001" Status="Incomplete" Usage="Header" SheetType="ErrorSheet" SheetUsage="Header">
+			<RunList ID="RunList_002" CommentURL="http://comments.are.us"/>
+			<SheetRef rRef="Sheet_001"/>
+		</InsertSheet>
+		<InterpretedPDLData Class="Parameter" ID="_OH_YEAH" Status="Incomplete"/>
+		<InterpretingParams Class="Parameter" ID="SomePDFID" Status="Incomplete" FitToPage="false" MirrorAround="FeedDirection" Polarity="Negative" Poster="49.74 12000" PosterOverlap="-0.1 -0.9" PrintQuality="Normal" Scaling="1.01 1.01" ScalingOrigin="0 0" Center="true">
+			<PDFInterpretingParams EmitPDFBG="false" EmitPDFHalftones="false" EmitPDFTransfers="false" EmitPDFUCR="false" HonorPDFOverprint="false" ICCColorAsDeviceColor="false" PrintPDFAnnotations="false" TransparencyRenderingQuality="23"/>
+		</InterpretingParams>
+		<JacketingParams ID="J001" Class="Parameter" Status="Draft" FoldingWidth="20"/>
+		<JobField ID="JF001" Class="Parameter" Status="Draft" ShowList="DeviceID"/>
+		<LabelingParams ID="LP001" Class="Parameter" Status="Complete"/>
+		<LaminatingIntent ID="LI001" Status="Incomplete" Class="Intent">
+			<Temperature DataType="EnumerationSpan"/>
+		</LaminatingIntent>
+		<LaminatingParams ID="LAMP001" Class="Parameter" Status="Draft" LaminatingBox="1 3 7 4"/>
+		<Layout Class="Parameter" ID="Layout_001" Status="Incomplete" Automated="false" MaxDocOrd="1" MaxSetOrd="7">
+			<Signature Name="A_Simple_Signature">
+				<InsertSheetRef rRef="InsertSheet_001"/>
+				<Sheet ID="Sheet_004" Name="SomeSheetName"/>
+				<SheetRef rRef="Sheet_001"/>
+			</Signature>
+			<InsertSheetRef rRef="InsertSheet_001"/>
+		</Layout>
+		<LayoutElement Class="Parameter" ID="LayoutElement_001" Status="Incomplete">
+			<FileSpecRef rRef="CCP_001"/>
+		</LayoutElement>
+		<LayoutIntent ID="LIN001" Status="Draft" Class="Intent" FolioCount="Booklet" NumberUp="1 1"/>
+		<LayoutPreparationParams ID="LAYPP001" Class="Parameter" Status="Draft"/>
+		<LongitudinalRibbonOperationParams Class="Parameter" ID="LongRibbonOpParams_001" Status="Incomplete">
+			<LongFold XOffset="21" WorkingList="34"/>
+			<LongGlue XOffset="21" WorkingList="34" GlueBrand="StickyStuffLtd" GlueType="Hotmelt" LineWidth="1.5" MeltingTemperature="-274"/>
+			<LongPerforate XOffset="21" WorkingList="34" TeethPerDimension="1000"/>
+			<LongSlit XOffset="21" WorkingList="34"/>
+		</LongitudinalRibbonOperationParams>
+		<ManualLaborParams ID="MLP001" Class="Parameter" Status="Complete" LaborType="HardWork"/>
+		<Media ID="MED001" Class="Consumable" Status="Draft" MediaUnit="Sheet" PrePrinted="false" HoleType="None"/>
+		<MediaIntent ID="MI001" Status="Draft" Class="Intent" PrePrinted="false"/>
+		<NumberingIntent ID="NI001" Status="Draft" Class="Intent">
+			<NumberItem StartValue="1" Step="1"/>
+		</NumberingIntent>
+		<NumberingParams Class="Parameter" ID="NumberingParams" Status="Incomplete">
+			<NumberingParam StartValue="ShouldThisbe a string" XPosition="2.4" YPosition="3.2" Orientation="90" Step="1"/>
+		</NumberingParams>
+		<ObjectResolution ID="obj001" Class="Parameter" Status="Draft" Resolution="1 1"/>
+		<OrderingParams Class="Parameter" ID="OrderingParams" Status="Incomplete" Amount="36.9" Unit="Oranges">
+			<Comment/>
+		</OrderingParams>
+		<PackingIntent ID="PI001" Status="Incomplete" Class="Intent"/>
+		<PackingParams Class="Parameter" ID="Packing_001" Status="Incomplete" BoxedQuantity="20" BoxShape="12 24 36" CartonQuantity="200" CartonShape="24 36 48" CartonMaxWeight="500" CartonStrength="4.9" PalletMaxHeight="1.3" PalletMaxWeight="20000" PalletQuantity="5000" PalletSize="23123 25000" PalletType="2Way" PalletWrapping="None" WrappedQuantity="1" WrappingMaterial="None"/>
+		<PageList ID="PAGEL001" Class="Parameter" Status="Draft" Template="false"/>
+		<PalletizingParams ID="PAL001" Class="Parameter" Status="Draft"/>
+		<Pallet ID="PALLET001" Class="Consumable" Status="Draft" PalletType="Cardboard"/>
+		<PerforatingParams ID="Perforating_01" Status="Rejected" Class="Parameter">
+			<Perforate StartPosition="1 1" WorkingPath="9 99" WorkingDirection="Top" TeethPerDimension="1.2"/>
+		</PerforatingParams>
+		<PDFToPSConversionParams Class="Parameter" ID="PDFToPSConversionParams_001" Status="Incomplete" BinaryOK="true" BoundingBox="0 0 0 0" CenterCropBox="true" IgnoreAnnotForms="true" IgnoreColorSeps="false" IgnoreDeviceExtGState="true" IgnoreDSC="true" IgnoreExternStreamRef="false" IgnoreHalftones="false" IgnorePageRotation="false" IgnoreRawData="false" IgnoreSeparableImagesOnly="false" IgnoreShowPage="true" IgnoreTTFontsFirst="false" GeneratePageStreams="false" IncludeBaseFonts="IncludeNever" IncludeType3Fonts="IncludeOncePerPage" IncludeType1Fonts="IncludeOncePerDoc" IncludeTrueTypeFonts="IncludeOncePerDoc" IncludeProcSets="IncludeOncePerDoc" IncludeOtherResources="IncludeOncePerDoc" IncludeEmbeddedFonts="IncludeOncePerDoc" IncludeCIDFonts="IncludeOncePerDoc" OutputType="PostScript" PSLevel="2" Scale="100" SetPageSize="false" SetupProcsets="true" ShrinkToFit="false" SuppressCenter="false" SuppressRotate="false" TTasT42="false" UseFontAliasNames="false"/>
+		<PDLResourceAlias Class="Parameter" ID="PDLResourceAlias_001" Status="Incomplete" ResourceType="Type of PDL" SourceName="Resource name">
+			<FileSpecRef rRef="RunList_001"/>
+		</PDLResourceAlias>
+<<<<<<< AllResources.jdf
+		<PerforatingParams ID="PERFP001" Class="Parameter" Status="Draft">
+			<Perforate WorkingDirection="Bottom"/>
+		</PerforatingParams>
+		<Person ID="PERS001" Class="Parameter" Status="Incomplete" FamilyName="Jones"/>
+		<PlaceHolderResource ID="PLACE001" Class="PlaceHolder" Status="Draft"/>
+		<PlasticCombBindingParams Class="Parameter" ID="PlasticComb" Status="Incomplete" Brand="BugRake" Color="NoColor" Diameter="52" Thickness="1000" Type="R11m-7h4s"/>
+=======
+		<PlasticCombBindingParams Class="Parameter" ID="PlasticComb" Status="Incomplete" Brand="BugRake" Color="NoColor" Diameter="52" Thickness="1000" Type="P16-9i-rect-0t"/>
+>>>>>>> 1.2
+		<PlateCopyParams Class="Parameter" ID="WillowPattern" Status="Incomplete" Cycle="3" Diffusion="Off" Vacuum="24.5"/>
+		<PreflightAnalysis Class="Parameter" ID="Preflight_001" Status="Incomplete">
+			<ColorsResultsPool>
+				<PreflightDetail PageRefs=""/>
+				<PreflightInstance PageRefs=""/>
+				<PreflightDetail PageRefs=""/>
+				<PreflightInstance PageRefs=""/>
+			</ColorsResultsPool>
+			<DocumentResultsPool/>
+			<FontsResultsPool/>
+			<FileTypeResultsPool/>
+			<ImagesResultsPool/>
+			<PagesResultsPool/>
+		</PreflightAnalysis>
+		<PreflightInventory Class="Parameter" ID="pREfLIGHTpROFILE_001" Status="Incomplete">
+			<ColorsResultsPool/>
+			<DocumentResultsPool/>
+			<FileTypeResultsPool/>
+			<ImagesResultsPool/>
+			<PagesResultsPool/>
+		</PreflightInventory>
+		<PreflightParams ID="PREFP001" Class="Parameter" Status="Incomplete">
+			<ActionPool/>
+		</PreflightParams>
+		<PreflightProfile Class="Parameter" ID="Profile_002" Status="Incomplete">
+			<ColorsConstraintsPool>
+				<PreflightConstraint Status="Error" AttemptFixupErrors="true" AttemptFixupWarnings="false" Constraint="None"/>
+			</ColorsConstraintsPool>
+			<DocumentConstraintsPool/>
+			<FontsConstraintsPool/>
+			<FileTypeConstraintsPool>
+				<PreflightConstraint Status="Error"/>
+			</FileTypeConstraintsPool>
+			<ImagesConstraintsPool/>
+			<PagesConstraintsPool/>
+		</PreflightProfile>
+		<Preview Class="Parameter" ID="Preview" Status="Incomplete" PreviewType="Separation" URL="http://fred"/>
+		<PreviewGenerationParams Class="Parameter" ID="PVGP001" Status="Draft" AspectRatio="CenterMin" PreviewFileType="CIP3Multiple" PreviewUsage="Separation"/>
+		<PrintCondition ID="PRICON001" Class="Parameter" Status="Draft" Name="Somebody"/>
+		<PrintRollingParams ID="PRINROLL001" Class="Parameter" Status="Draft"/>
+		<ProductionIntent ID="PRODI001" Status="Incomplete" Class="Intent"/>
+		<ProofingIntent ID="PRI001" Status="Incomplete" Class="Intent"/>
+		<PSToPDFConversionParams ID="PST2PDF001" Class="Parameter" Status="Draft"/>
+		<QualityControlParams ID="QCP001" Class="Parameter" Status="Incomplete"/>
+		<QualityControlResult ID="QCR001" Status="Incomplete" Class="Parameter"/>
+		<RegisterMark ID="REGM001" Class="Parameter" Status="Incomplete" Center="2 2"/>
+		<RegisterRibbon ID="REGRIB001" Class="Consumable" Status="Draft" VisibleLength="20" LengthOverall="20"/>
+		<RenderingParams ID="RENP001" Class="Parameter" Status="Draft"/>
+		<ResourceDefinitionParams ID="RESDEF001" Class="Parameter" Status="Draft">
+			<ResourceParam/>
+		</ResourceDefinitionParams>
+		<RingBindingParams ID="RING001" Class="Parameter" Status="Draft"/>
+		<RollStand ID="ROLL001" Class="Handling" Status="Draft"/>
+		<RunList ID="Link0003" Class="Parameter" Status="Available" PartIDKeys="Run">
+			<RunList Run="1" Pages="0  ~  -1">
+				<LayoutElement>
+					<FileSpec URL="File:://File1.pdf"/>
+				</LayoutElement>
+			</RunList>
+			<RunList Run="2" Pages="0  ~  -1">
+				<LayoutElement>
+					<FileSpec URL="File:://File2.pdf"/>
+				</LayoutElement>
+			</RunList>
+		</RunList>
+		<RunList ID="RunList_001" Class="Parameter" Status="Available" PartIDKeys="Run">
+			<RunList Run="1" Pages="0  ~  4">
+				<LayoutElement>
+					<FileSpec URL="File:://File1.pdf"/>
+				</LayoutElement>
+			</RunList>
+			<RunList Run="2" SpawnStatus="SpawnedRW" Pages="0  ~  -1">
+				<LayoutElement>
+					<FileSpec URL="File:://File2.pdf"/>
+				</LayoutElement>
+			</RunList>
+		</RunList>
+<<<<<<< AllResources.jdf
+		<ScanParams Class="Parameter" ID="SCANPAR001" Status="Incomplete" BitDepth="20" Magnification="1 1" OutputResolution="1 1"/>
+		<ScavengerArea ID="SCAV001" Class="Parameter" Status="Complete" Center="1 1" Size="2 2"/>
+		<ScreeningParams ID="SCREENP001" Class="Parameter" Status="Incomplete" IgnoreSourceFile="false"/>
+		<ScreeningIntent ID="SI001" Class="Intent" Status="Draft"/>
+		<SeparationControlParams Class="Parameter" ID="SEP001" Status="Draft"/>
+		<ShapeCuttingIntent ID="SHI001" Class="Intent" Status="Draft">
+			<ShapeCut CutOut="false">
+				<ShapeType DataType="EnumerationSpan"/>
+			</ShapeCut>
+		</ShapeCuttingIntent>
+		<Sheet Class="Parameter" ID="SHEET001" Status="Draft" LockOrigins="false"/>
+		<ShrinkingParams Class="Parameter" ID="SHRINK001" Status="Draft" ShrinkingMethod="ShrinkCool"/>
+		<SpinePreparationParams Class="Parameter" ID="SPINE001" Status="Incomplete" StartPosition="0"/>
+		<SpineTapingParams Class="Parameter" ID="SPINET001" Status="Draft" TopExcess="0.0"/>
+		<StackingParams Class="Parameter" ID="STACK001" Status="Draft" Compensate="false"/>
+		<StitchingParams Class="Parameter" ID="STITCH001" Status="Draft"/>
+		<Strap Class="Consumable" ID="STRAP001" Status="Incomplete" Material="Strap"/>
+		<StrappingParams Class="Parameter" ID="STRAPP001" Status="Draft" StrappingType="Double"/>
+		<StripBindingParams Class="Parameter" ID="STRIPBIND001" Status="Draft"/>
+		<StrippingParams Class="Parameter" ID="STRIPPA001" Status="Draft">
+			<BinderySignature/>
+		</StrippingParams>
+		<Surface Class="Parameter" ID="Surface_001" Status="Incomplete" Side="Front">
+			<MarkObject CTM="0 1 0 1 0 1" Type="Mark"/>
+		</Surface>
+=======
+		<StrippingParams ID="Res05" Class="Parameter" Status="Available" Locked="false" PartIDKeys="SignatureName SheetName BinderySignatureName">
+			<StripCellParams TrimSize="595.27501 841.88894" TrimFace="14.17321" TrimHead="14.17321" TrimFoot="14.17321" FrontOverfold="0.00000" MillingDepth="7.08661" Spine="0.00000"/>
+			<!--TrimSize en millimètres : 210 x 297-->
+			<StrippingParams SignatureName="Signature 1" WorkStyle="WorkAndBack">
+				<Media MediaType="Paper" Brand="PERIGORD BRILLANT" DescriptiveName="COUCHE MODERNE BRILLANT" Weight="80.00000" Dimension="1842.51788 2607.87146"/>
+				<!--Taille du papier en millimètre : 650 x 920-->
+				<Device DeviceID="ID_1_70/102 4C" FriendlyName="70/102 4C"/>
+				<StrippingParams SheetName=" 16 pages en 1 pose ">
+					<StrippingParams BinderySignatureName="B4x2">
+						<BinderySignatureRef rRef="B4x2"/>
+						<Position RelativeBox="0.00000000 
+0.00000000 1.00000000 1.00000000" Orientation="Rotate0"/>
+					</StrippingParams>
+				</StrippingParams>
+			</StrippingParams>
+		</StrippingParams>
+>>>>>>> 1.2
+		<ThreadSealingParams Class="Parameter" Status="Available" ID="ThreadSealing_01" ThreadPositions="1.2" ThreadLength="1.2" ThreadStitchWidth="1.2"/>
+		<Tile Class="Parameter" ID="TILE001" Status="Draft" ClipBox="2 2 2 2" CTM="0 0 0 0 0 0"/>
+		<Tool Class="Handling" ID="TOOL001" Status="Draft" ToolID="blah"/>
+		<TransferCurvePool Class="Parameter" ID="TransferCurvePool_001" Status="Incomplete">
+			<TransferCurveSet Name="Laser"/>
+		</TransferCurvePool>
+		<TransferFunctionControl Class="Parameter" ID="TFC001" Status="Draft" TransferFunctionSource="Device"/>
+		<TrappingDetails Class="Parameter" ID="TD001" Status="Draft" DefaultTrapping="false" IgnoreFileParams="false"/>
+		<TrappingParams Class="Parameter" ID="TrappingParams_001" Status="Incomplete" BlackColorLimit="0.5" BlackDensityLimit="5" Enabled="true" HalftoneName="Someones halftone">
+			<ColorantZoneDetails Colorant="Colorant Name" StepLimit="0.5" TrapColorScaling="0.5"/>
+		</TrappingParams>
+		<TrapRegion Class="Parameter" ID="TrapRegion_001" Status="Incomplete" Pages="">
+			<TrappingParams ID="TrappingParams_002" BlackColorLimit="0.5" BlackDensityLimit="54" Enabled="true" HalftoneName="A name that identifies a halftone object">
+				<ColorantZoneDetails Colorant="The colorant name" StepLimit="0.5" TrapColorScaling="0.75"/>
+			</TrappingParams>
+		</TrapRegion>
+		<TrapRegion Class="Parameter" ID="TrapRegion_002" Status="Incomplete" Pages="">
+			<TrappingParamsRef rRef="TrappingParams_001"/>
+		</TrapRegion>
+		<TrimmingParams Class="Parameter" ID="TRIMP001" Status="Draft"/>
+		<VerificationParams Class="Parameter" ID="VER001" Status="Incomplete"/>
+		<WireCombBindingParams Class="Parameter" ID="WIRE001" Status="Draft" FlipBackCover="false" Shape="Single"/>
+		<WrappingParams Class="Parameter" ID="WRAP001" Status="Draft" WrappingKind="LooseWrap"/>
+	</ResourcePool>
+</JDF>

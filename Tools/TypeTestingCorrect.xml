@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF_Types xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_1_Types" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.CIP4.org/JDFSchema_1_1" xsi:schemaLocation="http://www.CIP4.org/JDFSchema_1_1
+TypeTesting.xsd">
+	<!--Good examples-->
+	<Colors>
+		<CMYKColor>0 0 0 0</CMYKColor>
+		<CMYKColor>0.99999 0 1.000 100E-2</CMYKColor>
+		<CMYKColor>0.3 0.6 0.8 0.1</CMYKColor>
+		<CMYKColor>0.3 0.6 0.8 0</CMYKColor>
+		<LabColor>0 0 0</LabColor>
+		<LabColor>51.9 12.6 -18.9</LabColor>
+		<LabColor>1E99 .000009 -49.0001E-9</LabColor>
+		<LabColor>INF -INF 0</LabColor>
+		<NamedColor>White</NamedColor>
+		<NamedColor>Black</NamedColor>
+		<NamedColor>Gray</NamedColor>
+		<NamedColor>Red</NamedColor>
+		<NamedColor>Yellow</NamedColor>
+		<NamedColor>Green</NamedColor>
+		<NamedColor>Blue</NamedColor>
+		<NamedColor>Turquoise</NamedColor>
+		<NamedColor>Violet</NamedColor>
+		<NamedColor>Orange</NamedColor>
+		<NamedColor>Brown</NamedColor>
+		<NamedColor>Gold</NamedColor>
+		<NamedColor>Silver</NamedColor>
+		<NamedColor>Pink</NamedColor>
+		<NamedColor>Buff</NamedColor>
+		<NamedColor>Ivory</NamedColor>
+		<NamedColor>Goldenrod</NamedColor>
+		<NamedColor>Mustard</NamedColor>
+		<NamedColor>MultiColor</NamedColor>
+		<NamedColor>Magenta</NamedColor>
+		<NamedColor>LightCyan</NamedColor>
+		<NamedColor>NoColor</NamedColor>
+		<NamedColor>ClearBrown</NamedColor>
+		<NamedColor>DarkBrown</NamedColor>
+		<NamedColor>ClearDarkBrown</NamedColor>
+		<sRGBColor>0 0 0</sRGBColor>
+		<sRGBColor>0.99999 1.000 100E-2</sRGBColor>
+		<sRGBColor>0.3 0.6 0.8</sRGBColor>
+	</Colors>
+	<Integers>
+		<integer>0</integer>
+		<integer>008</integer>
+		<integer>-0</integer>
+		<integer>+0</integer>
+		<integer>7</integer>
+		<integer>-7</integer>
+		<integer>+7</integer>
+		<integer>49</integer>
+		<integer>-49</integer>
+		<integer>+49</integer>
+		<integer>INF</integer>
+		<integer>-INF</integer>
+		<integer>0</integer>
+		<integer>+999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999</integer>
+		<IntegerList>1</IntegerList>
+		<IntegerList>-99</IntegerList>
+		<IntegerList>-99 1234 56 7890 00001 +999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999</IntegerList>
+		<IntegerList>1 2 3 9999999 -999999999</IntegerList>
+		<IntegerList>1 2 3 9999999 -999999999 INF -INF</IntegerList>
+		<IntegerList>1 2 3 9999999 INF INF INF</IntegerList>
+		<IntegerList>1 2 3 9999999 -INF</IntegerList>
+		<IntegerRange>0 ~ 0</IntegerRange>
+		<IntegerRange>0 ~ -0</IntegerRange>
+		<IntegerRange>-102 ~ 0</IntegerRange>
+		<IntegerRange>-102 ~ -0</IntegerRange>
+		<IntegerRange>-102 ~ +0</IntegerRange>
+		<IntegerRange>-102 ~ -INF</IntegerRange>
+		<IntegerRange>-102 ~ INF</IntegerRange>
+		<IntegerRange>INF ~ INF</IntegerRange>
+		<IntegerRange>INF ~ -INF</IntegerRange>
+		<IntegerRange>-INF ~ INF</IntegerRange>
+		<IntegerRange>-102 ~ 7</IntegerRange>
+		<IntegerRange>-102 ~ -7</IntegerRange>
+		<IntegerRange>-102 ~	+7</IntegerRange>
+		<IntegerRange>-102		~ 49</IntegerRange>
+		<IntegerRange>-102 ~ -49</IntegerRange>
+		<IntegerRange>-102 ~ +49</IntegerRange>
+		<IntegerRange>-102 ~ 0</IntegerRange>
+		<IntegerRange>-102 ~ +9999999999999999999999999999999999999999999999999999999</IntegerRange>
+		<IntegerRange>1 ~ 2</IntegerRange>
+		<IntegerRangeList/>
+		<IntegerRangeList>1</IntegerRangeList>
+		<IntegerRangeList>-99</IntegerRangeList>
+		<IntegerRangeList>-99 1234 56 7890 00001 +99999999999999999999999999999999999999999999999999999999999999999999999999999999999999999</IntegerRangeList>
+		<IntegerRangeList>1 2 3 9999999 -999999999</IntegerRangeList>
+		<IntegerRangeList>-102 ~ 0</IntegerRangeList>
+		<IntegerRangeList>-102 ~ -0</IntegerRangeList>
+		<IntegerRangeList>-102 ~ +0</IntegerRangeList>
+		<IntegerRangeList>-102 ~ 7</IntegerRangeList>
+		<IntegerRangeList>-102 ~ -7</IntegerRangeList>
+		<IntegerRangeList>-102 ~ +7</IntegerRangeList>
+		<IntegerRangeList>-102 ~ +7 -INF</IntegerRangeList>
+		<IntegerRangeList>-102 ~ 49</IntegerRangeList>
+		<IntegerRangeList>-102 ~ -49 0 ~ 0 0 ~ -0</IntegerRangeList>
+		<IntegerRangeList>-102 ~ 0 -102 ~ -0 -102 ~ +0 -102 ~ 7 -102 ~ -7 -102 ~ +7 -102 ~ 49 -102 ~ -49</IntegerRangeList>
+		<IntegerRangeList>-102 ~ 0 1 2 3  -102 ~ -0 -0 -102 ~ +0 49 48 47 -102 ~ 7 -102 ~ -7 -102 ~ +7 -102 ~ 49 -102 ~ -49</IntegerRangeList>
+		<IntegerRangeList>1 -102 ~ 0 -102 ~ -0 -102 ~ +0 -102 ~ 7 -102 ~ -7 -102 ~ +7 -102 ~ 49 -102 ~ -49 -0</IntegerRangeList>
+		<IntegerRangeList>-102 ~ +49 -102 ~ +49 55555555 -102 ~ +9999999999999999999999999999999999999999999999</IntegerRangeList>
+		<IntegerRangeList>1 ~ 2 102 ~ 0 -102 ~ -INF -102 ~ INF -INF 1 2 3 INF INF ~ INF INF ~ -INF 1 ~ 2</IntegerRangeList>
+	</Integers>
+	<Numbers>
+		<double>0</double>
+		<double>-0</double>
+		<double>+0</double>
+		<double>-1</double>
+		<double>+1</double>
+		<double>INF</double>
+		<double>-INF</double>
+		<double>.4444</double>
+		<double>.4976</double>
+		<double>4976.</double>
+		<double>1.4976</double>
+		<double>-1.4976</double>
+		<double>1.4976E45</double>
+		<double>1.4976E-99</double>
+		<double>-1.4976e45</double>
+		<double>+1.4976e-99</double>
+		<double>-2.4703283E-324</double>
+		<double>-2.4703282292062327208828439643411E-324</double>
+		<double>+2.4703282292062327208828439643411E-324</double>
+		<double>+8.9884656743115795386465259539451E+307</double>
+		<DoubleList/>
+		<DoubleList>-INF INF</DoubleList>
+		<DoubleList>INF -0.0000009E-99 1.2 -45.54 5</DoubleList>
+		<DoubleRange>0 ~ 0</DoubleRange>
+		<DoubleRange>-0 ~ +0</DoubleRange>
+		<DoubleRange>0 ~ +99E+99</DoubleRange>
+		<DoubleRange>-0 ~ +99E+99</DoubleRange>
+		<DoubleRange>+0 ~ +99E+99</DoubleRange>
+		<DoubleRange>-1 ~ +99E+99</DoubleRange>
+		<DoubleRange>+1 ~ +99E+99</DoubleRange>
+		<DoubleRange>-INF ~ +99E+99</DoubleRange>
+		<DoubleRange>INF ~ +99E+99</DoubleRange>
+		<DoubleRange>INF ~ 0</DoubleRange>
+		<DoubleRange>INF ~ +99E+99</DoubleRange>
+		<DoubleRange>0.4444 ~ +99E+99</DoubleRange>
+		<DoubleRange>4976. ~ +99E+99</DoubleRange>
+		<DoubleRange>1.4976 ~ +99E+99</DoubleRange>
+		<DoubleRange>-1.4976 ~ +99E+99</DoubleRange>
+		<DoubleRange>1.4976E45 ~ +99E+99</DoubleRange>
+		<DoubleRange>1.4976E-99 ~ +99E+99</DoubleRange>
+		<DoubleRange>-1.4976e45 ~ +99E+99</DoubleRange>
+		<DoubleRange>+1.4976e-99 ~ +99E+99</DoubleRange>
+		<DoubleRange>-1.4976e-99999999 ~ +99E+99</DoubleRange>
+		<DoubleRangeList/>
+		<DoubleRangeList>0</DoubleRangeList>
+		<DoubleRangeList>-0</DoubleRangeList>
+		<DoubleRangeList>+0</DoubleRangeList>
+		<DoubleRangeList>-1</DoubleRangeList>
+		<DoubleRangeList>+1</DoubleRangeList>
+		<DoubleRangeList>-INF</DoubleRangeList>
+		<DoubleRangeList>1.4976</DoubleRangeList>
+		<DoubleRangeList>-1.4976</DoubleRangeList>
+		<DoubleRangeList>1.4976E45</DoubleRangeList>
+		<DoubleRangeList>1.4976E-99</DoubleRangeList>
+		<DoubleRangeList>-1.4976e45</DoubleRangeList>
+		<DoubleRangeList>0  -0  +0 -1 	 +1 -INF INF 1.4976 1.4976  1.4976E45</DoubleRangeList>
+		<DoubleRangeList>1.4976E-99 -1.4976e45 -1.4976e-99 -1.4976e-99</DoubleRangeList>
+		<DoubleRangeList>0 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>-0 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>+0 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>-1 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>+1 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>-INF ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>INF ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>INF ~ 0</DoubleRangeList>
+		<DoubleRangeList>INF ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>0.4444 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>4976. ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>1.4976 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>-1.4976 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>1.4976E45 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>1.4976E-99 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>-1.4976e45 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>+1.4976e-99 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>-1.4976e-99999999 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>0 ~ 0 0 ~ +99E+99 -0 ~ +99E+99 +0 ~ +99E+99 -1 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>1.4976 ~ +99E+99 -1.4976 ~ +99E+99 1.4976E45 ~ +99E+99 1.4976E-99 ~ +99E+99</DoubleRangeList>
+		<DoubleRangeList>1.4976 ~ +99E+99 INF -1.4976 ~ +99E+99 -INF 1.4976E45 ~ +99E+99 1.4976E-99 ~ +99E+99 0</DoubleRangeList>
+		<DoubleRangeList>99 1.4976 ~ +99E+99 -333.444 -1.4976 ~ +99E+99 1.4976E45 ~ +99E+99 32 1.4976E-99 ~ +99E+99</DoubleRangeList>
+	</Numbers>
+	<NumberLists>
+		<matrix>1 2 3 4 5 6</matrix>
+		<matrix>1 2 3 4 INF -INF</matrix>
+		<rectangle>1 2 3 4</rectangle>
+		<rectangle>-INF 1.34E99 0.99E-99 INF</rectangle>
+		<RectangleRange>6 7 8 8 ~ 1 2 3 4</RectangleRange>
+		<RectangleRange>6 7 8 8 ~ 1 2 3 4</RectangleRange>
+		<RectangleRangeList>6 7 8 8 ~ 1 2 3 4 3 2 1 0 ~ 0 1 2 3 6 7 8 8 ~ 1 2 3 4 3 2 1 0 ~ 0 1 2 3</RectangleRangeList>
+		<RectangleRangeList>-INF -INF -INF -INF ~ INF INF INF INF</RectangleRangeList>
+		<RectangleRangeList>1 2 3 4 ~ 5 6 7 8 1 2 3 4 ~ 5 6 7 8 1 2 3 4 ~ 5 6 7 8 1 2 3 4 ~ 5 6 7 8 INF INF INF INF</RectangleRangeList>
+		<shape>INF 12.34E9 0.00E-9</shape>
+		<shape>12.34E9 0.00E-9 8</shape>
+		<shape>INF +12.34E9 0.00E-9</shape>
+		<shape>INF 12.34E9 0.00E-9</shape>
+		<shape>INF 12.34E9 00.00</shape>
+		<ShapeRange>1 2 3 ~ 4 5 6</ShapeRange>
+		<ShapeRange>INF 12.34E9 0.00E-9 ~ INF 12.34E9 0.00E-9</ShapeRange>
+		<ShapeRange>1 2 -INF ~ INF 4 65.099E+99</ShapeRange>
+		<ShapeRange>1 2 3 ~ 4 5 6</ShapeRange>
+		<ShapeRangeList>7 2 3 ~ 4 5 6 1 2 3 ~ 4 5 6 0 INF INF ~ 99 -INF -INF INF INF INF ~ INF INF INF 1 2 3 ~ 4 5 6</ShapeRangeList>
+		<ShapeRangeList>1 2 3 ~ 4 5 6 1 2 3 ~ 4 5 6</ShapeRangeList>
+		<ShapeRangeList>INF 12.34E9 0.00E-9 ~ INF 12.34E9 0.00E-9 INF 12.34E9 0.00E-9 ~ INF 12.34E9 0.00E-9 1 2 -INF ~ INF 4 65.099E+99</ShapeRangeList>
+		<TransferFunction>12  34</TransferFunction>
+		<TransferFunction>12 56   78 34</TransferFunction>
+		<TransferFunction>12 56 78 34   12 56 78 34 12 56 78 34 7</TransferFunction>
+		<XYPair>1.23 49E92</XYPair>
+		<XYPair>1.23 INF</XYPair>
+		<XYPair>INF -INF</XYPair>
+		<XYPair>1.23 INF</XYPair>
+		<XYPair>1.23 49E92</XYPair>
+		<XYPair>1.23 49E92</XYPair>
+		<XYPair>1.23 49E92</XYPair>
+		<XYPairRange>1.23 49E92 ~ 1.23 INF</XYPairRange>
+		<XYPairRange>INF -INF ~ 1.23 INF</XYPairRange>
+		<XYPairRange>0 1 ~ 2 3</XYPairRange>
+		<XYPairRangeList>1.23 49E92 ~ 1.23 INF INF INF INF -INF ~ INF INF</XYPairRangeList>
+		<XYPairRangeList>INF -INF ~ 1.23 INF 0 1 ~ 2 3</XYPairRangeList>
+		<XYPairRangeList>0 1 ~ 2 3 1.23 49E92 ~ 1.23 INF INF -INF ~ 1.23 INF 0 1 ~ 2 3</XYPairRangeList>
+	</NumberLists>
+	<Names>
+		<Name>Fred</Name>
+		<Name>Fred</Name>
+		<Name>123Fred</Name>
+		<Name>123</Name>
+		<Name>Fred123</Name>
+		<Name>_Fred</Name>
+		<Name>:Fred</Name>
+		<Name>-Fred</Name>
+		<NameRange>Jim ~ Fred</NameRange>
+		<NameRange>Fred ~ JIIIM</NameRange>
+		<NameRange>_Fred ~ :Fred</NameRange>
+		<NameRange>:Fred ~ -Fred</NameRange>
+		<NameRange>-Fred ~ .Fred</NameRange>
+		<NameRange>Jim ~ 123</NameRange>
+		<NameRange>_Jim ~ 123</NameRange>
+		<NameRange>Jim ~ 123</NameRange>
+		<NameRangeList/>
+		<NameRangeList>Jim ~ Fred</NameRangeList>
+		<NameRangeList>Jim ~ Fred blah blah </NameRangeList>
+		<NameRangeList>Fred ~ JIIIM Peter Paul Mary John ~ ___</NameRangeList>
+		<NameRangeList>Jim ~ 123</NameRangeList>
+		<NameRangeList>_Fred ~ :Fred</NameRangeList>
+		<NameRangeList>:Fred ~ -Fred</NameRangeList>
+		<NameRangeList>-Fred ~ .Fred</NameRangeList>
+		<NameRangeList>Jim ~ 123</NameRangeList>
+		<NameRangeList>Jim ~ Fred</NameRangeList>
+		<NameRangeList>Jim ~ 123Jim</NameRangeList>
+		<NameRangeList>_Jim ~ 123</NameRangeList>
+		<NameRangeList>Jim ~ Fred Fred ~ JIIIM _Fred ~ :Fred</NameRangeList>
+		<NameRangeList>:Fred ~ -Fred Bill Witherspoon -Fred ~ .Fred Jim ~ 123</NameRangeList>
+		<NameRangeList>Jim ~ Fred</NameRangeList>
+		<NameRangeList>Jim ~ 123Jim _Jim ~ 123 111 Jim ~ 123</NameRangeList>
+		<NameRangeList>Jim ~ Bill Fred ~ Whomso</NameRangeList>
+	</Names>
+	<Nmtokens>
+		<Nmtoken>1.1</Nmtoken>
+		<Nmtoken>123Fred</Nmtoken>
+		<Nmtoken>Fred</Nmtoken>
+		<Nmtoken>.</Nmtoken>
+		<Nmtoken>-</Nmtoken>
+		<Nmtoken>_</Nmtoken>
+		<Nmtoken>:</Nmtoken>
+		<Nmtoken>1</Nmtoken>
+		<Nmtoken>A</Nmtoken>
+		<Nmtoken>Next_two_fail_in_XMLSPY_SHOULD_BE:OK</Nmtoken>
+		<Nmtoken>&#x0300;</Nmtoken>
+		<Nmtoken>&#x0345;</Nmtoken>
+		<Nmtoken>:</Nmtoken>
+		<Nmtoken>.</Nmtoken>
+		<Nmtoken>-</Nmtoken>
+		<Nmtoken>_</Nmtoken>
+		<Nmtoken>Cant:Use:For:QNames</Nmtoken>
+		<Nmtokens>123Fred fRED . - .-_:</Nmtokens>
+		<Nmtokens>A list of tokens</Nmtokens>
+		<Nmtokens>1234 5678 9101112 another list just numbers and lies</Nmtokens>
+		<Nmtokens>_ID :ID :ID :ID Lists do not have to be_unique </Nmtokens>
+		<ID>ID1</ID>
+		<ID>ID2</ID>
+		<ID>ID3</ID>
+		<ID>ID4</ID>
+		<IDREF>ID1</IDREF>
+		<IDREF>ID1</IDREF>
+		<IDREF>ID2</IDREF>
+		<IDREFS>ID1 ID2 ID3 ID4</IDREFS>
+		<IDREFS>ID4 ID2 </IDREFS>
+		<IDREFS>ID1 ID2 ID3 ID4 ID1 ID2 ID3 ID4</IDREFS>
+		<QName>ElementName</QName>
+		<QName>RunListLink</QName>
+		<QName>jdftyp:rectangle</QName>
+	</Nmtokens>
+	<DatesAndTime>
+		<date>1999-05-31</date>
+		<date>2004-04-01</date>
+		<date>1999-02-28</date>
+		<date>2000-02-29</date>
+		<dateTime>1999-05-31T13:20:00</dateTime>
+		<dateTime>1999-05-31T13:20:00Z</dateTime>
+		<dateTime>1999-05-31T13:20:00-05:00</dateTime>
+		<DateTimeRange>INF ~ -INF</DateTimeRange>
+		<DateTimeRange>2003-10-31T00:00:00 ~ INF</DateTimeRange>
+		<DateTimeRange>-INF ~ 2003-11-30T00:00:00Z</DateTimeRange>
+		<DateTimeRange>-INF ~ 2003-11-30T00:00:00Z</DateTimeRange>
+		<DateTimeRange>-INF ~ 2003-11-30T00:00:00+10:30</DateTimeRange>
+		<DateTimeRange>2003-11-30T00:00:00 ~ INF</DateTimeRange>
+		<DateTimeRange>2000-01-20T12:00:00 ~ 2000-01-20T12:00:00</DateTimeRange>
+		<DateTimeRangeList/>
+		<DateTimeRangeList>2003-10-31T00:00:00</DateTimeRangeList>
+		<DateTimeRangeList>2003-10-31T00:00:00 ~ INF 2003-11-30T00:00:00Z</DateTimeRangeList>
+		<DateTimeRangeList>-INF ~ 2003-11-30T00:00:00Z -INF ~ 2003-11-30T00:00:00+10:30 2003-11-30T00:00:00 ~ INF</DateTimeRangeList>
+		<DateTimeRangeList>2000-01-20T12:00:00 ~ 2000-01-20T12:00:00 INF</DateTimeRangeList>
+		<duration>P1Y2M3DT10H30M</duration>
+		<duration>P1Y2M3DT10H30M30S</duration>
+		<duration>P1Y</duration>
+		<duration>PT30M</duration>
+		<duration>INF</duration>
+		<DurationRange>P1Y2M3DT10H30M ~ P1Y2M3DT10H30M30S</DurationRange>
+		<DurationRange>PT30S ~ PT1H</DurationRange>
+		<DurationRange>PT30M ~ P5M</DurationRange>
+		<DurationRange>PT30M ~ INF</DurationRange>
+		<DurationRange>INF ~ P5M</DurationRange>
+		<DurationRangeList>P1Y2M3DT10H30M ~ P1Y2M3DT10H30M30S</DurationRangeList>
+		<DurationRangeList>PT30S PT1H PT30M ~ P5M P1Y2M3DT10H30M P1Y2M3DT10H30M30S</DurationRangeList>
+		<DurationRangeList>PT30M P5M INF ~ P1Y2M3DT10H30M P1Y2M3DT10H30M30S INF</DurationRangeList>
+		<gYearMonth>2002-11</gYearMonth>
+		<gYearMonth>1851-01</gYearMonth>
+	</DatesAndTime>
+	<Specials>
+		<boolean>true</boolean>
+		<boolean>false</boolean>
+		<language>en</language>
+		<language>uk</language>
+		<language>sp</language>
+		<language>es</language>
+		<language>ES</language>
+		<language>Es</language>
+		<language>eS</language>
+		<language>be</language>
+		<language>xx</language>
+		<language>zz</language>
+		<regexp>[t-r\n\t]{15}</regexp>
+		<regexp>\s\s\s\s\s</regexp>
+		<regexp>\s % 9</regexp>
+		<regexp>&#x4E;</regexp>
+		<PDFPath>1.2 33 m</PDFPath>
+		<PDFPath>1.2 333 m</PDFPath>
+		<PDFPath>1.2 -333 m</PDFPath>
+		<PDFPath>+1.2 333 m</PDFPath>
+		<PDFPath>-1.2 +333 m</PDFPath>
+		<PDFPath>1.2141234 34 3 4 5 6 c</PDFPath>
+		<PDFPath>h</PDFPath>
+		<PDFPath>12 99999999999 l</PDFPath>
+		<PDFPath>1.0 0.002 l</PDFPath>
+		<PDFPath>1 2 l</PDFPath>
+		<PDFPath>1.2 5.6 m</PDFPath>
+		<PDFPath>33333 0.0009 l</PDFPath>
+		<PDFPath>1 2 3 4 5 6 c</PDFPath>
+		<PDFPath>44 44 44 44 v</PDFPath>
+		<PDFPath>12 34 5 67 y</PDFPath>
+		<PDFPath>12 3 4.5 66.77 re</PDFPath>
+		<PDFPath>h</PDFPath>
+		<XYRelation>lt</XYRelation>
+		<XYRelation>le</XYRelation>
+		<XYRelation>eq</XYRelation>
+		<XYRelation>ge</XYRelation>
+		<XYRelation>gt</XYRelation>
+		<XYRelation>ne</XYRelation>
+	</Specials>
+</JDF_Types>

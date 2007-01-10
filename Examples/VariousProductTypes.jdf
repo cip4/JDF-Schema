@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:ADBE="http://ns.adobe.com/JDF" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.CIP4.org/JDFSchema_1_1 ..\Version_1_2\JDF.xsd" ID="Entire_Book" Type="Product" Status="InProgress" Version="1.1" DescriptiveName="This is 	
+an example">
+	<!--
+	-->
+	<Comment>TH5s5 5ss31df-3afd
+
+a3ds21f321safd</Comment>
+	<NodeInfo CleanupDuration="PT0S"/>
+	<ResourcePool>
+		<Component ID="TheBook" Class="Quantity" Status="Unavailable" Amount="1" DescriptiveName="The book to be delivered" ComponentType="FinalProduct"/>
+		<PSToPDFConversionParams ID="Rubbish" Status="Incomplete" Class="Parameter">
+			<ThinPDFParams FilePerPage="false" SidelineFonts="false" SidelineImages="false"/>
+		</PSToPDFConversionParams>
+		<FileSpec ID="Whatever" Status="Available" Class="Parameter" PartIDKeys="RunIndex"/>
+		<PSToPDFConversionParams ID="ID_asdfie49kdfieruzakdf" Status="Draft" Class="Parameter"/>
+		<ImageCompressionParams ID="ID_zaphobbeeblebrox" Status="Draft" Class="Parameter">
+			<ImageCompression ImageType="Color"/>
+		</ImageCompressionParams>
+	</ResourcePool>
+	<ResourceLinkPool/>
+	<JDF ID="FrontCover" Type="Product" Status="InProgress" Version="1.2">
+		<ResourceLinkPool>
+			<DeviceLink rRef="Entire_Book" Usage="Input"/>
+			<RunListLink rRef="Entire_Book" Usage="Input"/>
+		</ResourceLinkPool>
+	</JDF>
+	<JDF ID="BackCover" Type="DigitalPrinting" Status="InProgress" xsi:type="DigitalPrinting" Version="1.1">
+		<ResourceLinkPool>
+			<DeviceLink rRef="Entire_Book" Usage="Input"/>
+			<RunListLink rRef="Entire_Book" Usage="Input"/>
+		</ResourceLinkPool>
+	</JDF>
+	<!--Comment-->
+	<JDF ID="BookDelivery" Status="Waiting" Type="ColorCorrection" xsi:type="ColorCorrection" Version="1.1">
+		<ResourcePool>
+			<DeliveryParams ID="BD_1" Status="Incomplete" Class="Parameter">
+				<Company OrganizationName="Book Seller Ltd"/>
+				<Drop Method="Parachute"/>
+			</DeliveryParams>
+		</ResourcePool>
+		<ResourceLinkPool>
+			<ColorCorrectionParamsLink rRef="TheBook" Usage="Input"/>
+			<RunListLink rRef="BD_1" Usage="Output"/>
+		</ResourceLinkPool>
+	</JDF>
+</JDF>

@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="JO200310" Type="Product" JobID="200310" Status="Ready" Version="1.2" DescriptiveName="Sample MIS to PrePress September 2003" xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.CIP4.org/JDFSchema_1_1
+..\..\Version_1_2\JDF.xsd">
+	<Comment Name="Description">
+Brochure: 200.000 ex,
+Page format, A4,
+Versions: 150.000 ex. English + 50.000 ex. French,
+Cover: 4 pages, Full Color on front and back, version changes in all colors, 115 gr. Machine coated satin white, cut,
+Text: 16 pages, Full Color on front and back, version changes in all colors, 80 gr. Offset woodfree white, on web press, folded in line,
+Text: 8 pages, black + PMS 299 blue front and back, version changes in black only, 80 gr. Offset woodfree white, on sheet press, cut + folded off line,
+Finishing: Stitched,
+Packing: per 250 pcs
+</Comment>
+	<CustomerInfo CustomerID="100926" CustomerJobName="Bon2545214" CustomerOrderID="Bon2545214">
+		<Contact ContactTypes="Administrator">
+			<Address PostalCode="9000" City="Gent" Country="België" CountryCode="B" Street="Vedettenstraat 1"/>
+			<ComChannel ChannelType="Phone" Locator="+32 (0) 93.83.38.83"/>
+			<ComChannel ChannelType="Fax" Locator="+32 (0) 93.83.38.80"/>
+			<ComChannel ChannelType="Email" Locator="info@missprepress.be"/>
+			<Company OrganizationName="Miss Pre Press nv"/>
+			<Person FamilyName="Van Biervliet" FirstName="Jean-Claude" NamePrefix="Mr.">
+				<ComChannel ChannelType="Email" Locator="jeanclaude@missprepress.be"/>
+				<ComChannel ChannelType="Phone" Locator="+32 (0) 93.83.38.61"/>
+			</Person>
+		</Contact>
+	</CustomerInfo>
+	<AuditPool>
+		<Created Author="Geert Van Damme" TimeStamp="2003-09-09T09:35:00+01:00" AgentName="MIS softwarename" AgentVersion="v6.1.5"/>
+	</AuditPool>
+	<ResourcePool>
+		<Component ID="OJP100" Class="Quantity" DescriptiveName="Cover before collecting" ComponentType="PartialProduct" IsWaste="false" Status="Unavailable" PartIDKeys="PartVersion">
+			<Component PartVersion="French"/>
+			<Component PartVersion="English"/>
+		</Component>
+		<Component ID="OJP220" Class="Quantity" DescriptiveName="Inner 8 pages before collecting" ComponentType="PartialProduct" IsWaste="false" Status="Unavailable" PartIDKeys="PartVersion">
+			<Component PartVersion="French"/>
+			<Component PartVersion="English"/>
+		</Component>
+		<Component ID="OJP230" Class="Quantity" DescriptiveName="Inner 16 pages before collecting" ComponentType="PartialProduct" IsWaste="false" Status="Unavailable" PartIDKeys="PartVersion">
+			<Component PartVersion="French"/>
+			<Component PartVersion="English"/>
+		</Component>
+		<Component ID="Q200310" Class="Quantity" DescriptiveName="Brochure" ComponentType="FinalProduct" IsWaste="false" Status="Unavailable" PartIDKeys="PartVersion">
+			<Component PartVersion="French"/>
+			<Component PartVersion="English"/>
+		</Component>
+		<Media ID="MP100000" Class="Consumable" Status="Available" MediaType="Plate" Dimension="2891.339 2040.945 " DescriptiveName="Plate for 2and4colorsheetpress72x102"/>
+		<Media ID="MP100002" Class="Consumable" Status="Available" MediaType="Plate" Dimension="2692.913 1814.173" DescriptiveName="Plate for 4colorwebpress64"/>
+		<Media ID="MPR100000" Class="Consumable" Status="Available" MediaType="Paper" Dimension="2891.339 2040.945 " DescriptiveName="Paper for proof 72x102"/>
+		<ColorPool ID="CP200310" DescriptiveName="Colors for the Job" Class="Parameter" Locked="false" Status="Available">
+			<Color Name="Black"/>
+			<Color Name="Cyan"/>
+			<Color Name="Magenta"/>
+			<Color Name="Yellow"/>
+			<Color Name="PANTONE 299 U" ColorBook="PANTONE" ColorBookEntry="299" MediaType="Uncoated"/>
+		</ColorPool>
+		<ColorantControl ID="CPCS200310" rRefs="CP200310" DescriptiveName="Colors of the job" Class="Parameter" Locked="false" Status="Available" PartIDKeys="SheetName" PartUsage="Implicit">
+			<ColorPoolRef rRef="CP200310"/>
+			<ColorantControl>
+				<ColorantParams>
+					<SeparationSpec Name="Cyan"/>
+					<SeparationSpec Name="Magenta"/>
+					<SeparationSpec Name="Black"/>
+					<SeparationSpec Name="Yellow"/>
+				</ColorantParams>
+			</ColorantControl>
+			<ColorantControl SheetName="100001">
+				<ColorantParams>
+					<SeparationSpec Name="Black"/>
+					<SeparationSpec Name="PANTONE 299 U"/>
+				</ColorantParams>
+			</ColorantControl>
+		</ColorantControl>
+		<ExposedMedia ID="EPLS100000" Class="Handling" DescriptiveName="Plates for Cover (= sheet 100000) , 720 x 1020 mm" Status="Unavailable" Locked="false" PartIDKeys="SheetName Side Separation PartVersion" PartUsage="Implicit">
+			<ExposedMedia SheetName="100000">
+				<MediaRef rRef="MP100000"/>
+				<ExposedMedia Side="Front">
+					<ExposedMedia Separation="Cyan" ProductID="PL200308-001"/>
+					<ExposedMedia Separation="Magenta" ProductID="PL200308-002"/>
+					<ExposedMedia Separation="Yellow" ProductID="PL200308-003"/>
+					<ExposedMedia Separation="Black" ProductID="PL200308-004"/>
+				</ExposedMedia>
+				<ExposedMedia Side="Back">
+					<ExposedMedia Separation="Cyan" ProductID="PL200308-005"/>
+					<ExposedMedia Separation="Magenta" ProductID="PL200308-006"/>
+					<ExposedMedia Separation="Yellow" ProductID="PL200308-007"/>
+					<ExposedMedia Separation="Black" ProductID="PL200308-008"/>
+				</ExposedMedia>
+			</ExposedMedia>
+			<ExposedMedia SheetName="100001">
+				<MediaRef rRef="MP100000"/>
+				<ExposedMedia Side="Front">
+					<ExposedMedia Separation="PANTONE 299 U" ProductID="PL200308-009"/>
+					<ExposedMedia Separation="Black">
+						<ExposedMedia PartVersion="English" ProductID="PL200308-010"/>
+						<ExposedMedia PartVersion="French" ProductID="PL200308-011"/>
+					</ExposedMedia>
+				</ExposedMedia>
+			</ExposedMedia>
+			<ExposedMedia SheetName="100002">
+				<MediaRef rRef="MP100002"/>
+				<ExposedMedia Side="Front">
+					<ExposedMedia Separation="Cyan">
+						<ExposedMedia PartVersion="French" ProductID="PL200308-012"/>
+						<ExposedMedia PartVersion="English" ProductID="PL200308-020"/>
+					</ExposedMedia>
+					<ExposedMedia Separation="Magenta">
+						<ExposedMedia PartVersion="French" ProductID="PL200308-013"/>
+						<ExposedMedia PartVersion="English" ProductID="PL200308-021"/>
+					</ExposedMedia>
+					<ExposedMedia Separation="Yellow">
+						<ExposedMedia PartVersion="French" ProductID="PL200308-014"/>
+						<ExposedMedia PartVersion="English" ProductID="PL200308-022"/>
+					</ExposedMedia>
+					<ExposedMedia Separation="Black">
+						<ExposedMedia PartVersion="French" ProductID="PL200308-015"/>
+						<ExposedMedia PartVersion="English" ProductID="PL200308-023"/>
+					</ExposedMedia>
+				</ExposedMedia>
+				<ExposedMedia Side="Back">
+					<ExposedMedia Separation="Cyan">
+						<ExposedMedia PartVersion="French" ProductID="PL200308-016"/>
+						<ExposedMedia PartVersion="English" ProductID="PL200308-024"/>
+					</ExposedMedia>
+					<ExposedMedia Separation="Magenta">
+						<ExposedMedia PartVersion="French" ProductID="PL200308-017"/>
+						<ExposedMedia PartVersion="English" ProductID="PL200308-025"/>
+					</ExposedMedia>
+					<ExposedMedia Separation="Yellow">
+						<ExposedMedia PartVersion="French" ProductID="PL200308-018"/>
+						<ExposedMedia PartVersion="English" ProductID="PL200308-026"/>
+					</ExposedMedia>
+					<ExposedMedia Separation="Black">
+						<ExposedMedia PartVersion="French" ProductID="PL200308-019"/>
+						<ExposedMedia PartVersion="English" ProductID="PL200308-027"/>
+					</ExposedMedia>
+				</ExposedMedia>
+			</ExposedMedia>
+		</ExposedMedia>
+		<BindingIntent ID="BI200310" Class="Intent" Status="Available" BindingOrder="Collecting">
+			<BindingSide DataType="EnumerationSpan" Preferred="Left" Actual="Left"/>
+			<BindingType DataType="EnumerationSpan" Preferred="SaddleStitch" Actual="SaddleStitch"/>
+		</BindingIntent>
+		<DeliveryIntent ID="DI200310" Class="Intent" DescriptiveName="Delivery" rRefs="Q200310" Status="Available">
+			<Overage DataType="NumberSpan" Preferred="5" Actual="5"/>
+			<Underage DataType="NumberSpan" Preferred="0" Actual="5"/>
+			<DropIntent>
+				<Required DataType="TimeSpan" Preferred="2003-08-30T15:05:00+01:00" Actual="2003-08-30T15:05:00+01:00"/>
+				<Method DataType="NameSpan" Preferred="Courier" Actual="Courier"/>
+				<Contact ContactTypes="Delivery">
+					<Address PostalCode="9000" City="Gent" Country="België" CountryCode="B" Street="Vedettenlaan 1"/>
+					<ComChannel ChannelType="Phone" Locator="+32 (0) 93.83.38.83"/>
+					<Company OrganizationName="Miss Pre Press nv"/>
+					<Person FamilyName="Van Biervliet" FirstName="Jean-Claude" NamePrefix="Mr.">
+						<ComChannel ChannelType="Phone" Locator="+32 (0) 93.83.38.61"/>
+					</Person>
+				</Contact>
+				<DropItemIntent Amount="1" Proof="PC200310E"/>
+				<DropItemIntent Amount="1" Proof="PC200310F"/>
+				<DropItemIntent Amount="1" Proof="PI200310E"/>
+			</DropIntent>
+			<DropIntent>
+				<Required DataType="TimeSpan" Preferred="2003-08-30T15:05:00+01:00" Actual="2003-08-30T15:05:00+01:00"/>
+				<Method DataType="NameSpan" Preferred="Email" Actual="Email"/>
+				<Contact ContactTypes="Approver">
+					<ComChannel ChannelType="Email" Locator="info@missprepress.fr"/>
+				</Contact>
+				<DropItemIntent Amount="1" Proof="PI200310F"/>
+			</DropIntent>
+			<DropIntent>
+				<Method DataType="NameSpan" Preferred="CompanyTruck" Actual="CompanyTruck"/>
+				<Required DataType="TimeSpan" Preferred="2003-07-30T15:05:00+01:00" Actual="2003-07-30T15:05:00+01:00"/>
+				<Contact ContactTypes="Delivery">
+					<Address PostalCode="9000" City="Gent" Country="België" CountryCode="B" Street="Vedettenlaan 1"/>
+					<ComChannel ChannelType="Phone" Locator="+32 (0) 93.83.38.83"/>
+					<Company OrganizationName="Miss Pre Press nv"/>
+					<Person FamilyName="Van Biervliet" FirstName="Jean-Claude" NamePrefix="Mr.">
+						<ComChannel ChannelType="Phone" Locator="+32 (0) 93.83.38.61"/>
+					</Person>
+				</Contact>
+				<DropItemIntent Amount="50000">
+					<ComponentRef rRef="Q200310">
+						<Part PartVersion="English"/>
+					</ComponentRef>
+				</DropItemIntent>
+				<DropItemIntent Amount="25000">
+					<ComponentRef rRef="Q200310">
+						<Part PartVersion="French"/>
+					</ComponentRef>
+				</DropItemIntent>
+			</DropIntent>
+			<DropIntent>
+				<Method DataType="NameSpan" Preferred="CompanyTruck" Actual="CompanyTruck"/>
+				<Required DataType="TimeSpan" Preferred="2003-07-30T15:05:00+01:00" Actual="2003-07-30T15:05:00+01:00"/>
+				<Contact ContactTypes="Delivery">
+					<Address PostalCode="9000" City="Gent" Country="België" CountryCode="B" Street="Vedettenlaan 1"/>
+					<ComChannel ChannelType="Phone" Locator="+32 (0) 93.83.38.83"/>
+					<Company OrganizationName="Miss Pre Press nv"/>
+					<Person FamilyName="De Brouwer" FirstName="Vincent" NamePrefix="Mr.">
+						<ComChannel ChannelType="Phone" Locator="+32 (0) 93.83.38.60"/>
+					</Person>
+				</Contact>
+				<DropItemIntent Amount="50000">
+					<ComponentRef rRef="Q200310">
+						<Part PartVersion="English"/>
+					</ComponentRef>
+				</DropItemIntent>
+				<DropItemIntent Amount="25000">
+					<ComponentRef rRef="Q200310">
+						<Part PartVersion="French"/>
+					</ComponentRef>
+				</DropItemIntent>
+			</DropIntent>
+		</DeliveryIntent>
+		<Device ID="DJP101" DeviceID="5140" Class="Implementation" DescriptiveName="4 color 72 x 102 sheetfed" Status="Available"/>
+		<Device ID="DJP221" DeviceID="5120" Class="Implementation" DescriptiveName="2 color 72 x 102 sheetfed" Status="Available"/>
+		<Device ID="DJP231" DeviceID="6140" Class="Implementation" DescriptiveName="4 color 70 x 95 webfed" Status="Available"/>
+	</ResourcePool>
+	<ResourceLinkPool>
+		<BindingIntentLink rRef="BI200310" Usage="Input"/>
+		<ComponentLink rRef="OJP100" Amount="154500" Usage="Input" ProcessUsage="Cover">
+			<Part PartVersion="English"/>
+		</ComponentLink>
+		<ComponentLink rRef="OJP220" Amount="151500" Usage="Input">
+			<Part PartVersion="English"/>
+		</ComponentLink>
+		<ComponentLink rRef="OJP230" Amount="151500" Usage="Input">
+			<Part PartVersion="English"/>
+		</ComponentLink>
+		<ComponentLink rRef="OJP100" Amount="51500" Usage="Input" ProcessUsage="Cover">
+			<Part PartVersion="French"/>
+		</ComponentLink>
+		<ComponentLink rRef="OJP220" Amount="51500" Usage="Input">
+			<Part PartVersion="French"/>
+		</ComponentLink>
+		<ComponentLink rRef="OJP230" Amount="51500" Usage="Input">
+			<Part PartVersion="French"/>
+		</ComponentLink>
+		<DeliveryIntentLink rRef="DI200310" Usage="Input"/>
+		<ComponentLink rRef="Q200310" Usage="Output">
+			<AmountPool>
+				<PartAmount Amount="50000">
+					<Part PartVersion="French"/>
+				</PartAmount>
+				<PartAmount Amount="150000">
+					<Part PartVersion="English"/>
+				</PartAmount>
+			</AmountPool>
+		</ComponentLink>
+	</ResourceLinkPool>
+	<JDF ID="JO200310C" JobPartID="100" Type="Product" Status="Waiting" DescriptiveName="Cover">
+		<ResourcePool>
+			<LayoutIntent ID="LI200310C" Class="Intent" Status="Available">
+				<FinishedDimensions DataType="ShapeSpan" Preferred="595.276 841.890 0" Actual="595.276 841.890 0"/>
+				<Pages DataType="IntegerSpan" Preferred="4" Actual="4"/>
+			</LayoutIntent>
+			<MediaIntent ID="MI100000" Class="Intent" Status="Available">
+				<Dimensions DataType="XYPairSpan" Preferred="2891.339 2040.945" Actual="2891.339 2040.945"/>
+				<StockBrand DataType="StringSpan" Preferred="Nopacoat Scaldia SC488961"/>
+				<MediaColor DataType="EnumerationSpan" Preferred="White" Actual="White"/>
+				<Thickness DataType="NumberSpan" Preferred="130.00" Actual="130.00"/>
+				<Weight DataType="NumberSpan" Preferred="115.00" Actual="115.00"/>
+				<Grade DataType="IntegerSpan" Preferred="1" Actual="1"/>
+			</MediaIntent>
+			<ColorIntent ID="CI200310C" rRefs="CP200310" DescriptiveName="Colors for the cover" Class="Intent" Locked="false" Status="Available" PartIDKeys="SheetName" PartUsage="Implicit">
+				<ColorPoolRef rRef="CP200310"/>
+				<ColorsUsed>
+					<SeparationSpec Name="Cyan">
+					</SeparationSpec>
+					<SeparationSpec Name="Magenta">
+					</SeparationSpec>
+					<SeparationSpec Name="Yellow">
+					</SeparationSpec>
+					<SeparationSpec Name="Black">
+					</SeparationSpec>
+				</ColorsUsed>
+			</ColorIntent>
+			<ProofingIntent ID="PC200310" Class="Intent" DescriptiveName="Proof Cover" Status="Available" PartIDKeys="PartVersion">
+				<ProofingIntent PartVersion="English">
+					<ProofItem ProofName="PC200310E" PageIndex="0 ~ -1" Contract="true">
+						<ProofType DataType="EnumerationSpan" Preferred="Page" Actual="Page"/>
+						<ColorType DataType="EnumerationSpan" Preferred="MatchedColor" Actual="MatchedColor"/>
+					</ProofItem>
+				</ProofingIntent>
+				<ProofingIntent PartVersion="French">
+					<ProofItem ProofName="PC200310F" PageIndex="0 ~ -1" Contract="false">
+						<ProofType DataType="EnumerationSpan" Preferred="Page" Actual="Page"/>
+						<ColorType DataType="EnumerationSpan" Preferred="Monochrome" Actual="Monochrome"/>
+					</ProofItem>
+				</ProofingIntent>
+			</ProofingIntent>
+			<Media ID="MPAS100000" Class="Consumable" DescriptiveName="Machine coated 720 x 1020 mm B 115 gr." MediaType="Paper" Status="Available" Dimension="2891.339 2040.945" GrainDirection="ShortEdge" Thickness="130.00" Weight="115.00" Grade="1" MediaColorName="White" MediaUnit="Sheet" Brand="Nopacoat Scaldia SC488961"/>
+			<ExposedMedia ID="EPRS100000" Class="Handling" DescriptiveName="Proof for Cover (= sheet 100000)" Status="Unavailable" Locked="false">
+				<MediaRef rRef="MPR100000"/>
+			</ExposedMedia>
+			<Component ID="CGSCPS100000" DescriptiveName="Good sheets for 100000" Class="Quantity" Status="Unavailable" ComponentType="Sheet" IsWaste="false" SourceSheet="S100000" PartIDKeys="SheetName">
+				<Component SheetName="100000"/>
+			</Component>
+			<Component ID="CWSCPS100000" DescriptiveName="Waste sheets for 100000" Class="Quantity" Status="Unavailable" ComponentType="Sheet" IsWaste="true" SourceSheet="S100000" PartIDKeys="SheetName">
+				<Component SheetName="100000"/>
+			</Component>
+		</ResourcePool>
+		<ResourceLinkPool>
+			<ColorIntentLink rRef="CI200310C" Usage="Input"/>
+			<MediaIntentLink rRef="MI100000" Usage="Input"/>
+			<LayoutIntentLink rRef="LI200310C" Usage="Input"/>
+			<ProofingIntentLink rRef="PC200310" Usage="Input"/>
+			<ComponentLink rRef="OJP100" Usage="Output">
+				<AmountPool>
+					<PartAmount Amount="51500">
+						<Part PartVersion="French"/>
+					</PartAmount>
+					<PartAmount Amount="154500">
+						<Part PartVersion="English"/>
+					</PartAmount>
+				</AmountPool>
+			</ComponentLink>
+		</ResourceLinkPool>
+		<JDF ID="JO200310CP" JobPartID="110" Type="ProcessGroup" Types="Preflight Approval Imposition ImageSetting" Status="Waiting" DescriptiveName="Prepress for Cover">
+			<ResourcePool>
+				<Device ID="DJP111" DeviceID="3700" Class="Implementation" DescriptiveName="Proof 72 x 102" Status="Available"/>
+				<Device ID="DJP110" DeviceID="4400" Class="Implementation" DescriptiveName="CTP 72 x 102" Status="Available"/>
+				<BinderySignature ID="BS100000" Class="Parameter" Status="Available" FoldCatalog="F4-1"/>
+				<StrippingParams ID="LO100000" Class="Parameter" rRefs="BS100000" PartIDKeys="BinderySignatureName" WorkStyle="WorkAndBack" Status="Available">
+					<MediaRef rRef="MP100000"/>
+					<MediaRef rRef="MPAS100000"/>
+					<DeviceRef rRef="DJP101"/>
+					<StripCellParams BleedFace="0.0" BleedSpine="0.0" BleedFoot="0.0" BleedHead="0.0" TrimFace="0.0" Spine="0.0" TrimHead="0.0" TrimFoot="0.0" FrontOverfold="28.346" MillingDepth="0.0" CutWidthHead="0.0" CutWidthFoot="0.0" TrimSize="595.276 841.890"/>
+					<StrippingParams BinderySignatureName="CoverE" PartVersion="English">
+						<BinderySignatureRef rRef="BS100000"/>
+						<Position RelativeBox="0 0.5 0.5 1" MarginTop="14.17" MarginLeft="14.17" MarginRight="14.17" MarginBottom="14.17"/>
+						<Position RelativeBox="0.5 0 1 0.5" MarginTop="14.17" MarginLeft="14.17" MarginRight="14.17" MarginBottom="14.17"/>
+						<Position RelativeBox="0.5 0.5 1 1" MarginTop="14.17" MarginLeft="14.17" MarginRight="14.17" MarginBottom="14.17"/>
+					</StrippingParams>
+					<StrippingParams BinderySignatureName="CoverF" PartVersion="French">
+						<BinderySignatureRef rRef="BS100000"/>
+						<Position RelativeBox="0 0 0.5 0.5" MarginTop="14.17" MarginLeft="14.17" MarginRight="14.17" MarginBottom="14.17"/>
+					</StrippingParams>
+				</StrippingParams>
+				<Assembly ID="AS100000" Class="Parameter" Order="Collecting" Status="Available"/>
+				<TransferCurvePool ID="TC100000" Class="Parameter" Status="Available">
+					<TransferCurveSet Name="Film" CTM="1 0 0 1 0 0"/>
+					<TransferCurveSet Name="Plate" CTM="1 0 0 1 198.425 34.015"/>
+					<TransferCurveSet Name="Paper" CTM="1 0 0 1 198.425 34.015"/>
+				</TransferCurvePool>
+				<Layout ID="LA100000" Class="Parameter" Status="Unavailable"/>
+				<RunList ID="RU100000D" Class="Parameter" Status="Unavailable"/>
+				<RunList ID="RU100000M" Class="Parameter" Status="Unavailable"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<ColorantControlLink rRef="CPCS200310" Usage="Input"/>
+				<DeviceLink rRef="DJP110" Usage="Input"/>
+				<DeviceLink rRef="DJP111" Usage="Input"/>
+				<ExposedMediaLink rRef="EPRS100000" Usage="Output"/>
+				<ExposedMediaLink rRef="EPLS100000" Usage="Output">
+					<Part SheetName="100000"/>
+				</ExposedMediaLink>
+				<MediaLink rRef="MP100000" Usage="Input"/>
+				<MediaLink rRef="MPR100000" Usage="Input"/>
+			</ResourceLinkPool>
+			<JDF ID="AP100000" JobPartID="111" Type="Approval" DescriptiveName="Approval of Cover" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2003-08-20T08:00:00+01:00" End="2003-08-20T10:30:00+01:00" TotalDuration="PT2H30M" SetupDuration="PT30M"/>
+				<ResourcePool>
+					<ApprovalSuccess ID="AS111" Class="Parameter" DescriptiveName="Approval Success for Approval Process Cover" Status="Unavailable"/>
+					<ApprovalParams ID="AP111" Class="Parameter" Status="Unavailable"/>
+				</ResourcePool>
+				<ResourceLinkPool>
+					<ApprovalSuccessLink rRef="AS111" Usage="Output"/>
+					<ApprovalParamsLink rRef="AP111" Usage="Input"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="SP100000" JobPartID="112" Type="Stripping" DescriptiveName="Stripping of Cover" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2003-08-20T08:00:00+01:00" End="2003-08-20T10:30:00+01:00" TotalDuration="PT2H30M" SetupDuration="PT30M"/>
+				<ResourceLinkPool>
+					<StrippingParamsLink rRef="LO100000" Usage="Input"/>
+					<AssemblyLink rRef="AS100000" Usage="Input"/>
+					<TransferCurvePoolLink rRef="TC100000" Usage="Input"/>
+					<LayoutLink rRef="LA100000" Usage="Output"/>
+					<RunListLink rRef="RU100000D" ProcessUsage="Document" Usage="Output"/>
+					<RunListLink rRef="RU100000M" ProcessUsage="Marks" Usage="Output"/>
+				</ResourceLinkPool>
+			</JDF>
+		</JDF>
+		<JDF ID="PS100000" JobPartID="120" Type="ConventionalPrinting" DescriptiveName="Print of Sheet 100000, cover" Status="Waiting">
+			<NodeInfo JobPriority="99" Start="2003-08-30T09:35:00+01:00" End="2003-08-30T15:05:00+01:00" TotalDuration="PT5H30M" SetupDuration="PT1H30M"/>
+			<ResourcePool>
+				<ConventionalPrintingParams ID="CPPS100000" Class="Parameter" Status="Unavailable" WorkStyle="WorkAndBack" PrintingType="SheetFed"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<ConventionalPrintingParamsLink rRef="CPPS100000" Usage="Input"/>
+				<ExposedMediaLink rRef="EPLS100000" Usage="Input" ProcessUsage="Plate">
+					<Part SheetName="100000"/>
+				</ExposedMediaLink>
+				<ColorantControlLink rRef="CPCS200310" Usage="Input"/>
+				<ComponentLink rRef="CGSCPS100000" Usage="Output" Amount="51500" ProcessUsage="Good"/>
+				<ComponentLink rRef="CWSCPS100000" Usage="Output" Amount="1300" ProcessUsage="Waste"/>
+				<MediaLink rRef="MPAS100000" Usage="Input" Amount="52800"/>
+				<DeviceLink rRef="DJP101" Usage="Input"/>
+			</ResourceLinkPool>
+		</JDF>
+		<JDF ID="CS100000" JobPartID="130" Type="Cutting" DescriptiveName="Cut of 100000, cover, 3 x English + 1 x French" Status="Waiting">
+			<NodeInfo JobPriority="99" Start="2003-09-02T08:00:00+01:00" End="2003-09-02T10:30:00+01:00" TotalDuration="PT2H30M" SetupDuration="PT3M"/>
+			<ResourcePool>
+				<Device ID="DJP102" DeviceID="7500" Class="Implementation" DescriptiveName="Cutting Machine" Status="Available"/>
+				<CuttingParams ID="CPS100000" Class="Parameter" Status="Unavailable">
+					<!-- Cutting params not ready yet -->
+					<Cut StartPosition="0 0" WorkingPath="0 1" WorkingDirection="Top"/>
+					<Cut StartPosition="1 1" WorkingPath="1 0" WorkingDirection="Bottom"/>
+				</CuttingParams>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<CuttingParamsLink rRef="CPS100000" Usage="Input"/>
+				<ComponentLink rRef="CGSCPS100000" Amount="51500" Usage="Input"/>
+				<ComponentLink rRef="OJP100" Usage="Output" Amount="51500">
+					<Part PartVersion="French"/>
+				</ComponentLink>
+				<ComponentLink rRef="OJP100" Usage="Output" Amount="154500">
+					<Part PartVersion="English"/>
+				</ComponentLink>
+				<DeviceLink rRef="DJP102" Usage="Input"/>
+			</ResourceLinkPool>
+		</JDF>
+	</JDF>
+	<JDF ID="JO200310I" JobPartID="200" Type="Product" Status="Waiting" DescriptiveName="Inner 24 pages">
+		<ResourcePool>
+			<LayoutIntent ID="LI200310I" Class="Intent" Status="Available">
+				<FinishedDimensions DataType="ShapeSpan" Preferred="595.276 841.890 0" Actual="595.276 841.890 0"/>
+				<Pages DataType="IntegerSpan" Preferred="24" Actual="24"/>
+			</LayoutIntent>
+			<ProofingIntent ID="PI200310" Class="Intent" DescriptiveName="Proof Inner" Status="Available" PartIDKeys="PartVersion">
+				<ProofingIntent PartVersion="English">
+					<ProofItem ProofName="PI200310E" PageIndex="0 ~ -1" Contract="false">
+						<ProofType DataType="EnumerationSpan" Preferred="Page" Actual="Page"/>
+						<ColorType DataType="EnumerationSpan" Preferred="BasicColor" Actual="BasicColor"/>
+					</ProofItem>
+				</ProofingIntent>
+				<ProofingIntent PartVersion="French">
+					<ProofItem ProofName="PI200310F" PageIndex="0 ~ -1" Contract="false">
+						<ProofType DataType="EnumerationSpan" Preferred="Page" Actual="Page"/>
+						<ColorType DataType="EnumerationSpan" Preferred="Monochrome" Actual="Monochrome"/>
+						<Technology DataType="NameSpan" Preferred="SoftProof" Actual="SoftProof"/>
+					</ProofItem>
+				</ProofingIntent>
+			</ProofingIntent>
+			<Media ID="MPAS100001" Class="Consumable" DescriptiveName="Offset woodfree 720 x 1020 mm B 80 gr." MediaType="Paper" Status="Available" Dimension="2494.488 1785.827" GrainDirection="ShortEdge" Thickness="90.00" Weight="80.00" Grade="4" MediaColorName="White" MediaUnit="Sheet" Brand="Arc en ciel Buhrmann 34-75"/>
+			<Media ID="MPAS100002" Class="Consumable" DescriptiveName="Offset woodfree 880 mm 80 gr." MediaType="Paper" Status="Available" Dimension="2494.488 1984.252" Thickness="90.00" Weight="80.00" Grade="4" MediaColorName="White" MediaUnit="Roll" Unit="meter" Brand="Ultra Antalis 62461687"/>
+			<ExposedMedia ID="EPRS100001" Class="Handling" DescriptiveName="Proof for Inner (= sheets 100001 + 100002)" Status="Unavailable" Locked="false" PartIDKeys="SheetName">
+				<MediaRef rRef="MPR100000"/>
+				<ExposedMedia SheetName="100001"/>
+				<ExposedMedia SheetName="100002"/>
+			</ExposedMedia>
+		</ResourcePool>
+		<ResourceLinkPool>
+			<LayoutIntentLink rRef="LI200310I" Usage="Input"/>
+			<ProofingIntentLink rRef="PI200310" Usage="Input"/>
+		</ResourceLinkPool>
+		<JDF ID="JO200310IP" JobPartID="210" Type="ProcessGroup" Types="Preflight Approval Imposition ImageSetting" Status="Waiting" DescriptiveName="Prepress for Inner">
+			<ResourcePool>
+				<Device ID="DJP210" DeviceID="4400" Class="Implementation" DescriptiveName="CTP 72 x 102" Status="Available"/>
+				<Device ID="DJP211" DeviceID="3700" Class="Implementation" DescriptiveName="Proof 72 x 102" Status="Available"/>
+				<BinderySignature ID="BS100001" Class="Parameter" Status="Available" FoldCatalog="F8-7"/>
+				<BinderySignature ID="BS100002" Class="Parameter" Status="Available" FoldCatalog="F16-6"/>
+				<StrippingParams ID="LO100001" Class="Parameter" rRefs="BS100001 BS100002" PartIDKeys="SheetName" Status="Available">
+					<StrippingParams SheetName="100001" WorkStyle="WorkAndTurn">
+						<MediaRef rRef="EPLS100000"/>
+						<MediaRef rRef="MPAS100001"/>
+						<DeviceRef rRef="DJP221"/>
+						<StripCellParams BleedFace="0.0" BleedSpine="0.0" BleedFoot="0.0" BleedHead="0.0" TrimFace="0.0" Spine="0.0" TrimHead="14.173" TrimFoot="0.0" FrontOverfold="28.346" MillingDepth="0.0" CutWidthHead="0.0" CutWidthFoot="0.0" TrimSize="595.276 841.890"/>
+						<BinderySignatureRef rRef="BS100001"/>
+						<Position RelativeBox="0 0 0.5 1" MarginTop="14.173" MarginLeft="14.173" MarginRight="14.173" MarginBottom="14.173"/>
+						<Position RelativeBox="0.5 0 1 1" Orientation="Flip180" MarginTop="14.173" MarginLeft="14.173" MarginRight="14.173" MarginBottom="14.173"/>
+					</StrippingParams>
+					<StrippingParams SheetName="100002" WorkStyle="WorkAndBack">
+						<MediaRef rRef="EPLS100000"/>
+						<MediaRef rRef="MPAS100002"/>
+						<DeviceRef rRef="DJP231"/>
+						<StripCellParams BleedFace="0.0" BleedSpine="0.0" BleedFoot="0.0" BleedHead="0.0" TrimFace="14.173" Spine="0.0" TrimHead="14.173" TrimFoot="0.0" FrontOverfold="14.173" MillingDepth="0.0" CutWidthHead="0.0" CutWidthFoot="0.0" TrimSize="595.276 841.890"/>
+						<BinderySignatureRef rRef="BS100002"/>
+						<Position RelativeBox="0 0 1 1" MarginTop="14.173" MarginLeft="14.173" MarginRight="14.173" MarginBottom="14.173"/>
+					</StrippingParams>
+				</StrippingParams>
+				<Assembly ID="AS100001" Class="Parameter" Order="Collecting" Status="Available"/>
+				<TransferCurvePool ID="TC100001" Class="Parameter" Status="Available" PartIDKeys="SheetName">
+					<TransferCurvePool SheetName="100001">
+						<TransferCurveSet Name="Film" CTM="1 0 0 1 0 0"/>
+						<TransferCurveSet Name="Plate" CTM="1 0 0 1 198.425 34.015"/>
+						<TransferCurveSet Name="Paper" CTM="1 0 0 1 198.425 34.015"/>
+					</TransferCurvePool>
+					<TransferCurvePool SheetName="100002">
+						<TransferCurveSet Name="Film" CTM="1 0 0 1 0 0"/>
+						<TransferCurveSet Name="Plate" CTM="1 0 0 1 99.212 34.015"/>
+						<TransferCurveSet Name="Paper" CTM="1 0 0 1 0 34.015"/>
+					</TransferCurvePool>
+				</TransferCurvePool>
+				<Layout ID="LA100001" Class="Parameter" Status="Unavailable"/>
+				<RunList ID="RU100001D" Class="Parameter" Status="Unavailable"/>
+				<RunList ID="RU100001M" Class="Parameter" Status="Unavailable"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<ColorantControlLink rRef="CPCS200310" Usage="Input">
+					<Part SheetName="100001"/>
+				</ColorantControlLink>
+				<ColorantControlLink rRef="CPCS200310" Usage="Input"/>
+				<MediaLink rRef="MP100000" Usage="Input"/>
+				<MediaLink rRef="MP100002" Usage="Input"/>
+				<DeviceLink rRef="DJP210" Usage="Input"/>
+				<DeviceLink rRef="DJP211" Usage="Input"/>
+				<ExposedMediaLink rRef="EPRS100001" Usage="Output" ProcessUsage="Proof">
+					<Part SheetName="100001"/>
+					<Part SheetName="100002"/>
+				</ExposedMediaLink>
+				<ExposedMediaLink rRef="EPLS100000" Usage="Output" ProcessUsage="Plate">
+					<Part SheetName="100001"/>
+					<Part SheetName="100002"/>
+				</ExposedMediaLink>
+			</ResourceLinkPool>
+			<JDF ID="SP100001" JobPartID="212" Type="Stripping" DescriptiveName="Stripping of Inner" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2003-08-20T08:00:00+01:00" End="2003-08-20T10:30:00+01:00" TotalDuration="PT2H30M" SetupDuration="PT30M"/>
+				<ResourceLinkPool>
+					<StrippingParamsLink rRef="LO100001" Usage="Input"/>
+					<AssemblyLink rRef="AS100001" Usage="Input"/>
+					<TransferCurvePoolLink rRef="TC100001" Usage="Input"/>
+					<LayoutLink rRef="LA100001" Usage="Output"/>
+					<RunListLink rRef="RU100001D" ProcessUsage="Document" Usage="Output"/>
+					<RunListLink rRef="RU100001M" ProcessUsage="Marks" Usage="Output"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="AP100001" JobPartID="211" Type="Approval" DescriptiveName="Approval of Inner" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2003-08-20T08:00:00+01:00" End="2003-08-20T10:30:00+01:00" TotalDuration="PT2H30M" SetupDuration="PT30M"/>
+				<ResourcePool>
+					<ApprovalSuccess ID="AS211" Class="Parameter" DescriptiveName="Approval Success for Inner Approval Process" Status="Unavailable"/>
+					<ApprovalParams ID="AP211" Class="Parameter" Status="Unavailable"/>
+				</ResourcePool>
+				<ResourceLinkPool>
+					<ApprovalSuccessLink rRef="AS211" Usage="Output"/>
+					<ApprovalParamsLink rRef="AP211" Usage="Input"/>
+				</ResourceLinkPool>
+			</JDF>
+		</JDF>
+		<JDF ID="JO200310I8" JobPartID="220" Type="Product" Status="Waiting" DescriptiveName="Inner 8 pages">
+			<ResourcePool>
+				<LayoutIntent ID="LI200310I8" Class="Intent" Status="Available">
+					<FinishedDimensions DataType="ShapeSpan" Preferred="595.276 841.890 0" Actual="595.276 841.890 0"/>
+					<Pages DataType="IntegerSpan" Preferred="8" Actual="8"/>
+				</LayoutIntent>
+				<MediaIntent ID="MI100001" Class="Intent" Status="Available">
+					<Dimensions DataType="XYPairSpan" Preferred="2891.339 2040.945" Actual="2891.339 2040.945"/>
+					<StockBrand DataType="StringSpan" Preferred="Arc en ciel Buhrmann 34-75"/>
+					<MediaColor DataType="EnumerationSpan" Preferred="White" Actual="White"/>
+					<Thickness DataType="NumberSpan" Preferred="90.00" Actual="90.00"/>
+					<Weight DataType="NumberSpan" Preferred="80.00" Actual="80.00"/>
+					<Grade DataType="IntegerSpan" Preferred="4" Actual="4"/>
+				</MediaIntent>
+				<ColorIntent ID="CI200310I8" rRefs="CP200310" DescriptiveName="Colors for inner 8" Class="Intent" Locked="false" Status="Available">
+					<ColorPoolRef rRef="CP200310"/>
+					<ColorsUsed>
+						<SeparationSpec Name="Black"/>
+						<SeparationSpec Name="PANTONE 299 U"/>
+					</ColorsUsed>
+				</ColorIntent>
+				<FoldingIntent ID="FI100001" Class="Intent" Status="Available">
+					<FoldingCatalog DataType="NameSpan" Preferred="F8-7" Actual="F8-7"/>
+				</FoldingIntent>
+				<Component ID="CGSCPS100001E" DescriptiveName="Good sheets for 100001E, PartVersion English" Class="Quantity" Status="Unavailable" ComponentType="PartialProduct" IsWaste="false" PartIDKeys="SheetName">
+					<Component SheetName="100001E"/>
+				</Component>
+				<Component ID="CWSCPS100001E" DescriptiveName="Waste sheets for 100001E, PartVersion English" Class="Quantity" Status="Unavailable" ComponentType="PartialProduct" IsWaste="true" PartIDKeys="SheetName">
+					<Component SheetName="100001E"/>
+				</Component>
+				<Component ID="CGSCPS100001F" DescriptiveName="Good sheets for 100001F, PartVersion French" Class="Quantity" Status="Unavailable" ComponentType="PartialProduct" IsWaste="false" PartIDKeys="SheetName">
+					<Component SheetName="100001F"/>
+				</Component>
+				<Component ID="CWSCPS100001F" DescriptiveName="Waste sheets for 100001F, PartVersion French" Class="Quantity" Status="Unavailable" ComponentType="PartialProduct" IsWaste="true" PartIDKeys="SheetName">
+					<Component SheetName="100001F"/>
+				</Component>
+				<Component ID="CGSCS100001E" Class="Quantity" DescriptiveName="Good for cutting sheet 100001E, English " ComponentType="PartialProduct" IsWaste="false" Status="Unavailable" PartIDKeys="SheetName">
+					<Component SheetName="100001E"/>
+				</Component>
+				<Component ID="CGSCS100001F" Class="Quantity" DescriptiveName="Good for cutting sheet 100001F, French" ComponentType="PartialProduct" IsWaste="false" Status="Unavailable" PartIDKeys="SheetName">
+					<Component SheetName="100001F"/>
+				</Component>
+				<!-- Schema rejected Waste for Folding -->
+			</ResourcePool>
+			<ResourceLinkPool>
+				<ColorIntentLink rRef="CI200310I8" Usage="Input"/>
+				<MediaIntentLink rRef="MI100001" Usage="Input"/>
+				<FoldingIntentLink rRef="FI100001" Usage="Input"/>
+				<ComponentLink rRef="OJP220" Usage="Output">
+					<AmountPool>
+						<PartAmount Amount="151500">
+							<Part PartVersion="English"/>
+						</PartAmount>
+						<PartAmount Amount="51500">
+							<Part PartVersion="French"/>
+						</PartAmount>
+					</AmountPool>
+				</ComponentLink>
+				<LayoutIntentLink rRef="LI200310I8" Usage="Input"/>
+			</ResourceLinkPool>
+			<JDF ID="PS100001E" JobPartID="221" Type="ConventionalPrinting" DescriptiveName="Print of Sheet 100001E, 8 pages, English PartVersion" Status="Waiting">
+				<NodeInfo JobPriority="99" Start="2003-08-30T09:35:00+01:00" End="2003-08-30T17:05:00+01:00" TotalDuration="PT7H30M" SetupDuration="PT1H"/>
+				<ResourcePool>
+					<ConventionalPrintingParams ID="CPS100001E" Class="Parameter" Status="Unavailable" WorkStyle="WorkAndTurn" PrintingType="SheetFed"/>
+				</ResourcePool>
+				<ResourceLinkPool>
+					<ConventionalPrintingParamsLink rRef="CPS100001E" Usage="Input"/>
+					<ExposedMediaLink rRef="EPLS100000" Usage="Input" ProcessUsage="Plate">
+						<Part SheetName="100001" PartVersion="English"/>
+					</ExposedMediaLink>
+					<ColorantControlLink rRef="CPCS200310" Usage="Input">
+						<Part SheetName="100001"/>
+					</ColorantControlLink>
+					<ComponentLink rRef="CGSCPS100001E" Usage="Output" Amount="76500" ProcessUsage="Good"/>
+					<ComponentLink rRef="CWSCPS100001E" Usage="Output" Amount="1700" ProcessUsage="Waste"/>
+					<MediaLink rRef="MPAS100001" Usage="Input" Amount="78200"/>
+					<DeviceLink rRef="DJP221" Usage="Input"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="PS100001F" JobPartID="222" Type="ConventionalPrinting" DescriptiveName="Print of Sheet 100001F, 8 pages, French PartVersion " Status="Waiting">
+				<NodeInfo JobPriority="98" Start="2003-08-30T17:05:00+01:00" End="2003-08-30T19:55:00+01:00" TotalDuration="PT2H50M" SetupDuration="PT30M"/>
+				<ResourcePool>
+					<ConventionalPrintingParams ID="CPS100001F" Class="Parameter" Status="Unavailable" WorkStyle="WorkAndTurn" PrintingType="SheetFed"/>
+				</ResourcePool>
+				<ResourceLinkPool>
+					<ConventionalPrintingParamsLink rRef="CPS100001F" Usage="Input"/>
+					<ExposedMediaLink rRef="EPLS100000" Usage="Input" ProcessUsage="Plate">
+						<Part SheetName="100001" PartVersion="French"/>
+					</ExposedMediaLink>
+					<ColorantControlLink rRef="CPCS200310" Usage="Input">
+						<Part SheetName="100001"/>
+					</ColorantControlLink>
+					<ComponentLink rRef="CGSCPS100001F" Usage="Output" Amount="26000" ProcessUsage="Good"/>
+					<ComponentLink rRef="CWSCPS100001F" Usage="Output" Amount="600" ProcessUsage="Waste"/>
+					<MediaLink rRef="MPAS100001" Usage="Input" Amount="26600"/>
+					<DeviceLink rRef="DJP221" Usage="Input"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="CS100001E" JobPartID="223" Type="Cutting" DescriptiveName="Cut of 100001E, 8 pages, English" Status="Waiting">
+				<NodeInfo JobPriority="98" Start="2003-09-02T10:30:00+01:00" End="2003-09-02T13:00:00+01:00" TotalDuration="PT2H30M" SetupDuration="PT3M"/>
+				<ResourcePool>
+					<Device ID="DJP223" DeviceID="7500" Class="Implementation" DescriptiveName="Cutting Machine" Status="Available"/>
+					<CuttingParams ID="CCPS100001E" Class="Parameter" Status="Unavailable">
+						<!-- Cutting params not ready yet -->
+						<Cut StartPosition="0 0" WorkingPath="0 1" WorkingDirection="Top"/>
+						<Cut StartPosition="1 1" WorkingPath="1 0" WorkingDirection="Bottom"/>
+					</CuttingParams>
+				</ResourcePool>
+				<ResourceLinkPool>
+					<CuttingParamsLink rRef="CCPS100001E" Usage="Input"/>
+					<ComponentLink rRef="CGSCPS100001E" Amount="76500" Usage="Input"/>
+					<ComponentLink rRef="CGSCS100001E" Amount="153000" Usage="Output"/>
+					<DeviceLink rRef="DJP223" Usage="Input"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="CS100001F" JobPartID="224" Type="Cutting" DescriptiveName="Cut of 100001F, 8 pages, French" Status="Waiting">
+				<NodeInfo JobPriority="99" Start="2003-09-02T08:00:00+01:00" End="2003-09-02T10:30:00+01:00" TotalDuration="PT2H30M" SetupDuration="PT30M"/>
+				<ResourcePool>
+					<Device ID="DJP224" DeviceID="7500" Class="Implementation" DescriptiveName="Cutting Machine" Status="Available"/>
+					<CuttingParams ID="CCPS100001F" Class="Parameter" Status="Unavailable">
+						<!-- Cutting params not ready yet -->
+						<Cut StartPosition="0 0" WorkingPath="0 1" WorkingDirection="Top"/>
+						<Cut StartPosition="1 1" WorkingPath="1 0" WorkingDirection="Bottom"/>
+					</CuttingParams>
+				</ResourcePool>
+				<ResourceLinkPool>
+					<CuttingParamsLink rRef="CCPS100001F" Usage="Input"/>
+					<ComponentLink rRef="CGSCPS100001F" Amount="26000" Usage="Input"/>
+					<ComponentLink rRef="CGSCS100001F" Amount="52000" Usage="Output"/>
+					<DeviceLink rRef="DJP224" Usage="Input"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="FS100001E" JobPartID="225" Type="Folding" DescriptiveName="Fold of 100001E, 8 pages, English" Status="Waiting">
+				<NodeInfo JobPriority="99" Start="2003-09-02T08:00:00+01:00" End="2003-09-02T10:30:00+01:00" TotalDuration="PT2H30M" SetupDuration="PT30M"/>
+				<ResourcePool>
+					<Device ID="DJP225" DeviceID="7200" Class="Implementation" DescriptiveName="8 p. Folding Machine" Status="Available"/>
+					<FoldingParams ID="FPS100001E" Class="Parameter" Status="Unavailable" DescriptionType="FoldCatalog" FoldCatalog="F8-7"/>
+				</ResourcePool>
+				<ResourceLinkPool>
+					<FoldingParamsLink rRef="FPS100001E" Usage="Input"/>
+					<ComponentLink rRef="CGSCS100001E" Amount="153000" Usage="Input"/>
+					<ComponentLink rRef="OJP220" Usage="Output" Amount="151500">
+						<Part PartVersion="English"/>
+					</ComponentLink>
+					<!--Funny, no waste indication possible in JDF -->
+					<DeviceLink rRef="DJP225" Usage="Input"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="FS100001F" JobPartID="226" Type="Folding" DescriptiveName="Fold of 100001F, 8 pages, French" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2003-09-02T08:00:00+01:00" End="2003-09-02T10:30:00+01:00" TotalDuration="PT2H30M" SetupDuration="PT30M"/>
+				<ResourcePool>
+					<Device ID="DJP226" DeviceID="7200" Class="Implementation" DescriptiveName="8 p. Folding Machine" Status="Available"/>
+					<FoldingParams ID="FPS100001F" Class="Parameter" Status="Unavailable" DescriptionType="FoldCatalog" FoldCatalog="F8-7"/>
+				</ResourcePool>
+				<ResourceLinkPool>
+					<FoldingParamsLink rRef="FPS100001F" Usage="Input"/>
+					<ComponentLink rRef="CGSCS100001F" Amount="52000" Usage="Input"/>
+					<ComponentLink rRef="OJP220" Usage="Output" Amount="51500">
+						<Part PartVersion="French"/>
+					</ComponentLink>
+					<!--Funny, no waste indication possible in JDF -->
+					<DeviceLink rRef="DJP226" Usage="Input"/>
+				</ResourceLinkPool>
+			</JDF>
+		</JDF>
+		<JDF ID="JO200310I16" JobPartID="230" Type="Product" Status="Waiting" DescriptiveName="Inner 16 pages">
+			<ResourcePool>
+				<LayoutIntent ID="LI200310I16" Class="Intent" Status="Available">
+					<FinishedDimensions DataType="ShapeSpan" Preferred="595.276 841.890 0" Actual="595.276 841.890 0"/>
+					<Pages DataType="IntegerSpan" Preferred="16" Actual="16"/>
+				</LayoutIntent>
+				<MediaIntent ID="MI100002" Class="Intent" Status="Available">
+					<Dimensions DataType="XYPairSpan" Preferred="2494.488 1984.252" Actual="2494.488 1984.252"/>
+					<StockBrand DataType="StringSpan" Preferred="Ultra Antalis 62461687"/>
+					<MediaColor DataType="EnumerationSpan" Preferred="White" Actual="White"/>
+					<Thickness DataType="NumberSpan" Preferred="90.00" Actual="90.00"/>
+					<Weight DataType="NumberSpan" Preferred="80.00" Actual="80.00"/>
+					<Grade DataType="IntegerSpan" Preferred="4" Actual="4"/>
+				</MediaIntent>
+				<FoldingIntent ID="FI100002" Class="Intent" Status="Available">
+					<FoldingCatalog DataType="NameSpan" Preferred="F16-6" Actual="F16-6"/>
+				</FoldingIntent>
+				<ColorIntent ID="CI200310I16" rRefs="CP200310" DescriptiveName="Colors for inner16" Class="Intent" Locked="false" Status="Available">
+					<ColorPoolRef rRef="CP200310"/>
+					<ColorsUsed>
+						<SeparationSpec Name="Cyan">
+					</SeparationSpec>
+						<SeparationSpec Name="Magenta">
+					</SeparationSpec>
+						<SeparationSpec Name="Yellow">
+					</SeparationSpec>
+						<SeparationSpec Name="Black">
+					</SeparationSpec>
+					</ColorsUsed>
+				</ColorIntent>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<ColorIntentLink rRef="CI200310I16" Usage="Input"/>
+				<MediaIntentLink rRef="MI100002" Usage="Input"/>
+				<ComponentLink rRef="OJP230" Usage="Output">
+					<AmountPool>
+						<PartAmount Amount="51500">
+							<Part PartVersion="French"/>
+						</PartAmount>
+						<PartAmount Amount="151500">
+							<Part PartVersion="English"/>
+						</PartAmount>
+					</AmountPool>
+				</ComponentLink>
+				<FoldingIntentLink rRef="FI100002" Usage="Input"/>
+				<LayoutIntentLink rRef="LI200310I16" Usage="Input"/>
+			</ResourceLinkPool>
+			<JDF ID="PFS100002F" JobPartID="231" Type="Combined" Types="ConventionalPrinting Folding" DescriptiveName="Print and Fold of Sheet 100002F, 16 pages, French PartVersion " Status="Waiting">
+				<NodeInfo JobPriority="99" Start="2003-08-30T09:35:00+01:00" End="2003-08-30T11:45:00+01:00" TotalDuration="PT2H10M" SetupDuration="PT40M"/>
+				<ResourcePool>
+					<ConventionalPrintingParams ID="CPS100002F" Class="Parameter" Status="Unavailable" WorkStyle="Simplex" PrintingType="WebFed"/>
+					<FoldingParams ID="FPS100002F" Class="Parameter" Status="Unavailable" DescriptionType="FoldCatalog" FoldCatalog="F16-7"/>
+				</ResourcePool>
+				<ResourceLinkPool>
+					<ConventionalPrintingParamsLink rRef="CPS100002F" CombinedProcessIndex="0" Usage="Input"/>
+					<FoldingParamsLink rRef="FPS100002F" CombinedProcessIndex="1" Usage="Input"/>
+					<ExposedMediaLink rRef="EPLS100000" Usage="Input" ProcessUsage="Plate">
+						<Part SheetName="100002" PartVersion="French"/>
+					</ExposedMediaLink>
+					<ColorantControlLink rRef="CPCS200310" Usage="Input"/>
+					<ComponentLink rRef="OJP230" Usage="Output" Amount="51500">
+						<Part PartVersion="French"/>
+					</ComponentLink>
+					<!--Funny, no waste indication possible in JDF -->
+					<MediaLink rRef="MPAS100002" Usage="Input" Amount="95788346"/>
+					<!-- Funny, amount is presumed to be points !!! (52800 * 0,640 = 33792 meters * 2834,6) -->
+					<DeviceLink rRef="DJP231" Usage="Input"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="PFS100002E" JobPartID="232" Type="Combined" Types="ConventionalPrinting Folding" DescriptiveName="Print and Fold of Sheet 100002E, 16 pages, English PartVersion " Status="Waiting">
+				<NodeInfo JobPriority="98" Start="2003-08-30T11:45:00+01:00" End="2003-08-30T18:15:00+01:00" TotalDuration="PT6H30M" SetupDuration="PT30M"/>
+				<ResourcePool>
+					<ConventionalPrintingParams ID="CPS100002E" Class="Parameter" Status="Unavailable" WorkStyle="Simplex" PrintingType="WebFed"/>
+					<FoldingParams ID="FPS100002E" Class="Parameter" Status="Unavailable" DescriptionType="FoldCatalog" FoldCatalog="F16-7"/>
+				</ResourcePool>
+				<ResourceLinkPool>
+					<ConventionalPrintingParamsLink rRef="CPS100002E" CombinedProcessIndex="0" Usage="Input"/>
+					<FoldingParamsLink rRef="FPS100002E" CombinedProcessIndex="1" Usage="Input"/>
+					<ExposedMediaLink rRef="EPLS100000" Usage="Input" ProcessUsage="Plate">
+						<Part SheetName="100002" PartVersion="English"/>
+					</ExposedMediaLink>
+					<ColorantControlLink rRef="CPCS200310" Usage="Input"/>
+					<ComponentLink rRef="OJP230" Usage="Output" Amount="151500">
+						<Part PartVersion="English"/>
+					</ComponentLink>
+					<!--Funny, no waste indication possible in JDF -->
+					<MediaLink rRef="MPAS100002" Usage="Input" Amount="99392"/>
+					<!-- Amount is presumed to be meters (155300 * 0,640 = 99392) -->
+					<DeviceLink rRef="DJP231" Usage="Input"/>
+				</ResourceLinkPool>
+			</JDF>
+		</JDF>
+	</JDF>
+	<JDF ID="CSTJ200310E" JobPartID="300" Type="Combined" Types="Collecting Stitching Trimming" DescriptiveName="Collect and Stitch and Trim English PartVersion" Status="Waiting">
+		<NodeInfo JobPriority="98" Start="2003-09-02T08:00:00+01:00" End="2003-09-06T12:00:00+01:00" TotalDuration="PT100H" SetupDuration="PT30M"/>
+		<ResourcePool>
+			<Device ID="DJP300" DeviceID="7800" Class="Implementation" DescriptiveName="Collect, Stitch and Trim" Status="Available"/>
+			<Component ID="CWSCSJ200310E" DescriptiveName="Waste brochures for 200310, PartVersion English" Class="Quantity" Status="Unavailable" ComponentType="PartialProduct" IsWaste="true"/>
+			<CollectingParams ID="CPJ200310E" Class="Parameter" Status="Unavailable"/>
+			<StitchingParams ID="SPJ200310E" Class="Parameter" Status="Unavailable" StitchType="Saddle"/>
+			<TrimmingParams ID="TPJ200310E" Class="Parameter" Status="Unavailable" Height="841.890" Width="595.276" TrimmingOffset="14.173" TrimmingType="Detailed"/>
+		</ResourcePool>
+		<ResourceLinkPool>
+			<CollectingParamsLink rRef="CPJ200310E" CombinedProcessIndex="0" Usage="Input"/>
+			<StitchingParamsLink rRef="SPJ200310E" CombinedProcessIndex="1" Usage="Input"/>
+			<TrimmingParamsLink rRef="TPJ200310E" CombinedProcessIndex="2" Usage="Input"/>
+			<ComponentLink rRef="OJP100" Amount="154500" Usage="Input">
+				<Part PartVersion="English"/>
+			</ComponentLink>
+			<ComponentLink rRef="OJP220" Amount="151500" Usage="Input">
+				<Part PartVersion="English"/>
+			</ComponentLink>
+			<ComponentLink rRef="OJP230" Amount="151500" Usage="Input">
+				<Part PartVersion="English"/>
+			</ComponentLink>
+			<ComponentLink rRef="Q200310" Usage="Output" Amount="150000">
+				<Part PartVersion="English"/>
+			</ComponentLink>
+			<ComponentLink rRef="CWSCSJ200310E" Usage="Output" Amount="1500"/>
+			<DeviceLink rRef="DJP300" Usage="Input"/>
+		</ResourceLinkPool>
+	</JDF>
+	<JDF ID="CSTJ200310F" JobPartID="400" Type="Combined" Types="Collecting Stitching Trimming" DescriptiveName="Collect and Stitch and Trim French PartVersion" Status="Waiting">
+		<NodeInfo JobPriority="98" Start="2003-09-08T08:00:00+01:00" End="2003-09-09T17:33:00+01:00" TotalDuration="PT33H33M" SetupDuration="PT10M"/>
+		<ResourcePool>
+			<Device ID="DJP400" DeviceID="7800" Class="Implementation" DescriptiveName="Collect, Stitch and Trim" Status="Available"/>
+			<Component ID="CWSCSJ200310F" DescriptiveName="Waste brochures for 200310, PartVersion French" Class="Quantity" Status="Unavailable" ComponentType="PartialProduct" IsWaste="true"/>
+			<CollectingParams ID="CPJ200310F" Class="Parameter" Status="Unavailable"/>
+			<StitchingParams ID="SPJ200310F" Class="Parameter" Status="Unavailable" StitchType="Saddle"/>
+			<TrimmingParams ID="TPJ200310F" Class="Parameter" Status="Unavailable" Height="841.890" Width="595.276" TrimmingOffset="14.173" TrimmingType="Detailed"/>
+		</ResourcePool>
+		<ResourceLinkPool>
+			<CollectingParamsLink rRef="CPJ200310F" CombinedProcessIndex="0" Usage="Input"/>
+			<StitchingParamsLink rRef="SPJ200310F" CombinedProcessIndex="1" Usage="Input"/>
+			<TrimmingParamsLink rRef="TPJ200310F" CombinedProcessIndex="2" Usage="Input"/>
+			<ComponentLink rRef="OJP100" Amount="51500" Usage="Input">
+				<Part PartVersion="French"/>
+			</ComponentLink>
+			<ComponentLink rRef="OJP220" Amount="51500" Usage="Input">
+				<Part PartVersion="French"/>
+			</ComponentLink>
+			<ComponentLink rRef="OJP230" Amount="51500" Usage="Input">
+				<Part PartVersion="French"/>
+			</ComponentLink>
+			<ComponentLink rRef="Q200310" Usage="Output" Amount="50000">
+				<Part PartVersion="French"/>
+			</ComponentLink>
+			<ComponentLink rRef="CWSCSJ200310F" Usage="Output" Amount="1500"/>
+			<DeviceLink rRef="DJP400" Usage="Input"/>
+		</ResourceLinkPool>
+	</JDF>
+</JDF>

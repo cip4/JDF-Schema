@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JMF xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.CIP4.org/JDFSchema_1_1
+..\Version_1_2\JDF.xsd" TimeStamp="2002-02-03T12:12:00+03:00" SenderID="Super RIP" Version="1.1">
+	<Signal Type="Status" ID="sig00032">
+		<StatusQuParams JobID="433" JobPartID="45"/>
+		<Notification Class="Error" Type="Error" TimeStamp="2003-05-31T11:45:00">
+			<Comment>StartJob unsuccessful ­ Unknown Extension</Comment>
+			<Error ErrorID="1234"/>
+		</Notification>
+	</Signal>
+</JMF>
