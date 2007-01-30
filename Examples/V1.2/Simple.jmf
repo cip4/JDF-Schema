@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Max Chappell (Maxxml Limited) -->
+<JMF xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.CIP4.org/JDFSchema_1_1
+../../Version_1_2/JDF.xsd" TimeStamp="2004-01-05T13:28:47Z" Version="1.2" SenderID="MISPrepress">
+	<Query Type="Resource" ID="QRY001">
+		<ResourceQuParams Usage="Output" Exact="true" JobID="040050">
+				</ResourceQuParams>
+		<Subscription URL="http://www.misprepress.org/jmfserver">
+				</Subscription>
+	</Query>
+	<Response Type="Resource" ID="QRY00190" xsi:type="ResponseResource"/>
+	<Acknowledge Type="Resource" ID="QRY00191" AcknowledgeType="Applied" ReturnCode="0" refID="QRY001"/>
+	<Signal Type="Resource" ID="QRY00192" LastRepeat="false"/>
+	<Command Type="Resource" ID="QRY00193" AcknowledgeType="Applied"/>
+</JMF>

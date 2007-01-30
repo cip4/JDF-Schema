@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v2004 rel. 3 U (http://www.xmlspy.com) by Richard Keeney (Electronics For Imaging) -->
+<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.CIP4.org/JDFSchema_1_1
+../../Version_1_2/JDF.xsd" xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_1_Types" ID="n20020826175502" DescriptiveName="JDF Digital Printing Combined Node using Multiple Media" Type="Combined" Types="LayoutPreparation Imposition Interpreting Rendering Screening DigitalPrinting" Status="Ready" Version="1.1" Activation="Active">
+	<ResourcePool>
+		<RunList ID="rl01" Class="Parameter" Locked="false" Status="Available">
+			<LayoutElement>
+				<FileSpec URL="file:///fileA.pdf"/>
+			</LayoutElement>
+		</RunList>
+		<LayoutPreparationParams ID="lpp01" Locked="false" Status="Available" Class="Parameter"/>
+		<InterpretingParams ID="ip01" Status="Available" Class="Parameter"/>
+		<RenderingParams ID="rp01" Class="Parameter" Locked="false" Status="Available">
+			<ObjectResolution Resolution="600 600"/>
+		</RenderingParams>
+		<ScreeningParams ID="sp01" Class="Parameter" Locked="false" Status="Available"/>
+		<Media ID="m01" ProductID="I-40011025-G" Dimension="612 792" MediaType="Paper" Class="Consumable" Status="Available" StockType="Index" Weight="199" MediaColorName="Goldenrod"/>
+		<Media ID="m02" ProductID="P-40011001-W" Dimension="612 792" MediaType="Paper" Class="Consumable" Status="Available" StockType="Bond" Weight="30"/>
+		<DigitalPrintingParams ID="dpp01" Class="Parameter" Locked="false" Status="Available" PartIDKeys="RunIndex">
+			<DigitalPrintingParams RunIndex="0 1">
+				<MediaRef rRef="m01"/>
+			</DigitalPrintingParams>
+			<DigitalPrintingParams RunIndex="2 ~        21">
+				<MediaRef rRef="m02"/>
+			</DigitalPrintingParams>
+			<DigitalPrintingParams RunIndex="22 23">
+				<MediaRef rRef="m01"/>
+			</DigitalPrintingParams>
+		</DigitalPrintingParams>
+		<Component ID="c01" Class="Quantity" Amount="10" Locked="false" Status="Unavailable" ComponentType="FinalProduct" DescriptiveName="Digital Printing Output"/>
+	</ResourcePool>
+	<ResourceLinkPool>
+		<RunListLink rRef="rl01" Usage="Input" CombinedProcessIndex="0 1" ProcessUsage="Document"/>
+		<LayoutPreparationParamsLink rRef="lpp01" Usage="Input" CombinedProcessIndex="0"/>
+		<InterpretingParamsLink rRef="ip01" Usage="Input" CombinedProcessIndex="2"/>
+		<RenderingParamsLink rRef="rp01" Usage="Input" CombinedProcessIndex="3"/>
+		<ScreeningParamsLink rRef="sp01" Usage="Input" CombinedProcessIndex="4"/>
+		<MediaLink rRef="m01" Usage="Input" CombinedProcessIndex="5" Amount="20"/>
+		<MediaLink rRef="m02" Usage="Input" CombinedProcessIndex="5" Amount="100"/>
+		<DigitalPrintingParamsLink rRef="dpp01" Usage="Input" CombinedProcessIndex="5"/>
+		<ComponentLink rRef="c01" Usage="Output" ProcessUsage="Good" Amount="10"/>
+	</ResourceLinkPool>
+	<Comment>
+		Some comments and instructions.
+		With multiple lines.
+	</Comment>
+</JDF>

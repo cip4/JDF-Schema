@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jdf:JDF xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.CIP4.org/JDFSchema_1_1 ..\Version_1_2\JDF.xsd" ID="BackCover" Type="DigitalPrinting" Status="InProgress" xsi:type="jdf:DigitalPrinting" Version="1.1">
+	<jdf:ResourcePool>
+		<jdf:Device ID="Device_001" Status="Available" Class="Implementation" DeviceID="Unknown Device"/>
+		<jdf:RunList ID="RunList_001" Status="Unavailable" Class="Parameter"/>
+	</jdf:ResourcePool>
+	<jdf:ResourceLinkPool>
+		<jdf:DeviceLink rRef="Device_001" Usage="Input"/>
+		<jdf:RunListLink rRef="RunList_001" Usage="Input"/>
+	</jdf:ResourceLinkPool>
+</jdf:JDF>

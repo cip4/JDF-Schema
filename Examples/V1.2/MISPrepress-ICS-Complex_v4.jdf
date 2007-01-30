@@ -1,0 +1,948 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.CIP4.org/JDFSchema_1_1
+../../Version_1_2/JDF.xsd" ID="ID_030006" JobPartID="ID_030006" Type="Product" Status="Ready" JobID="030006" Version="1.1" DescriptiveName="ICS sample Complex_v4">
+	<!--History:
+	2004-3-12 cleaned PostalCode; translated to English; removed application names; added Status to bufferparams (and removed from link)
+	2004-3-16 cleanup Pantone name, removed ProoferDeviceIDs, made DescriptiveNames for parts different, 
+	2004-3-17 sheetfed away; renamed Types=Stripping to Types=ImpositionPreparation; restored PANTONE Green name, still question on ColorBook name
+	2004-3-22 removed ProcessUsage="Good" since this is deprecated
+	2004-3-24 v4 started from fresh sample which applied previous changes
+				manually step 1: specified output componentlink now; removed a few intents (folding) since they seem to need partitioning later
+				manually step 2: added encoding in XML header; removed leading space in StrippingParams rRefs; 
+	-->
+	<Comment Name="JobDescription">50.000 ex.; Format: Finished: 210 x 297 mm - Open: 420 x 297 mm; Cover - 4 pages; Paper: Coated Satine Woodfree White 200 gr; Printing: Recto: Full colour + 1 PMS color, Verso: Full colour + 1 PMS color; body - 56 pages; Paper: White 90 gr; Printing: Recto: Black + 1 PMS color, Verso: zwart + 1 PMS color; Body - 4 pages; Paper: Offset Woodfree White 150 gr; Printing: Recto: Full colour + 1 PMS color, Verso: Full colour + 1 PMS color; )</Comment>
+	<CustomerInfo CustomerID="100002" CustomerJobName="ICS sample" CustomerOrderID="ICS sample">
+		<Contact ContactTypes="Administrator Customer">
+			<Address City="Izegem" Country="België" CountryCode="B" PostalCode="8870" Street="Grote Moerstraat 88"/>
+			<Company OrganizationName="DIOXINUS BV"/>
+			<Person FamilyName="MESTDAGH" FirstName="André" JobTitle="Produktie-direkteur">
+				<ComChannel ChannelType="Phone" Locator="051-41.36.15"/>
+				<ComChannel ChannelType="Email" Locator="andré@dioxinus.be"/>
+			</Person>
+			<ComChannel ChannelType="Phone" Locator="051-41.36.35"/>
+			<ComChannel ChannelType="Fax" Locator="051-41.36.10"/>
+			<ComChannel ChannelType="Email" Locator="info@dioxinus.be"/>
+			<ComChannel ChannelType="WWW" Locator="www.dioxinus.be"/>
+		</Contact>
+	</CustomerInfo>
+	<AuditPool>
+		<Created Author="Miss Prepress" TimeStamp="2004-03-22T14:33:34+01:00" AgentName="MIS" AgentVersion="22.03.04"/>
+	</AuditPool>
+	<ResourcePool>
+		<BindingIntent Class="Intent" ID="BII100002" Status="Available" BindingOrder="Collecting">
+			<BindingSide DataType="EnumerationSpan" Preferred="Left" Actual="Left"/>
+			<BindingType DataType="EnumerationSpan" Preferred="SaddleStitch" Actual="SaddleStitch"/>
+		</BindingIntent>
+		<ColorPool Class="Parameter" ID="ColorPool" DescriptiveName="Colors for the job" Status="Available" Locked="false">
+			<Color Name="Cyan"/>
+			<Color Name="Magenta"/>
+			<Color Name="Yellow"/>
+			<Color Name="Black"/>
+			<Color Name="PANTONE Green 0921 U" ColorBook="PANTONE" ColorBookEntry="921" MediaType="Uncoated"/>
+		</ColorPool>
+		<ColorantControl Class="Parameter" ID="ColorantControl" rRefs="ColorPool" DescriptiveName="Colors of the job" Locked="false" Status="Available" PartIDKeys="SignatureName" PartUsage="Implicit">
+			<ColorantParams>
+				<SeparationSpec Name="Black"/>
+				<SeparationSpec Name="PANTONE Green 0921 U"/>
+			</ColorantParams>
+			<ColorPoolRef rRef="ColorPool"/>
+			<ColorantControl SignatureName="SIG105843">
+				<ColorantParams>
+					<SeparationSpec Name="Cyan"/>
+					<SeparationSpec Name="Magenta"/>
+					<SeparationSpec Name="Yellow"/>
+					<SeparationSpec Name="Black"/>
+					<SeparationSpec Name="PANTONE Green 0921 U"/>
+				</ColorantParams>
+			</ColorantControl>
+			<ColorantControl SignatureName="SIG105850">
+				<ColorantParams>
+					<SeparationSpec Name="Cyan"/>
+					<SeparationSpec Name="Magenta"/>
+					<SeparationSpec Name="Yellow"/>
+					<SeparationSpec Name="Black"/>
+					<SeparationSpec Name="PANTONE Green 0921 U"/>
+				</ColorantParams>
+			</ColorantControl>
+		</ColorantControl>
+		<Component Class="Quantity" ID="CompID_030006_G" ComponentType="FinalProduct Sheet" Status="Unavailable"/>
+		<DeliveryIntent Class="Intent" ID="DLI030006" Status="Available" DescriptiveName="Delivery" rRefs="CompID_030006_G">
+			<DropIntent>
+				<Method DataType="NameSpan" Preferred="CompanyTruck" Actual="CompanyTruck"/>
+				<Required DataType="TimeSpan" Preferred="2004-03-14T00:00:00+01:00" Actual="2004-03-14T00:00:00+01:00"/>
+				<Contact ContactTypes="Delivery Customer">
+					<Address City="Ieper" Country="België" CountryCode="B" PostalCode="8900" Street="Kleine Molenstraat 1"/>
+					<Company OrganizationName="DIOXINUS  BV"/>
+					<Person FamilyName="Mestdagh" FirstName="André" JobTitle="Productie-directeur"/>
+					<ComChannel ChannelType="Phone" Locator="051-41.36.35"/>
+					<ComChannel ChannelType="Fax" Locator="051-41.36.10"/>
+				</Contact>
+				<DropItemIntent Amount="50000">
+					<ComponentRef rRef="CompID_030006_G"/>
+				</DropItemIntent>
+			</DropIntent>
+		</DeliveryIntent>
+		<Device Class="Implementation" ID="PRS5150" ProductID="PRS5150" DeviceID="5150" DescriptiveName="A1--5" FriendlyName="A1--5" Status="Available"/>
+		<Device Class="Implementation" ID="PRS5140" ProductID="PRS5140" DeviceID="5140" DescriptiveName="A1--4" FriendlyName="A1--4" Status="Available"/>
+		<Device Class="Implementation" ID="PLA1001" DeviceID="PLA1001" DescriptiveName="Temporary Platemaker" FriendlyName="Temporary Platemaker" Status="Available"/>
+		<ExposedMedia Class="Handling" PartIDKeys="SignatureName SheetName Side Separation" PartUsage="Implicit" ID="ExposedMedia" DescriptiveName="Plates" Status="Unavailable" Locked="false">
+			<MediaRef rRef="Plate000001"/>
+			<ExposedMedia SignatureName="SIG105843">
+				<ExposedMedia SheetName="SHT105843">
+					<ExposedMedia Side="Front">
+						<ExposedMedia Separation="Cyan" ProductID="0001"/>
+						<ExposedMedia Separation="Magenta" ProductID="0002"/>
+						<ExposedMedia Separation="Yellow" ProductID="0003"/>
+						<ExposedMedia Separation="Black" ProductID="0004"/>
+						<ExposedMedia Separation="PANTONE Green 0921 U" ProductID="0005"/>
+					</ExposedMedia>
+				</ExposedMedia>
+			</ExposedMedia>
+			<ExposedMedia SignatureName="SIG105846">
+				<ExposedMedia SheetName="SHT105846">
+					<ExposedMedia Side="Front">
+						<ExposedMedia Separation="Black" ProductID="0006"/>
+						<ExposedMedia Separation="PANTONE Green 0921 U" ProductID="0007"/>
+					</ExposedMedia>
+					<ExposedMedia Side="Back">
+						<ExposedMedia Separation="Black" ProductID="0025"/>
+						<ExposedMedia Separation="PANTONE Green 0921 U" ProductID="0026"/>
+					</ExposedMedia>
+				</ExposedMedia>
+			</ExposedMedia>
+			<ExposedMedia SignatureName="SIG105847">
+				<ExposedMedia SheetName="SHT105847">
+					<ExposedMedia Side="Front">
+						<ExposedMedia Separation="Black" ProductID="0008"/>
+						<ExposedMedia Separation="PANTONE Green 0921 U" ProductID="0009"/>
+					</ExposedMedia>
+					<ExposedMedia Side="Back">
+						<ExposedMedia Separation="Black" ProductID="0010"/>
+						<ExposedMedia Separation="PANTONE Green 0921 U" ProductID="0011"/>
+					</ExposedMedia>
+				</ExposedMedia>
+			</ExposedMedia>
+			<ExposedMedia SignatureName="SIG105848">
+				<ExposedMedia SheetName="SHT105848">
+					<ExposedMedia Side="Front">
+						<ExposedMedia Separation="Black" ProductID="0012"/>
+						<ExposedMedia Separation="PANTONE Green 0921 U" ProductID="0013"/>
+					</ExposedMedia>
+					<ExposedMedia Side="Back">
+						<ExposedMedia Separation="Black" ProductID="0014"/>
+						<ExposedMedia Separation="PANTONE Green 0921 U" ProductID="0015"/>
+					</ExposedMedia>
+				</ExposedMedia>
+			</ExposedMedia>
+			<ExposedMedia SignatureName="SIG105849">
+				<ExposedMedia SheetName="SHT105849">
+					<ExposedMedia Side="Front">
+						<ExposedMedia Separation="Black" ProductID="0016"/>
+						<ExposedMedia Separation="PANTONE Green 0921 U" ProductID="0017"/>
+					</ExposedMedia>
+					<ExposedMedia Side="Back">
+						<ExposedMedia Separation="Black" ProductID="0018"/>
+						<ExposedMedia Separation="PANTONE Green 0921 U" ProductID="0019"/>
+					</ExposedMedia>
+				</ExposedMedia>
+			</ExposedMedia>
+			<ExposedMedia SignatureName="SIG105850">
+				<ExposedMedia SheetName="SHT105850">
+					<ExposedMedia Side="Front">
+						<ExposedMedia Separation="Cyan" ProductID="0020"/>
+						<ExposedMedia Separation="Magenta" ProductID="0021"/>
+						<ExposedMedia Separation="Yellow" ProductID="0022"/>
+						<ExposedMedia Separation="Black" ProductID="0023"/>
+						<ExposedMedia Separation="PANTONE Green 0921 U" ProductID="0024"/>
+					</ExposedMedia>
+				</ExposedMedia>
+			</ExposedMedia>
+		</ExposedMedia>
+		<ExposedMedia Class="Handling" ID="ImpositionProof" DescriptiveName="ImpositionProof" Status="Unavailable" Locked="false">
+			<MediaRef rRef="ImpoProof01"/>
+		</ExposedMedia>
+		<Layout Class="Parameter" ID="LAY030006" Name="LAY030006" Status="Unavailable">
+			<Signature Name="SIG105843">
+				<Sheet Name="SHT105843">
+					<MediaRef rRef="PAP352063N2HA"/>
+					<Surface Side="Front"/>
+					<Surface Side="Back"/>
+				</Sheet>
+			</Signature>
+			<Signature Name="SIG105846">
+				<Sheet Name="SHT105846">
+					<MediaRef rRef="PAPMSVA_90_WIT_880x630"/>
+					<Surface Side="Front"/>
+					<Surface Side="Back"/>
+				</Sheet>
+			</Signature>
+			<Signature Name="SIG105847">
+				<Sheet Name="SHT105847">
+					<MediaRef rRef="PAPMSVA_90_WIT_880x630"/>
+					<Surface Side="Front"/>
+					<Surface Side="Back"/>
+				</Sheet>
+			</Signature>
+			<Signature Name="SIG105848">
+				<Sheet Name="SHT105848">
+					<MediaRef rRef="PAPMSVA_90_WIT_880x630"/>
+					<Surface Side="Front"/>
+					<Surface Side="Back"/>
+				</Sheet>
+			</Signature>
+			<Signature Name="SIG105849">
+				<Sheet Name="SHT105849">
+					<MediaRef rRef="PAPMSVA_90_WIT_880x630"/>
+					<Surface Side="Front"/>
+					<Surface Side="Back"/>
+				</Sheet>
+			</Signature>
+			<Signature Name="SIG105850">
+				<Sheet Name="SHT105850">
+					<MediaRef rRef="PAP100532"/>
+					<Surface Side="Front"/>
+					<Surface Side="Back"/>
+				</Sheet>
+			</Signature>
+		</Layout>
+		<Media Class="Consumable" ID="PAP352063N2HA" ProductID="PAP352063N2HA" DescriptiveName="MACO SATINE HOUTVRIJ WIT 880x630 mm 200 g/m²" MediaType="Paper" Status="Available" Dimension="2494 1786" GrainDirection="ShortEdge" Weight="200" MediaUnit="Sheet" Thickness="0"/>
+		<Media Class="Consumable" ID="PAPMSVA_90_WIT_880x630" ProductID="PAPMSVA_90_WIT_880x630" DescriptiveName="MACO SATINE HOUTVRIJ WIT 880x630 mm 90 g/m²" MediaType="Paper" Status="Available" Dimension="2494 1786" GrainDirection="ShortEdge" Weight="90" MediaUnit="Sheet"/>
+		<Media Class="Consumable" ID="PAP100532" ProductID="PAP100532" DescriptiveName="OFFSET HOUTVRIJ WIT 1000x700 mm 150 g/m²" MediaType="Paper" Status="Available" Dimension="2835 1984" GrainDirection="LongEdge" Weight="150" MediaUnit="Sheet" Thickness="0"/>
+		<Media Class="Consumable" ID="Plate000001" DescriptiveName="Temporary Plate" MediaType="Plate" Status="Available"/>
+		<Media Class="Consumable" ID="ImpoProof01" DescriptiveName="ImpoProof" MediaType="Paper" Status="Available"/>
+		<MediaIntent Class="Intent" ID="MEI352063N2HA" ProductID="MEI352063N2HA" DescriptiveName="MACO SATINE HOUTVRIJ WIT 880x630 mm 200 g/m²" Status="Available">
+			<Dimensions DataType="XYPairSpan" Preferred="2494 1786" Actual="2494 1786"/>
+			<StockBrand DataType="StringSpan" Preferred="MACO SATINE HOUTVRIJ WIT 880x630 mm 200 g/m²" Actual="MACO SATINE HOUTVRIJ WIT 880x630 mm 200 g/m²"/>
+			<MediaColor DataType="EnumerationSpan"/>
+			<Weight DataType="NumberSpan" Preferred="200" Actual="200"/>
+			<Thickness DataType="NumberSpan" Preferred="0" Actual="0"/>
+		</MediaIntent>
+		<MediaIntent Class="Intent" ID="MEIMSVA_90_WIT_880x630" ProductID="MEIMSVA_90_WIT_880x630" DescriptiveName="MACO SATINE HOUTVRIJ WIT 880x630 mm 90 g/m²" Status="Available">
+			<Dimensions DataType="XYPairSpan" Preferred="2494 1786" Actual="2494 1786"/>
+			<StockBrand DataType="StringSpan" Preferred="MACO SATINE HOUTVRIJ WIT 880x630 mm 90 g/m²" Actual="MACO SATINE HOUTVRIJ WIT 880x630 mm 90 g/m²"/>
+			<MediaColor DataType="EnumerationSpan"/>
+			<Weight DataType="NumberSpan" Preferred="90" Actual="90"/>
+		</MediaIntent>
+		<MediaIntent Class="Intent" ID="MEI100532" ProductID="MEI100532" DescriptiveName="OFFSET HOUTVRIJ WIT 1000x700 mm 150 g/m²" Status="Available">
+			<Dimensions DataType="XYPairSpan" Preferred="2835 1984" Actual="2835 1984"/>
+			<StockBrand DataType="StringSpan" Preferred="OFFSET HOUTVRIJ WIT 1000x700 mm 150 g/m²" Actual="OFFSET HOUTVRIJ WIT 1000x700 mm 150 g/m²"/>
+			<MediaColor DataType="EnumerationSpan"/>
+			<Weight DataType="NumberSpan" Preferred="150" Actual="150"/>
+			<Thickness DataType="NumberSpan" Preferred="0" Actual="0"/>
+		</MediaIntent>
+		<Preview Class="Parameter" PartIDKeys="SignatureName SheetName Side Separation" PartUsage="Implicit" ID="Preview" DescriptiveName="Preview" Status="Incomplete" Locked="false" URL="">
+			<Preview SignatureName="SIG105843">
+				<Preview SheetName="SHT105843">
+					<Preview Side="Front">
+						<Preview Separation="Cyan"/>
+						<Preview Separation="Magenta"/>
+						<Preview Separation="Yellow"/>
+						<Preview Separation="Black"/>
+						<Preview Separation="PANTONE Green 0921 U"/>
+					</Preview>
+				</Preview>
+			</Preview>
+			<Preview SignatureName="SIG105846">
+				<Preview SheetName="SHT105846">
+					<Preview Side="Front">
+						<Preview Separation="Black"/>
+						<Preview Separation="PANTONE Green 0921 U"/>
+					</Preview>
+					<Preview Side="Back">
+						<Preview Separation="Black"/>
+						<Preview Separation="PANTONE Green 0921 U"/>
+					</Preview>
+				</Preview>
+			</Preview>
+			<Preview SignatureName="SIG105847">
+				<Preview SheetName="SHT105847">
+					<Preview Side="Front">
+						<Preview Separation="Black"/>
+						<Preview Separation="PANTONE Green 0921 U"/>
+					</Preview>
+					<Preview Side="Back">
+						<Preview Separation="Black"/>
+						<Preview Separation="PANTONE Green 0921 U"/>
+					</Preview>
+				</Preview>
+			</Preview>
+			<Preview SignatureName="SIG105848">
+				<Preview SheetName="SHT105848">
+					<Preview Side="Front">
+						<Preview Separation="Black"/>
+						<Preview Separation="PANTONE Green 0921 U"/>
+					</Preview>
+					<Preview Side="Back">
+						<Preview Separation="Black"/>
+						<Preview Separation="PANTONE Green 0921 U"/>
+					</Preview>
+				</Preview>
+			</Preview>
+			<Preview SignatureName="SIG105849">
+				<Preview SheetName="SHT105849">
+					<Preview Side="Front">
+						<Preview Separation="Black"/>
+						<Preview Separation="PANTONE Green 0921 U"/>
+					</Preview>
+					<Preview Side="Back">
+						<Preview Separation="Black"/>
+						<Preview Separation="PANTONE Green 0921 U"/>
+					</Preview>
+				</Preview>
+			</Preview>
+			<Preview SignatureName="SIG105850">
+				<Preview SheetName="SHT105850">
+					<Preview Side="Front">
+						<Preview Separation="Cyan"/>
+						<Preview Separation="Magenta"/>
+						<Preview Separation="Yellow"/>
+						<Preview Separation="Black"/>
+						<Preview Separation="PANTONE Green 0921 U"/>
+					</Preview>
+				</Preview>
+			</Preview>
+		</Preview>
+	</ResourcePool>
+	<ResourceLinkPool>
+		<ComponentLink rRef="CompID_030006_G" Usage="Output" Amount="50000"/>
+		<BindingIntentLink rRef="BII100002" Usage="Input"/>
+		<DeliveryIntentLink rRef="DLI030006" Usage="Input"/>
+	</ResourceLinkPool>
+	<JDF ID="SUB100" JobPartID="SUB100" Type="Product" Status="Waiting" DescriptiveName="Cover">
+		<ResourcePool>
+			<ColorIntent Class="Intent" ID="COI100" Status="Available" Locked="false" rRefs="ColorPool">
+				<ColorPoolRef rRef="ColorPool"/>
+				<ColorsUsed>
+					<SeparationSpec Name="Cyan"/>
+					<SeparationSpec Name="Magenta"/>
+					<SeparationSpec Name="Yellow"/>
+					<SeparationSpec Name="Black"/>
+					<SeparationSpec Name="PANTONE Green 0921 U"/>
+				</ColorsUsed>
+			</ColorIntent>
+			<Component Class="Quantity" ID="COMPCS_CVP1058430001" DescriptiveName="Cover  after PCS_CVP1058430001" Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="2494 1786 0" SourceSheet="SHT105843">
+				<LayoutRef rRef="LAY030006"/>
+			</Component>
+			<Component Class="Quantity" ID="COMPCS_BUF1058430030" DescriptiveName="Cover  after PCS_BUF1058430030" Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="1219 913 0"/>
+			<Component Class="Quantity" ID="COMPCS_FPS1058430036" DescriptiveName="Cover " Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="1219 913 0"/>
+			<FoldingIntent Class="Intent" ID="FOI100001186" Status="Available">
+				<FoldingCatalog DataType="NameSpan" Preferred="F4-1" Actual="F4-1"/>
+			</FoldingIntent>
+			<LayoutIntent Class="Intent" ID="LAI100" Status="Available">
+				<FinishedDimensions DataType="ShapeSpan" Preferred="595 842 0" Actual="595 842 0"/>
+				<Pages DataType="IntegerSpan" Preferred="4" Actual="4"/>
+			</LayoutIntent>
+		</ResourcePool>
+		<ResourceLinkPool>
+			<FoldingIntentLink rRef="FOI100001186" Usage="Input"/>
+			<LayoutIntentLink rRef="LAI100" Usage="Input"/>
+			<ColorIntentLink rRef="COI100" Usage="Input"/>
+			<MediaIntentLink rRef="MEI352063N2HA" Usage="Input"/>
+			<ComponentLink rRef="COMPCS_FPS1058430036" Usage="Output" Amount="50000.00000"/>
+		</ResourceLinkPool>
+		<JDF ID="PRE100" JobPartID="PRE100" Type="ProcessGroup" Category="PrePress" Status="Waiting" DescriptiveName="PrePress Cover">
+			<ResourcePool>
+				<Assembly Class="Parameter" ID="ASM100" Status="Available" BindingSide="Left" Order="Collecting"/>
+				<BinderySignature Class="Parameter" ID="BIS100001186" Status="Available" FoldCatalog="F4-1"/>
+				<InterpretingParams Class="Parameter" ID="INPPAP352063N2HAPlate000001" Status="Available" rRefs="PAP352063N2HA Plate000001">
+					<MediaRef rRef="PAP352063N2HA"/>
+					<MediaRef rRef="Plate000001"/>
+				</InterpretingParams>
+				<RunList Class="Parameter" ID="RNL100_D" Status="Unavailable"/>
+				<RunList Class="Parameter" ID="RNL100_M" Status="Unavailable"/>
+				<RunList Class="Parameter" ID="RNL100" Status="Unavailable" NPage="4"/>
+				<StrippingParams Class="Parameter" ID="STP100" Status="Available" rRefs="BIS100001186 PAP352063N2HA Plate000001 PRS5150" PartIDKeys="SignatureName SheetName">
+					<StrippingParams SignatureName="SIG105843">
+						<StrippingParams SheetName="SHT105843" SectionList="0" WorkStyle="WorkAndTurn">
+							<StripCellParams BleedFace="0.00000" BleedSpine="0.000" BleedFoot="0.00000" BleedHead="0.00000" TrimFace="14.17323" Spine="0.00000" TrimHead="14.17323" TrimFoot="14.17323" FrontOverfold="0.00000" BackOverfold="0.00000" MillingDepth="0.00000" TrimSize="595.27559 841.88976"/>
+							<BinderySignatureRef rRef="BIS100001186"/>
+							<DeviceRef rRef="PRS5150"/>
+							<MediaRef rRef="PAP352063N2HA"/>
+							<MediaRef rRef="Plate000001"/>
+							<Position RelativeBox="0.00000 0.50000 0.50000 1.00000" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="22.67717" MarginBottom="0.00000"/>
+							<Position RelativeBox="0.50000 0.50000 1.00000 1.00000" Orientation="Flip180" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="22.67717" MarginBottom="0.00000"/>
+							<Position RelativeBox="0.00000 0.00000 0.50000 0.50000" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="0.00000" MarginBottom="19.84252"/>
+							<Position RelativeBox="0.50000 0.00000 1.00000 0.50000" Orientation="Flip180" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="0.00000" MarginBottom="19.84252"/>
+						</StrippingParams>
+					</StrippingParams>
+				</StrippingParams>
+			</ResourcePool>
+			<JDF ID="PPP100" JobPartID="PPP100" Type="ProcessGroup" Types="PrePressPreparation" Category="PrePressPreparation" DescriptiveName="PrePressPreparation of PrePress Cover" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2004-03-22T15:09:12+01:00" End="2004-03-22T15:09:12+01:00" TotalDuration="P0DT0H0M0S"/>
+				<ResourceLinkPool>
+					<RunListLink rRef="RNL100" Usage="Input"/>
+					<RunListLink rRef="RNL100_D" Usage="Output" ProcessUsage="Document"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="STR100" JobPartID="STR100" Type="ProcessGroup" Types="ImpositionPreparation" Category="ImpositionPreparation" DescriptiveName="ImpositionPreparation of PrePress Cover" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2004-03-22T15:09:12+01:00" End="2004-03-22T15:09:12+01:00" TotalDuration="P0DT0H0M0S"/>
+				<ResourceLinkPool>
+					<StrippingParamsLink rRef="STP100" Usage="Input"/>
+					<AssemblyLink rRef="ASM100" Usage="Input"/>
+					<LayoutLink rRef="LAY030006" Usage="Output"/>
+					<RunListLink rRef="RNL100_M" Usage="Output" ProcessUsage="Marks"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="PRI100" JobPartID="PRI100" Type="ProcessGroup" Types="Imposition ProofImaging" Category="ProofImaging" DescriptiveName="ProofImaging of PrePress Cover" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2004-03-22T15:09:12+01:00" End="2004-03-22T15:09:12+01:00" TotalDuration="P0DT0H0M0S"/>
+				<ResourceLinkPool>
+					<RunListLink rRef="RNL100_D" Usage="Input" ProcessUsage="Document"/>
+					<RunListLink rRef="RNL100_M" Usage="Input" ProcessUsage="Marks"/>
+					<LayoutLink rRef="LAY030006" Usage="Input"/>
+					<ColorantControlLink rRef="ColorantControl" Usage="Input"/>
+					<InterpretingParamsLink rRef="INPPAP352063N2HAPlate000001" Usage="Input"/>
+					<MediaLink rRef="ImpoProof01" Usage="Input"/>
+					<ExposedMediaLink rRef="ImpositionProof" Usage="Output"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="RIP100" JobPartID="RIP100" Type="ProcessGroup" Types="Imposition RIPing PreviewGeneration ImageSetting" Category="FinalImaging" DescriptiveName="FinalImaging of PrePress Cover" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2004-03-22T15:09:12+01:00" End="2004-03-22T15:09:12+01:00" TotalDuration="P0DT0H0M0S"/>
+				<ResourcePool/>
+				<ResourceLinkPool>
+					<RunListLink rRef="RNL100_D" Usage="Input" ProcessUsage="Document"/>
+					<RunListLink rRef="RNL100_M" Usage="Input" ProcessUsage="Marks"/>
+					<LayoutLink rRef="LAY030006" Usage="Input"/>
+					<ColorantControlLink rRef="ColorantControl" Usage="Input"/>
+					<InterpretingParamsLink rRef="INPPAP352063N2HAPlate000001" Usage="Input"/>
+					<MediaLink rRef="Plate000001" Usage="Input"/>
+					<DeviceLink rRef="PLA1001" Usage="Input"/>
+					<ExposedMediaLink rRef="ExposedMedia" Usage="Output">
+						<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="Cyan"/>
+						<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="Magenta"/>
+						<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="Yellow"/>
+						<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="Black"/>
+						<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="PANTONE Green 0921 U"/>
+					</ExposedMediaLink>
+					<PreviewLink rRef="Preview" Usage="Output">
+						<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="Cyan"/>
+						<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="Magenta"/>
+						<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="Yellow"/>
+						<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="Black"/>
+						<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="PANTONE Green 0921 U"/>
+					</PreviewLink>
+				</ResourceLinkPool>
+			</JDF>
+		</JDF>
+		<JDF ID="PCS_CVP1058430001" JobPartID="PCS_CVP1058430001" Type="ConventionalPrinting" DescriptiveName="ConventionalPrinting of Cover " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-22T19:19:12+01:00" TotalDuration="P0DT4H10M0S"/>
+			<ResourcePool>
+				<ConventionalPrintingParams Class="Parameter" ID="CVP1058430001" Status="Unavailable" PrintingType="SheetFed" WorkStyle="WorkAndTurn"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<ConventionalPrintingParamsLink rRef="CVP1058430001" Usage="Input"/>
+				<DeviceLink rRef="PRS5150" Usage="Input"/>
+				<ColorantControlLink rRef="ColorantControl" Usage="Input"/>
+				<ExposedMediaLink rRef="ExposedMedia" Usage="Input" ProcessUsage="Plate">
+					<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="Cyan"/>
+					<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="Magenta"/>
+					<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="Yellow"/>
+					<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="Black"/>
+					<Part SignatureName="SIG105843" SheetName="SHT105843" Side="Front" Separation="PANTONE Green 0921 U"/>
+				</ExposedMediaLink>
+				<LayoutLink rRef="LAY030006" Usage="Input"/>
+				<MediaLink rRef="PAP352063N2HA" Usage="Input" Amount="12982.00000"/>
+				<ComponentLink rRef="COMPCS_CVP1058430001" Usage="Output" Amount="12500.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+		<JDF ID="PCS_BUF1058430030" JobPartID="PCS_BUF1058430030" Type="Buffer" DescriptiveName="Snijden of Cover " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-22T17:44:12+01:00" TotalDuration="P0DT2H35M0S"/>
+			<ResourcePool>
+				<BufferParams Class="Parameter" ID="BFP1058430030" MinimumWait="P0DT2H35M0S" Status="Available"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<BufferParamsLink rRef="BFP1058430030" Usage="Input"/>
+				<ComponentLink rRef="COMPCS_CVP1058430001" Usage="Input" Amount="12638.00000"/>
+				<ComponentLink rRef="COMPCS_BUF1058430030" Usage="Output" Amount="50550.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+		<JDF ID="PCS_FPS1058430036" JobPartID="PCS_FPS1058430036" Type="Folding" DescriptiveName="Folding of Cover " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-22T15:09:12+01:00" TotalDuration="P0DT0H0M0S"/>
+			<ResourcePool>
+				<FoldingParams Class="Parameter" ID="FPS1058430001" Status="Unavailable" DescriptionType="FoldCatalog" FoldCatalog="F4-1"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<FoldingParamsLink rRef="FPS1058430001" Usage="Input"/>
+				<ComponentLink rRef="COMPCS_BUF1058430030" Usage="Input" Amount="50550.00000"/>
+				<ComponentLink rRef="COMPCS_FPS1058430036" Usage="Output" Amount="50000.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+	</JDF>
+	<JDF ID="SUB210" JobPartID="SUB210" Type="Product" Status="Waiting" DescriptiveName="Body">
+		<ResourcePool>
+			<ColorIntent Class="Intent" ID="COI210" Status="Available" Locked="false" rRefs="ColorPool">
+				<ColorPoolRef rRef="ColorPool"/>
+				<ColorsUsed>
+					<SeparationSpec Name="Black"/>
+					<SeparationSpec Name="PANTONE Green 0921 U"/>
+				</ColorsUsed>
+			</ColorIntent>
+			<Component Class="Quantity" ID="COMPCS_CVP1058460009" DescriptiveName="Body 8 p. 00  after PCS_CVP1058460009" Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="2494 1786 0" SourceSheet="SHT105846">
+				<LayoutRef rRef="LAY030006"/>
+			</Component>
+			<Component Class="Quantity" ID="COMPCS_BUF1058460033" DescriptiveName="Body 8 p. 00  after PCS_BUF1058460033" Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="1247 1783 0"/>
+			<Component Class="Quantity" ID="COMPCS_FPS1058460038" DescriptiveName="Body 8 p. 00 " Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="1247 1783 0"/>
+			<Component Class="Quantity" ID="COMPCS_CVP1058470004" DescriptiveName="Body 16 p. 01  after PCS_CVP1058470004" Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="2494 1786 0" SourceSheet="SHT105847">
+				<LayoutRef rRef="LAY030006"/>
+			</Component>
+			<Component Class="Quantity" ID="COMPCS_FPS1058470013" DescriptiveName="Body 16 p. 01 " Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="2494 1786 0"/>
+			<Component Class="Quantity" ID="COMPCS_CVP1058480005" DescriptiveName="Body 16 p. 02  after PCS_CVP1058480005" Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="2494 1786 0" SourceSheet="SHT105848">
+				<LayoutRef rRef="LAY030006"/>
+			</Component>
+			<Component Class="Quantity" ID="COMPCS_FPS1058480015" DescriptiveName="Body 16 p. 02 " Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="2494 1786 0"/>
+			<Component Class="Quantity" ID="COMPCS_CVP1058490006" DescriptiveName="Body 16 p. 03  after PCS_CVP1058490006" Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="2494 1786 0" SourceSheet="SHT105849">
+				<LayoutRef rRef="LAY030006"/>
+			</Component>
+			<Component Class="Quantity" ID="COMPCS_FPS1058490017" DescriptiveName="Body 16 p. 03 " Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="2494 1786 0"/>
+			<FoldingIntent Class="Intent" ID="FOI210000075" Status="Available">
+				<!-- CheckJDF does not like this DataType="NameSpan" Preferred="F8-7" Actual="F8-7"/-->
+				<FoldingCatalog DataType="NameSpan" Preferred="F16-6" Actual="F16-6"/>
+			</FoldingIntent>
+			<LayoutIntent Class="Intent" ID="LAI210" Status="Available">
+				<FinishedDimensions DataType="ShapeSpan" Preferred="595 842 0" Actual="595 842 0"/>
+				<Pages DataType="IntegerSpan" Preferred="56" Actual="56"/>
+			</LayoutIntent>
+		</ResourcePool>
+		<ResourceLinkPool>
+			<FoldingIntentLink rRef="FOI210000075" Usage="Input"/>
+			<LayoutIntentLink rRef="LAI210" Usage="Input"/>
+			<ColorIntentLink rRef="COI210" Usage="Input"/>
+			<MediaIntentLink rRef="MEIMSVA_90_WIT_880x630" Usage="Input"/>
+			<ComponentLink rRef="COMPCS_FPS1058460038" Usage="Output" Amount="50000.00000"/>
+			<ComponentLink rRef="COMPCS_FPS1058470013" Usage="Output" Amount="50000.00000"/>
+			<ComponentLink rRef="COMPCS_FPS1058480015" Usage="Output" Amount="50000.00000"/>
+			<ComponentLink rRef="COMPCS_FPS1058490017" Usage="Output" Amount="50000.00000"/>
+		</ResourceLinkPool>
+		<JDF ID="PRE210" JobPartID="PRE210" Type="ProcessGroup" Category="PrePress" Status="Waiting" DescriptiveName="PrePress Body">
+			<ResourcePool>
+				<Assembly Class="Parameter" ID="ASM210" Status="Available" BindingSide="Left" Order="Collecting"/>
+				<BinderySignature Class="Parameter" ID="BIS210000075" Status="Available" FoldCatalog="F8-7"/>
+				<BinderySignature Class="Parameter" ID="BIS210000105" Status="Available" FoldCatalog="F16-6"/>
+				<InterpretingParams Class="Parameter" ID="INPPAPMSVA_90_WIT_880x630Plate000001" Status="Available" rRefs="PAPMSVA_90_WIT_880x630 Plate000001">
+					<MediaRef rRef="PAPMSVA_90_WIT_880x630"/>
+					<MediaRef rRef="Plate000001"/>
+				</InterpretingParams>
+				<RunList Class="Parameter" ID="RNL210_D" Status="Unavailable"/>
+				<RunList Class="Parameter" ID="RNL210_M" Status="Unavailable"/>
+				<RunList Class="Parameter" ID="RNL210" Status="Unavailable" NPage="56"/>
+				<StrippingParams Class="Parameter" ID="STP210" Status="Available" rRefs="BIS210000075 PAPMSVA_90_WIT_880x630 Plate000001 PRS5140 BIS210000105" PartIDKeys="SignatureName SheetName">
+					<StrippingParams SignatureName="SIG105846">
+						<StrippingParams SheetName="SHT105846" SectionList="0" WorkStyle="Perfecting">
+							<StripCellParams BleedFace="0.00000" BleedSpine="0.000" BleedFoot="0.00000" BleedHead="0.00000" TrimFace="14.17323" Spine="0.00000" TrimHead="14.17323" TrimFoot="14.17323" FrontOverfold="28.34646" BackOverfold="0.00000" MillingDepth="0.00000" TrimSize="595.27559 841.88976"/>
+							<BinderySignatureRef rRef="BIS210000075"/>
+							<DeviceRef rRef="PRS5140"/>
+							<MediaRef rRef="PAPMSVA_90_WIT_880x630"/>
+							<MediaRef rRef="Plate000001"/>
+							<Position RelativeBox="0.00000 0.00000 0.50000 1.00000" Orientation="Flip90" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="22.67717" MarginBottom="19.84252"/>
+							<Position RelativeBox="0.50000 0.00000 1.00000 1.00000" Orientation="Flip90" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="22.67717" MarginBottom="19.84252"/>
+						</StrippingParams>
+					</StrippingParams>
+					<StrippingParams SignatureName="SIG105847">
+						<StrippingParams SheetName="SHT105847" SectionList="1" WorkStyle="Perfecting">
+							<StripCellParams BleedFace="0.00000" BleedSpine="0.000" BleedFoot="0.00000" BleedHead="0.00000" TrimFace="14.17323" Spine="0.00000" TrimHead="14.17323" TrimFoot="14.17323" FrontOverfold="28.34646" BackOverfold="0.00000" MillingDepth="0.00000" TrimSize="595.27559 841.88976"/>
+							<BinderySignatureRef rRef="BIS210000105"/>
+							<DeviceRef rRef="PRS5140"/>
+							<MediaRef rRef="PAPMSVA_90_WIT_880x630"/>
+							<MediaRef rRef="Plate000001"/>
+							<Position RelativeBox="0.00000 0.00000 1.00000 1.00000" Orientation="Flip0" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="22.67717" MarginBottom="19.84252"/>
+						</StrippingParams>
+					</StrippingParams>
+					<StrippingParams SignatureName="SIG105848">
+						<StrippingParams SheetName="SHT105848" SectionList="2" WorkStyle="Perfecting">
+							<StripCellParams BleedFace="0.00000" BleedSpine="0.000" BleedFoot="0.00000" BleedHead="0.00000" TrimFace="14.17323" Spine="0.00000" TrimHead="14.17323" TrimFoot="14.17323" FrontOverfold="28.34646" BackOverfold="0.00000" MillingDepth="0.00000" TrimSize="595.27559 841.88976"/>
+							<BinderySignatureRef rRef="BIS210000105"/>
+							<DeviceRef rRef="PRS5140"/>
+							<MediaRef rRef="PAPMSVA_90_WIT_880x630"/>
+							<MediaRef rRef="Plate000001"/>
+							<Position RelativeBox="0.00000 0.00000 1.00000 1.00000" Orientation="Flip0" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="22.67717" MarginBottom="19.84252"/>
+						</StrippingParams>
+					</StrippingParams>
+					<StrippingParams SignatureName="SIG105849">
+						<StrippingParams SheetName="SHT105849" SectionList="3" WorkStyle="Perfecting">
+							<StripCellParams BleedFace="0.00000" BleedSpine="0.000" BleedFoot="0.00000" BleedHead="0.00000" TrimFace="14.17323" Spine="0.00000" TrimHead="14.17323" TrimFoot="14.17323" FrontOverfold="28.34646" BackOverfold="0.00000" MillingDepth="0.00000" TrimSize="595.27559 841.88976"/>
+							<BinderySignatureRef rRef="BIS210000105"/>
+							<DeviceRef rRef="PRS5140"/>
+							<MediaRef rRef="PAPMSVA_90_WIT_880x630"/>
+							<MediaRef rRef="Plate000001"/>
+							<Position RelativeBox="0.00000 0.00000 1.00000 1.00000" Orientation="Flip0" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="22.67717" MarginBottom="19.84252"/>
+						</StrippingParams>
+					</StrippingParams>
+				</StrippingParams>
+			</ResourcePool>
+			<ResourceLinkPool/>
+			<JDF ID="PPP210" JobPartID="PPP210" Type="ProcessGroup" Types="PrePressPreparation" Category="PrePressPreparation" DescriptiveName="PrePressPreparation of PrePress Body" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2004-03-22T15:09:12+01:00" End="2004-03-22T15:09:12+01:00" TotalDuration="P0DT0H0M0S"/>
+				<ResourceLinkPool>
+					<RunListLink rRef="RNL210" Usage="Input"/>
+					<RunListLink rRef="RNL210_D" Usage="Output" ProcessUsage="Document"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="STR210" JobPartID="STR210" Type="ProcessGroup" Types="ImpositionPreparation" Category="ImpositionPreparation" DescriptiveName="ImpositionPreparation of PrePress Body" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2004-03-22T15:09:12+01:00" End="2004-03-22T15:09:12+01:00" TotalDuration="P0DT0H0M0S"/>
+				<ResourceLinkPool>
+					<StrippingParamsLink rRef="STP210" Usage="Input"/>
+					<AssemblyLink rRef="ASM210" Usage="Input"/>
+					<LayoutLink rRef="LAY030006" Usage="Output"/>
+					<RunListLink rRef="RNL210_M" Usage="Output" ProcessUsage="Marks"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="PRI210" JobPartID="PRI210" Type="ProcessGroup" Types="Imposition ProofImaging" Category="ProofImaging" DescriptiveName="ProofImaging of PrePress Body" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2004-03-22T15:09:12+01:00" End="2004-03-22T15:09:12+01:00" TotalDuration="P0DT0H0M0S"/>
+				<ResourceLinkPool>
+					<RunListLink rRef="RNL210_D" Usage="Input" ProcessUsage="Document"/>
+					<RunListLink rRef="RNL210_M" Usage="Input" ProcessUsage="Marks"/>
+					<LayoutLink rRef="LAY030006" Usage="Input"/>
+					<ColorantControlLink rRef="ColorantControl" Usage="Input"/>
+					<InterpretingParamsLink rRef="INPPAPMSVA_90_WIT_880x630Plate000001" Usage="Input"/>
+					<MediaLink rRef="ImpoProof01" Usage="Input"/>
+					<ExposedMediaLink rRef="ImpositionProof" Usage="Output"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="RIP210" JobPartID="RIP210" Type="ProcessGroup" Types="Imposition RIPing PreviewGeneration ImageSetting" Category="FinalImaging" DescriptiveName="FinalImaging of PrePress Body" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2004-03-22T15:09:12+01:00" End="2004-03-22T15:09:12+01:00" TotalDuration="P0DT0H0M0S"/>
+				<ResourcePool/>
+				<ResourceLinkPool>
+					<RunListLink rRef="RNL210_D" Usage="Input" ProcessUsage="Document"/>
+					<RunListLink rRef="RNL210_M" Usage="Input" ProcessUsage="Marks"/>
+					<LayoutLink rRef="LAY030006" Usage="Input"/>
+					<ColorantControlLink rRef="ColorantControl" Usage="Input"/>
+					<InterpretingParamsLink rRef="INPPAPMSVA_90_WIT_880x630Plate000001" Usage="Input"/>
+					<MediaLink rRef="Plate000001" Usage="Input"/>
+					<DeviceLink rRef="PLA1001" Usage="Input"/>
+					<ExposedMediaLink rRef="ExposedMedia" Usage="Output">
+						<Part SignatureName="SIG105846" SheetName="SHT105846" Side="Front" Separation="Black"/>
+						<Part SignatureName="SIG105846" SheetName="SHT105846" Side="Front" Separation="PANTONE Green 0921 U"/>
+						<Part SignatureName="SIG105846" SheetName="SHT105846" Side="Back" Separation="Black"/>
+						<Part SignatureName="SIG105846" SheetName="SHT105846" Side="Back" Separation="PANTONE Green 0921 U"/>
+						<Part SignatureName="SIG105847" SheetName="SHT105847" Side="Front" Separation="Black"/>
+						<Part SignatureName="SIG105847" SheetName="SHT105847" Side="Front" Separation="PANTONE Green 0921 U"/>
+						<Part SignatureName="SIG105847" SheetName="SHT105847" Side="Back" Separation="Black"/>
+						<Part SignatureName="SIG105847" SheetName="SHT105847" Side="Back" Separation="PANTONE Green 0921 U"/>
+						<Part SignatureName="SIG105848" SheetName="SHT105848" Side="Front" Separation="Black"/>
+						<Part SignatureName="SIG105848" SheetName="SHT105848" Side="Front" Separation="PANTONE Green 0921 U"/>
+						<Part SignatureName="SIG105848" SheetName="SHT105848" Side="Back" Separation="Black"/>
+						<Part SignatureName="SIG105848" SheetName="SHT105848" Side="Back" Separation="PANTONE Green 0921 U"/>
+						<Part SignatureName="SIG105849" SheetName="SHT105849" Side="Front" Separation="Black"/>
+						<Part SignatureName="SIG105849" SheetName="SHT105849" Side="Front" Separation="PANTONE Green 0921 U"/>
+						<Part SignatureName="SIG105849" SheetName="SHT105849" Side="Back" Separation="Black"/>
+						<Part SignatureName="SIG105849" SheetName="SHT105849" Side="Back" Separation="PANTONE Green 0921 U"/>
+					</ExposedMediaLink>
+					<PreviewLink rRef="Preview" Usage="Output">
+						<Part SignatureName="SIG105846" SheetName="SHT105846" Side="Front" Separation="Black"/>
+						<Part SignatureName="SIG105846" SheetName="SHT105846" Side="Front" Separation="PANTONE Green 0921 U"/>
+						<Part SignatureName="SIG105846" SheetName="SHT105846" Side="Back" Separation="Black"/>
+						<Part SignatureName="SIG105846" SheetName="SHT105846" Side="Back" Separation="PANTONE Green 0921 U"/>
+						<Part SignatureName="SIG105847" SheetName="SHT105847" Side="Front" Separation="Black"/>
+						<Part SignatureName="SIG105847" SheetName="SHT105847" Side="Front" Separation="PANTONE Green 0921 U"/>
+						<Part SignatureName="SIG105847" SheetName="SHT105847" Side="Back" Separation="Black"/>
+						<Part SignatureName="SIG105847" SheetName="SHT105847" Side="Back" Separation="PANTONE Green 0921 U"/>
+						<Part SignatureName="SIG105848" SheetName="SHT105848" Side="Front" Separation="Black"/>
+						<Part SignatureName="SIG105848" SheetName="SHT105848" Side="Front" Separation="PANTONE Green 0921 U"/>
+						<Part SignatureName="SIG105848" SheetName="SHT105848" Side="Back" Separation="Black"/>
+						<Part SignatureName="SIG105848" SheetName="SHT105848" Side="Back" Separation="PANTONE Green 0921 U"/>
+						<Part SignatureName="SIG105849" SheetName="SHT105849" Side="Front" Separation="Black"/>
+						<Part SignatureName="SIG105849" SheetName="SHT105849" Side="Front" Separation="PANTONE Green 0921 U"/>
+						<Part SignatureName="SIG105849" SheetName="SHT105849" Side="Back" Separation="Black"/>
+						<Part SignatureName="SIG105849" SheetName="SHT105849" Side="Back" Separation="PANTONE Green 0921 U"/>
+					</PreviewLink>
+				</ResourceLinkPool>
+			</JDF>
+		</JDF>
+		<JDF ID="PCS_CVP1058460009" JobPartID="PCS_CVP1058460009" Type="ConventionalPrinting" DescriptiveName="ConventionalPrinting of Body 8 p. 00 " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-22T19:26:12+01:00" TotalDuration="P0DT4H17M0S"/>
+			<ResourcePool>
+				<ConventionalPrintingParams Class="Parameter" ID="CVP1058460009" Status="Unavailable" PrintingType="SheetFed" WorkStyle="Perfecting"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<ConventionalPrintingParamsLink rRef="CVP1058460009" Usage="Input"/>
+				<DeviceLink rRef="PRS5140" Usage="Input"/>
+				<ColorantControlLink rRef="ColorantControl" Usage="Input"/>
+				<ExposedMediaLink rRef="ExposedMedia" Usage="Input" ProcessUsage="Plate">
+					<Part SignatureName="SIG105846" SheetName="SHT105846" Side="Front" Separation="Black"/>
+					<Part SignatureName="SIG105846" SheetName="SHT105846" Side="Front" Separation="PANTONE Green 0921 U"/>
+					<Part SignatureName="SIG105846" SheetName="SHT105846" Side="Back" Separation="Black"/>
+					<Part SignatureName="SIG105846" SheetName="SHT105846" Side="Back" Separation="PANTONE Green 0921 U"/>
+				</ExposedMediaLink>
+				<LayoutLink rRef="LAY030006" Usage="Input"/>
+				<MediaLink rRef="PAPMSVA_90_WIT_880x630" Usage="Input" Amount="25858.00000"/>
+				<ComponentLink rRef="COMPCS_CVP1058460009" Usage="Output" Amount="25000.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+		<JDF ID="PCS_BUF1058460033" JobPartID="PCS_BUF1058460033" Type="Buffer" DescriptiveName="Snijden of Body 8 p. 00 " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-22T16:47:12+01:00" TotalDuration="P0DT1H38M0S"/>
+			<ResourcePool>
+				<BufferParams Class="Parameter" ID="BFP1058460033" MinimumWait="P0DT1H38M0S" Status="Available"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<BufferParamsLink rRef="BFP1058460033" Usage="Input"/>
+				<ComponentLink rRef="COMPCS_CVP1058460009" Usage="Input" Amount="25325.00000"/>
+				<ComponentLink rRef="COMPCS_BUF1058460033" Usage="Output" Amount="50650.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+		<JDF ID="PCS_FPS1058460038" JobPartID="PCS_FPS1058460038" Type="Folding" DescriptiveName="Folding of Body 8 p. 00 " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-22T23:26:12+01:00" TotalDuration="P0DT8H17M0S"/>
+			<ResourcePool>
+				<FoldingParams Class="Parameter" ID="FPS1058460002" Status="Unavailable" DescriptionType="FoldCatalog" FoldCatalog="F8-7"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<FoldingParamsLink rRef="FPS1058460002" Usage="Input"/>
+				<ComponentLink rRef="COMPCS_BUF1058460033" Usage="Input" Amount="50650.00000"/>
+				<ComponentLink rRef="COMPCS_FPS1058460038" Usage="Output" Amount="50000.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+		<JDF ID="PCS_CVP1058470004" JobPartID="PCS_CVP1058470004" Type="ConventionalPrinting" DescriptiveName="ConventionalPrinting of Body 16 p. 01 " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-22T22:07:12+01:00" TotalDuration="P0DT6H58M0S"/>
+			<ResourcePool>
+				<ConventionalPrintingParams Class="Parameter" ID="CVP1058470004" Status="Unavailable" PrintingType="SheetFed" WorkStyle="Perfecting"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<ConventionalPrintingParamsLink rRef="CVP1058470004" Usage="Input"/>
+				<DeviceLink rRef="PRS5140" Usage="Input"/>
+				<ColorantControlLink rRef="ColorantControl" Usage="Input"/>
+				<ExposedMediaLink rRef="ExposedMedia" Usage="Input" ProcessUsage="Plate">
+					<Part SignatureName="SIG105847" SheetName="SHT105847" Side="Front" Separation="Black"/>
+					<Part SignatureName="SIG105847" SheetName="SHT105847" Side="Front" Separation="PANTONE Green 0921 U"/>
+					<Part SignatureName="SIG105847" SheetName="SHT105847" Side="Back" Separation="Black"/>
+					<Part SignatureName="SIG105847" SheetName="SHT105847" Side="Back" Separation="PANTONE Green 0921 U"/>
+				</ExposedMediaLink>
+				<LayoutLink rRef="LAY030006" Usage="Input"/>
+				<MediaLink rRef="PAPMSVA_90_WIT_880x630" Usage="Input" Amount="51393.00000"/>
+				<ComponentLink rRef="COMPCS_CVP1058470004" Usage="Output" Amount="50000.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+		<JDF ID="PCS_FPS1058470013" JobPartID="PCS_FPS1058470013" Type="Folding" DescriptiveName="Folding of Body 16 p. 01 " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-23T06:53:12+01:00" TotalDuration="P0DT15H44M0S"/>
+			<ResourcePool>
+				<FoldingParams Class="Parameter" ID="FPS1058470003" Status="Unavailable" DescriptionType="FoldCatalog" FoldCatalog="F16-6"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<FoldingParamsLink rRef="FPS1058470003" Usage="Input"/>
+				<ComponentLink rRef="COMPCS_CVP1058470004" Usage="Input" Amount="50750.00000"/>
+				<ComponentLink rRef="COMPCS_FPS1058470013" Usage="Output" Amount="50000.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+		<JDF ID="PCS_CVP1058480005" JobPartID="PCS_CVP1058480005" Type="ConventionalPrinting" DescriptiveName="ConventionalPrinting of Body 16 p. 02 " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-22T22:05:12+01:00" TotalDuration="P0DT6H56M0S"/>
+			<ResourcePool>
+				<ConventionalPrintingParams Class="Parameter" ID="CVP1058480005" Status="Unavailable" PrintingType="SheetFed" WorkStyle="Perfecting"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<ConventionalPrintingParamsLink rRef="CVP1058480005" Usage="Input"/>
+				<DeviceLink rRef="PRS5140" Usage="Input"/>
+				<ColorantControlLink rRef="ColorantControl" Usage="Input"/>
+				<ExposedMediaLink rRef="ExposedMedia" Usage="Input" ProcessUsage="Plate">
+					<Part SignatureName="SIG105848" SheetName="SHT105848" Side="Front" Separation="Black"/>
+					<Part SignatureName="SIG105848" SheetName="SHT105848" Side="Front" Separation="PANTONE Green 0921 U"/>
+					<Part SignatureName="SIG105848" SheetName="SHT105848" Side="Back" Separation="Black"/>
+					<Part SignatureName="SIG105848" SheetName="SHT105848" Side="Back" Separation="PANTONE Green 0921 U"/>
+				</ExposedMediaLink>
+				<LayoutLink rRef="LAY030006" Usage="Input"/>
+				<MediaLink rRef="PAPMSVA_90_WIT_880x630" Usage="Input" Amount="51388.00000"/>
+				<ComponentLink rRef="COMPCS_CVP1058480005" Usage="Output" Amount="50000.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+		<JDF ID="PCS_FPS1058480015" JobPartID="PCS_FPS1058480015" Type="Folding" DescriptiveName="Folding of Body 16 p. 02 " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-23T06:23:12+01:00" TotalDuration="P0DT15H14M0S"/>
+			<ResourcePool>
+				<FoldingParams Class="Parameter" ID="FPS1058480004" Status="Unavailable" DescriptionType="FoldCatalog" FoldCatalog="F16-6"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<FoldingParamsLink rRef="FPS1058480004" Usage="Input"/>
+				<ComponentLink rRef="COMPCS_CVP1058480005" Usage="Input" Amount="50550.00000"/>
+				<ComponentLink rRef="COMPCS_FPS1058480015" Usage="Output" Amount="50000.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+		<JDF ID="PCS_CVP1058490006" JobPartID="PCS_CVP1058490006" Type="ConventionalPrinting" DescriptiveName="ConventionalPrinting of Body 16 p. 03 " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-22T22:05:12+01:00" TotalDuration="P0DT6H56M0S"/>
+			<ResourcePool>
+				<ConventionalPrintingParams Class="Parameter" ID="CVP1058490006" Status="Unavailable" PrintingType="SheetFed" WorkStyle="Perfecting"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<ConventionalPrintingParamsLink rRef="CVP1058490006" Usage="Input"/>
+				<DeviceLink rRef="PRS5140" Usage="Input"/>
+				<ColorantControlLink rRef="ColorantControl" Usage="Input"/>
+				<ExposedMediaLink rRef="ExposedMedia" Usage="Input" ProcessUsage="Plate">
+					<Part SignatureName="SIG105849" SheetName="SHT105849" Side="Front" Separation="Black"/>
+					<Part SignatureName="SIG105849" SheetName="SHT105849" Side="Front" Separation="PANTONE Green 0921 U"/>
+					<Part SignatureName="SIG105849" SheetName="SHT105849" Side="Back" Separation="Black"/>
+					<Part SignatureName="SIG105849" SheetName="SHT105849" Side="Back" Separation="PANTONE Green 0921 U"/>
+				</ExposedMediaLink>
+				<LayoutLink rRef="LAY030006" Usage="Input"/>
+				<MediaLink rRef="PAPMSVA_90_WIT_880x630" Usage="Input" Amount="51388.00000"/>
+				<ComponentLink rRef="COMPCS_CVP1058490006" Usage="Output" Amount="50000.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+		<JDF ID="PCS_FPS1058490017" JobPartID="PCS_FPS1058490017" Type="Folding" DescriptiveName="Folding of Body 16 p. 03 " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-23T06:23:12+01:00" TotalDuration="P0DT15H14M0S"/>
+			<ResourcePool>
+				<FoldingParams Class="Parameter" ID="FPS1058490005" Status="Unavailable" DescriptionType="FoldCatalog" FoldCatalog="F16-6"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<FoldingParamsLink rRef="FPS1058490005" Usage="Input"/>
+				<ComponentLink rRef="COMPCS_CVP1058490006" Usage="Input" Amount="50550.00000"/>
+				<ComponentLink rRef="COMPCS_FPS1058490017" Usage="Output" Amount="50000.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+	</JDF>
+	<JDF ID="SUB220" JobPartID="SUB220" Type="Product" Status="Waiting" DescriptiveName="Insert">
+		<ResourcePool>
+			<ColorIntent Class="Intent" ID="COI220" Status="Available" Locked="false" rRefs="ColorPool">
+				<ColorPoolRef rRef="ColorPool"/>
+				<ColorsUsed>
+					<SeparationSpec Name="Cyan"/>
+					<SeparationSpec Name="Magenta"/>
+					<SeparationSpec Name="Yellow"/>
+					<SeparationSpec Name="Black"/>
+					<SeparationSpec Name="PANTONE Green 0921 U"/>
+				</ColorsUsed>
+			</ColorIntent>
+			<Component Class="Quantity" ID="COMPCS_CVP1058500007" DescriptiveName="Insert  after PCS_CVP1058500007" Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="2835 1984 0" SourceSheet="SHT105850">
+				<LayoutRef rRef="LAY030006"/>
+			</Component>
+			<Component Class="Quantity" ID="COMPCS_BUF1058500019" DescriptiveName="Insert  after PCS_BUF1058500019" Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="870 981 0"/>
+			<Component Class="Quantity" ID="COMPCS_FPS1058500040" DescriptiveName="Insert " Status="Unavailable" ComponentType="PartialProduct Sheet" Dimensions="870 981 0"/>
+			<FoldingIntent Class="Intent" ID="FOI220000050" Status="Available">
+				<FoldingCatalog DataType="NameSpan" Preferred="F4-1" Actual="F4-1"/>
+			</FoldingIntent>
+			<LayoutIntent Class="Intent" ID="LAI220" Status="Available">
+				<FinishedDimensions DataType="ShapeSpan" Preferred="448 842 0" Actual="448 842 0"/>
+				<Pages DataType="IntegerSpan" Preferred="4" Actual="4"/>
+			</LayoutIntent>
+		</ResourcePool>
+		<ResourceLinkPool>
+			<FoldingIntentLink rRef="FOI220000050" Usage="Input"/>
+			<LayoutIntentLink rRef="LAI220" Usage="Input"/>
+			<ColorIntentLink rRef="COI220" Usage="Input"/>
+			<MediaIntentLink rRef="MEI100532" Usage="Input"/>
+			<ComponentLink rRef="COMPCS_FPS1058500040" Usage="Output" Amount="50004.00000"/>
+		</ResourceLinkPool>
+		<JDF ID="PRE220" JobPartID="PRE220" Type="ProcessGroup" Category="PrePress" Status="Waiting" DescriptiveName="PrePress Insert">
+			<ResourcePool>
+				<Assembly Class="Parameter" ID="ASM220" Status="Available" BindingSide="Left" Order="Collecting"/>
+				<BinderySignature Class="Parameter" ID="BIS220000050" Status="Available" FoldCatalog="F4-1"/>
+				<InterpretingParams Class="Parameter" ID="INPPAP100532Plate000001" Status="Available" rRefs="PAP100532 Plate000001">
+					<MediaRef rRef="PAP100532"/>
+					<MediaRef rRef="Plate000001"/>
+				</InterpretingParams>
+				<RunList Class="Parameter" ID="RNL220_D" Status="Unavailable"/>
+				<RunList Class="Parameter" ID="RNL220_M" Status="Unavailable"/>
+				<RunList Class="Parameter" ID="RNL220" Status="Unavailable" NPage="4"/>
+				<StrippingParams Class="Parameter" ID="STP220" Status="Available" rRefs="BIS220000050 PAP100532 Plate000001 PRS5150" PartIDKeys="SignatureName SheetName">
+					<StrippingParams SignatureName="SIG105850">
+						<StrippingParams SheetName="SHT105850" SectionList="0" WorkStyle="WorkAndTumble">
+							<StripCellParams BleedFace="0.00000" BleedSpine="0.000" BleedFoot="0.00000" BleedHead="0.00000" TrimFace="14.17323" Spine="0.00000" TrimHead="14.17323" TrimFoot="14.17323" FrontOverfold="28.34646" BackOverfold="0.00000" MillingDepth="0.00000" TrimSize="447.87402 841.88976"/>
+							<BinderySignatureRef rRef="BIS220000050"/>
+							<DeviceRef rRef="PRS5150"/>
+							<MediaRef rRef="PAP100532"/>
+							<MediaRef rRef="Plate000001"/>
+							<Position RelativeBox="0.00000 0.50000 0.33333 1.00000" Orientation="Rotate90" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="0.00000" MarginBottom="0.00000"/>
+							<Position RelativeBox="0.33333 0.50000 0.66667 1.00000" Orientation="Rotate90" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="0.00000" MarginBottom="0.00000"/>
+							<Position RelativeBox="0.66667 0.50000 1.00000 1.00000" Orientation="Rotate90" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="0.00000" MarginBottom="0.00000"/>
+							<Position RelativeBox="0.00000 0.00000 0.33333 0.50000" Orientation="Flip90" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="0.00000" MarginBottom="0.00000"/>
+							<Position RelativeBox="0.33333 0.00000 0.66667 0.50000" Orientation="Flip90" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="0.00000" MarginBottom="0.00000"/>
+							<Position RelativeBox="0.66667 0.00000 1.00000 0.50000" Orientation="Flip90" MarginLeft="0.00000" MarginRight="0.00000" MarginTop="0.00000" MarginBottom="0.00000"/>
+						</StrippingParams>
+					</StrippingParams>
+				</StrippingParams>
+			</ResourcePool>
+			<ResourceLinkPool/>
+			<JDF ID="PPP220" JobPartID="PPP220" Type="ProcessGroup" Types="PrePressPreparation" Category="PrePressPreparation" DescriptiveName="PrePressPreparation of PrePress Insert" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2004-03-22T15:09:12+01:00" End="2004-03-22T15:09:12+01:00" TotalDuration="P0DT0H0M0S"/>
+				<ResourceLinkPool>
+					<RunListLink rRef="RNL220" Usage="Input"/>
+					<RunListLink rRef="RNL220_D" Usage="Output" ProcessUsage="Document"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="STR220" JobPartID="STR220" Type="ProcessGroup" Types="ImpositionPreparation" Category="ImpositionPreparation" DescriptiveName="ImpositionPreparation of PrePress Insert" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2004-03-22T15:09:12+01:00" End="2004-03-22T15:09:12+01:00" TotalDuration="P0DT0H0M0S"/>
+				<ResourceLinkPool>
+					<StrippingParamsLink rRef="STP220" Usage="Input"/>
+					<AssemblyLink rRef="ASM220" Usage="Input"/>
+					<LayoutLink rRef="LAY030006" Usage="Output"/>
+					<RunListLink rRef="RNL220_M" Usage="Output" ProcessUsage="Marks"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="PRI220" JobPartID="PRI220" Type="ProcessGroup" Types="Imposition ProofImaging" Category="ProofImaging" DescriptiveName="ProofImaging of PrePress Insert" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2004-03-22T15:09:12+01:00" End="2004-03-22T15:09:12+01:00" TotalDuration="P0DT0H0M0S"/>
+				<ResourceLinkPool>
+					<RunListLink rRef="RNL220_D" Usage="Input" ProcessUsage="Document"/>
+					<RunListLink rRef="RNL220_M" Usage="Input" ProcessUsage="Marks"/>
+					<LayoutLink rRef="LAY030006" Usage="Input"/>
+					<ColorantControlLink rRef="ColorantControl" Usage="Input"/>
+					<InterpretingParamsLink rRef="INPPAP100532Plate000001" Usage="Input"/>
+					<MediaLink rRef="ImpoProof01" Usage="Input"/>
+					<ExposedMediaLink rRef="ImpositionProof" Usage="Output"/>
+				</ResourceLinkPool>
+			</JDF>
+			<JDF ID="RIP220" JobPartID="RIP220" Type="ProcessGroup" Types="Imposition RIPing PreviewGeneration ImageSetting" Category="FinalImaging" DescriptiveName="FinalImaging of PrePress Insert" Status="Waiting">
+				<NodeInfo JobPriority="100" Start="2004-03-22T15:09:12+01:00" End="2004-03-22T15:09:12+01:00" TotalDuration="P0DT0H0M0S"/>
+				<ResourcePool/>
+				<ResourceLinkPool>
+					<RunListLink rRef="RNL220_D" Usage="Input" ProcessUsage="Document"/>
+					<RunListLink rRef="RNL220_M" Usage="Input" ProcessUsage="Marks"/>
+					<LayoutLink rRef="LAY030006" Usage="Input"/>
+					<ColorantControlLink rRef="ColorantControl" Usage="Input"/>
+					<InterpretingParamsLink rRef="INPPAP100532Plate000001" Usage="Input"/>
+					<MediaLink rRef="Plate000001" Usage="Input"/>
+					<DeviceLink rRef="PLA1001" Usage="Input"/>
+					<ExposedMediaLink rRef="ExposedMedia" Usage="Output">
+						<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="Cyan"/>
+						<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="Magenta"/>
+						<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="Yellow"/>
+						<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="Black"/>
+						<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="PANTONE Green 0921 U"/>
+					</ExposedMediaLink>
+					<PreviewLink rRef="Preview" Usage="Output">
+						<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="Cyan"/>
+						<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="Magenta"/>
+						<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="Yellow"/>
+						<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="Black"/>
+						<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="PANTONE Green 0921 U"/>
+					</PreviewLink>
+				</ResourceLinkPool>
+			</JDF>
+		</JDF>
+		<JDF ID="PCS_CVP1058500007" JobPartID="PCS_CVP1058500007" Type="ConventionalPrinting" DescriptiveName="ConventionalPrinting of Insert " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-22T17:54:12+01:00" TotalDuration="P0DT2H45M0S"/>
+			<ResourcePool>
+				<ConventionalPrintingParams Class="Parameter" ID="CVP1058500007" Status="Unavailable" PrintingType="SheetFed" WorkStyle="WorkAndTumble"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<ConventionalPrintingParamsLink rRef="CVP1058500007" Usage="Input"/>
+				<DeviceLink rRef="PRS5150" Usage="Input"/>
+				<ColorantControlLink rRef="ColorantControl" Usage="Input"/>
+				<ExposedMediaLink rRef="ExposedMedia" Usage="Input" ProcessUsage="Plate">
+					<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="Cyan"/>
+					<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="Magenta"/>
+					<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="Yellow"/>
+					<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="Black"/>
+					<Part SignatureName="SIG105850" SheetName="SHT105850" Side="Front" Separation="PANTONE Green 0921 U"/>
+				</ExposedMediaLink>
+				<LayoutLink rRef="LAY030006" Usage="Input"/>
+				<MediaLink rRef="PAP100532" Usage="Input" Amount="8655.00000"/>
+				<ComponentLink rRef="COMPCS_CVP1058500007" Usage="Output" Amount="8334.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+		<JDF ID="PCS_BUF1058500019" JobPartID="PCS_BUF1058500019" Type="Buffer" DescriptiveName="Snijden of Insert " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-22T16:31:12+01:00" TotalDuration="P0DT1H22M0S"/>
+			<ResourcePool>
+				<BufferParams Class="Parameter" ID="BFP1058500019" MinimumWait="P0DT1H22M0S" Status="Available"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<BufferParamsLink rRef="BFP1058500019" Usage="Input"/>
+				<ComponentLink rRef="COMPCS_CVP1058500007" Usage="Input" Amount="8426.00000"/>
+				<ComponentLink rRef="COMPCS_BUF1058500019" Usage="Output" Amount="50554.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+		<JDF ID="PCS_FPS1058500040" JobPartID="PCS_FPS1058500040" Type="Folding" DescriptiveName="Folding of Insert " Status="Waiting">
+			<NodeInfo Start="2004-03-22T15:09:12+01:00" End="2004-03-22T19:15:12+01:00" TotalDuration="P0DT4H6M0S"/>
+			<ResourcePool>
+				<FoldingParams Class="Parameter" ID="FPS1058500006" Status="Unavailable" DescriptionType="FoldCatalog" FoldCatalog="F4-1"/>
+			</ResourcePool>
+			<ResourceLinkPool>
+				<FoldingParamsLink rRef="FPS1058500006" Usage="Input"/>
+				<ComponentLink rRef="COMPCS_BUF1058500019" Usage="Input" Amount="50554.00000"/>
+				<ComponentLink rRef="COMPCS_FPS1058500040" Usage="Output" Amount="50004.00000"/>
+			</ResourceLinkPool>
+		</JDF>
+	</JDF>
+</JDF>

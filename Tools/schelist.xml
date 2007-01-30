@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSPY v2004 rel. 2 U (http://www.xmlspy.com) by Maxine Chappell (Maxxml Limited) -->
+<schemalist>
+	<filename>JDF.xsd</filename>
+	<filename>JDFTypes.xsd</filename>
+	<filename>JDFCapability.xsd</filename>
+	<filename>JDFCore.xsd</filename>
+	<filename>JDFMessage.xsd</filename>
+	<filename>JDFProcess.xsd</filename>
+	<filename>JDFResource.xsd</filename>
+</schemalist>

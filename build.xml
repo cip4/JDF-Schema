@@ -1,0 +1,198 @@
+<project name="jdfschema" basedir="." default="verify-and-test">
+	<description>
+------------------------------------------------------------
+		
+README 2006-03-29
+		
+This Ant script (build.xml) runs tests on the JDF XML Schema. First the correctness of the 
+JDF Schema is verified, then the JDF Schema is used to validate a number of JDF/JMF files.
+
+If the JDF Schema passes all tests the build will complete successfully. If a test does 
+not pass the build will immediately abort and fail. Look at the output in the console 
+to determine why the test failed.
+
+Run 'ant' to run all tests.
+Run 'ant -p' for a description of available targets if you want to run a specific test.
+
+The validation tools, used by this script can be downloaded from 
+http://elk.itn.liu.se/schema/validators.zip. If needed the paths to files and validators 
+can be customized in 'build.properties'.
+	
+Dependencies:
+1. Apache Ant 1.6 -- http://ant.apache.org
+2. CIP4 JDF Schema -- http://www.cip4.org/documents/jdf_specifications/index.html#schema
+3. XSV -- ftp://ftp.cogsci.ed.ac.uk/pub/XSV/
+4. ant-contrib -- http://ant-contrib.sourceforge.net
+5. XPath Evaluator Task -- http://www.jtech.se/xpath-test/
+6. Xerces J -- http://xerces.apache.org/xerces2-j/
+7. MSXML.NET
+8. IBM XML Schema Qualiy Checker (optional) -- http://www.alphaworks.ibm.com/tech/xmlsqc
+
+Dependencies 3-8 are included in the validation tools ZIP archive referenced above.
+
+For more information contact the CIP4 Tools and Infrastructure working group.
+
+------------------------------------------------------------
+	</description>
+	<property file="./build.properties" />
+
+	<!-- Define For Loop task -->
+	<taskdef resource="net/sf/antcontrib/antlib.xml">
+		<classpath>
+			<pathelement location="./validators/ant-contrib-1.0b2-bin/lib/ant-contrib.jar"/>
+		</classpath>
+	</taskdef>
+	<!-- Define XPath Evaluator task -->
+	<taskdef name="xpathtest" classname="se.jtech.ant.xpath.XPathEvaluatorTask"
+		classpath="./validators/xpath-task.jar"/>
+	<target name="init">
+		<mkdir dir="${output.dir}"/>
+	</target>
+	<target name="clean">
+		<delete dir="${output.dir}"/>
+	</target>
+	<target name="sqc-schema-verify" depends="init" description="Verifies correctness of JDF schema
+		with IBM XML Schema Quality Checker (http://www.alphaworks.ibm.com/tech/xmlsqc). This can
+		take a while. It took 130 minutes on my P4 3.2 GHz, 1 GB RAM.">
+		<echo>Verifying correctness of JDF schema with IBM XML Schema Quality Checker...</echo>
+		<echo>This can take a while. It took 130 minutes on my P4 3.2 GHz, 1 GB RAM.</echo>
+		<property name="sqc.output" value="${output.dir}/sqc/report.xml"/>
+		<exec dir="${sqc.home}" executable="${sqc}" failonerror="true">
+			<arg line="-reportAsXML '${sqc.output}' '${jdf.schema}'"/>
+		</exec>
+		<echo>Open ${sqc.output} to view results.</echo>
+	</target>
+	<target name="xsv-schema-verify" depends="init" description="Verifies correctness of JDF schema
+		with XSV (http://www.w3.org/2001/03/webdata/xsv). Binaries can be downloaded from
+		ftp://ftp.cogsci.ed.ac.uk/pub/XSV/.">
+		<echo>Verifying correctness of JDF schema with XSV...</echo>
+		<property name="xsv.output" value="${output.dir}/xsv-verify-output.xml"/>
+		<exec dir="${xsv.home}" executable="${xsv}" failonerror="true">
+			<arg line="-o '${xsv.output}' -s '${xsv.home}/xsv.xsl' -t -i 'file:///${jdf.schema}'"/>
+		</exec>
+		<xpathtest xmlfile="${xsv.output}">
+			<namespace uri="http://www.w3.org/2000/05/xsv" prefix="xsv"/>
+			<xpath expression="/xsv:xsv/@schemaErrors=0"/>
+		</xpathtest>
+		<echo>Open ${xsv.output} to view results.</echo>
+	</target>
+	<target name="xercesj-schema-verify" depends="init" description="Verifies correctness of JDF
+		schema with Xerces2 J (Ant XmlValidate).">
+		<echo>Verifying correctness of JDF schema with Xerces (Ant XmlValidate)...</echo>
+		<xmlvalidate lenient="false" classname="org.apache.xerces.parsers.SAXParser"
+			file="${valid.test.files}/MISPrepress-ICS-PlateMaking.jdf">
+			<classpath>
+				<pathelement location="${xerces.home}/xercesImpl.jar"/>
+				<pathelement location="${xerces.home}/xml-apis.jar"/>
+				<pathelement location="${xerces.home}/resolver.jar"/>
+			</classpath>
+			<attribute name="http://xml.org/sax/features/namespaces" value="true"/>
+			<attribute name="http://apache.org/xml/features/validation/schema" value="true"/>
+			<attribute name="http://apache.org/xml/features/validation/schema-full-checking"
+				value="true"/>
+			<!--<attribute name="http://apache.org/xml/features/validate-annotations" value="true" />-->
+			<property name="http://apache.org/xml/properties/schema/external-schemaLocation"
+				value="http://www.CIP4.org/JDFSchema_1_1 '${jdf.schema}'"/>
+		</xmlvalidate>
+	</target>
+	<target name="dotnet-schema-test" depends="init" description="Tests JDF schema by validating
+		JDF/JMF files with MSXML.NET.">
+		<echo>Testing JDF schema with MSXML.NET...</echo>
+		<for param="jdf.file" keepgoing="false">
+			<fileset dir="${valid.test.files}">
+				<include name="**/*.jmf"/>
+				<include name="**/*.jdf"/>
+			</fileset>
+			<sequential>
+				<echo>Validating: @{jdf.file}</echo>
+				<exec dir="." executable="${msxml.net}" append="true" failonerror="true" os="Windows 2000, Windows XP">
+					<arg line="'@{jdf.file}' --xsd '${jdf.schema}'"/>
+				</exec>
+			</sequential>
+		</for>
+	</target>
+	<target name="xercesj-schema-test" depends="init" description="Tests JDF schema by validating
+		JDF/JMF files with Xerces2 J (Ant XmlValidate).">
+		<echo>Testing JDF schema with Xerces (Ant XmlValidate)...</echo>
+		<for param="jdf.file" keepgoing="false">
+			<fileset dir="${valid.test.files}">
+				<include name="**/*.jmf"/>
+				<include name="**/*.jdf"/>
+			</fileset>
+			<sequential>
+				<echo>Validating: @{jdf.file}</echo>
+				<xmlvalidate lenient="false" classname="org.apache.xerces.parsers.SAXParser"
+					failonerror="true" file="@{jdf.file}">
+					<classpath>
+						<pathelement location="${xerces.home}/xercesImpl.jar"/>
+						<pathelement location="${xerces.home}/xml-apis.jar"/>
+						<pathelement location="${xerces.home}/resolver.jar"/>
+					</classpath>
+					<attribute name="http://xml.org/sax/features/namespaces" value="true"/>
+					<attribute name="http://apache.org/xml/features/validation/schema" value="true"/>
+					<attribute name="http://apache.org/xml/features/validation/schema-full-checking"
+						value="true"/>
+					<!--<attribute name="http://apache.org/xml/features/validate-annotations" value="true" />-->
+					<property name="http://apache.org/xml/properties/schema/external-schemaLocation"
+						value="http://www.CIP4.org/JDFSchema_1_1 ${jdf.schema}"/>
+				</xmlvalidate>
+			</sequential>
+		</for>
+	</target>
+	<target name="xsv-schema-test" depends="init" description="Tests JDF schema by validating
+		JDF/JMF files with XSV.">
+		<echo>Testing JDF schema with XSV...</echo>
+		<property name="xsv.test.output" value="${output.dir}/xsv-test-output.xml"/>
+		<echo>Validation output: ${xsv.test.output}</echo>
+		<echo/>
+		<for param="jdf.file" keepgoing="false">
+			<fileset dir="${valid.test.files}">
+				<include name="**/*.jmf"/>
+				<include name="**/*.jdf"/>
+			</fileset>
+			<sequential>
+				<echo>Validating: @{jdf.file}</echo>
+				<exec dir="${xsv.home}" executable="${xsv}" failonerror="true">
+					<arg line="-o '${xsv.test.output}' -t 'file:///@{jdf.file}'
+						'file:///${jdf.schema}'"/>
+				</exec>
+				<xpathtest xmlfile="${xsv.test.output}">
+					<namespace uri="http://www.w3.org/2000/05/xsv" prefix="xsv"/>
+					<xpath expression="/xsv:xsv/@schemaErrors=0"/>
+					<xpath expression="/xsv:xsv/@instanceErrors=0"/>
+				</xpathtest>
+			</sequential>
+		</for>
+	</target>
+	<target name="schema-verify" depends="init" description="Verifies correctness of JDF schema.">
+		<echo>Verifying correctness of JDF schema...</echo>
+		<echo>Schema: ${jdf.schema}</echo>
+		<!--<antcall target="xercesj-schema-verify"/>-->
+		<antcall target="xsv-schema-verify"/>
+		<!-- <antcall target="sqc-schema-verify" /> -->
+		<echo/>
+		<echo>Schema successfully verified.</echo>
+		<echo/>
+	</target>
+	<target name="schema-test" depends="init" description="Test JDF schema by validating JDF/JMF
+		files.">
+		<echo>Testing JDF schema on JDF/JMF files...</echo>
+		<echo>Schema: ${jdf.schema}</echo>
+		<echo>JDF files: ${valid.test.files}</echo>
+		<!--<antcall target="xercesj-schema-test"/>-->
+		<antcall target="dotnet-schema-test"/>
+		<antcall target="xsv-schema-test"/>
+		<echo/>
+		<echo>Schema successfully tested on JDF/JMF files.</echo>
+		<echo/>
+	</target>
+	<target name="verify-and-test" depends="schema-verify,schema-test" description="Verifies and
+		tests JDF schema.">
+		<antcall target="done"/>
+	</target>
+	<target name="done">
+		<echo/>
+		<echo>Schema successfully verified and tested.</echo>
+		<echo/>
+	</target>
+</project>

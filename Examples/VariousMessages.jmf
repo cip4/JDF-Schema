@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<JMF TimeStamp="2000-11-07T12:15:56Z" SenderID="TestSender" xmlns="http://www.CIP4.org/JDFSchema_1_1" Version="1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.CIP4.org/JDFSchema_1_1
+..\Version_1_2\JDF.xsd">
+	<!--=====================
+General - without xsi:Type-->
+	<Command ID="General_001" Type="AllOfThem">
+		<PipeParams PipeID="WaterConvection"/>
+		<QueueEntryDef QueueEntryID="QueueId"/>
+		<QueueEntryPosParams QueueEntryID="QueueID"/>
+		<QueueEntryPriParams Priority="99" QueueEntryID="QueueID"/>
+		<QueueSubmissionParams URL="http://Foo/Bar.html"/>
+		<ResourceCmdParams/>
+		<ResubmissionParams QueueEntryID="QueueID" URL="http://Foo/Bar.html"/>
+		<StopPersChParams URL="http://Foo/Bar.html"/>
+	</Command>
+	<Acknowledge ID="General_002" Type="AckType" refID="Queue_0001">
+		<DeviceInfo DeviceStatus="Cleanup"/>
+		<DeviceList/>
+		<JDFController URL="http://Foo/Bar.html"/>
+		<JDFService Type="Car"/>
+		<JobPhase Status="Cleanup"/>
+		<MessageService Type="Fax"/>
+		<NotificationDef Classes="Fatal" Type="Notify"/>
+		<Occupation/>
+		<Queue Status="Blocked" DeviceID="DevID"/>
+		<QueueEntry QueueEntryID="QENT001" Status="Removed"/>
+		<ResourceInfo/>
+		<TrackResult URL="http://Foo/Bar.html" IsDevice="false"/>
+	</Acknowledge>
+	<!--=====================
+Events-->
+	<Query ID="Message_001Q" Type="Events" xsi:type="QueryEvents">
+		<NotificationFilter/>
+	</Query>
+	<Response ID="Message_001R" Type="Events" refID="Q001" xsi:type="ResponseEvents">
+		<NotificationDef Classes="Error" Type="Barcode"/>
+	</Response>
+	<Signal ID="Message_001S" Type="Events" xsi:type="SignalEvents">
+		<NotificationFilter/>
+		<NotificationDef Classes="Error" Type="Barcode"/>
+	</Signal>
+	<!--=====================
+KnownController-->
+	<Response ID="Message_002R" Type="KnownController" refID="Q001" xsi:type="ResponseKnownControllers">
+		<JDFController URL="http://NOTAHOTFOLDER"/>
+	</Response>
+	<Signal ID="Message_002S" Type="KnownController" xsi:type="SignalKnownControllers">
+		<JDFController URL="http://JustSayNO"/>
+		<Notification TimeStamp="2000-11-07T12:15:56Z" Class="Fatal"/>
+	</Signal>
+	<!--=====================
+KnownDevices-->
+	<Query ID="Message_003Q" Type="KnownDevices" xsi:type="QueryKnownDevices">
+		<DeviceFilter/>
+	</Query>
+	<Response Acknowledged="false" Type="KnownDevices" Subscribed="true" ReturnCode="0" ID="Message_003R" refID="Q0001" xsi:type="ResponseKnownDevices">
+		<DeviceList>
+			<DeviceInfo DeviceStatus="Unknown">
+				<Device Class="Implementation" ID="Device_ljkshdpoivopije" Status="Unavailable" DeviceID="testDevice1" Locked="false" SpawnStatus="NotSpawned" PartUsage="Explicit">
+					<DeviceCap TypeOrder="Fixed" Type="Scanning" OptionalCombinedTypes="none" CombinedMethod="None" GenericAttributes="ID Class SettingsPolicy BestEffortExceptions OperatorInterventionExceptions MustHonorExceptions PartIDKeys DocIndex">
+						<Performance AverageCleanup="P0M" MaxSetup="P0M" AverageSetup="P0M" MaxCleanup="P0M" MinSetup="P0M" MaxAmount="0" AverageAmount="120" Name="ExposedMedia" MinCleanup="P0M" MinAmount="0"/>
+					</DeviceCap>
+				</Device>
+			</DeviceInfo>
+		</DeviceList>
+	</Response>
+	<Signal ID="Message_003S" Type="KnownDevices" xsi:type="SignalKnownDevices">
+		<DeviceFilter/>
+		<DeviceList/>
+		<Notification TimeStamp="2000-11-07T12:15:56Z" Class="Fatal"/>
+		<Trigger/>
+	</Signal>
+	<!--=====================
+KnownJDFService-->
+	<Response Acknowledged="false" Type="KnownJDFServices" Subscribed="true" ReturnCode="0" ID="Message_004R" refID="Q0001" xsi:type="ResponseKnownJDFServices">
+		<JDFService Type="SomeService"/>
+	</Response>
+	<Signal ID="Message_004S" Type="KnownJDFService" xsi:type="SignalKnownJDFServices">
+		<Notification TimeStamp="2000-11-07T12:15:56Z" Class="Fatal"/>
+		<Trigger/>
+		<JDFService Type="SomethingElse"/>
+	</Signal>
+	<!--=====================
+KnownMessages-->
+	<Query ID="Message_005Q" Type="KnownMessages" xsi:type="QueryKnownMessages">
+		<KnownMsgQuParams/>
+	</Query>
+	<Response Acknowledged="false" Type="KnownMessages" Subscribed="true" ReturnCode="0" ID="Message_005R" refID="Q0001" xsi:type="ResponseKnownMessages">
+		<MessageService Type="Teletype"/>
+	</Response>
+	<Signal ID="Message_005S" Type="KnownMessages" xsi:type="SignalKnownMessages">
+		<KnownMsgQuParams/>
+		<MessageService Type="Fax"/>
+	</Signal>
+	<!--=====================
+RepeatMessages-->
+	<Query ID="Message_006Q" Type="KnownMessages" xsi:type="QueryKnownMessages">
+		<KnownMsgQuParams/>
+	</Query>
+	<Response Acknowledged="false" Type="KnownMessages" Subscribed="true" ReturnCode="0" ID="Message_006R" refID="Q0001" xsi:type="ResponseKnownMessages">
+		<MessageService Type="Teletype"/>
+	</Response>
+	<!--=====================
+StopPersistentChannel-->
+	<Command ID="Message_007C" Type="StopPersistentChannel" xsi:type="CommandStopPersistentChannel">
+		<StopPersChParams URL="http://Foo.bar"/>
+	</Command>
+</JMF>
