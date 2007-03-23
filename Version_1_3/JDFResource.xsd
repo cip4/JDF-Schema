@@ -16423,7 +16423,7 @@
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="UsageCounterRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-	<xs:element name="UsageCounterLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+	<xs:element name="UsageCounterLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="UsageCounterAttribs_c">
 		<xs:attribute name="CounterTypes" type="jdftyp:NMTOKENS" use="optional"/>
 	</xs:attributeGroup>
