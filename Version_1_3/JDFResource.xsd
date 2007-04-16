@@ -8837,8 +8837,8 @@
 				<Constraint Path="InsertSheet" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="InsertSheetRef" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="LayerList" minOccurs="0" maxOccurs="1"/>
-				<Constraint Path="Media" minOccurs="0" maxOccurs="1"/>
-				<Constraint Path="MediaRef" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="Media" minOccurs="0" maxOccurs="unbounded"/>
+				<Constraint Path="MediaRef" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="MediaSource" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="MediaSourceRef" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="PlacedObject" minOccurs="0" maxOccurs="unbounded"/>
