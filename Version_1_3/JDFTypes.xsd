@@ -1306,7 +1306,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="eElementType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
-			<xs:enumeration value="Auxilliary"/>
+			<xs:enumeration value="Auxiliary"/>
 			<xs:enumeration value="Barcode"/>
 			<xs:enumeration value="Composed"/>
 			<xs:enumeration value="Document"/>
