@@ -1340,7 +1340,8 @@
 	</xs:simpleType>
 	<xs:simpleType name="eEmbossingType">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
-			<xs:enumeration value="BlinedEmbossing"/>
+			<xs:enumeration value="BlindEmbossing"/>
+			<xs:enumeration value="Braille"/>
 			<xs:enumeration value="EmbossedFinish"/>
 			<xs:enumeration value="FoilEmbossing"/>
 			<xs:enumeration value="FoilStamping"/>
