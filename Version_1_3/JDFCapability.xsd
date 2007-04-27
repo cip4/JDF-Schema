@@ -181,7 +181,7 @@
 				</xs:sequence>
 				<xs:attribute name="Availability" type="jdftyp:eAvailability_" default="Installed"/>
 				<xs:attribute name="Context" type="jdftyp:eContext" default="Resource"/>
-				<xs:attribute name="DevCapRef" type="jdftyp:IDREF" use="optional"/>
+				<xs:attribute name="DevCapRef" type="jdftyp:IDREFS" use="optional"/>
 				<xs:attribute name="DevNS" type="jdftyp:URI" default="http://www.CIP4.org/JDFSchema_1_1"/>
 				<xs:attribute name="ID" type="jdftyp:ID" use="optional"/>
 				<xs:attribute name="LinkUsage" type="jdftyp:eUsage_" use="optional"/>
