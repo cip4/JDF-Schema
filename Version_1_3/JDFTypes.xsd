@@ -1564,6 +1564,8 @@
 	<xs:simpleType name="eHoleType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="R2-generic"/>
+			<xs:enumeration value="S1-generic"/>
+			<xs:enumeration value="S-generic"/>
 			<xs:enumeration value="R2m-DIN"/>
 			<xs:enumeration value="R2m-ISO"/>
 			<xs:enumeration value="R2m-MIB"/>
@@ -1602,6 +1604,8 @@
 	<xs:simpleType name="eHoleType1_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="None"/>
+			<xs:enumeration value="S1-generic"/>
+			<xs:enumeration value="S-generic"/>
 			<xs:enumeration value="R2-generic"/>
 			<xs:enumeration value="R2m-DIN"/>
 			<xs:enumeration value="R2m-ISO"/>
