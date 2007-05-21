@@ -4680,7 +4680,7 @@
 		<xs:attribute name="DeviceType" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="Directory" type="jdftyp:URL" use="optional"/>
 		<xs:attribute name="FriendlyName" type="jdftyp:string" use="optional"/>
-		<xs:attribute name="ICSVersions" type="jdftyp:NMTOKEN" use="optional"/>
+		<xs:attribute name="ICSVersions" type="jdftyp:NMTOKENS" use="optional"/>
 		<xs:attribute name="JDFErrorURL" type="jdftyp:URL" use="optional"/>
 		<xs:attribute name="JDFInputURL" type="jdftyp:URL" use="optional"/>
 		<xs:attribute name="JDFOutputURL" type="jdftyp:URL" use="optional"/>
