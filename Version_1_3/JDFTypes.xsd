@@ -2,7 +2,7 @@
 <!--	The CIP4 Software License, Version 1.0
 	
 	
-	Copyright (c) 2001-2006 The International Cooperation for the Integration of 
+	Copyright (c) 2001-2007 The International Cooperation for the Integration of 
 	Processes in Prepress, Press and Postpress (CIP4). All rights reserved.
 	
 	Redistribution and use in source and binary forms, with or without modification, 
@@ -2294,6 +2294,7 @@
 			<xs:enumeration value="SheetName"/>
 			<xs:enumeration value="Side"/>
 			<xs:enumeration value="SignatureName"/>
+	  	<xs:enumeration value="StationName"/>
 			<xs:enumeration value="SubRun"/>
 			<xs:enumeration value="TileID"/>
 			<xs:enumeration value="WebName"/>
@@ -3266,6 +3267,9 @@
 	</xs:simpleType>
 	<xs:simpleType name="pSortAmount">
 		<xs:restriction base="jdftyp:boolean"/>
+	</xs:simpleType>
+	<xs:simpleType name="pStationName">
+		<xs:restriction base="jdftyp:string"/>
 	</xs:simpleType>
 	<xs:simpleType name="pSubRun">
 		<xs:restriction base="jdftyp:NMTOKEN"/>
