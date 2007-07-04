@@ -1996,6 +1996,7 @@
 				<Version Path="@MappingSelection" First="1.2"/>
 				<Version Path="@RawName" First="1.2"/>
 				<Version Path="@UsePDLAlternateCS" Last="1.1"/>
+				<Version Path="@ActualColorName" First="1.3"/>
 				<Version Path="PrintConditionColor" First="1.2"/>
 				<Version Path="ColorMeasurmentConditions" First="1.1"/>
 				<Version Path="ColorMeasurmentConditionsRef" First="1.1"/>
@@ -2021,6 +2022,7 @@
 	<xs:element name="ColorRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
 	<xs:element name="ColorLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="ColorAttribs_c">
+		<xs:attribute name="ActualColorName" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="CMYK" type="jdftyp:CMYKColor" use="optional"/>
 		<xs:attribute name="ColorBook" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="ColorBookEntry" type="jdftyp:string" use="optional"/>
@@ -5108,7 +5110,7 @@
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute name="AssemblyID" type="jdftyp:NMTOKEN" use="optional"/>
+				<xs:attribute name="AssemblyIDs" type="jdftyp:NMTOKENS" use="optional"/>
 				<xs:attribute name="StationAmount" type="jdftyp:Integer" default="1"/>
 				<xs:attribute name="StationName" type="jdftyp:string" use="optional"/>
 			</xs:extension>
@@ -9173,7 +9175,7 @@
 					<xs:element name="ScavengerArea" type="jdf:ScavengerArea_re" minOccurs="0"/>
 					<xs:element ref="jdf:ScavengerAreaRef" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute name="LayoutElementPageNum" type="jdftyp:Integer" default="0"/>
+				<xs:attribute name="LayoutElementPageNum" type="jdftyp:Integer" use="optional"/>
 				<xs:attribute name="Ord" type="jdftyp:Integer" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
