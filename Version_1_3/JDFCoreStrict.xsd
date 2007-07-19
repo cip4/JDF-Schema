@@ -61,7 +61,7 @@
 -->
 <xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_3_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.3-002">
 	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_3_Types" schemaLocation="JDFTypes.xsd"/>
-	<xs:include schemaLocation="JDFResource.xsd"/>
+	<xs:include schemaLocation="JDFResourceStrict.xsd"/>
 	<xs:complexType name="Comment_Type">
 		<xs:annotation>
 			<xs:appinfo>
