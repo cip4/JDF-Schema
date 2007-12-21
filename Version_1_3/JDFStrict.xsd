@@ -63,7 +63,7 @@
 	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_3_Types" schemaLocation="JDFTypes.xsd"/>
 	<xs:include schemaLocation="JDFCoreStrict.xsd"/>
 	<xs:include schemaLocation="JDFCapability.xsd"/>
-	<xs:include schemaLocation="JDFResource.xsd"/>
+	<xs:include schemaLocation="JDFResourceStrict.xsd"/>
 	<xs:include schemaLocation="JDFProcess.xsd"/>
 	<xs:include schemaLocation="JDFMessage.xsd"/>
 	<xs:element name="JDF" type="jdf:JDFProcessNode"/>
