@@ -445,7 +445,7 @@
 					<xs:element name="DevCapPool" type="jdf:DevCapPool" minOccurs="0"/>
 					<xs:element name="DevCaps" type="jdf:DeviceCap_DevCaps_lr" minOccurs="0"/>
 					<xs:element name="ModulePool" type="jdf:ModulePool" minOccurs="0"/>
-					<xs:element name="TestPool" type="jdf:ModulePool" minOccurs="0"/>
+					<xs:element name="TestPool" type="jdf:TestPool" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="Acknowledge" type="jdftyp:boolean" default="false"/>
 				<xs:attribute name="Command" type="jdftyp:boolean" default="false"/>
