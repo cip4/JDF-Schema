@@ -741,6 +741,12 @@
 			<xs:enumeration value="RegistrationMark"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="eChannelMode_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="FireAndForget"/>
+			<xs:enumeration value="Reliable"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="eChannelType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Phone"/>
@@ -2706,6 +2712,12 @@
 			<xs:enumeration value="Available"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="eRetryPolicy_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="DiscardAtNextSignal"/>
+			<xs:enumeration value="RetryForever"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="eRingSystem_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="2HoleEuro"/>
@@ -3127,6 +3139,18 @@
 			<xs:enumeration value="Input"/>
 			<xs:enumeration value="Output"/>
 		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eURLType_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="JDFError"/>
+			<xs:enumeration value="JDFInput"/>
+			<xs:enumeration value="JDFOutput"/>
+			<xs:enumeration value="JMF"/>
+			<xs:enumeration value="SecureJMF"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eURLTypes_">
+		<xs:list itemType="jdftyp:eURLType_"/>
 	</xs:simpleType>
 	<xs:simpleType name="eUserDisplay">
 		<xs:restriction base="jdftyp:EnumerationBaseType">

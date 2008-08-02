@@ -10306,6 +10306,7 @@
 				<xs:attribute name="DeviceID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="JobID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="JobPartID" type="jdftyp:shortString" use="optional"/>
+				<xs:attribute name="MilestoneTypes" type="jdftyp:NMTOKENS" use="optional"/>
 				<xs:attribute name="QueueEntryID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="SignalTypes" type="jdftyp:NMTOKENS" default="Notification"/>
 				<xs:attribute name="Types" type="jdftyp:NMTOKENS" use="optional"/>

@@ -219,6 +219,7 @@
 		<xs:attribute name="AgentVersion" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="Author" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="ID" type="jdftyp:ID" use="optional"/>
+		<xs:attribute name="QueueEntryID" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="refID" type="jdftyp:IDREF" use="optional"/>
 		<xs:attribute name="SpawnID" type="jdftyp:shortString" use="optional"/>
 		<xs:attribute name="TimeStamp" type="jdftyp:dateTime" use="required"/>
@@ -771,6 +772,8 @@
 	<xs:complexType name="ProcessRunAudit" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version First="1.4" Path="@ReturnTime"/>
+				<Version First="1.4" Path="@SubmissionTime"/>
 				<Version Path="Part" First="1.1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -778,21 +781,29 @@
 			<xs:extension base="jdf:AuditElement">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:Employee"/>
 					<xs:element name="Part" type="jdf:Part" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="Duration" type="jdftyp:duration" use="optional"/>
 				<xs:attribute name="End" type="jdftyp:dateTime" use="required"/>
 				<xs:attribute name="EndStatus" type="jdftyp:eEndStatusOfNode_" use="required"/>
+				<xs:attribute name="ReturnTime" type="jdftyp:dateTime" use="required"/>
 				<xs:attribute name="Start" type="jdftyp:dateTime" use="required"/>
+				<xs:attribute name="SubmissionTime" type="jdftyp:dateTime" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="NotificationAudit" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="Event" First="1.2"/>
+				<Version Path="@CombinedProcessIndex"  First="1.4"/>
 				<Version Path="@JobID" First="1.3"/>
 				<Version Path="@JobPartID" First="1.3"/>
+				<Version Path="@ModuleID" First="1.4"/>
+				<Version Path="@ModuleIndex" First="1.4"/>
+				<Version Path="@ModuleType" First="1.4"/>
+				<Version Path="Event" First="1.2" />
+				<Version Path="Event" First="1.2"/>
 				<Version Path="Part" First="1.1"/>
 				<Constraint Path="CostCenter" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="NotificationDetails" minOccurs="0" maxOccurs="1"/>
@@ -809,8 +820,12 @@
 					<xs:element name="Part" type="jdf:Part" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="Class" type="jdftyp:eNotificationClass_" use="required"/>
+				<xs:attribute name="CombinedProcessIndex" type="jdftyp:IntegerList" use="optional"/>
 				<xs:attribute name="JobID" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="JobPartID" type="jdftyp:string" use="optional"/>
+				<xs:attribute name="ModuleID" type="jdftyp:string" use="optional"/>
+				<xs:attribute name="ModuleIndex" type="jdftyp:IntegerRangeList" use="optional"/>
+				<xs:attribute name="ModuleType" type="jdftyp:NMTOKEN" use="optional"/>
 				<xs:attribute name="Type" type="jdftyp:NMTOKEN" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -858,6 +873,8 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="@CombinedProcessIndex" First="1.3"/>
+				<Version Path="@End" Last="1.3"/>
+				<Version Path="@Start" Last="1.3"/>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexContent mixed="false">
@@ -892,6 +909,8 @@
 			<xs:extension base="jdf:AuditElement">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:Employee"/>
+					<xs:element ref="jdf:EmployeeRef" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="ref" type="jdftyp:IDREF" use="optional"/>
 				<xs:attribute name="TemplateID" type="jdftyp:shortString" use="optional"/>
@@ -905,6 +924,7 @@
 			<xs:extension base="jdf:AuditElement">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:Employee"/>
 				</xs:sequence>
 				<xs:attribute name="XPath" type="jdftyp:XPath" use="optional"/>
 			</xs:extension>
@@ -921,6 +941,7 @@
 			<xs:extension base="jdf:AuditElement">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:Employee"/>
 				</xs:sequence>
 				<xs:attribute name="jRef" type="jdftyp:IDREF" use="optional"/>
 				<xs:attribute name="XPath" type="jdftyp:XPath" use="optional"/>
@@ -939,6 +960,7 @@
 			<xs:extension base="jdf:AuditElement">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:Employee"/>
 					<xs:element name="Part" type="jdf:Part" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="Independent" type="jdftyp:boolean" default="false"/>
@@ -963,6 +985,7 @@
 			<xs:extension base="jdf:AuditElement">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:Employee"/>
 					<xs:element name="Part" type="jdf:Part" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="Independent" type="jdftyp:boolean" default="false"/>
@@ -990,6 +1013,7 @@
 			<xs:extension base="jdf:AuditElement">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:Employee"/>
 					<xs:element name="MISDetails" type="jdf:MISDetails_re" minOccurs="0"/>
 					<xs:element ref="jdf:ResourceLink" minOccurs="0"/>
 					<xs:element name="Part" type="jdf:Part" minOccurs="0"/>
@@ -1131,17 +1155,6 @@
 				<Version Path="@BundleItemIndex" First="1.2"/>
 				<Version Path="@CellIndex" First="1.2"/>
 				<Version Path="@Condition" First="1.2"/>
-				<Version Path="@ItemNames" First="1.2"/>
-				<Version Path="@LayerIDs" First="1.1"/>
-				<Version Path="@PreflightRule" First="1.2"/>
-				<Version Path="@PreviewType" First="1.1"/>
-				<Version Path="@RunTags" First="1.1"/>
-				<Version Path="@RunPage" First="1.1"/>
-				<Version Path="@SectionIndex" First="1.2"/>
-				<Version Path="@SetDocIndex" First="1.2"/>
-				<Version Path="@SetIndex" First="1.1"/>
-				<Version Path="@SetRunIndex" First="1.2"/>
-				<Version Path="@SetSheetIndex" First="1.2"/>
 				<!-- enumeration of values for DeliveryUnit 0 to 9 -->
 				<Version Path="@DeliveryUnit0" First="1.3"/>
 				<Version Path="@DeliveryUnit1" First="1.3"/>
@@ -1156,10 +1169,21 @@
 				<Version Path="@DocTags" First="1.3"/>
 				<Version Path="@Edition" First="1.3"/>
 				<Version Path="@EditionVersion" First="1.3"/>
+				<Version Path="@ItemNames" First="1.2"/>
+				<Version Path="@LayerIDs" First="1.1"/>
 				<Version Path="@PageTags" First="1.3"/>
 				<Version Path="@PlateLayout" First="1.3"/>
+				<Version Path="@PreflightRule" First="1.2"/>
+				<Version Path="@PreviewType" First="1.1"/>
+				<Version Path="@RunPage" First="1.1"/>
 				<Version Path="@RunPageRange" First="1.4"/>
 				<Version Path="@RunSet" First="1.3"/>
+				<Version Path="@RunTags" First="1.1"/>
+				<Version Path="@SectionIndex" First="1.2"/>
+				<Version Path="@SetDocIndex" First="1.2"/>
+				<Version Path="@SetIndex" First="1.1"/>
+				<Version Path="@SetRunIndex" First="1.2"/>
+				<Version Path="@SetSheetIndex" First="1.2"/>
 				<Version Path="@SetTags" First="1.3"/>
 				<Version Path="@Sorting" Last="1.3"/>
 				<Version Path="@SortAmount" Last="1.3"/>
@@ -1362,11 +1386,21 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<!--Generic-->
+				<Version Path="@AgentName" First="1.4"/>
+				<Version Path="@AgentVersion" First="1.4"/>
 				<Version Path="@ICSVersions" First="1.3"/>
 				<Version Path="@MaxVersion" First="1.3"/>
 				<Version Path="@ResponseURL" First="1.2"/>
 				<Version Path="@xmlns" First="1.1"/>
+				<Version Path="Employee" First="1.4"/>
+				<!--Generic Messages-->
 				<Version Path="./*/@xsi:type" First="1.2"/>
+				<Version Path="./*/@AgentName" First="1.4"/>
+				<Version Path="./*/@AgentVersion" First="1.4"/>
+				<Version Path="./*/@ICSVersions" First="1.4"/>
+				<Version Path="./*/@SenderID" First="1.4"/>
+				<Version Path="./*/@Version" First="1.4"/>
+				<Version Path="./*/Employee" First="1.4"/>
 				<!--A JMF must have one or more child message elements -->
 				<Constraint Path="Registration" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="Command" minOccurs="0" maxOccurs="unbounded"/>
@@ -1380,8 +1414,11 @@
 			<xs:extension base="jdf:BaseElement_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:Employee"/>
 					<xs:group ref="jdf:AnyMessage" minOccurs="0"/>
 				</xs:sequence>
+				<xs:attribute name="AgentName" type="jdftyp:string" use="optional"/>
+				<xs:attribute name="AgentVersion" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="DeviceID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="ICSVersions" type="jdftyp:NMTOKENS" use="optional"/>
 				<xs:attribute name="MaxVersion" type="jdftyp:JDFJMFVersion" use="optional"/>
@@ -1400,9 +1437,14 @@
 		</xs:annotation>
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:BaseElement_">
+				<xs:attribute name="AgentName" type="jdftyp:string"/>
+				<xs:attribute name="AgentVersion" type="jdftyp:string"/>
+				<xs:attribute name="ICSVersions" type="jdftyp:NMTOKENS"/>
 				<xs:attribute name="ID" type="jdftyp:ID" use="required"/>
+				<xs:attribute name="SenderID" type="jdftyp:string"/>
 				<xs:attribute name="Time" type="jdftyp:dateTime" use="optional"/>
 				<xs:attribute name="Type" type="jdftyp:NMTOKEN" use="required"/>
+				<xs:attribute name="Version" type="jdftyp:JDFJMFVersion"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -1412,6 +1454,8 @@
 				<Version Path="@AcknowledgeType" First="1.1"/>
 				<Version Path="@AcknowledgeFormat" First="1.2"/>
 				<Version Path="@AcknowledgeTemplate" First="1.2"/>
+				<Version Path="@RelatedCommands" First="1.4"/>
+				<Version Path="@TransactionID" First="1.4"/>
 				<Version Path="Subscription" First="1.3"/>
 				<Constraint Path="Subscription" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -1420,6 +1464,7 @@
 			<xs:extension base="jdf:Message">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element minOccurs="0" ref="jdf:Employee"/>
 					<xs:element ref="jdf:CommandTypeObj" minOccurs="0"/>
 				      <xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
 				</xs:sequence>
@@ -1427,6 +1472,8 @@
 				<xs:attribute name="AcknowledgeTemplate" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="AcknowledgeURL" type="jdftyp:URL" use="optional"/>
 				<xs:attribute name="AcknowledgeType" type="jdftyp:eAcknowledgeTypeList_" default="Completed"/>
+				<xs:attribute name="RelatedCommands" type="jdftyp:NMTOKENS"/>
+				<xs:attribute name="TransactionID" type="jdftyp:string"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -1446,6 +1493,7 @@
 			<xs:extension base="jdf:Message">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element minOccurs="0" ref="jdf:Employee"/>
 					<xs:element ref="jdf:ResponseTypeObj" minOccurs="0"/>
 					<xs:element name="Notification" type="jdf:NotificationAudit" minOccurs="0"/>
 				</xs:sequence>
@@ -1470,8 +1518,9 @@
 			<xs:extension base="jdf:Message">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element minOccurs="0" ref="jdf:Employee"/>
 					<xs:element ref="jdf:CommandTypeObj" minOccurs="0"/>
-				      <xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
+					<xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
 					<xs:element name="Subscription" type="jdf:SubscriptionElement_m" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -1492,6 +1541,7 @@
 			<xs:extension base="jdf:Message">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:Employee" minOccurs="0"/>
 					<xs:element ref="jdf:ResponseTypeObj" minOccurs="0"/>
 					<xs:element name="Notification" type="jdf:NotificationAudit" minOccurs="0"/>
 				</xs:sequence>
@@ -1510,6 +1560,7 @@
 	<xs:complexType name="Signal" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="@ChannelMode" First="1.4"/>				
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Trigger" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -1518,12 +1569,14 @@
 			<xs:extension base="jdf:Message">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:Employee" minOccurs="0"/>
 					<xs:element ref="jdf:QueryTypeObj" minOccurs="0"/>
 					<xs:element ref="jdf:ResponseTypeObj" minOccurs="0"/>
 				      <xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
 					<xs:element name="Notification" type="jdf:NotificationAudit" minOccurs="0"/>
 					<xs:element name="Trigger" type="jdf:TriggerElement_m" minOccurs="0"/>
 				</xs:sequence>
+				<xs:attribute name="ChannelMode" type="jdftyp:eChannelMode_" default="FireAndForget"/>
 				<xs:attribute name="LastRepeat" type="jdftyp:boolean" default="false"/>
 				<xs:attribute name="refID" type="jdftyp:NMTOKEN" use="optional"/>
 			</xs:extension>
@@ -1548,8 +1601,9 @@
 			<xs:extension base="jdf:Message">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element minOccurs="0" ref="jdf:Employee"/>
 					<xs:element ref="jdf:QueryTypeObj" minOccurs="0"/>
-				      <xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
+					<xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
 					<xs:element name="Subscription" type="jdf:SubscriptionElement_m" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="AcknowledgeFormat" type="jdftyp:string" use="optional"/>
@@ -1601,9 +1655,11 @@
 	<xs:complexType name="SubscriptionElement_m" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="@ChannelMode" First="1.4"/>
 				<Version Path="@Format" First="1.2"/>
-				<Version Path="@Template" First="1.2"/>
 				<Version Path="@MinDelayTime" First="1.3"/>
+				<Version Path="@RetryPolicy" First="1.4"/>
+				<Version Path="@Template" First="1.2"/>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexContent mixed="false">
@@ -1612,11 +1668,13 @@
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:element name="ObservationTarget" type="jdf:Subscription_ObservationTarget" minOccurs="0"/>
 				</xs:sequence>
+				<xs:attribute name="ChannelMode" type="jdftyp:eChannelMode_" default="FireAndForget"/>
 				<xs:attribute name="Format" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="MinDelayTime" type="jdftyp:duration" use="optional"/>
-				<xs:attribute name="Template" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="RepeatStep" type="jdftyp:Integer" use="optional"/>
 				<xs:attribute name="RepeatTime" type="jdftyp:double" use="optional"/>
+				<xs:attribute name="RetryPolicy" type="jdftyp:eRetryPolicy_"/>
+				<xs:attribute name="Template" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="URL" type="jdftyp:URL" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -1976,13 +2034,16 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<!--Generic-->
-				<Version Path="@rRefs" Last="1.1"/>
+				<Version Path="@Author" Last="1.3"/>
 				<Version Path="@AgentName" First="1.2"/>
 				<Version Path="@AgentVersion" First="1.2"/>
 				<Version Path="@SpawnID" First="1.1"/>
 				<Version Path="@ID" First="1.2"/>
+				<Version Path="@QueueEntryID" First="1.4"/>
 				<Version Path="@refID" First="1.2"/>
+				<Version Path="@rRefs" Last="1.1"/>
 				<Version Path="Deleted" First="1.2"/>
+				<Version Path="Employee" First="1.4"/>
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>

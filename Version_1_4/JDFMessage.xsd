@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_3_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.3-002">
 	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_3_Types" schemaLocation="JDFTypes.xsd"/>
-      <!--	This is the schema representation of 5.5.1 pure events  -->
+	<xs:include schemaLocation="JDFCore.xsd"/>
+	<!--	This is the schema representation of 5.5.1 pure events  -->
 	<xs:complexType name="SignalNotification" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
@@ -76,6 +77,8 @@
 	<xs:element name="NotificationFilter" type="jdf:NotificationFilter_m" substitutionGroup="jdf:QueryTypeObj">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="@DeviceID" Last="1.3"/>
+				<Version Path="@MilestoneTypes" First="1.4"/>
 				<Version Path="@QueueEntryID" First="1.2"/>
 				<Version Path="@SignalTypes" First="1.2"/>
 				<Version Path="Part" First="1.2"/>
@@ -153,13 +156,31 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="ControllerFilter" type="jdf:ControllerFilter_m" substitutionGroup="jdf:QueryTypeObj">
+		<xs:annotation>
+			<xs:appinfo>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
 	<xs:element name="JDFController" type="jdf:JDFController_m" substitutionGroup="jdf:ResponseTypeObj">
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="@ControllerID" First="1.2"/>
+				<Version Path="@URLType" First="1.4"/>
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>
+	<xs:complexType name="ControllerFilter_m" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:QueryTypeObj_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="ControllerID" type="jdftyp:string"/>
+				<xs:attribute name="URLTypes" type="jdftyp:eURLTypes_"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
 	<xs:complexType name="JDFController_m" mixed="false">
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:ResponseTypeObj_">
@@ -168,6 +189,7 @@
 				</xs:sequence>
 				<xs:attribute name="ControllerID" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="URL" type="jdftyp:URL" use="required"/>
+				<xs:attribute name="URLType" type="jdftyp:eURLType_"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -399,6 +421,7 @@
 	<xs:element name="KnownMsgQuParams" type="jdf:KnownMsgQuParams_m" substitutionGroup="jdf:QueryTypeObj">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="@ChannelMode" First="1.4"/>
 				<Version Path="@Exact" First="1.1"/>
 				<Version Path="@ListRegistrations" First="1.3"/>
 			</xs:appinfo>
@@ -408,15 +431,22 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="@Acknowledge" First="1.1"/>
+				<Version Path="@ChannelMode" First="1.4"/>
+				<Version Path="@GenericAttributes" First="1.3"/>
+				<Version Path="@JMFRole" First="1.3"/>
+				<Version Path="@Registration" First="1.3"/>
+				<Version Path="@URLSchemes" First="1.1"/>
 				<Version Path="DevCaps" First="1.1"/>
 				<Version Path="ActionPool" First="1.3"/>
 				<Version Path="DevCapPool" First="1.3"/>
 				<Version Path="ModulePool" First="1.3"/>
+				<Version Path="State" First="1.4"/>
 				<Version Path="TestPool" First="1.3"/>
 				<Constraint Path="DevCaps" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="ActionPool" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="DevCapPool" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ModulePool" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="State" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="TestPool" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -427,6 +457,7 @@
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 				</xs:sequence>
+				<xs:attribute name="ChannelMode" type="jdftyp:eChannelMode_"/>
 				<xs:attribute name="Exact" type="jdftyp:boolean" default="false"/>
 				<xs:attribute name="ListCommands" type="jdftyp:boolean" default="true"/>
 				<xs:attribute name="ListQueries" type="jdftyp:boolean" default="true"/>
@@ -445,9 +476,11 @@
 					<xs:element name="DevCapPool" type="jdf:DevCapPool" minOccurs="0"/>
 					<xs:element name="DevCaps" type="jdf:DeviceCap_DevCaps_lr" minOccurs="0"/>
 					<xs:element name="ModulePool" type="jdf:ModulePool" minOccurs="0"/>
+					<xs:element ref="jdf:AbstractStates" minOccurs="0"/>
 					<xs:element name="TestPool" type="jdf:TestPool" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="Acknowledge" type="jdftyp:boolean" default="false"/>
+				<xs:attribute name="ChannelMode" type="jdftyp:eChannelMode_"/>
 				<xs:attribute name="Command" type="jdftyp:boolean" default="false"/>
 				<xs:attribute name="GenericAttributes" type="jdftyp:NMTOKENS" use="optional"/>
 				<xs:attribute name="JMFRole" type="jdftyp:eJMFRole_" use="optional"/>
@@ -457,6 +490,107 @@
 				<xs:attribute name="Signal" type="jdftyp:boolean" default="false"/>
 				<xs:attribute name="Type" type="jdftyp:NMTOKEN" use="required"/>
 				<xs:attribute name="URLSchemes" type="jdftyp:NMTOKENS"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="QueryKnownSubscriptions" mixed="false">
+		<xs:annotation>
+			<xs:appinfo>
+				<Constraint Path="SubscriptionFilter" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="Subscription" minOccurs="0" maxOccurs="1"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:JMFAbstractQuery_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:SubscriptionFilter" minOccurs="0"/>
+					<xs:element name="Subscription" type="jdf:SubscriptionElement_m" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ResponseKnownSubscriptions" mixed="false">
+		<xs:annotation>
+			<xs:appinfo>
+				<Constraint Path="SubscriptionInfo" minOccurs="0" maxOccurs="unbounded"/>
+				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:JMFAbstractResponse_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:SubscriptionInfo" minOccurs="0"/>
+					<xs:element name="Notification" type="jdf:NotificationAudit" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SignalKnownSubscriptions" mixed="false">
+		<xs:annotation>
+			<xs:appinfo>
+				<Constraint Path="SubscriptionInfo" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="Trigger" minOccurs="0" maxOccurs="1"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:JMFAbstractSignal_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:SubscriptionInfo" minOccurs="0"/>
+					<xs:element name="Notification" type="jdf:NotificationAudit" minOccurs="0"/>
+					<xs:element name="Trigger" type="jdf:TriggerElement_m" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SubscriptionFilter" type="jdf:SubscriptionFilter_m" substitutionGroup="jdf:QueryTypeObj">
+		<xs:annotation>
+			<xs:appinfo/>			
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="SubscriptionInfo" type="jdf:SubscriptionInfo_m" substitutionGroup="jdf:ResponseTypeObj">
+		<xs:annotation>
+			<xs:appinfo>
+				<Constraint Path="Subscription" minOccurs="1" maxOccurs="1"/>				
+			</xs:appinfo>			
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="SubscriptionFilter_m" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:QueryTypeObj_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element name="Part" type="jdf:Part" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="ChannelID" type="jdftyp:NMTOKEN"/>
+				<xs:attribute name="DeviceID" type="jdftyp:string"/>
+				<xs:attribute name="Families" type="jdftyp:NMTOKENS"/>
+				<xs:attribute name="JobID" type="jdftyp:string"/>
+				<xs:attribute name="JobPartID" type="jdftyp:string"/>
+				<xs:attribute name="MessageTypes" type="jdftyp:NMTOKENS"/>
+				<xs:attribute name="QueueEntryID" type="jdftyp:string"/>
+				<xs:attribute name="URL" type="jdftyp:URL"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="SubscriptionInfo_m" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ResponseTypeObj_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element name="Part" type="jdf:Part" minOccurs="0"/>
+					<xs:element name="Subscription" type="jdf:SubscriptionElement_m" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="ChannelID" type="jdftyp:NMTOKEN"/>
+				<xs:attribute name="DeviceID" type="jdftyp:string"/>
+				<xs:attribute name="Families" type="jdftyp:NMTOKEN"/>
+				<xs:attribute name="JobID" type="jdftyp:string"/>
+				<xs:attribute name="JobPartID" type="jdftyp:string"/>
+				<xs:attribute name="MessageTypes" type="jdftyp:NMTOKEN"/>
+				<xs:attribute name="QueueEntryID" type="jdftyp:string"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
