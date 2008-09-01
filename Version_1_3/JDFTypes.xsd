@@ -2334,13 +2334,6 @@
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ePlateType_">
-		<xs:restriction base="jdftyp:EnumerationBaseType">
-			<xs:enumeration value="Content"/>
-			<xs:enumeration value="Dummy"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="ePlateType2_">
-		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Exposed"/>
 			<xs:enumeration value="Dummy"/>
 		</xs:restriction>

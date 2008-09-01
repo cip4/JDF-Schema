@@ -5811,7 +5811,7 @@
 	<xs:attributeGroup name="ExposedMediaAttribs_c">
 		<xs:attribute name="ColorType" type="jdftyp:eExposedMediaColorType" use="optional"/>
 		<xs:attribute name="PageListIndex" type="jdftyp:IntegerRangeList" use="optional"/>
-		<xs:attribute name="PlateType" type="jdftyp:ePlateType2_" use="optional"/>
+		<xs:attribute name="PlateType" type="jdftyp:ePlateType_" use="optional"/>
 		<xs:attribute name="ProofName" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="ProofQuality" type="jdftyp:eExposedMediaProofQuality" use="optional"/>
 		<xs:attribute name="ProofType" type="jdftyp:eExposedMediaProofType" use="optional"/>
