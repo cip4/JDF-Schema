@@ -4049,7 +4049,7 @@
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="PlatePosition" type="jdftyp:XYPairRangeList" use="required"/>
-				<xs:attribute name="PlateType" type="jdftyp:ePlateType_" use="optional" default="Content"/>
+				<xs:attribute name="PlateType" type="jdftyp:ePlateType_" use="optional" default="Exposed"/>
 				<xs:attribute name="PlateUsage" type="jdftyp:ePlateUsage_" default="Original"/>
 				<xs:attribute name="DeviceModuleIndex" type="jdftyp:Integer" use="required"/>
 			</xs:extension>
