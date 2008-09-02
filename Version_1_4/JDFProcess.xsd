@@ -175,7 +175,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<!-- ---------------------------------------------------------- -->
+	<!-- =========================================== -->
 	<!-- Section: General Processes -->
 	<xs:complexType name="Approval" mixed="false">
 		<xs:annotation>
@@ -375,7 +375,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<!-- ---------------------------------------------------------- -->
+	<!-- ==================================================== -->
 	<!-- Section: Structural Design Processes -->
 	<xs:complexType name="DieDesign" mixed="false">
 		<xs:annotation>
@@ -492,7 +492,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<!-- ---------------------------------------------------------- -->
+	<!-- ======================================================================= -->
 	<!-- Section: Prepress Processes -->
 	<xs:complexType name="AssetListCreation" mixed="false">
 		<xs:annotation>
@@ -1648,7 +1648,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<!-- ---------------------------------------------------------- -->
+	<!-- ========================================================== -->
 	<!-- Section: Press Processes -->
 	<xs:complexType name="ConventionalPrinting" mixed="false">
 		<xs:annotation>
@@ -1847,7 +1847,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<!-- ---------------------------------------------------------- -->
+	<!-- ================================================================ -->
 	<!-- Section: Postpress Processes -->
 	<xs:complexType name="AdhesiveBinding" mixed="false">
 		<xs:annotation>
