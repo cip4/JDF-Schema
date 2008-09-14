@@ -2035,6 +2035,15 @@
 			<xs:enumeration value="SubDocIndex9"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="eMarkContext_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Sheet"/>
+			<xs:enumeration value="BinderySignature"/>
+			<xs:enumeration value="Cell"/>
+			<xs:enumeration value="CellPair"/>
+		</xs:restriction>
+	</xs:simpleType>
+	
 	<xs:simpleType name="eMappingSelection_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="UsePDLValues"/>
@@ -2075,6 +2084,7 @@
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Color"/>
 			<xs:enumeration value="PaperPath"/>
+			<xs:enumeration value="Tile"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eMask_">
@@ -2136,10 +2146,12 @@
 			<xs:enumeration value="GravureCylinder"/>
 			<xs:enumeration value="ImagingCylinder"/>
 			<xs:enumeration value="LaminatingFoil"/>
+			<xs:enumeration value="MountingTape"/>
 			<xs:enumeration value="Other"/>
 			<xs:enumeration value="Paper"/>
 			<xs:enumeration value="Plate"/>
 			<xs:enumeration value="SelfAdhesive"/>
+			<xs:enumeration value="Sleeve"/>
 			<xs:enumeration value="ShrinkFoil"/>
 			<xs:enumeration value="Transparency"/>
 			<xs:enumeration value="Unknown"/>
@@ -2459,6 +2471,11 @@
 	</xs:simpleType>
 	<xs:simpleType name="ePlateTechnology_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="FlexoAnalogSolvent"/>
+			<xs:enumeration value="FlexoAnalogThermal"/>
+			<xs:enumeration value="FlexoDigitalSolvent"/>
+			<xs:enumeration value="FlexoDigitalThermal"/>
+			<xs:enumeration value="FlexoDirectEngraving"/>
 			<xs:enumeration value="InkJet"/>
 			<xs:enumeration value="Thermal"/>
 			<xs:enumeration value="UV"/>
@@ -2603,6 +2620,13 @@
 	</xs:simpleType>
 	<xs:simpleType name="ePresentValueList">
 		<xs:list itemType="jdftyp:boolean"/>
+	</xs:simpleType>
+	<xs:simpleType name="ePreStackMethod_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="All"/>
+			<xs:enumeration value="First"/>
+			<xs:enumeration value="None"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ePreviewType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
@@ -2986,6 +3010,14 @@
 			<xs:enumeration value="Right"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="eSheetSides_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Front"/>
+			<xs:enumeration value="Back"/>
+			<xs:enumeration value="FrontBack"/>
+			<xs:enumeration value="BackFront"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="eSheetType">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="AccountingSheet"/>
@@ -3142,6 +3174,13 @@
 			<xs:enumeration value="Eyelet"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="eStitchOrigin_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="TrimBoxCenter"/>
+			<xs:enumeration value="TrimBoxJogSide"/>
+			<xs:enumeration value="UntrimmedJogSide"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="eStrappingType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Single"/>
@@ -3196,6 +3235,14 @@
 			<xs:enumeration value="Standard"/>
 			<xs:enumeration value="Late"/>
 			<xs:enumeration value="Force"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eTabEdge_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Left"/>
+			<xs:enumeration value="Rigth"/>
+			<xs:enumeration value="Top"/>
+			<xs:enumeration value="Bottom"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eThreadMaterial_">
@@ -3315,6 +3362,19 @@
 			<xs:enumeration value="Display"/>
 			<xs:enumeration value="Hide"/>
 			<xs:enumeration value="Dependant"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eVarnishArea_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Full"/>
+			<xs:enumeration value="Spot"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eVarnishMethod_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Blanket"/>
+			<xs:enumeration value="Plate"/>
+			<xs:enumeration value="Method"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eValueUsage_">

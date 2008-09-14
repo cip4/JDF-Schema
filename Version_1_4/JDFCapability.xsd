@@ -928,6 +928,8 @@
 	<xs:complexType name="BasicPreflightTest" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="@Classes" First="1.4"/>
+				<Version Path="@ClassName" First="1.4"/>
 				<Constraint Path="PreflightArgument" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="PreflightArgument/BoxArgument" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="PreflightArgument/BoxToBoxDifference" minOccurs="0" maxOccurs="1"/>
@@ -939,11 +941,13 @@
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:element name="PreflightArgument" type="jdf:PreflightArgument" minOccurs="0"/>
 				</xs:sequence>
+				<xs:attribute name="Classes" type="jdftyp:NMTOKENS" use="optional"/>
+				<xs:attribute name="ClassName" type="jdftyp:NMTOKEN" use="optional"/>
 				<xs:attribute name="DevNS" type="jdftyp:URI" default="http://www.CIP4.org/JDFSchema_1_1"/>
-				<xs:attribute name="ListType" type="jdftyp:eListType_" use="optional"/>
+				<xs:attribute name="ListType" type="jdftyp:eListType_" default="SingleValue"/>
 				<xs:attribute name="MaxOccurs" type="jdftyp:Integer" default="1"/>
 				<xs:attribute name="MinOccurs" type="jdftyp:Integer" default="1"/>
-				<xs:attribute name="Name" type="jdftyp:NMTOKEN" use="optional"/>
+				<xs:attribute name="Name" type="jdftyp:NMTOKEN" use="required"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

@@ -10251,6 +10251,7 @@
 	<xs:element name="MediaRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
 	<xs:element name="MediaLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="MediaAttribs_c">
+		<xs:attribute name="BackCoatingDetail" type="jdftyp:NMTOKEN" use="optional"/>
 		<xs:attribute name="BackCoatings" type="jdftyp:eCoatings_" use="optional"/>
 		<xs:attribute name="BackGlossValue" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="Brightness" type="jdftyp:double" use="optional"/>
@@ -10261,6 +10262,7 @@
 		<xs:attribute name="Dimension" type="jdftyp:XYPair" use="optional"/>
 		<xs:attribute name="Flute" type="jdftyp:NMTOKEN" use="optional"/>
 		<xs:attribute name="FluteDirection" type="jdftyp:eDirection_" use="optional"/>
+		<xs:attribute name="FrontCoatingDetail" type="jdftyp:NMTOKEN" use="optional"/>
 		<xs:attribute name="FrontCoatings" type="jdftyp:eCoatings_" use="optional"/>
 		<xs:attribute name="FrontGlossValue" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="Grade" type="jdftyp:Integer" use="optional"/>
@@ -10271,6 +10273,7 @@
 		<xs:attribute name="LabColorValue" type="jdftyp:LabColor" use="optional"/>
 		<xs:attribute name="MediaColorName" type="jdftyp:NamedColor" use="optional"/>
 		<xs:attribute name="MediaColorNameDetails" type="jdftyp:string" use="optional"/>
+		<xs:attribute name="MediaQuality" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="MediaSetCount" type="jdftyp:Integer" use="optional"/>
 		<xs:attribute name="MediaType" type="jdftyp:eMediaType_" use="optional"/>
 		<xs:attribute name="MediaTypeDetails" type="jdftyp:NMTOKEN" use="optional"/>
@@ -10280,10 +10283,13 @@
 		<xs:attribute name="OutsideGain" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="PlateTechnology" type="jdftyp:ePlateTechnology_" use="optional"/>
 		<xs:attribute name="Polarity" type="jdftyp:ePolarity_" use="optional"/>
+		<xs:attribute name="PrintingTechnology" type="jdftyp:NMTOKEN" use="optional"/>
 		<xs:attribute name="Recycled" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="RecycledPercentage" type="jdftyp:double" use="optional"/>
+		<xs:attribute name="ReliefThickness" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="RollDiameter" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="ShrinkIndex" type="jdftyp:XYPair" use="optional"/>
+		<xs:attribute name="SleeveInterlock" type="jdftyp:NMTOKEN" use="optional"/>
 		<xs:attribute name="StockType" type="jdftyp:NMTOKEN" use="optional"/>
 		<xs:attribute name="Texture" type="jdftyp:NMTOKEN" use="optional"/>
 		<xs:attribute name="Thickness" type="jdftyp:double" use="optional"/>
@@ -10306,6 +10312,7 @@
 	<xs:complexType name="Media_r" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="@BackCoatingDetail" First="1.4"/>
 				<Version Path="@BackGlossValue" First="1.2"/>
 				<Version Path="@CIETint" First="1.2"/>
 				<Version Path="@CIEWhiteness" First="1.2"/>
@@ -10313,6 +10320,7 @@
 				<Version Path="@CoreWeight" First="1.3"/>
 				<Version Path="@Flute" First="1.3"/>
 				<Version Path="@FluteDirection" First="1.3"/>
+				<Version Path="@FrontCoatingDetail" First="1.4"/>
 				<Version Path="@FrontGlossValue" First="1.2"/>
 				<Version Path="@GrainDirection" First="1.1"/>
 				<Version Path="@HoleCount" Last="1.0"/>
@@ -10320,13 +10328,17 @@
 				<Version Path="@InsideLoss" First="1.3"/>
 				<Version Path="@LabColorValue" First="1.2"/>
 				<Version Path="@MediaColorNameDetails" First="1.2"/>
+				<Version Path="@MediaQuality" First="1.4"/>
 				<Version Path="@OpacityLevel" First="1.2"/>
 				<Version Path="@OuterCoreDiameter" First="1.3"/>
 				<Version Path="@OutsideGain" First="1.3"/>
 				<Version Path="@PlateTechnology" First="1.3"/>
+				<Version Path="@PrintingTechnology" First="1.4"/>
 				<Version Path="@Recycled" Last="1.1"/>
 				<Version Path="@RecycledPercentage" First="1.2"/>
+				<Version Path="@ReliefThickness" First="1.4"/>
 				<Version Path="@ShrinkIndex" First="1.1"/>
+				<Version Path="@SleeveInterlock" First="1.4"/>				
 				<Version Path="@StockType" First="1.1"/>
 				<Version Path="@Texture" First="1.1"/>
 				<Version Path="@UserMediaType" Last="1.0"/>
@@ -10338,6 +10350,7 @@
 				<Version Path="HoleList" First="1.2"/>
 				<Version Path="MediaLayers" First="1.3"/>
 				<Version Path="MediaLayersRef" First="1.3"/>
+				<Version Path="TableDimensions" First="1.4"/>
 				<Constraint Path="Color" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ColorRef" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ColorMeasurementConditions" minOccurs="0" maxOccurs="1"/>
@@ -10345,6 +10358,7 @@
 				<Constraint Path="HoleList" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="MediaLayers" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="MediaLayersRef" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="TableDimensions" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexContent mixed="false">
@@ -10361,6 +10375,7 @@
 					<xs:element name="MediaUpdate" type="jdf:Media_re" minOccurs="0"/>
 					<xs:element name="Media" type="jdf:Media_rp" minOccurs="0"/>
 					<xs:element name="HoleList" type="jdf:HoleList_re" minOccurs="0"/>
+					<xs:element name="TabDimensions" type="jdf:TabDimensions_lr" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attributeGroup ref="jdf:MediaAttribs_r"/>
 			</xs:extension>
@@ -10379,6 +10394,7 @@
 					<xs:element ref="jdf:ColorMeasurementConditionsRef" minOccurs="0"/>
 					<xs:element name="MediaLayers" type="jdf:Media_MediaLayers_lr" minOccurs="0"/>
 					<xs:element name="HoleList" type="jdf:HoleList_re" minOccurs="0"/>
+					<xs:element name="TabDimensions" type="jdf:TabDimensions_lr" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attributeGroup ref="jdf:MediaAttribs_r"/>
 			</xs:extension>
@@ -10399,6 +10415,7 @@
 						<xs:element name="MediaLayers" type="jdf:Media_MediaLayers_lr" minOccurs="0"/>
 						<xs:element name="Media" type="jdf:Media_rp" minOccurs="0"/>
 						<xs:element name="HoleList" type="jdf:HoleList_re" minOccurs="0"/>
+						<xs:element name="TabDimensions" type="jdf:TabDimensions_lr" minOccurs="0"/>
 					</xs:sequence>
 					<xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
 				</xs:choice>
@@ -10425,6 +10442,26 @@
 					<xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
 					<xs:element ref="jdf:MediaRef" minOccurs="0"/>
 				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="TabDimensions_lr" mixed="false">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="." First="1.3"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:BaseElement_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="TabEdge" type="jdftyp:eTabEdge_" use="optional"/>
+				<xs:attribute name="TabExtensionDistance" type="jdftyp:double" use="optional"/>
+				<xs:attribute name="TabOffset" type="jdftyp:double" use="optional"/>
+				<xs:attribute name="TabsPerBank" type="jdftyp:Integer" use="optional"/>
+				<xs:attribute name="TabSetCollationOrder" type="jdftyp:NMTOKEN" use="optional"/>
+				<xs:attribute name="TabWidth" type="jdftyp:double" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -10598,8 +10635,9 @@
 				<Version Path="@NaturalLang" First="1.1"/>
 				<Version Path="@NodeStatus" First="1.3"/>
 				<Version Path="@NodeStatusDetails" First="1.3"/>
-				<Version Path="MergeTarget" Last="1.0"/>
+				<Version Path="@MergeTarget" Last="1.0"/>
 				<Version Path="@rRefs" Last="1.1"/>
+				<Version Path="@WorkStepID" First="1.4"/>
 				<Version Path="MISDetails" First="1.2"/>
 				<Constraint Path="BusniessInfo" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Employee" minOccurs="0" maxOccurs="1"/>
@@ -10630,6 +10668,7 @@
 		<xs:attribute name="Start" type="jdftyp:dateTime" use="optional"/>
 		<xs:attribute name="TargetRoute" type="jdftyp:URL" use="optional"/>
 		<xs:attribute name="TotalDuration" type="jdftyp:duration" use="optional"/>
+		<xs:attribute name="WorkStepID" type="jdftyp:string" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="NodeInfoAttribs_u">
 		<xs:attributeGroup ref="jdf:NodeInfoAttribs_c"/>
@@ -10799,6 +10838,7 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="@AntiAliasing" First="1.2"/>
+				<Version Path="@ObjectTags" First="1.4"/>
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>
@@ -10806,6 +10846,7 @@
 	<xs:element name="ObjectResolutionLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="ObjectResolutionAttribs_c">
 		<xs:attribute name="AntiAliasing" type="jdftyp:NMTOKEN" use="optional"/>
+		<xs:attribute name="ObjectTags" type="jdftyp:NMTOKENS" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="ObjectResolutionAttribs_u">
 		<xs:attributeGroup ref="jdf:ObjectResolutionAttribs_c"/>
@@ -11007,6 +11048,60 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="PageAssignParams" type="jdf:PageAssignParams_r" substitutionGroup="jdf:Resource">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="." First="1.4"/>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="PageAssignParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+	<xs:element name="PageAssignParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+	<xs:attributeGroup name="PageAssignParamsAttribs_c">
+	</xs:attributeGroup>
+	<xs:attributeGroup name="PageAssignParamsAttribs_u">
+	</xs:attributeGroup>
+	<xs:attributeGroup name="PageAssignParamsAttribs_r">
+	</xs:attributeGroup>
+	<xs:complexType name="PageAssignParams_r" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ParameterResource">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+					<xs:element name="PageAssignParamsUpdate" type="jdf:PageAssignParams_re" minOccurs="0"/>
+					<xs:element name="PageAssignParams" type="jdf:PageAssignParams_rp" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="jdf:PageAssignParamsAttribs_r"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PageAssignParams_re" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ParameterResourceElement">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="jdf:PageAssignParamsAttribs_r"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="PageAssignParams_rp" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ParameterResourceLeaf">
+				<xs:choice>
+					<xs:sequence minOccurs="0" maxOccurs="unbounded">
+						<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+						<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+						<xs:element name="PageAssignParams" type="jdf:PageAssignParams_rp" minOccurs="0"/>
+					</xs:sequence>
+					<xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+				</xs:choice>
+				<xs:attributeGroup ref="jdf:PageAssignParamsAttribs_u"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
 	<xs:element name="PageList" type="jdf:PageList_r" substitutionGroup="jdf:Resource"/>
 	<xs:element name="PageListRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
 	<xs:element name="PageListLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
@@ -11144,6 +11239,7 @@
 				<Version Path="@AssemblyID" Last="1.2"/>
 				<Version Path="@AssemblyIDs" First="1.3"/>
 				<Version Path="@PageFormat" First="1.3"/>
+				<Version Path="@PageIndex" First="1.4"/>
 				<Version Path="@PageStatus" First="1.3"/>
 				<Version Path="PageElement" First="1.3"/>
 				<Constraint Path="ElementColorParams" minOccurs="0" maxOccurs="1"/>
@@ -11180,6 +11276,7 @@
 				<xs:attribute name="IsTrapped" type="jdftyp:boolean" use="optional"/>
 				<xs:attribute name="JobID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="PageFormat" type="jdftyp:NMTOKEN" use="optional"/>
+				<xs:attribute name="PageIndex" type="jdftyp:IntegerRangeList" use="optional"/>
 				<xs:attribute name="PageLabel" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="PageLabelPrefix" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="PageLabelSuffix" type="jdftyp:string" use="optional"/>
@@ -11196,6 +11293,8 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.3"/>
+				<Version Path="@ContentDataRefs" First="1.4"/>
+				<Version Path="@ContentListIndex" Last="1.3"/>				
 				<Constraint Path="PageElement" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -11205,6 +11304,7 @@
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:element name="PageElement" type="jdf:PageList_PageData_PageElement_lr" minOccurs="0"/>
 				</xs:sequence>
+				<xs:attribute name="ContentDataRefs" type="jdftyp:IDREFS" use="optional"/>
 				<xs:attribute name="ContentListIndex" type="jdftyp:Integer" use="optional"/>
 				<xs:attribute name="ElementPages" type="jdftyp:IntegerRangeList" use="optional"/>
 				<xs:attribute name="ContentType" type="jdftyp:NMTOKEN" use="optional"/>
@@ -11216,15 +11316,23 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.1"/>
+				<Version Path="@LayerAmount" First="1.4"/>
+				<Version Path="@Overhang" First="1.4"/>
+				<Version Path="@OverhangOffset" First="1.4"/>
+				<Version Path="Bundle" First="1.4"/>
+				<Version Path="BundleRef" First="1.4"/>
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="PalletizingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
 	<xs:element name="PalletizingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="PalletizingParamsAttribs_c">
-		<xs:attribute name="Pattern" type="jdftyp:string" use="optional"/>
+		<xs:attribute name="LayerAmount" type="jdftyp:IntegerList" use="optional"/>
 		<xs:attribute name="MaxHeight" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="MaxWeight" type="jdftyp:double" use="optional"/>
+		<xs:attribute name="Overhang" type="jdftyp:XYPair" use="optional"/>
+		<xs:attribute name="OverhangOffset" type="jdftyp:XYPair" use="optional"/>
+		<xs:attribute name="Pattern" type="jdftyp:string" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="PalletizingParamsAttribs_u">
 		<xs:attributeGroup ref="jdf:PalletizingParamsAttribs_c"/>
@@ -11238,6 +11346,8 @@
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+					<xs:element name="Bundle" type="jdf:Bundle_re" minOccurs="0"/>
+					<xs:element ref="jdf:BundleRef" minOccurs="0"/>
 					<xs:element name="PalletizingParamsUpdate" type="jdf:PalletizingParams_re" minOccurs="0"/>
 					<xs:element name="PalletizingParams" type="jdf:PalletizingParams_rp" minOccurs="0"/>
 				</xs:sequence>
@@ -11251,6 +11361,8 @@
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+					<xs:element name="Bundle" type="jdf:Bundle_re" minOccurs="0"/>
+					<xs:element ref="jdf:BundleRef" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attributeGroup ref="jdf:PalletizingParamsAttribs_r"/>
 			</xs:extension>
@@ -11263,6 +11375,8 @@
 					<xs:sequence minOccurs="0" maxOccurs="unbounded">
 						<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 						<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+						<xs:element name="Bundle" type="jdf:Bundle_re" minOccurs="0"/>
+						<xs:element ref="jdf:BundleRef" minOccurs="0"/>
 						<xs:element name="PalletizingParams" type="jdf:PalletizingParams_rp" minOccurs="0"/>
 					</xs:sequence>
 					<xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
@@ -11685,6 +11799,7 @@
 	<xs:element name="Person" type="jdf:Person_r" substitutionGroup="jdf:Resource">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="@Languages" First="1.4"/>
 				<Version Path="Address" First="1.2"/>
 				<Version Path="AddressRef" First="1.2"/>
 				<Constraint Path="Address" minOccurs="0" maxOccurs="1"/>
@@ -11701,6 +11816,7 @@
 		<xs:attribute name="FamilyName" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="FirstName" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="JobTitle" type="jdftyp:string" use="optional"/>
+		<xs:attribute name="Languages" type="jdftyp:languages" use="optional"/>
 		<xs:attribute name="NamePrefix" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="NameSuffix" type="jdftyp:string" use="optional"/>
 	</xs:attributeGroup>
@@ -11813,6 +11929,7 @@
 	<xs:element name="PlasticCombBindingParams" type="jdf:PlasticCombBindingParams_r" substitutionGroup="jdf:Resource">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="@ColorDetails" First="1.4"/>
 				<Version Path="@Type" Last="1.1"/>
 				<Constraint Path="HoleMakingParams" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="HoleMakingParamsRef" minOccurs="0" maxOccurs="1"/>
@@ -11824,6 +11941,7 @@
 	<xs:attributeGroup name="PlasticCombBindingParamsAttribs_c">
 		<xs:attribute name="Brand" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="Color" type="jdftyp:NamedColor" use="optional"/>
+		<xs:attribute name="ColorDetails" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="Diameter" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="Thickness" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="Type" type="jdftyp:eHoleType_" use="optional"/>
@@ -12650,6 +12768,7 @@
 		<xs:attribute name="FontSubset" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="FontType" type="jdftyp:eFontType_" default="Other"/>
 		<xs:attribute name="FontVendor" type="jdftyp:string" use="optional"/>
+		<xs:attribute name="IsDoubleByteFont" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="IsFontScreenOnly" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="PSFontName" type="jdftyp:NMTOKEN" use="optional"/>
 	</xs:attributeGroup>
@@ -12700,7 +12819,9 @@
 	<xs:attributeGroup name="PagesProperties">
 		<xs:attribute name="BlankPage" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="BlendColorSpace" type="jdftyp:eAlternateColorSpace_" use="optional"/>
+		<xs:attribute name="PageHasOptionalContent" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="PageHasUnknownObjects" type="jdftyp:boolean" use="optional"/>
+		<xs:attribute name="PageScalingFactor" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="ReversePageNumber" type="jdftyp:Integer" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="PDLObjectProperties">
@@ -12782,7 +12903,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-<!-- GCM: Removed for 1.4, Preview becomes Generic to all elements 
+<!-- GCM: Removed for 1.4, Preview becomes Generic to all elements only Preview_r is required
   	<xs:element name="Preview" type="jdf:Preview_r" substitutionGroup="jdf:Resource">
 		<xs:annotation>
 			<xs:appinfo>
@@ -12800,6 +12921,7 @@
 		<xs:attribute name="Compensation" type="jdftyp:eCompensation_" use="optional"/>
 		<xs:attribute name="CTM" type="jdftyp:matrix" use="optional"/>
 		<xs:attribute name="Directory" type="jdftyp:URL" use="optional"/>
+		<xs:attribute name="MimeTypeDetails" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="PreviewType" type="jdftyp:ePreviewType_" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="PreviewAttribs_u">
@@ -12815,6 +12937,16 @@
 		<xs:attribute name="URL" type="jdftyp:URL" use="required"/>
 	</xs:attributeGroup>
 	<xs:complexType name="Preview_r" mixed="false">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="@CTM" First="1.1"/>
+				<Version Path="@Directory" First="1.1"/>
+				<Version Path="@MimeTypeDetails" First="1.4"/>
+				<Version Path="@PreviewFileType" First="1.2"/>
+				<Version Path="@PreviewType" Last="1.1"/>
+				<Version Path="@PreviewUsage" First="1.2"/>
+			</xs:appinfo>
+		</xs:annotation>
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:ParameterResource">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -13802,7 +13934,7 @@
 	<xs:element name="RegisterMarkRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
 	<xs:element name="RegisterMarkLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="RegisterMarkAttribs_c">
-		<xs:attribute name="MarkType" type="jdftyp:NMTOKEN" use="optional"/>
+		<xs:attribute name="MarkType" type="jdftyp:NMTOKENS" use="optional"/>
 		<xs:attribute name="MarkUsage" type="jdftyp:eMarkUsage_" use="optional"/>
 		<xs:attribute name="Rotation" type="jdftyp:double" use="optional"/>
 	</xs:attributeGroup>
@@ -13860,25 +13992,25 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.1"/>
+				<Version Path="RibbonColorDetails" First="1.4"/>				
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="RegisterRibbonRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
 	<xs:element name="RegisterRibbonLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="RegisterRibbonAttribs_c">
+		<xs:attribute name="LengthOverall" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="Material" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="RibbonColor" type="jdftyp:NamedColor" use="optional"/>
+		<xs:attribute name="RibbonColorDetails" type="jdftyp:string" use="optional"/>		
 		<xs:attribute name="RibbonEnd" type="jdftyp:NMTOKEN" use="optional"/>
+		<xs:attribute name="VisibleLength" type="jdftyp:double" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="RegisterRibbonAttribs_u">
 		<xs:attributeGroup ref="jdf:RegisterRibbonAttribs_c"/>
-		<xs:attribute name="LengthOverall" type="jdftyp:double" use="optional"/>
-		<xs:attribute name="VisibleLength" type="jdftyp:double" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="RegisterRibbonAttribs_r">
 		<xs:attributeGroup ref="jdf:RegisterRibbonAttribs_c"/>
-		<xs:attribute name="LengthOverall" type="jdftyp:double" use="required"/>
-		<xs:attribute name="VisibleLength" type="jdftyp:double" use="required"/>
 	</xs:attributeGroup>
 	<xs:complexType name="RegisterRibbon_r" mixed="false">
 		<xs:complexContent mixed="false">
@@ -14094,7 +14226,9 @@
 	<xs:element name="RingBindingParams" type="jdf:RingBindingParams_r" substitutionGroup="jdf:Resource">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="@BinderColorDetails" First="1.4"/>
 				<Version Path="@RingSystem" Last="1.0"/>
+				<Version Path="@SpineColorDetails" First="1.4"/>
 				<Version Path="HoleMakingParams" First="1.2"/>
 				<Version Path="HoleMakingParamsRef" First="1.2"/>
 				<Constraint Path="HoleMakingParams" minOccurs="0" maxOccurs="1"/>
@@ -14106,6 +14240,7 @@
 	<xs:element name="RingBindingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="RingBindingParamsAttribs_c">
 		<xs:attribute name="BinderColor" type="jdftyp:NamedColor" use="optional"/>
+		<xs:attribute name="BinderColorDetails" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="BinderMaterial" type="jdftyp:NMTOKEN" use="optional"/>
 		<xs:attribute name="BinderName" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="RingDiameter" type="jdftyp:double" use="optional"/>
@@ -14114,6 +14249,7 @@
 		<xs:attribute name="RingSystem" type="jdftyp:eRingSystem_" use="optional"/>
 		<xs:attribute name="RivetsExposed" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="SpineColor" type="jdftyp:NamedColor" use="optional"/>
+		<xs:attribute name="SpineColorDetails" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="SpineWidth" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="ViewBinder" type="jdftyp:NMTOKEN" use="optional"/>
 	</xs:attributeGroup>
@@ -14240,10 +14376,11 @@
 	<xs:element name="RunList" type="jdf:RunList_r" substitutionGroup="jdf:Resource">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="@ComponentGranularity" First="1.2"/>
+				<Version Path="@ComponentGranularity" First="1.2" Last="1.3"/>
 				<Version Path="@DocCopies" First="1.1"/>
 				<Version Path="@EndOfBundleItem" First="1.2"/>
 				<Version Path="@EndOfSet" First="1.1"/>
+				<Version Path="@IgnoreContext" First="1.4"/>
 				<Version Path="@NDoc" First="1.1" Last="1.1"/>
 				<Version Path="@NSet" First="1.1" Last="1.1"/>
 				<Version Path="@PageCopies" First="1.1"/>
@@ -14252,8 +14389,11 @@
 				<Version Path="@SetCopies" First="1.1"/>
 				<Version Path="@SetNames" First="1.1"/>
 				<Version Path="@Sets" First="1.1"/>
+				<Version Path="@SheetSides" First="1.4"/>
+				<Version Path="DynamicInput" Last="1.3"/>
 				<Version Path="InterpretedPDLData" First="1.2"/>
 				<Version Path="InterpretedPDLDataRef" First="1.2"/>
+				<Version Path="MetadataMap" First="1.4"/>
 				<Constraint Path="ByteMap" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ByteMapRef" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Disposition" minOccurs="0" maxOccurs="1"/>
@@ -14273,6 +14413,7 @@
 	<xs:element name="RunListRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
 	<xs:element name="RunListLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="RunListAttribs_c">
+		<xs:attribute name="ComponentGranularity" type="jdftyp:eComponentGranularity_" use="optional"/>
 		<xs:attribute name="Directory" type="jdftyp:URL" use="optional"/>
 		<xs:attribute name="DocNames" type="jdftyp:NameRangeList" use="optional"/>
 		<xs:attribute name="Docs" type="jdftyp:IntegerRangeList" use="optional"/>
@@ -14280,6 +14421,7 @@
 		<xs:attribute name="EndOfDocument" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="EndOfSet" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="FirstPage" type="jdftyp:Integer" use="optional"/>
+		<xs:attribute name="IgnoreContext" type="jdftyp:NMTOKENS" use="optional"/>
 		<xs:attribute name="LogicalPage" type="jdftyp:Integer" use="optional"/>
 		<xs:attribute name="NDoc" type="jdftyp:Integer" use="optional"/>
 		<xs:attribute name="NPage" type="jdftyp:Integer" use="optional"/>
@@ -14290,12 +14432,12 @@
 		<xs:attribute name="RunTag" type="jdftyp:NMTOKEN" use="optional"/>
 		<xs:attribute name="SetNames" type="jdftyp:NameRangeList" use="optional"/>
 		<xs:attribute name="Sets" type="jdftyp:IntegerRangeList" use="optional"/>
+		<xs:attribute name="SheetSides" type="jdftyp:eSheetSides_" use="optional"/>
 		<xs:attribute name="SkipPage" type="jdftyp:Integer" use="optional"/>
 		<xs:attribute name="Sorted" type="jdftyp:boolean" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="RunListAttribs_u">
 		<xs:attributeGroup ref="jdf:RunListAttribs_c"/>
-		<xs:attribute name="ComponentGranularity" type="jdftyp:eComponentGranularity_" use="optional"/>
 		<xs:attribute name="DocCopies" type="jdftyp:Integer" use="optional"/>
 		<xs:attribute name="IsPage" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="PageCopies" type="jdftyp:Integer" use="optional"/>
@@ -14303,7 +14445,6 @@
 	</xs:attributeGroup>
 	<xs:attributeGroup name="RunListAttribs_r">
 		<xs:attributeGroup ref="jdf:RunListAttribs_c"/>
-		<xs:attribute name="ComponentGranularity" type="jdftyp:eComponentGranularity_" default="Document"/>
 		<xs:attribute name="DocCopies" type="jdftyp:Integer" default="1"/>
 		<xs:attribute name="IsPage" type="jdftyp:boolean" default="true"/>
 		<xs:attribute name="PageCopies" type="jdftyp:Integer" default="1"/>
@@ -14316,6 +14457,42 @@
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="Name" type="jdftyp:string" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RunList_MetadataMap_lr" mixed="true">
+		<xs:complexContent mixed="true">
+			<xs:extension base="jdf:BaseElement_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element name="Expr" type="jdf:RunList_MDM_Expr_lr" minOccurs="1" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="DataType" type="jdftyp:ePartitionKeysList_" use="optional"/>
+				<xs:attribute name="Name" type="jdftyp:NMTOKEN" use="optional"/>
+				<xs:attribute name="ValueFormat" type="jdftyp:string" use="optional"/>
+				<xs:attribute name="ValueTemplate" type="jdftyp:string" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RunList_MDM_Expr_lr" mixed="true">
+		<xs:complexContent mixed="true">
+			<xs:extension base="jdf:BaseElement_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element name="Term" type="jdf:RunList_MDM_Term_lr" minOccurs="1" maxOccurs="unbounded"/>
+				</xs:sequence>
+				<xs:attribute name="Name" type="jdftyp:NMTOKEN" use="optional"/>
+				<xs:attribute name="Path" type="jdftyp:XPath" use="optional"/>
+				<xs:attribute name="Value" type="jdftyp:string" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="RunList_MDM_Term_lr" mixed="true">
+		<xs:complexContent mixed="true">
+			<xs:extension base="jdf:BaseElement_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -14671,6 +14848,7 @@
 			<xs:appinfo>
 				<Version Path="ScreenSelector/@AngleMap" First="1.1"/>
 				<Version Path="ScreenSelector/@DotSize" First="1.1"/>
+				<Version Path="ScreenSelector/@ObjectTags" First="1.4"/>
 				<Version Path="@AbortJobWhenScreenMatchingFails" Last="1.1"/>
 				<Constraint Path="ScreenSelector" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:appinfo>
@@ -14699,6 +14877,7 @@
 				<xs:attribute name="AngleMap" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="DotSize" type="jdftyp:double" use="optional"/>
 				<xs:attribute name="Frequency" type="jdftyp:double" use="optional"/>
+				<xs:attribute name="ObjectTags" type="jdftyp:NMTOKENS" use="optional"/>
 				<xs:attribute name="ScreeningFamily" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="ScreeningType" type="jdftyp:eScreeningType_" use="optional"/>
 				<xs:attribute name="Separation" type="jdftyp:string" default="All"/>
@@ -15099,6 +15278,94 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="ShapeDefProductionParams" type="jdf:ShapeDefProductionParams_r" substitutionGroup="jdf:Resource">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="." First="1.4"/>
+				<Constraint Path="ObjectModel" minOccurs="0" maxOccurs="unbounded"/>
+				<Constraint Path="ShapeTemplate" minOccurs="0" maxOccurs="1"/>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ShapeDefProductionParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+	<xs:element name="ShapeDefProductionParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+	<xs:attributeGroup name="ShapeDefProductionParamsAttribs_c">
+	</xs:attributeGroup>
+	<xs:attributeGroup name="ShapeDefProductionParamsAttribs_u">
+		<xs:attributeGroup ref="jdf:ShapeDefProductionParamsAttribs_c"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="ShapeDefProductionParamsAttribs_r">
+		<xs:attributeGroup ref="jdf:ShapeDefProductionParamsAttribs_c"/>
+	</xs:attributeGroup>
+	<xs:complexType name="ShapeDefProdParams_ObjectModel_lr" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:BaseElement_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+					<xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="Dimensions" type="jdftyp:shape" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ShapeDefProdParams_ShapeTemplate_lr" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:BaseElement_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+					<xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="InnerDimensions" type="jdftyp:shape" use="optional"/>
+				<xs:attribute name="Name" type="jdftyp:string" use="optional"/>
+				<xs:attribute name="Standard" type="jdftyp:string" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ShapeDefProductionParams_r" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ParameterResource">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+					<xs:element name="ObjectModel" type="jdf:ShapeDefProdParams_ObjectModel_lr" minOccurs="0"/>
+					<xs:element name="ShapeTemplate" type="jdf:ShapeDefProdParams_ShapeTemplate_lr" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="jdf:ShapeDefProductionParamsAttribs_r"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ShapeDefProductionParams_re" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ParameterResourceElement">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+					<xs:element name="ObjectModel" type="jdf:ShapeDefProdParams_ObjectModel_lr" minOccurs="0"/>
+					<xs:element name="ShapeTemplate" type="jdf:ShapeDefProdParams_ShapeTemplate_lr" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="jdf:ShapeDefProductionParamsAttribs_r"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ShapeDefProductionParams_rp" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ParameterResourceLeaf">
+				<xs:choice>
+					<xs:sequence minOccurs="0" maxOccurs="unbounded">
+						<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+						<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+						<xs:element name="ObjectModel" type="jdf:ShapeDefProdParams_ObjectModel_lr" minOccurs="0"/>
+						<xs:element name="ShapeTemplate" type="jdf:ShapeDefProdParams_ShapeTemplate_lr" minOccurs="0"/>
+						<xs:element name="ShapeDefProductionParams" type="jdf:ShapeDefProductionParams_rp" minOccurs="0"/>
+					</xs:sequence>
+					<xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+				</xs:choice>
+				<xs:attributeGroup ref="jdf:ShapeDefProductionParamsAttribs_u"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:element name="Sheet" type="jdf:Sheet_r" substitutionGroup="jdf:Resource">
 		<xs:annotation>
 			<xs:appinfo>
@@ -15392,6 +15659,8 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.1"/>
+				<Version Path="@HorizontalExcessBack" First="1.4"/>
+				<Version Path="@StripColorDetails" First="1.4"/>
 				<Constraint Path="GlueApplication" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="GlueApplicationRef" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:appinfo>
@@ -15401,8 +15670,10 @@
 	<xs:element name="SpineTapingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="SpineTapingParamsAttribs_c">
 		<xs:attribute name="HorizontalExcess" type="jdftyp:double" use="optional"/>
+		<xs:attribute name="HorizontalExcessBack" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="StripBrand" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="StripColor" type="jdftyp:NamedColor" use="optional"/>
+		<xs:attribute name="StripColorDetails" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="StripLength" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="StripMaterial" type="jdftyp:eStripMaterial_" use="optional"/>
 	</xs:attributeGroup>
@@ -15463,7 +15734,13 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.1"/>
+				<Version Path="@BundleDepth" First="1.4"/>
+				<Version Path="@LayerLift" First="1.4"/>
+				<Version Path="@LayerCompression" First="1.4"/>
+				<Version Path="@MaxHeight" First="1.4"/>
 				<Version Path="@Offset" Last="1.1"/>
+				<Version Path="@PreStackAmount" First="1.4"/>
+				<Version Path="@StackCompression" First="1.4"/>
 				<Version Path="Disjointing" First="1.2"/>
 				<Version Path="DisjointingRef" First="1.2"/>
 				<Version Path="@UnderLays" First="1.3"/>
@@ -15476,19 +15753,27 @@
 	<xs:element name="StackingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="StackingParamsAttribs_c">
 		<xs:attribute name="LayerAmount" type="jdftyp:IntegerList" use="optional"/>
+		<xs:attribute name="LayerLift" type="jdftyp:boolean" use="optional"/>
+		<xs:attribute name="LayerCompression" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="MaxAmount" type="jdftyp:Integer" use="optional"/>
+		<xs:attribute name="MaxHeight" type="jdftyp:Integer" use="optional"/>
 		<xs:attribute name="MinAmount" type="jdftyp:Integer" use="optional"/>
 		<xs:attribute name="MaxWeight" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="Offset" type="jdftyp:boolean" use="optional"/>
+		<xs:attribute name="PreStackAmount" type="jdftyp:Integer" use="optional"/>
+		<xs:attribute name="PreStackMethod" type="jdftyp:ePreStackMethod_" use="optional"/>
+		<xs:attribute name="StackCompression" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="UnderLays" type="jdftyp:IntegerList" use="optional"/>
 		<xs:attribute name="StandardAmount" type="jdftyp:Integer" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="StackingParamsAttribs_u">
 		<xs:attributeGroup ref="jdf:StackingParamsAttribs_c"/>
+		<xs:attribute name="BundleDepth" type="jdftyp:Integer" use="optional"/>
 		<xs:attribute name="Compensate" type="jdftyp:boolean" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="StackingParamsAttribs_r">
 		<xs:attributeGroup ref="jdf:StackingParamsAttribs_c"/>
+		<xs:attribute name="BundleDepth" type="jdftyp:Integer" default="0"/>
 		<xs:attribute name="Compensate" type="jdftyp:boolean" default="true"/>
 	</xs:attributeGroup>
 	<xs:complexType name="StackingParams_r" mixed="false">
@@ -15533,10 +15818,64 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="StaticBlockingParams" type="jdf:StaticBlockingParams_r" substitutionGroup="jdf:Resource">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="." First="1.4"/>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="StaticBlockingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+	<xs:element name="StaticBlockingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+	<xs:attributeGroup name="StaticBlockingParamsAttribs_c">
+	</xs:attributeGroup>
+	<xs:attributeGroup name="StaticBlockingParamsAttribs_u">
+		<xs:attributeGroup ref="jdf:StaticBlockingParamsAttribs_c"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="StaticBlockingParamsAttribs_r">
+		<xs:attributeGroup ref="jdf:StaticBlockingParamsAttribs_c"/>
+	</xs:attributeGroup>
+	<xs:complexType name="StaticBlockingParams_r" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ParameterResource">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="jdf:StaticBlockingParamsAttribs_r"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StaticBlockingParams_re" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ParameterResourceElement">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="jdf:StaticBlockingParamsAttribs_r"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="StaticBlockingParams_rp" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ParameterResourceLeaf">
+				<xs:choice>
+					<xs:sequence minOccurs="0" maxOccurs="unbounded">
+						<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+						<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+						<xs:element name="StaticBlockingParams" type="jdf:StaticBlockingParams_rp" minOccurs="0"/>
+					</xs:sequence>
+				</xs:choice>
+				<xs:attributeGroup ref="jdf:StaticBlockingParamsAttribs_u"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
 	<xs:element name="StitchingParams" type="jdf:StitchingParams_r" substitutionGroup="jdf:Resource">
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="@ReferenceEdge" First="1.1" Last="1.1"/>
+				<Version Path="@StitchOrigin" First="1.4"/>
 				<Version Path="@StitchFromFront" Last="1.1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -15558,9 +15897,11 @@
 	</xs:attributeGroup>
 	<xs:attributeGroup name="StitchingParamsAttribs_u">
 		<xs:attributeGroup ref="jdf:StitchingParamsAttribs_c"/>
+		<xs:attribute name="StitchOrigin" type="jdftyp:eStitchOrigin_" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="StitchingParamsAttribs_r">
 		<xs:attributeGroup ref="jdf:StitchingParamsAttribs_c"/>
+		<xs:attribute name="StitchOrigin" type="jdftyp:eStitchOrigin_" default="UntrimmedJogSide"/>
 	</xs:attributeGroup>
 	<xs:complexType name="StitchingParams_r" mixed="false">
 		<xs:complexContent mixed="false">
@@ -15605,6 +15946,7 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.1"/>
+				<Version Path="@StrapColorDetails" First="1.4"/>
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>
@@ -15616,6 +15958,7 @@
 	<xs:attributeGroup name="StrapAttribs_u">
 		<xs:attributeGroup ref="jdf:StrapAttribs_c"/>
 		<xs:attribute name="Material" type="jdftyp:eMaterial1_" use="optional"/>
+		<xs:attribute name="StrapColorDetails" type="jdftyp:string" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="StrapAttribs_r">
 		<xs:attributeGroup ref="jdf:StrapAttribs_c"/>
@@ -15728,6 +16071,7 @@
 			<xs:appinfo>
 				<Version Path="." First="1.1"/>
 				<Version Path="@Distance" Last="1.1"/>
+				<Version Path="@StripColorDetails" First="1.4"/>
 				<Version Path="HoleMakingParams" First="1.2"/>
 				<Version Path="HoleMakingParamsRef" First="1.2"/>
 				<Constraint Path="HoleMakingParams" minOccurs="0" maxOccurs="1"/>
@@ -15742,6 +16086,7 @@
 		<xs:attribute name="Distance" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="Length" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="StripColor" type="jdftyp:NamedColor" use="optional"/>
+		<xs:attribute name="StripColorDetails" type="jdftyp:string" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="StripBindingParamsAttribs_u">
 		<xs:attributeGroup ref="jdf:StripBindingParamsAttribs_c"/>
@@ -15794,14 +16139,51 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="StrippingParams" type="jdf:StrippingParams_r" substitutionGroup="jdf:Resource"/>
+	<xs:element name="StrippingParams" type="jdf:StrippingParams_r" substitutionGroup="jdf:Resource">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="." First="1.4"/>
+				<Version Path="@AssemblyID" Last="1.2"/>
+				<Version Path="@AssemblyIDs" First="1.3"/>
+				<Version Path="@Automated" First="1.4"/>
+				<Version Path="@InnermostShingling" First="1.4"/>
+				<Version Path="@OutermostShingling" First="1.4"/>
+				<Version Path="@SheetNameFormat" First="1.4"/>
+				<Version Path="@SheetNameTemplate" First="1.4"/>
+				<Version Path="@StackDepth" First="1.4"/>
+				<Version Path="StripMark/@AbsoluteHeight" First="1.4"/>
+				<Version Path="StripMark/@AbsoluteWidth" First="1.4"/>
+				<Version Path="StripMark/@Anchor" First="1.4"/>
+				<Version Path="StripMark/@HorizontalFitPolicy" First="1.4"/>
+				<Version Path="StripMark/@ID" First="1.4"/>
+				<Version Path="StripMark/@MarkcContext" First="1.4"/>
+				<Version Path="StripMark/@Offset" First="1.4"/>
+				<Version Path="StripMark/@Ord" First="1.4"/>
+				<Version Path="StripMark/@Orientation" First="1.4"/>
+				<Version Path="StripMark/@RelativeHeight" First="1.4"/>
+				<Version Path="StripMark/@RelativeWidth" First="1.4"/>
+				<Version Path="StripMark/@StripMarkDetails" First="1.4"/>
+				<Version Path="StripMark/@VeticalFitPolicy" First="1.4"/>
+				<Version Path="StripMark/Position" Last="1.3"/>
+				<Version Path="StripMark/RefAnchor" First="1.4"/>
+				<Version Path="ExternalImpositionTemplate" First="1.3"/>
+				<Version Path="StripMark" First="1.3"/>
+			</xs:appinfo>
+		</xs:annotation>		
+	</xs:element>
 	<xs:element name="StrippingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
 	<xs:element name="StrippingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="StrippingParamsAttribs_c">
 		<xs:attribute name="AssemblyID" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="AssemblyIDs" type="jdftyp:NMTOKENS" use="optional"/>
+		<xs:attribute name="Automated" type="jdftyp:boolean" use="optional"/>
+		<xs:attribute name="InnermostShingling" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="JobID" type="jdftyp:shortString" use="optional"/>
+		<xs:attribute name="OutermostShingling" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="SectionList" type="jdftyp:IntegerList" use="optional"/>
+		<xs:attribute name="SheetNameFormat" type="jdftyp:string" use="optional"/>
+		<xs:attribute name="SheetNameTemplate" type="jdftyp:string" use="optional"/>
+		<xs:attribute name="StackDepth" type="jdftyp:Integer" use="optional"/>
 		<xs:attribute name="WorkStyle" type="jdftyp:WorkStyle" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="StrippingParamsAttribs_u">
@@ -15886,10 +16268,23 @@
 					<xs:element name="Position" type="jdf:StrippingParams_Position_lr" minOccurs="0"/>
 					<xs:element name="JobField" type="jdf:JobField_re" minOccurs="0"/>
 					<xs:element ref="jdf:JobFieldRef" minOccurs="0"/>
+					<xs:element name="RefAnchor" type="jdf:RefAnchor_re" minOccurs="0" maxOccurs="1"/>
 				</xs:sequence>
+				<xs:attribute name="AbsoluteHeight" type="jdftyp:double" use="optional"/>
+				<xs:attribute name="AbsoluteWidth" type="jdftyp:double" use="optional"/>
+				<xs:attribute name="Anchor" type="jdftyp:eAnchor_" use="optional"/>
+				<xs:attribute name="HorizontalFitPolicy" type="jdftyp:eHorizontalFitPolicy_" use="optional"/>
+				<xs:attribute name="ID" type="jdftyp:NMTOKEN" use="optional"/>
+				<xs:attribute name="MarkcContext" type="jdftyp:eMarkContext_" use="optional"/>
 				<xs:attribute name="MarkName" type="jdftyp:NMTOKEN" use="optional"/>
 				<xs:attribute name="MarkSide" type="jdftyp:eMarkSide_" use="optional"/>
+				<xs:attribute name="Offset" type="jdftyp:XYPair" use="optional"/>
+				<xs:attribute name="Ord" type="jdftyp:Integer" use="optional"/>
+				<xs:attribute name="Orientation" type="jdftyp:Orientation" use="optional"/>
+				<xs:attribute name="RelativeHeight" type="jdftyp:double" use="optional"/>
+				<xs:attribute name="RelativeWidth" type="jdftyp:double" use="optional"/>
 				<xs:attribute name="StripMarkDetails" type="jdftyp:string" use="optional"/>
+				<xs:attribute name="VeticalFitPolicy" type="jdftyp:eVerticalFitPolicy_" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -16379,6 +16774,7 @@
 	<xs:element name="Tile" type="jdf:Tile_r" substitutionGroup="jdf:Resource">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="MarkObject" First="1.4"/>
 				<Version Path="Media" First="1.2"/>
 				<Version Path="MediaRef" First="1.2"/>
 				<Version Path="MediaSource" Last="1.1"/>
@@ -16409,6 +16805,7 @@
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+					<xs:element name="MarkObject"/>
 					<xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
 					<xs:element ref="jdf:MediaRef" minOccurs="0"/>
 					<xs:element name="MediaSource" type="jdf:MediaSource_re" minOccurs="0"/>
@@ -16778,6 +17175,7 @@
 	<xs:element name="TrappingDetails" type="jdf:TrappingDetails_r" substitutionGroup="jdf:Resource">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="@IgnoreFileParams" Last="1.3"/>
 				<Version Path="@Trapping" Last="1.1"/>
 				<Version Path="@TrappingType" Last="1.1"/>
 				<Version Path="ObjectResolution" First="1.1"/>
@@ -16796,18 +17194,17 @@
 	<xs:element name="TrappingDetailsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
 	<xs:element name="TrappingDetailsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="TrappingDetailsAttribs_c">
+		<xs:attribute name="IgnoreFileParams" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="Trapping" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="TrappingType" type="jdftyp:Integer" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="TrappingDetailsAttribs_u">
 		<xs:attributeGroup ref="jdf:TrappingDetailsAttribs_c"/>
 		<xs:attribute name="DefaultTrapping" type="jdftyp:boolean" use="optional"/>
-		<xs:attribute name="IgnoreFileParams" type="jdftyp:boolean" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="TrappingDetailsAttribs_r">
 		<xs:attributeGroup ref="jdf:TrappingDetailsAttribs_c"/>
 		<xs:attribute name="DefaultTrapping" type="jdftyp:boolean" default="false"/>
-		<xs:attribute name="IgnoreFileParams" type="jdftyp:boolean" default="true"/>
 	</xs:attributeGroup>
 	<xs:complexType name="TrappingDetails_TrappingOrder_lr" mixed="false">
 		<xs:complexContent mixed="false">
@@ -17168,6 +17565,63 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="VarnishingParams" type="jdf:VarnishingParams_r" substitutionGroup="jdf:Resource">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="." First="1.4"/>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="VarnishingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+	<xs:element name="VarnishingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+	<xs:attributeGroup name="VarnishingParamsAttribs_c">
+		<xs:attribute name="ModuleIndex" type="jdftyp:Integer" use="optional"/>
+		<xs:attribute name="AbsoluteWidth" type="jdftyp:NMTOKEN" use="optional"/>
+		<xs:attribute name="Anchor" type="jdftyp:eVarnishArea_" use="optional"/>
+		<xs:attribute name="VarnishMethod" type="jdftyp:eVarnishMethod_" use="optional"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="VarnishingParamsAttribs_u">
+		<xs:attributeGroup ref="jdf:VarnishingParamsAttribs_c"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="VarnishingParamsAttribs_r">
+		<xs:attributeGroup ref="jdf:VarnishingParamsAttribs_c"/>
+	</xs:attributeGroup>
+	<xs:complexType name="VarnishingParams_r" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ParameterResource">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="jdf:VarnishingParamsAttribs_r"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="VarnishingParams_re" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ParameterResourceElement">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="jdf:VarnishingParamsAttribs_r"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="VarnishingParams_rp" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ParameterResourceLeaf">
+				<xs:choice>
+					<xs:sequence minOccurs="0" maxOccurs="unbounded">
+						<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+						<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+						<xs:element name="VarnishingParams" type="jdf:VarnishingParams_rp" minOccurs="0"/>
+					</xs:sequence>
+				</xs:choice>
+				<xs:attributeGroup ref="jdf:VarnishingParamsAttribs_u"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	<xs:element name="VerificationParams" type="jdf:VerificationParams_r" substitutionGroup="jdf:Resource"/>
 	<xs:element name="VerificationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
 	<xs:element name="VerificationParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
@@ -17296,6 +17750,7 @@
 	<xs:element name="WireCombBindingParams" type="jdf:WireCombBindingParams_r" substitutionGroup="jdf:Resource">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="@ColorDetails" First="1.4"/>				
 				<Version Path="@FlipBackCover" First="1.1"/>
 				<Version Path="@Distance" Last="1.1"/>
 				<Version Path="HoleMakingParams" First="1.2"/>
@@ -17310,6 +17765,7 @@
 	<xs:attributeGroup name="WireCombBindingParamsAttribs_c">
 		<xs:attribute name="Brand" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="Color" type="jdftyp:NamedColor" use="optional"/>
+		<xs:attribute name="ColorDetails" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="Diameter" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="Distance" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="Material" type="jdftyp:eWireCombMaterial_" use="optional"/>
