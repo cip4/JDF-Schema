@@ -9810,7 +9810,7 @@
           <xs:element ref="jdf:LayoutElementRef" minOccurs="0"/>
           <xs:element name="PositionObj" type="jdf:LayoutElementProductionParams_LayoutElementPart_PositionObj_lr" minOccurs="0" />
         </xs:sequence>
-        <xs:attribute name="ID" type="xs:ID" use="optional"/>
+        <xs:attribute name="ID" type="jdftyp:ID" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -19943,7 +19943,7 @@
   <xs:element name="PublishingIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="PublishingIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PublishingIntentAttribs_c">
-    <xs:attribute name="ContentDataRefs" type="xs:IDREFS" use="optional"/>
+    <xs:attribute name="ContentDataRefs" type="jdftyp:IDREFS" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="PublishingIntentAttribs_u">
     <xs:attributeGroup ref="jdf:PublishingIntentAttribs_c"/>
