@@ -221,6 +221,7 @@
 			<xs:enumeration value="1.1"/>
 			<xs:enumeration value="1.2"/>
 			<xs:enumeration value="1.3"/>
+			<xs:enumeration value="1.4"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="JDFJMFVersions">

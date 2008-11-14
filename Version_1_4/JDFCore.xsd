@@ -2,7 +2,7 @@
 <!--  The CIP4 Software License, Version 1.0
   
   
-  Copyright (c) 2001-2007 The International Cooperation for the Integration of 
+  Copyright (c) 2001-2008 The International Cooperation for the Integration of 
   Processes in Prepress, Press and Postpress (CIP4). All rights reserved.
   
   Redistribution and use in source and binary forms, with or without modification, 
@@ -787,9 +787,9 @@
         <xs:attribute name="Duration" type="jdftyp:duration" use="optional"/>
         <xs:attribute name="End" type="jdftyp:dateTime" use="required"/>
         <xs:attribute name="EndStatus" type="jdftyp:eEndStatusOfNode_" use="required"/>
-        <xs:attribute name="ReturnTime" type="jdftyp:dateTime" use="required"/>
+        <xs:attribute name="ReturnTime" type="jdftyp:dateTime" use="optional"/>
         <xs:attribute name="Start" type="jdftyp:dateTime" use="required"/>
-        <xs:attribute name="SubmissionTime" type="jdftyp:dateTime" use="required"/>
+        <xs:attribute name="SubmissionTime" type="jdftyp:dateTime" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -1447,10 +1447,12 @@
         <xs:attribute name="Time" type="jdftyp:dateTime" use="optional"/>
         <xs:attribute name="Type" type="jdftyp:NMTOKEN" use="required"/>
         <xs:attribute name="Version" type="jdftyp:JDFJMFVersion"/>
+        <!--
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:element ref="jdf:Employee"/>
+          <xs:element ref="jdf:Employee" minOccurs="0"/> 
         </xs:sequence>
+        -->
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -1473,7 +1475,8 @@
           <xs:element minOccurs="0" ref="jdf:Employee"/>
           <xs:element ref="jdf:CommandTypeObj" minOccurs="0"/>
               <xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
-        </xs:sequence>
+           <xs:element ref="jdf:Employee" minOccurs="0"/> 
+       </xs:sequence>
         <xs:attribute name="AcknowledgeFormat" type="jdftyp:string" use="optional"/>
         <xs:attribute name="AcknowledgeTemplate" type="jdftyp:string" use="optional"/>
         <xs:attribute name="AcknowledgeURL" type="jdftyp:URL" use="optional"/>
@@ -1502,7 +1505,8 @@
           <xs:element minOccurs="0" ref="jdf:Employee"/>
           <xs:element ref="jdf:ResponseTypeObj" minOccurs="0"/>
           <xs:element name="Notification" type="jdf:NotificationAudit" minOccurs="0"/>
-        </xs:sequence>
+            <xs:element ref="jdf:Employee" minOccurs="0"/> 
+      </xs:sequence>
         <xs:attribute name="refID" type="jdftyp:NMTOKEN" use="required"/>
         <xs:attribute name="AcknowledgeType" type="jdftyp:eAcknowledgeTypeList_" default="Completed"/>
         <xs:attribute name="ReturnCode" type="jdftyp:Integer" default="0"/>
@@ -1527,6 +1531,7 @@
           <xs:element minOccurs="0" ref="jdf:Employee"/>
           <xs:element ref="jdf:CommandTypeObj" minOccurs="0"/>
           <xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
+          <xs:element ref="jdf:Employee" minOccurs="0"/> 
           <xs:element name="Subscription" type="jdf:SubscriptionElement_m" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
@@ -1550,6 +1555,7 @@
           <xs:element ref="jdf:Employee" minOccurs="0"/>
           <xs:element ref="jdf:ResponseTypeObj" minOccurs="0"/>
           <xs:element name="Notification" type="jdf:NotificationAudit" minOccurs="0"/>
+          <xs:element ref="jdf:Employee" minOccurs="0"/> 
         </xs:sequence>
         <xs:attribute name="Acknowledged" type="jdftyp:boolean" default="false"/>
         <xs:attribute name="refID" type="jdftyp:NMTOKEN" use="optional"/>
@@ -1578,6 +1584,7 @@
           <xs:element ref="jdf:Employee" minOccurs="0"/>
           <xs:element ref="jdf:QueryTypeObj" minOccurs="0"/>
           <xs:element ref="jdf:ResponseTypeObj" minOccurs="0"/>
+          <xs:element ref="jdf:Employee" minOccurs="0"/> 
               <xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
           <xs:element name="Notification" type="jdf:NotificationAudit" minOccurs="0"/>
           <xs:element name="Trigger" type="jdf:TriggerElement_m" minOccurs="0"/>
@@ -1611,7 +1618,8 @@
           <xs:element ref="jdf:QueryTypeObj" minOccurs="0"/>
           <xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
           <xs:element name="Subscription" type="jdf:SubscriptionElement_m" minOccurs="0"/>
-        </xs:sequence>
+           <xs:element ref="jdf:Employee" minOccurs="0"/> 
+       </xs:sequence>
         <xs:attribute name="AcknowledgeFormat" type="jdftyp:string" use="optional"/>
         <xs:attribute name="AcknowledgeTemplate" type="jdftyp:string" use="optional"/>
         <xs:attribute name="AcknowledgeURL" type="jdftyp:URL" use="optional"/>
