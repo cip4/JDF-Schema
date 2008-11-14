@@ -394,7 +394,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="DieDesignLinkPool_" mixed="false">
+	<xs:complexType name="DieDesignResLinkPool_" mixed="false">
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:ResourceLinkPool_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -1128,7 +1128,7 @@
 			<xs:extension base="jdf:ResourceLinkPool_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:ProcessInputResources_" minOccurs="0"/>
-					<xs:element ref="jdf:LayoutShifLink" minOccurs="0"/>
+					<xs:element ref="jdf:LayoutShiftLink" minOccurs="0"/>
 					<xs:element ref="jdf:RunListLink" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -1157,7 +1157,7 @@
 			<xs:extension base="jdf:ResourceLinkPool_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:ProcessInputResources_" minOccurs="0"/>
-					<xs:element ref="jdf:PageAssigningLink" minOccurs="0"/>
+					<xs:element ref="jdf:PageAssignParamsLink" minOccurs="0"/>
 					<xs:element ref="jdf:RunListLink" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
@@ -3082,12 +3082,12 @@
 			<xs:extension base="jdf:JDFAbstractNode">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:JDFChildElements_" minOccurs="0"/>
-					<xs:element name="ResourceLinkPool" type="jdf:StackingResLinkPool_" minOccurs="0"/>
+					<xs:element name="ResourceLinkPool" type="jdf:StaticBlockingResLinkPool_" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="StackingResLinkPool_" mixed="false">
+	<xs:complexType name="StaticBlockingResLinkPool_" mixed="false">
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:ResourceLinkPool_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">

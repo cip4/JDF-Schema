@@ -14,7 +14,7 @@
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:JMFAbstractSignal_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
-					<xs:element name="NotificationFilter" type="jdf:NotificationFilter" minOccurs="0"/>					
+					<xs:element name="NotificationFilter" type="jdf:NotificationFilter_m" minOccurs="0"/>					
 					<xs:element name="Notification" type="jdf:NotificationAudit" minOccurs="0"/>
 					<xs:element name="Trigger" type="jdf:TriggerElement_m" minOccurs="0"/>
 				</xs:sequence>

@@ -5177,6 +5177,8 @@
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
+  
+  <!-- DieLayout -->
   <xs:element name="DieLayoutRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="DieLayoutLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DieLayoutAttribs_c">
@@ -10054,6 +10056,80 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
+   <!-- ============ LayoutShift ================== -->
+  <xs:element name="LayoutShift" type="jdf:LayoutShift_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="." First="1.4"/>
+        <Version Path="ShiftPoint/@CTM" First="1.4"/>
+        <Version Path="ShiftPoint/@Position" First="1.4"/>
+         <Constraint Path="ShiftPoint" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+	  <xs:element name="LayoutShiftRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+	  <xs:element name="LayoutShiftLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+	  <xs:attributeGroup name="LayoutShiftAttribs_c">
+	  </xs:attributeGroup>
+	  <xs:attributeGroup name="LayoutShiftAttribs_u">
+	    <xs:attributeGroup ref="jdf:LayoutShiftAttribs_c"/>
+	  </xs:attributeGroup>
+	  <xs:attributeGroup name="LayoutShiftAttribs_r">
+	    <xs:attributeGroup ref="jdf:LayoutShiftAttribs_c"/>
+	  </xs:attributeGroup>
+	  <xs:complexType name="LayoutShift_r" mixed="false">
+	    <xs:complexContent mixed="false">
+	      <xs:extension base="jdf:ParameterResource">
+	        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+	          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+	          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+	          <xs:element name="ShiftPoint" type="jdf:LayoutShift_ShiftPoint_lr" minOccurs="1"/>
+	        </xs:sequence>
+	        <xs:attributeGroup ref="jdf:LayoutShiftAttribs_r"/>
+	      </xs:extension>
+	    </xs:complexContent>
+	  </xs:complexType>
+	  <xs:complexType name="LayoutShift_re" mixed="false">
+	    <xs:complexContent mixed="false">
+	      <xs:extension base="jdf:ParameterResourceElement">
+	        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+	          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+	          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+	          <xs:element name="ShiftPoint" type="jdf:LayoutShift_ShiftPoint_lr" minOccurs="1" maxOccurs="unbounded"/>
+	        </xs:sequence>
+	        <xs:attributeGroup ref="jdf:LayoutShiftAttribs_r"/>
+	      </xs:extension>
+	    </xs:complexContent>
+	  </xs:complexType>
+	  <xs:complexType name="LayoutShift_rp" mixed="false">
+	    <xs:complexContent mixed="false">
+	      <xs:extension base="jdf:ParameterResourceLeaf">
+	        <xs:choice>
+	          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+	            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+	            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+  	          <xs:element name="ShiftPoint" type="jdf:LayoutShift_ShiftPoint_lr" minOccurs="1" maxOccurs="unbounded"/>
+	          </xs:sequence>
+	          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+	        </xs:choice>
+	        <xs:attributeGroup ref="jdf:LayoutShiftAttribs_u"/>
+	      </xs:extension>
+	    </xs:complexContent>
+	  </xs:complexType>
+	  <xs:complexType name="LayoutShift_ShiftPoint_lr" mixed="false">
+	    <xs:complexContent mixed="false">
+	      <xs:extension base="jdf:BaseElement_">
+	        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+	          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+	        </xs:sequence>
+	        <xs:attribute name="CTM" type="jdftyp:matrix" use="required"/>
+	        <xs:attribute name="Position" type="jdftyp:XYPair" use="required"/>
+	      </xs:extension>
+	    </xs:complexContent>
+  </xs:complexType>
+  
+  
   <xs:attributeGroup name="LocationAttribs_c">
     <xs:attribute name="LocationName" type="jdftyp:string" use="optional"/>
     <xs:attribute name="LocID" type="jdftyp:shortString" use="optional"/>
