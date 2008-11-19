@@ -340,7 +340,8 @@
     <xs:sequence>
       <xs:element ref="jdf:Comment" minOccurs="0"/>
       <xs:element ref="jdf:GeneralID" minOccurs="0"/>
-      <xs:element name="Preview" type="jdf:Preview_r" minOccurs="0"/>
+      <!--  was  jdf:Preview_r but this caused "Class" to be inserted in partitions... -->
+      <xs:element name="Preview" type="jdf:Preview_re" minOccurs="0"/>
       <xs:any namespace="##other" processContents="lax" minOccurs="0"/>
     </xs:sequence>
   </xs:group>

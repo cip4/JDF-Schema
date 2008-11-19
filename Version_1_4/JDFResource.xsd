@@ -1,65 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--  The CIP4 Software License, Version 1.0
-  
-  
-  Copyright (c) 2001-2007 The International Cooperation for the Integration of 
-  Processes in Prepress, Press and Postpress (CIP4). All rights reserved.
-  
-  Redistribution and use in source and binary forms, with or without modification, 
-  are permitted provided that the following conditions are met:
-  
-  1. Redistributions of source code must retain the above copyright notice, this 
-  list of conditions and the following disclaimer.
-  
-  2. Redistributions in binary form must reproduce the above copyright notice, 
-  this list of conditions and the following disclaimer in the documentation and/or 
-  other materials provided with the distribution.
-  
-  3. The end-user documentation included with the redistribution, if any, must 
-  include the following acknowledgment: &quot;This product includes software developed 
-  by the The International Cooperation for the Integration of Processes in 
-  Prepress, Press and Postpress (www.cip4.org)&quot; Alternately, this acknowledgment 
-  may appear in the software itself, if and wherever such third-party 
-  acknowledgments normally appear.
-  
-  4. The names &quot;CIP4&quot; and &quot;The International Cooperation for the Integration of 
-  Processes in Prepress, Press and Postpress&quot; must not be used to endorse or 
-  promote products derived from this software without prior written permission. 
-  For written permission, please contact info@cip4.org
-  
-  5. Products derived from this software may not be called &quot;CIP4&quot;, nor may &quot;CIP4&quot; 
-  appear in their name, without prior written permission of the CIP4 organization
-  
-  &quot;CIP4&quot; and &quot;The International Cooperation for the Integration of Processes in 
-  Prepress, Press and Postpress&quot; are trademarks of The International Cooperation 
-  for the Integration of Processes in Prepress, Press and Postpress (CIP4).  All 
-  other names and brands are the property of their respective owners.
-  
-  THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES, 
-  INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND 
-  FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. CIP4 AND ITS CONTRIBUTORS MAKE 
-  NO REPRESENTATION THAT THE USE OF THIS SOFTWARE OR DATA WILL NOT INFRINGE ANY 
-  PATENTS, COPYRIGHTS, TRADEMARKS, OR OTHER RIGHTS. IN NO EVENT SHALL CIP4 OR ITS 
-  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, 
-  OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF 
-  SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS 
-  INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN 
-  CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING 
-  IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY 
-  OF SUCH DAMAGE. 
-  ====================================================================
-  
-  This software consists of voluntary contributions made by many individuals on 
-  behalf of the The International Cooperation for the Integration of Processes in 
-  Prepress, Press and Postpress and was originally based on software some of which 
-  contributed by and copyrighted by Adobe Systems and Man Roland. copyright (c) 
-  2000-2001, Adobe Systems copyright (c) 2001-2001, Man Roland
-  
-  For more information on The International Cooperation for the Integration of 
-  Processes in Prepress, Press and Postpress , please see &lt;http://www.cip4.org/&gt;.
-  
--->
-<xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_3_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.3-002">
+  <!--
+    The CIP4 Software License, Version 1.0 Copyright (c) 2001-2007 The International Cooperation for the Integration of Processes in Prepress, Press and
+    Postpress (CIP4). All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the
+    following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following
+    disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the
+    documentation and/or other materials provided with the distribution. 3. The end-user documentation included with the redistribution, if any, must include
+    the following acknowledgment: &quot;This product includes software developed by the The International Cooperation for the Integration of Processes in
+    Prepress, Press and Postpress (www.cip4.org)&quot; Alternately, this acknowledgment may appear in the software itself, if and wherever such third-party
+    acknowledgments normally appear. 4. The names &quot;CIP4&quot; and &quot;The International Cooperation for the Integration of Processes in Prepress, Press
+    and Postpress&quot; must not be used to endorse or promote products derived from this software without prior written permission. For written permission,
+    please contact info@cip4.org 5. Products derived from this software may not be called &quot;CIP4&quot;, nor may &quot;CIP4&quot; appear in their name,
+    without prior written permission of the CIP4 organization &quot;CIP4&quot; and &quot;The International Cooperation for the Integration of Processes in
+    Prepress, Press and Postpress&quot; are trademarks of The International Cooperation for the Integration of Processes in Prepress, Press and Postpress
+    (CIP4). All other names and brands are the property of their respective owners. THIS SOFTWARE IS PROVIDED ``AS IS'' AND ANY EXPRESSED OR IMPLIED WARRANTIES,
+    INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. CIP4 AND ITS CONTRIBUTORS MAKE
+    NO REPRESENTATION THAT THE USE OF THIS SOFTWARE OR DATA WILL NOT INFRINGE ANY PATENTS, COPYRIGHTS, TRADEMARKS, OR OTHER RIGHTS. IN NO EVENT SHALL CIP4 OR
+    ITS CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
+    SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT,
+    STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH
+    DAMAGE. ==================================================================== This software consists of voluntary contributions made by many individuals on
+    behalf of the The International Cooperation for the Integration of Processes in Prepress, Press and Postpress and was originally based on software some of
+    which contributed by and copyrighted by Adobe Systems and Man Roland. copyright (c) 2000-2001, Adobe Systems copyright (c) 2001-2001, Man Roland For more
+    information on The International Cooperation for the Integration of Processes in Prepress, Press and Postpress , please see &lt;http://www.cip4.org/&gt;.
+  -->
+<xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_3_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.3-002"
+>
   <xs:import namespace="http://www.CIP4.org/JDFSchema_1_3_Types" schemaLocation="JDFTypes.xsd"/>
   <xs:include schemaLocation="JDFCore.xsd"/>
   <xs:include schemaLocation="JDFCapability.xsd"/>
@@ -100,13 +66,20 @@
         <Constraint Path="QualityControlResult" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="QualityControlResultRef" minOccurs="0" maxOccurs="unbounded"/>
         <!--Constraints - PhysicalResources-->
-        <Constraint Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/Contact" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/ContactRef" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/IdentificationFieldRef" minOccurs="0" maxOccurs="unbounded"/>
-        <Constraint Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/IdentificationField" minOccurs="0" maxOccurs="unbounded"/>
-        <Constraint Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/Location" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/Location/Address" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/Location/AdressRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/Contact" minOccurs="0"
+          maxOccurs="1"/>
+        <Constraint Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/ContactRef" minOccurs="0"
+          maxOccurs="1"/>
+        <Constraint Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/IdentificationFieldRef"
+          minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/IdentificationField"
+          minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/Location" minOccurs="0"
+          maxOccurs="1"/>
+        <Constraint Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/Location/Address" minOccurs="0"
+          maxOccurs="1"/>
+        <Constraint Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/Location/AdressRef"
+          minOccurs="0" maxOccurs="1"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -943,7 +916,7 @@
     <xs:attribute name="StaggerColumns" type="jdftyp:DoubleList" use="optional"/>
     <xs:attribute name="StaggerContinuous" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="StaggerRows" type="jdftyp:DoubleList" use="optional"/>
-    <xs:attribute name="WebCellAlignment" type="jdftyp:XYPair" use="optional"/>   
+    <xs:attribute name="WebCellAlignment" type="jdftyp:XYPair" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="BinderySignatureAttribs_u">
     <xs:attributeGroup ref="jdf:BinderySignatureAttribs_c"/>
@@ -1229,11 +1202,11 @@
   <xs:attributeGroup name="BoxPackingParamsAttribs_c">
     <xs:attribute name="ComponentsPerRow" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="Columns" type="jdftyp:Integer" use="optional"/>
-    <xs:attribute name="ComponentOrientation" type="jdftyp:eComponentOrientation_" use="optional"/>   
+    <xs:attribute name="ComponentOrientation" type="jdftyp:eComponentOrientation_" use="optional"/>
     <xs:attribute name="Copies" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="FillMaterial" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="Layers" type="jdftyp:Integer" use="optional"/>
-    <xs:attribute name="MaxWeight" type="jdftyp:double" use="optional"/>    
+    <xs:attribute name="MaxWeight" type="jdftyp:double" use="optional"/>
     <xs:attribute name="Pattern" type="jdftyp:string" use="optional"/>
     <xs:attribute name="Rows" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="Ties" type="jdftyp:IntegerList" use="optional"/>
@@ -1748,7 +1721,7 @@
       <xs:appinfo>
         <Version Path="@ClampColorDetails" First="1.4"/>
       </xs:appinfo>
-    </xs:annotation>    
+    </xs:annotation>
   </xs:element>
   <xs:element name="ChannelBindingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="ChannelBindingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
@@ -2191,7 +2164,7 @@
   <xs:element name="ColorantAliasRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="ColorantAliasLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ColorantAliasAttribs_c">
-    <xs:attribute name="RawNames" type="jdftyp:hexBinaryList" use="optional"/>    
+    <xs:attribute name="RawNames" type="jdftyp:hexBinaryList" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="ColorantAliasAttribs_u">
     <xs:attributeGroup ref="jdf:ColorantAliasAttribs_c"/>
@@ -4007,7 +3980,7 @@
   <xs:element name="CuttingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="CuttingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CuttingParamsAttribs_c">
-    <xs:attribute name="NUpSeparation" type="jdftyp:XYPair"/> 
+    <xs:attribute name="NUpSeparation" type="jdftyp:XYPair"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="CuttingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:CuttingParamsAttribs_c"/>
@@ -5019,9 +4992,9 @@
         <Version Path="." First="1.1"/>
         <Version Path="@Anchor" First="1.4"/>
         <Version Path="@HorizontalFitPolicy" First="1.4"/>
-        <Version Path="@MarkJustification" Last="1.3"/>       
-        <Version Path="@MarkOffset" Last="1.3"/>        
-        <Version Path="@MarkOrientation." Last="1.3"/>        
+        <Version Path="@MarkJustification" Last="1.3"/>
+        <Version Path="@MarkOffset" Last="1.3"/>
+        <Version Path="@MarkOrientation." Last="1.3"/>
         <Version Path="@MarkPosition" Last="1.3"/>
         <Version Path="@VerticalFitPolicy" First="1.4"/>
         <Version Path="BarcodeReproParams" First="1.4"/>
@@ -5169,15 +5142,15 @@
         <Constraint Path="Device" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="DeviceRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1"/>        
+        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="Media" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path="MediaRef" minOccurs="0" maxOccurs="1"/>   
+        <Constraint Path="MediaRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="RuleLength" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="Station" minOccurs="0" maxOccurs="unbounded"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
-  
+
   <!-- DieLayout -->
   <xs:element name="DieLayoutRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="DieLayoutLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
@@ -5185,7 +5158,7 @@
     <xs:attribute name="DieSide" type="jdftyp:eTo_" use="optional"/>
     <xs:attribute name="MediaSide" type="jdftyp:eMediaSide_" use="optional"/>
     <xs:attribute name="Rotated" type="jdftyp:boolean" use="optional"/>
-    <xs:attribute name="Waste" type="jdftyp:double" use="optional"/>    
+    <xs:attribute name="Waste" type="jdftyp:double" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="DieLayoutAttribs_u">
     <xs:attributeGroup ref="jdf:DieLayoutAttribs_c"/>
@@ -8358,7 +8331,7 @@
       <xs:appinfo>
         <Version Path="ColorName" Last="1.3"/>
       </xs:appinfo>
-    </xs:annotation>    
+    </xs:annotation>
   </xs:element>
   <xs:element name="InkRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="InkLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
@@ -9810,7 +9783,7 @@
           <xs:element name="BarcodeProductionParams" type="jdf:LayoutElementProductionParams_LayoutElementPart_BarcodeProductionParams_lr" minOccurs="0"/>
           <xs:element name="LayoutElement" type="jdf:LayoutElement_re" minOccurs="0"/>
           <xs:element ref="jdf:LayoutElementRef" minOccurs="0"/>
-          <xs:element name="PositionObj" type="jdf:LayoutElementProductionParams_LayoutElementPart_PositionObj_lr" minOccurs="0" />
+          <xs:element name="PositionObj" type="jdf:LayoutElementProductionParams_LayoutElementPart_PositionObj_lr" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="ID" type="jdftyp:ID" use="optional"/>
       </xs:extension>
@@ -10056,80 +10029,80 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
-   <!-- ============ LayoutShift ================== -->
+
+  <!-- ============ LayoutShift ================== -->
   <xs:element name="LayoutShift" type="jdf:LayoutShift_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.4"/>
         <Version Path="ShiftPoint/@CTM" First="1.4"/>
         <Version Path="ShiftPoint/@Position" First="1.4"/>
-         <Constraint Path="ShiftPoint" minOccurs="1" maxOccurs="unbounded"/>
+        <Constraint Path="ShiftPoint" minOccurs="1" maxOccurs="unbounded"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
-	  <xs:element name="LayoutShiftRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-	  <xs:element name="LayoutShiftLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
-	  <xs:attributeGroup name="LayoutShiftAttribs_c">
-	  </xs:attributeGroup>
-	  <xs:attributeGroup name="LayoutShiftAttribs_u">
-	    <xs:attributeGroup ref="jdf:LayoutShiftAttribs_c"/>
-	  </xs:attributeGroup>
-	  <xs:attributeGroup name="LayoutShiftAttribs_r">
-	    <xs:attributeGroup ref="jdf:LayoutShiftAttribs_c"/>
-	  </xs:attributeGroup>
-	  <xs:complexType name="LayoutShift_r" mixed="false">
-	    <xs:complexContent mixed="false">
-	      <xs:extension base="jdf:ParameterResource">
-	        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-	          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-	          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-	          <xs:element name="ShiftPoint" type="jdf:LayoutShift_ShiftPoint_lr" minOccurs="1"/>
-	        </xs:sequence>
-	        <xs:attributeGroup ref="jdf:LayoutShiftAttribs_r"/>
-	      </xs:extension>
-	    </xs:complexContent>
-	  </xs:complexType>
-	  <xs:complexType name="LayoutShift_re" mixed="false">
-	    <xs:complexContent mixed="false">
-	      <xs:extension base="jdf:ParameterResourceElement">
-	        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-	          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-	          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-	          <xs:element name="ShiftPoint" type="jdf:LayoutShift_ShiftPoint_lr" minOccurs="1" maxOccurs="unbounded"/>
-	        </xs:sequence>
-	        <xs:attributeGroup ref="jdf:LayoutShiftAttribs_r"/>
-	      </xs:extension>
-	    </xs:complexContent>
-	  </xs:complexType>
-	  <xs:complexType name="LayoutShift_rp" mixed="false">
-	    <xs:complexContent mixed="false">
-	      <xs:extension base="jdf:ParameterResourceLeaf">
-	        <xs:choice>
-	          <xs:sequence minOccurs="0" maxOccurs="unbounded">
-	            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-	            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-  	          <xs:element name="ShiftPoint" type="jdf:LayoutShift_ShiftPoint_lr" minOccurs="1" maxOccurs="unbounded"/>
-	          </xs:sequence>
-	          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
-	        </xs:choice>
-	        <xs:attributeGroup ref="jdf:LayoutShiftAttribs_u"/>
-	      </xs:extension>
-	    </xs:complexContent>
-	  </xs:complexType>
-	  <xs:complexType name="LayoutShift_ShiftPoint_lr" mixed="false">
-	    <xs:complexContent mixed="false">
-	      <xs:extension base="jdf:BaseElement_">
-	        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-	          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-	        </xs:sequence>
-	        <xs:attribute name="CTM" type="jdftyp:matrix" use="required"/>
-	        <xs:attribute name="Position" type="jdftyp:XYPair" use="required"/>
-	      </xs:extension>
-	    </xs:complexContent>
+  <xs:element name="LayoutShiftRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="LayoutShiftLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="LayoutShiftAttribs_c">
+  </xs:attributeGroup>
+  <xs:attributeGroup name="LayoutShiftAttribs_u">
+    <xs:attributeGroup ref="jdf:LayoutShiftAttribs_c"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="LayoutShiftAttribs_r">
+    <xs:attributeGroup ref="jdf:LayoutShiftAttribs_c"/>
+  </xs:attributeGroup>
+  <xs:complexType name="LayoutShift_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="ShiftPoint" type="jdf:LayoutShift_ShiftPoint_lr" minOccurs="1"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:LayoutShiftAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
-  
-  
+  <xs:complexType name="LayoutShift_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="ShiftPoint" type="jdf:LayoutShift_ShiftPoint_lr" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:LayoutShiftAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LayoutShift_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="ShiftPoint" type="jdf:LayoutShift_ShiftPoint_lr" minOccurs="1" maxOccurs="unbounded"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:LayoutShiftAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="LayoutShift_ShiftPoint_lr" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:BaseElement_">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="CTM" type="jdftyp:matrix" use="required"/>
+        <xs:attribute name="Position" type="jdftyp:XYPair" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+
   <xs:attributeGroup name="LocationAttribs_c">
     <xs:attribute name="LocationName" type="jdftyp:string" use="optional"/>
     <xs:attribute name="LocID" type="jdftyp:shortString" use="optional"/>
@@ -10414,7 +10387,7 @@
         <Version Path="@RecycledPercentage" First="1.2"/>
         <Version Path="@ReliefThickness" First="1.4"/>
         <Version Path="@ShrinkIndex" First="1.1"/>
-        <Version Path="@SleeveInterlock" First="1.4"/>        
+        <Version Path="@SleeveInterlock" First="1.4"/>
         <Version Path="@StockType" First="1.1"/>
         <Version Path="@Texture" First="1.1"/>
         <Version Path="@UserMediaType" Last="1.0"/>
@@ -10646,7 +10619,7 @@
           <xs:element name="MiscConsumableUpdate" type="jdf:MiscConsumable_re" minOccurs="0"/>
           <xs:element name="MiscConsumable" type="jdf:MiscConsumable_rp" minOccurs="0"/>
         </xs:sequence>
-          <xs:attributeGroup ref="jdf:MiscConsumableAttribs_u"/>
+        <xs:attributeGroup ref="jdf:MiscConsumableAttribs_u"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -10658,7 +10631,7 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:group ref="jdf:PhysicalResourceSubElements" minOccurs="0"/>
         </xs:sequence>
-          <xs:attributeGroup ref="jdf:MiscConsumableAttribs_r"/>
+        <xs:attributeGroup ref="jdf:MiscConsumableAttribs_r"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -10674,7 +10647,7 @@
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
-          <xs:attributeGroup ref="jdf:MiscConsumableAttribs_u"/>
+        <xs:attributeGroup ref="jdf:MiscConsumableAttribs_u"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -11177,7 +11150,7 @@
         <xs:attributeGroup ref="jdf:PageAssignParamsAttribs_u"/>
       </xs:extension>
     </xs:complexContent>
-  </xs:complexType> 
+  </xs:complexType>
   <xs:element name="PageList" type="jdf:PageList_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="PageListRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="PageListLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
@@ -11370,7 +11343,7 @@
       <xs:appinfo>
         <Version Path="." First="1.3"/>
         <Version Path="@ContentDataRefs" First="1.4"/>
-        <Version Path="@ContentListIndex" Last="1.3"/>        
+        <Version Path="@ContentListIndex" Last="1.3"/>
         <Constraint Path="PageElement" minOccurs="0" maxOccurs="unbounded"/>
       </xs:appinfo>
     </xs:annotation>
@@ -12979,18 +12952,12 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-<!-- GCM: Removed for 1.4, Preview becomes Generic to all elements only Preview_r is required
-    <xs:element name="Preview" type="jdf:Preview_r" substitutionGroup="jdf:Resource">
-    <xs:annotation>
-      <xs:appinfo>
-        <Version Path="@CTM" First="1.1"/>
-        <Version Path="@Directory" First="1.1"/>
-        <Version Path="@PreviewFileType" First="1.2"/>
-        <Version Path="@PreviewType" Last="1.1"/>
-        <Version Path="@PreviewUsage" First="1.2"/>
-      </xs:appinfo>
-    </xs:annotation>
-  </xs:element>-->
+  <!--
+    GCM: Removed for 1.4, Preview becomes Generic to all elements only Preview_r is required <xs:element name="Preview" type="jdf:Preview_r"
+    substitutionGroup="jdf:Resource"> <xs:annotation> <xs:appinfo> <Version Path="@CTM" First="1.1"/> <Version Path="@Directory" First="1.1"/> <Version
+    Path="@PreviewFileType" First="1.2"/> <Version Path="@PreviewType" Last="1.1"/> <Version Path="@PreviewUsage" First="1.2"/> </xs:appinfo> </xs:annotation>
+    </xs:element>
+  -->
   <xs:element name="PreviewRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="PreviewLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PreviewAttribs_c">
@@ -13026,9 +12993,13 @@
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:ParameterResource">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <!--  <xs:group ref="jdf:GenericElements" minOccurs="0"/> -->
+
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="PreviewUpdate" type="jdf:Preview_re" minOccurs="0"/>
+          <xs:element ref="jdf:Comment" minOccurs="0"/>
+          <xs:element ref="jdf:GeneralID" minOccurs="0"/>
+          <xs:any namespace="##other" processContents="lax" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:PreviewAttribs_r"/>
       </xs:extension>
@@ -13038,8 +13009,10 @@
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:ParameterResourceElement">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element ref="jdf:Comment" minOccurs="0"/>
+          <xs:element ref="jdf:GeneralID" minOccurs="0"/>
+          <xs:any namespace="##other" processContents="lax" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:PreviewAttribs_r"/>
       </xs:extension>
@@ -13112,8 +13085,10 @@
       <xs:extension base="jdf:BaseElement_">
         <xs:choice>
           <xs:sequence minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element ref="jdf:Comment" minOccurs="0"/>
+            <xs:element ref="jdf:GeneralID" minOccurs="0"/>
+            <xs:any namespace="##other" processContents="lax" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
@@ -14068,7 +14043,7 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.1"/>
-        <Version Path="RibbonColorDetails" First="1.4"/>        
+        <Version Path="RibbonColorDetails" First="1.4"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -14078,7 +14053,7 @@
     <xs:attribute name="LengthOverall" type="jdftyp:double" use="optional"/>
     <xs:attribute name="Material" type="jdftyp:string" use="optional"/>
     <xs:attribute name="RibbonColor" type="jdftyp:NamedColor" use="optional"/>
-    <xs:attribute name="RibbonColorDetails" type="jdftyp:string" use="optional"/>   
+    <xs:attribute name="RibbonColorDetails" type="jdftyp:string" use="optional"/>
     <xs:attribute name="RibbonEnd" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="VisibleLength" type="jdftyp:double" use="optional"/>
   </xs:attributeGroup>
@@ -15168,7 +15143,7 @@
         <xs:attributeGroup ref="jdf:ShapeAttribs_u"/>
       </xs:extension>
     </xs:complexContent>
-  </xs:complexType> 
+  </xs:complexType>
   <xs:element name="ShapeCuttingParams" type="jdf:ShapeCuttingParams_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="ShapeCuttingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="ShapeCuttingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
@@ -15946,7 +15921,7 @@
         <xs:attributeGroup ref="jdf:StaticBlockingParamsAttribs_u"/>
       </xs:extension>
     </xs:complexContent>
-  </xs:complexType> 
+  </xs:complexType>
   <xs:element name="StitchingParams" type="jdf:StitchingParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -16245,7 +16220,7 @@
         <Version Path="ExternalImpositionTemplate" First="1.3"/>
         <Version Path="StripMark" First="1.3"/>
       </xs:appinfo>
-    </xs:annotation>    
+    </xs:annotation>
   </xs:element>
   <xs:element name="StrippingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="StrippingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
@@ -17826,7 +17801,7 @@
   <xs:element name="WireCombBindingParams" type="jdf:WireCombBindingParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
-        <Version Path="@ColorDetails" First="1.4"/>       
+        <Version Path="@ColorDetails" First="1.4"/>
         <Version Path="@FlipBackCover" First="1.1"/>
         <Version Path="@Distance" Last="1.1"/>
         <Version Path="HoleMakingParams" First="1.2"/>
@@ -19591,7 +19566,7 @@
           <xs:element name="BuyerSupplied" type="jdf:OptionSpan" minOccurs="0"/>
           <xs:element name="Dimensions" type="jdf:XYPairSpan" minOccurs="0"/>
           <xs:element name="Flute" type="jdf:NameSpan" minOccurs="0"/>
-          <xs:element name="FluteDirection" type="jdf:EnumerationSpan" minOccurs="0"/>          
+          <xs:element name="FluteDirection" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="FrontCoatings" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="Grade" type="jdf:IntegerSpan" minOccurs="0"/>
           <xs:element name="GrainDirection" type="jdf:EnumerationSpan" minOccurs="0"/>
@@ -19599,7 +19574,7 @@
           <xs:element name="HoleType" type="jdf:StringSpan" minOccurs="0"/>
           <xs:element name="MediaColor" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="MediaColorDetails" type="jdf:StringSpan" minOccurs="0"/>
-          <xs:element name="MediaQuality" type="jdf:StringSpan" minOccurs="0"/>         
+          <xs:element name="MediaQuality" type="jdf:StringSpan" minOccurs="0"/>
           <xs:element name="MediaType" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="MediaTypeDetails" type="jdf:NameSpan" minOccurs="0"/>
           <xs:element name="MediaUnit" type="jdf:EnumerationSpan" minOccurs="0"/>
@@ -19613,7 +19588,7 @@
           <xs:element name="Thickness" type="jdf:NumberSpan" minOccurs="0"/>
           <xs:element name="USWeight" type="jdf:NumberSpan" minOccurs="0"/>
           <xs:element name="Weight" type="jdf:NumberSpan" minOccurs="0"/>
-          <xs:element name="MediaLayers" type="jdf:Media_MediaLayers_lr" minOccurs="0"/>          
+          <xs:element name="MediaLayers" type="jdf:Media_MediaLayers_lr" minOccurs="0"/>
           <xs:element name="MediaIntent" type="jdf:MediaIntent_rp" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:MediaIntentAttribs_r"/>
@@ -19697,8 +19672,8 @@
   <xs:element name="NumberingIntent" type="jdf:NumberingIntent_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
-        <Version Path="ColorNameDetails" First="1.4"/>        
-        <Version Path="NumberItem/ColorNameDetails" First="1.4"/>       
+        <Version Path="ColorNameDetails" First="1.4"/>
+        <Version Path="NumberItem/ColorNameDetails" First="1.4"/>
         <Constraint Path="ColorName" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ColorPool" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ColorPoolRef" minOccurs="0" maxOccurs="1"/>
