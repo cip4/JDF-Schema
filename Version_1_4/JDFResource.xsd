@@ -2438,8 +2438,8 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path='FileSpec[@ProcessUsage="WorkingColorSpace"]' Last="1.0"/>
-        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="2"/>
+        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="2"/>
         <Constraint Path="ColorCorrectionOp" minOccurs="0" maxOccurs="unbounded"/>
       </xs:appinfo>
     </xs:annotation>
