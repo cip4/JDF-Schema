@@ -9252,11 +9252,20 @@
   <xs:element name="ContentObject" type="jdf:Layout_ContentObject_lr">
     <xs:annotation>
       <xs:appinfo>
+        <Version Path="@Anchor" First="1.4"/>
+        <Version Path="@ClipBoxFormat" First="1.4"/>
+        <Version Path="@ClipBoxTemplate" First="1.4"/>
+        <Version Path="@ClipPath" First="1.3"/>
+        <Version Path="@CompensationCTMFormat" First="1.4"/>
+        <Version Path="@CompensationCTMTemplate" First="1.4"/>
         <Version Path="@LayerID" First="1.1"/>
+        <Version Path="@LogicalStackOrd" First="1.4"/>
         <Version Path="@OrdID" First="1.1"/>
+        <Version Path="@TrimClipPath" First="1.4"/>
         <Version Path="@TrimCTM" First="1.1"/>
         <Version Path="@TrimSize" First="1.2"/>
         <Version Path="@Type" Last="1.0"/>
+        
         <Version Path="@DocOrd" First="1.1"/>
         <Version Path="@SetOrd" First="1.1"/>
       </xs:appinfo>
@@ -9265,16 +9274,30 @@
   <xs:element name="MarkObject" type="jdf:Layout_MarkObject_lr">
     <xs:annotation>
       <xs:appinfo>
+        <Version Path="@Anchor" First="1.4"/>
+        <Version Path="@ClipBoxFormat" First="1.4"/>
+        <Version Path="@ClipBoxTemplate" First="1.4"/>
+        <Version Path="@ClipPath" First="1.3"/>
+        <Version Path="@CompensationCTMFormat" First="1.4"/>
+        <Version Path="@CompensationCTMTemplate" First="1.4"/>
         <Version Path="@LayerID" First="1.1"/>
+        <Version Path="@LogicalStackOrd" First="1.4"/>
         <Version Path="@OrdID" First="1.1"/>
+        <Version Path="@TrimClipPath" First="1.4"/>
         <Version Path="@TrimCTM" First="1.1"/>
         <Version Path="@TrimSize" First="1.2"/>
         <Version Path="@Type" Last="1.0"/>
-        <Version Path="@LayoutElementPageNum" First="1.1"/>
-        <Version Path="DeviceMark" First="1.1" Last="1.2"/>
-        <Version Path="DeviceMarkRef" First="1.1" Last="1.2"/>
+        
+        <Version Path="@ContentRef" First="1.4"/>
+        <Version Path="@LayoutElementPageNum" First="1.1" Last="1.3"/>
+        <Version Path="DeviceMark" First="1.1"/>
+        <Version Path="DeviceMarkRef" First="1.1"/>
         <Version Path="JobField" First="1.1"/>
         <Version Path="JobFieldRef" First="1.1"/>
+        <Version Path="LayoutElement" Last="1.3"/>
+        <Version Path="LayoutElementRef" Last="1.3"/>
+        <Version Path="MarkActivation" First="1.4"/>
+        <Version Path="RefAnchor" First="1.4"/>
         <Version Path="ScavengerArea" First="1.1"/>
         <Version Path="ScavengerAreaRef" First="1.1"/>
         <Constraint Path="CIELABMeasuringField" minOccurs="0" maxOccurs="unbounded"/>
@@ -9290,10 +9313,12 @@
         <Constraint Path="DynamicField" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="IdentificationField" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="IdentificationFieldRef" minOccurs="0" maxOccurs="unbounded"/>
-        <Constraint Path="JobField" minOccurs="0" maxOccurs="unbounded"/>
-        <Constraint Path="JobFieldRef" minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="JobField" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="JobFieldRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="LayoutElement" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="LayoutElementRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="MarkActivation" minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="RefAnchor" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="RegisterMark" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="RegisterMarkRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ScavengerArea" minOccurs="0" maxOccurs="unbounded"/>
@@ -9425,14 +9450,17 @@
       <xs:extension base="jdf:BaseElement_">
         <xs:attribute name="Anchor" type="jdftyp:eAnchor_" use="optional"></xs:attribute>
         <xs:attribute name="ClipBox" type="jdftyp:rectangle" use="optional"/>
+        <xs:attribute name="ClipBoxFormat" type="jdftyp:string" use="optional"/>
+        <xs:attribute name="ClipBoxTemplate" type="jdftyp:string" use="optional"/>
         <xs:attribute name="ClipPath" type="jdftyp:PDFPath" use="optional"/>
-        <xs:attribute name="CompensationCTM" type="jdftyp:matrix" use="required"/>
+        <xs:attribute name="CompensationCTMFormat" type="jdftyp:string" use="optional"/>
+        <xs:attribute name="CompensationCTMTemplate" type="jdftyp:string" use="optional"/>
         <xs:attribute name="CTM" type="jdftyp:matrix" use="required"/>
         <xs:attribute name="HalfTonePhaseOrigin" type="jdftyp:XYPair" default="0 0"/>
         <xs:attribute name="LayerID" type="jdftyp:Integer" use="optional"/>
+        <xs:attribute name="LogicalStackOrd" type="jdftyp:Integer" use="optional"/>
         <xs:attribute name="OrdID" type="jdftyp:Integer" use="optional"/>
         <xs:attribute name="SourceClipPath" type="jdftyp:PDFPath" use="optional"/>
-        <xs:attribute name="StackOrd" type="jdftyp:Integer" use="optional"/>
         <xs:attribute name="TrimClipPath" type="jdftyp:PDFPath" use="optional"/>
         <xs:attribute name="TrimCTM" type="jdftyp:matrix" use="optional"/>
         <xs:attribute name="TrimSize" type="jdftyp:XYPair" use="optional"/>
