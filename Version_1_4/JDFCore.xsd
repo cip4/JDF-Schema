@@ -1473,11 +1473,10 @@
       <xs:extension base="jdf:Message">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:element minOccurs="0" ref="jdf:Employee"/>
           <xs:element ref="jdf:CommandTypeObj" minOccurs="0"/>
-              <xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
-           <xs:element ref="jdf:Employee" minOccurs="0"/> 
-       </xs:sequence>
+          <xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
+          <xs:element ref="jdf:Employee" minOccurs="0"/> 
+        </xs:sequence>
         <xs:attribute name="AcknowledgeFormat" type="jdftyp:string" use="optional"/>
         <xs:attribute name="AcknowledgeTemplate" type="jdftyp:string" use="optional"/>
         <xs:attribute name="AcknowledgeURL" type="jdftyp:URL" use="optional"/>
@@ -1503,11 +1502,10 @@
       <xs:extension base="jdf:Message">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:element minOccurs="0" ref="jdf:Employee"/>
           <xs:element ref="jdf:ResponseTypeObj" minOccurs="0"/>
           <xs:element name="Notification" type="jdf:NotificationAudit" minOccurs="0"/>
-            <xs:element ref="jdf:Employee" minOccurs="0"/> 
-      </xs:sequence>
+          <xs:element ref="jdf:Employee" minOccurs="0"/> 
+        </xs:sequence>
         <xs:attribute name="refID" type="jdftyp:NMTOKEN" use="required"/>
         <xs:attribute name="AcknowledgeType" type="jdftyp:eAcknowledgeTypeList_" default="Completed"/>
         <xs:attribute name="ReturnCode" type="jdftyp:Integer" default="0"/>
@@ -1529,7 +1527,6 @@
       <xs:extension base="jdf:Message">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:element minOccurs="0" ref="jdf:Employee"/>
           <xs:element ref="jdf:CommandTypeObj" minOccurs="0"/>
           <xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
           <xs:element ref="jdf:Employee" minOccurs="0"/> 
@@ -1553,7 +1550,6 @@
       <xs:extension base="jdf:Message">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:element ref="jdf:Employee" minOccurs="0"/>
           <xs:element ref="jdf:ResponseTypeObj" minOccurs="0"/>
           <xs:element name="Notification" type="jdf:NotificationAudit" minOccurs="0"/>
           <xs:element ref="jdf:Employee" minOccurs="0"/> 
@@ -1582,11 +1578,10 @@
       <xs:extension base="jdf:Message">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:element ref="jdf:Employee" minOccurs="0"/>
           <xs:element ref="jdf:QueryTypeObj" minOccurs="0"/>
           <xs:element ref="jdf:ResponseTypeObj" minOccurs="0"/>
           <xs:element ref="jdf:Employee" minOccurs="0"/> 
-              <xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
+          <xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
           <xs:element name="Notification" type="jdf:NotificationAudit" minOccurs="0"/>
           <xs:element name="Trigger" type="jdf:TriggerElement_m" minOccurs="0"/>
         </xs:sequence>
@@ -1615,12 +1610,11 @@
       <xs:extension base="jdf:Message">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:element minOccurs="0" ref="jdf:Employee"/>
           <xs:element ref="jdf:QueryTypeObj" minOccurs="0"/>
           <xs:element ref="jdf:CommandOrQueryTypeObj" minOccurs="0"/>
           <xs:element name="Subscription" type="jdf:SubscriptionElement_m" minOccurs="0"/>
-           <xs:element ref="jdf:Employee" minOccurs="0"/> 
-       </xs:sequence>
+          <xs:element ref="jdf:Employee" minOccurs="0"/> 
+        </xs:sequence>
         <xs:attribute name="AcknowledgeFormat" type="jdftyp:string" use="optional"/>
         <xs:attribute name="AcknowledgeTemplate" type="jdftyp:string" use="optional"/>
         <xs:attribute name="AcknowledgeURL" type="jdftyp:URL" use="optional"/>
