@@ -2757,7 +2757,7 @@
 				<xs:attribute name="Status" type="jdftyp:eNodeStatus_" use="required"/>
 				<xs:attribute name="StatusDetails" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="TotalAmount" type="jdftyp:double" use="optional"/>
-				<xs:attribute name="URL" type="jdftyp:URL" use="required"/>
+				<xs:attribute name="URL" type="jdftyp:URL" use="optional"/>
 				<xs:attribute name="Waste" type="jdftyp:double" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
