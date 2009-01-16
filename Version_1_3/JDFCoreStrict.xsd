@@ -80,6 +80,7 @@
 				<xs:attribute name="Attribute" type="jdftyp:NMTOKEN" use="optional"/>
 				<xs:attribute name="Author" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="Box" type="jdftyp:rectangle" use="optional"/>
+				<xs:attribute name="CommentURL" type="jdftyp:URL" use="optional"/>
 				<xs:attribute name="ID" type="jdftyp:ID" use="optional"/>
 				<xs:attribute name="Language" type="jdftyp:language" use="optional"/>
 				<xs:attribute name="Name" type="jdftyp:NMTOKEN" default="Description"/>
