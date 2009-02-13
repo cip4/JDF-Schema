@@ -1407,7 +1407,7 @@
       <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:element ref="jdf:Employee"/>
+          <xs:element ref="jdf:Employee" minOccurs="0"/>
           <xs:group ref="jdf:AnyMessage" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="AgentName" type="jdftyp:string" use="optional"/>
