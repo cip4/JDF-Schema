@@ -12981,8 +12981,9 @@
     </xs:complexContent>
   </xs:complexType>
   <!--
-    GCM: Removed for 1.4, Preview becomes Generic to all elements only Preview_r is required <xs:element name="Preview" type="jdf:Preview_r"
-    substitutionGroup="jdf:Resource"> <xs:annotation> <xs:appinfo> <Version Path="@CTM" First="1.1"/> <Version Path="@Directory" First="1.1"/> <Version
+    GCM: Removed for 1.4, Preview becomes Generic to all elements only Preview_r is required 
+    <xs:element name="Preview" type="jdf:Preview_re"> 
+    <xs:annotation> <xs:appinfo> <Version Path="@CTM" First="1.1"/> <Version Path="@Directory" First="1.1"/> <Version
     Path="@PreviewFileType" First="1.2"/> <Version Path="@PreviewType" Last="1.1"/> <Version Path="@PreviewUsage" First="1.2"/> </xs:appinfo> </xs:annotation>
     </xs:element>
   -->
@@ -13000,13 +13001,28 @@
     <xs:attribute name="PreviewFileType" type="jdftyp:ePreviewFileType_" use="optional"/>
     <xs:attribute name="PreviewUsage" type="jdftyp:ePreviewType_" use="optional"/>
     <xs:attribute name="URL" type="jdftyp:URL" use="optional"/>
-  </xs:attributeGroup>
+    <!-- fudge to allow Preview anywhere -->
+       <xs:attribute name="Class" type="jdftyp:eResourceClass_" use="optional"/>
+ </xs:attributeGroup>
+ <!-- in this case Parameter is purely optional -->
+ 	<xs:simpleType name="myParameter">
+ 		<xs:restriction base="jdftyp:EnumerationBaseType">
+ 			<xs:enumeration value="Parameter"/>
+  		</xs:restriction>
+ 	</xs:simpleType>
+
   <xs:attributeGroup name="PreviewAttribs_r">
     <xs:attributeGroup ref="jdf:PreviewAttribs_c"/>
+    <xs:attributeGroup ref="jdf:PartitionAttribs"/>
+       <xs:attributeGroup ref="jdf:PartitionKeysAttribsForPreview"/>
+ 
     <xs:attribute name="PreviewFileType" type="jdftyp:ePreviewFileType_" default="PNG"/>
     <xs:attribute name="PreviewUsage" type="jdftyp:ePreviewType_" default="Separation"/>
-    <xs:attribute name="URL" type="jdftyp:URL" use="required"/>
-  </xs:attributeGroup>
+    <xs:attribute name="URL" type="jdftyp:URL" use="optional"/>
+   	<xs:attribute name="NoOp" type="jdftyp:boolean" use="optional"/>
+    <xs:attribute name="Class" type="jdf:myParameter" use="optional"/>
+   </xs:attributeGroup>
+   <!--
   <xs:complexType name="Preview_r" mixed="false">
     <xs:annotation>
       <xs:appinfo>
@@ -13019,27 +13035,31 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResource">
+      <xs:extension base="jdf:ParameterResource"> 
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <!--  <xs:group ref="jdf:GenericElements" minOccurs="0"/> -->
-
+ 
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="PreviewUpdate" type="jdf:Preview_re" minOccurs="0"/>
           <xs:element ref="jdf:Comment" minOccurs="0"/>
           <xs:element ref="jdf:GeneralID" minOccurs="0"/>
+          <xs:element ref="jdf:Preview" minOccurs="0"/>
           <xs:any namespace="##other" processContents="lax" minOccurs="0"/>
         </xs:sequence>
-        <xs:attributeGroup ref="jdf:PreviewAttribs_r"/>
+        <xs:attributeGroup ref="jdf:PreviewAttribs_u"/>
       </xs:extension>
     </xs:complexContent>
+
   </xs:complexType>
-  <xs:complexType name="Preview_re" mixed="false">
+ -->
+ 
+ <xs:complexType name="Preview_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResourceElement">
+      <xs:extension base="jdf:ResourceElement">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element ref="jdf:Comment" minOccurs="0"/>
           <xs:element ref="jdf:GeneralID" minOccurs="0"/>
+          <xs:element name="Preview" type="jdf:Preview_re" minOccurs="0"/>
           <xs:any namespace="##other" processContents="lax" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:PreviewAttribs_r"/>
