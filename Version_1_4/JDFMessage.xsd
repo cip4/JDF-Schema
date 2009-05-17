@@ -587,11 +587,11 @@
 					<xs:element name="Subscription" type="jdf:SubscriptionElement_m" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="ChannelID" type="jdftyp:NMTOKEN"/>
-				<xs:attribute name="DeviceID" type="jdftyp:string"/>
-				<xs:attribute name="Families" type="jdftyp:NMTOKEN"/>
+				<xs:attribute name="SenderID" type="jdftyp:string"/>
+				<xs:attribute name="Family" type="jdftyp:NMTOKEN"/>
 				<xs:attribute name="JobID" type="jdftyp:string"/>
 				<xs:attribute name="JobPartID" type="jdftyp:string"/>
-				<xs:attribute name="MessageTypes" type="jdftyp:NMTOKEN"/>
+				<xs:attribute name="MessageType" type="jdftyp:NMTOKEN"/>
 				<xs:attribute name="QueueEntryID" type="jdftyp:string"/>
 			</xs:extension>
 		</xs:complexContent>
