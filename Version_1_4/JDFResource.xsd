@@ -13015,13 +13015,14 @@
   <xs:attributeGroup name="PreviewAttribs_r">
     <xs:attributeGroup ref="jdf:PreviewAttribs_c"/>
     <xs:attributeGroup ref="jdf:PartitionAttribs"/>
-       <xs:attributeGroup ref="jdf:PartitionKeysAttribsForPreview"/>
+    <xs:attributeGroup ref="jdf:PartitionKeysAttribsForPreview"/>
  
     <xs:attribute name="PreviewFileType" type="jdftyp:ePreviewFileType_" default="PNG"/>
     <xs:attribute name="PreviewUsage" type="jdftyp:ePreviewType_" default="Separation"/>
     <xs:attribute name="URL" type="jdftyp:URL" use="optional"/>
    	<xs:attribute name="NoOp" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="Class" type="jdf:myParameter" use="optional"/>
+    <xs:attribute name="PartUsage" type="jdftyp:ePartUsage_" use="optional"/>
    </xs:attributeGroup>
    <!--
   <xs:complexType name="Preview_r" mixed="false">
