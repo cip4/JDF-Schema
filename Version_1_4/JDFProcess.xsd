@@ -457,7 +457,6 @@
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:ProcessInputResources_" minOccurs="0"/>
 					<xs:element ref="jdf:DieLayoutLink" minOccurs="0"/>
-					<xs:element ref="jdf:ToolLink" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>

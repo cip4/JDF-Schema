@@ -12986,8 +12986,9 @@
     <xs:annotation> <xs:appinfo> <Version Path="@CTM" First="1.1"/> <Version Path="@Directory" First="1.1"/> <Version
     Path="@PreviewFileType" First="1.2"/> <Version Path="@PreviewType" Last="1.1"/> <Version Path="@PreviewUsage" First="1.2"/> </xs:appinfo> </xs:annotation>
     </xs:element>
-  -->
   <xs:element name="PreviewRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  -->
+  <xs:element name="PreviewRef" type="jdf:ResourceRef"/>
   <xs:element name="PreviewLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PreviewAttribs_c">
     <xs:attribute name="Compensation" type="jdftyp:eCompensation_" use="optional"/>
