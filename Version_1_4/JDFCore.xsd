@@ -211,9 +211,14 @@
     <xs:attribute name="ID" type="jdftyp:ID" use="optional"/>
     <xs:attribute name="UpdateID" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="ProductID" type="jdftyp:shortString" use="optional"/>
-            <!-- added for backward compatibility 060601 -->
-            <xs:attribute name="Status" type="jdftyp:eResourceStatus_" use="optional" />
-      </xs:attributeGroup>
+     <xs:attribute name="AgentName" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="AgentVersion" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="Author" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="CatalogID" type="jdftyp:shortString" use="optional"/>
+    <xs:attribute name="CatalogDetails" type="jdftyp:string" use="optional"/>
+  <!-- added for backward compatibility 060601 -->
+     <xs:attribute name="Status" type="jdftyp:eResourceStatus_" use="optional" />
+   </xs:attributeGroup>
   <xs:attributeGroup name="AuditAttribs">
     <xs:attribute name="AgentName" type="jdftyp:string" use="optional"/>
     <xs:attribute name="AgentVersion" type="jdftyp:string" use="optional"/>
