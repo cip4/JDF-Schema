@@ -650,6 +650,12 @@
 			<xs:enumeration value="ColorMajor"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="eBaseOrdReset_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="PagePool"/>
+			<xs:enumeration value="PagePoolList"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="eBearerBars_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="None"/>
