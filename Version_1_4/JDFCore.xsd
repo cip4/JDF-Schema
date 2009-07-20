@@ -218,7 +218,9 @@
     <xs:attribute name="CatalogDetails" type="jdftyp:string" use="optional"/>
   <!-- added for backward compatibility 060601 -->
      <xs:attribute name="Status" type="jdftyp:eResourceStatus_" use="optional" />
+    <xs:attribute name="Brand" type="jdftyp:string" use="optional"/>
    </xs:attributeGroup>
+   
   <xs:attributeGroup name="AuditAttribs">
     <xs:attribute name="AgentName" type="jdftyp:string" use="optional"/>
     <xs:attribute name="AgentVersion" type="jdftyp:string" use="optional"/>
