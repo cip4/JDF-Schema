@@ -8990,7 +8990,7 @@
   </xs:attributeGroup>
   <xs:attributeGroup name="JobFieldAttribs_r">
     <xs:attributeGroup ref="jdf:JobFieldAttribs_c"/>
-    <xs:attribute name="ShowList" type="jdftyp:NMTOKENS" use="required"/>
+    <xs:attribute name="ShowList" type="jdftyp:NMTOKENS" use="optional"/>
   </xs:attributeGroup>
   <xs:complexType name="JobField_r" mixed="false">
     <xs:complexContent mixed="false">
