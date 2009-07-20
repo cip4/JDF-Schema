@@ -2421,7 +2421,17 @@
 			<xs:enumeration value="ItemNames"/>
 			<xs:enumeration value="LayerIDs"/>
 			<xs:enumeration value="Location"/>
-			<xs:enumeration value="Option"/>
+			<xs:enumeration value="Metadata0"/>
+		<xs:enumeration value="Metadata1"/>
+		<xs:enumeration value="Metadata2"/>
+		<xs:enumeration value="Metadata3"/>
+		<xs:enumeration value="Metadata4"/>
+		<xs:enumeration value="Metadata5"/>
+		<xs:enumeration value="Metadata6"/>
+		<xs:enumeration value="Metadata7"/>
+		<xs:enumeration value="Metadata8"/>
+		<xs:enumeration value="Metadata9"/>
+		<xs:enumeration value="Option"/>
 			<xs:enumeration value="PageNumber"/>
 			<xs:enumeration value="PageTags"/>
 			<xs:enumeration value="PlateLayout"/>
@@ -3133,6 +3143,7 @@
 			<xs:enumeration value="Lab"/>
 			<xs:enumeration value="Separtation"/>
 			<xs:enumeration value="YUV"/>
+			<xs:enumeration value="All"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eSourceCSsList_">

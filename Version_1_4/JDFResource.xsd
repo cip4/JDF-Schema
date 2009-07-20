@@ -3847,6 +3847,16 @@
     <xs:attribute name="ItemNames" type="jdftyp:pItemNames" use="optional"/>
     <xs:attribute name="LayerIDs" type="jdftyp:pLayerIDs" use="optional"/>
     <xs:attribute name="Location" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="Metadata0" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata1" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata2" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata3" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata4" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata5" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata6" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata7" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata8" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata9" type="jdftyp:NameRangeList" use="optional"/>
     <xs:attribute name="Option" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="PageNumber" type="jdftyp:pPageNumber" use="optional"/>
     <xs:attribute name="PageTags" type="jdftyp:pPageTags" use="optional"/>
@@ -4691,6 +4701,16 @@
     <xs:attribute name="ItemNames" type="jdftyp:pItemNames" use="optional"/>
     <xs:attribute name="LayerIDs" type="jdftyp:pLayerIDs" use="optional"/>
     <xs:attribute name="Location" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="Metadata0" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata1" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata2" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata3" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata4" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata5" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata6" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata7" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata8" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata9" type="jdftyp:NameRangeList" use="optional"/>
     <xs:attribute name="Option" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="PageNumber" type="jdftyp:pPageNumber" use="optional"/>
     <xs:attribute name="PageTags" type="jdftyp:pPageTags" use="optional"/>
@@ -13100,7 +13120,17 @@
     <xs:attribute name="ItemNames" type="jdftyp:pItemNames" use="optional"/>
     <xs:attribute name="LayerIDs" type="jdftyp:pLayerIDs" use="optional"/>
     <xs:attribute name="Location" type="jdftyp:NMTOKEN" use="optional"/>
-    <xs:attribute name="Option" type="jdftyp:NMTOKEN" use="optional"/>
+     <xs:attribute name="Metadata0" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata1" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata2" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata3" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata4" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata5" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata6" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata7" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata8" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata9" type="jdftyp:NameRangeList" use="optional"/>
+   <xs:attribute name="Option" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="PageNumber" type="jdftyp:pPageNumber" use="optional"/>
     <xs:attribute name="PageTags" type="jdftyp:pPageTags" use="optional"/>
     <xs:attribute name="PartVersion" type="jdftyp:NMTOKENS" use="optional"/>
@@ -14608,6 +14638,7 @@
           <xs:element name="ByteMap" type="jdf:ByteMap_re" minOccurs="0"/>
           <xs:element ref="jdf:ByteMapRef" minOccurs="0"/>
           <xs:element name="DynamicInput" type="jdf:RunList_DynamicInput_lr" minOccurs="0"/>
+          <xs:element name="MetadataMap" type="jdf:RunList_MetadataMap_lr" minOccurs="0"/>
           <xs:element name="InsertSheet" type="jdf:InsertSheet_re" minOccurs="0"/>
           <xs:element ref="jdf:InsertSheetRef" minOccurs="0"/>
           <xs:element name="LayoutElement" type="jdf:LayoutElement_re" minOccurs="0"/>
@@ -14676,6 +14707,16 @@
     <xs:attribute name="ItemNames" type="jdftyp:pItemNames" use="optional"/>
     <xs:attribute name="LayerIDs" type="jdftyp:pLayerIDs" use="optional"/>
     <xs:attribute name="Location" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="Metadata0" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata1" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata2" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata3" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata4" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata5" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata6" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata7" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata8" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata9" type="jdftyp:NameRangeList" use="optional"/>
     <xs:attribute name="Option" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="PageNumber" type="jdftyp:pPageNumber" use="optional"/>
     <xs:attribute name="PageTags" type="jdftyp:pPageTags" use="optional"/>
@@ -16688,6 +16729,16 @@
     <xs:attribute name="ItemNames" type="jdftyp:pItemNames" use="optional"/>
     <xs:attribute name="LayerIDs" type="jdftyp:pLayerIDs" use="optional"/>
     <xs:attribute name="Location" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="Metadata0" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata1" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata2" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata3" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata4" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata5" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata6" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata7" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata8" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata9" type="jdftyp:NameRangeList" use="optional"/>
     <xs:attribute name="Option" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="PageNumber" type="jdftyp:pPageNumber" use="optional"/>
     <xs:attribute name="PageTags" type="jdftyp:pPageTags" use="optional"/>
@@ -17087,6 +17138,16 @@
     <xs:attribute name="ItemNames" type="jdftyp:pItemNames" use="optional"/>
     <xs:attribute name="LayerIDs" type="jdftyp:pLayerIDs" use="optional"/>
     <xs:attribute name="Location" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="Metadata0" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata1" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata2" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata3" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata4" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata5" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata6" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata7" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata8" type="jdftyp:NameRangeList" use="optional"/>
+    <xs:attribute name="Metadata9" type="jdftyp:NameRangeList" use="optional"/>
     <xs:attribute name="Option" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="PageNumber" type="jdftyp:pPageNumber" use="optional"/>
     <xs:attribute name="PageTags" type="jdftyp:pPageTags" use="optional"/>
