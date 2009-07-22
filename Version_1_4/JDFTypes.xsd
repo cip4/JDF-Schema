@@ -2,7 +2,7 @@
 <!--	The CIP4 Software License, Version 1.0
 	
 	
-	Copyright (c) 2001-2008 The International Cooperation for the Integration of 
+	Copyright (c) 2001-2009 The International Cooperation for the Integration of 
 	Processes in Prepress, Press and Postpress (CIP4). All rights reserved.
 	
 	Redistribution and use in source and binary forms, with or without modification, 
@@ -1002,6 +1002,26 @@
 			<xs:enumeration value="Element"/>
 		</xs:restriction>
 	</xs:simpleType>
+		<xs:simpleType name="eContext_MDM">
+			<xs:restriction base="jdftyp:EnumerationBaseType">
+				<xs:enumeration value="Set"/>
+				<xs:enumeration value="Document"/>
+				<xs:enumeration value="SubDoc0"/>
+				<xs:enumeration value="SubDoc1"/>
+				<xs:enumeration value="SubDoc2"/>
+				<xs:enumeration value="SubDoc3"/>
+				<xs:enumeration value="SubDoc4"/>
+				<xs:enumeration value="SubDoc5"/>
+				<xs:enumeration value="SubDoc6"/>
+				<xs:enumeration value="SubDoc7"/>
+				<xs:enumeration value="SubDoc8"/>
+				<xs:enumeration value="SubDoc9"/>
+				<xs:enumeration value="PagePool"/>
+				<xs:enumeration value="Page"/>
+				<xs:enumeration value="Object"/>
+			</xs:restriction>
+		</xs:simpleType>
+
 	<xs:simpleType name="eCostType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Chargeable"/>
@@ -1619,6 +1639,19 @@
 		<xs:enumeration value="boolean"/>
 		<xs:enumeration value="dateTime"/>
 		<xs:enumeration value="duration"/>
+	</xs:restriction>
+	</xs:simpleType>
+	<!-- 090722 RP added new enum; same as eGeneralIDDataType + PartIDKeys -->
+	<xs:simpleType name="eMetaDataMapDataType">
+	<xs:restriction base="jdftyp:EnumerationBaseType">
+		<xs:enumeration value="string"/>
+		<xs:enumeration value="integer"/>
+		<xs:enumeration value="double"/>
+		<xs:enumeration value="NMTOKEN"/>
+		<xs:enumeration value="boolean"/>
+		<xs:enumeration value="dateTime"/>
+		<xs:enumeration value="duration"/>
+		<xs:enumeration value="PartIDKeys"/>
 	</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eGlueType_">

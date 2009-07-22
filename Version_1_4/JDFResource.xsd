@@ -14599,9 +14599,10 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="Expr" type="jdf:RunList_MDM_Expr_lr" minOccurs="1" maxOccurs="unbounded"/>
-        </xs:sequence>
-        <xs:attribute name="DataType" type="jdftyp:ePartitionKeysList_" use="optional"/>
-        <xs:attribute name="Name" type="jdftyp:NMTOKEN" use="optional"/>
+        </xs:sequence>       
+        <xs:attribute name="Context" type="jdftyp:eContext_MDM" default="PagePool"/>
+        <xs:attribute name="DataType" type="jdftyp:eMetaDataMapDataType" use="required"/>
+        <xs:attribute name="Name" type="jdftyp:NMTOKEN" use="required"/>
         <xs:attribute name="ValueFormat" type="jdftyp:string" use="optional"/>
         <xs:attribute name="ValueTemplate" type="jdftyp:string" use="optional"/>
       </xs:extension>
