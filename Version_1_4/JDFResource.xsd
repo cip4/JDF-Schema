@@ -7833,7 +7833,7 @@
           <xs:element ref="jdf:MediaSourceRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="SheetFormat" type="jdftyp:NMTOKEN" default="Standard"/>
-        <xs:attribute name="SheetOccurence" type="jdftyp:eIDPParamsJobSheetOccurence" use="optional"/>
+        <xs:attribute name="SheetOccurrence" type="jdftyp:eIDPParamsJobSheetOccurrence" use="optional"/>
         <xs:attribute name="SheetType" type="jdftyp:eIDPParamsJobSheetType" use="optional"/>
       </xs:extension>
     </xs:complexContent>
@@ -12924,7 +12924,7 @@
     <xs:attribute name="ReversePageNumber" type="jdftyp:Integer" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="PDLObjectProperties">
-    <xs:attribute name="PDLType" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="PDLObjectType" type="jdftyp:NMTOKEN" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="ReferenceProperties">
     <xs:attribute name="ExternalReferenceMissing" type="jdftyp:boolean" use="optional"/>
