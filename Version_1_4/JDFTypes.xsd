@@ -2700,6 +2700,14 @@
 			<xs:enumeration value="CIP3Single"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="ePrintingTechnology_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Flexo"/>
+			<xs:enumeration value="Gravure"/>
+			<xs:enumeration value="Offset"/>
+			<xs:enumeration value="Screen"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="ePrintingType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="ContinuousFed"/>

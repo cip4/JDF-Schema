@@ -3389,6 +3389,7 @@
         <Version Path="@NonPrintableMarginRight" First="1.3"/>
         <Version Path="@NonPrintableMarginTop" First="1.3"/>
         <Version Path="@PerfectingModule" First="1.1"/>
+        <Version Path="@PrintingTechnology" First="1.4"/>
         <Version Path="ApprovalParams" First="1.2"/>
         <Version Path="ApprovalParamsRef" First="1.2"/>
         <Version Path="Ink" Last="1.3"/>
@@ -3414,6 +3415,7 @@
     <xs:attribute name="PerfectingModule" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="Powder" type="jdftyp:double" use="optional"/>
     <xs:attribute name="PrintingType" type="jdftyp:ePrintingType_" use="optional"/>
+    <xs:attribute name="PrintingTechnology" type="jdftyp:ePrintingTechnology_" use="optional"/>
     <xs:attribute name="SheetLay" type="jdftyp:eSheetLay_" use="optional"/>
     <xs:attribute name="Speed" type="jdftyp:double" use="optional"/>
     <xs:attribute name="WorkStyle" type="jdftyp:WorkStyle" use="optional"/>
