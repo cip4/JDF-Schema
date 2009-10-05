@@ -542,7 +542,7 @@
         <xs:attribute name="AssemblyID" type="jdftyp:string" use="optional"/>
         <xs:attribute name="AssemblyIDs" type="jdftyp:NMTOKENS" use="optional"/>
         <xs:attribute name="JobID" type="jdftyp:shortString" use="optional"/>
-        <xs:attribute name="Order" type="jdftyp:eOrder1_" default="Gathering"/>
+        <xs:attribute name="Order" type="jdftyp:eOrder1_" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
