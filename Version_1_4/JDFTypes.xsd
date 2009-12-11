@@ -2429,6 +2429,7 @@
 	<xs:simpleType name="ePartitionKeys_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="BinderySignatureName"/>
+			<xs:enumeration value="BinderySignaturePaginationIndex"/>
 			<xs:enumeration value="BlockName"/>
 			<xs:enumeration value="BundleItemIndex"/>
 			<xs:enumeration value="CellIndex"/>
@@ -3492,6 +3493,9 @@
 	<!--Definitions of the types to be used for partition key attributes/-->
 	<xs:simpleType name="pBinderySignatureName">
 		<xs:restriction base="jdftyp:NMTOKEN"/>
+	</xs:simpleType>
+	<xs:simpleType value="pBinderySignaturePaginationIndex">
+		<xs:restriction base="jdftyp:IntegerRangeList"/>
 	</xs:simpleType>
 	<xs:simpleType name="pBlockName">
 		<xs:restriction base="jdftyp:NMTOKEN"/>

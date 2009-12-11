@@ -268,6 +268,7 @@
   </xs:attributeGroup>
   <xs:attributeGroup name="PartitionKeysAttribs">
     <xs:attribute name="BinderySignatureName" type="jdftyp:pBinderySignatureName" use="optional"/>
+	<xs:attribute name="BinderySignaturePaginationIndex" type="jdftyp:pBinderySignaturePaginationIndex" use="optional"/>
     <xs:attribute name="BlockName" type="jdftyp:pBlockName" use="optional"/>
     <xs:attribute name="BundleItemIndex" type="jdftyp:pBundleItemIndex" use="optional"/>
     <xs:attribute name="CellIndex" type="jdftyp:pCellIndex" use="optional"/>

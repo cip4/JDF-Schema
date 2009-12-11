@@ -2752,14 +2752,14 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:attributeGroup name="ColorSpaceConversionOpAttribs_c">
-    <xs:attribute name="ObjectTags" type="jdftyp:NMTOKENS" use="optional"/>
+  	<xs:attribute name="IgnoreEmbeddedICC" type="jdftyp:boolean" use="optional"/>
+  	<xs:attribute name="ObjectTags" type="jdftyp:NMTOKENS" use="optional"/>
     <xs:attribute name="Operation" type="jdftyp:eOperation_" use="optional"/>
     <xs:attribute name="SourceCS" type="jdftyp:eSourceCSs_" use="optional"/>
     <xs:attribute name="SourceRenderingIntent" type="jdftyp:eRenderingIntent1_" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="ColorSpaceConversionOpAttribs_r">
     <xs:attributeGroup ref="jdf:ColorSpaceConversionOpAttribs_c"/>
-    <xs:attribute name="IgnoreEmbeddedICC" type="jdftyp:boolean" default="false"/>
     <xs:attribute name="PreserveBlack" type="jdftyp:boolean" default="false"/>
     <xs:attribute name="RenderingIntent" type="jdftyp:eRenderingIntent1_" default="ColorSpaceDependent"/>
     <xs:attribute name="RGBGray2Black" type="jdftyp:boolean" default="false"/>
@@ -2769,6 +2769,7 @@
   <xs:complexType name="ColorSpaceConversionOp_re" mixed="false">
     <xs:annotation>
       <xs:appinfo>
+      	<Version Path="@IgnoreEmbeddedICC" Last="1.3"/>
         <Version Path="@ObjectTags" First="1.4"/>
         <Version Path="@PreserveBlack" First="1.1"/>
         <Version Path="@RGBGray2BlackThreshold" First="1.2"/>
@@ -3825,6 +3826,7 @@
       <xs:documentation>NAME CLASH - Removed BlockName!!</xs:documentation>
     </xs:annotation>
     <xs:attribute name="BinderySignatureName" type="jdftyp:pBinderySignatureName" use="optional"/>
+	<xs:attribute name="BinderySignaturePaginationIndex" type="jdftyp:pBinderySignaturePaginationIndex" use="optional"/>
     <xs:attribute name="BundleItemIndex" type="jdftyp:pBundleItemIndex" use="optional"/>
     <xs:attribute name="CellIndex" type="jdftyp:pCellIndex" use="optional"/>
     <xs:attribute name="Condition" type="jdftyp:pCondition" use="optional"/>
@@ -4678,6 +4680,7 @@
       <xs:documentation>NAME CLASH - Removed Separation!!</xs:documentation>
     </xs:annotation>
     <xs:attribute name="BinderySignatureName" type="jdftyp:pBinderySignatureName" use="optional"/>
+	<xs:attribute name="BinderySignaturePaginationIndex" type="jdftyp:pBinderySignaturePaginationIndex" use="optional"/>
     <xs:attribute name="BlockName" type="jdftyp:pBlockName" use="optional"/>
     <xs:attribute name="BundleItemIndex" type="jdftyp:pBundleItemIndex" use="optional"/>
     <xs:attribute name="CellIndex" type="jdftyp:pCellIndex" use="optional"/>
@@ -5849,6 +5852,7 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.1"/>
+      	<Version Path="@ModuleIndex" First="1.4"/>
         <Version Path="Emboss/IdentifiationField" First="1.4"/>
         <Version Path="Emboss/IdentifiationFieldRef" First="1.4"/>
         <Version Path="Emboss/Media" First="1.4"/>
@@ -5868,7 +5872,9 @@
   </xs:element>
   <xs:element name="EmbossingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="EmbossingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
-  <xs:attributeGroup name="EmbossingParamsAttribs_c"/>
+	<xs:attributeGroup name="EmbossingParamsAttribs_c">
+		<xs:attribute name="ModuleIndex" type="jdftyp:Integer" use="optional"/>
+	</xs:attributeGroup>
   <xs:attributeGroup name="EmbossingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:EmbossingParamsAttribs_c"/>
   </xs:attributeGroup>
@@ -8791,7 +8797,9 @@
         <Version Path="@OCGZoom" First="1.3"/>
         <Version Path="@PrintTrapAnnotations" First="1.3"/>
         <Version Path="OCGControl" First="1.3"/>
+		<Version Path="ReferenceXObjParams" First="1.4"/>
         <Constraint Path="OCGControl" minOccurs="0" maxOccurs="unbounded"/>
+		<Constraint Path="ReferenceXObjParams" minOccurs="0" maxOccurs="1"/>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
@@ -8799,6 +8807,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="OCGControl" type="jdf:InterpretingParams_PDFInterpretingParams_OCGControl_lr" minOccurs="0"/>
+          <xs:element name="ReferenceXObjParams" type="jdf:InterpretingParams_PDFInterpretingParams_ReferenceXObjParams_lr" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="EmitPDFBG" type="jdftyp:boolean" default="true"/>
         <xs:attribute name="EmitPDFHalftones" type="jdftyp:boolean" default="true"/>
@@ -8824,6 +8833,18 @@
         </xs:sequence>
         <xs:attribute name="IncludeOCG" type="jdftyp:boolean" default="true"/>
         <xs:attribute name="OCGName" type="jdftyp:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>  
+  <xs:complexType name="InterpretingParams_PDFInterpretingParams_ReferenceXObjParams_lr" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:BaseElement_">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+          <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="Mode" type="jdftyp:NMTOKEN" use="required"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -9102,7 +9123,8 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.1"/>
-        <Version Path="@NipWidth" First="1.3"/>
+      	<Version Path="@ModuleIndex" First="1.4"/>
+      	<Version Path="@NipWidth" First="1.3"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -9112,17 +9134,17 @@
     <xs:attribute name="AdhesiveType" type="jdftyp:string" use="optional"/>
     <xs:attribute name="GapList" type="jdftyp:DoubleList" use="optional"/>
     <xs:attribute name="HardenerType" type="jdftyp:string" use="optional"/>
-    <xs:attribute name="LaminatingMethod" type="jdftyp:eLaminatingMethod_" use="optional"/>
+  	<xs:attribute name="LaminatingBox" type="jdftyp:rectangle" use="optional"/>
+  	<xs:attribute name="LaminatingMethod" type="jdftyp:eLaminatingMethod_" use="optional"/>
     <xs:attribute name="NipWidth" type="jdftyp:double" use="optional"/>
+  	<xs:attribute name="ModuleIndex" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="Temperature" type="jdftyp:double" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="LaminatingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:LaminatingParamsAttribs_c"/>
-    <xs:attribute name="LaminatingBox" type="jdftyp:rectangle" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="LaminatingParamsAttribs_r">
     <xs:attributeGroup ref="jdf:LaminatingParamsAttribs_c"/>
-    <xs:attribute name="LaminatingBox" type="jdftyp:rectangle" use="required"/>
   </xs:attributeGroup>
   <xs:complexType name="LaminatingParams_r" mixed="false">
     <xs:complexContent mixed="false">
@@ -9576,6 +9598,7 @@
         <Version Path="@IgnorePDLImposition" First="1.1"/>
         <Version Path="@IsBlank" First="1.2"/>
         <Version Path="@PageListIndex" First="1.2"/>
+      	<Version Path="@SetLevel" First="1.4"/>
         <Version Path="@SourceMediaBox" First="1.4"/>
         <Version Path="ColorPool" First="1.2"/>
         <Version Path="ColorPoolRef" First="1.2"/>
@@ -9620,6 +9643,7 @@
     <xs:attribute name="IsPrintable" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="IsTrapped" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="PageListIndex" type="jdftyp:IntegerRangeList" use="optional"/>
+  	<xs:attribute name="SetLevel" type="jdftyp:XPath" use="optional"/>
     <xs:attribute name="SourceBleedBox" type="jdftyp:rectangle" use="optional"/>
     <xs:attribute name="SourceClipBox" type="jdftyp:rectangle" use="optional"/>
     <xs:attribute name="SourceMediaBox" type="jdftyp:rectangle" use="optional"/>
@@ -12367,10 +12391,14 @@
       <xs:appinfo>
         <Version Path="." First="1.2"/>
         <Version Path="TestPool" First="1.3"/>
-        <Constraint Path="ActionPool" minOccurs="1" maxOccurs="unbounded"/>
+		<Version Path="FileSpec" First="1.4"/>
+		<Version Path="FileSpecRef" First="1.4"/>
+        <Constraint Path="ActionPool" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ActionPool/Action/Loc" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ActionPool/Action/PreflightAction" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path="TestPool" minOccurs="1" maxOccurs="1"/>
+		<Constraint Path="FileSpec" minOccurs="0" maxOccurs="1"/>
+		<Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="TestPool" minOccurs="0" maxOccurs="1"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -12390,6 +12418,8 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="ActionPool" type="jdf:ActionPool" minOccurs="0"/>
+          <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+          <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
           <xs:element name="TestPool" type="jdf:PreflightParams_TestPool_lr" minOccurs="0"/>
           <xs:element name="PreflightParamsUpdate" type="jdf:PreflightParams_re" minOccurs="0"/>
           <xs:element name="PreflightParams" type="jdf:PreflightParams_rp" minOccurs="0"/>
@@ -12542,10 +12572,14 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.2"/>
+		<Version Path="FileSpec" First="1.4"/>
+		<Version Path="FileSpecRef" First="1.4"/>
+		<Constraint Path="FileSpec" minOccurs=0 maxOccurs="1"/>
+		<Constraint Path="FileSpecRef" minOccurs=0 maxOccurs="1"/>
         <Constraint Path="PreflightParams" minOccurs="1" maxOccurs="1"/>
         <Constraint Path="PreflightParamsRef" minOccurs="1" maxOccurs="1"/>
-        <Constraint Path="PreflightReportRulePool" minOccurs="1" maxOccurs="1"/>
-        <Constraint Path="PreflightReportRulePoolRef" minOccurs="1" maxOccurs="1"/>
+        <Constraint Path="PreflightReportRulePool" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="PreflightReportRulePoolRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="RunList" minOccurs="1" maxOccurs="1"/>
         <Constraint Path="RunListRef" minOccurs="1" maxOccurs="1"/>
         <Constraint Path="PRItem" minOccurs="0" maxOccurs="unbounded"/>
@@ -12564,17 +12598,15 @@
   <xs:element name="PreflightReportRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="PreflightReportLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PreflightReportAttribs_c">
+    <xs:attribute name="ErrorCount" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="ErrorState" type="jdftyp:eErrorState_" use="optional"/>
+    <xs:attribute name="WarningCount" type="jdftyp:Integer" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="PreflightReportAttribs_u">
     <xs:attributeGroup ref="jdf:PreflightReportAttribs_c"/>
-    <xs:attribute name="ErrorCount" type="jdftyp:Integer" use="optional"/>
-    <xs:attribute name="WarningCount" type="jdftyp:Integer" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="PreflightReportAttribs_r">
     <xs:attributeGroup ref="jdf:PreflightReportAttribs_c"/>
-    <xs:attribute name="ErrorCount" type="jdftyp:Integer" use="required"/>
-    <xs:attribute name="WarningCount" type="jdftyp:Integer" use="required"/>
   </xs:attributeGroup>
   <xs:complexType name="PreflightReport_PRItem_lr" mixed="false">
     <xs:complexContent mixed="false">
@@ -12675,6 +12707,8 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+          <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
           <xs:element name="PreflightParams" type="jdf:PreflightParams_re" minOccurs="0"/>
           <xs:element ref="jdf:PreflightParamsRef" minOccurs="0"/>
           <xs:element name="PreflightReportRulePool" type="jdf:PreflightReportRulePool_re" minOccurs="0"/>
@@ -12712,7 +12746,7 @@
       <xs:extension base="jdf:ParameterResourceLeaf">
         <xs:choice>
           <xs:sequence minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+F            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="PreflightParams" type="jdf:PreflightParams_re" minOccurs="0"/>
             <xs:element ref="jdf:PreflightParamsRef" minOccurs="0"/>
@@ -13004,14 +13038,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <!--
-    GCM: Removed for 1.4, Preview becomes Generic to all elements only Preview_r is required 
-    <xs:element name="Preview" type="jdf:Preview_re"> 
-    <xs:annotation> <xs:appinfo> <Version Path="@CTM" First="1.1"/> <Version Path="@Directory" First="1.1"/> <Version
-    Path="@PreviewFileType" First="1.2"/> <Version Path="@PreviewType" Last="1.1"/> <Version Path="@PreviewUsage" First="1.2"/> </xs:appinfo> </xs:annotation>
-    </xs:element>
-  <xs:element name="PreviewRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  -->
   <xs:element name="PreviewRef" type="jdf:ResourceRef"/>
   <xs:element name="PreviewLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PreviewAttribs_c">
@@ -13097,6 +13123,7 @@
       <xs:documentation>NAME CLASH - Removed PreviewType!!</xs:documentation>
     </xs:annotation>
     <xs:attribute name="BinderySignatureName" type="jdftyp:pBinderySignatureName" use="optional"/>
+	<xs:attribute name="BinderySignaturePaginationIndex" type="jdftyp:pBinderySignaturePaginationIndex" use="optional"/>
     <xs:attribute name="BlockName" type="jdftyp:pBlockName" use="optional"/>
     <xs:attribute name="BundleItemIndex" type="jdftyp:pBundleItemIndex" use="optional"/>
     <xs:attribute name="CellIndex" type="jdftyp:pCellIndex" use="optional"/>
@@ -14686,6 +14713,7 @@
       <xs:documentation>NAME CLASH - Removed DocCopies</xs:documentation>
     </xs:annotation>
     <xs:attribute name="BinderySignatureName" type="jdftyp:pBinderySignatureName" use="optional"/>
+	<xs:attribute name="BinderySignaturePaginationIndex" type="jdftyp:pBinderySignaturePaginationIndex" use="optional"/>
     <xs:attribute name="BlockName" type="jdftyp:pBlockName" use="optional"/>
     <xs:attribute name="BundleItemIndex" type="jdftyp:pBundleItemIndex" use="optional"/>
     <xs:attribute name="CellIndex" type="jdftyp:pCellIndex" use="optional"/>
@@ -15245,6 +15273,7 @@
   <xs:element name="ShapeCuttingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ShapeCuttingParamsAttribs_c">
     <xs:attribute name="DeliveryMode" type="jdftyp:eDeliveryMode_" use="optional"/>
+  	<xs:attribute name="ModuleIndex" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="SheetLay" type="jdftyp:eSheetLay_" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="ShapeCuttingParamsAttribs_u">
@@ -15283,6 +15312,7 @@
       <xs:appinfo>
         <Version Path="." First="1.1"/>
         <Version Path="@DeliveryMode" First="1.3"/>
+      	<Version Path="@ModuleIndex" First="1.4"/>
         <Version Path="@SheetLay" First="1.3"/>
         <Version Path="DieLayout" First="1.3"/>
         <Version Path="DieLayoutRef" First="1.3"/>
@@ -16707,6 +16737,7 @@
       <xs:documentation>NAME CLASH - Removed Side!!</xs:documentation>
     </xs:annotation>
     <xs:attribute name="BinderySignatureName" type="jdftyp:pBinderySignatureName" use="optional"/>
+	<xs:attribute name="BinderySignaturePaginationIndex" type="jdftyp:pBinderySignaturePaginationIndex" use="optional"/>
     <xs:attribute name="BlockName" type="jdftyp:pBlockName" use="optional"/>
     <xs:attribute name="BundleItemIndex" type="jdftyp:pBundleItemIndex" use="optional"/>
     <xs:attribute name="CellIndex" type="jdftyp:pCellIndex" use="optional"/>
@@ -17116,6 +17147,7 @@
       <xs:documentation>NAME CLASH - Removed Separation!!</xs:documentation>
     </xs:annotation>
     <xs:attribute name="BinderySignatureName" type="jdftyp:pBinderySignatureName" use="optional"/>
+	<xs:attribute name="BinderySignaturePaginationIndex" type="jdftyp:pBinderySignaturePaginationIndex" use="optional"/>
     <xs:attribute name="BlockName" type="jdftyp:pBlockName" use="optional"/>
     <xs:attribute name="BundleItemIndex" type="jdftyp:pBundleItemIndex" use="optional"/>
     <xs:attribute name="CellIndex" type="jdftyp:pCellIndex" use="optional"/>

@@ -1224,7 +1224,7 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Constraint Path="ResourceLinkPool/PreflightParamsLink" Usage="Input" minOccurs="1" maxOccurs="1"/>
-				<Constraint Path="ResourceLinkPool/PreflightReportRulePoolLink" Usage="Input" minOccurs="1" maxOccurs="1"/>
+				<Constraint Path="ResourceLinkPool/PreflightReportRulePoolLink" Usage="Input" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ResourceLinkPool/RunListLink" Usage="Input" minOccurs="1" maxOccurs="1"/>
 				<Constraint Path="ResourceLinkPool/PreflightReportLink" Usage="Output" minOccurs="1" maxOccurs="1"/>
 			</xs:appinfo>
