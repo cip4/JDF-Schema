@@ -1693,7 +1693,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="ObservationTarget" type="jdf:Subscription_ObservationTarget" minOccurs="0"/>
         </xs:sequence>
-        <xs:attribute name="ChannelMode" type="jdftyp:eChannelMode_" default="FireAndForget"/>
+        <xs:attribute name="ChannelMode" type="jdftyp:eChannelMode_" use="optional"/>
         <xs:attribute name="Format" type="jdftyp:string" use="optional"/>
         <xs:attribute name="MinDelayTime" type="jdftyp:duration" use="optional"/>
         <xs:attribute name="RepeatStep" type="jdftyp:Integer" use="optional"/>
