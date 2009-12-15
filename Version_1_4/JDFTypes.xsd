@@ -3494,7 +3494,7 @@
 	<xs:simpleType name="pBinderySignatureName">
 		<xs:restriction base="jdftyp:NMTOKEN"/>
 	</xs:simpleType>
-	<xs:simpleType value="pBinderySignaturePaginationIndex">
+	<xs:simpleType name="pBinderySignaturePaginationIndex">
 		<xs:restriction base="jdftyp:IntegerRangeList"/>
 	</xs:simpleType>
 	<xs:simpleType name="pBlockName">

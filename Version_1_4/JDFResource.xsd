@@ -12746,7 +12746,7 @@
       <xs:extension base="jdf:ParameterResourceLeaf">
         <xs:choice>
           <xs:sequence minOccurs="0" maxOccurs="unbounded">
-F            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="PreflightParams" type="jdf:PreflightParams_re" minOccurs="0"/>
             <xs:element ref="jdf:PreflightParamsRef" minOccurs="0"/>
