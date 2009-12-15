@@ -12574,8 +12574,8 @@
         <Version Path="." First="1.2"/>
 		<Version Path="FileSpec" First="1.4"/>
 		<Version Path="FileSpecRef" First="1.4"/>
-		<Constraint Path="FileSpec" minOccurs=0 maxOccurs="1"/>
-		<Constraint Path="FileSpecRef" minOccurs=0 maxOccurs="1"/>
+		<Constraint Path="FileSpec" minOccurs="0" maxOccurs="1"/>
+		<Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="PreflightParams" minOccurs="1" maxOccurs="1"/>
         <Constraint Path="PreflightParamsRef" minOccurs="1" maxOccurs="1"/>
         <Constraint Path="PreflightReportRulePool" minOccurs="0" maxOccurs="1"/>
