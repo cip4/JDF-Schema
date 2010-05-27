@@ -17775,8 +17775,8 @@
   <xs:element name="VarnishingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="VarnishingParamsAttribs_c">
     <xs:attribute name="ModuleIndex" type="jdftyp:Integer" use="optional"/>
-    <xs:attribute name="AbsoluteWidth" type="jdftyp:NMTOKEN" use="optional"/>
-    <xs:attribute name="Anchor" type="jdftyp:eVarnishArea_" use="optional"/>
+    <xs:attribute name="MOduleType" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="VarnishArea" type="jdftyp:eVarnishArea_" use="optional"/>
     <xs:attribute name="VarnishMethod" type="jdftyp:eVarnishMethod_" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="VarnishingParamsAttribs_u">
@@ -17788,10 +17788,13 @@
   <xs:complexType name="VarnishingParams_r" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:ParameterResource">
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-        </xs:sequence>
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="VarnishingParams" type="jdf:VarnishingParams_rp" minOccurs="0"/>
+          </xs:sequence>
+        </xs:choice>
         <xs:attributeGroup ref="jdf:VarnishingParamsAttribs_r"/>
       </xs:extension>
     </xs:complexContent>
