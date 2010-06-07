@@ -586,8 +586,8 @@
 	</xs:complexType>
 	<xs:complexType name="ParameterResourceElement" mixed="false">
 		<xs:complexContent mixed="false">
-			<xs:extension base="jdf:ResourceElement">
-				<xs:attributeGroup ref="jdf:ParameterAttribs_re"/>
+			<xs:extension base="jdf:BaseElement_">
+				<xs:attribute name="ID" type="jdftyp:ID"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>

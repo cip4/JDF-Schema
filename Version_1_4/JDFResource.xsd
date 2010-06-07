@@ -12729,6 +12729,8 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+          <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
           <xs:element name="PreflightParams" type="jdf:PreflightParams_re" minOccurs="0"/>
           <xs:element ref="jdf:PreflightParamsRef" minOccurs="0"/>
           <xs:element name="PreflightReportRulePool" type="jdf:PreflightReportRulePool_re" minOccurs="0"/>
@@ -12748,6 +12750,8 @@
           <xs:sequence minOccurs="0" maxOccurs="unbounded">
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+            <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
             <xs:element name="PreflightParams" type="jdf:PreflightParams_re" minOccurs="0"/>
             <xs:element ref="jdf:PreflightParamsRef" minOccurs="0"/>
             <xs:element name="PreflightReportRulePool" type="jdf:PreflightReportRulePool_re" minOccurs="0"/>
@@ -13049,7 +13053,7 @@
   </xs:attributeGroup>
   <xs:attributeGroup name="PreviewAttribs_u">
     <xs:attributeGroup ref="jdf:PreviewAttribs_c"/>
-    <xs:attribute name="PreviewFileType" type="jdftyp:ePreviewFileType_" use="optional"/>
+    <xs:attribute name="PreviewFileType" type="jdftyp:string" use="optional"/>
     <xs:attribute name="PreviewUsage" type="jdftyp:ePreviewType_" use="optional"/>
     <xs:attribute name="URL" type="jdftyp:URL" use="optional"/>
     <!-- fudge to allow Preview anywhere -->
@@ -13067,7 +13071,7 @@
     <xs:attributeGroup ref="jdf:PartitionAttribs"/>
     <xs:attributeGroup ref="jdf:PartitionKeysAttribsForPreview"/>
  
-    <xs:attribute name="PreviewFileType" type="jdftyp:ePreviewFileType_" default="PNG"/>
+    <xs:attribute name="PreviewFileType" type="jdftyp:string" default="PNG"/>
     <xs:attribute name="PreviewUsage" type="jdftyp:ePreviewType_" default="Separation"/>
     <xs:attribute name="URL" type="jdftyp:URL" use="optional"/>
    	<xs:attribute name="NoOp" type="jdftyp:boolean" use="optional"/>
