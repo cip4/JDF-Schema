@@ -9767,11 +9767,11 @@
         <Version Path="ShapeDef" First="1.4"/>
         <Version Path="ShapeDefRef" First="1.4"/>
         <Version Path="TestPool" First="1.4"/>
-        <Constraint Path="ActionPool" minOccurs="0" maxOccurs="0"/>
+        <Constraint Path="ActionPool" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="LayoutElementPart" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ShapeDef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ShapeDefRef" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path="TestPool" minOccurs="0" maxOccurs="0"/>
+        <Constraint Path="TestPool" minOccurs="0" maxOccurs="1"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
