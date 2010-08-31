@@ -685,6 +685,7 @@
 			<xs:enumeration value="Collecting"/>
 			<xs:enumeration value="Gathering"/>
 			<xs:enumeration value="List"/>
+			<xs:enumeration value="None"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eBinding_">
