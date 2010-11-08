@@ -987,6 +987,7 @@
 			<xs:enumeration value="PagePoolStart"/>
 			<xs:enumeration value="PagePoolListStart"/>
 			<xs:enumeration value="PagePoolListEnd"/>
+			<xs:enumeration value="PagePoolEnd"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eConsumption_">
