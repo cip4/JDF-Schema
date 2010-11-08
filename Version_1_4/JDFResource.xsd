@@ -2410,6 +2410,7 @@
           <xs:element ref="jdf:CIELABMeasuringFieldRef" minOccurs="0"/>
           <xs:element name="DensityMeasuringField" type="jdf:DensityMeasuringField_re" minOccurs="0"/>
           <xs:element ref="jdf:DensityMeasuringFieldRef" minOccurs="0"/>
+          <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ColorControlStripAttribs_r"/>
       </xs:extension>
@@ -2427,6 +2428,7 @@
             <xs:element name="DensityMeasuringField" type="jdf:DensityMeasuringField_re" minOccurs="0"/>
             <xs:element ref="jdf:DensityMeasuringFieldRef" minOccurs="0"/>
             <xs:element name="ColorControlStrip" type="jdf:ColorControlStrip_rp" minOccurs="0"/>
+            <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
