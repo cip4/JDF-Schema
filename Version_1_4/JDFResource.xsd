@@ -18791,7 +18791,7 @@
         <Constraint Path="BindingColor" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="BindingLength" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="BindingSide" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path="BindingType" minOccurs="1" maxOccurs="1"/>
+        <Constraint Path="BindingType" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="CoverColor" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="AdhesiveBinding" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="BindList" minOccurs="0" maxOccurs="1"/>
