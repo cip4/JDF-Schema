@@ -9207,6 +9207,7 @@
         <Version Path="@StackDepth" First="1.4"/>
         <Version Path="@SurfaceContentsBox" First="1.3"/>
         <Version Path="LayerList" First="1.1"/>
+        <Version Path="LogicalStackParams" First="1.4"/>
         <Version Path="Media" First="1.1"/>
         <Version Path="MediaRef" First="1.1"/>
         <Version Path="MediaSource" Last="1.0"/>
@@ -9223,6 +9224,7 @@
         <Constraint Path="InsertSheet" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="InsertSheetRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="LayerList" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="LogicalStackParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="Media" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="MediaRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="MediaSource" minOccurs="0" maxOccurs="1"/>
@@ -9312,8 +9314,7 @@
         <Version Path="@TrimClipPath" First="1.4"/>
         <Version Path="@TrimCTM" First="1.1"/>
         <Version Path="@TrimSize" First="1.2"/>
-        <Version Path="@Type" Last="1.0"/>
-        
+        <Version Path="@Type" Last="1.0"/>        
         <Version Path="@DocOrd" First="1.1"/>
         <Version Path="@SetOrd" First="1.1"/>
       </xs:appinfo>
@@ -9370,7 +9371,7 @@
         <Constraint Path="RegisterMark" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="RegisterMarkRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ScavengerArea" minOccurs="0" maxOccurs="unbounded"/>
-        <Constraint Path="ScavengerAreaRef" minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="ScavengerAreaRef" minOccurs="0" maxOccurs="c"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -9385,6 +9386,17 @@
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
+  <xs:element name="LogicalStackParams" type="jdf:Layout_LogicalStackParams_lr">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="@MaxStackDepth" First="1.4"/>
+        <Version Path="Stack" First="1.4"/>
+        <Version Path="@Restrictions" First="1.4"/>
+        <Constraint Path="Stack" minOccurs="1" maxOccurs="unbounded"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+
   <xs:complexType name="Layout_Signature_lr" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
@@ -9413,6 +9425,7 @@
           <xs:element name="InsertSheet" type="jdf:InsertSheet_re" minOccurs="0"/>
           <xs:element ref="jdf:InsertSheetRef" minOccurs="0"/>
           <xs:element name="LayerList" type="jdf:Layout_LayerList_lr" minOccurs="0"/>
+          <xs:element name="LogicalStackParams" type="jdf:Layout_LogicalStackParams_lr" minOccurs="0"/>
           <xs:element ref="jdf:MarkObject" minOccurs="0"/>
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
@@ -9589,6 +9602,29 @@
         </xs:sequence>
         <xs:attribute name="Context" type="jdftyp:eMarkActivationContext_" use="required"/>
         <xs:attribute name="Index" type="jdftyp:IntegerRangeList" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Layout_LogicalStackParams_lr" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:BaseElement_">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:element name="Stack" type="jdf:Layout_LogicalStackParams_Stack_lr" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="MaxStackDepth" type="jdftyp:Integer" use="optional"/>
+        <xs:attribute name="Restrictions" type="jdftyp:eRestrictions_" default="None"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Layout_LogicalStackParams_Stack_lr" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:BaseElement_">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="LogicalStackOrd" type="jdftyp:Integer" use="required"/>
+        <xs:attribute name="LogicalStackSequence" type="jdftyp:eLogicalStackSequence_" default="SheetIndex"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -14648,20 +14684,11 @@
       <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:element name="Term" type="jdf:RunList_MDM_Term_lr" minOccurs="1" maxOccurs="unbounded"/>
+		  <xs:element ref="jdf:AbstractTerms" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="Name" type="jdftyp:NMTOKEN" use="optional"/>
         <xs:attribute name="Path" type="jdftyp:XPath" use="optional"/>
         <xs:attribute name="Value" type="jdftyp:string" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="RunList_MDM_Term_lr" mixed="true">
-    <xs:complexContent mixed="true">
-      <xs:extension base="jdf:BaseElement_">
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

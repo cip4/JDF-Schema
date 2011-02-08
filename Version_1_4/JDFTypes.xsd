@@ -2045,6 +2045,12 @@
 			<xs:enumeration value="FinishedPage"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="eLogicalStackSequence_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="SheetIndex"/>
+			<xs:enumeration value="DescendingSheetIndex"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="eLotControl_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Controlled"/>
@@ -2939,6 +2945,13 @@
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="DiscardAtNextSignal"/>
 			<xs:enumeration value="RetryForever"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eRestrictions_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="None"/>
+			<xs:enumeration value="WithinImposedSheetSet"/>
+			<xs:enumeration value="WithinLogicalStack"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eRingSystem_">
