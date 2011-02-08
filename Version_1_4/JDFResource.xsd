@@ -17808,7 +17808,7 @@
   <xs:element name="VarnishingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="VarnishingParamsAttribs_c">
     <xs:attribute name="ModuleIndex" type="jdftyp:Integer" use="optional"/>
-    <xs:attribute name="MOduleType" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="ModuleType" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="VarnishArea" type="jdftyp:eVarnishArea_" use="optional"/>
     <xs:attribute name="VarnishMethod" type="jdftyp:eVarnishMethod_" use="optional"/>
   </xs:attributeGroup>
