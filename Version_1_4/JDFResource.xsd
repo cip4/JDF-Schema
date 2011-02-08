@@ -9371,7 +9371,7 @@
         <Constraint Path="RegisterMark" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="RegisterMarkRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ScavengerArea" minOccurs="0" maxOccurs="unbounded"/>
-        <Constraint Path="ScavengerAreaRef" minOccurs="0" maxOccurs="c"/>
+        <Constraint Path="ScavengerAreaRef" minOccurs="0" maxOccurs="unbounded"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
