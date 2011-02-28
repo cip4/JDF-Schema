@@ -1194,7 +1194,7 @@
 		</xs:annotation>
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:AbstractTerm">
-				<xs:attribute name="Path" type="jdftyp:XYPair" use="optional"/>
+				<xs:attribute name="Path" type="jdftyp:XPath" use="optional"/>
 				<xs:attribute name="rRef" type="jdftyp:IDREF" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
