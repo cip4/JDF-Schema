@@ -3071,6 +3071,24 @@
 			<xs:enumeration value="Both"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="eSheetCondition_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Begin"/>
+			<xs:enumeration value="End"/>
+			<xs:enumeration value="BeginSet"/>
+			<xs:enumeration value="EndSet"/>
+			<xs:enumeration value="PagePoolBegin"/>
+			<xs:enumeration value="PagePoolEnd"/>
+			<xs:enumeration value="PagePoolListBegin"/>
+			<xs:enumeration value="PagePoolListEnd"/>
+			<xs:enumeration value="LogicalStackBegin"/>
+			<xs:enumeration value="LogicalStackEnd"/>
+			<xs:enumeration value="LogicalStackSetBegin"/>
+			<xs:enumeration value="LogicalStackSetEnd"/>
+			<xs:enumeration value="ImposedSheetSetBegin"/>
+			<xs:enumeration value="ImposedSheetSetEnd"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="eSheetLay_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Left"/>
@@ -3318,6 +3336,12 @@
 			<xs:enumeration value="Rigth"/>
 			<xs:enumeration value="Top"/>
 			<xs:enumeration value="Bottom"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eTemplateType_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Normal"/>
+			<xs:enumeration value="ConditionalSheets"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eThreadMaterial_">
