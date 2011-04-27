@@ -9431,7 +9431,7 @@
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
           <xs:element name="MediaSource" type="jdf:MediaSource_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaSourceRef" minOccurs="0"/>
-          <xs:element name="PageCondition" type="jdf:Layout_PageCondition_lr" minOccurs="0"/>
+          <xs:element name="PageCondition" type="jdf:Layout_PageCondition_lr" maxOccurs="unbounded" minOccurs="0"/>
           <xs:element name="Signature" type="jdf:Layout_Signature_lr" minOccurs="0"/>
           <xs:element name="TransferCurvePool" type="jdf:TransferCurvePool_re" minOccurs="0"/>
           <xs:element ref="jdf:TransferCurvePoolRef" minOccurs="0"/>
@@ -9457,6 +9457,7 @@
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
           <xs:element name="MediaSource" type="jdf:MediaSource_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaSourceRef" minOccurs="0"/>
+          <xs:element name="PageCondition" type="jdf:Layout_PageCondition_lr" maxOccurs="unbounded" minOccurs="0"/>
           <xs:element name="Signature" type="jdf:Layout_Signature_lr" minOccurs="0"/>
           <xs:element name="TransferCurvePool" type="jdf:TransferCurvePool_re" minOccurs="0"/>
           <xs:element ref="jdf:TransferCurvePoolRef" minOccurs="0"/>
@@ -9481,6 +9482,8 @@
             <xs:element ref="jdf:MediaRef" minOccurs="0"/>
             <xs:element name="MediaSource" type="jdf:MediaSource_re" minOccurs="0"/>
             <xs:element ref="jdf:MediaSourceRef" minOccurs="0"/>
+            <xs:element name="PageCondition" type="jdf:Layout_PageCondition_lr" maxOccurs="unbounded" minOccurs="0"/>
+            <xs:element name="SheetCondition" type="jdf:Layout_SheetCondition_lr" minOccurs="0"/>
             <xs:element name="Signature" type="jdf:Layout_Signature_lr" minOccurs="0"/>
             <xs:element name="TransferCurvePool" type="jdf:TransferCurvePool_re" minOccurs="0"/>
             <xs:element ref="jdf:TransferCurvePoolRef" minOccurs="0"/>
@@ -9489,6 +9492,7 @@
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
         <xs:attributeGroup ref="jdf:LayoutAttribs_u"/>
+        <xs:attribute name="TemplateType" type="jdftyp:eTemplateType_" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -9625,6 +9629,18 @@
         </xs:sequence>
         <xs:attribute name="LogicalStackOrd" type="jdftyp:Integer" use="required"/>
         <xs:attribute name="LogicalStackSequence" type="jdftyp:eLogicalStackSequence_" default="SheetIndex"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Layout_SheetCondition_lr" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:BaseElement_">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:element name="RunList" type="jdf:RunList_re" minOccurs="0"/>
+          <xs:element ref="jdf:RunListRef" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="Condition" type="jdftyp:eSheetCondition_" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
