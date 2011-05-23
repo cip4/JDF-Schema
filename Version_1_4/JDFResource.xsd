@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
   <!--
-    The CIP4 Software License, Version 1.0 Copyright (c) 2001-2009 The International Cooperation for the Integration of Processes in Prepress, Press and
+    The CIP4 Software License, Version 1.0 Copyright (c) 2001-2011 The International Cooperation for the Integration of Processes in Prepress, Press and
     Postpress (CIP4). All rights reserved. Redistribution and use in source and binary forms, with or without modification, are permitted provided that the
     following conditions are met: 1. Redistributions of source code must retain the above copyright notice, this list of conditions and the following
     disclaimer. 2. Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the
@@ -7667,6 +7667,8 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="IdentificationFieldUpdate" type="jdf:IdentificationField_re" minOccurs="0"/>
           <xs:element name="IdentificationField" type="jdf:IdentificationField_rp" minOccurs="0"/>
+          <xs:element name="BarcodeDetails" type="jdf:IdentificationField_BarcodeDetails_lr" minOccurs="0"/>
+          <xs:element name="ExtraValues" type="jdf:IdentificationField_ExtraValues_lr" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:IdentificationFieldAttribs_r"/>
       </xs:extension>
@@ -7678,6 +7680,8 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="BarcodeDetails" type="jdf:IdentificationField_BarcodeDetails_lr" minOccurs="0"/>
+          <xs:element name="ExtraValues" type="jdf:IdentificationField_ExtraValues_lr" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:IdentificationFieldAttribs_r"/>
       </xs:extension>
@@ -7691,6 +7695,8 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="IdentificationField" type="jdf:IdentificationField_rp" minOccurs="0"/>
+          <xs:element name="BarcodeDetails" type="jdf:IdentificationField_BarcodeDetails_lr" minOccurs="0"/>
+          <xs:element name="ExtraValues" type="jdf:IdentificationField_ExtraValues_lr" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
@@ -9193,6 +9199,7 @@
         <Version Path="@LockOrigins" First="1.3"/>
         <Version Path="@MaxCollect" First="1.4"/>
         <Version Path="@BaseOrdReset" First="1.4"/>
+        <Version Path="@MaxCollect" First="1.4"/>
         <Version Path="@MaxDocOrd" First="1.1" Last="1.3"/>
         <Version Path="@MaxOrd" Last="1.3"/>
         <Version Path="@MaxSetOrd" First="1.1" Last="1.3"/>
@@ -9204,7 +9211,6 @@
         <Version Path="@SheetNameFormat" First="1.4"/>
         <Version Path="@SheetNameTemplate" First="1.4"/>
         <Version Path="@SourceWorkStyle" First="1.3"/>
-        <Version Path="@StackDepth" First="1.4"/>
         <Version Path="@SurfaceContentsBox" First="1.3"/>
         <Version Path="LayerList" First="1.1"/>
         <Version Path="LogicalStackParams" First="1.4"/>
@@ -9258,8 +9264,8 @@
     <xs:attribute name="SheetNameFormat" type="jdftyp:string" use="optional"/>
     <xs:attribute name="SheetNameTemplate" type="jdftyp:string" use="optional"/>
     <xs:attribute name="SourceWorkStyle" type="jdftyp:WorkStyle" use="optional"/>
-    <xs:attribute name="StackDepth" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="SurfaceContentsBox" type="jdftyp:rectangle" use="optional"/>
+    <xs:attribute name="TemplateType" type="jdftyp:eTemplateType" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="LayoutAttribs_u">
     <xs:attributeGroup ref="jdf:LayoutAttribs_c"/>
