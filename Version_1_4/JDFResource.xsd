@@ -9265,7 +9265,7 @@
     <xs:attribute name="SheetNameTemplate" type="jdftyp:string" use="optional"/>
     <xs:attribute name="SourceWorkStyle" type="jdftyp:WorkStyle" use="optional"/>
     <xs:attribute name="SurfaceContentsBox" type="jdftyp:rectangle" use="optional"/>
-    <xs:attribute name="TemplateType" type="jdftyp:eTemplateType" use="optional"/>
+    <xs:attribute name="TemplateType" type="jdftyp:eTemplateType_" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="LayoutAttribs_u">
     <xs:attributeGroup ref="jdf:LayoutAttribs_c"/>
@@ -9498,7 +9498,6 @@
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
         <xs:attributeGroup ref="jdf:LayoutAttribs_u"/>
-        <xs:attribute name="TemplateType" type="jdftyp:eTemplateType_" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
