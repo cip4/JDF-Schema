@@ -2,7 +2,7 @@
 <!--	The CIP4 Software License, Version 1.0
 	
 	
-	Copyright (c) 2001-2009 The International Cooperation for the Integration of 
+	Copyright (c) 2001-2012 The International Cooperation for the Integration of 
 	Processes in Prepress, Press and Postpress (CIP4). All rights reserved.
 	
 	Redistribution and use in source and binary forms, with or without modification, 
@@ -3216,7 +3216,7 @@
 			<xs:enumeration value="ICCLAB"/>
 			<xs:enumeration value="ICCRGB"/>
 			<xs:enumeration value="Lab"/>
-			<xs:enumeration value="Separtation"/>
+			<xs:enumeration value="Separation"/>
 			<xs:enumeration value="YUV"/>
 			<xs:enumeration value="All"/>
 		</xs:restriction>
