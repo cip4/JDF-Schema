@@ -5768,8 +5768,8 @@
         <Version Path="." First="1.2"/>
         <Constraint Path="AutomatedOverPrintParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="AutomatedOverPrintParamsRef" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path="ColorantAlias" MinOccurs="0" maxOccurs="unbounded"/>
-        <Constraint Path="ColorantAliasRef" MinOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="ColorantAlias" minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="ColorantAliasRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ColorSpaceConversionOp" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ColorSpaceConversionOpRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="FileSpec[@ResourceUsage='ActualOutputProfile']" minOccurs="0" maxOccurs="1"/>
