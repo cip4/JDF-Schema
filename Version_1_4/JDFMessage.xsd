@@ -3393,7 +3393,7 @@
 				<Version Path="JobPhase" First="1.2"/>
 				<Version Path="Part" First="1.2"/>
 				<Version Path="Preview" First="1.2"/>
-				<Constraint Path="JobPhase" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="JobPhase" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="Part" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="Preview" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:appinfo>
