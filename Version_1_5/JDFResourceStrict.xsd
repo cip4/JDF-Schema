@@ -59,8 +59,8 @@
 	Processes in Prepress, Press and Postpress , please see &lt;http://www.cip4.org/&gt;.
 	
 -->
-<xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_3_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.3-002">
-	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_3_Types" schemaLocation="JDFTypes.xsd"/>
+<xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_5_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.5-001">
+	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_5_Types" schemaLocation="JDFTypes.xsd"/>
 	<xs:include schemaLocation="JDFCoreStrict.xsd"/>
 	<xs:include schemaLocation="JDFCapability.xsd"/>
 	<xs:element name="Resource" type="jdf:Resources" abstract="true">
@@ -8062,7 +8062,7 @@
 	</xs:complexType>
 	<xs:element name="Ink" type="jdf:Ink_r" substitutionGroup="jdf:Resource"/>
 	<xs:element name="InkRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-	<xs:element name="InkLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
+	<xs:element name="InkLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="InkAttribs_c">
 		<xs:attribute name="ColorName" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="Family" type="jdftyp:NMTOKEN" use="optional"/>
@@ -9825,7 +9825,7 @@
 	</xs:complexType>
 	<xs:element name="Media" type="jdf:Media_r" substitutionGroup="jdf:Resource"/>
 	<xs:element name="MediaRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-	<xs:element name="MediaLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
+	<xs:element name="MediaLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="MediaAttribs_c">
 		<xs:attribute name="BackCoatings" type="jdftyp:eCoatings_" use="optional"/>
 		<xs:attribute name="BackGlossValue" type="jdftyp:double" use="optional"/>
@@ -10854,7 +10854,7 @@
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="PalletRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-	<xs:element name="PalletLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
+	<xs:element name="PalletLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="PalletAttribs_c">
 		<xs:attribute name="Size" type="jdftyp:XYPair" use="optional"/>
 	</xs:attributeGroup>
@@ -13381,7 +13381,7 @@
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="RegisterRibbonRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-	<xs:element name="RegisterRibbonLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
+	<xs:element name="RegisterRibbonLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="RegisterRibbonAttribs_c">
 		<xs:attribute name="Material" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="RibbonColor" type="jdftyp:NamedColor" use="optional"/>
@@ -14967,7 +14967,7 @@
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="StrapRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-	<xs:element name="StrapLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
+	<xs:element name="StrapLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="StrapAttribs_c">
 		<xs:attribute name="StrapColor" type="jdftyp:NamedColor" use="optional"/>
 	</xs:attributeGroup>
@@ -16473,7 +16473,7 @@
 		</xs:annotation>
 	</xs:element>
 	<xs:element name="UsageCounterRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-	<xs:element name="UsageCounterLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
+	<xs:element name="UsageCounterLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="UsageCounterAttribs_c">
 		<xs:attribute name="CounterTypes" type="jdftyp:NMTOKENS" use="optional"/>
 	</xs:attributeGroup>

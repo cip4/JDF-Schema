@@ -60,7 +60,7 @@
 	
 -->
 <!--JDF specification V 1.3-->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_3_Types" targetNamespace="http://www.CIP4.org/JDFSchema_1_3_Types" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.3-002">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_5_Types" targetNamespace="http://www.CIP4.org/JDFSchema_1_5_Types" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.5-001">
 	<!--Simple Type Declarations-->
 	<xs:simpleType name="boolean">
 		<xs:restriction base="xs:boolean">
@@ -222,6 +222,7 @@
 			<xs:enumeration value="1.2"/>
 			<xs:enumeration value="1.3"/>
 			<xs:enumeration value="1.4"/>
+			<xs:enumeration value="1.5"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="JDFJMFVersions">
@@ -1641,6 +1642,7 @@
 		<xs:enumeration value="boolean"/>
 		<xs:enumeration value="dateTime"/>
 		<xs:enumeration value="duration"/>
+		<xs:enumeration value="NamedFeature"/>
 	</xs:restriction>
 	</xs:simpleType>
 	<!-- 090722 RP added new enum; same as eGeneralIDDataType + PartIDKeys -->
@@ -2464,21 +2466,22 @@
 			<xs:enumeration value="LayerIDs"/>
 			<xs:enumeration value="Location"/>
 			<xs:enumeration value="Metadata0"/>
-		<xs:enumeration value="Metadata1"/>
-		<xs:enumeration value="Metadata2"/>
-		<xs:enumeration value="Metadata3"/>
-		<xs:enumeration value="Metadata4"/>
-		<xs:enumeration value="Metadata5"/>
-		<xs:enumeration value="Metadata6"/>
-		<xs:enumeration value="Metadata7"/>
-		<xs:enumeration value="Metadata8"/>
-		<xs:enumeration value="Metadata9"/>
-		<xs:enumeration value="Option"/>
+			<xs:enumeration value="Metadata1"/>
+			<xs:enumeration value="Metadata2"/>
+			<xs:enumeration value="Metadata3"/>
+			<xs:enumeration value="Metadata4"/>
+			<xs:enumeration value="Metadata5"/>
+			<xs:enumeration value="Metadata6"/>
+			<xs:enumeration value="Metadata7"/>
+			<xs:enumeration value="Metadata8"/>
+			<xs:enumeration value="Metadata9"/>
+			<xs:enumeration value="Option"/>
 			<xs:enumeration value="PageNumber"/>
 			<xs:enumeration value="PageTags"/>
 			<xs:enumeration value="PlateLayout"/>
 			<xs:enumeration value="PartVersion"/>
 			<xs:enumeration value="PreflightRule"/>
+			<xs:enumeration value="ProductPart"/>
 			<xs:enumeration value="PreviewType"/>
 			<xs:enumeration value="RibbonName"/>
 			<xs:enumeration value="Run"/>
@@ -2488,6 +2491,7 @@
 			<xs:enumeration value="RunSet"/>
 			<xs:enumeration value="SectionIndex"/>
 			<xs:enumeration value="Separation"/>
+			<xs:enumeration value="SetCopies"/>
 			<xs:enumeration value="SetDocIndex"/>
 			<xs:enumeration value="SetIndex"/>
 			<xs:enumeration value="SetRunIndex"/>

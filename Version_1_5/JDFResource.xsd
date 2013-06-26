@@ -23,10 +23,10 @@
     which contributed by and copyrighted by Adobe Systems and Man Roland. copyright (c) 2000-2001, Adobe Systems copyright (c) 2001-2001, Man Roland For more
     information on The International Cooperation for the Integration of Processes in Prepress, Press and Postpress , please see &lt;http://www.cip4.org/&gt;.
   -->
-<xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_3_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-  targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.3-002"
+<xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_5_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.5-001"
 >
-  <xs:import namespace="http://www.CIP4.org/JDFSchema_1_3_Types" schemaLocation="JDFTypes.xsd"/>
+  <xs:import namespace="http://www.CIP4.org/JDFSchema_1_5_Types" schemaLocation="JDFTypes.xsd"/>
   <xs:include schemaLocation="JDFCore.xsd"/>
   <xs:include schemaLocation="JDFCapability.xsd"/>
   <xs:element name="Resource" type="jdf:Resources" abstract="true">
@@ -40,9 +40,10 @@
         <Version Path="@CatalogDetails" Last="1.3"/>
         <Version Path="@PartUsage" First="1.1"/>
         <Version Path="@PipeProtocol" First="1.2"/>
-        <Version Path="@PipeURL" First="1.2"/>
+        <Version Path="@PipeURL" First="1.2" Last="1.4"/>
         <Version Path="@rRefs" Last="1.1"/>
         <Version Path="@SettingsPolicy" First="1.1"/>
+		<Version Path="@SkipIndex" First="1.5"/>
         <Version Path="@SpawnIDs" First="1.1"/>
         <Version Path="@UpdateID" First="1.1" Last="1.2"/>
         <Version Path="GeneralID" First="1.3"/>
@@ -87,26 +88,29 @@
   <xs:element name="ResourceLink" type="jdf:ResourceLink" abstract="true">
     <xs:annotation>
       <xs:appinfo>
-        <!--Generic ResourceLink-->
+        <!--Generic ResourceLink From V1.5 the type for all ResourceLinks -->
+        <Version Path="@ActualAmount" First="1.2"/>
         <Version Path="@CombinedProcessIndex" First="1.1"/>
         <Version Path="@CombinedProcessType" Last="1.0"/>
         <Version Path="@DraftOK" Last="1.2"/>
         <Version Path="@Duration" First="1.4"/>
+		<Version Path="@MaxAmount" First="1.3"/>
+		<Version Path="@MinAmount" First="1.3"/>
         <Version Path="@MinLateStatus" First="1.3"/>
         <Version Path="@MinStatus" First="1.3"/>
-        <Version Path="@PipeProtocol" First="1.1"/>
+        <Version Path="@Orientation" First="1.1"/>
+        <Version Path="@PipeProtocol" First="1.1" Last="1.4"/>
+        <Version Path="@Recommendation" Last="1.1"/>
+        <Version Path="@RemotePipEndPause" First="1.1" Last="1.4"/>
+        <Version Path="@RemotePipEndResume" First="1.1" Last="1.4"/>
         <Version Path="@rSubRef" Last="1.1"/>
+        <Version Path="@Transformation" First="1.1"/>		
         <Version Path="AmountPool" First="1.1"/>
+        <Version Path="Lot" First="1.3"/>
         <Constraint Path="AmountPool" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="AmountPool/PartAmount" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="AmountPool/PartAmount/Part" minOccurs="1" maxOccurs="1"/>
         <Constraint Path="Part" minOccurs="0" maxOccurs="unbounded"/>
-        <!-- Implementation Resource Links -->
-        <Version Path=".[@Class=&quot;Implementation&quot;]/@Recommendation" Last="1.1"/>
-        <!--Physical Resource Links-->
-        <Version Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/@ActualAmount" First="1.2"/>
-        <Version Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/@Orientation" First="1.1"/>
-        <Version Path=".[@Class=&quot;Consumable&quot; or @Class=&quot;Handling&quot; or @Class=&quot;Quantity&quot;]/@Transformation" First="1.1"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -118,7 +122,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="AddressRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="AddressLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="AddressLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="AddressAttribs_c">
     <xs:attribute name="City" type="jdftyp:string" use="optional"/>
     <xs:attribute name="Country" type="jdftyp:string" use="optional"/>
@@ -185,7 +189,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="AdhesiveBindingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="AdhesiveBindingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="AdhesiveBindingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="AdhesiveBindingParamsAttribs_c">
     <xs:attribute name="PullOutValue" type="jdftyp:double" use="optional"/>
     <xs:attribute name="FlexValue" type="jdftyp:double" use="optional"/>
@@ -261,7 +265,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ApprovalParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ApprovalParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink">
+  <xs:element name="ApprovalParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink">
     <xs:annotation>
       <xs:appinfo/>
     </xs:annotation>
@@ -348,7 +352,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ApprovalSuccessRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ApprovalSuccessLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ApprovalSuccessLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ApprovalSuccessAttribs_c"/>
   <xs:attributeGroup name="ApprovalSuccessAttribs_u">
     <xs:attributeGroup ref="jdf:ApprovalSuccessAttribs_c"/>
@@ -454,7 +458,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="AssemblyRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="AssemblyLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="AssemblyLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="AssemblyAttribs_c">
     <xs:attribute name="AssemblyID" type="jdftyp:string" use="optional"/>
     <xs:attribute name="AssemblyIDs" type="jdftyp:NMTOKENS" use="optional"/>
@@ -569,7 +573,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="AssetListCreationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="AssetListCreationParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="AssetListCreationParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="AssetListCreationParamsAttribs_c">
     <xs:attribute name="AssetTypes" type="jdftyp:regExp" use="optional"/>
   </xs:attributeGroup>
@@ -628,7 +632,7 @@
   </xs:complexType>
   <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="AutomatedOverPrintParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="AutomatedOverPrintParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="AutomatedOverPrintParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="AutomatedOverPrintParamsAttribs_c">
     <xs:attribute name="LineArtBlackLevel" type="jdftyp:double" use="optional"/>
     <xs:attribute name="TextSizeThreshold" type="jdftyp:Integer" use="optional"/>
@@ -699,7 +703,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="BarcodeCompParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="BarcodeCompParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="BarcodeCompParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="BarcodeCompParamsAttribs_c">
     <xs:attribute name="CompensationValue" type="jdftyp:double" use="optional"/>
   </xs:attributeGroup>
@@ -760,7 +764,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="BarcodeReproParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="BarcodeReproParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="BarcodeReproParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="BarcodeReproParamsAttribs_c">
     <xs:attribute name="BearerBars" type="jdftyp:eBearerBars_" use="optional"/>
     <xs:attribute name="Height" type="jdftyp:double" use="optional"/>
@@ -829,7 +833,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="BendingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="BendingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="BendingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="BendingParamsAttribs_c">
     <xs:attribute name="PunchType" type="jdftyp:string" use="optional"/>
   </xs:attributeGroup>
@@ -906,7 +910,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="BinderySignatureRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="BinderySignatureLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="BinderySignatureLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="BinderySignatureAttribs_c">
     <xs:attribute name="AlignmentReferenceWeb" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="BindingOrientation" type="jdftyp:Orientation" use="optional"/>
@@ -1021,7 +1025,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="BlockPreparationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="BlockPreparationParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="BlockPreparationParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="BlockPreparationParamsAttribs_c">
     <xs:attribute name="Backing" type="jdftyp:double" use="optional"/>
     <xs:attribute name="Rounding" type="jdftyp:double" use="optional"/>
@@ -1091,7 +1095,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="BoxFoldingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="BoxFoldingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="BoxFoldingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="BoxFoldingParamsAttribs_c">
     <xs:attribute name="BlankDimensionsX" type="jdftyp:DoubleList" use="optional"/>
     <xs:attribute name="BlankDimensionsY" type="jdftyp:DoubleList" use="optional"/>
@@ -1198,7 +1202,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="BoxPackingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="BoxPackingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="BoxPackingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="BoxPackingParamsAttribs_c">
     <xs:attribute name="ComponentsPerRow" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="Columns" type="jdftyp:Integer" use="optional"/>
@@ -1265,7 +1269,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="BufferParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="BufferParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="BufferParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="BufferParamsAttribs_c">
     <xs:attribute name="MinimumWait" type="jdftyp:duration" use="optional"/>
   </xs:attributeGroup>
@@ -1326,7 +1330,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="BundleRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="BundleLink" type="jdf:QuantityLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="BundleLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="BundleAttribs_c">
     <xs:attribute name="FolioCount" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="ReaderPageCount" type="jdftyp:Integer" use="optional"/>
@@ -1408,7 +1412,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="BundlingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="BundlingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="BundlingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="BundlingParamsAttribs_c">
     <xs:attribute name="Copies" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="Length" type="jdftyp:double" use="optional"/>
@@ -1474,7 +1478,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ByteMapRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ByteMapLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ByteMapLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ByteMapAttribs_c">
     <xs:attribute name="BandOrdering" type="jdftyp:eBandOrdering_" use="optional"/>
     <xs:attribute name="ElementType" type="jdftyp:eElementType_" use="optional"/>
@@ -1583,7 +1587,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="CaseMakingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="CaseMakingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="CaseMakingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CaseMakingParamsAttribs_c">
     <xs:attribute name="BottomFoldIn" type="jdftyp:double" use="optional"/>
     <xs:attribute name="CoverWidth" type="jdftyp:double" use="optional"/>
@@ -1659,7 +1663,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="CasingInParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="CasingInParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="CasingInParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CasingInParamsAttribs_c">
     <xs:attribute name="CaseRadius" type="jdftyp:double" use="optional"/>
   </xs:attributeGroup>
@@ -1724,7 +1728,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ChannelBindingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ChannelBindingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ChannelBindingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ChannelBindingParamsAttribs_c">
     <xs:attribute name="Brand" type="jdftyp:string" use="optional"/>
     <xs:attribute name="ClampColor" type="jdftyp:NamedColor" use="optional"/>
@@ -1794,7 +1798,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="CIELABMeasuringFieldRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="CIELABMeasuringFieldLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="CIELABMeasuringFieldLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CIELABMeasuringFieldAttribs_c">
     <xs:attribute name="DensityStandard" type="jdftyp:eDensityStandard_" use="optional"/>
     <xs:attribute name="Diameter" type="jdftyp:double" use="optional"/>
@@ -1874,7 +1878,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="CoilBindingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="CoilBindingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="CoilBindingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CoilBindingParamsAttribs_c">
     <xs:attribute name="Brand" type="jdftyp:string" use="optional"/>
     <xs:attribute name="Color" type="jdftyp:NamedColor" use="optional"/>
@@ -1939,7 +1943,7 @@
   </xs:complexType>
   <xs:element name="CollectingParams" type="jdf:CollectingParams_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="CollectingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="CollectingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="CollectingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CollectingParamsAttribs_c"/>
   <xs:attributeGroup name="CollectingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:CollectingParamsAttribs_c"/>
@@ -2020,7 +2024,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ColorRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ColorLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ColorLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ColorAttribs_c">
     <xs:attribute name="ActualColorName" type="jdftyp:string" use="optional"/>
     <xs:attribute name="CMYK" type="jdftyp:CMYKColor" use="optional"/>
@@ -2162,7 +2166,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ColorantAliasRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ColorantAliasLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ColorantAliasLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ColorantAliasAttribs_c">
     <xs:attribute name="RawNames" type="jdftyp:hexBinaryList" use="optional"/>
   </xs:attributeGroup>
@@ -2241,7 +2245,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ColorantControlRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ColorantControlLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ColorantControlLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ColorantControlAttribs_c">
     <xs:attribute name="ProcessColorModel" type="jdftyp:NMTOKEN" use="optional"/>
   </xs:attributeGroup>
@@ -2369,7 +2373,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ColorControlStripRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ColorControlStripLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ColorControlStripLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ColorControlStripAttribs_c">
     <xs:attribute name="Center" type="jdftyp:XYPair" use="optional"/>
     <xs:attribute name="Rotation" type="jdftyp:double" use="optional"/>
@@ -2447,7 +2451,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ColorCorrectionParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ColorCorrectionParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ColorCorrectionParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ColorCorrectionParamsAttribs_c">
     <xs:attribute name="ColorManagementSystem" type="jdftyp:string" use="optional"/>
   </xs:attributeGroup>
@@ -2559,7 +2563,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ColorMeasurementConditionsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ColorMeasurementConditionsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ColorMeasurementConditionsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ColorMeasurementConditionsAttribs_c">
     <xs:attribute name="Instrumentation" type="jdftyp:string" use="optional"/>
     <xs:attribute name="InkState" type="jdftyp:eInkState_" use="optional"/>
@@ -2626,7 +2630,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ColorPoolRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ColorPoolLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ColorPoolLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ColorPoolAttribs_c">
     <xs:attribute name="ColorantSetName" type="jdftyp:string" use="optional"/>
   </xs:attributeGroup>
@@ -2692,7 +2696,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ColorSpaceConversionParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ColorSpaceConversionParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ColorSpaceConversionParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ColorSpaceConversionParamsAttribs_c">
     <xs:attribute name="ColorManagementSystem" type="jdftyp:string" use="optional"/>
     <xs:attribute name="ConvertDevIndepColors" type="jdftyp:boolean" use="optional"/>
@@ -2812,7 +2816,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ComChannelRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ComChannelLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ComChannelLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ComChannelAttribs_c">
     <xs:attribute name="ChannelTypeDetails" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="ChannelUsage" type="jdftyp:NMTOKENS" use="optional"/>
@@ -2878,7 +2882,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="CompanyRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="CompanyLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="CompanyLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CompanyAttribs_c"/>
   <xs:attributeGroup name="CompanyAttribs_u">
     <xs:attributeGroup ref="jdf:CompanyAttribs_c"/>
@@ -2983,7 +2987,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ComponentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ComponentLink" type="jdf:QuantityLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ComponentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ComponentAttribs_c">
     <xs:attribute name="AssemblyIDs" type="jdftyp:NMTOKENS" use="optional"/>
     <xs:attribute name="CartonTopFlaps" type="jdftyp:XYPair" use="optional"/>
@@ -3106,7 +3110,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ContactRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ContactLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ContactLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ContactAttribs_c">
     <xs:attribute name="ContactTypeDetails" type="jdftyp:string" use="optional"/>
   </xs:attributeGroup>
@@ -3191,7 +3195,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ContactCopyParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ContactCopyParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ContactCopyParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ContactCopyParamsAttribs_c">
     <xs:attribute name="Cycle" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="Diffusion" type="jdftyp:eDiffusion_" use="optional"/>
@@ -3263,7 +3267,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ContentListRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ContentListLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ContentListLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ContentListAttribs_c"/>
   <xs:attributeGroup name="ContentListAttribs_u">
     <xs:attributeGroup ref="jdf:ContentListAttribs_c"/>
@@ -3402,7 +3406,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ConventionalPrintingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ConventionalPrintingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ConventionalPrintingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ConventionalPrintingParamsAttribs_c">
     <xs:attribute name="Drying" type="jdftyp:eDrying_" use="optional"/>
     <xs:attribute name="FirstSurface" type="jdftyp:eFirstSurface_" use="optional"/>
@@ -3512,7 +3516,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="CoverApplicationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="CoverApplicationParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="CoverApplicationParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CoverApplicationParamsAttribs_c">
     <xs:attribute name="CoverOffset" type="jdftyp:XYPair" use="optional"/>
   </xs:attributeGroup>
@@ -3595,7 +3599,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="CreasingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="CreasingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="CreasingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CreasingParamsAttribs_c"/>
   <xs:attributeGroup name="CreasingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:CreasingParamsAttribs_c"/>
@@ -3681,7 +3685,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="CustomerInfoRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="CustomerInfoLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="CustomerInfoLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CustomerInfoAttribs_c">
     <xs:attribute name="BillingCode" type="jdftyp:string" use="optional"/>
     <xs:attribute name="CustomerID" type="jdftyp:shortString" use="optional"/>
@@ -3776,7 +3780,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="CutBlockRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="CutBlockLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="CutBlockLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CutBlockAttribs_c">
     <xs:attribute name="AssemblyIDs" type="jdftyp:NMTOKENS" use="optional"/>
     <xs:attribute name="CutWidth" type="jdftyp:double" use="optional"/>
@@ -3916,7 +3920,7 @@
   </xs:complexType>
   <xs:element name="CutMark" type="jdf:CutMark_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="CutMarkRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="CutMarkLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="CutMarkLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CutMarkAttribs_c">
     <xs:attribute name="Blocks" type="jdftyp:NMTOKENS" use="optional"/>
   </xs:attributeGroup>
@@ -3994,7 +3998,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="CuttingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="CuttingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="CuttingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CuttingParamsAttribs_c">
     <xs:attribute name="NUpSeparation" type="jdftyp:XYPair"/>
   </xs:attributeGroup>
@@ -4084,7 +4088,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="CylinderLayoutRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="CylinderLayoutLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="CylinderLayoutLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CylinderLayoutAttribs_c">
     <xs:attribute name="DeviceID" type="jdftyp:NMTOKEN" use="optional"/>
   </xs:attributeGroup>
@@ -4165,7 +4169,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="CylinderLayoutPreparationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="CylinderLayoutPreparationParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="CylinderLayoutPreparationParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CylinderLayoutPreparationParamsAttribs_c"/>
   <xs:attributeGroup name="CylinderLayoutPreparationParamsAttribs_u">
     <xs:attributeGroup ref="jdf:CylinderLayoutPreparationParamsAttribs_c"/>
@@ -4227,7 +4231,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="DBMergeParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DBMergeParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DBMergeParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DBMergeParamsAttribs_c">
     <xs:attribute name="SplitDocuments" type="jdftyp:Integer" use="optional"/>
   </xs:attributeGroup>
@@ -4290,7 +4294,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="DBRulesRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DBRulesLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DBRulesLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DBRulesAttribs_c"/>
   <xs:attributeGroup name="DBRulesAttribs_u">
     <xs:attributeGroup ref="jdf:DBRulesAttribs_c"/>
@@ -4345,7 +4349,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="DBSchemaRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DBSchemaLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DBSchemaLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DBSchemaAttribs_c"/>
   <xs:attributeGroup name="DBSchemaAttribs_u">
     <xs:attributeGroup ref="jdf:DBSchemaAttribs_c"/>
@@ -4396,7 +4400,7 @@
   </xs:complexType>
   <xs:element name="DBSelection" type="jdf:DBSelection_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="DBSelectionRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DBSelectionLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DBSelectionLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DBSelectionAttribs_c">
     <xs:attribute name="Records" type="jdftyp:IntegerRangeList" use="optional"/>
     <xs:attribute name="Select" type="jdftyp:string" use="optional"/>
@@ -4450,7 +4454,7 @@
   </xs:complexType>
   <xs:element name="DeliveryParams" type="jdf:DeliveryParams_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="DeliveryParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DeliveryParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DeliveryParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DeliveryParamsAttribs_c">
     <xs:attribute name="Earliest" type="jdftyp:dateTime" use="optional"/>
     <xs:attribute name="Method" type="jdftyp:string" use="optional"/>
@@ -4615,7 +4619,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="DensityMeasuringFieldRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DensityMeasuringFieldLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DensityMeasuringFieldLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DensityMeasuringFieldAttribs_c">
     <xs:attribute name="Setup" type="jdftyp:string" use="optional"/>
   </xs:attributeGroup>
@@ -4778,7 +4782,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="DevelopingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DevelopingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DevelopingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DevelopingParamsAttribs_c">
     <xs:attribute name="PreHeatTemp" type="jdftyp:double" use="optional"/>
     <xs:attribute name="PreHeatTime" type="jdftyp:duration" use="optional"/>
@@ -4833,7 +4837,7 @@
   </xs:complexType>
   <xs:element name="Device" type="jdf:Device_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="DeviceRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DeviceLink" type="jdf:ImplementationLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DeviceLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DeviceAttribs_c">
     <xs:attribute name="DeviceFamily" type="jdftyp:string" use="optional"/>
     <xs:attribute name="DeviceID" type="jdftyp:string" use="optional"/>
@@ -5030,7 +5034,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="DeviceMarkRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DeviceMarkLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DeviceMarkLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DeviceMarkAttribs_c">
     <xs:attribute name="Anchor" type="jdftyp:eAnchor_" use="optional"/>
     <xs:attribute name="Font" type="jdftyp:NMTOKEN" use="optional"/>
@@ -5098,7 +5102,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="DeviceNSpaceRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DeviceNSpaceLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DeviceNSpaceLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DeviceNSpaceAttribs_c">
     <xs:attribute name="Name" type="jdftyp:string" use="optional"/>
   </xs:attributeGroup>
@@ -5180,7 +5184,7 @@
 
   <!-- DieLayout -->
   <xs:element name="DieLayoutRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DieLayoutLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DieLayoutLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DieLayoutAttribs_c">
     <xs:attribute name="DieSide" type="jdftyp:eTo_" use="optional"/>
     <xs:attribute name="MediaSide" type="jdftyp:eMediaSide_" use="optional"/>
@@ -5281,7 +5285,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="DieLayoutProductionParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DieLayoutProductionParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DieLayoutProductionParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DieLayoutProductionParamsAttribs_c">
     <xs:attribute name="Estimate" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="Position" type="jdftyp:eAnchor_" use="optional"/>
@@ -5379,7 +5383,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="DigitalDeliveryParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DigitalDeliveryParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DigitalDeliveryParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DigitalDeliveryParamsAttribs_c">
     <xs:attribute name="DigitalDeliveryDirection" type="jdftyp:eDigitalDeliveryDirection_" use="optional"/>
     <xs:attribute name="DigitalDeliveryProtocol" type="jdftyp:NMTOKEN" use="optional"/>
@@ -5446,7 +5450,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="DigitalMediaRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DigitalMediaLink" type="jdf:HandlingLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DigitalMediaLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DigitalMediaAttribs_c">
     <xs:attribute name="Capacity" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="MediaLabel" type="jdftyp:string" use="optional"/>
@@ -5550,7 +5554,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="DigitalPrintingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DigitalPrintingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DigitalPrintingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DigitalPrintingParamsAttribs_c">
     <xs:attribute name="Collate" type="jdftyp:eDigitalPrintingCollate_" use="optional"/>
     <xs:attribute name="OutputBin" type="jdftyp:NMTOKEN" use="optional"/>
@@ -5713,7 +5717,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="DividingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DividingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DividingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DividingParamsAttribs_c">
     <xs:attribute name="DividePositions" type="jdftyp:DoubleList" use="optional"/>
   </xs:attributeGroup>
@@ -5779,7 +5783,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ElementColorParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ElementColorParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ElementColorParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ElementColorParamsAttribs_c">
     <xs:attribute name="ColorManagementSystem" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="ICCOutputProfileUsage" type="jdftyp:eICCOutputProfileUsage_" use="optional"/>
@@ -5873,7 +5877,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="EmbossingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="EmbossingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="EmbossingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
 	<xs:attributeGroup name="EmbossingParamsAttribs_c">
 		<xs:attribute name="ModuleIndex" type="jdftyp:Integer" use="optional"/>
 	</xs:attributeGroup>
@@ -5959,7 +5963,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="EmployeeRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="EmployeeLink" type="jdf:ImplementationLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="EmployeeLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="EmployeeAttribs_c">
     <xs:attribute name="PersonalID" type="jdftyp:shortString" use="optional"/>
     <xs:attribute name="Roles" type="jdftyp:NMTOKENS" use="optional"/>
@@ -6031,7 +6035,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="EndSheetGluingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="EndSheetGluingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="EndSheetGluingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="EndSheetGluingParamsAttribs_c"/>
   <xs:attributeGroup name="EndSheetGluingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:EndSheetGluingParamsAttribs_c"/>
@@ -6095,7 +6099,7 @@
   </xs:complexType>
   <xs:element name="ExposedMedia" type="jdf:ExposedMedia_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="ExposedMediaRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ExposedMediaLink" type="jdf:HandlingLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ExposedMediaLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ExposedMediaAttribs_c">
     <xs:attribute name="ColorType" type="jdftyp:eExposedMediaColorType" use="optional"/>
     <xs:attribute name="PageListIndex" type="jdftyp:IntegerRangeList" use="optional"/>
@@ -6199,7 +6203,7 @@
   </xs:complexType>
   <xs:element name="ExternalImpositionTemplate" type="jdf:ExternalImpositionTemplate_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="ExternalImpositionTemplateRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ExternalImpositionTemplateLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ExternalImpositionTemplateLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ExternalImpositionTemplateAttribs_c"/>
   <xs:attributeGroup name="ExternalImpositionTemplateAttribs_u">
     <xs:attributeGroup ref="jdf:ExternalImpositionTemplateAttribs_c"/>
@@ -6273,7 +6277,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="FeedingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="FeedingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="FeedingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="FeedingParamsAttribs_c"/>
   <xs:attributeGroup name="FeedingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:FeedingParamsAttribs_c"/>
@@ -6406,7 +6410,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="FileSpecRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="FileSpecLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="FileSpecLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="FileSpecAttribs_c">
     <xs:attribute name="Application" type="jdftyp:string" use="optional"/>
     <xs:attribute name="AppOS" type="jdftyp:string" use="optional"/>
@@ -6543,7 +6547,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="FitPolicyRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="FitPolicyLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="FitPolicyLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="FitPolicyAttribs_c">
     <xs:attribute name="ClipOffset" type="jdftyp:XYPair" use="optional"/>
     <xs:attribute name="MinGutter" type="jdftyp:XYPair" use="optional"/>
@@ -6606,7 +6610,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="FoldRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="FoldLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="FoldLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="FoldAttribs_c">
     <xs:attribute name="Travel" type="jdftyp:double" use="optional"/>
     <xs:attribute name="RelativeTravel" use="optional">
@@ -6679,7 +6683,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="FoldingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="FoldingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="FoldingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="FoldingParamsAttribs_c">
     <xs:attribute name="DescriptionType" type="jdftyp:eDescriptionType_" use="optional"/>
     <xs:attribute name="FoldCatalog" type="jdftyp:string" use="optional"/>
@@ -6745,7 +6749,7 @@
   </xs:complexType>
   <xs:element name="FontParams" type="jdf:FontParams_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="FontParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="FontParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="FontParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="FontParamsAttribs_c">
     <xs:attribute name="AlwaysEmbed" type="jdftyp:NMTOKENS" use="optional"/>
     <xs:attribute name="MaxSubsetPct" type="jdftyp:Integer" use="optional"/>
@@ -6803,7 +6807,7 @@
   </xs:complexType>
   <xs:element name="FontPolicy" type="jdf:FontPolicy_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="FontPolicyRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="FontPolicyLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="FontPolicyLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="FontPolicyAttribs_c"/>
   <xs:attributeGroup name="FontPolicyAttribs_u">
     <xs:attributeGroup ref="jdf:FontPolicyAttribs_c"/>
@@ -6885,7 +6889,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="FormatConversionParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="FormatConversionParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="FormatConversionParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="FormatConversionParamsAttribs_c"/>
   <xs:attributeGroup name="FormatConversionParamsAttribs_u">
     <xs:attributeGroup ref="jdf:FormatConversionParamsAttribs_c"/>
@@ -7007,7 +7011,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="GatheringParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="GatheringParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="GatheringParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="GatheringParamsAttribs_c"/>
   <xs:attributeGroup name="GatheringParamsAttribs_u">
     <xs:attributeGroup ref="jdf:GatheringParamsAttribs_c"/>
@@ -7104,7 +7108,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="GlueApplicationRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="GlueApplicationLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="GlueApplicationLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="GlueApplicationAttribs_c"/>
   <xs:attributeGroup name="GlueApplicationAttribs_u">
     <xs:attributeGroup ref="jdf:GlueApplicationAttribs_c"/>
@@ -7169,7 +7173,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="GluingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="GluingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="GluingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="GluingParamsAttribs_c">
     <xs:attribute name="GluingProductionID" type="jdftyp:string" use="optional"/>
   </xs:attributeGroup>
@@ -7254,7 +7258,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="GlueLineRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="GlueLineLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="GlueLineLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="GlueLineAttribs_c">
     <xs:attribute name="GlueBrand" type="jdftyp:string" use="optional"/>
     <xs:attribute name="GlueLineWidth" type="jdftyp:double" use="optional"/>
@@ -7325,7 +7329,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="HeadBandApplicationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="HeadBandApplicationParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="HeadBandApplicationParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="HeadBandApplicationParamsAttribs_c">
     <xs:attribute name="BottomBrand" type="jdftyp:string" use="optional"/>
     <xs:attribute name="BottomColor" type="jdftyp:NamedColor" use="optional"/>
@@ -7391,7 +7395,7 @@
   </xs:complexType>
   <xs:element name="Hole" type="jdf:Hole_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="HoleRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="HoleLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="HoleLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="HoleAttribs_c"/>
   <xs:attributeGroup name="HoleAttribs_u">
     <xs:attributeGroup ref="jdf:HoleAttribs_c"/>
@@ -7453,7 +7457,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="HoleLineRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="HoleLineLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="HoleLineLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="HoleLineAttribs_c"/>
   <xs:attributeGroup name="HoleLineAttribs_u">
     <xs:attributeGroup ref="jdf:HoleLineAttribs_c"/>
@@ -7552,7 +7556,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="HoleMakingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="HoleMakingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="HoleMakingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="HoleMakingParamsAttribs_c">
     <xs:attribute name="Center" type="jdftyp:XYPair" use="optional"/>
     <xs:attribute name="Extent" type="jdftyp:XYPair" use="optional"/>
@@ -7636,7 +7640,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="IdentificationFieldRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="IdentificationFieldLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="IdentificationFieldLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="IdentificationFieldAttribs_c">
     <xs:attribute name="BoundingBox" type="jdftyp:rectangle" use="optional"/>
     <xs:attribute name="Format" type="jdftyp:regExp" use="optional"/>
@@ -7784,7 +7788,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="IDPrintingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="IDPrintingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="IDPrintingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="IDPrintingParamsAttribs_c">
     <xs:attribute name="IPPVersion" type="jdftyp:XYPair" use="optional"/>
     <xs:attribute name="OutputBin" type="jdftyp:NMTOKEN" use="optional"/>
@@ -8019,7 +8023,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ImageCompressionParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ImageCompressionParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ImageCompressionParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ImageCompressionParamsAttribs_c"/>
   <xs:attributeGroup name="ImageCompressionParamsAttribs_u">
     <xs:attributeGroup ref="jdf:ImageCompressionParamsAttribs_c"/>
@@ -8191,7 +8195,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ImageReplacementParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ImageReplacementParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ImageReplacementParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ImageReplacementParamsAttribs_c">
     <xs:attribute name="ImagePreScanStrategy" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="MaxResolution" type="jdftyp:double" use="optional"/>
@@ -8281,7 +8285,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ImageSetterParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ImageSetterParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ImageSetterParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ImageSetterParamsAttribs_c">
     <xs:attribute name="AdvanceDistance" type="jdftyp:double" use="optional"/>
     <xs:attribute name="BurnOutArea" type="jdftyp:XYPair" use="optional"/>
@@ -8370,7 +8374,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="InkRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="InkLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="InkLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="InkAttribs_c">
     <xs:attribute name="ColorName" type="jdftyp:string" use="optional"/>
     <xs:attribute name="Family" type="jdftyp:NMTOKEN" use="optional"/>
@@ -8437,7 +8441,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="InkZoneCalculationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="InkZoneCalculationParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="InkZoneCalculationParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="InkZoneCalculationParamsAttribs_c">
     <xs:attribute name="FountainPositions" type="jdftyp:DoubleList" use="optional"/>
     <xs:attribute name="PrintableArea" type="jdftyp:rectangle" use="optional"/>
@@ -8499,7 +8503,7 @@
   </xs:complexType>
   <xs:element name="InkZoneProfile" type="jdf:InkZoneProfile_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="InkZoneProfileRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="InkZoneProfileLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="InkZoneProfileLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="InkZoneProfileAttribs_c">
     <xs:attribute name="ZoneHeight" type="jdftyp:double" use="optional"/>
     <xs:attribute name="ZoneSettingsY" type="jdftyp:DoubleList" use="optional"/>
@@ -8564,7 +8568,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="InsertingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="InsertingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="InsertingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="InsertingParamsAttribs_c">
     <xs:attribute name="SheetOffset" type="jdftyp:XYPair" use="optional"/>
     <xs:attribute name="FinishedPage" type="jdftyp:Integer" use="optional"/>
@@ -8647,7 +8651,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="InsertSheetRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="InsertSheetLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="InsertSheetLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="InsertSheetAttribs_c">
     <xs:attribute name="IncludeInBundleItem" type="jdftyp:eIncludeInBundleItem_" use="optional"/>
     <xs:attribute name="IsWaste" type="jdftyp:boolean" use="optional"/>
@@ -8724,7 +8728,7 @@
   </xs:complexType>
   <xs:element name="InterpretedPDLData" type="jdf:InterpretedPDLData_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="InterpretedPDLDataRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="InterpretedPDLDataLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="InterpretedPDLDataLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="InterpretedPDLDataAttribs_c"/>
   <xs:attributeGroup name="InterpretedPDLDataAttribs_u">
     <xs:attributeGroup ref="jdf:InterpretedPDLDataAttribs_c"/>
@@ -8773,7 +8777,7 @@
   </xs:complexType>
   <xs:element name="InterpretingParams" type="jdf:InterpretingParams_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="InterpretingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="InterpretingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="InterpretingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="InterpretingParamsAttribs_c">
     <xs:attribute name="FitToPage" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="Poster" type="jdftyp:XYPair" use="optional"/>
@@ -8945,7 +8949,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="JacketingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="JacketingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="JacketingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="JacketingParamsAttribs_c"/>
   <xs:attributeGroup name="JacketingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:JacketingParamsAttribs_c"/>
@@ -9008,7 +9012,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="JobFieldRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="JobFieldLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="JobFieldLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="JobFieldAttribs_c">
     <xs:attribute name="JobFormat" type="jdftyp:string" use="optional"/>
     <xs:attribute name="JobTemplate" type="jdftyp:string" use="optional"/>
@@ -9076,7 +9080,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="LabelingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="LabelingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="LabelingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="LabelingParamsAttribs_c">
     <xs:attribute name="CTM" type="jdftyp:matrix" use="optional"/>
     <xs:attribute name="Application" type="jdftyp:NMTOKEN" use="optional"/>
@@ -9137,7 +9141,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="LaminatingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="LaminatingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="LaminatingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="LaminatingParamsAttribs_c">
     <xs:attribute name="AdhesiveType" type="jdftyp:string" use="optional"/>
     <xs:attribute name="GapList" type="jdftyp:DoubleList" use="optional"/>
@@ -9253,7 +9257,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="LayoutRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="LayoutLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="LayoutLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="LayoutAttribs_c">
     <xs:attribute name="Name" type="jdftyp:string" use="optional"/>
     <xs:attribute name="BaseOrdReset" type="jdftyp:eBaseOrdReset_" use="optional"/>
@@ -9692,7 +9696,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="LayoutElementRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="LayoutElementLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="LayoutElementLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="LayoutElementAttribs_c">
     <xs:attribute name="ClipPath" type="jdftyp:PDFPath" use="optional"/>
     <xs:attribute name="ContentDataRefs" type="jdftyp:IDREFS" use="optional"/>
@@ -9835,7 +9839,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="LayoutElementProductionParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="LayoutElementProductionParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="LayoutElementProductionParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="LayoutElementProductionParamsAttribs_c"/>
   <xs:attributeGroup name="LayoutElementProductionParamsAttribs_u">
     <xs:attributeGroup ref="jdf:LayoutElementProductionParamsAttribs_c"/>
@@ -9999,7 +10003,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="LayoutPreparationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="LayoutPreparationParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="LayoutPreparationParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="LayoutPreparationParamsAttribs_c">
     <xs:attribute name="BindingEdge" type="jdftyp:eBindingEdge_" use="optional"/>
     <xs:attribute name="BackMarkList" type="jdftyp:NMTOKENS" use="optional"/>
@@ -10177,7 +10181,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="LayoutShiftRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="LayoutShiftLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="LayoutShiftLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="LayoutShiftAttribs_c">
   </xs:attributeGroup>
   <xs:attributeGroup name="LayoutShiftAttribs_u">
@@ -10266,7 +10270,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="LongitudinalRibbonOperationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="LongitudinalRibbonOperationParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="LongitudinalRibbonOperationParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="LongitudinalRibbonOperationParamsAttribs_c"/>
   <xs:attributeGroup name="LongitudinalRibbonOperationParamsAttribs_u">
     <xs:attributeGroup ref="jdf:LongitudinalRibbonOperationParamsAttribs_c"/>
@@ -10382,7 +10386,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ManualLaborParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ManualLaborParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ManualLaborParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ManualLaborParamsAttribs_c"/>
   <xs:attributeGroup name="ManualLaborParamsAttribs_u">
     <xs:attributeGroup ref="jdf:ManualLaborParamsAttribs_c"/>
@@ -10433,7 +10437,7 @@
   </xs:complexType>
   <xs:element name="Media" type="jdf:Media_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="MediaRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="MediaLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="MediaLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="MediaAttribs_c">
     <xs:attribute name="BackCoatingDetail" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="BackCoatings" type="jdftyp:eCoatings_" use="optional"/>
@@ -10661,7 +10665,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="MediaSourceRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="MediaSourceLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="MediaSourceLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="MediaSourceAttribs_c">
     <xs:attribute name="LeadingEdge" type="jdftyp:double" use="optional"/>
     <xs:attribute name="MediaLocation" type="jdftyp:string" use="optional"/>
@@ -10728,7 +10732,7 @@
   </xs:complexType>
   <xs:element name="MiscConsumable" type="jdf:MiscConsumable_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="MiscConsumableRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="MiscConsumableLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="MiscConsumableLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="MiscConsumableAttribs_c">
     <xs:attribute name="ConsumableType" type="jdftyp:NMTOKEN" use="optional"/>
   </xs:attributeGroup>
@@ -10833,7 +10837,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="NodeInfoRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="NodeInfoLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="NodeInfoLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="NodeInfoAttribs_c">
     <xs:attribute name="CleanupDuration" type="jdftyp:duration" use="optional"/>
     <xs:attribute name="DueLevel" type="jdftyp:eDueLevel_" use="optional"/>
@@ -10954,7 +10958,7 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="NumberingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="NumberingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="NumberingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="NumberingParamsAttribs_c"/>
   <xs:attributeGroup name="NumberingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:NumberingParamsAttribs_c"/>
@@ -11027,7 +11031,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ObjectResolutionRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ObjectResolutionLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ObjectResolutionLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ObjectResolutionAttribs_c">
     <xs:attribute name="AntiAliasing" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="ObjectTags" type="jdftyp:NMTOKENS" use="optional"/>
@@ -11097,7 +11101,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="OrderingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="OrderingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="OrderingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="OrderingParamsAttribs_c"/>
   <xs:attributeGroup name="OrderingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:OrderingParamsAttribs_c"/>
@@ -11168,7 +11172,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PackingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PackingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PackingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PackingParamsAttribs_c">
     <xs:attribute name="BoxedQuantity" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="BoxShape" type="jdftyp:shape" use="optional"/>
@@ -11240,7 +11244,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PageAssignParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PageAssignParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PageAssignParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PageAssignParamsAttribs_c">
   </xs:attributeGroup>
   <xs:attributeGroup name="PageAssignParamsAttribs_u">
@@ -11288,7 +11292,7 @@
   </xs:complexType>
   <xs:element name="PageList" type="jdf:PageList_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="PageListRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PageListLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PageListLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PageListAttribs_c">
     <xs:attribute name="AssemblyID" type="jdftyp:string" use="optional"/>
     <xs:attribute name="AssemblyIDs" type="jdftyp:NMTOKENS" use="optional"/>
@@ -11509,7 +11513,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PalletizingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PalletizingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PalletizingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PalletizingParamsAttribs_c">
     <xs:attribute name="LayerAmount" type="jdftyp:IntegerList" use="optional"/>
     <xs:attribute name="MaxHeight" type="jdftyp:double" use="optional"/>
@@ -11577,7 +11581,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PalletRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PalletLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PalletLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PalletAttribs_c">
     <xs:attribute name="Size" type="jdftyp:XYPair" use="optional"/>
   </xs:attributeGroup>
@@ -11643,7 +11647,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PDFToPSConversionParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PDFToPSConversionParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PDFToPSConversionParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PDFToPSConversionParamsAttribs_c">
     <xs:attribute name="IgnoreDeviceExtGState" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="BoundingBox" type="jdftyp:rectangle" use="optional"/>
@@ -11775,7 +11779,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PDLCreationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PDLCreationParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PDLCreationParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PDLCreationParamsAttribs_c"/>
   <xs:attributeGroup name="PDLCreationParamsAttribs_u">
     <xs:attributeGroup ref="jdf:PDLCreationParamsAttribs_c"/>
@@ -11845,7 +11849,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PDLResourceAliasRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PDLResourceAliasLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PDLResourceAliasLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PDLResourceAliasAttribs_c">
     <xs:attribute name="SourceName" type="jdftyp:string" use="optional"/>
   </xs:attributeGroup>
@@ -11914,7 +11918,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PerforatingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PerforatingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PerforatingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PerforatingParamsAttribs_c"/>
   <xs:attributeGroup name="PerforatingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:PerforatingParamsAttribs_c"/>
@@ -11994,7 +11998,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PersonRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PersonLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PersonLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PersonAttribs_c">
     <xs:attribute name="AdditionalNames" type="jdftyp:string" use="optional"/>
     <xs:attribute name="FamilyName" type="jdftyp:string" use="optional"/>
@@ -12063,7 +12067,7 @@
   </xs:complexType>
   <xs:element name="PlaceHolderResource" type="jdf:PlaceHolderResource_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="PlaceHolderResourceRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PlaceHolderResourceLink" type="jdf:PlaceHolderLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PlaceHolderResourceLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PlaceHolderResourceAttribs_c"/>
   <xs:attributeGroup name="PlaceHolderResourceAttribs_u">
     <xs:attributeGroup ref="jdf:PlaceHolderResourceAttribs_c"/>
@@ -12121,7 +12125,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PlasticCombBindingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PlasticCombBindingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PlasticCombBindingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PlasticCombBindingParamsAttribs_c">
     <xs:attribute name="Brand" type="jdftyp:string" use="optional"/>
     <xs:attribute name="Color" type="jdftyp:NamedColor" use="optional"/>
@@ -12189,7 +12193,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PlateCopyParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PlateCopyParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PlateCopyParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PlateCopyParamsAttribs_c">
     <xs:attribute name="Cycle" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="Diffusion" type="jdftyp:eDiffusion_" use="optional"/>
@@ -12259,7 +12263,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PreflightAnalysisRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PreflightAnalysisLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PreflightAnalysisLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:complexType name="PreflightCommonPool_lr" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
@@ -12395,7 +12399,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PreflightInventoryRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PreflightInventoryLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PreflightInventoryLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PreflightInventoryAttribs_c"/>
   <xs:attributeGroup name="PreflightInventoryAttribs_u">
     <xs:attributeGroup ref="jdf:PreflightInventoryAttribs_c"/>
@@ -12462,7 +12466,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PreflightParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PreflightParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PreflightParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PreflightParamsAttribs_c"/>
   <xs:attributeGroup name="PreflightParamsAttribs_u">
     <xs:attributeGroup ref="jdf:PreflightParamsAttribs_c"/>
@@ -12543,7 +12547,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PreflightProfileRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PreflightProfileLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PreflightProfileLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PreflightProfileAttribs_c"/>
   <xs:attributeGroup name="PreflightProfileAttribs_u">
     <xs:attributeGroup ref="jdf:PreflightProfileAttribs_c"/>
@@ -12655,7 +12659,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PreflightReportRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PreflightReportLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PreflightReportLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PreflightReportAttribs_c">
     <xs:attribute name="ErrorCount" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="ErrorState" type="jdftyp:eErrorState_" use="optional"/>
@@ -12837,7 +12841,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PreflightReportRulePoolRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PreflightReportRulePoolLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PreflightReportRulePoolLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PreflightReportRulePoolAttribs_c">
     <xs:attribute name="MaxOccurrences" type="jdftyp:Integer" use="optional"/>
   </xs:attributeGroup>
@@ -13102,7 +13106,7 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="PreviewRef" type="jdf:ResourceRef"/>
-  <xs:element name="PreviewLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PreviewLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PreviewAttribs_c">
     <xs:attribute name="Compensation" type="jdftyp:eCompensation_" use="optional"/>
     <xs:attribute name="CTM" type="jdftyp:matrix" use="optional"/>
@@ -13288,7 +13292,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PreviewGenerationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PreviewGenerationParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PreviewGenerationParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PreviewGenerationParamsAttribs_c">
     <xs:attribute name="Compensation" type="jdftyp:eCompensation1_" use="optional"/>
     <xs:attribute name="PreviewType" type="jdftyp:ePreviewType1_" use="optional"/>
@@ -13372,7 +13376,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PrintConditionRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PrintConditionLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PrintConditionLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PrintConditionAttribs_c">
     <xs:attribute name="AimCurve" type="jdftyp:TransferFunction" use="optional"/>
     <xs:attribute name="Density" type="jdftyp:double" use="optional"/>
@@ -13450,7 +13454,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PrintRollingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PrintRollingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PrintRollingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PrintRollingParamsAttribs_c">
     <xs:attribute name="Copies" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="MaxDiameter" type="jdftyp:double" use="optional"/>
@@ -13511,7 +13515,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ProductionPathRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ProductionPathLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ProductionPathLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ProductionPathAttribs_c">
     <xs:attribute name="ProductionPathID" type="jdftyp:string" use="optional"/>
   </xs:attributeGroup>
@@ -13593,7 +13597,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ProofingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ProofingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ProofingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ProofingParamsAttribs_c">
     <xs:attribute name="ColorType" type="jdftyp:eColorType1_" use="optional"/>
     <xs:attribute name="Resolution" type="jdftyp:XYPair" use="optional"/>
@@ -13691,7 +13695,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PSToPDFConversionParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PSToPDFConversionParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PSToPDFConversionParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PSToPDFConversionParamsAttribs_c">
     <xs:attribute name="AutoRotatePages" type="jdftyp:eAutoRotatePages_" use="optional"/>
     <xs:attribute name="CompressPages" type="jdftyp:boolean" use="optional"/>
@@ -13841,7 +13845,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="QualityControlParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="QualityControlParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="QualityControlParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="QualityControlParamsAttribs_c">
     <xs:attribute name="TimeInterval" type="jdftyp:duration" use="optional"/>
     <xs:attribute name="SampleInterval" type="jdftyp:Integer" use="optional"/>
@@ -13918,7 +13922,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="QualityControlResultRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="QualityControlResultLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="QualityControlResultLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="QualityControlResultAttribs_c">
     <xs:attribute name="Failed" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="Passed" type="jdftyp:Integer" use="optional"/>
@@ -14019,7 +14023,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="RasterReadingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="RasterReadingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="RasterReadingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="RasterReadingParamsAttribs_c">
     <xs:attribute name="Poster" type="jdftyp:XYPair" use="optional"/>
     <xs:attribute name="PosterOverlap" type="jdftyp:XYPair" use="optional"/>
@@ -14096,7 +14100,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="RefAnchorRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="RefAnchorLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="RefAnchorLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="RefAnchorAttribs_c">
     <xs:attribute name="Anchor" type="jdftyp:eAnchor_" use="optional"/>
     <xs:attribute name="AnchorType" type="jdftyp:eAnchorType_" use="optional"/>
@@ -14157,7 +14161,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="RegisterMarkRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="RegisterMarkLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="RegisterMarkLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="RegisterMarkAttribs_c">
     <xs:attribute name="MarkType" type="jdftyp:NMTOKENS" use="optional"/>
     <xs:attribute name="MarkUsage" type="jdftyp:eMarkUsage_" use="optional"/>
@@ -14222,7 +14226,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="RegisterRibbonRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="RegisterRibbonLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="RegisterRibbonLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="RegisterRibbonAttribs_c">
     <xs:attribute name="LengthOverall" type="jdftyp:double" use="optional"/>
     <xs:attribute name="Material" type="jdftyp:string" use="optional"/>
@@ -14294,7 +14298,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="RenderingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="RenderingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="RenderingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="RenderingParamsAttribs_c">
     <xs:attribute name="BandHeight" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="BandOrdering" type="jdftyp:eBandOrdering_" use="optional"/>
@@ -14367,7 +14371,7 @@
   </xs:complexType>
   <xs:element name="ResourceDefinitionParams" type="jdf:ResourceDefinitionParams_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="ResourceDefinitionParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ResourceDefinitionParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ResourceDefinitionParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ResourceDefinitionParamsAttribs_c">
     <xs:attribute name="DefaultID" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="DefaultJDF" type="jdftyp:URL" use="optional"/>
@@ -14462,7 +14466,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="RingBindingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="RingBindingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="RingBindingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="RingBindingParamsAttribs_c">
     <xs:attribute name="BinderColor" type="jdftyp:NamedColor" use="optional"/>
     <xs:attribute name="BinderColorDetails" type="jdftyp:string" use="optional"/>
@@ -14539,7 +14543,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="RollStandRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="RollStandLink" type="jdf:HandlingLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="RollStandLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="RollStandAttribs_c">
     <xs:attribute name="MaxDiameter" type="jdftyp:double" use="optional"/>
     <xs:attribute name="MaxWidth" type="jdftyp:double" use="optional"/>
@@ -14636,7 +14640,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="RunListRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="RunListLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="RunListLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="RunListAttribs_c">
     <xs:attribute name="ComponentGranularity" type="jdftyp:eComponentGranularity_" use="optional"/>
     <xs:attribute name="Directory" type="jdftyp:URL" use="optional"/>
@@ -14873,7 +14877,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="SaddleStitchingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="SaddleStitchingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="SaddleStitchingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="SaddleStitchingParamsAttribs_c">
     <xs:attribute name="StitchPositions" type="jdftyp:DoubleList" use="optional"/>
     <xs:attribute name="StapleShape" type="jdftyp:eStapleShape_" use="optional"/>
@@ -14939,7 +14943,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ScanParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ScanParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ScanParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ScanParamsAttribs_c">
     <xs:attribute name="CompressionFilter" type="jdftyp:eCompressionFilter_" use="optional"/>
     <xs:attribute name="DCTQuality" type="jdftyp:double" use="optional"/>
@@ -15016,7 +15020,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ScavengerAreaRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ScavengerAreaLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ScavengerAreaLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ScavengerAreaAttribs_c">
     <xs:attribute name="Rotation" type="jdftyp:double" use="optional"/>
   </xs:attributeGroup>
@@ -15084,7 +15088,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ScreeningParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ScreeningParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ScreeningParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ScreeningParamsAttribs_c">
     <xs:attribute name="AbortJobWhenScreenMatchingFails" type="jdftyp:boolean" use="optional"/>
   </xs:attributeGroup>
@@ -15167,7 +15171,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="SeparationControlParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="SeparationControlParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink">
+  <xs:element name="SeparationControlParamsLink" type="jdf:ResourceLink">
     <xs:annotation>
       <xs:appinfo>
         <Constraint Path="AutomatedOverPrintParams" minOccurs="0" maxOccurs="1"/>
@@ -15261,7 +15265,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ShapeRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ShapeLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ShapeLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ShapeAttribs_c">
     <xs:attribute name="CutBox" type="jdftyp:rectangle" use="optional"/>
     <xs:attribute name="CutOut" type="jdftyp:boolean" default="false"/>
@@ -15324,7 +15328,7 @@
   </xs:complexType>
   <xs:element name="ShapeCuttingParams" type="jdf:ShapeCuttingParams_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="ShapeCuttingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ShapeCuttingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ShapeCuttingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ShapeCuttingParamsAttribs_c">
     <xs:attribute name="DeliveryMode" type="jdftyp:eDeliveryMode_" use="optional"/>
   	<xs:attribute name="ModuleIndex" type="jdftyp:Integer" use="optional"/>
@@ -15436,7 +15440,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ShapeDefRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ShapeDefLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ShapeDefLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ShapeDefAttribs_c">
     <xs:attribute name="Area" type="jdftyp:double" use="optional"/>
     <xs:attribute name="CutBox" type="jdftyp:rectangle" use="optional"/>
@@ -15519,7 +15523,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ShapeDefProductionParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ShapeDefProductionParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ShapeDefProductionParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ShapeDefProductionParamsAttribs_c">
   </xs:attributeGroup>
   <xs:attributeGroup name="ShapeDefProductionParamsAttribs_u">
@@ -15618,7 +15622,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="SheetRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="SheetLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="SheetLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="SheetAttribs_c">
     <xs:attribute name="Name" type="jdftyp:string" use="optional"/>
     <xs:attribute name="SurfaceContentsBox" type="jdftyp:rectangle" use="optional"/>
@@ -15702,7 +15706,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ShrinkingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ShrinkingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ShrinkingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ShrinkingParamsAttribs_c">
     <xs:attribute name="Duration" type="jdftyp:duration" use="optional"/>
     <xs:attribute name="Temperature" type="jdftyp:double" use="optional"/>
@@ -15762,7 +15766,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="SideSewingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="SideSewingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="SideSewingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="SideSewingParamsAttribs_c">
     <xs:attribute name="NeedlePositions" type="jdftyp:DoubleList" use="optional"/>
     <xs:attribute name="SewingPattern" type="jdftyp:eSewingPattern_" use="optional"/>
@@ -15829,7 +15833,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="SpinePreparationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="SpinePreparationParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="SpinePreparationParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="SpinePreparationParamsAttribs_c">
     <xs:attribute name="FlexValue" type="jdftyp:double" use="optional"/>
     <xs:attribute name="MillingDepth" type="jdftyp:double" use="optional"/>
@@ -15898,7 +15902,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="SpineTapingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="SpineTapingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="SpineTapingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="SpineTapingParamsAttribs_c">
     <xs:attribute name="HorizontalExcess" type="jdftyp:double" use="optional"/>
     <xs:attribute name="HorizontalExcessBack" type="jdftyp:double" use="optional"/>
@@ -15981,7 +15985,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="StackingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="StackingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="StackingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="StackingParamsAttribs_c">
     <xs:attribute name="LayerAmount" type="jdftyp:IntegerList" use="optional"/>
     <xs:attribute name="LayerLift" type="jdftyp:boolean" use="optional"/>
@@ -16057,7 +16061,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="StaticBlockingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="StaticBlockingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="StaticBlockingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="StaticBlockingParamsAttribs_c">
   </xs:attributeGroup>
   <xs:attributeGroup name="StaticBlockingParamsAttribs_u">
@@ -16112,7 +16116,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="StitchingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="StitchingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="StitchingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="StitchingParamsAttribs_c">
     <xs:attribute name="Angle" type="jdftyp:double" use="optional"/>
     <xs:attribute name="NumberOfStitches" type="jdftyp:Integer" use="optional"/>
@@ -16182,7 +16186,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="StrapRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="StrapLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="StrapLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="StrapAttribs_c">
     <xs:attribute name="StrapColor" type="jdftyp:NamedColor" use="optional"/>
   </xs:attributeGroup>
@@ -16246,7 +16250,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="StrappingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="StrappingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="StrappingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="StrappingParamsAttribs_c">
     <xs:attribute name="StrapPositions" type="jdftyp:DoubleList" use="optional"/>
   </xs:attributeGroup>
@@ -16311,7 +16315,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="StripBindingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="StripBindingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="StripBindingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="StripBindingParamsAttribs_c">
     <xs:attribute name="Brand" type="jdftyp:string" use="optional"/>
     <xs:attribute name="Distance" type="jdftyp:double" use="optional"/>
@@ -16403,7 +16407,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="StrippingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="StrippingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="StrippingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="StrippingParamsAttribs_c">
     <xs:attribute name="AssemblyID" type="jdftyp:string" use="optional"/>
     <xs:attribute name="AssemblyIDs" type="jdftyp:NMTOKENS" use="optional"/>
@@ -16669,7 +16673,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="SurfaceRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="SurfaceLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="SurfaceLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="SurfaceAttribs_c">
     <xs:attribute name="SurfaceContentsBox" type="jdftyp:rectangle" use="optional"/>
   </xs:attributeGroup>
@@ -16887,7 +16891,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ThreadSealingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ThreadSealingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ThreadSealingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ThreadSealingParamsAttribs_c">
     <xs:attribute name="BlindStitch" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="ThreadMaterial" type="jdftyp:eThreadMaterial_" use="optional"/>
@@ -16950,7 +16954,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ThreadSewingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ThreadSewingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ThreadSewingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ThreadSewingParamsAttribs_c">
     <xs:attribute name="CastingMaterial" type="jdftyp:eThreadMaterial_" use="optional"/>
     <xs:attribute name="CoreMaterial" type="jdftyp:eThreadMaterial_" use="optional"/>
@@ -17029,7 +17033,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="TileRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="TileLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="TileLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="TileAttribs_c"/>
   <xs:attributeGroup name="TileAttribs_u">
     <xs:attributeGroup ref="jdf:TileAttribs_c"/>
@@ -17103,7 +17107,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ToolRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ToolLink" type="jdf:HandlingLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ToolLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ToolAttribs_c">
     <xs:attribute name="ToolAmount" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="ToolType" type="jdftyp:NMTOKEN" use="optional"/>
@@ -17160,7 +17164,7 @@
   </xs:complexType>
   <xs:element name="TransferCurve" type="jdf:TransferCurve_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="TransferCurveRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="TransferCurveLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="TransferCurveLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="TransferCurveAttribs_c">
     <xs:attribute name="Separation" type="jdftyp:string" use="optional"/>
   </xs:attributeGroup>
@@ -17298,7 +17302,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="TransferCurvePoolRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="TransferCurvePoolLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="TransferCurvePoolLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="TransferCurvePoolAttribs_c"/>
   <xs:attributeGroup name="TransferCurvePoolAttribs_u">
     <xs:attributeGroup ref="jdf:TransferCurvePoolAttribs_c"/>
@@ -17370,7 +17374,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="TransferFunctionControlRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="TransferFunctionControlLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="TransferFunctionControlLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="TransferFunctionControlAttribs_c"/>
   <xs:attributeGroup name="TransferFunctionControlAttribs_u">
     <xs:attributeGroup ref="jdf:TransferFunctionControlAttribs_c"/>
@@ -17445,7 +17449,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="TrappingDetailsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="TrappingDetailsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="TrappingDetailsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="TrappingDetailsAttribs_c">
     <xs:attribute name="IgnoreFileParams" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="Trapping" type="jdftyp:boolean" use="optional"/>
@@ -17541,7 +17545,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="TrappingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="TrappingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="TrappingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="TrappingParamsAttribs_c">
     <xs:attribute name="BlackColorLimit" type="jdftyp:double" use="optional"/>
     <xs:attribute name="BlackDensityLimit" type="jdftyp:double" use="optional"/>
@@ -17637,7 +17641,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="TrapRegionRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="TrapRegionLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="TrapRegionLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="TrapRegionAttribs_c">
     <xs:attribute name="TrapZone" type="jdftyp:PDFPath" use="optional"/>
   </xs:attributeGroup>
@@ -17703,7 +17707,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="TrimmingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="TrimmingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="TrimmingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="TrimmingParamsAttribs_c">
     <xs:attribute name="Width" type="jdftyp:double" use="optional"/>
     <xs:attribute name="Height" type="jdftyp:double" use="optional"/>
@@ -17765,7 +17769,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="UsageCounterRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="UsageCounterLink" type="jdf:ConsumableLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="UsageCounterLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="UsageCounterAttribs_c">
     <xs:attribute name="CounterTypes" type="jdftyp:NMTOKENS" use="optional"/>
   </xs:attributeGroup>
@@ -17826,7 +17830,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="VarnishingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="VarnishingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="VarnishingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="VarnishingParamsAttribs_c">
     <xs:attribute name="ModuleIndex" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="ModuleType" type="jdftyp:NMTOKEN" use="optional"/>
@@ -17880,7 +17884,7 @@
   </xs:complexType>
   <xs:element name="VerificationParams" type="jdf:VerificationParams_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="VerificationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="VerificationParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="VerificationParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="VerificationParamsAttribs_c">
     <xs:attribute name="FieldRange" type="jdftyp:IntegerRangeList" use="optional"/>
     <xs:attribute name="InsertError" type="jdftyp:string" use="optional"/>
@@ -17942,7 +17946,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="WebInlineFinishingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="WebInlineFinishingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="WebInlineFinishingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="WebInlineFinishingParamsAttribs_c"/>
   <xs:attributeGroup name="WebInlineFinishingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:WebInlineFinishingParamsAttribs_c"/>
@@ -18017,7 +18021,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="WireCombBindingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="WireCombBindingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="WireCombBindingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="WireCombBindingParamsAttribs_c">
     <xs:attribute name="Brand" type="jdftyp:string" use="optional"/>
     <xs:attribute name="Color" type="jdftyp:NamedColor" use="optional"/>
@@ -18090,7 +18094,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="WrappingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="WrappingParamsLink" type="jdf:ParameterLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="WrappingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="WrappingParamsAttribs_c"/>
   <xs:attributeGroup name="WrappingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:WrappingParamsAttribs_c"/>
@@ -18220,7 +18224,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ArtDeliveryIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ArtDeliveryIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ArtDeliveryIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ArtDeliveryIntentAttribs_c"/>
   <xs:attributeGroup name="ArtDeliveryIntentAttribs_u">
     <xs:attributeGroup ref="jdf:ArtDeliveryIntentAttribs_c"/>
@@ -18327,7 +18331,7 @@
   </xs:complexType>
   <xs:element name="BindingIntent" type="jdf:BindingIntent_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="BindingIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="BindingIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="BindingIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="BindingIntentAttribs_c"/>
   <xs:attributeGroup name="BindingIntentAttribs_u">
     <xs:attributeGroup ref="jdf:BindingIntentAttribs_c"/>
@@ -18962,7 +18966,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ColorIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ColorIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ColorIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ColorIntentAttribs_c"/>
   <xs:attributeGroup name="ColorIntentAttribs_u">
     <xs:attributeGroup ref="jdf:ColorIntentAttribs_c"/>
@@ -19025,7 +19029,7 @@
   </xs:complexType>
   <xs:element name="DeliveryIntent" type="jdf:DeliveryIntent_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="DeliveryIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="DeliveryIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="DeliveryIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="DeliveryIntentAttribs_c">
     <xs:attribute name="BuyerAccount" type="jdftyp:string" use="optional"/>
     <xs:attribute name="Pickup" type="jdftyp:boolean" use="optional"/>
@@ -19305,7 +19309,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="EmbossingIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="EmbossingIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="EmbossingIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="EmbossingIntentAttribs_c"/>
   <xs:attributeGroup name="EmbossingIntentAttribs_u">
     <xs:attributeGroup ref="jdf:EmbossingIntentAttribs_c"/>
@@ -19372,7 +19376,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="FoldingIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="FoldingIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="FoldingIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="FoldingIntentAttribs_c">
     <xs:attribute name="Folds" type="jdftyp:XYPair" use="optional"/>
   </xs:attributeGroup>
@@ -19424,7 +19428,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="HoleMakingIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="HoleMakingIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="HoleMakingIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="HoleMakingIntentAttribs_c">
     <xs:attribute name="Extent" type="jdftyp:XYPair" use="optional"/>
   </xs:attributeGroup>
@@ -19484,7 +19488,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="InsertingIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="InsertingIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="InsertingIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="InsertingIntentAttribs_c"/>
   <xs:attributeGroup name="InsertingIntentAttribs_u">
     <xs:attributeGroup ref="jdf:InsertingIntentAttribs_c"/>
@@ -19565,7 +19569,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="LaminatingIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="LaminatingIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="LaminatingIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="LaminatingIntentAttribs_c"/>
   <xs:attributeGroup name="LaminatingIntentAttribs_u">
     <xs:attributeGroup ref="jdf:LaminatingIntentAttribs_c"/>
@@ -19636,7 +19640,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="LayoutIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="LayoutIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="LayoutIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="LayoutIntentAttribs_c">
     <xs:attribute name="FinishedPageOrientation" type="jdftyp:ePortraitOrLandscape_" use="optional"/>
     <xs:attribute name="RotatePolicy" type="jdftyp:eRotatePolicy_" use="optional"/>
@@ -19747,7 +19751,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="MediaIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="MediaIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="MediaIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="MediaIntentAttribs_c">
     <xs:attribute name="MediaSetCount" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="UserMediaType" type="jdftyp:NMTOKEN" use="optional"/>
@@ -19893,7 +19897,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="NumberingIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="NumberingIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="NumberingIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="NumberingIntentAttribs_c"/>
   <xs:attributeGroup name="NumberingIntentAttribs_u">
     <xs:attributeGroup ref="jdf:NumberingIntentAttribs_c"/>
@@ -19978,7 +19982,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PackingIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PackingIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PackingIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PackingIntentAttribs_c"/>
   <xs:attributeGroup name="PackingIntentAttribs_u">
     <xs:attributeGroup ref="jdf:PackingIntentAttribs_c"/>
@@ -20054,7 +20058,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ProductionIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ProductionIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ProductionIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ProductionIntentAttribs_c"/>
   <xs:attributeGroup name="ProductionIntentAttribs_u">
     <xs:attributeGroup ref="jdf:ProductionIntentAttribs_c"/>
@@ -20120,7 +20124,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ProofingIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ProofingIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ProofingIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ProofingIntentAttribs_c"/>
   <xs:attributeGroup name="ProofingIntentAttribs_u">
     <xs:attributeGroup ref="jdf:ProofingIntentAttribs_c"/>
@@ -20197,7 +20201,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="PublishingIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="PublishingIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="PublishingIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="PublishingIntentAttribs_c">
     <xs:attribute name="ContentDataRefs" type="jdftyp:IDREFS" use="optional"/>
   </xs:attributeGroup>
@@ -20254,7 +20258,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ScreeningIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ScreeningIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ScreeningIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ScreeningIntentAttribs_c"/>
   <xs:attributeGroup name="ScreeningIntentAttribs_u">
     <xs:attributeGroup ref="jdf:ScreeningIntentAttribs_c"/>
@@ -20311,7 +20315,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="ShapeCuttingIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="ShapeCuttingIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="ShapeCuttingIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ShapeCuttingIntentAttribs_c"/>
   <xs:attributeGroup name="ShapeCuttingIntentAttribs_u">
     <xs:attributeGroup ref="jdf:ShapeCuttingIntentAttribs_c"/>
@@ -20376,7 +20380,7 @@
     </xs:annotation>
   </xs:element>
   <xs:element name="SizeIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
-  <xs:element name="SizeIntentLink" type="jdf:IntentLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:element name="SizeIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="SizeIntentAttribs_c"/>
   <xs:attributeGroup name="SizeIntentAttribs_u">
     <xs:attributeGroup ref="jdf:SizeIntentAttribs_c"/>

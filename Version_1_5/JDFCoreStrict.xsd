@@ -59,8 +59,8 @@
 	Processes in Prepress, Press and Postpress , please see &lt;http://www.cip4.org/&gt;.
 	
 -->
-<xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_3_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.3-002">
-	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_3_Types" schemaLocation="JDFTypes.xsd"/>
+<xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_5_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.5-001">
+	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_5_Types" schemaLocation="JDFTypes.xsd"/>
 	<xs:include schemaLocation="JDFResourceStrict.xsd"/>
 	<xs:complexType name="Comment_Type">
 		<xs:annotation>
@@ -1301,17 +1301,12 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="ConsumableLink" mixed="false">
+	<xs:complexType name="ResourceLink" mixed="false">
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:PhysicalResourceLink"/>
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="QuantityLink" mixed="false">
-		<xs:complexContent mixed="false">
-			<xs:extension base="jdf:PhysicalResourceLink"/>
-		</xs:complexContent>
-	</xs:complexType>
-	<xs:complexType name="HandlingLink" mixed="false">
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:PhysicalResourceLink"/>
 		</xs:complexContent>
