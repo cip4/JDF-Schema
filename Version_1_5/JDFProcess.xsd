@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_5_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.5-001">
 	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_5_Types" schemaLocation="JDFTypes.xsd"/>
+	<xs:include schemaLocation="JDFResource.xsd"/>
 	<xs:group name="ProcessInputResources_">
 		<xs:annotation>
 			<xs:appinfo>
@@ -108,7 +109,7 @@
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:JDFChildElements_" minOccurs="0"/>
 					<xs:element name="ResourceLinkPool" type="jdf:ProductResLinkPool_" minOccurs="0"/>
-					<xs:element ref="jdf:JDF" minOccurs="0"/>
+					<xs:element name="JDF" type="jdf:JDFProcessNode" minOccurs="0" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -154,7 +155,7 @@
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:JDFChildElements_" minOccurs="0"/>
 					<xs:element name="ResourceLinkPool" type="jdf:GeneralProcessResLinkPool_" minOccurs="0"/>
-					<xs:element ref="jdf:JDF" minOccurs="0"/>
+					<xs:element name="JDF" type="jdf:JDFProcessNode" minOccurs="0" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -170,7 +171,7 @@
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:JDFChildElements_" minOccurs="0"/>
 					<xs:element name="ResourceLinkPool" type="jdf:GeneralProcessResLinkPool_" minOccurs="0"/>
-					<xs:element ref="jdf:JDF" minOccurs="0"/>
+					<xs:element name="JDF" type="jdf:JDFProcessNode" minOccurs="0" />
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>

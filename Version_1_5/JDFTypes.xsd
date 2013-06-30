@@ -1005,7 +1005,13 @@
 			<xs:enumeration value="Element"/>
 		</xs:restriction>
 	</xs:simpleType>
-		<xs:simpleType name="eContext_MDM">
+	<xs:simpleType name="eContextQueriedResources">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Job"/>
+			<xs:enumeration value="Global"/>
+		</xs:restriction>
+	</xs:simpleType>	
+	<xs:simpleType name="eContext_MDM">
 			<xs:restriction base="jdftyp:EnumerationBaseType">
 				<xs:enumeration value="Set"/>
 				<xs:enumeration value="Document"/>
@@ -1024,7 +1030,6 @@
 				<xs:enumeration value="Object"/>
 			</xs:restriction>
 		</xs:simpleType>
-
 	<xs:simpleType name="eCostType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Chargeable"/>
@@ -1485,6 +1490,12 @@
 			<xs:enumeration value="FailedTestRun"/>
 			<xs:enumeration value="Ready"/>
 			<xs:enumeration value="Stopped"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eEndStatusOfQueue_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Aborted"/>
+			<xs:enumeration value="Completed"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eErrorState_">
@@ -2093,7 +2104,6 @@
 			<xs:enumeration value="CellPair"/>
 		</xs:restriction>
 	</xs:simpleType>
-	
 	<xs:simpleType name="eMappingSelection_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="UsePDLValues"/>

@@ -1352,7 +1352,7 @@
 				<Version Path="@AgentVersion" First="1.4"/>
 				<Version Path="@ICSVersions" First="1.3"/>
 				<Version Path="@MaxVersion" First="1.3"/>
-				<Version Path="@ResponseURL" First="1.2"/>
+				<Version Path="@ResponseURL" First="1.2" Last="1.4"/>
 				<Version Path="@xmlns" First="1.1"/>
 				<Version Path="Employee" First="1.4"/>
 				<!--A JMF must have one or more child message elements -->
@@ -1419,13 +1419,11 @@
 	<xs:complexType name="Command" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="@AcknowledgeType" First="1.1"/>
-				<Version Path="@AcknowledgeFormat" First="1.2"/>
+				<Version Path="@AcknowledgeFormat" First="1.2" Last="1.4"/>
 				<Version Path="@AcknowledgeTemplate" First="1.2"/>
+				<Version Path="@AcknowledgeType" First="1.1"/>
 				<Version Path="@RelatedCommands" First="1.4"/>
 				<Version Path="@TransactionID" First="1.4"/>
-				<Version Path="Subscription" First="1.3"/>
-				<Constraint Path="Subscription" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexContent mixed="false">
@@ -1502,7 +1500,6 @@
 	<xs:complexType name="Response" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexContent mixed="false">
@@ -1529,7 +1526,6 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="@ChannelMode" First="1.4"/>
-				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Trigger" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -1559,8 +1555,8 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="@AcknowledgeType" First="1.3"/>
-				<Version Path="@AcknowledgeFormat" First="1.3"/>
-				<Version Path="@AcknowledgeTemplate" First="1.3"/>
+				<Version Path="@AcknowledgeFormat" First="1.3" Last="1.4"/>
+				<Version Path="@AcknowledgeTemplate" First="1.3" Last="1.4"/>
 				<Version Path="@AcknowledgeURL" First="1.3"/>
 				<Constraint Path="Subscription" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>

@@ -24,6 +24,7 @@
 	<xs:complexType name="QueryEvents" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="." Last="1.4"/>
 				<Constraint Path="NotificationFilter" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Subscription" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -41,6 +42,7 @@
 	<xs:complexType name="ResponseEvents" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="." Last="1.4"/>
 				<Constraint Path="NotificationDef" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -58,6 +60,7 @@
 	<xs:complexType name="SignalEvents" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="." Last="1.4"/>
 				<Constraint Path="NotificationFilter" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="NotificationDef" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
@@ -80,10 +83,12 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="@DeviceID" Last="1.3"/>
+				<Version Path="@JobID" Last="1.4"/>
+				<Version Path="@JobPartID" Last="1.4"/>
 				<Version Path="@MilestoneTypes" First="1.4"/>
-				<Version Path="@QueueEntryID" First="1.2"/>
+				<Version Path="@QueueEntryID" First="1.2" Last="1.4"/>
 				<Version Path="@SignalTypes" First="1.2"/>
-				<Version Path="Part" First="1.2"/>
+				<Version Path="Part" First="1.2" Last="1.4"/>
 				<Constraint Path="Part" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -110,6 +115,7 @@
 	<xs:complexType name="QueryKnownControllers" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="." Last="1.4"/>
 				<Constraint Path="Subscription" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -125,6 +131,7 @@
 	<xs:complexType name="ResponseKnownControllers" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="." Last="1.4"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="JDFController" minOccurs="0" maxOccurs="unbounded"/>
 			</xs:appinfo>
@@ -142,6 +149,7 @@
 	<xs:complexType name="SignalKnownControllers" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="." Last="1.4"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Trigger" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="JDFController" minOccurs="0" maxOccurs="unbounded"/>
@@ -599,6 +607,7 @@
 	<xs:complexType name="QueryRepeatMessages" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="." Last="1.4"/>
 				<Constraint Path="MsgFilter" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Subscription" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -616,6 +625,7 @@
 	<xs:complexType name="ResponseRepeatMessages" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="." Last="1.4"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -878,12 +888,32 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.2"/>
+				<Version Path="QueueFilter" Last="1.4"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="FlushResourceParams" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:JMFAbstractCommand_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:QueueFilter" minOccurs="0"/>
+					<xs:element ref="jdf:FlushResourceParams" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="QueryFlushResources" mixed="false">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="." First="1.2"/>
+				<Version Path="QueueFilter" Last="1.4"/>
+				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="FlushResourceParams" minOccurs="0" maxOccurs="1"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:JMFAbstractQuery_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:element ref="jdf:QueueFilter" minOccurs="0"/>
@@ -932,7 +962,6 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-
 	<xs:element name="FlushResourceParams" type="jdf:FlushResourceParams_m" substitutionGroup="jdf:CommandOrQueryTypeObj">
 		<xs:annotation>
 			<xs:appinfo>
@@ -968,9 +997,6 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	
-
-
 	<xs:complexType name="AcknowledgeModifyNode" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
@@ -1076,8 +1102,6 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-
-
 	<xs:complexType name="AcknowledgeNewJDF" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
@@ -1189,6 +1213,8 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.2"/>
+				<Version Path="@JDFURL" First="1.5"/>
+				<Version Path="@ProjectID" First="1.5"/>
 				<Constraint Path="Device" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="JDF" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -1226,10 +1252,12 @@
 					<xs:element name="JDF" type="jdf:JDFProcessNode" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="Category" type="jdftyp:NMTOKEN" use="optional"/>
+				<xs:attribute name="JDFURL" type="jdftyp:URL" use="optional"/>
 				<xs:attribute name="JobID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="JobPartID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="ParentJobID" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="ParentJobPartID" type="jdftyp:string" use="optional"/>
+				<xs:attribute name="ProjectID" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="Type" type="jdftyp:NMTOKEN" use="optional"/>
 				<xs:attribute name="Types" type="jdftyp:NMTOKENS" use="optional"/>
 			</xs:extension>
@@ -1398,6 +1426,7 @@
 	<xs:complexType name="QueryOccupation" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="." Last="1.4"/>
 				<Version Path="EmployeeDef" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="Subscription" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -1415,6 +1444,7 @@
 	<xs:complexType name="ResponseOccupation" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="." Last="1.4"/>
 				<Version Path="Occupation" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -1432,6 +1462,7 @@
 	<xs:complexType name="SignalOccupation" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="." Last="1.4"/>
 				<Version Path="Occupation" minOccurs="0" maxOccurs="unbounded"/>
 				<Version Path="EmployeeDef" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
@@ -1604,6 +1635,7 @@
 	<xs:element name="ResourceQuParams" type="jdf:ResourceQuParams_m" substitutionGroup="jdf:QueryTypeObj">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="@Context" First="1.5"/>
 				<Version Path="@LotDetails" First="1.4"/>
 				<Version Path="@LotID" First="1.4"/>
 				<Version Path="@ProductID" First="1.2"/>
@@ -1619,9 +1651,11 @@
 			<xs:appinfo>
 				<Version Path="@ActualAmount" First="1.2"/>
 				<Version Path="@CommandResult" First="1.4"/>
+				<Version Path="@DeviceID" First="1.5"/>
 				<Version Path="@ModuleID" First="1.3"/>
 				<Version Path="@LotControlled" First="1.4"/>
 				<Version Path="@ModuleIndex" First="1.3"/>
+				<Version Path="@Orientation" First="1.5"/>
 				<Version Path="@ProductID" First="1.2"/>
 				<Version Path="@Status" First="1.2"/>
 				<Version Path="@Usage" First="1.3"/>
@@ -1665,6 +1699,7 @@
 					<xs:element name="Part" type="jdf:Part" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="Classes" type="jdftyp:eResourceClasses_" use="optional"/>
+				<xs:attribute name="Context" type="jdftyp:eContextQueriedResources" use="optional"/>
 				<xs:attribute name="Exact" type="jdftyp:boolean" default="false"/>
 				<xs:attribute name="JobID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="JobPartID" type="jdftyp:shortString" use="optional"/>
@@ -1697,11 +1732,13 @@
 				<xs:attribute name="Amount" type="jdftyp:double" use="optional"/>
 				<xs:attribute name="AvailableAmount" type="jdftyp:double" use="optional"/>
 				<xs:attribute name="CommandResult" type="jdftyp:eCommandResult_" use="optional"/>
+				<xs:attribute name="DeviceID" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="Level" type="jdftyp:eResourceInfo_m_Level_" use="optional"/>
 				<xs:attribute name="Location" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="LotControlled" type="jdftyp:boolean" use="optional"/>
 				<xs:attribute name="ModuleID" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="ModuleIndex" type="jdftyp:IntegerRangeList" use="optional"/>
+				<xs:attribute name="Orientation" type="jdftyp:eOrientation1_" use="optional"/>
 				<xs:attribute name="ProcessUsage" type="jdftyp:NMTOKEN" use="optional"/>
 				<xs:attribute name="ProductID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="ResourceID" type="jdftyp:NMTOKEN" use="optional"/>
@@ -1762,8 +1799,9 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.2"/>
+				<Version Path="QueueFilter" Last="1.4"/>
 				<Constraint Path="ResourcePullParams" minOccurs="1" maxOccurs="1"/>
-				<Constraint Path="QueueFilter" minOccurs="1" maxOccurs="1"/>
+				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexContent mixed="false">
@@ -1799,8 +1837,9 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.2"/>
+				<Version Path="Queue" Last="1.4"/>
 				<Constraint Path="QueueEntry" minOccurs="1" maxOccurs="1"/>
-				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
+				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -1853,7 +1892,7 @@
 	<xs:complexType name="AcknowledgeShutDown" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="1.2" First="1.2"/>
+				<Version Path="." First="1.2"/>
 				<Constraint Path="DeviceInfo" minOccurs="1" maxOccurs="1"/>
 				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
@@ -1873,9 +1912,10 @@
 	<xs:complexType name="CommandShutDown" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="1.2" First="1.2"/>
+				<Version Path="." First="1.2"/>
+				<Version Path="QueueFilter" Last="1.4"/>
 				<Constraint Path="ShutDownCmdParams" minOccurs="1" maxOccurs="1"/>
-				<Constraint Path="QueueFilter" minOccurs="1" maxOccurs="1"/>
+				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexContent mixed="false">
@@ -1891,9 +1931,10 @@
 	<xs:complexType name="ResponseShutDown" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="1.2" First="1.2"/>
+				<Version Path="." First="1.2"/>
+				<Version Path="Queue" Last="1.4"/>
 				<Constraint Path="DeviceInfo" minOccurs="1" maxOccurs="1"/>
-				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
+				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -1913,7 +1954,7 @@
 	<xs:complexType name="SignalShutDown" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="1.2" First="1.2"/>
+				<Version Path="." First="1.2"/>
 				<Constraint Path="ShutDownCmdParams" minOccurs="1" maxOccurs="1"/>
 				<Constraint Path="QueueFilter" minOccurs="1" maxOccurs="1"/>
 				<Constraint Path="DeviceInfo" minOccurs="1" maxOccurs="1"/>
@@ -2031,6 +2072,9 @@
 				<Version Path="@DeviceID" First="1.3"/>
 				<Version Path="@DeviceOperationMode" First="1.2"/>
 				<Version Path="@IdleStartTime" First="1.4"/>
+				<Version Path="Activity" First="1.5"/>
+				<Version Path="ModuleStatus/Employee" Last="1.4"/>
+				<Constraint Path="Activity" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="Device" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Employee" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="JobPhase" minOccurs="0" maxOccurs="unbounded"/>
@@ -2091,6 +2135,7 @@
 			<xs:extension base="jdf:ResponseTypeObj_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element name="Activity" type="jdf:PhaseTimeAudit_Activity" minOccurs="0"/>
 					<xs:element name="Device" type="jdf:Device_re" minOccurs="0"/>
 					<xs:element name="Employee" type="jdf:Employee_re" minOccurs="0"/>
 					<xs:element ref="jdf:JobPhase" minOccurs="0"/>
@@ -2105,6 +2150,8 @@
 			<xs:appinfo>
 				<Version Path="@DeviceCondition" First="1.2"/>
 				<Version Path="@DeviceOperationMode" First="1.2"/>
+				<Version Path="Activity" First="1.5"/>
+				<Version Path="ModuleStatus/Employee" Last="1.4"/>
 				<Constraint Path="Device" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Employee" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="JobPhase" minOccurs="0" maxOccurs="unbounded"/>
@@ -2116,6 +2163,7 @@
 			<xs:extension base="jdf:BaseElement_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element name="Activity" type="jdf:PhaseTimeAudit_Activity" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="Device" type="jdf:Device_re" minOccurs="0"/>
 					<xs:element name="Employee" type="jdf:Employee_re" minOccurs="0"/>
 					<xs:element ref="jdf:JobPhase" minOccurs="0"/>
@@ -2128,6 +2176,7 @@
 	<xs:complexType name="QueryTrack" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="." Last="1.4"/>
 				<Constraint Path="TrackFilter" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Subscription" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -2145,6 +2194,7 @@
 	<xs:complexType name="ResponseTrack" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="." Last="1.4"/>
 				<Constraint Path="TrackResult" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -2162,6 +2212,7 @@
 	<xs:complexType name="SignalTrack" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="." Last="1.4"/>
 				<Constraint Path="TrackFilter" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="TrackResult" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
@@ -2231,8 +2282,6 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-
-
 	<xs:complexType name="AcknowledgeUpdateJDF" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
@@ -2305,7 +2354,6 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-
 	<xs:element name="UpdateJDFCmdParams" type="jdf:UpdateJDFCmdParams_m" substitutionGroup="jdf:CommandOrQueryTypeObj">
 		<xs:annotation>
 			<xs:appinfo>
@@ -2361,7 +2409,7 @@
 							<xs:attributeGroup ref="jdf:UpdateJDFCmdParamsAttribs"/>
 						</xs:complexType>
 					</xs:element>
-					<xs:element ref="jdf:JDF" minOccurs="0"/>
+					<xs:element name="JDF" type="jdf:JDFProcessNode" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -2491,7 +2539,8 @@
 	<xs:complexType name="ResponsePipeClose" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Constraint Path="JobPhase" minOccurs="1" maxOccurs="1"/>
+				<Version Path="JobPhase" Last="1.4"/>
+				<Constraint Path="JobPhase" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -2557,6 +2606,7 @@
 	<xs:complexType name="ResponsePipePull" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="JobPhase" Last="1.4"/>
 				<Constraint Path="JobPhase" minOccurs="1" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -2623,6 +2673,7 @@
 	<xs:complexType name="ResponsePipePush" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="JobPhase" Last="1.4"/>
 				<Constraint Path="JobPhase" minOccurs="1" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -2672,6 +2723,7 @@
 	<xs:complexType name="ResponsePipePause" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="JobPhase" Last="1.4"/>
 				<Constraint Path="JobPhase" minOccurs="1" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -2691,6 +2743,12 @@
 			<xs:appinfo>
 				<Version Path="@JobID" First="1.2"/>
 				<Version Path="@JobPartID" First="1.2"/>
+				<Version Path="@ProjectID" First="1.5"/>
+				<Version Path="AmountPool" First="1.5"/>
+				<Version Path="ResourceLink" Last="1.4"/>
+				<Constraint Path="AmountPool" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="Resource" minOccurs="0" maxOccurs="unbounded"/>
+				<Constraint Path="ResourceLink" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
 	</xs:element>
@@ -2702,13 +2760,17 @@
 				<Version Path="@PhaseStartTime" First="1.2"/>
 				<Version Path="@PhaseWaste" First="1.2"/>
 				<Version Path="@RestTime" First="1.1"/>
+				<Version Path="@SpawnID" First="1.5"/>
 				<Version Path="@StartTime" First="1.1"/>
 				<Version Path="@TotalAmount" First="1.1"/>
 				<Version Path="@URL" First="1.4"/>
 				<Version Path="@Waste" First="1.1"/>
 				<Version Path="MISDetails" First="1.2"/>
 				<Version Path="ModuleStatus" First="1.3"/>
+				<Version Path="Activity" First="1.5"/>
 				<Version Path="JDF" Last="1.3"/>
+				<Version Path="ModuleStatus/Employee" Last="1.4"/>
+				<Constraint Path="Activity" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="CostCenter" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="JDF" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ModuleStatus" minOccurs="0" maxOccurs="unbounded"/>
@@ -2723,12 +2785,14 @@
 			<xs:extension base="jdf:CommandTypeObj_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element name="AmountPool" type="jdf:ResourceLink_AmountPool_l" minOccurs="0"/>
 					<xs:element ref="jdf:Resource" minOccurs="0"/>
 					<xs:element ref="jdf:ResourceLink" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="JobID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="JobPartID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="PipeID" type="jdftyp:shortString" use="required"/>
+				<xs:attribute name="ProjectID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="Status" type="jdftyp:eNodeStatus_" default="InProgress"/>
 				<xs:attribute name="UpdatedStatus" type="jdftyp:eResourceStatus_" use="optional"/>
 			</xs:extension>
@@ -2739,8 +2803,9 @@
 			<xs:extension base="jdf:ResponseTypeObj_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element name="Activity" type="jdf:PhaseTimeAudit_Activity" minOccurs="0"/>
 					<xs:element name="CostCenter" type="jdf:CostCenter_re" minOccurs="0"/>
-					<xs:element ref="jdf:JDF" minOccurs="0"/>
+					<xs:element name="JDF" type="jdf:JDFProcessNode" minOccurs="0"/>
 					<xs:element name="MISDetails" type="jdf:MISDetails_re" minOccurs="0"/>
 					<xs:element name="ModuleStatus" type="jdf:DeviceInfo_ModuleStatus_" minOccurs="0"/>
 					<xs:element name="Part" type="jdf:Part" minOccurs="0"/>
@@ -2757,6 +2822,7 @@
 				<xs:attribute name="QueueEntryID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="RestTime" type="jdftyp:duration" use="optional"/>
 				<xs:attribute name="Speed" type="jdftyp:double" use="optional"/>
+				<xs:attribute name="SpawnID" type="jdftyp:NMTOKEN" use="optional"/>
 				<xs:attribute name="StartTime" type="jdftyp:dateTime" use="optional"/>
 				<xs:attribute name="Status" type="jdftyp:eNodeStatus_" use="required"/>
 				<xs:attribute name="StatusDetails" type="jdftyp:shortString" use="optional"/>
@@ -2786,8 +2852,11 @@
 	<xs:complexType name="CommandAbortQueueEntry" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="QueueFilter" First="1.2"/>
-				<Constraint Path="QueueEntryDef" minOccurs="1" maxOccurs="1"/>
+				<Version Path="AbortQueueEntryParams" First="1.5"/>
+				<Version Path="QueueEntryDef" Last="1.4"/>
+				<Version Path="QueueFilter" First="1.2" Last="1.4"/>
+				<Constraint Path="AbortQueueEntryParams" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="QueueEntryDef" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -2795,6 +2864,7 @@
 			<xs:extension base="jdf:JMFAbstractCommand_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:AbortQueueEntryParams" minOccurs="0"/>
 					<xs:element ref="jdf:QueueEntryDef" minOccurs="0"/>
 					<xs:element ref="jdf:QueueFilter" minOccurs="0"/>
 				</xs:sequence>
@@ -2804,6 +2874,7 @@
 	<xs:complexType name="ResponseAbortQueueEntry" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="Queue" Last="1.4"/>
 				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -2838,8 +2909,11 @@
 	<xs:complexType name="CommandHoldQueueEntry" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="QueueFilter" First="1.2"/>
-				<Constraint Path="QueueEntryDef" minOccurs="1" maxOccurs="1"/>
+				<Version Path="HoldQueueEntryParams" First="1.5"/>
+				<Version Path="QueueEntryDef" Last="1.4"/>
+				<Version Path="QueueFilter" First="1.2" Last="1.4"/>
+				<Constraint Path="HoldQueueEntryParams" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="QueueEntryDef" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -2847,6 +2921,7 @@
 			<xs:extension base="jdf:JMFAbstractCommand_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:HoldQueueEntryParams" minOccurs="0"/>
 					<xs:element ref="jdf:QueueEntryDef" minOccurs="0"/>
 					<xs:element ref="jdf:QueueFilter" minOccurs="0"/>
 				</xs:sequence>
@@ -2856,7 +2931,8 @@
 	<xs:complexType name="ResponseHoldQueueEntry" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
+				<Version Path="Queue" Last="1.4"/>
+				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -2890,9 +2966,12 @@
 	<xs:complexType name="CommandRemoveQueueEntry" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="QueueFilter" First="1.2"/>
-				<Constraint Path="QueueEntryDef" minOccurs="1" maxOccurs="1"/>
+				<Version Path="QueueEntryDef" Last="1.4"/>
+				<Version Path="QueueFilter" First="1.2" Last="1.4"/>
+				<Version Path="RemoveQueueEntryParams" First="1.5"/>
+				<Constraint Path="QueueEntryDef" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="RemoveQueueEntryParams" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexContent mixed="false">
@@ -2901,6 +2980,7 @@
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:element ref="jdf:QueueEntryDef" minOccurs="0"/>
 					<xs:element ref="jdf:QueueFilter" minOccurs="0"/>
+					<xs:element ref="jdf:RemoveQueueEntryParams" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -2908,7 +2988,8 @@
 	<xs:complexType name="ResponseRemoveQueueEntry" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
+				<Version Path="Queue" Last="1.4"/>
+				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -2970,10 +3051,66 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	<xs:element name="AbortQueueEntryParams" type="jdf:AbortQueueEntryParams_m" substitutionGroup="jdf:CommandTypeObj">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="." First="1.5"/>
+				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="AbortQueueEntryParams_m" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:CommandTypeObj_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:QueueFilter" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="EndStatus" type="jdftyp:eEndStatusOfQueue_" use="required"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="HoldQueueEntryParams" type="jdf:HoldQueueEntryParams_m" substitutionGroup="jdf:CommandTypeObj">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="." First="1.5"/>
+				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="HoldQueueEntryParams_m" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:CommandTypeObj_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:QueueFilter" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
+	<xs:element name="RemoveQueueEntryParams" type="jdf:RemoveQueueEntryParams_m" substitutionGroup="jdf:CommandTypeObj">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="." First="1.5"/>
+				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="RemoveQueueEntryParams_m" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:CommandTypeObj_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:QueueFilter" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>	
 	<xs:element name="RequestQueueEntryParams" type="jdf:RequestQueueEntryParams_m" substitutionGroup="jdf:CommandTypeObj">
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.2"/>
+				<Version Path="@Activation" First="1.4"/>
 				<Version Path="@SubmitPolicy" First="1.3"/>
 				<Constraint Path="Part" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
@@ -2988,6 +3125,7 @@
 					<xs:element name="Part" type="jdf:Part" minOccurs="0"/>
 					<xs:element ref="jdf:Queue" minOccurs="0"/>
 				</xs:sequence>
+				<xs:attribute name="Activation" type="jdftyp:eActivation_" use="optional"/>
 				<xs:attribute name="JobID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="JobPartID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="QueueURL" type="jdftyp:URL" use="required"/>
@@ -3015,7 +3153,7 @@
 	<xs:complexType name="CommandResubmitQueueEntry" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="QueueFilter" First="1.2"/>
+				<Version Path="QueueFilter" First="1.2" Last="1.4"/>
 				<Constraint Path="ResubmissionParams" minOccurs="1" maxOccurs="1"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -3033,7 +3171,8 @@
 	<xs:complexType name="ResponseResubmitQueueEntry" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
+				<Version Path="Queue" Last="1.4"/>
+				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -3079,9 +3218,12 @@
 	<xs:complexType name="CommandResumeQueueEntry" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="QueueFilter" First="1.2"/>
-				<Constraint Path="QueueEntryDef" minOccurs="1" maxOccurs="1"/>
+				<Version Path="QueueEntryDef" Last="1.4"/>
+				<Version Path="QueueFilter" First="1.2" Last="1.4"/>
+				<Version Path="ResumeQueueEntryParams" First="1.5"/>
+				<Constraint Path="QueueEntryDef" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="ResumeQueueEntryParams" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexContent mixed="false">
@@ -3090,6 +3232,7 @@
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:element ref="jdf:QueueEntryDef" minOccurs="0"/>
 					<xs:element ref="jdf:QueueFilter" minOccurs="0"/>
+					<xs:element ref="jdf:ResumeQueueEntryParams" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -3097,7 +3240,8 @@
 	<xs:complexType name="ResponseResumeQueueEntry" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
+				<Version Path="Queue" Last="1.4"/>
+				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -3107,6 +3251,23 @@
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:element ref="jdf:Queue" minOccurs="0"/>
 					<xs:element name="Notification" type="jdf:NotificationAudit" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="ResumeQueueEntryParams" type="jdf:ResumeQueueEntryParams_m" substitutionGroup="jdf:CommandTypeObj">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="." First="1.5"/>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ResumeQueueEntryParams_m" mixed="false">	
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:CommandTypeObj_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:QueueFilter" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -3274,7 +3435,7 @@
 	<xs:complexType name="CommandSetQueueEntryPriority" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="QueueFilter" First="1.2"/>
+				<Version Path="QueueFilter" First="1.2" Last="1.4"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="QueueEntryPriParams" minOccurs="1" maxOccurs="1"/>
 			</xs:appinfo>
@@ -3292,7 +3453,8 @@
 	<xs:complexType name="ResponseSetQueueEntryPriority" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
+				<Version Path="Queue" Last="1.4"/>
+				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -3306,15 +3468,24 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:element name="QueueEntryPriParams" type="jdf:QueueEntryPriParams_m" substitutionGroup="jdf:CommandTypeObj"/>
+	<xs:element name="QueueEntryPriParams" type="jdf:QueueEntryPriParams_m" substitutionGroup="jdf:CommandTypeObj">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="@QueueEntryID" Last="1.4"/>
+				<Version Path="QueueFilter" First="1.5"/>
+				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
 	<xs:complexType name="QueueEntryPriParams_m" mixed="false">
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:CommandTypeObj_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:QueueFilter" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="Priority" type="jdftyp:Integer0To100" use="required"/>
-				<xs:attribute name="QueueEntryID" type="jdftyp:shortString" use="required"/>
+				<xs:attribute name="QueueEntryID" type="jdftyp:shortString" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -3340,7 +3511,7 @@
 	<xs:complexType name="CommandSubmitQueueEntry" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="QueueFilter" First="1.2"/>
+				<Version Path="QueueFilter" First="1.2" Last="1.4"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="QueueSubmissionParams" minOccurs="1" maxOccurs="1"/>
 			</xs:appinfo>
@@ -3358,8 +3529,9 @@
 	<xs:complexType name="ResponseSubmitQueueEntry" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="Queue" Last="1.4"/>
 				<Constraint Path="QueueEntry" minOccurs="0" maxOccurs="1"/>
-				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
+				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -3387,9 +3559,13 @@
 	<xs:element name="QueueEntry" type="jdf:QueueEntry_m" substitutionGroup="jdf:ResponseTypeObj">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="@Activation" First="1.5"/>
 				<Version Path="@DeviceID" First="1.2"/>
+				<Version Path="@GangName" First="1.3"/>
+				<Version Path="@GangPolicy" First="1.3"/>
 				<Version Path="@EndTime" First="1.2"/>
-				<Version Path="@StartTime" First="1.2"/>
+				<Version Path="@StartTime" First="1.1"/>
+				<Version Path="@StatusDetails" First="1.5"/>
 				<Version Path="JobPhase" First="1.2"/>
 				<Version Path="Part" First="1.2"/>
 				<Version Path="Preview" First="1.2"/>
@@ -3407,15 +3583,18 @@
 					<xs:element ref="jdf:JobPhase" minOccurs="0"/>
 					<xs:element name="Part" type="jdf:Part" minOccurs="0"/>
 				</xs:sequence>
+				<xs:attribute name="Activation" type="jdftyp:eActivation_" use="optional"/>
 				<xs:attribute name="DeviceID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="EndTime" type="jdftyp:dateTime" use="optional"/>
 				<xs:attribute name="GangName" type="jdftyp:NMTOKEN" use="optional"/>
+				<xs:attribute name="GangPolicy" type="jdftyp:eGangPolicy_" use="optional"/>
 				<xs:attribute name="JobID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="JobPartID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="Priority" type="jdftyp:Integer0To100" default="1"/>
 				<xs:attribute name="QueueEntryID" type="jdftyp:shortString" use="required"/>
 				<xs:attribute name="Status" type="jdftyp:eQueueEntryStatus_" use="required"/>
 				<xs:attribute name="StartTime" type="jdftyp:dateTime" use="optional"/>
+				<xs:attribute name="StatusDetails" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="SubmissionTime" type="jdftyp:dateTime" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
@@ -3463,8 +3642,12 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.2"/>
-				<Constraint Path="QueueEntryDef" minOccurs="1" maxOccurs="1"/>
+				<Version Path="QueueEntryDef" Last="1.4"/>
+				<Version Path="QueueFilter" Last="1.4"/>
+				<Version Path="SuspendQueueEntryParams" First="1.5"/>
+				<Constraint Path="QueueEntryDef" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="SuspendQueueEntryParams" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexContent mixed="false">
@@ -3473,6 +3656,7 @@
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:element ref="jdf:QueueEntryDef" minOccurs="0"/>
 					<xs:element ref="jdf:QueueFilter" minOccurs="0"/>
+					<xs:element ref="jdf:SuspendQueueEntryParams" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -3481,7 +3665,8 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.2"/>
-				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
+				<Version Path="Queue" Last="1.4"/>
+				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -3491,6 +3676,24 @@
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:element ref="jdf:Queue" minOccurs="0"/>
 					<xs:element name="Notification" type="jdf:NotificationAudit" minOccurs="0"/>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:element name="SuspendQueueEntryParams" type="jdf:SuspendQueueEntryParams_m" substitutionGroup="jdf:ResponseTypeObj">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="." First="1.5"/>
+				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
+			</xs:appinfo>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="SuspendQueueEntryParams_m" mixed="false">
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ResponseTypeObj_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:QueueFilter" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
 		</xs:complexContent>
@@ -3515,7 +3718,7 @@
 	<xs:complexType name="CommandCloseQueue" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="QueueFilter" First="1.2"/>
+				<Version Path="QueueFilter" First="1.2" Last="1.4"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -3531,7 +3734,8 @@
 	<xs:complexType name="ResponseCloseQueue" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
+				<Version Path="Queue" First="1.2" Last="1.4"/>
+				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -3568,7 +3772,7 @@
 	<xs:complexType name="CommandFlushQueue" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="QueueFilter" First="1.2"/>
+				<Version Path="QueueFilter" First="1.2" Last="1.4"/>
 				<Version Path="FlushQueueParams" First="1.2"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="FlushQueueParams" minOccurs="0" maxOccurs="1"/>
@@ -3588,6 +3792,9 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.2"/>
+				<Version Path="FlushQueueParams" First="1.5"/>
+				<Version Path="QueueFilter" Last="1.4"/>
+				<Constraint Path="FlushQueueParams" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Subscription" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -3596,6 +3803,7 @@
 			<xs:extension base="jdf:JMFAbstractQuery_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:FlushQueueParams" minOccurs="0"/>
 					<xs:element ref="jdf:QueueFilter" minOccurs="0"/>
 					<xs:element name="Subscription" type="jdf:SubscriptionElement_m" minOccurs="0"/>
 				</xs:sequence>
@@ -3605,9 +3813,9 @@
 	<xs:complexType name="ResponseFlushQueue" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="Queue" First="1.2"/>
+				<Version Path="Queue" First="1.2" Last="1.4"/>
 				<Version Path="FlushQueueInfo" First="1.2"/>
-				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
+				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="FlushQueueInfo" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -3704,7 +3912,7 @@
 	<xs:complexType name="CommandHoldQueue" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="QueueFilter" First="1.2"/>
+				<Version Path="QueueFilter" First="1.2" Last="1.4"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -3720,7 +3928,8 @@
 	<xs:complexType name="ResponseHoldQueue" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
+				<Version Path="Queue" Last="1.4"/>
+				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -3754,7 +3963,7 @@
 	<xs:complexType name="CommandOpenQueue" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="QueueFilter" First="1.2"/>
+				<Version Path="QueueFilter" First="1.2" Last="1.4"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -3770,7 +3979,8 @@
 	<xs:complexType name="ResponseOpenQueue" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
+				<Version Path="Queue" Last="1.4"/>
+				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -3935,7 +4145,7 @@
 	<xs:complexType name="CommandResumeQueue" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Version Path="QueueFilter" First="1.2"/>
+				<Version Path="QueueFilter" First="1.2" Last="1.4"/>
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -3951,7 +4161,8 @@
 	<xs:complexType name="ResponseResumeQueue" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
-				<Constraint Path="Queue" minOccurs="1" maxOccurs="1"/>
+				<Version Path="Queue" Last="1.4"/>
+				<Constraint Path="Queue" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Notification" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
