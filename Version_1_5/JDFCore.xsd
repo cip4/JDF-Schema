@@ -64,6 +64,7 @@
 	elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.5-001">
 	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_5_Types" schemaLocation="JDFTypes.xsd"/>
 	<xs:include schemaLocation="JDFResource.xsd"/>
+	<xs:include schemaLocation="JDFResourceElements.xsd"/>
 	<xs:complexType name="Comment_Type">
 		<xs:annotation>
 			<xs:appinfo>
@@ -1857,7 +1858,7 @@
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0"/>
-					<xs:element ref="jdf:ComChannelRef" minOccurs="0"/>
+					<!--  No ref for ComChannel <xs:element ref="jdf:ComChannelRef" minOccurs="0"/> -->
 				</xs:sequence>
 				<xs:attribute name="Language" type="jdftyp:language" use="optional"/>
 				<xs:attribute name="MessageEvents" type="jdftyp:NMTOKENS" use="required"/>

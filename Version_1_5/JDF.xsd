@@ -64,6 +64,7 @@
 	<xs:include schemaLocation="JDFCore.xsd"/>
 	<xs:include schemaLocation="JDFCapability.xsd"/>
 	<xs:include schemaLocation="JDFResource.xsd"/>
+	<xs:include schemaLocation="JDFResourceElements.xsd"/>
 	<xs:include schemaLocation="JDFProcess.xsd"/>
 	<xs:include schemaLocation="JDFMessage.xsd"/>
 	<xs:element name="JDF" type="jdf:JDFProcessNode"/>

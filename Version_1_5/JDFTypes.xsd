@@ -629,6 +629,12 @@
 			<xs:enumeration value="AsServer"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="eAutomation_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Static"/>
+			<xs:enumeration value="Dynamic"/>
+		</xs:restriction>
+	</xs:simpleType>	
 	<xs:simpleType name="eAutoRotatePages_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="None"/>
@@ -762,6 +768,7 @@
 			<xs:enumeration value="Pallet"/>
 			<xs:enumeration value="Roll"/>
 			<xs:enumeration value="Sheet"/>
+			<xs:enumeration value="SheetStream"/>
 			<xs:enumeration value="Stack"/>
 			<xs:enumeration value="StrappedStack"/>
 			<xs:enumeration value="StrappedCompensatedStack"/>
@@ -803,13 +810,15 @@
 	</xs:simpleType>
 	<xs:simpleType name="eChannelType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
-			<xs:enumeration value="Phone"/>
+			<xs:enumeration value="ComputerName"/>
 			<xs:enumeration value="Email"/>
 			<xs:enumeration value="Fax"/>
-			<xs:enumeration value="WWW"/>
-			<xs:enumeration value="JMF"/>
-			<xs:enumeration value="PrivateDirectory"/>
 			<xs:enumeration value="InstantMessaging"/>
+			<xs:enumeration value="JMF"/>
+			<xs:enumeration value="Mobile"/>
+			<xs:enumeration value="Phone"/>
+			<xs:enumeration value="PrivateDirectory"/>
+			<xs:enumeration value="WWW"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eCharacterProblem_">
@@ -1685,8 +1694,12 @@
 	</xs:simpleType>
 	<xs:simpleType name="eGrainDirection_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
-			<xs:enumeration value="ShortEdge"/>
-			<xs:enumeration value="LongEdge"/>
+			<xs:enumeration value="Any"/><!-- First in 1.5 -->
+			<xs:enumeration value="ShortEdge"/><!-- Last in 1.4 -->
+			<xs:enumeration value="LongEdge"/><!-- Last in 1.4 -->
+			<xs:enumeration value="SameDirection"/><!-- First in 1.5 -->
+			<xs:enumeration value="XDirection"/><!-- First in 1.4 -->
+			<xs:enumeration value="YDirection"/><!-- First in 1.4 -->
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eHoleReferenceEdge_">
@@ -1943,6 +1956,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="eImageType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="All"/>
 			<xs:enumeration value="Color"/>
 			<xs:enumeration value="Grayscale"/>
 			<xs:enumeration value="Monochrome"/>
@@ -2011,6 +2025,14 @@
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Receiver"/>
 			<xs:enumeration value="Sender"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eKnockoutSource_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="ClipPath"/>
+			<xs:enumeration value="SourceClipPath"/>
+			<xs:enumeration value="TrimClipPath"/>
+			<xs:enumeration value="TrimBox"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eLaminatingMethod_">
@@ -2098,10 +2120,11 @@
 	</xs:simpleType>
 	<xs:simpleType name="eMarkContext_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
-			<xs:enumeration value="Sheet"/>
 			<xs:enumeration value="BinderySignature"/>
 			<xs:enumeration value="Cell"/>
 			<xs:enumeration value="CellPair"/>
+			<xs:enumeration value="Sheet"/>
+			<xs:enumeration value="Tile"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eMappingSelection_">
@@ -2193,6 +2216,18 @@
 			<xs:enumeration value="Front"/>
 			<xs:enumeration value="Back"/>
 			<xs:enumeration value="Both"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eMediaSubstrateType_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="PS1"/>
+			<xs:enumeration value="PS2"/>
+			<xs:enumeration value="PS3"/>
+			<xs:enumeration value="PS4"/>
+			<xs:enumeration value="PS5"/>
+			<xs:enumeration value="PS6"/>
+			<xs:enumeration value="PS7"/>
+			<xs:enumeration value="PS8"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eMediaType_">
@@ -2723,6 +2758,12 @@
 			<xs:enumeration value="CIP3Single"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="ePrintPass_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="OneShot"/>
+			<xs:enumeration value="MultiShot"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="ePrintingTechnology_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Flexo"/>
@@ -3192,7 +3233,17 @@
 			<xs:enumeration value="TwoSidedFlipY"/>
 		</xs:restriction>
 	</xs:simpleType>
-	<xs:simpleType name="eSides3_">
+	<xs:simpleType name="eSidesDPParams_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="OneSidedBack"/>
+			<xs:enumeration value="OneSidedBackFlipX"/>
+			<xs:enumeration value="OneSidedBackFlipY"/><!-- Last in 1.4 -->
+			<xs:enumeration value="OneSidedFront"/><!-- Last in 1.4 -->
+			<xs:enumeration value="TwoSided"/>
+			<xs:enumeration value="TwoSidedFlipX"/><!-- Last in 1.4 -->
+			<xs:enumeration value="TwoSidedFlipY"/><!-- Last in 1.4 -->
+		</xs:restriction>
+	</xs:simpleType>	<xs:simpleType name="eSides3_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="OneSided"/>
 			<xs:enumeration value="OneSidedBack"/>
@@ -3237,15 +3288,15 @@
 	</xs:simpleType>
 	<xs:simpleType name="eSourceCSsList_">
 		<xs:list itemType="jdftyp:eSourceCSs_"/>
-	</xs:simpleType>
+	</xs:simpleType>	
 	<xs:simpleType name="eSourceObject_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="All"/>
 			<xs:enumeration value="ImagePhotographic"/>
 			<xs:enumeration value="ImageScreenShot"/>
-			<xs:enumeration value="Text"/>
 			<xs:enumeration value="LineArt"/>
 			<xs:enumeration value="SmoothShades"/>
+			<xs:enumeration value="Text"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eSourceObjects_">
@@ -3371,6 +3422,12 @@
 			<xs:enumeration value="Round"/>
 			<xs:enumeration value="FlatBacked"/>
 			<xs:enumeration value="RoundBacked"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eTightBackingStitchingParams_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Flat"/>
+			<xs:enumeration value="Pressure"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eTo_">
