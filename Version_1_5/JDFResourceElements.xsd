@@ -344,7 +344,7 @@
 		<xs:attribute name="StartPosition" type="jdftyp:XYPair" use="optional"/>
 		<xs:attribute name="UpperRibbonName" type="jdftyp:NMTOKEN" use="optional"/>
 		<xs:attribute name="WorkingPath" type="jdftyp:XYPair" use="optional"/>
-		<xs:attribute name="WorkingDirection" type="jdftyp:eWorkingDirection_" use="required"/>
+		<xs:attribute name="WorkingDirection" type="jdftyp:eWorkingDirection_" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="CutAttribs_r">
 		<xs:attributeGroup ref="jdf:CutAttribs_c"/>
@@ -618,7 +618,7 @@
         <xs:attribute name="Name" type="jdftyp:NMTOKEN" use="required"/>
 	</xs:attributeGroup>
 	<xs:complexType name="MetadataMap_re" mixed="false">
-		<xs:annotation>
+	<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.4"/>
 				<Constraint Path="Expr" minOccurs="0" maxOccurs="unbounded"/>
@@ -635,21 +635,19 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-
-  <xs:complexType name="MetaDataMap_Expr_lr" mixed="true">
-    <xs:complexContent mixed="true">
-      <xs:extension base="jdf:BaseElement_">
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-		  <xs:element ref="jdf:AbstractTerms" minOccurs="0"/>
-        </xs:sequence>
-        <xs:attribute name="Name" type="jdftyp:NMTOKEN" use="optional"/>
-        <xs:attribute name="Path" type="jdftyp:XPath" use="optional"/>
-        <xs:attribute name="Value" type="jdftyp:string" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
+	<xs:complexType name="MetaDataMap_Expr_lr" mixed="true">
+		<xs:complexContent mixed="true">
+			<xs:extension base="jdf:BaseElement_">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:element ref="jdf:AbstractTerms" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attribute name="Name" type="jdftyp:NMTOKEN" use="optional"/>
+				<xs:attribute name="Path" type="jdftyp:XPath" use="optional"/>
+				<xs:attribute name="Value" type="jdftyp:string" use="optional"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 	
 	<xs:attributeGroup name="MISDetailsAttribs_c">
 		<xs:attribute name="CostType" type="jdftyp:eCostType_" use="optional"/>
@@ -704,7 +702,7 @@
 		<xs:attribute name="RelativeWorkingPath" type="jdftyp:XYPair" use="optional"/>
 		<xs:attribute name="StartPosition" type="jdftyp:XYPair" use="optional"/>
 		<xs:attribute name="WorkingPath" type="jdftyp:XYPair" use="optional"/>
-		<xs:attribute name="WorkingDirection" type="jdftyp:eWorkingDirection_" use="required"/>
+		<xs:attribute name="WorkingDirection" type="jdftyp:eWorkingDirection_" use="optional"/>
 		<xs:attribute name="TeethPerDimension" type="jdftyp:double" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="PerforateAttribs_r">
@@ -737,11 +735,19 @@
 		<xs:attribute name="Languages" type="jdftyp:languages" use="optional"/>
 		<xs:attribute name="NamePrefix" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="NameSuffix" type="jdftyp:string" use="optional"/>
+		<xs:attribute name="PhoneticFirstName" type="jdftyp:string" use="optional"/>
+		<xs:attribute name="PhoneticLastName" type="jdftyp:string" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="PersonAttribs_r">
 		<xs:attributeGroup ref="jdf:PersonAttribs_c"/>
 	</xs:attributeGroup>
 	<xs:complexType name="Person_re" mixed="false">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="@PhoneticFirstName" First="1.5"/>
+				<Version Path="@PhoneticLastName" First="1.5"/>
+			</xs:appinfo>
+		</xs:annotation>
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:ResourceElement">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
