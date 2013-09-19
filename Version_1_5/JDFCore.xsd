@@ -839,6 +839,7 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+    <xs:element name="Notification" type="jdf:NotificationAudit" />
 	<xs:element name="NotificationDetails" type="jdf:NotificationDetails" abstract="true"/>
 	<xs:complexType name="NotificationDetails" mixed="false">
 		<xs:annotation>

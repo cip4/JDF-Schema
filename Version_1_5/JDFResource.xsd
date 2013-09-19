@@ -19372,6 +19372,7 @@
   <xs:attributeGroup name="ProofingIntentAttribs_r">
     <xs:attributeGroup ref="jdf:ProofingIntentAttribs_c"/>
   </xs:attributeGroup>
+  <xs:element name="ProofItem" type="jdf:ProofingIntent_ProofItem_lr"/>
   <xs:complexType name="ProofingIntent_ProofItem_lr" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
