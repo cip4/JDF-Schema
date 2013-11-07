@@ -9524,6 +9524,9 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <!-- Exported as a top level element for resue by the Printtalk schema -->
+  <xs:element name="Location" type="jdf:Location_re"/>
+  
   <xs:element name="LongitudinalRibbonOperationParams" type="jdf:LongitudinalRibbonOperationParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
