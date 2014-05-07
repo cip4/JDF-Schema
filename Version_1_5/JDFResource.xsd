@@ -1946,7 +1946,7 @@
     <xs:attributeGroup ref="jdf:ColorantControlAttribs_c"/>
     <xs:attribute name="ForceSeparations" type="jdftyp:boolean" default="false"/>
   </xs:attributeGroup>
-  <xs:complexType name="ColorantControl_CO_CP_DCO_lr" mixed="false">
+  <xs:complexType name="SeparationList" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -1983,13 +1983,13 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="ColorantAlias" type="jdf:ColorantAlias_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorantAliasRef" minOccurs="0"/>
-          <xs:element name="ColorantConvertProcess" type="jdf:ColorantControl_CO_CP_DCO_lr" minOccurs="0"/>
-          <xs:element name="ColorantOrder" type="jdf:ColorantControl_CO_CP_DCO_lr" minOccurs="0"/>
-          <xs:element name="ColorantParams" type="jdf:ColorantControl_CO_CP_DCO_lr" minOccurs="0"/>
+          <xs:element name="ColorantConvertProcess" type="jdf:SeparationList" minOccurs="0"/>
+          <xs:element name="ColorantOrder" type="jdf:SeparationList" minOccurs="0"/>
+          <xs:element name="ColorantParams" type="jdf:SeparationList" minOccurs="0"/>
           <xs:element name="ColorPool" type="jdf:ColorPool_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorPoolRef" minOccurs="0"/>
           <xs:element name="ColorSpaceSubstitute" type="jdf:ColorantControl_ColorSpaceSubstitute_lr" minOccurs="0"/>
-          <xs:element name="DeviceColorantOrder" type="jdf:ColorantControl_CO_CP_DCO_lr" minOccurs="0"/>
+          <xs:element name="DeviceColorantOrder" type="jdf:SeparationList" minOccurs="0"/>
           <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_re" minOccurs="0"/>
 <!--           <xs:element ref="jdf:DeviceNSpaceRef" minOccurs="0"/> -->
           <xs:element name="ColorantControlUpdate" type="jdf:ColorantControl_re" minOccurs="0"/>
@@ -2007,12 +2007,12 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="ColorantAlias" type="jdf:ColorantAlias_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorantAliasRef" minOccurs="0"/>
-          <xs:element name="ColorantOrder" type="jdf:ColorantControl_CO_CP_DCO_lr" minOccurs="0"/>
-          <xs:element name="ColorantParams" type="jdf:ColorantControl_CO_CP_DCO_lr" minOccurs="0"/>
+          <xs:element name="ColorantOrder" type="jdf:SeparationList" minOccurs="0"/>
+          <xs:element name="ColorantParams" type="jdf:SeparationList" minOccurs="0"/>
           <xs:element name="ColorPool" type="jdf:ColorPool_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorPoolRef" minOccurs="0"/>
           <xs:element name="ColorSpaceSubstitute" type="jdf:ColorantControl_ColorSpaceSubstitute_lr" minOccurs="0"/>
-          <xs:element name="DeviceColorantOrder" type="jdf:ColorantControl_CO_CP_DCO_lr" minOccurs="0"/>
+          <xs:element name="DeviceColorantOrder" type="jdf:SeparationList" minOccurs="0"/>
           <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_re" minOccurs="0"/>
 <!--           <xs:element ref="jdf:DeviceNSpaceRef" minOccurs="0"/> -->
         </xs:sequence>
@@ -2029,12 +2029,12 @@
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="ColorantAlias" type="jdf:ColorantAlias_re" minOccurs="0"/>
             <xs:element ref="jdf:ColorantAliasRef" minOccurs="0"/>
-            <xs:element name="ColorantOrder" type="jdf:ColorantControl_CO_CP_DCO_lr" minOccurs="0"/>
-            <xs:element name="ColorantParams" type="jdf:ColorantControl_CO_CP_DCO_lr" minOccurs="0"/>
+            <xs:element name="ColorantOrder" type="jdf:SeparationList" minOccurs="0"/>
+            <xs:element name="ColorantParams" type="jdf:SeparationList" minOccurs="0"/>
             <xs:element name="ColorPool" type="jdf:ColorPool_re" minOccurs="0"/>
             <xs:element ref="jdf:ColorPoolRef" minOccurs="0"/>
             <xs:element name="ColorSpaceSubstitute" type="jdf:ColorantControl_ColorSpaceSubstitute_lr" minOccurs="0"/>
-            <xs:element name="DeviceColorantOrder" type="jdf:ColorantControl_CO_CP_DCO_lr" minOccurs="0"/>
+            <xs:element name="DeviceColorantOrder" type="jdf:SeparationList" minOccurs="0"/>
             <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_re" minOccurs="0"/>
 <!--             <xs:element ref="jdf:DeviceNSpaceRef" minOccurs="0"/> -->
             <xs:element name="ColorantControl" type="jdf:ColorantControl_rp" minOccurs="0"/>
@@ -14771,8 +14771,8 @@
 			<xs:element ref="jdf:MediaRef"  minOccurs="0"/>
 			<xs:element name="RunList" type="jdf:RunList_re" minOccurs="0"/>
 			<xs:element ref="jdf:RunListRef" minOccurs="0"/>
-			<xs:element name="SeparationListBack" type="jdf:SheetOptimizingParams_GangElement_SeparationListBack_lr" minOccurs="0"/>
-			<xs:element name="SeparationListFront" type="jdf:SheetOptimizingParams_GangElement_SeparationListFront_lr" minOccurs="0"/>
+			<xs:element name="SeparationListBack" type="jdf:SeparationList" minOccurs="0"/>
+			<xs:element name="SeparationListFront" type="jdf:SeparationList" minOccurs="0"/>
 			<xs:element name="StrippingParams" type="jdf:StrippingParams_re" minOccurs="0"/>
 			<xs:element ref="jdf:StrippingParamsRef" minOccurs="0"/>
         </xs:sequence>
@@ -14795,26 +14795,6 @@
 		<xs:attribute name="PageDimension" type="jdftyp:XYPair" use="optional"/>
 		<xs:attribute name="Priority" type="jdftyp:Integer" use="optional"/>
 		<xs:attribute name="ProductID" type="jdftyp:string" use="optional"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SheetOptimizingParams_GangElement_SeparationListBack_lr" mixed="false">
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:BaseElement_">
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-			<xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="SheetOptimizingParams_GangElement_SeparationListFront_lr" mixed="false">
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:BaseElement_">
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-			<xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
-        </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -18209,17 +18189,7 @@
   <xs:attributeGroup name="ColorIntentAttribs_r">
     <xs:attributeGroup ref="jdf:ColorIntentAttribs_c"/>
   </xs:attributeGroup>
-  <xs:complexType name="ColorIntent_ColorsUsed_lr" mixed="false">
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:BaseElement_">
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="ColorIntent_r" mixed="false">
+   <xs:complexType name="ColorIntent_r" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:IntentResource">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
@@ -18232,7 +18202,7 @@
           <xs:element name="InkManufacturer" type="jdf:NameSpan" minOccurs="0"/>
           <xs:element name="ColorPool" type="jdf:ColorPool_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorPoolRef" minOccurs="0"/>
-          <xs:element name="ColorsUsed" type="jdf:ColorIntent_ColorsUsed_lr" minOccurs="0"/>
+          <xs:element name="ColorsUsed" type="jdf:SeparationList" minOccurs="0"/>
           <xs:element name="ColorIntent" type="jdf:ColorIntent_rp" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ColorIntentAttribs_r"/>
