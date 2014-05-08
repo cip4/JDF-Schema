@@ -248,6 +248,7 @@
 		<xs:attribute name="SheetWidth" type="jdftyp:DoubleRange" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="ConvertingConfigAttribs_r">
+		<xs:attributeGroup ref="jdf:ConvertingConfigAttribs_c"/>
 	</xs:attributeGroup>
 	<xs:complexType name="ConvertingConfig_re" mixed="false">
 		<xs:annotation>
@@ -613,6 +614,7 @@
         <xs:attribute name="ValueTemplate" type="jdftyp:string" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="MetadataMapAttribs_r">
+ 		<xs:attributeGroup ref="jdf:MetadataMapAttribs_c"/>
         <xs:attribute name="Context" type="jdftyp:eContext_MDM" default="PagePool"/>
         <xs:attribute name="DataType" type="jdftyp:eMetaDataMapDataType" use="required"/>
         <xs:attribute name="Name" type="jdftyp:NMTOKEN" use="required"/>
