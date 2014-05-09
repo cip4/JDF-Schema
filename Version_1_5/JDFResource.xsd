@@ -8438,6 +8438,7 @@
         <Version Path="PlacedObject" First="1.3"/>
         <Version Path="TransferCurvePool" First="1.1"/>
         <Version Path="TransferCurvePoolRef" First="1.1"/>
+        <Version Path="SheetCondition" First="1.4"/>
         <Version Path="Signature" Last="1.2"/>
         <Version Path="Signature/Media" First="1.1"/>
         <Version Path="Signature/MediaRef" First="1.1"/>
@@ -8451,7 +8452,9 @@
         <Constraint Path="MediaRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="MediaSource" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="MediaSourceRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="PageCondition" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="PlacedObject" minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="SheetCondition" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="Signature" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="TransferCurvePool" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="TransferCurvePoolRef" minOccurs="0" maxOccurs="1"/>
@@ -8656,6 +8659,7 @@
           <xs:element name="MediaSource" type="jdf:MediaSource_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaSourceRef" minOccurs="0"/>
           <xs:element name="PageCondition" type="jdf:Layout_PageCondition_lr" maxOccurs="unbounded" minOccurs="0"/>
+          <xs:element name="SheetCondition" type="jdf:Layout_SheetCondition_lr" maxOccurs="unbounded" minOccurs="0"/>
           <xs:element name="Signature" type="jdf:Layout_Signature_lr" minOccurs="0"/>
           <xs:element name="TransferCurvePool" type="jdf:TransferCurvePool_re" minOccurs="0"/>
           <xs:element ref="jdf:TransferCurvePoolRef" minOccurs="0"/>
