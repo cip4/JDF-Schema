@@ -18227,7 +18227,7 @@
             <xs:element name="InkManufacturer" type="jdf:NameSpan" minOccurs="0"/>
             <xs:element name="ColorPool" type="jdf:ColorPool_re" minOccurs="0"/>
             <xs:element ref="jdf:ColorPoolRef" minOccurs="0"/>
-            <xs:element name="ColorsUsed" type="jdf:ColorIntent_ColorsUsed_lr" minOccurs="0"/>
+            <xs:element name="ColorsUsed" type="jdf:SeparationList" minOccurs="0"/>
             <xs:element name="ColorIntent" type="jdf:ColorIntent_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
