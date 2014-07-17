@@ -1444,7 +1444,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-          <xs:element name="GlueApplication" type="jdf:GlueLine_re" minOccurs="0"/>
+          <xs:element name="GlueApplication" type="jdf:GlueApplication_re" minOccurs="0"/>
           <xs:element ref="jdf:GlueApplicationRef" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
 <!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
@@ -1462,6 +1462,8 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
+          <xs:element name="GlueApplication" type="jdf:GlueApplication_re" minOccurs="0"/>
+          <xs:element ref="jdf:GlueApplicationRef" minOccurs="0"/>
 <!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
         </xs:sequence>
         <xs:attributeGroup ref="jdf:CasingInParamsAttribs_r"/>
@@ -1476,6 +1478,8 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
+            <xs:element name="GlueApplication" type="jdf:GlueApplication_re" minOccurs="0"/>
+            <xs:element ref="jdf:GlueApplicationRef" minOccurs="0"/>
 <!--             <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
             <xs:element name="CasingInParams" type="jdf:CasingInParams_rp" minOccurs="0"/>
           </xs:sequence>
