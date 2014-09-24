@@ -1229,11 +1229,11 @@
         <Version Path="@ElementType" First="1.4"/>
         <Version Path="ColorPool" First="1.2"/>
         <Version Path="ColorPoolRef" First="1.2"/>
-        <Constraint Path="Band" minOccurs="1" maxOccurs="unbounded"/>
+        <Constraint Path="Band" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ColorPool" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ColorPoolRef" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path="FileSpec/@ResourceUsage=&quot;RasterFileLocation&quot;" minOccurs="1" maxOccurs="1"/>
-        <Constraint Path="FileSpecRef" minOccurs="1" maxOccurs="1"/>
+        <Constraint Path="FileSpec/@ResourceUsage=&quot;RasterFileLocation&quot;" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="PixelColorant" minOccurs="0" maxOccurs="unbounded"/>
       </xs:appinfo>
     </xs:annotation>
@@ -13340,14 +13340,13 @@
     <xs:attribute name="BandWidth" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="ColorantDepth" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="Interleaved" type="jdftyp:boolean" use="optional"/>
+    <xs:attribute name="MimeType" type="jdftyp:string" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="RenderingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:RenderingParamsAttribs_c"/>
-    <xs:attribute name="MimeType" type="jdftyp:string" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="RenderingParamsAttribs_r">
     <xs:attributeGroup ref="jdf:RenderingParamsAttribs_c"/>
-    <xs:attribute name="MimeType" type="jdftyp:string" use="required"/>
   </xs:attributeGroup>
   <xs:complexType name="RenderingParams_r" mixed="false">
     <xs:complexContent mixed="false">
