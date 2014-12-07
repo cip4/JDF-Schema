@@ -2916,8 +2916,8 @@
         <Version Path="." First="1.3"/>
         <Version Path="@ContentRefs" First="1.4"/>
         <Version Path="@ID" First="1.4"/>
-        <Version Path="ContentMetadata" First="1.4"/>
-        <Constraint Path="ContentMetadata" minOccurs="0" maxOccurs="1"/>
+        <Version Path="ContentMetaData" First="1.4"/>
+        <Constraint Path="ContentMetaData" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ElementColorParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ElementColorParamsRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ImageCompressionParams" minOccurs="0" maxOccurs="1"/>
