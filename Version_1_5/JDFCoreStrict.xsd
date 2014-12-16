@@ -64,7 +64,7 @@
 	elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.5-001">
 	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_5_Types" schemaLocation="JDFTypes.xsd"/>
 	<xs:include schemaLocation="JDFResourceStrict.xsd"/>
-	<xs:include schemaLocation="JDFResourceElements.xsd"/>
+	<xs:include schemaLocation="JDFResourceElementsStrict.xsd"/>
 	<xs:complexType name="Comment_Type">
 		<xs:annotation>
 			<xs:appinfo>

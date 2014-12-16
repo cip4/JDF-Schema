@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/TestExtensions"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.example.org/TestExtensions"
+	xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_5_Types" 
+	elementFormDefault="qualified">
+	
+	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_5_Types"/>
+	
+	<xs:element name="Elm_Test_String" type="xs:string"/>
+	
+	<xs:element name="Elm_Test_Integer">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Base" type="xs:integer" minOccurs="1" maxOccurs="1"/>
+			</xs:sequence>
+			<xs:attribute name="Percentage" type="xs:boolean" use="required" />
+			<xs:attribute name="ProofType" type="jdftyp:eProofType_" use="required" />
+		</xs:complexType>
+	</xs:element>
+
+	<xs:attribute name="Att_Test_Bool" type="boolean"/>
+	<xs:attribute name="Att_Test_Int" type="jdftyp:IntegerRange" />
+
+</schema>
