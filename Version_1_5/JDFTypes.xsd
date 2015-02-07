@@ -2748,10 +2748,13 @@
 	</xs:simpleType>
 	<xs:simpleType name="ePreviewType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Animation"/>
+			<xs:enumeration value="Identification"/>
 			<xs:enumeration value="Separation"/>
 			<xs:enumeration value="SeparatedThumbNail"/>
 			<xs:enumeration value="SeparationRaw"/>
 			<xs:enumeration value="ThumbNail"/>
+			<xs:enumeration value="Static3D"/>
 			<xs:enumeration value="Viewable"/>
 		</xs:restriction>
 	</xs:simpleType>
