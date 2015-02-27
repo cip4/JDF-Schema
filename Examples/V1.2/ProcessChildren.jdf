@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.CIP4.org/JDFSchema_1_1
-../../Version_1_2/JDF.xsd" ID="J1" Type="Process" Status="Ready" Version="1.2" xsi:type="ContactCopying">
-	<AuditPool/>
-	<AncestorPool/>
-</JDF>
