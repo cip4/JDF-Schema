@@ -1351,16 +1351,17 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
-	<xs:complexType name="Lot">
-		<xs:complexContent>
-			<xs:extension base="jdf:BaseElement_">
-				<xs:attribute name="ActualAmount" type="jdftyp:double" use="optional"/>
-				<xs:attribute name="Amount" type="jdftyp:double" use="optional"/>
-				<xs:attribute name="LotID" type="jdftyp:string" use="required"/>
-				<xs:attribute name="Consumption" type="jdftyp:eConsumption_" use="optional"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
+    <xs:complexType name="Lot" mixed="false">
+        <xs:complexContent mixed="false">
+            <xs:extension base="jdf:BaseElement_">
+                <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+                <xs:attribute name="ActualAmount" type="jdftyp:double" use="optional"/>
+                <xs:attribute name="Amount" type="jdftyp:double" use="optional"/>
+                <xs:attribute name="LotID" type="jdftyp:string" use="required"/>
+                <xs:attribute name="Consumption" type="jdftyp:eConsumption_" use="optional"/>
+            </xs:extension>
+        </xs:complexContent>
+    </xs:complexType>
 	<xs:complexType name="JMFRootMessage" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
