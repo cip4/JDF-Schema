@@ -3699,7 +3699,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="PlatePosition" type="jdftyp:XYPairRangeList" use="required"/>
-        <xs:attribute name="PlateType" type="jdftyp:ePlateType_" use="optional" default="Content"/>
+        <xs:attribute name="PlateType" type="jdftyp:ePlateType_" use="optional" default="Exposed"/>
         <xs:attribute name="PlateUsage" type="jdftyp:ePlateUsage_" default="Original"/>
         <xs:attribute name="DeviceModuleIndex" type="jdftyp:Integer" use="required"/>
       </xs:extension>
@@ -5459,7 +5459,7 @@
   <xs:attributeGroup name="ExposedMediaAttribs_c">
     <xs:attribute name="ColorType" type="jdftyp:eExposedMediaColorType" use="optional"/>
     <xs:attribute name="PageListIndex" type="jdftyp:IntegerRangeList" use="optional"/>
-    <xs:attribute name="PlateType" type="jdftyp:ePlateType2_" use="optional"/>
+    <xs:attribute name="PlateType" type="jdftyp:ePlateType_" use="optional"/>
     <xs:attribute name="ProofName" type="jdftyp:string" use="optional"/>
     <xs:attribute name="ProofQuality" type="jdftyp:eExposedMediaProofQuality" use="optional"/>
     <xs:attribute name="ProofType" type="jdftyp:eExposedMediaProofType" use="optional"/>
