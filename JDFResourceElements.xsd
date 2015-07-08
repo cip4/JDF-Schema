@@ -89,27 +89,6 @@
 		</xs:complexContent>
 	</xs:complexType>
 
-	<xs:attributeGroup name="ComChannelAttribs_c">
-		<xs:attribute name="ChannelTypeDetails" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="ChannelUsage" type="jdftyp:NMTOKENS" use="optional"/>
-	</xs:attributeGroup>
-	<xs:attributeGroup name="ComChannelAttribs_r">
-		<xs:attributeGroup ref="jdf:ComChannelAttribs_c"/>
-		<xs:attribute name="ChannelType" type="jdftyp:eChannelType_" use="required"/>
-		<xs:attribute name="Locator" type="jdftyp:string" use="required"/>
-	</xs:attributeGroup>
-	<xs:complexType name="ComChannel_re" mixed="false">
-		<xs:complexContent mixed="false">
-			<xs:extension base="jdf:ResourceElement">
-				<xs:sequence minOccurs="0" maxOccurs="unbounded">
-					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
-					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-				</xs:sequence>
-				<xs:attributeGroup ref="jdf:ComChannelAttribs_r"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
 	<xs:attributeGroup name="ConvertingConfigAttribs_c">
 		<xs:attribute name="MarginBottom" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="MarginLeft" type="jdftyp:double" use="optional"/>

@@ -2798,7 +2798,70 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Company" type="jdf:Company_r" substitutionGroup="jdf:Resource">
+  <xs:element name="ComChannel" type="jdf:ComChannel_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="@ChannelTypeDetails" First="1.2"/>
+        <Version Path="@ChannelUsage" First="1.2"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ComChannelRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="ComChannelLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="ComChannelAttribs_c">
+    <xs:attribute name="ChannelTypeDetails" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="ChannelUsage" type="jdftyp:NMTOKENS" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="ComChannelAttribs_u">
+    <xs:attributeGroup ref="jdf:ComChannelAttribs_c"/>
+    <xs:attribute name="ChannelType" type="jdftyp:eChannelType_" use="optional"/>
+    <xs:attribute name="Locator" type="jdftyp:string" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="ComChannelAttribs_r">
+    <xs:attributeGroup ref="jdf:ComChannelAttribs_c"/>
+    <xs:attribute name="ChannelType" type="jdftyp:eChannelType_" use="required"/>
+    <xs:attribute name="Locator" type="jdftyp:string" use="required"/>
+  </xs:attributeGroup>
+  <xs:complexType name="ComChannel_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="ComChannelUpdate" type="jdf:ComChannel_re" minOccurs="0"/>
+          <xs:element name="ComChannel" type="jdf:ComChannel_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:ComChannelAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ComChannel_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:ComChannelAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ComChannel_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="ComChannel" type="jdf:ComChannel_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:ComChannelAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+   <xs:element name="Company" type="jdf:Company_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
         <Version Path="Contact" Last="1.0"/>
@@ -3068,7 +3131,7 @@
           <xs:element name="Address" type="jdf:Address_re" minOccurs="0"/>
           <xs:element ref="jdf:AddressRef" minOccurs="0"/>
           <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:ComChannelRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:ComChannelRef" minOccurs="0"/>
           <xs:element name="Company" type="jdf:Company_re" minOccurs="0"/>
           <xs:element ref="jdf:CompanyRef" minOccurs="0"/>
           <xs:element name="Person" type="jdf:Person_re" minOccurs="0"/>
@@ -3089,7 +3152,7 @@
           <xs:element name="Address" type="jdf:Address_re" minOccurs="0"/>
           <xs:element ref="jdf:AddressRef" minOccurs="0"/>
           <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:ComChannelRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:ComChannelRef" minOccurs="0"/>
           <xs:element name="Company" type="jdf:Company_re" minOccurs="0"/>
           <xs:element ref="jdf:CompanyRef" minOccurs="0"/>
           <xs:element name="Person" type="jdf:Person_re" minOccurs="0"/>
@@ -3109,7 +3172,7 @@
             <xs:element name="Address" type="jdf:Address_re" minOccurs="0"/>
             <xs:element ref="jdf:AddressRef" minOccurs="0"/>
             <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:ComChannelRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:ComChannelRef" minOccurs="0"/>
             <xs:element name="Company" type="jdf:Company_re" minOccurs="0"/>
             <xs:element ref="jdf:CompanyRef" minOccurs="0"/>
             <xs:element name="Person" type="jdf:Person_re" minOccurs="0"/>
@@ -3607,7 +3670,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:ComChannelRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:ComChannelRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="Language" type="jdftyp:language" use="optional"/>
         <xs:attribute name="MessageEvents" type="jdftyp:NMTOKENS" use="required"/>
