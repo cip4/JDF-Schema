@@ -36,36 +36,6 @@
 	elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.5-001">
 	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_5_Types" schemaLocation="JDFTypes.xsd"/>
 	<xs:include schemaLocation="JDFCore.xsd"/>
-	<xs:attributeGroup name="CIELABMeasuringFieldAttribs_c">
-		<xs:attribute name="DensityStandard" type="jdftyp:eDensityStandard_" use="optional"/>
-		<xs:attribute name="Diameter" type="jdftyp:double" use="optional"/>
-		<xs:attribute name="Light" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="Observer" type="jdftyp:Integer" use="optional"/>
-		<xs:attribute name="Percentages" type="jdftyp:DoubleList" use="optional"/>
-		<xs:attribute name="ScreenRuling" type="jdftyp:DoubleList" use="optional"/>
-		<xs:attribute name="ScreenShape" type="jdftyp:string" use="optional"/>
-		<xs:attribute name="Setup" type="jdftyp:string" use="optional"/>
-		<xs:attribute name="Tolerance" type="jdftyp:double" use="optional"/>
-	</xs:attributeGroup>
-	<xs:attributeGroup name="CIELABMeasuringFieldAttribs_r">
-		<xs:attributeGroup ref="jdf:CIELABMeasuringFieldAttribs_c"/>
-		<xs:attribute name="Center" type="jdftyp:XYPair" use="required"/>
-		<xs:attribute name="CIELab" type="jdftyp:LabColor" use="required"/>
-	</xs:attributeGroup>
-	<xs:complexType name="CIELABMeasuringField_re" mixed="false">
-		<xs:complexContent mixed="false">
-			<xs:extension base="jdf:ResourceElement">
-				<xs:sequence minOccurs="0" maxOccurs="unbounded">
-					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
-					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-					<xs:element name="ColorMeasurementConditions" type="jdf:ColorMeasurementConditions_re"
-						minOccurs="0"/>
-					<xs:element ref="jdf:ColorMeasurementConditionsRef" minOccurs="0"/>
-				</xs:sequence>
-				<xs:attributeGroup ref="jdf:CIELABMeasuringFieldAttribs_r"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
 
 	<xs:attributeGroup name="ColorSpaceConversionOpAttribs_c">
 		<xs:attribute name="IgnoreEmbeddedICC" type="jdftyp:boolean" use="optional"/>

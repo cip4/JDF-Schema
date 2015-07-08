@@ -1814,6 +1814,88 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="CIELABMeasuringField" type="jdf:CIELABMeasuringField_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="@DensityStandard" Last="1.0"/>
+        <Version Path="@Light" Last="1.0"/>
+        <Version Path="@Observer" Last="1.0"/>
+        <Version Path="@Setup" Last="1.0"/>
+        <Version Path="ColorMeasurementConditions" First="1.1"/>
+        <Version Path="ColorMeasurementConditionsRef" First="1.1"/>
+        <Constraint Path="ColorMeasurementConditions" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="ColorMeasurementConditionsRef" minOccurs="0" maxOccurs="1"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="CIELABMeasuringFieldRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="CIELABMeasuringFieldLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="CIELABMeasuringFieldAttribs_c">
+    <xs:attribute name="DensityStandard" type="jdftyp:eDensityStandard_" use="optional"/>
+    <xs:attribute name="Diameter" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="Light" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="Observer" type="jdftyp:Integer" use="optional"/>
+    <xs:attribute name="Percentages" type="jdftyp:DoubleList" use="optional"/>
+    <xs:attribute name="ScreenRuling" type="jdftyp:DoubleList" use="optional"/>
+    <xs:attribute name="ScreenShape" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="Setup" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="Tolerance" type="jdftyp:double" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="CIELABMeasuringFieldAttribs_u">
+    <xs:attributeGroup ref="jdf:CIELABMeasuringFieldAttribs_c"/>
+    <xs:attribute name="Center" type="jdftyp:XYPair" use="optional"/>
+    <xs:attribute name="CIELab" type="jdftyp:LabColor" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="CIELABMeasuringFieldAttribs_r">
+    <xs:attributeGroup ref="jdf:CIELABMeasuringFieldAttribs_c"/>
+    <xs:attribute name="Center" type="jdftyp:XYPair" use="required"/>
+    <xs:attribute name="CIELab" type="jdftyp:LabColor" use="required"/>
+  </xs:attributeGroup>
+  <xs:complexType name="CIELABMeasuringField_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="ColorMeasurementConditions" type="jdf:ColorMeasurementConditions_re" minOccurs="0"/>
+          <xs:element ref="jdf:ColorMeasurementConditionsRef" minOccurs="0"/>
+          <xs:element name="CIELABMeasuringFieldUpdate" type="jdf:CIELABMeasuringField_re" minOccurs="0"/>
+          <xs:element name="CIELABMeasuringField" type="jdf:CIELABMeasuringField_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:CIELABMeasuringFieldAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CIELABMeasuringField_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="ColorMeasurementConditions" type="jdf:ColorMeasurementConditions_re" minOccurs="0"/>
+          <xs:element ref="jdf:ColorMeasurementConditionsRef" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:CIELABMeasuringFieldAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="CIELABMeasuringField_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="ColorMeasurementConditions" type="jdf:ColorMeasurementConditions_re" minOccurs="0"/>
+            <xs:element ref="jdf:ColorMeasurementConditionsRef" minOccurs="0"/>
+            <xs:element name="CIELABMeasuringField" type="jdf:CIELABMeasuringField_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:CIELABMeasuringFieldAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="CoilBindingParams" type="jdf:CoilBindingParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -2352,7 +2434,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="CIELABMeasuringField" type="jdf:CIELABMeasuringField_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:CIELABMeasuringFieldRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:CIELABMeasuringFieldRef" minOccurs="0"/>
           <xs:element name="DensityMeasuringField" type="jdf:DensityMeasuringField_re" minOccurs="0"/>
           <xs:element ref="jdf:DensityMeasuringFieldRef" minOccurs="0"/>
           <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
@@ -2370,7 +2452,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="CIELABMeasuringField" type="jdf:CIELABMeasuringField_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:CIELABMeasuringFieldRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:CIELABMeasuringFieldRef" minOccurs="0"/>
           <xs:element name="DensityMeasuringField" type="jdf:DensityMeasuringField_re" minOccurs="0"/>
           <xs:element ref="jdf:DensityMeasuringFieldRef" minOccurs="0"/>
           <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
@@ -2387,7 +2469,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="CIELABMeasuringField" type="jdf:CIELABMeasuringField_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:CIELABMeasuringFieldRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:CIELABMeasuringFieldRef" minOccurs="0"/>
             <xs:element name="DensityMeasuringField" type="jdf:DensityMeasuringField_re" minOccurs="0"/>
             <xs:element ref="jdf:DensityMeasuringFieldRef" minOccurs="0"/>
             <xs:element name="ColorControlStrip" type="jdf:ColorControlStrip_rp" minOccurs="0"/>
@@ -9051,7 +9133,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="CIELABMeasuringField" type="jdf:CIELABMeasuringField_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:CIELABMeasuringFieldRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:CIELABMeasuringFieldRef" minOccurs="0"/>
           <xs:element name="ColorControlStrip" type="jdf:ColorControlStrip_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorControlStripRef" minOccurs="0"/>
           <xs:element name="CutMark" type="jdf:CutMark_re" minOccurs="0"/>
@@ -16132,7 +16214,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="CIELABMeasuringField" type="jdf:CIELABMeasuringField_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:CIELABMeasuringFieldRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:CIELABMeasuringFieldRef" minOccurs="0"/>
           <xs:element name="ColorControlStrip" type="jdf:ColorControlStrip_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorControlStripRef" minOccurs="0"/>
           <xs:element name="CutMark" type="jdf:CutMark_re" minOccurs="0"/>
