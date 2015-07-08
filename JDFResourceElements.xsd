@@ -36,37 +36,6 @@
 	elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.5-001">
 	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_5_Types" schemaLocation="JDFTypes.xsd"/>
 	<xs:include schemaLocation="JDFCore.xsd"/>
-
-	<xs:attributeGroup name="AddressAttribs_c">
-		<xs:attribute name="City" type="jdftyp:string" use="optional"/>
-		<xs:attribute name="Country" type="jdftyp:string" use="optional"/>
-		<xs:attribute name="CountryCode" type="jdftyp:string" use="optional"/>
-		<xs:attribute name="PostBox" type="jdftyp:string" use="optional"/>
-		<xs:attribute name="PostalCode" type="jdftyp:string" use="optional"/>
-		<xs:attribute name="Region" type="jdftyp:string" use="optional"/>
-		<xs:attribute name="Street" type="jdftyp:string" use="optional"/>
-	</xs:attributeGroup>
-	<xs:attributeGroup name="AddressAttribs_r">
-		<xs:attributeGroup ref="jdf:AddressAttribs_c"/>
-	</xs:attributeGroup>
-	<xs:complexType name="Address_re" mixed="false">
-		<xs:annotation>
-			<xs:appinfo>
-				<Constraint Path="ExtendedAddress" minOccurs="0" maxOccurs="1"/>
-			</xs:appinfo>
-		</xs:annotation>
-		<xs:complexContent mixed="false">
-			<xs:extension base="jdf:ResourceElement">
-				<xs:sequence minOccurs="0" maxOccurs="unbounded">
-					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
-					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-					<xs:element name="ExtendedAddress" type="jdf:telem" minOccurs="0"/>
-				</xs:sequence>
-				<xs:attributeGroup ref="jdf:AddressAttribs_r"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
 	<xs:attributeGroup name="AutomatedOverPrintParamsAttribs_c">
 		<xs:attribute name="LineArtBlackLevel" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="TextSizeThreshold" type="jdftyp:Integer" use="optional"/>

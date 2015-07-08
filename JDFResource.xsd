@@ -115,6 +115,72 @@
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
+  <xs:element name="Address" type="jdf:Address_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Constraint Path="ExtendedAddress" minOccurs="0" maxOccurs="1"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="AddressRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="AddressLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="AddressAttribs_c">
+    <xs:attribute name="City" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="Country" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="CountryCode" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="PostBox" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="PostalCode" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="Region" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="Street" type="jdftyp:string" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AddressAttribs_u">
+    <xs:attributeGroup ref="jdf:AddressAttribs_c"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AddressAttribs_r">
+    <xs:attributeGroup ref="jdf:AddressAttribs_c"/>
+  </xs:attributeGroup>
+  <xs:complexType name="Address_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="ExtendedAddress" type="jdf:telem" minOccurs="0"/>
+          <xs:element name="AddressUpdate" type="jdf:Address_re" minOccurs="0"/>
+          <xs:element name="Address" type="jdf:Address_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:AddressAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Address_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="ExtendedAddress" type="jdf:telem" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:AddressAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Address_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="ExtendedAddress" type="jdf:telem" minOccurs="0"/>
+            <xs:element name="Address" type="jdf:Address_rp" minOccurs="0"/>
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:AddressAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="AdhesiveBindingParams" type="jdf:AdhesiveBindingParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
