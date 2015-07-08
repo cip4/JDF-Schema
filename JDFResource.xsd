@@ -6440,6 +6440,76 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="Fold" type="jdf:Fold_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="." First="1.1"/>
+        <Version Path="@RelativeTravel" First="1.2"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FoldRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="FoldLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="FoldAttribs_c">
+    <xs:attribute name="Travel" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="RelativeTravel" use="optional">
+      <xs:simpleType>
+        <xs:restriction base="jdftyp:double">
+          <xs:minInclusive value="0"/>
+          <xs:maxInclusive value="1"/>
+        </xs:restriction>
+      </xs:simpleType>
+    </xs:attribute>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="FoldAttribs_u">
+    <xs:attributeGroup ref="jdf:FoldAttribs_c"/>
+    <xs:attribute name="From" type="jdftyp:eFrom_" use="optional"/>
+    <xs:attribute name="To" type="jdftyp:eTo_" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="FoldAttribs_r">
+    <xs:attributeGroup ref="jdf:FoldAttribs_c"/>
+    <xs:attribute name="From" type="jdftyp:eFrom_" use="required"/>
+    <xs:attribute name="To" type="jdftyp:eTo_" use="required"/>
+  </xs:attributeGroup>
+  <xs:complexType name="Fold_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="FoldUpdate" type="jdf:Fold_re" minOccurs="0"/>
+          <xs:element name="Fold" type="jdf:Fold_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:FoldAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Fold_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:FoldAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Fold_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="Fold" type="jdf:Fold_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:FoldAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="FoldingParams" type="jdf:FoldingParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>

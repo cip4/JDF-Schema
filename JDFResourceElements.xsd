@@ -284,34 +284,6 @@
 		</xs:complexContent>
 	</xs:complexType>
 
-	<xs:attributeGroup name="FoldAttribs_c">
-		<xs:attribute name="Travel" type="jdftyp:double" use="optional"/>
-		<xs:attribute name="RelativeTravel" use="optional">
-			<xs:simpleType>
-				<xs:restriction base="jdftyp:double">
-					<xs:minInclusive value="0"/>
-					<xs:maxInclusive value="1"/>
-				</xs:restriction>
-			</xs:simpleType>
-		</xs:attribute>
-	</xs:attributeGroup>
-	<xs:attributeGroup name="FoldAttribs_r">
-		<xs:attributeGroup ref="jdf:FoldAttribs_c"/>
-		<xs:attribute name="From" type="jdftyp:eFrom_" use="required"/>
-		<xs:attribute name="To" type="jdftyp:eTo_" use="required"/>
-	</xs:attributeGroup>
-	<xs:complexType name="Fold_re" mixed="false">
-		<xs:complexContent mixed="false">
-			<xs:extension base="jdf:ResourceElement">
-				<xs:sequence minOccurs="0" maxOccurs="unbounded">
-					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
-					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-				</xs:sequence>
-				<xs:attributeGroup ref="jdf:FoldAttribs_r"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
 	<xs:attributeGroup name="GlueLineAttribs_c">
 		<xs:attribute name="GlueBrand" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="GlueLineWidth" type="jdftyp:double" use="optional"/>
