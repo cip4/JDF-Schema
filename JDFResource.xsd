@@ -2789,7 +2789,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="Address" type="jdf:Address_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:AddressRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:AddressRef" minOccurs="0"/>
           <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0"/>
 <!--           <xs:element ref="jdf:ComChannelRef" minOccurs="0"/> -->
           <xs:element name="Company" type="jdf:Company_re" minOccurs="0"/>
@@ -2810,7 +2810,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="Address" type="jdf:Address_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:AddressRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:AddressRef" minOccurs="0"/>
           <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0"/>
 <!--           <xs:element ref="jdf:ComChannelRef" minOccurs="0"/> -->
           <xs:element name="Company" type="jdf:Company_re" minOccurs="0"/>
@@ -2830,7 +2830,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="Address" type="jdf:Address_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:AddressRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:AddressRef" minOccurs="0"/>
             <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0"/>
 <!--             <xs:element ref="jdf:ComChannelRef" minOccurs="0"/> -->
             <xs:element name="Company" type="jdf:Company_re" minOccurs="0"/>
@@ -9597,7 +9597,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="Address" type="jdf:Address_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:AddressRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:AddressRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:LocationAttribs_r"/>
       </xs:extension>
