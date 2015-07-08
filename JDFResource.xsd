@@ -8137,7 +8137,7 @@
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
           <xs:element name="ImageSetterParamsUpdate" type="jdf:ImageSetterParams_re" minOccurs="0"/>
           <xs:element name="ImageSetterParams" type="jdf:ImageSetterParams_rp" minOccurs="0"/>
         </xs:sequence>
@@ -8154,7 +8154,7 @@
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ImageSetterParamsAttribs_r"/>
       </xs:extension>
@@ -8170,7 +8170,7 @@
             <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
             <xs:element ref="jdf:MediaRef" minOccurs="0"/>
             <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
             <xs:element name="ImageSetterParams" type="jdf:ImageSetterParams_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
@@ -8720,7 +8720,7 @@
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
 <!--           <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
           <xs:element name="InterpretingDetails" type="jdf:InterpretingParams_InterpretingDetails_lr" minOccurs="0"/>
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
@@ -8741,7 +8741,7 @@
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
 <!--           <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
           <xs:element name="InterpretingDetails" type="jdf:InterpretingParams_InterpretingDetails_lr" minOccurs="0"/>
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
@@ -8761,7 +8761,7 @@
             <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
 <!--             <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
             <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
             <xs:element name="InterpretingDetails" type="jdf:InterpretingParams_InterpretingDetails_lr" minOccurs="0"/>
             <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
             <xs:element ref="jdf:MediaRef" minOccurs="0"/>
@@ -9883,7 +9883,7 @@
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0"/>
           <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/>
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
           <xs:element name="ImageShift" type="jdf:LayoutPreparationParams_ImageShift_lr" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="Border" type="jdftyp:double" use="optional"/>
@@ -9921,7 +9921,7 @@
           <xs:element name="ExternalImpositionTemplate" type="jdf:ExternalImpositionTemplate_re" minOccurs="0"/>
           <xs:element ref="jdf:ExternalImpositionTemplateRef" minOccurs="0"/>
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
           <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0"/>
 <!--           <xs:element ref="jdf:JobFieldRef" minOccurs="0"/> -->
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
@@ -9948,7 +9948,7 @@
           <xs:element name="ExternalImpositionTemplate" type="jdf:ExternalImpositionTemplate_re" minOccurs="0"/>
           <xs:element ref="jdf:ExternalImpositionTemplateRef" minOccurs="0"/>
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
           <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0"/>
 <!--           <xs:element ref="jdf:JobFieldRef" minOccurs="0"/> -->
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
@@ -9974,7 +9974,7 @@
             <xs:element name="ExternalImpositionTemplate" type="jdf:ExternalImpositionTemplate_re" minOccurs="0"/>
             <xs:element ref="jdf:ExternalImpositionTemplateRef" minOccurs="0"/>
             <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
             <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0"/>
 <!--             <xs:element ref="jdf:JobFieldRef" minOccurs="0"/> -->
             <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
@@ -13686,7 +13686,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
           <xs:element name="RasterReadingParamsUpdate" type="jdf:RasterReadingParams_re" minOccurs="0"/>
@@ -13703,7 +13703,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
         </xs:sequence>
@@ -13719,7 +13719,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
             <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
             <xs:element ref="jdf:MediaRef" minOccurs="0"/>
           </xs:sequence>
@@ -19126,6 +19126,68 @@
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
         <xs:attributeGroup ref="jdf:EmbossingIntentAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="FitPolicy" type="jdf:FitPolicy_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="." First="1.1"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="FitPolicyRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="FitPolicyLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="FitPolicyAttribs_c">
+    <xs:attribute name="ClipOffset" type="jdftyp:XYPair" use="optional"/>
+    <xs:attribute name="MinGutter" type="jdftyp:XYPair" use="optional"/>
+    <xs:attribute name="RotatePolicy" type="jdftyp:eFitPolicyRotatePolicy_" use="optional"/>
+    <xs:attribute name="SizePolicy" type="jdftyp:eFitPolicySizePolicy_" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="FitPolicyAttribs_u">
+    <xs:attributeGroup ref="jdf:FitPolicyAttribs_c"/>
+    <xs:attribute name="GutterPolicy" type="jdftyp:eFitPolicyGutterPolicy_" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="FitPolicyAttribs_r">
+    <xs:attributeGroup ref="jdf:FitPolicyAttribs_c"/>
+    <xs:attribute name="GutterPolicy" type="jdftyp:eFitPolicyGutterPolicy_" default="Fixed"/>
+  </xs:attributeGroup>
+  <xs:complexType name="FitPolicy_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="FitPolicyUpdate" type="jdf:FitPolicy_re" minOccurs="0"/>
+          <xs:element name="FitPolicy" type="jdf:FitPolicy_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:FitPolicyAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FitPolicy_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:FitPolicyAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FitPolicy_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="FitPolicy" type="jdf:FitPolicy_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:FitPolicyAttribs_u"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

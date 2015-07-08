@@ -284,28 +284,6 @@
 		</xs:complexContent>
 	</xs:complexType>
 
-	<xs:attributeGroup name="FitPolicyAttribs_c">
-		<xs:attribute name="ClipOffset" type="jdftyp:XYPair" use="optional"/>
-		<xs:attribute name="MinGutter" type="jdftyp:XYPair" use="optional"/>
-		<xs:attribute name="RotatePolicy" type="jdftyp:eFitPolicyRotatePolicy_" use="optional"/>
-		<xs:attribute name="SizePolicy" type="jdftyp:eFitPolicySizePolicy_" use="optional"/>
-	</xs:attributeGroup>
-	<xs:attributeGroup name="FitPolicyAttribs_r">
-		<xs:attributeGroup ref="jdf:FitPolicyAttribs_c"/>
-		<xs:attribute name="GutterPolicy" type="jdftyp:eFitPolicyGutterPolicy_" default="Fixed"/>
-	</xs:attributeGroup>
-	<xs:complexType name="FitPolicy_re" mixed="false">
-		<xs:complexContent mixed="false">
-			<xs:extension base="jdf:ResourceElement">
-				<xs:sequence minOccurs="0" maxOccurs="unbounded">
-					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
-					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-				</xs:sequence>
-				<xs:attributeGroup ref="jdf:FitPolicyAttribs_r"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
 	<xs:attributeGroup name="FoldAttribs_c">
 		<xs:attribute name="Travel" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="RelativeTravel" use="optional">
