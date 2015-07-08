@@ -36,29 +36,6 @@
 	elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.5-001">
 	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_5_Types" schemaLocation="JDFTypes.xsd"/>
 	<xs:include schemaLocation="JDFCore.xsd"/>
-	<xs:attributeGroup name="AutomatedOverPrintParamsAttribs_c">
-		<xs:attribute name="LineArtBlackLevel" type="jdftyp:double" use="optional"/>
-		<xs:attribute name="TextSizeThreshold" type="jdftyp:Integer" use="optional"/>
-	</xs:attributeGroup>
-	<xs:attributeGroup name="AutomatedOverPrintParamsAttribs_r">
-		<xs:attributeGroup ref="jdf:AutomatedOverPrintParamsAttribs_c"/>
-		<xs:attribute name="KnockOutCMYKWhite" type="jdftyp:boolean" default="false"/>
-		<xs:attribute name="OverPrintBlackText" type="jdftyp:boolean" default="false"/>
-		<xs:attribute name="OverPrintBlackLineArt" type="jdftyp:boolean" default="false"/>
-		<xs:attribute name="TextBlackLevel" type="jdftyp:double" default="1"/>
-	</xs:attributeGroup>
-	<xs:complexType name="AutomatedOverPrintParams_re" mixed="false">
-		<xs:complexContent mixed="false">
-			<xs:extension base="jdf:ResourceElement">
-				<xs:sequence minOccurs="0" maxOccurs="unbounded">
-					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
-					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-				</xs:sequence>
-				<xs:attributeGroup ref="jdf:AutomatedOverPrintParamsAttribs_r"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
 	<xs:attributeGroup name="BarcodeCompParamsAttribs_c">
 		<xs:attribute name="CompensationValue" type="jdftyp:double" use="optional"/>
 	</xs:attributeGroup>

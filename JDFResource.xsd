@@ -631,6 +631,71 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_r" substitutionGroup="jdf:Resource"/>
+  <xs:element name="AutomatedOverPrintParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="AutomatedOverPrintParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="AutomatedOverPrintParamsAttribs_c">
+    <xs:attribute name="LineArtBlackLevel" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="TextSizeThreshold" type="jdftyp:Integer" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AutomatedOverPrintParamsAttribs_u">
+    <xs:attributeGroup ref="jdf:AutomatedOverPrintParamsAttribs_c"/>
+    <xs:attribute name="KnockOutCMYKWhite" type="jdftyp:boolean" use="optional"/>
+    <xs:attribute name="OverPrintBlackText" type="jdftyp:boolean" use="optional"/>
+    <xs:attribute name="OverPrintBlackLineArt" type="jdftyp:boolean" use="optional"/>
+    <xs:attribute name="TextBlackLevel" type="jdftyp:double" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="AutomatedOverPrintParamsAttribs_r">
+    <xs:attributeGroup ref="jdf:AutomatedOverPrintParamsAttribs_c"/>
+    <xs:attribute name="KnockOutCMYKWhite" type="jdftyp:boolean" default="false"/>
+    <xs:attribute name="OverPrintBlackText" type="jdftyp:boolean" default="false"/>
+    <xs:attribute name="OverPrintBlackLineArt" type="jdftyp:boolean" default="false"/>
+    <xs:attribute name="TextBlackLevel" type="jdftyp:double" default="1"/>
+  </xs:attributeGroup>
+  <xs:complexType name="AutomatedOverPrintParams_r" mixed="false">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="KnockOutCMYKWhite" First="1.3"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="AutomatedOverPrintParamsUpdate" type="jdf:AutomatedOverPrintParams_re" minOccurs="0"/>
+          <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:AutomatedOverPrintParamsAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AutomatedOverPrintParams_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:AutomatedOverPrintParamsAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="AutomatedOverPrintParams_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:AutomatedOverPrintParamsAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="BendingParams" type="jdf:BendingParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -5222,7 +5287,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/>
           <xs:element name="ColorantAlias" type="jdf:ColorantAlias_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorantAliasRef" minOccurs="0"/>
           <xs:element name="ColorCorrectionOp" type="jdf:ColorCorrectionParams_ColorCorrectionOp_lr" minOccurs="0"/>
@@ -5243,7 +5308,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/>
           <xs:element name="ColorantAlias" type="jdf:ColorantAlias_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorantAliasRef" minOccurs="0"/>
           <xs:element name="ColorSpaceConversionOp" type="jdf:ColorSpaceConversionOp_re" minOccurs="0"/>
@@ -5262,7 +5327,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/>
             <xs:element name="ColorantAlias" type="jdf:ColorantAlias_re" minOccurs="0"/>
             <xs:element ref="jdf:ColorantAliasRef" minOccurs="0"/>
             <xs:element name="ColorSpaceConversionOp" type="jdf:ColorSpaceConversionOp_re" minOccurs="0"/>
@@ -13422,7 +13487,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/>
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
 <!--           <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
@@ -13442,7 +13507,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/>
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
 <!--           <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
@@ -13461,7 +13526,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/>
             <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
 <!--             <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
             <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
@@ -14301,7 +14366,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/>
           <xs:element name="TransferFunctionControl" type="jdf:TransferFunctionControl_re" minOccurs="0"/>
           <xs:element ref="jdf:TransferFunctionControlRef" minOccurs="0"/>
           <xs:element name="SeparationControlParamsUpdate" type="jdf:SeparationControlParams_re" minOccurs="0"/>
@@ -14318,7 +14383,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/>
           <xs:element name="TransferFunctionControl" type="jdf:TransferFunctionControl_re" minOccurs="0"/>
           <xs:element ref="jdf:TransferFunctionControlRef" minOccurs="0"/>
         </xs:sequence>
@@ -14334,7 +14399,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/>
             <xs:element name="TransferFunctionControl" type="jdf:TransferFunctionControl_re" minOccurs="0"/>
             <xs:element ref="jdf:TransferFunctionControlRef" minOccurs="0"/>
             <xs:element name="SeparationControlParams" type="jdf:SeparationControlParams_rp" minOccurs="0"/>
