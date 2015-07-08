@@ -221,26 +221,6 @@
 		</xs:complexContent>
 	</xs:complexType>
 
-	<xs:attributeGroup name="DeviceNSpaceAttribs_c">
-		<xs:attribute name="Name" type="jdftyp:string" use="optional"/>
-	</xs:attributeGroup>
-	<xs:attributeGroup name="DeviceNSpaceAttribs_r">
-		<xs:attributeGroup ref="jdf:DeviceNSpaceAttribs_c"/>
-		<xs:attribute name="N" type="jdftyp:Integer" use="required"/>
-	</xs:attributeGroup>
-	<xs:complexType name="DeviceNSpace_re" mixed="false">
-		<xs:complexContent mixed="false">
-			<xs:extension base="jdf:ResourceElement">
-				<xs:sequence minOccurs="0" maxOccurs="unbounded">
-					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
-					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-					<xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
-				</xs:sequence>
-				<xs:attributeGroup ref="jdf:DeviceNSpaceAttribs_r"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
 	<xs:attributeGroup name="DisjointingAttribs_c">
 		<xs:attribute name="Number" type="jdftyp:Integer" use="optional"/>
 		<xs:attribute name="Offset" type="jdftyp:XYPair" use="optional"/>

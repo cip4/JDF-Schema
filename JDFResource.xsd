@@ -2343,7 +2343,7 @@
           <xs:element name="ColorSpaceSubstitute" type="jdf:ColorantControl_ColorSpaceSubstitute_lr" minOccurs="0"/>
           <xs:element name="DeviceColorantOrder" type="jdf:SeparationList" minOccurs="0"/>
           <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:DeviceNSpaceRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:DeviceNSpaceRef" minOccurs="0"/>
           <xs:element name="ColorantControlUpdate" type="jdf:ColorantControl_re" minOccurs="0"/>
           <xs:element name="ColorantControl" type="jdf:ColorantControl_rp" minOccurs="0"/>
         </xs:sequence>
@@ -2366,7 +2366,7 @@
           <xs:element name="ColorSpaceSubstitute" type="jdf:ColorantControl_ColorSpaceSubstitute_lr" minOccurs="0"/>
           <xs:element name="DeviceColorantOrder" type="jdf:SeparationList" minOccurs="0"/>
           <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:DeviceNSpaceRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:DeviceNSpaceRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ColorantControlAttribs_r"/>
       </xs:extension>
@@ -2388,7 +2388,7 @@
             <xs:element name="ColorSpaceSubstitute" type="jdf:ColorantControl_ColorSpaceSubstitute_lr" minOccurs="0"/>
             <xs:element name="DeviceColorantOrder" type="jdf:SeparationList" minOccurs="0"/>
             <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:DeviceNSpaceRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:DeviceNSpaceRef" minOccurs="0"/>
             <xs:element name="ColorantControl" type="jdf:ColorantControl_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
@@ -5060,6 +5060,69 @@
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
         <xs:attributeGroup ref="jdf:DeviceMarkAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Constraint Path="SeparationSpec" minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="SeparationSpecRef" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DeviceNSpaceRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="DeviceNSpaceLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="DeviceNSpaceAttribs_c">
+    <xs:attribute name="Name" type="jdftyp:string" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="DeviceNSpaceAttribs_u">
+    <xs:attributeGroup ref="jdf:DeviceNSpaceAttribs_c"/>
+    <xs:attribute name="N" type="jdftyp:Integer" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="DeviceNSpaceAttribs_r">
+    <xs:attributeGroup ref="jdf:DeviceNSpaceAttribs_c"/>
+    <xs:attribute name="N" type="jdftyp:Integer" use="required"/>
+  </xs:attributeGroup>
+  <xs:complexType name="DeviceNSpace_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
+          <xs:element name="DeviceNSpaceUpdate" type="jdf:DeviceNSpace_re" minOccurs="0"/>
+          <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:DeviceNSpaceAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DeviceNSpace_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:DeviceNSpaceAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DeviceNSpace_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
+            <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:DeviceNSpaceAttribs_u"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
