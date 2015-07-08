@@ -755,6 +755,77 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="BarcodeReproParams" type="jdf:BarcodeReproParams_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="." First="1.3"/>
+        <Constraint Path="BarcodeCompParams" minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="BarcodeCompParamsRef" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BarcodeReproParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="BarcodeReproParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="BarcodeReproParamsAttribs_c">
+    <xs:attribute name="BearerBars" type="jdftyp:eBearerBars_" use="optional"/>
+    <xs:attribute name="Height" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="Magnification" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="Masking" type="jdftyp:eMasking_" use="optional"/>
+    <xs:attribute name="ModuleHeight" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="ModuleWidth" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="Ratio" type="jdftyp:double" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="BarcodeReproParamsAttribs_u">
+    <xs:attributeGroup ref="jdf:BarcodeReproParamsAttribs_c"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="BarcodeReproParamsAttribs_r">
+    <xs:attributeGroup ref="jdf:BarcodeReproParamsAttribs_c"/>
+  </xs:attributeGroup>
+  <xs:complexType name="BarcodeReproParams_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="BarcodeCompParams" type="jdf:BarcodeCompParams_re" minOccurs="0"/>
+          <xs:element ref="jdf:BarcodeCompParamsRef" minOccurs="0"/>
+          <xs:element name="BarcodeReproParamsUpdate" type="jdf:BarcodeReproParams_re" minOccurs="0"/>
+          <xs:element name="BarcodeReproParams" type="jdf:BarcodeReproParams_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:BarcodeReproParamsAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BarcodeReproParams_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="BarcodeCompParams" type="jdf:BarcodeCompParams_re" minOccurs="0"/>
+          <xs:element ref="jdf:BarcodeCompParamsRef" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:BarcodeReproParamsAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BarcodeReproParams_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="BarcodeCompParams" type="jdf:BarcodeCompParams_re" minOccurs="0"/>
+            <xs:element ref="jdf:BarcodeCompParamsRef" minOccurs="0"/>
+            <xs:element name="BarcodeReproParams" type="jdf:BarcodeReproParams_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:BarcodeReproParamsAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="BendingParams" type="jdf:BendingParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
