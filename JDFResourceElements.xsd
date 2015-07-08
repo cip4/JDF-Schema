@@ -36,25 +36,6 @@
 	elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.5-001">
 	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_5_Types" schemaLocation="JDFTypes.xsd"/>
 	<xs:include schemaLocation="JDFCore.xsd"/>
-	<xs:attributeGroup name="BarcodeCompParamsAttribs_c">
-		<xs:attribute name="CompensationValue" type="jdftyp:double" use="optional"/>
-	</xs:attributeGroup>
-	<xs:attributeGroup name="BarcodeCompParamsAttribs_r">
-		<xs:attributeGroup ref="jdf:BarcodeCompParamsAttribs_c"/>
-		<xs:attribute name="CompensationProcess" type="jdftyp:eCompensationProcess_" use="required"/>
-	</xs:attributeGroup>
-	<xs:complexType name="BarcodeCompParams_re" mixed="false">
-		<xs:complexContent mixed="false">
-			<xs:extension base="jdf:ResourceElement">
-				<xs:sequence minOccurs="0" maxOccurs="unbounded">
-					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
-					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-				</xs:sequence>
-				<xs:attributeGroup ref="jdf:BarcodeCompParamsAttribs_r"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
 	<xs:attributeGroup name="BarcodeReproParamsAttribs_c">
 		<xs:attribute name="BearerBars" type="jdftyp:eBearerBars_" use="optional"/>
 		<xs:attribute name="Height" type="jdftyp:double" use="optional"/>

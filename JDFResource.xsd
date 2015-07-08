@@ -696,6 +696,65 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="BarcodeCompParams" type="jdf:BarcodeCompParams_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="." First="1.3"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="BarcodeCompParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="BarcodeCompParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="BarcodeCompParamsAttribs_c">
+    <xs:attribute name="CompensationValue" type="jdftyp:double" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="BarcodeCompParamsAttribs_u">
+    <xs:attributeGroup ref="jdf:BarcodeCompParamsAttribs_c"/>
+    <xs:attribute name="CompensationProcess" type="jdftyp:eCompensationProcess_" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="BarcodeCompParamsAttribs_r">
+    <xs:attributeGroup ref="jdf:BarcodeCompParamsAttribs_c"/>
+    <xs:attribute name="CompensationProcess" type="jdftyp:eCompensationProcess_" use="required"/>
+  </xs:attributeGroup>
+  <xs:complexType name="BarcodeCompParams_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="BarcodeCompParamsUpdate" type="jdf:BarcodeCompParams_re" minOccurs="0"/>
+          <xs:element name="BarcodeCompParams" type="jdf:BarcodeCompParams_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:BarcodeCompParamsAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BarcodeCompParams_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:BarcodeCompParamsAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="BarcodeCompParams_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="BarcodeCompParams" type="jdf:BarcodeCompParams_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:BarcodeCompParamsAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="BendingParams" type="jdf:BendingParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
