@@ -221,32 +221,6 @@
 		</xs:complexContent>
 	</xs:complexType>
 
-	<xs:attributeGroup name="DeviceMarkAttribs_c">
-		<xs:attribute name="Anchor" type="jdftyp:eAnchor_" use="optional"/>
-		<xs:attribute name="Font" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="FontSize" type="jdftyp:double" use="optional"/>
-		<xs:attribute name="HorizontalFitPolicy" type="jdftyp:eHorizontalFitPolicy_" use="optional"/>
-		<xs:attribute name="MarkJustification" type="jdftyp:eMarkJustification_" use="optional"/>
-		<xs:attribute name="MarkOffset" type="jdftyp:XYPair" use="optional"/>
-		<xs:attribute name="MarkOrientation" type="jdftyp:eMarkOrientation_" use="optional"/>
-		<xs:attribute name="MarkPosition" type="jdftyp:eMarkPosition_" use="optional"/>
-		<xs:attribute name="VerticalFitPolicy" type="jdftyp:eVerticalFitPolicy_" use="optional"/>
-	</xs:attributeGroup>
-	<xs:attributeGroup name="DeviceMarkAttribs_r">
-		<xs:attributeGroup ref="jdf:DeviceMarkAttribs_c"/>
-	</xs:attributeGroup>
-	<xs:complexType name="DeviceMark_re" mixed="false">
-		<xs:complexContent mixed="false">
-			<xs:extension base="jdf:ResourceElement">
-				<xs:sequence minOccurs="0" maxOccurs="unbounded">
-					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
-					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-				</xs:sequence>
-				<xs:attributeGroup ref="jdf:DeviceMarkAttribs_r"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
 	<xs:attributeGroup name="DeviceNSpaceAttribs_c">
 		<xs:attribute name="Name" type="jdftyp:string" use="optional"/>
 	</xs:attributeGroup>

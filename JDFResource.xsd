@@ -4987,6 +4987,82 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="DeviceMark" type="jdf:DeviceMark_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="." First="1.1"/>
+        <Version Path="@Anchor" First="1.4"/>
+        <Version Path="@HorizontalFitPolicy" First="1.4"/>
+        <Version Path="@MarkJustification" Last="1.3"/>
+        <Version Path="@MarkOffset" Last="1.3"/>
+        <Version Path="@MarkOrientation." Last="1.3"/>
+        <Version Path="@MarkPosition" Last="1.3"/>
+        <Version Path="@VerticalFitPolicy" First="1.4"/>
+        <Version Path="BarcodeReproParams" First="1.4"/>
+        <Version Path="BarcodeReproParamsRef" First="1.4"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="DeviceMarkRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="DeviceMarkLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="DeviceMarkAttribs_c">
+    <xs:attribute name="Anchor" type="jdftyp:eAnchor_" use="optional"/>
+    <xs:attribute name="Font" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="FontSize" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="HorizontalFitPolicy" type="jdftyp:eHorizontalFitPolicy_" use="optional"/>
+    <xs:attribute name="MarkJustification" type="jdftyp:eMarkJustification_" use="optional"/>
+    <xs:attribute name="MarkOffset" type="jdftyp:XYPair" use="optional"/>
+    <xs:attribute name="MarkOrientation" type="jdftyp:eMarkOrientation_" use="optional"/>
+    <xs:attribute name="MarkPosition" type="jdftyp:eMarkPosition_" use="optional"/>
+    <xs:attribute name="VerticalFitPolicy" type="jdftyp:eVerticalFitPolicy_" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="DeviceMarkAttribs_u">
+    <xs:attributeGroup ref="jdf:DeviceMarkAttribs_c"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="DeviceMarkAttribs_r">
+    <xs:attributeGroup ref="jdf:DeviceMarkAttribs_c"/>
+  </xs:attributeGroup>
+  <xs:complexType name="DeviceMark_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="BarcodeReproParams" type="jdf:BarcodeReproParams_re" minOccurs="0"/>
+          <xs:element ref="jdf:BarcodeReproParamsRef" minOccurs="0"/>
+          <xs:element name="DeviceMarkUpdate" type="jdf:DeviceMark_re" minOccurs="0"/>
+          <xs:element name="DeviceMark" type="jdf:DeviceMark_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:DeviceMarkAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DeviceMark_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:DeviceMarkAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="DeviceMark_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="DeviceMark" type="jdf:DeviceMark_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:DeviceMarkAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="DieLayout" type="jdf:DieLayout_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -9204,7 +9280,7 @@
           <xs:element name="DensityMeasuringField" type="jdf:DensityMeasuringField_re" minOccurs="0"/>
           <xs:element ref="jdf:DensityMeasuringFieldRef" minOccurs="0"/>
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/>
           <xs:element name="DynamicField" type="jdf:Layout_DynamicField_lr" minOccurs="0"/>
           <xs:element name="FillMark" type="jdf:Layout_FillMark_lr" minOccurs="0"/>
           <xs:element name="IdentificationField" type="jdf:IdentificationField_re" minOccurs="0"/>
@@ -9232,7 +9308,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="Format" type="jdftyp:string" use="required"/>
         <xs:attribute name="InputField" type="jdftyp:string" use="optional"/>
@@ -9742,7 +9818,7 @@
           <xs:element name="Color" type="jdf:Color_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorRef" minOccurs="0"/>
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/>
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
 <!--           <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/> -->
           <xs:element name="ImageShift" type="jdf:LayoutPreparationParams_ImageShift_lr" minOccurs="0"/>
@@ -9778,7 +9854,7 @@
           <xs:element name="InsertSheet" type="jdf:InsertSheet_re" minOccurs="0"/>
           <xs:element ref="jdf:InsertSheetRef" minOccurs="0"/>
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/>
           <xs:element name="ExternalImpositionTemplate" type="jdf:ExternalImpositionTemplate_re" minOccurs="0"/>
           <xs:element ref="jdf:ExternalImpositionTemplateRef" minOccurs="0"/>
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
@@ -9805,7 +9881,7 @@
           <xs:element name="InsertSheet" type="jdf:InsertSheet_re" minOccurs="0"/>
           <xs:element ref="jdf:InsertSheetRef" minOccurs="0"/>
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/>
           <xs:element name="ExternalImpositionTemplate" type="jdf:ExternalImpositionTemplate_re" minOccurs="0"/>
           <xs:element ref="jdf:ExternalImpositionTemplateRef" minOccurs="0"/>
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
@@ -9831,7 +9907,7 @@
             <xs:element name="InsertSheet" type="jdf:InsertSheet_re" minOccurs="0"/>
             <xs:element ref="jdf:InsertSheetRef" minOccurs="0"/>
             <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/>
             <xs:element name="ExternalImpositionTemplate" type="jdf:ExternalImpositionTemplate_re" minOccurs="0"/>
             <xs:element ref="jdf:ExternalImpositionTemplateRef" minOccurs="0"/>
             <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
@@ -16285,7 +16361,7 @@
           <xs:element name="DensityMeasuringField" type="jdf:DensityMeasuringField_re" minOccurs="0"/>
           <xs:element ref="jdf:DensityMeasuringFieldRef" minOccurs="0"/>
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/>
           <xs:element name="DynamicField" type="jdf:Surface_DynamicField_lr" minOccurs="0"/>
           <xs:element name="IdentificationField" type="jdf:IdentificationField_re" minOccurs="0"/>
           <xs:element ref="jdf:IdentificationFieldRef" minOccurs="0"/>
@@ -16309,7 +16385,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="Format" type="jdftyp:string" use="required"/>
         <xs:attribute name="InputField" type="jdftyp:string" use="optional"/>
