@@ -1804,6 +1804,7 @@
 				<xs:attribute name="ProductID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="ResourceID" type="jdftyp:NMTOKEN" use="optional"/>
 				<xs:attribute name="ResourceName" type="jdftyp:NMTOKEN" use="optional"/>
+				<xs:attribute name="Scope" type="jdftyp:eValueUsage_" use="optional"/>
 				<xs:attribute name="Status" type="jdftyp:eResourceStatus_" use="optional"/>
 				<xs:attribute name="Unit" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="Usage" type="jdftyp:eUsage_" use="optional"/>
@@ -3668,6 +3669,7 @@
 				<Version Path="@refID" First="1.2"/>
 				<Version Path="@ReturnJMF" First="1.2"/>
 				<Version Path="@ReturnURL" First="1.2"/>
+				<Version Path="@WatchURL" Last="1.4"/>
 			</xs:appinfo>
 		</xs:annotation>
 		<xs:complexContent mixed="false">
@@ -4353,6 +4355,7 @@
 					<xs:element name="Device" type="jdf:Device_re" minOccurs="0"/>
 					<xs:element name="Part" type="jdf:Part" minOccurs="0"/>
 				</xs:sequence>
+				<xs:attribute name="Activation" type="jdftyp:eActivation_" use="optional"/>
 				<xs:attribute name="GangNames" type="jdftyp:NMTOKENS" use="optional"/>
 				<xs:attribute name="JobID" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="JobPartID" type="jdftyp:string" use="optional"/>
@@ -4363,7 +4366,6 @@
 				<xs:attribute name="QueueEntryDetails" type="jdftyp:eQueueEntryDetails_" default="Brief"/>
 				<xs:attribute name="StatusList" type="jdftyp:eQueueEntryStatusList_" use="optional"/>
 				<xs:attribute name="UpdateGranularity" type="jdftyp:eUpdateGranularity_" use="optional"/>
-				<xs:attribute name="Activation" type="jdftyp:eActivation_" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
