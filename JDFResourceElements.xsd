@@ -284,30 +284,6 @@
 		</xs:complexContent>
 	</xs:complexType>
 
-	<xs:attributeGroup name="JobFieldAttribs_c">
-		<xs:attribute name="JobFormat" type="jdftyp:string" use="optional"/>
-		<xs:attribute name="JobTemplate" type="jdftyp:string" use="optional"/>
-		<xs:attribute name="OperatorText" type="jdftyp:string" use="optional"/>
-		<xs:attribute name="UserText" type="jdftyp:string" use="optional"/>
-	</xs:attributeGroup>
-	<xs:attributeGroup name="JobFieldAttribs_r">
-		<xs:attributeGroup ref="jdf:JobFieldAttribs_c"/>
-		<xs:attribute name="ShowList" type="jdftyp:NMTOKENS" use="optional"/>
-	</xs:attributeGroup>
-	<xs:complexType name="JobField_re" mixed="false">
-		<xs:complexContent mixed="false">
-			<xs:extension base="jdf:ResourceElement">
-				<xs:sequence minOccurs="0" maxOccurs="unbounded">
-					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
-					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-					<xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0"/>
-<!-- 					<xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/> -->
-				</xs:sequence>
-				<xs:attributeGroup ref="jdf:JobFieldAttribs_r"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
 	<xs:attributeGroup name="MediaLayersAttribs_c">
 	</xs:attributeGroup>
 	<xs:attributeGroup name="MediaLayersAttribs_r">

@@ -8972,6 +8972,79 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="JobField" type="jdf:JobField_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="." First="1.1"/>
+        <Version Path="JobFormat" First="1.4"/>
+        <Version Path="JobTemplate" First="1.4"/>
+        <Version Path="DeviceMark" Last="1.3"/>
+        <Constraint Path="DeviceMark" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="DeviceMarkRef" minOccurs="0" maxOccurs="1"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="JobFieldRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="JobFieldLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="JobFieldAttribs_c">
+    <xs:attribute name="JobFormat" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="JobTemplate" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="OperatorText" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="UserText" type="jdftyp:string" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="JobFieldAttribs_u">
+    <xs:attributeGroup ref="jdf:JobFieldAttribs_c"/>
+    <xs:attribute name="ShowList" type="jdftyp:NMTOKENS" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="JobFieldAttribs_r">
+    <xs:attributeGroup ref="jdf:JobFieldAttribs_c"/>
+    <xs:attribute name="ShowList" type="jdftyp:NMTOKENS" use="optional"/>
+  </xs:attributeGroup>
+  <xs:complexType name="JobField_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0"/>
+          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/>
+          <xs:element name="JobFieldUpdate" type="jdf:JobField_re" minOccurs="0"/>
+          <xs:element name="JobField" type="jdf:JobField_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:JobFieldAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="JobField_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0"/>
+          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:JobFieldAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="JobField_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0"/>
+            <xs:element ref="jdf:DeviceMarkRef" minOccurs="0"/>
+            <xs:element name="JobField" type="jdf:JobField_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:JobFieldAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="LabelingParams" type="jdf:LabelingParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -9488,7 +9561,7 @@
           <xs:element name="IdentificationField" type="jdf:IdentificationField_re" minOccurs="0"/>
           <xs:element ref="jdf:IdentificationFieldRef" minOccurs="0"/>
           <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:JobFieldRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:JobFieldRef" minOccurs="0"/>
           <xs:element name="LayoutElement" type="jdf:LayoutElement_re" minOccurs="0"/>
           <xs:element ref="jdf:LayoutElementRef" minOccurs="0"/>
           <xs:element name="MarkActivation" type="jdf:Layout_MarkObject_MarkActivation_lr" minOccurs="0"/>
@@ -10062,7 +10135,7 @@
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
           <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
           <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:JobFieldRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:JobFieldRef" minOccurs="0"/>
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
           <xs:element name="PageCell" type="jdf:LayoutPreparationParams_PageCell_lr" minOccurs="0"/>
@@ -10089,7 +10162,7 @@
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
           <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
           <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:JobFieldRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:JobFieldRef" minOccurs="0"/>
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
           <xs:element name="PageCell" type="jdf:LayoutPreparationParams_PageCell_lr" minOccurs="0"/>
@@ -10115,7 +10188,7 @@
             <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
             <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
             <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:JobFieldRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:JobFieldRef" minOccurs="0"/>
             <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
             <xs:element ref="jdf:MediaRef" minOccurs="0"/>
             <xs:element name="PageCell" type="jdf:LayoutPreparationParams_PageCell_lr" minOccurs="0"/>
@@ -16357,7 +16430,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="Position" type="jdf:StrippingParams_Position_lr" minOccurs="0"/>
           <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:JobFieldRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:JobFieldRef" minOccurs="0"/>
           <xs:element name="RefAnchor" type="jdf:RefAnchor_re" minOccurs="0" maxOccurs="1"/>
         </xs:sequence>
         <xs:attribute name="AbsoluteHeight" type="jdftyp:double" use="optional"/>
@@ -16568,7 +16641,7 @@
           <xs:element name="IdentificationField" type="jdf:IdentificationField_re" minOccurs="0"/>
           <xs:element ref="jdf:IdentificationFieldRef" minOccurs="0"/>
           <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:JobFieldRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:JobFieldRef" minOccurs="0"/>
           <xs:element name="LayoutElement" type="jdf:LayoutElement_re" minOccurs="0"/>
           <xs:element ref="jdf:LayoutElementRef" minOccurs="0"/>
           <xs:element name="RegisterMark" type="jdf:RegisterMark_re" minOccurs="0"/>
