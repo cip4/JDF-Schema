@@ -13133,7 +13133,6 @@
           <xs:element ref="jdf:Comment" minOccurs="0"/>
           <xs:element ref="jdf:GeneralID" minOccurs="0"/>
           <xs:element name="Preview" type="jdf:Preview_re" minOccurs="0"/>
-          <xs:any namespace="##other" processContents="lax" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:PreviewAttribs_r"/>
       </xs:extension>
@@ -13220,7 +13219,6 @@
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element ref="jdf:Comment" minOccurs="0"/>
             <xs:element ref="jdf:GeneralID" minOccurs="0"/>
-            <xs:any namespace="##other" processContents="lax" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
