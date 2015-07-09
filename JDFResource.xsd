@@ -16584,6 +16584,8 @@
         <xs:attribute name="AbsoluteHeight" type="jdftyp:double" use="optional"/>
         <xs:attribute name="AbsoluteWidth" type="jdftyp:double" use="optional"/>
         <xs:attribute name="Anchor" type="jdftyp:eAnchor_" use="optional"/>
+        <xs:attribute name="Font" type="jdftyp:NMTOKEN" use="optional"/>
+        <xs:attribute name="FontSize" type="jdftyp:double" use="optional"/>
         <xs:attribute name="HorizontalFitPolicy" type="jdftyp:eHorizontalFitPolicy_" use="optional"/>
         <xs:attribute name="ID" type="jdftyp:NMTOKEN" use="optional"/>
         <xs:attribute name="MarkContext" type="jdftyp:eMarkContext_" use="optional"/>
