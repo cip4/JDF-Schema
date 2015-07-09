@@ -9599,8 +9599,10 @@
       <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:element name="FillColor" type="jdf:Layout_FillMark_FillColor_lr" minOccurs="0"/>
+<!--           <xs:element name="FillColor" type="jdf:Layout_FillMark_FillColor_lr" minOccurs="0"/> -->
+		  <xs:element name="MarkColor" type="jdf:MarkColor_re" minOccurs="0"/>
         </xs:sequence>
+        <xs:attribute name="KnockoutBleed" type="jdftyp:double" use="optional" />
         <xs:attribute name="KnockoutRefs" type="jdftyp:IDREFS" use="optional"/>
         <xs:attribute name="KnockoutSource" type="jdftyp:eKnockoutSource_" use="required"/>
       </xs:extension>
@@ -16563,6 +16565,7 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.3"/>
+        <Constraint Path="MarkColor" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="Position" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="JobField" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="JobFieldRef" minOccurs="0" maxOccurs="1"/>
@@ -16572,6 +16575,7 @@
       <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:element name="MarkColor" type="jdf:MarkColor_re" minOccurs="0"/>
           <xs:element name="Position" type="jdf:StrippingParams_Position_lr" minOccurs="0"/>
           <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0"/>
           <xs:element ref="jdf:JobFieldRef" minOccurs="0"/>
