@@ -3135,7 +3135,7 @@
           <xs:element name="Company" type="jdf:Company_re" minOccurs="0"/>
           <xs:element ref="jdf:CompanyRef" minOccurs="0"/>
           <xs:element name="Person" type="jdf:Person_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:PersonRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:PersonRef" minOccurs="0"/>
           <xs:element name="ContactUpdate" type="jdf:Contact_re" minOccurs="0"/>
           <xs:element name="Contact" type="jdf:Contact_rp" minOccurs="0"/>
         </xs:sequence>
@@ -3156,7 +3156,7 @@
           <xs:element name="Company" type="jdf:Company_re" minOccurs="0"/>
           <xs:element ref="jdf:CompanyRef" minOccurs="0"/>
           <xs:element name="Person" type="jdf:Person_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:PersonRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:PersonRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ContactAttribs_r"/>
       </xs:extension>
@@ -3176,7 +3176,7 @@
             <xs:element name="Company" type="jdf:Company_re" minOccurs="0"/>
             <xs:element ref="jdf:CompanyRef" minOccurs="0"/>
             <xs:element name="Person" type="jdf:Person_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:PersonRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:PersonRef" minOccurs="0"/>
             <xs:element name="Contact" type="jdf:Contact_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
@@ -5884,7 +5884,7 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="CostCenter" type="jdf:CostCenter_re" minOccurs="0"/>
           <xs:element name="Person" type="jdf:Person_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:PersonRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:PersonRef" minOccurs="0"/>
           <xs:element name="EmployeeUpdate" type="jdf:Employee_re" minOccurs="0"/>
           <xs:element name="Employee" type="jdf:Employee_rp" minOccurs="0"/>
         </xs:sequence>
@@ -5900,7 +5900,7 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="CostCenter" type="jdf:CostCenter_re" minOccurs="0"/>
           <xs:element name="Person" type="jdf:Person_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:PersonRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:PersonRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:EmployeeAttribs_r"/>
       </xs:extension>
@@ -5915,7 +5915,7 @@
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="CostCenter" type="jdf:CostCenter_re" minOccurs="0"/>
             <xs:element name="Person" type="jdf:Person_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:PersonRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:PersonRef" minOccurs="0"/>
             <xs:element name="Employee" type="jdf:Employee_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
@@ -11962,6 +11962,87 @@
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
         <xs:attributeGroup ref="jdf:PerforatingParamsAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="Person" type="jdf:Person_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="@Languages" First="1.4"/>
+        <Version Path="Address" First="1.2"/>
+        <Version Path="AddressRef" First="1.2"/>
+        <Constraint Path="Address" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="AddressRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="ComChannel" minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="ComChannelRef" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="PersonRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="PersonLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="PersonAttribs_c">
+    <xs:attribute name="AdditionalNames" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="FamilyName" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="FirstName" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="JobTitle" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="Languages" type="jdftyp:languages" use="optional"/>
+    <xs:attribute name="NamePrefix" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="NameSuffix" type="jdftyp:string" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="PersonAttribs_u">
+    <xs:attributeGroup ref="jdf:PersonAttribs_c"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="PersonAttribs_r">
+    <xs:attributeGroup ref="jdf:PersonAttribs_c"/>
+  </xs:attributeGroup>
+  <xs:complexType name="Person_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="Address" type="jdf:Address_re" minOccurs="0"/>
+          <xs:element ref="jdf:AddressRef" minOccurs="0"/>
+          <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0"/>
+          <xs:element ref="jdf:ComChannelRef" minOccurs="0"/>
+          <xs:element name="PersonUpdate" type="jdf:Person_re" minOccurs="0"/>
+          <xs:element name="Person" type="jdf:Person_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:PersonAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Person_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="Address" type="jdf:Address_re" minOccurs="0"/>
+          <xs:element ref="jdf:AddressRef" minOccurs="0"/>
+          <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0"/>
+          <xs:element ref="jdf:ComChannelRef" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:PersonAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="Person_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="Address" type="jdf:Address_re" minOccurs="0"/>
+            <xs:element ref="jdf:AddressRef" minOccurs="0"/>
+            <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0"/>
+            <xs:element ref="jdf:ComChannelRef" minOccurs="0"/>
+            <xs:element name="Person" type="jdf:Person_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:PersonAttribs_u"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
