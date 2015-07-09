@@ -380,27 +380,6 @@
 		</xs:complexContent>
 	</xs:complexType>
 
-	<xs:attributeGroup name="ObjectResolutionAttribs_c">
-		<xs:attribute name="AntiAliasing" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="ObjectTags" type="jdftyp:NMTOKENS" use="optional"/>
-	</xs:attributeGroup>
-	<xs:attributeGroup name="ObjectResolutionAttribs_r">
-		<xs:attributeGroup ref="jdf:ObjectResolutionAttribs_c"/>
-		<xs:attribute name="Resolution" type="jdftyp:XYPair" use="required"/>
-		<xs:attribute name="SourceObjects" type="jdftyp:eSourceObjects_" default="All"/>
-	</xs:attributeGroup>
-	<xs:complexType name="ObjectResolution_re" mixed="false">
-		<xs:complexContent mixed="false">
-			<xs:extension base="jdf:ResourceElement">
-				<xs:sequence minOccurs="0" maxOccurs="unbounded">
-					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
-					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-				</xs:sequence>
-				<xs:attributeGroup ref="jdf:ObjectResolutionAttribs_r"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
 	<xs:attributeGroup name="PerforateAttribs_c">
 		<xs:attribute name="Depth" type="jdftyp:double" use="optional"/>
 		<xs:attribute name="RelativeStartPosition" type="jdftyp:XYPair" use="optional"/>

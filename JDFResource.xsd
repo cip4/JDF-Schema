@@ -8857,7 +8857,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/>
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
           <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
           <xs:element name="InterpretingDetails" type="jdf:InterpretingParams_InterpretingDetails_lr" minOccurs="0"/>
@@ -8878,7 +8878,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/>
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
           <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
           <xs:element name="InterpretingDetails" type="jdf:InterpretingParams_InterpretingDetails_lr" minOccurs="0"/>
@@ -8898,7 +8898,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/>
             <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
             <xs:element ref="jdf:FitPolicyRef" minOccurs="0"/>
             <xs:element name="InterpretingDetails" type="jdf:InterpretingParams_InterpretingDetails_lr" minOccurs="0"/>
@@ -11015,6 +11015,69 @@
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
         <xs:attributeGroup ref="jdf:NumberingParamsAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="ObjectResolution" type="jdf:ObjectResolution_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="@AntiAliasing" First="1.2"/>
+        <Version Path="@ObjectTags" First="1.4"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="ObjectResolutionRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="ObjectResolutionLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="ObjectResolutionAttribs_c">
+    <xs:attribute name="AntiAliasing" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="ObjectTags" type="jdftyp:NMTOKENS" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="ObjectResolutionAttribs_u">
+    <xs:attributeGroup ref="jdf:ObjectResolutionAttribs_c"/>
+    <xs:attribute name="Resolution" type="jdftyp:XYPair" use="optional"/>
+    <xs:attribute name="SourceObjects" type="jdftyp:eSourceObjects_" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="ObjectResolutionAttribs_r">
+    <xs:attributeGroup ref="jdf:ObjectResolutionAttribs_c"/>
+    <xs:attribute name="Resolution" type="jdftyp:XYPair" use="required"/>
+    <xs:attribute name="SourceObjects" type="jdftyp:eSourceObjects_" default="All"/>
+  </xs:attributeGroup>
+  <xs:complexType name="ObjectResolution_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="ObjectResolutionUpdate" type="jdf:ObjectResolution_re" minOccurs="0"/>
+          <xs:element name="ObjectResolution" type="jdf:ObjectResolution_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:ObjectResolutionAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ObjectResolution_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:ObjectResolutionAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ObjectResolution_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="ObjectResolution" type="jdf:ObjectResolution_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:ObjectResolutionAttribs_u"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -14115,7 +14178,7 @@
           <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0"/>
           <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/>
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/>
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
           <xs:element name="TIFFFormatParams" type="jdf:RenderingParams_TIFFFormatParams_lr" minOccurs="0"/>
@@ -14135,7 +14198,7 @@
           <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0"/>
           <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/>
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/>
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
           <xs:element name="TIFFFormatParams" type="jdf:RenderingParams_TIFFFormatParams_lr" minOccurs="0"/>
@@ -14154,7 +14217,7 @@
             <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0"/>
             <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0"/>
             <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/>
             <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
             <xs:element ref="jdf:MediaRef" minOccurs="0"/>
             <xs:element name="TIFFFormatParams" type="jdf:RenderingParams_TIFFFormatParams_lr" minOccurs="0"/>
@@ -17397,7 +17460,7 @@
           <xs:element name="TrappingParams" type="jdf:TrappingParams_re" minOccurs="0"/>
           <xs:element ref="jdf:TrappingParamsRef" minOccurs="0"/>
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/>
           <xs:element name="TrapRegion" type="jdf:TrapRegion_re" minOccurs="0"/>
           <xs:element ref="jdf:TrapRegionRef" minOccurs="0"/>
           <xs:element name="TrappingDetailsUpdate" type="jdf:TrappingDetails_re" minOccurs="0"/>
@@ -17417,7 +17480,7 @@
           <xs:element name="TrappingParams" type="jdf:TrappingParams_re" minOccurs="0"/>
           <xs:element ref="jdf:TrappingParamsRef" minOccurs="0"/>
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/>
           <xs:element name="TrapRegion" type="jdf:TrapRegion_re" minOccurs="0"/>
           <xs:element ref="jdf:TrapRegionRef" minOccurs="0"/>
         </xs:sequence>
@@ -17436,7 +17499,7 @@
             <xs:element name="TrappingParams" type="jdf:TrappingParams_re" minOccurs="0"/>
             <xs:element ref="jdf:TrappingParamsRef" minOccurs="0"/>
             <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0"/>
             <xs:element name="TrapRegion" type="jdf:TrapRegion_re" minOccurs="0"/>
             <xs:element ref="jdf:TrapRegionRef" minOccurs="0"/>
             <xs:element name="TrappingDetails" type="jdf:TrappingDetails_rp" minOccurs="0"/>
