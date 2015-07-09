@@ -1136,7 +1136,7 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="BoxFoldAction" type="jdf:BoxFoldingParams_BoxFoldAction_lr" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
           <xs:element name="BoxApplication" type="jdf:BoxFoldingParams_BoxApplication_lr" minOccurs="0"/>
           <xs:element name="BoxFoldingParamsUpdate" type="jdf:BoxFoldingParams_re" minOccurs="0"/>
           <xs:element name="BoxFoldingParams" type="jdf:BoxFoldingParams_rp" minOccurs="0"/>
@@ -1153,7 +1153,7 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="BoxFoldAction" type="jdf:BoxFoldingParams_BoxFoldAction_lr" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
           <xs:element name="BoxApplication" type="jdf:BoxFoldingParams_BoxApplication_lr" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:BoxFoldingParamsAttribs_r"/>
@@ -1170,7 +1170,7 @@
             <xs:element name="BoxApplication" type="jdf:BoxFoldingParams_BoxApplication_lr" minOccurs="0"/>
             <xs:element name="BoxFoldAction" type="jdf:BoxFoldingParams_BoxFoldAction_lr" minOccurs="0"/>
             <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
             <xs:element name="BoxFoldingParams" type="jdf:BoxFoldingParams_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
@@ -1187,7 +1187,7 @@
           <xs:element name="Component" type="jdf:Component_re" minOccurs="0"/>
           <xs:element ref="jdf:ComponentRef" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="ApplicationArea" type="jdftyp:rectangle" use="optional"/>
       </xs:extension>
@@ -1199,7 +1199,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="FoldIndex" type="jdftyp:XYPair" use="required"/>
         <xs:attribute name="Action" type="jdftyp:eAction_" use="optional"/>
@@ -1634,7 +1634,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
           <xs:element name="CaseMakingParamsUpdate" type="jdf:CaseMakingParams_re" minOccurs="0"/>
           <xs:element name="CaseMakingParams" type="jdf:CaseMakingParams_rp" minOccurs="0"/>
         </xs:sequence>
@@ -1649,7 +1649,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:CaseMakingParamsAttribs_r"/>
       </xs:extension>
@@ -1663,7 +1663,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
             <xs:element name="CaseMakingParams" type="jdf:CaseMakingParams_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
@@ -1709,7 +1709,7 @@
           <xs:element name="GlueApplication" type="jdf:GlueApplication_re" minOccurs="0"/>
           <xs:element ref="jdf:GlueApplicationRef" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
           <xs:element name="CasingInParamsUpdate" type="jdf:CasingInParams_re" minOccurs="0"/>
           <xs:element name="CasingInParams" type="jdf:CasingInParams_rp" minOccurs="0"/>
         </xs:sequence>
@@ -1726,7 +1726,7 @@
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
           <xs:element name="GlueApplication" type="jdf:GlueApplication_re" minOccurs="0"/>
           <xs:element ref="jdf:GlueApplicationRef" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:CasingInParamsAttribs_r"/>
       </xs:extension>
@@ -1742,7 +1742,7 @@
             <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
             <xs:element name="GlueApplication" type="jdf:GlueApplication_re" minOccurs="0"/>
             <xs:element ref="jdf:GlueApplicationRef" minOccurs="0"/>
-<!--             <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
             <xs:element name="CasingInParams" type="jdf:CasingInParams_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
@@ -6964,7 +6964,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
           <xs:element name="GlueApplicationUpdate" type="jdf:GlueApplication_re" minOccurs="0"/>
           <xs:element name="GlueApplication" type="jdf:GlueApplication_rp" minOccurs="0"/>
         </xs:sequence>
@@ -6979,7 +6979,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:GlueApplicationAttribs_r"/>
       </xs:extension>
@@ -6993,7 +6993,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
             <xs:element name="GlueApplication" type="jdf:GlueApplication_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
@@ -7039,7 +7039,7 @@
           <xs:element name="GlueApplication" type="jdf:GlueApplication_re" minOccurs="0"/>
           <xs:element ref="jdf:GlueApplicationRef" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="WorkingDirection" type="jdftyp:eWorkingDirection_" use="optional"/>
       </xs:extension>
@@ -7087,6 +7087,75 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="GlueLine" type="jdf:GlueLine_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="@AreaGlue" First="1.1"/>
+        <Version Path="@RelativeStartPosition" First="1.2"/>
+        <Version Path="@RelativeWorkingPath" First="1.2"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="GlueLineRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="GlueLineLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="GlueLineAttribs_c">
+    <xs:attribute name="GlueBrand" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="GlueLineWidth" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="GluingPattern" type="jdftyp:XYPair" use="optional"/>
+    <xs:attribute name="GlueType" type="jdftyp:eGlueType_" use="optional"/>
+    <xs:attribute name="MeltingTemperature" type="jdftyp:Integer" use="optional"/>
+    <xs:attribute name="RelativeStartPosition" type="jdftyp:XYPair" use="optional"/>
+    <xs:attribute name="RelativeWorkingPath" type="jdftyp:XYPair" use="optional"/>
+    <xs:attribute name="StartPosition" type="jdftyp:XYPair" use="optional"/>
+    <xs:attribute name="WorkingPath" type="jdftyp:XYPair" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="GlueLineAttribs_u">
+    <xs:attributeGroup ref="jdf:GlueLineAttribs_c"/>
+    <xs:attribute name="AreaGlue" type="jdftyp:boolean" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="GlueLineAttribs_r">
+    <xs:attributeGroup ref="jdf:GlueLineAttribs_c"/>
+    <xs:attribute name="AreaGlue" type="jdftyp:boolean" default="false"/>
+  </xs:attributeGroup>
+  <xs:complexType name="GlueLine_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="GlueLineUpdate" type="jdf:GlueLine_re" minOccurs="0"/>
+          <xs:element name="GlueLine" type="jdf:GlueLine_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:GlueLineAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GlueLine_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:GlueLineAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GlueLine_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="GlueLine" type="jdf:GlueLine_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:GlueLineAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="HeadBandApplicationParams" type="jdf:HeadBandApplicationParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -7125,7 +7194,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
           <xs:element name="HeadBandApplicationParamsUpdate" type="jdf:HeadBandApplicationParams_re" minOccurs="0"/>
           <xs:element name="HeadBandApplicationParams" type="jdf:HeadBandApplicationParams_rp" minOccurs="0"/>
         </xs:sequence>
@@ -7140,7 +7209,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:HeadBandApplicationParamsAttribs_r"/>
       </xs:extension>
@@ -7154,7 +7223,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
             <xs:element name="HeadBandApplicationParams" type="jdf:HeadBandApplicationParams_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
@@ -8473,7 +8542,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
           <xs:element name="InsertingParamsUpdate" type="jdf:InsertingParams_re" minOccurs="0"/>
           <xs:element name="InsertingParams" type="jdf:InsertingParams_rp" minOccurs="0"/>
         </xs:sequence>
@@ -8488,7 +8557,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+          <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:InsertingParamsAttribs_r"/>
       </xs:extension>
@@ -8502,7 +8571,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
-<!--             <xs:element ref="jdf:GlueLineRef" minOccurs="0"/> -->
+            <xs:element ref="jdf:GlueLineRef" minOccurs="0"/>
             <xs:element name="InsertingParams" type="jdf:InsertingParams_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>

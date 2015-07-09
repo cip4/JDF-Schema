@@ -284,33 +284,6 @@
 		</xs:complexContent>
 	</xs:complexType>
 
-	<xs:attributeGroup name="GlueLineAttribs_c">
-		<xs:attribute name="GlueBrand" type="jdftyp:string" use="optional"/>
-		<xs:attribute name="GlueLineWidth" type="jdftyp:double" use="optional"/>
-		<xs:attribute name="GluingPattern" type="jdftyp:XYPair" use="optional"/>
-		<xs:attribute name="GlueType" type="jdftyp:eGlueType_" use="optional"/>
-		<xs:attribute name="MeltingTemperature" type="jdftyp:Integer" use="optional"/>
-		<xs:attribute name="RelativeStartPosition" type="jdftyp:XYPair" use="optional"/>
-		<xs:attribute name="RelativeWorkingPath" type="jdftyp:XYPair" use="optional"/>
-		<xs:attribute name="StartPosition" type="jdftyp:XYPair" use="optional"/>
-		<xs:attribute name="WorkingPath" type="jdftyp:XYPair" use="optional"/>
-	</xs:attributeGroup>
-	<xs:attributeGroup name="GlueLineAttribs_r">
-		<xs:attributeGroup ref="jdf:GlueLineAttribs_c"/>
-		<xs:attribute name="AreaGlue" type="jdftyp:boolean" default="false"/>
-	</xs:attributeGroup>
-	<xs:complexType name="GlueLine_re" mixed="false">
-		<xs:complexContent mixed="false">
-			<xs:extension base="jdf:ResourceElement">
-				<xs:sequence minOccurs="0" maxOccurs="unbounded">
-					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
-					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-				</xs:sequence>
-				<xs:attributeGroup ref="jdf:GlueLineAttribs_r"/>
-			</xs:extension>
-		</xs:complexContent>
-	</xs:complexType>
-
 	<xs:attributeGroup name="JobFieldAttribs_c">
 		<xs:attribute name="JobFormat" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="JobTemplate" type="jdftyp:string" use="optional"/>
