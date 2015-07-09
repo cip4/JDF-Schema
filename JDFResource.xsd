@@ -2260,9 +2260,6 @@
       <xs:appinfo>
         <Version Path="ColorantConvertProcess" First="1.4"/>
         <Version Path="DeviceNSpaceRef" Last="1.4"/>
-        <!-- I don't think these are required? GCM -->
-        <!-- Version Path="ColorantAliasRef" First="1.2"/ -->
-        <!-- Version Path="DeviceNSpaceRef" First="1.2"/ -->
         <Version Path="DeviceNSpaceRef" Last="1.5"/>
         <Version Path="@InternalColorModel" First="1.5"/>
         <Version Path="@MappingSelection" First="1.5"/>
@@ -9599,7 +9596,6 @@
       <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-<!--           <xs:element name="FillColor" type="jdf:Layout_FillMark_FillColor_lr" minOccurs="0"/> -->
 		  <xs:element name="MarkColor" type="jdf:MarkColor_re" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="KnockoutBleed" type="jdftyp:double" use="optional" />
@@ -9977,7 +9973,6 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="BarcodeReproParams" type="jdf:BarcodeReproParams_re" minOccurs="0"/>
-<!--           <xs:element ref="jdf:BarcodeReproParamsRef" minOccurs="0"/> -->
           <xs:element name="IdentificationField" type="jdf:IdentificationField_re" minOccurs="0"/>
           <xs:element ref="jdf:IdentificationFieldRef" minOccurs="0"/>
         </xs:sequence>
@@ -13130,36 +13125,6 @@
     <xs:attribute name="Class" type="jdf:myParameter" use="optional"/>
     <xs:attribute name="PartUsage" type="jdftyp:ePartUsage_" use="optional"/>
    </xs:attributeGroup>
-   <!--
-  <xs:complexType name="Preview_r" mixed="false">
-    <xs:annotation>
-      <xs:appinfo>
-        <Version Path="@CTM" First="1.1"/>
-        <Version Path="@Directory" First="1.1"/>
-        <Version Path="@MimeTypeDetails" First="1.4"/>
-        <Version Path="@PreviewFileType" First="1.2"/>
-        <Version Path="@PreviewType" Last="1.1"/>
-        <Version Path="@PreviewUsage" First="1.2"/>
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResource"> 
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
- 
-          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-          <xs:element name="PreviewUpdate" type="jdf:Preview_re" minOccurs="0"/>
-          <xs:element ref="jdf:Comment" minOccurs="0"/>
-          <xs:element ref="jdf:GeneralID" minOccurs="0"/>
-          <xs:element ref="jdf:Preview" minOccurs="0"/>
-          <xs:any namespace="##other" processContents="lax" minOccurs="0"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="jdf:PreviewAttribs_u"/>
-      </xs:extension>
-    </xs:complexContent>
-
-  </xs:complexType>
- -->
- 
  <xs:complexType name="Preview_re" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:ResourceElement">
