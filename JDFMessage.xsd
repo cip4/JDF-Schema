@@ -3585,6 +3585,7 @@
 			<xs:appinfo>
 				<Version Path="@refID" First="1.2"/>
 				<Version Path="@ReturnJMF" First="1.2"/>
+				<Version Path="@WatchURL" Last="1.4"/>
 				<Version Path="Disposition" First="1.2"/>
 				<Constraint Path="Disposition" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
