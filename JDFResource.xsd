@@ -9054,8 +9054,9 @@
   <xs:element name="LabelingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="LabelingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="LabelingParamsAttribs_c">
-    <xs:attribute name="CTM" type="jdftyp:matrix" use="optional"/>
     <xs:attribute name="Application" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="CTM" type="jdftyp:matrix" use="optional"/>
+    <xs:attribute name="Offset" type="jdftyp:XYPair" use="optional"/>
     <xs:attribute name="Position" type="jdftyp:ePosition1_" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="LabelingParamsAttribs_u">
