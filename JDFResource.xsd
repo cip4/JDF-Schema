@@ -3637,7 +3637,7 @@
 			<Version Path="ContactRef" First="1.1"/>
 			<Version Path="Company" Last="1.0"/>
 			<Version Path="CompanyRef" Last="1.0"/>
-			<Version Path="CustomerMessge" First="1.2" Last="1.4"/>
+			<Version Path="CustomerMessage" First="1.2" Last="1.4"/>
 			<Constraint Path="Contact" minOccurs="0" maxOccurs="unbounded"/>
 			<Constraint Path="ContactRef" minOccurs="0" maxOccurs="unbounded"/>
 			<Constraint Path="Company" minOccurs="0" maxOccurs="1"/>
@@ -7373,7 +7373,7 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="Hole" type="jdf:Hole_re" minOccurs="0"/>
           <xs:element ref="jdf:HoleRef" minOccurs="0"/>
-          <xs:element name="HoleLine" type="jdf:HoleList_re" minOccurs="0"/>
+          <xs:element name="HoleLine" type="jdf:HoleLine_re" minOccurs="0"/>
           <xs:element ref="jdf:HoleLineRef" minOccurs="0"/>
           <xs:element name="HoleListUpdate" type="jdf:HoleList_re" minOccurs="0"/>
           <xs:element name="HoleList" type="jdf:HoleList_rp" minOccurs="0"/>
