@@ -1304,8 +1304,8 @@
 			<xs:extension base="jdf:BaseElement_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
-					<xs:element name="Lot" type="jdf:Lot" minOccurs="0"/>
-					<xs:element name="Part" type="jdf:Part" minOccurs="1"/>
+					<xs:element name="Lot" type="jdf:Lot" minOccurs="0" maxOccurs="unbounded"/>
+					<xs:element name="Part" type="jdf:Part" minOccurs="1" maxOccurs="unbounded"/>
 				</xs:sequence>
 				<xs:attribute name="ActualAmount" type="jdftyp:double" use="optional"/>
 				<xs:attribute name="Amount" type="jdftyp:double" use="optional"/>
