@@ -2239,6 +2239,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="eMediaType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Blanket"/>
 			<xs:enumeration value="CorrugatedBoard"/>
 			<xs:enumeration value="Disc"/>
 			<xs:enumeration value="EndBoard"/>

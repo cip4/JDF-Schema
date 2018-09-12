@@ -1817,7 +1817,7 @@
 				<xs:attribute name="LotControlled" type="jdftyp:boolean" use="optional"/>
 				<xs:attribute name="ModuleID" type="jdftyp:string" use="optional"/>
 				<xs:attribute name="ModuleIndex" type="jdftyp:IntegerRangeList" use="optional"/>
-				<xs:attribute name="Orientation" type="jdftyp:eOrientation1_" use="optional"/>
+				<xs:attribute name="Orientation" type="jdftyp:Orientation" use="optional"/>
 				<xs:attribute name="ProcessUsage" type="jdftyp:NMTOKEN" use="optional"/>
 				<xs:attribute name="ProductID" type="jdftyp:shortString" use="optional"/>
 				<xs:attribute name="ResourceID" type="jdftyp:NMTOKEN" use="optional"/>
