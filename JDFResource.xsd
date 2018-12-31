@@ -1210,6 +1210,8 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.1"/>
+        <Version Path="@BoxType" First="1.6"/>
+        <Version Path="@BoxTypeDetails" First="1.6"/>
         <Version Path="@ComponentsPerRow" First="1.3"/>
         <Version Path="@Columns" First="1.4"/>
         <Version Path="@ComponentOrientation" First="1.4"/>
@@ -1225,6 +1227,8 @@
   <xs:element name="BoxPackingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="BoxPackingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="BoxPackingParamsAttribs_c">
+    <xs:attribute name="BoxType" type="jdftyp:eBoxType" use="optional"/>
+    <xs:attribute name="BoxTypeDetails" type="jdftyp:string" use="optional"/>
     <xs:attribute name="ComponentsPerRow" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="Columns" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="ComponentOrientation" type="jdftyp:eComponentOrientation_" use="optional"/>
@@ -2356,6 +2360,7 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="ColorantAlias" type="jdf:ColorantAlias_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorantAliasRef" minOccurs="0"/>
+          <xs:element name="ColorantConvertProcess" type="jdf:SeparationList" minOccurs="0"/>
           <xs:element name="ColorantOrder" type="jdf:SeparationList" minOccurs="0"/>
           <xs:element name="ColorantParams" type="jdf:SeparationList" minOccurs="0"/>
           <xs:element name="ColorPool" type="jdf:ColorPool_re" minOccurs="0"/>
@@ -2378,6 +2383,7 @@
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="ColorantAlias" type="jdf:ColorantAlias_re" minOccurs="0"/>
             <xs:element ref="jdf:ColorantAliasRef" minOccurs="0"/>
+            <xs:element name="ColorantConvertProcess" type="jdf:SeparationList" minOccurs="0"/>
             <xs:element name="ColorantOrder" type="jdf:SeparationList" minOccurs="0"/>
             <xs:element name="ColorantParams" type="jdf:SeparationList" minOccurs="0"/>
             <xs:element name="ColorPool" type="jdf:ColorPool_re" minOccurs="0"/>
@@ -3008,7 +3014,7 @@
   </xs:attributeGroup>
   <xs:attributeGroup name="ComponentAttribs_r">
     <xs:attributeGroup ref="jdf:ComponentAttribs_c"/>
-    <xs:attribute name="ComponentType" type="jdftyp:eComponentTypeList_" use="required"/>
+    <xs:attribute name="ComponentType" type="jdftyp:eComponentTypeList_" use="optional"/>
   </xs:attributeGroup>
   <xs:complexType name="Component_r" mixed="false">
     <xs:complexContent mixed="false">
@@ -3053,6 +3059,8 @@
           <xs:element ref="jdf:SheetRef" minOccurs="0"/>
           <xs:element name="Layout" type="jdf:Layout_re" minOccurs="0"/>
           <xs:element ref="jdf:LayoutRef" minOccurs="0"/>
+          <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
+          <xs:element ref="jdf:MediaRef" minOccurs="0"/>
           <xs:element name="PageList" type="jdf:PageList_re" minOccurs="0"/>
           <xs:element ref="jdf:PageListRef" minOccurs="0"/>
         </xs:sequence>
@@ -3077,6 +3085,8 @@
             <xs:element ref="jdf:SheetRef" minOccurs="0"/>
             <xs:element name="Layout" type="jdf:Layout_re" minOccurs="0"/>
             <xs:element ref="jdf:LayoutRef" minOccurs="0"/>
+            <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
+            <xs:element ref="jdf:MediaRef" minOccurs="0"/>
             <xs:element name="PageList" type="jdf:PageList_re" minOccurs="0"/>
             <xs:element ref="jdf:PageListRef" minOccurs="0"/>
             <xs:element name="Component" type="jdf:Component_rp" minOccurs="0"/>
@@ -3321,11 +3331,13 @@
         <Version Path="@ContentRefs" First="1.4"/>
         <Version Path="@ID" First="1.4"/>
         <Version Path="ContentMetaData" First="1.4"/>
+        <Version Path="OCGControl" First="1.6"/>
         <Constraint Path="ContentMetaData" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ElementColorParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ElementColorParamsRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ImageCompressionParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ImageCompressionParamsRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="OCGControl" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ScreeningParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ScreeningParamsRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="SeparationSpec" minOccurs="0" maxOccurs="unbounded"/>
@@ -3340,6 +3352,7 @@
           <xs:element ref="jdf:ElementColorParamsRef" minOccurs="0"/>
           <xs:element name="ImageCompressionParams" type="jdf:ImageCompressionParams_re" minOccurs="0"/>
           <xs:element ref="jdf:ImageCompressionParamsRef" minOccurs="0"/>
+          <xs:element name="OCGControl" type="jdf:OCGControl_re" minOccurs="0"/>
           <xs:element name="ScreeningParams" type="jdf:ScreeningParams_re" minOccurs="0"/>
           <xs:element ref="jdf:ScreeningParamsRef" minOccurs="0"/>
           <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
@@ -3361,6 +3374,9 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.4"/>
+        <Version Path="@ISBN" First="1.6"/>
+        <Version Path="@ISBN10" Last="1.5"/>
+        <Version Path="@ISBN13" Last="1.5"/>
         <Constraint Path="Contact" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ContactRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="Empoyee" minOccurs="0" maxOccurs="unbounded"/>
@@ -3378,6 +3394,7 @@
           <xs:element ref="jdf:EmployeeRef" minOccurs="0"/>
           <xs:element name="Part" type="jdf:Part" minOccurs="0"/>
         </xs:sequence>
+        <xs:attribute name="ISBN" type="jdftyp:NMTOKEN"/>
         <xs:attribute name="ISBN10" type="jdftyp:string"/>
         <xs:attribute name="ISBN13" type="jdftyp:string"/>
         <xs:attribute name="Title" type="jdftyp:string"/>
@@ -4426,7 +4443,7 @@
         <Constraint Path="Contact" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ContactRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="Drop" minOccurs="1" maxOccurs="unbounded"/>
-        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="2"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -4489,11 +4506,14 @@
         <Version Path="CompanyRef" Last="1.0"/>
         <Version Path="Contact" First="1.1"/>
         <Version Path="ContactRef" First="1.1"/>
+        <Version Path="FileSpec" First="1.6"/>
         <Constraint Path="Company" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="CompanyRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="Contact" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ContactRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="DropItem" minOccurs="1" maxOccurs="unbounded"/>
+        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1"/>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
@@ -4504,6 +4524,8 @@
           <xs:element ref="jdf:CompanyRef" minOccurs="0"/>
           <xs:element name="Contact" type="jdf:Contact_re" minOccurs="0"/>
           <xs:element ref="jdf:ContactRef" minOccurs="0"/>
+          <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+          <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
           <xs:element name="DropItem" type="jdf:DeliveryParams_Drop_DropItem_lr" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="DropID" type="jdftyp:string" use="optional"/>
@@ -4531,6 +4553,7 @@
           <xs:element name="DeliveryParamsUpdate" type="jdf:DeliveryParams_re" minOccurs="0"/>
           <xs:element name="DeliveryParams" type="jdf:DeliveryParams_rp" minOccurs="0"/>
           <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+          <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:DeliveryParamsAttribs_r"/>
       </xs:extension>
@@ -4547,7 +4570,9 @@
           <xs:element name="Contact" type="jdf:Contact_re" minOccurs="0"/>
           <xs:element ref="jdf:ContactRef" minOccurs="0"/>
           <xs:element name="Drop" type="jdf:DeliveryParams_Drop_lr" minOccurs="0"/>
-        </xs:sequence>
+         <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+          <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
+         </xs:sequence>
         <xs:attributeGroup ref="jdf:DeliveryParamsAttribs_r"/>
       </xs:extension>
     </xs:complexContent>
@@ -4565,13 +4590,16 @@
             <xs:element ref="jdf:ContactRef" minOccurs="0"/>
             <xs:element name="Drop" type="jdf:DeliveryParams_Drop_lr" minOccurs="0"/>
             <xs:element name="DeliveryParams" type="jdf:DeliveryParams_rp" minOccurs="0"/>
-          </xs:sequence>
+            <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+            <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
+           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
         <xs:attributeGroup ref="jdf:DeliveryParamsAttribs_u"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="DensityMeasuringField" type="jdf:DensityMeasuringField_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -5138,12 +5166,14 @@
         <Version Path="RuleLength" First="1.4"/>
         <Version Path="Station/ShapeDef" First="1.4"/>
         <Version Path="Station/ShapeDefRef" First="1.4"/>
+        <Version Path="CutLines" First="1.6"/>
         <Constraint Path="Device" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="DeviceRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="Media" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="MediaRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="CutLines" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="RuleLength" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="Station" minOccurs="0" maxOccurs="unbounded"/>
       </xs:appinfo>
@@ -5180,7 +5210,8 @@
           <xs:element name="Station" type="jdf:DieLayout_Station_lr" minOccurs="0"/>
           <xs:element name="DieLayoutUpdate" type="jdf:DieLayout_re" minOccurs="0"/>
           <xs:element name="DieLayout" type="jdf:DieLayout_rp" minOccurs="0"/>
-        </xs:sequence>
+          <xs:element name="CutLines" type="jdf:SeparationList" minOccurs="0"/>
+         </xs:sequence>
         <xs:attributeGroup ref="jdf:DieLayoutAttribs_r"/>
       </xs:extension>
     </xs:complexContent>
@@ -5194,7 +5225,11 @@
           <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
           <xs:element name="Station" type="jdf:DieLayout_Station_lr" minOccurs="0"/>
           <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
-        </xs:sequence>
+          <xs:element name="CutLines" type="jdf:SeparationList" minOccurs="0"/>
+          <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
+          <xs:element ref="jdf:MediaRef" minOccurs="0"/>
+          <xs:element name="RuleLength" type="jdf:DieLayout_RuleLength_lr" minOccurs="0"/>
+         </xs:sequence>
         <xs:attributeGroup ref="jdf:DieLayoutAttribs_r"/>
       </xs:extension>
     </xs:complexContent>
@@ -5210,7 +5245,11 @@
             <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
             <xs:element name="Station" type="jdf:DieLayout_Station_lr" minOccurs="0"/>
             <xs:element name="DieLayout" type="jdf:DieLayout_rp" minOccurs="0"/>
-          </xs:sequence>
+            <xs:element name="CutLines" type="jdf:SeparationList" minOccurs="0"/>
+            <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
+            <xs:element ref="jdf:MediaRef" minOccurs="0"/>
+            <xs:element name="RuleLength" type="jdf:DieLayout_RuleLength_lr" minOccurs="0"/>
+           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
         <xs:attributeGroup ref="jdf:DieLayoutAttribs_u"/>
@@ -7884,6 +7923,7 @@
         <Version Path="ImageCompression/@ImageAutoFilterStrategy" First="1.2"/>
         <Version Path="ImageCompression/@JPXQuality" First="1.2"/>
         <Version Path="ImageCompression/CCITTFaxParams" First="1.2"/>
+        <Version Path="ImageCompression/DCTParams/@SourceCSs" First="1.2" Last="1.5"/>
         <Version Path="ImageCompression/DCTParams" First="1.2"/>
         <Version Path="ImageCompression/FlateParams" First="1.2"/>
         <Version Path="ImageCompression/JBIG2Params" First="1.3"/>
@@ -7906,6 +7946,7 @@
   <xs:attributeGroup name="ImageCompressionParamsAttribs_r">
     <xs:attributeGroup ref="jdf:ImageCompressionParamsAttribs_c"/>
   </xs:attributeGroup>
+  
   <xs:complexType name="ImageCompressionParams_ImageCompression_lr" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
@@ -7935,6 +7976,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="ImageCompressionParams_ImageCompression_CCITTFaxParams_lr" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
@@ -7949,13 +7991,14 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="ImageCompressionParams_ImageCompression_DCTParams_lr" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
         </xs:sequence>
-        <xs:attribute name="SourceCSs" type="jdftyp:eSourceCSsList_" use="required"/>
+        <xs:attribute name="SourceCSs" type="jdftyp:eSourceCSsList_" use="optional"/>
         <xs:attribute name="HSamples" type="jdftyp:IntegerList" use="optional"/>
         <xs:attribute name="VSamples" type="jdftyp:IntegerList" use="optional"/>
         <xs:attribute name="QFactor" type="jdftyp:double" default="1.0"/>
@@ -8805,7 +8848,7 @@
       <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:element name="OCGControl" type="jdf:InterpretingParams_PDFInterpretingParams_OCGControl_lr" minOccurs="0"/>
+          <xs:element name="OCGControl" type="jdf:OCGControl_re" minOccurs="0"/>
           <xs:element name="ReferenceXObjParams" type="jdf:InterpretingParams_PDFInterpretingParams_ReferenceXObjParams_lr" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="EmitPDFBG" type="jdftyp:boolean" default="true"/>
@@ -8824,17 +8867,46 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="InterpretingParams_PDFInterpretingParams_OCGControl_lr" mixed="false">
+  
+  <xs:complexType name="OCGControl_re" mixed="false">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="." First="1.3"/>
+        <Version Path="@ProcStepsGroup" First="1.6"/>
+        <Version Path="@ProcStepsType" First="1.6"/>
+       </xs:appinfo>
+    </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="IncludeOCG" type="jdftyp:boolean" default="true"/>
-        <xs:attribute name="OCGName" type="jdftyp:string" use="required"/>
+        <xs:attribute name="OCGName" type="jdftyp:string" use="optional"/>
+        <xs:attribute name="ProcStepsGroup" type="jdftyp:NMTOKEN" use="optional"/>
+        <xs:attribute name="ProcStepsType" type="jdftyp:NMTOKEN" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>  
+  
+  <xs:complexType name="Certification_re" mixed="false">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="." First="1.6"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:BaseElement_">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="Claim" type="jdftyp:string" use="optional"/>
+        <xs:attribute name="Identifier" type="jdftyp:string" use="optional"/>
+        <xs:attribute name="Organization" type="jdftyp:NMTOKEN" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>  
+  
   <xs:complexType name="InterpretingParams_PDFInterpretingParams_ReferenceXObjParams_lr" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
@@ -9047,6 +9119,8 @@
       <xs:appinfo>
         <Version Path="." First="1.1"/>
 		<Version Path="FileSpec" First="1.5"/>
+ 		<Version Path="@CTM" Last="1.5"/>
+ 		<Version Path="@Offset" First="1.6"/>
         <Constraint Path="Filespec" minOccurs="0" maxOccurs="1"/>
       </xs:appinfo>
     </xs:annotation>
@@ -10468,6 +10542,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="Media" type="jdf:Media_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -10505,6 +10580,7 @@
         <Version Path="@Texture" First="1.1"/>
         <Version Path="@UserMediaType" Last="1.0"/>
         <Version Path="@WrapperWeight" First="1.3"/>
+        <Version Path="Certification" First="1.6"/>
         <Version Path="Color" Last="1.0"/>
         <Version Path="ColorRef" Last="1.0"/>
         <Version Path="ColorMeasurementConditions" First="1.2"/>
@@ -10513,6 +10589,7 @@
         <Version Path="MediaLayers" First="1.3"/>
         <Version Path="MediaLayersRef" First="1.3"/>
         <Version Path="TableDimensions" First="1.4"/>
+        <Constraint Path="Certification" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="Color" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ColorRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ColorMeasurementConditions" minOccurs="0" maxOccurs="1"/>
@@ -10595,6 +10672,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:group ref="jdf:PhysicalResourceSubElements" minOccurs="0"/>
+          <xs:element name="Certification" type="jdf:Certification_re" minOccurs="0"/>
           <xs:element name="Color" type="jdf:Color_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorRef" minOccurs="0"/>
           <xs:element name="ColorMeasurementConditions" type="jdf:ColorMeasurementConditions_re" minOccurs="0"/>
@@ -10616,6 +10694,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:group ref="jdf:PhysicalResourceSubElements" minOccurs="0"/>
+          <xs:element name="Certification" type="jdf:Certification_re" minOccurs="0"/>
           <xs:element name="Color" type="jdf:Color_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorRef" minOccurs="0"/>
           <xs:element name="ColorMeasurementConditions" type="jdf:ColorMeasurementConditions_re" minOccurs="0"/>
@@ -10636,6 +10715,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:group ref="jdf:PhysicalResourceSubElements" minOccurs="0"/>
+            <xs:element name="Certification" type="jdf:Certification_re" minOccurs="0"/>
             <xs:element name="Color" type="jdf:Color_re" minOccurs="0"/>
             <xs:element ref="jdf:ColorRef" minOccurs="0"/>
             <xs:element name="ColorMeasurementConditions" type="jdf:ColorMeasurementConditions_re" minOccurs="0"/>
@@ -10752,14 +10832,20 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.3"/>
-        <Constraint Path="ConsumableType" minOccurs="0" maxOccurs="1"/>
-      </xs:appinfo>
+        <Version Path="@Color" First="1.6"/>
+        <Version Path="@ColorDetails" First="1.6"/>
+        <Version Path="@TypeDetails" First="1.6"/>
+        <Version Path="IdentificationField" First="1.6"/>
+       </xs:appinfo>
     </xs:annotation>
   </xs:element>
   <xs:element name="MiscConsumableRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="MiscConsumableLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="MiscConsumableAttribs_c">
+    <xs:attribute name="Color" type="jdftyp:NamedColor" use="optional"/>
+    <xs:attribute name="ColorDetails" type="jdftyp:string" use="optional"/>
     <xs:attribute name="ConsumableType" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="TypeDetails" type="jdftyp:NMTOKEN" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="MiscConsumableAttribs_u">
     <xs:attributeGroup ref="jdf:MiscConsumableAttribs_c"/>
@@ -10809,6 +10895,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="NodeInfo" type="jdf:NodeInfo_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -10820,11 +10907,15 @@
         <Version Path="@MergeTarget" Last="1.0"/>
         <Version Path="@rRefs" Last="1.1"/>
         <Version Path="@WorkStepID" First="1.4"/>
+		<Version Path="GangSource" First="1.6"/>
 		<Version Path="JMF" Last="1.4"/>
         <Version Path="MISDetails" First="1.2"/>
+		<Version Path="BusinessInfo" Last="1.5"/>
+ 		<Version Path="NotificationFilter" Last="1.5"/>
         <Constraint Path="BusniessInfo" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="Employee" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="EmployeeRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="GangSource" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="JMF" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="MISDetails" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="NotificationFilter" minOccurs="0" maxOccurs="unbounded"/>
@@ -10870,6 +10961,7 @@
           <xs:element name="BusinessInfo" type="jdf:NodeInfo_BusinessInfo_l" minOccurs="0"/>
           <xs:element name="Employee" type="jdf:Employee_re" minOccurs="0"/>
           <xs:element ref="jdf:EmployeeRef" minOccurs="0"/>
+          <xs:element name="GangSource" type="jdf:GangSource_re" minOccurs="0"/>
           <xs:element name="JMF" type="jdf:JMFRootMessage" minOccurs="0"/>
           <xs:element name="MISDetails" type="jdf:MISDetails_re" minOccurs="0"/>
           <xs:element name="NotificationFilter" type="jdf:NotificationFilter_m" minOccurs="0"/>
@@ -10889,6 +10981,7 @@
           <xs:element name="BusinessInfo" type="jdf:NodeInfo_BusinessInfo_l" minOccurs="0"/>
           <xs:element name="Employee" type="jdf:Employee_re" minOccurs="0"/>
           <xs:element ref="jdf:EmployeeRef" minOccurs="0"/>
+          <xs:element name="GangSource" type="jdf:GangSource_re" minOccurs="0"/>
           <xs:element name="JMF" type="jdf:JMFRootMessage" minOccurs="0"/>
           <xs:element name="MISDetails" type="jdf:MISDetails_re" minOccurs="0"/>
           <xs:element name="NotificationFilter" type="jdf:NotificationFilter_m" minOccurs="0"/>
@@ -10907,6 +11000,7 @@
             <xs:element name="BusinessInfo" type="jdf:NodeInfo_BusinessInfo_lr" minOccurs="0"/>
             <xs:element name="Employee" type="jdf:Employee_re" minOccurs="0"/>
             <xs:element ref="jdf:EmployeeRef" minOccurs="0"/>
+            <xs:element name="GangSource" type="jdf:GangSource_re" minOccurs="0"/>
             <xs:element name="JMF" type="jdf:JMFRootMessage" minOccurs="0"/>
             <xs:element name="MISDetails" type="jdf:MISDetails_re" minOccurs="0"/>
             <xs:element name="NotificationFilter" type="jdf:NotificationFilter_m" minOccurs="0"/>
@@ -11427,11 +11521,13 @@
         <Version Path="@PageIndex" First="1.4"/>
         <Version Path="@PageStatus" First="1.3"/>
         <Version Path="PageElement" First="1.3"/>
+        <Version Path="OCGControl" First="1.6"/>
         <Constraint Path="ElementColorParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ElementColorParamsRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ImageCompressionParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ImageCompressionParamsRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="PageElement" minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="OCGControl" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ScreeningParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ScreeningParamsRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="SeparationSpec" minOccurs="0" maxOccurs="unbounded"/>
@@ -11445,6 +11541,7 @@
           <xs:element ref="jdf:ElementColorParamsRef" minOccurs="0"/>
           <xs:element name="ImageCompressionParams" type="jdf:ImageCompressionParams_re" minOccurs="0"/>
           <xs:element ref="jdf:ImageCompressionParamsRef" minOccurs="0"/>
+          <xs:element name="OCGControl" type="jdf:OCGControl_re" minOccurs="0"/>
           <xs:element name="PageElement" type="jdf:PageList_PageData_PageElement_lr" minOccurs="0"/>
           <xs:element name="ScreeningParams" type="jdf:ScreeningParams_re" minOccurs="0"/>
           <xs:element ref="jdf:ScreeningParamsRef" minOccurs="0"/>
@@ -11768,6 +11865,9 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.3"/>
+        <Version Path="FontParams" First="1.6"/>
+        <Constraint Path="FontParams" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="FontParamsRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="PDFToPSConversionParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="PDFToPSConversionParamsRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="PSToPDFConversionParams" minOccurs="0" maxOccurs="1"/>
@@ -11792,6 +11892,8 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="FontParams" type="jdf:FontParams_re" minOccurs="0"/>
+          <xs:element ref="jdf:FontParamsRef" minOccurs="0"/>
           <xs:element name="PDFToPSConversionParams" type="jdf:PDFToPSConversionParams_re" minOccurs="0"/>
           <xs:element ref="jdf:PDFToPSConversionParamsRef" minOccurs="0"/>
           <xs:element name="PSToPDFConversionParams" type="jdf:PSToPDFConversionParams_re" minOccurs="0"/>
@@ -11969,8 +12071,6 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="@Languages" First="1.4"/>
-        <Version Path="@PhoneticFirstName" First="1.5"/>
-        <Version Path="@PhoneticLastName" First="1.5"/>
         <Version Path="Address" First="1.2"/>
         <Version Path="AddressRef" First="1.2"/>
         <Constraint Path="Address" minOccurs="0" maxOccurs="1"/>
@@ -11990,8 +12090,6 @@
     <xs:attribute name="Languages" type="jdftyp:languages" use="optional"/>
     <xs:attribute name="NamePrefix" type="jdftyp:string" use="optional"/>
     <xs:attribute name="NameSuffix" type="jdftyp:string" use="optional"/>
-    <xs:attribute name="PhoneticFirstName" type="jdftyp:string" use="optional"/>
-    <xs:attribute name="PhoneticLastName" type="jdftyp:string" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="PersonAttribs_u">
     <xs:attributeGroup ref="jdf:PersonAttribs_c"/>
@@ -13799,11 +13897,15 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="QualityControlParams" type="jdf:QualityControlParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.2"/>
+        <Version Path="FileSpec" First="1.6"/>
         <Constraint Path="BindingQualityParams" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -13826,6 +13928,8 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="BindingQualityParams" type="jdf:QualityControlParams_BindingQualityParams_lr" minOccurs="0"/>
+         <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+          <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
           <xs:element name="QualityControlParamsUpdate" type="jdf:QualityControlParams_re" minOccurs="0"/>
           <xs:element name="QualityControlParams" type="jdf:QualityControlParams_rp" minOccurs="0"/>
         </xs:sequence>
@@ -13839,6 +13943,8 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+         <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+          <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
           <xs:element name="BindingQualityParams" type="jdf:QualityControlParams_BindingQualityParams_lr" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:QualityControlParamsAttribs_r"/>
@@ -13853,6 +13959,8 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="BindingQualityParams" type="jdf:QualityControlParams_BindingQualityParams_lr" minOccurs="0"/>
+            <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+            <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
             <xs:element name="QualityControlParams" type="jdf:QualityControlParams_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
@@ -13872,6 +13980,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="QualityControlResult" type="jdf:QualityControlResult_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -15369,7 +15478,7 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>		  
           <xs:element name="ColorPool" type="jdf:ColorPool_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorPoolRef" minOccurs="0"/>
-          <xs:element name="CutLines" type="jdf:ShapeDef_CutLines_lr" minOccurs="0"/>
+          <xs:element name="CutLines" type="jdf:SeparationList" minOccurs="0"/>
           <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
           <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
@@ -15389,7 +15498,7 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="ColorPool" type="jdf:ColorPool_re" minOccurs="0"/>
           <xs:element ref="jdf:ColorPoolRef" minOccurs="0"/>
-          <xs:element name="CutLines" type="jdf:ShapeDef_CutLines_lr" minOccurs="0"/>
+          <xs:element name="CutLines" type="jdf:SeparationList" minOccurs="0"/>
           <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
           <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
@@ -15410,7 +15519,7 @@
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="ColorPool" type="jdf:ColorPool_re" minOccurs="0"/>
             <xs:element ref="jdf:ColorPoolRef" minOccurs="0"/>
-            <xs:element name="CutLines" type="jdf:ShapeDef_CutLines_lr" minOccurs="0"/>
+            <xs:element name="CutLines" type="jdf:SeparationList" minOccurs="0"/>
             <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
             <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
             <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
@@ -15425,16 +15534,6 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>   
-  <xs:complexType name="ShapeDef_CutLines_lr" mixed="false">
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:BaseElement_">
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-		  <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>  
   <xs:element name="ShapeDefProductionParams" type="jdf:ShapeDefProductionParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -18430,6 +18529,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="BindingIntent" type="jdf:BindingIntent_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="BindingIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="BindingIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
@@ -18462,6 +18562,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentBookCase" mixed="false">
     <xs:annotation>
       <xs:appinfo>
@@ -18482,6 +18583,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentChannelBinding" mixed="false">
     <xs:annotation>
       <xs:appinfo>
@@ -18502,14 +18604,17 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentCoilBinding" mixed="false">
     <xs:annotation>
       <xs:appinfo>
         <Version Path="CoilBrand" First="1.3"/>
         <Version Path="HoleList" First="1.2"/>
+        <Version Path="HoleType" First="1.6"/>
         <Constraint Path="CoilBrand" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="CoilMaterial" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="HoleList" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="HoleType" minOccurs="0" maxOccurs="1"/>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
@@ -18519,10 +18624,12 @@
           <xs:element name="CoilBrand" type="jdf:StringSpan" minOccurs="0"/>
           <xs:element name="CoilMaterial" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="HoleList" type="jdf:HoleList_re" minOccurs="0"/>
+          <xs:element name="HoleType" type="jdf:EnumerationSpan" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentEdgeGluing" mixed="false">
     <xs:annotation>
       <xs:appinfo>
@@ -18539,6 +18646,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentHardCoverBinding" mixed="false">
     <xs:annotation>
       <xs:appinfo>
@@ -18599,13 +18707,16 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentPlasticCombBinding" mixed="false">
     <xs:annotation>
       <xs:appinfo>
         <Version Path="CombBrand" First="1.3"/>
         <Version Path="HoleList" First="1.2"/>
+        <Version Path="HoleType" First="1.6"/>
         <Constraint Path="CombBrand" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="HoleList" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="HoleType" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="PlasticCombType" minOccurs="0" maxOccurs="1"/>
       </xs:appinfo>
     </xs:annotation>
@@ -18616,10 +18727,12 @@
           <xs:element name="CombBrand" type="jdf:StringSpan" minOccurs="0"/>
           <xs:element name="PlasticCombType" type="jdf:NameSpan" minOccurs="0"/>
           <xs:element name="HoleList" type="jdf:HoleList_re" minOccurs="0"/>
+          <xs:element name="HoleType" type="jdf:EnumerationSpan" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentRingBinding" mixed="false">
     <xs:annotation>
       <xs:appinfo>
@@ -18654,6 +18767,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentSaddleStitching" mixed="false">
     <xs:annotation>
       <xs:appinfo>
@@ -18670,6 +18784,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentSideSewing" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
@@ -18679,6 +18794,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentSideStitching" mixed="false">
     <xs:annotation>
       <xs:appinfo>
@@ -18695,6 +18811,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentSoftCoverBinding" mixed="false">
     <xs:annotation>
       <xs:appinfo>
@@ -18740,6 +18857,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentTape" mixed="false">
     <xs:annotation>
       <xs:appinfo>
@@ -18756,6 +18874,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentTabs" mixed="false">
     <xs:annotation>
       <xs:appinfo>
@@ -18789,6 +18908,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentThreadSealing" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
@@ -18813,11 +18933,14 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentStripBinding" mixed="false">
     <xs:annotation>
       <xs:appinfo>
         <Version Path="HoleList" First="1.2"/>
+        <Version Path="HoleType" First="1.6"/>
         <Constraint Path="HoleList" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="HoleType" minOccurs="0" maxOccurs="1"/>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
@@ -18825,21 +18948,23 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="HoleList" type="jdf:HoleList_re" minOccurs="0"/>
+          <xs:element name="HoleType" type="jdf:EnumerationSpan" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntentWireCombBinding" mixed="false">
     <xs:annotation>
       <xs:appinfo>
         <Version Path="HoleList" First="1.2"/>
-        <Version Path="HoleListRef" First="1.2"/>
+        <Version Path="HoleType" First="1.6"/>
         <Version Path="WireCombBrand" First="1.3"/>
         <Constraint Path="WireCombBrand" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="WireCombMaterial" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="WireCombShape" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="HoleList" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path="HoleListRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="HoleType" minOccurs="0" maxOccurs="1"/>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
@@ -18848,11 +18973,13 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="WireCombBrand" type="jdf:StringSpan" minOccurs="0"/>
           <xs:element name="WireCombMaterial" type="jdf:EnumerationSpan" minOccurs="0"/>
-          <xs:element name="WireCombShape" type="jdf:EnumerationSpan" minOccurs="0"/>
+          <xs:element name="WireCombShape" type="jdf:NameSpan" minOccurs="0"/>
           <xs:element name="HoleList" type="jdf:HoleList_re" minOccurs="0"/>
+          <xs:element name="HoleType" type="jdf:EnumerationSpan" minOccurs="0"/>
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
+    
   </xs:complexType>
   <xs:complexType name="BindingIntent_BindList_lr" mixed="false">
     <xs:annotation>
@@ -18922,6 +19049,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:complexType name="BindingIntent_r" mixed="false">
     <xs:annotation>
       <xs:appinfo>
@@ -18932,6 +19060,7 @@
         <Version Path="AdhesiveBinding" Last="1.0"/>
         <Version Path="BindingColorDetails" First="1.4"/>
         <Version Path="BindList" First="1.1"/>
+        <Version Path="BindingLength" Last="1.5"/>
         <Version Path="BookCase" Last="1.0"/>
         <Version Path="CoverColorDetails" First="1.4"/>
         <Version Path="EdgeGluing" First="1.1"/>
@@ -19121,6 +19250,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="DeliveryIntent" type="jdf:DeliveryIntent_r" substitutionGroup="jdf:Resource"/>
   <xs:element name="DeliveryIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="DeliveryIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
@@ -19156,6 +19286,8 @@
         <Version Path="CompanyRef" Last="1.0"/>
         <Version Path="Contact" First="1.1"/>
         <Version Path="ContactRef" First="1.1"/>
+        <Version Path="FileSpec" First="1.6"/>
+        <Version Path="FileSpecRef" First="1.6"/>
         <Constraint Path="Earliest" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="EarliestDuration" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="Method" minOccurs="0" maxOccurs="1"/>
@@ -19171,6 +19303,8 @@
         <Constraint Path="ContactRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="DropItemIntent" minOccurs="1" maxOccurs="unbounded"/>
         <Constraint Path="Pricing" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1"/>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
@@ -19189,6 +19323,8 @@
           <xs:element name="Company" type="jdf:Company_re" minOccurs="0"/>
           <xs:element ref="jdf:CompanyRef" minOccurs="0"/>
           <xs:element name="Contact" type="jdf:Contact_re" minOccurs="0"/>
+          <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+          <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
           <xs:element ref="jdf:ContactRef" minOccurs="0"/>
           <xs:element name="DropItemIntent" type="jdf:DeliveryIntent_DropIntent_DropItemIntent_lr" minOccurs="0"/>
           <xs:element name="Pricing" type="jdf:DeliveryIntent_Pricing_lr" minOccurs="0"/>
@@ -19300,6 +19436,8 @@
         <Version Path="Transfer" First="1.1"/>
         <Version Path="Company" Last="1.0"/>
         <Version Path="CompanyRef" Last="1.0"/>
+        <Version Path="FileSpec" First="1.5"/>
+        <Version Path="FileSpecRef" First="1.0"/>
         <Version Path="Contact" First="1.1"/>
         <Version Path="ContactRef" First="1.1"/>
         <Version Path="Pricing" Last="1.2"/>
@@ -19317,6 +19455,8 @@
         <Constraint Path="Underage" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="Company" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="CompanyRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="2"/>
+        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="2"/>
         <Constraint Path="Contact" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ContactRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="DropIntent" minOccurs="1" maxOccurs="unbounded"/>
@@ -19342,6 +19482,8 @@
           <xs:element name="Underage" type="jdf:NumberSpan" minOccurs="0"/>
           <xs:element name="Company" type="jdf:Company_re" minOccurs="0"/>
           <xs:element ref="jdf:CompanyRef" minOccurs="0"/>
+          <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+          <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
           <xs:element name="Contact" type="jdf:Contact_re" minOccurs="0"/>
           <xs:element ref="jdf:ContactRef" minOccurs="0"/>
           <xs:element name="DropIntent" type="jdf:DeliveryIntent_DropIntent_lr" minOccurs="0"/>
@@ -19373,6 +19515,8 @@
             <xs:element name="Underage" type="jdf:NumberSpan" minOccurs="0"/>
             <xs:element name="Company" type="jdf:Company_re" minOccurs="0"/>
             <xs:element ref="jdf:CompanyRef" minOccurs="0"/>
+            <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+            <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
             <xs:element name="Contact" type="jdf:Contact_re" minOccurs="0"/>
             <xs:element ref="jdf:ContactRef" minOccurs="0"/>
             <xs:element name="DropIntent" type="jdf:DeliveryIntent_DropIntent_lr" minOccurs="0"/>
@@ -19385,11 +19529,14 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="EmbossingIntent" type="jdf:EmbossingIntent_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.1"/>
         <Version Path="EmbossingItem/FoilColorDetails" First="1.4"/>
+        <Version Path="EmbossingItem/@Separation" First="1.6"/>
+        <Version Path="EmbossingItem/@ToolName" First="1.6"/>
         <Constraint Path="EmbossingItem" minOccurs="1" maxOccurs="unbounded"/>
         <Constraint Path="EmbossingItem/Direction" minOccurs="1" maxOccurs="1"/>
         <Constraint Path="EmbossingItem/EdgeAngle" minOccurs="0" maxOccurs="1"/>
@@ -19429,6 +19576,8 @@
           <xs:element name="Level" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="Position" type="jdf:XYPairSpan" minOccurs="0"/>
         </xs:sequence>
+        <xs:attribute name="Separation" type="jdftyp:string" use="optional"/>
+        <xs:attribute name="ToolName" type="jdftyp:NMTOKEN" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -19461,6 +19610,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="FitPolicy" type="jdf:FitPolicy_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -19523,12 +19673,16 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="FoldingIntent" type="jdf:FoldingIntent_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
         <Version Path="@Folds" Last="1.0"/>
+        <Version Path="@FoldingDetails" First="1.6"/>
         <Version Path="Fold" First="1.1"/>
+        <Version Path="Orientation" First="1.6"/>
         <Constraint Path="FoldingCatalog" minOccurs="1" maxOccurs="1"/>
+        <Constraint Path="Orientation" minOccurs="1" maxOccurs="1"/>
         <Constraint Path="Fold" minOccurs="0" maxOccurs="unbounded"/>
       </xs:appinfo>
     </xs:annotation>
@@ -19537,6 +19691,7 @@
   <xs:element name="FoldingIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="FoldingIntentAttribs_c">
     <xs:attribute name="Folds" type="jdftyp:XYPair" use="optional"/>
+    <xs:attribute name="FoldingDetails" type="jdftyp:string" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="FoldingIntentAttribs_u">
     <xs:attributeGroup ref="jdf:FoldingIntentAttribs_c"/>
@@ -19552,6 +19707,7 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="FoldingCatalog" type="jdf:NameSpan" minOccurs="0"/>
           <xs:element name="Fold" type="jdf:Fold_re" minOccurs="0"/>
+          <xs:element name="Orientation" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="FoldingIntent" type="jdf:FoldingIntent_rp" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:FoldingIntentAttribs_r"/>
@@ -19575,6 +19731,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="HoleMakingIntent" type="jdf:HoleMakingIntent_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -19629,6 +19786,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="InsertingIntent" type="jdf:InsertingIntent_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -19772,6 +19930,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="LayoutIntent" type="jdf:LayoutIntent_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -19783,8 +19942,10 @@
         <Version Path="@FolioCount" First="1.1"/>
         <Version Path="Pages" First="1.1"/>
         <Version Path="PageVariance" First="1.1"/>
+        <Version Path="@Orientation" First="1.6"/>
         <Version Path="@RotatePolicy" First="1.2"/>
         <Version Path="SizePolicy" First="1.2"/>
+        <Version Path="@SpreadType" First="1.6"/>
         <Version Path="Layout" First="1.1"/>
         <Version Path="LayouRef" First="1.1"/>
         <Constraint Path="Dimensions" minOccurs="0" maxOccurs="1"/>
@@ -19802,7 +19963,9 @@
   <xs:element name="LayoutIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="LayoutIntentAttribs_c">
     <xs:attribute name="FinishedPageOrientation" type="jdftyp:ePortraitOrLandscape_" use="optional"/>
+    <xs:attribute name="Orientation" type="jdftyp:Orientation" use="optional"/>
     <xs:attribute name="RotatePolicy" type="jdftyp:eRotatePolicy_" use="optional"/>
+    <xs:attribute name="SpreadType" type="jdftyp:eSpreadType_" use="optional"/>
     <xs:attribute name="Sides" type="jdftyp:eSides3_" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="LayoutIntentAttribs_u">
@@ -19859,9 +20022,11 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="MediaIntent" type="jdf:MediaIntent_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
+        <Version Path="@UserMediaType" Last="1.5"/>
         <Version Path="Dimensions" Last="1.1"/>
         <Version Path="Flute" First="1.4"/>
         <Version Path="FluteDirection" First="1.4"/>
@@ -19880,9 +20045,11 @@
         <Version Path="Thickness" First="1.1"/>
         <Version Path="USWeight" Last="1.1"/>
         <Version Path="MediaLayers" First="1.4"/>
+        <Version Path="Certification" First="1.6"/>
         <Constraint Path="BackCoatings" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="Brightness" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="BuyerSupplied" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="Certification" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="Dimensions" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="Flute" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="FluteDirection" minOccurs="0" maxOccurs="1"/>
@@ -19935,6 +20102,7 @@
           <xs:element name="BackCoatings" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="Brightness" type="jdf:NumberSpan" minOccurs="0"/>
           <xs:element name="BuyerSupplied" type="jdf:OptionSpan" minOccurs="0"/>
+          <xs:element name="Certification" type="jdf:Certification_re" minOccurs="0"/>
           <xs:element name="Dimensions" type="jdf:XYPairSpan" minOccurs="0"/>
           <xs:element name="Flute" type="jdf:NameSpan" minOccurs="0"/>
           <xs:element name="FluteDirection" type="jdf:EnumerationSpan" minOccurs="0"/>
@@ -19976,6 +20144,7 @@
           <xs:element name="BackCoatings" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="Brightness" type="jdf:NumberSpan" minOccurs="0"/>
           <xs:element name="BuyerSupplied" type="jdf:OptionSpan" minOccurs="0"/>
+          <xs:element name="Certification" type="jdf:Certification_re" minOccurs="0"/>
           <xs:element name="Dimensions" type="jdf:XYPairSpan" minOccurs="0"/>
           <xs:element name="FrontCoatings" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="Grade" type="jdf:IntegerSpan" minOccurs="0"/>
@@ -20013,6 +20182,7 @@
             <xs:element name="BackCoatings" type="jdf:EnumerationSpan" minOccurs="0"/>
             <xs:element name="Brightness" type="jdf:NumberSpan" minOccurs="0"/>
             <xs:element name="BuyerSupplied" type="jdf:OptionSpan" minOccurs="0"/>
+            <xs:element name="Certification" type="jdf:Certification_re" minOccurs="0"/>
             <xs:element name="Dimensions" type="jdf:XYPairSpan" minOccurs="0"/>
             <xs:element name="FrontCoatings" type="jdf:EnumerationSpan" minOccurs="0"/>
             <xs:element name="Grade" type="jdf:IntegerSpan" minOccurs="0"/>
@@ -20042,6 +20212,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="NumberingIntent" type="jdf:NumberingIntent_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -20272,6 +20443,8 @@
         <Version Path="ProofItem/SeparationSpecRef" First="1.1"/>
         <Version Path="ProofItem/ApprovalParams" First="1.2"/>
         <Version Path="ProofItem/ApprovalParamsRef" First="1.2"/>
+        <Version Path="PreflightItem" First="1.6"/>
+        <Version Path="PreflightItem/@PreflightLevel" First="1.6"/>
         <Constraint Path="ProofItem" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ProofItem/Amount" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ProofItem/BrandName" minOccurs="0" maxOccurs="1"/>
@@ -20284,6 +20457,7 @@
         <Constraint Path="ProofItem/SeparationSpecRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ProofItem/ApprovalParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ProofItem/ApprovalParamsRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="PreflightItem" minOccurs="0" maxOccurs="unbounded"/> 
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -20320,6 +20494,17 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="ProofingIntent_PreflightItem_lr" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:BaseElement_">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="PreflightLevel" type="jdftyp:ePreflightLevel_" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
   <xs:complexType name="ProofingIntent_r" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:IntentResource">
@@ -20327,6 +20512,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="ProofItem" type="jdf:ProofingIntent_ProofItem_lr" minOccurs="0"/>
+          <xs:element name="PreflightItem" type="jdf:ProofingIntent_PreflightItem_lr" minOccurs="0"/>
           <xs:element name="ProofingIntent" type="jdf:ProofingIntent_rp" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ProofingIntentAttribs_r"/>
@@ -20341,6 +20527,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="ProofItem" type="jdf:ProofingIntent_ProofItem_lr" minOccurs="0"/>
+            <xs:element name="PreflightItemItem" type="jdf:ProofingIntent_PreflightItem_lr" minOccurs="0"/>
             <xs:element name="ProofingIntent" type="jdf:ProofingIntent_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
@@ -20349,6 +20536,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="PublishingIntent" type="jdf:PublishingIntent_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -20466,12 +20654,16 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="ShapeCuttingIntent" type="jdf:ShapeCuttingIntent_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
-        <Version Path="ShapeCut/ShapeDepth" First="1.1"/>
+        <Version Path="ShapeCut/ShapeDepth" First="1.1" Last="1.5"/>
+        <Version Path="ShapeCut/CutDepth" First="1.6"/>
+        <Version Path="ShapeCut/@ShapeTypeDetails" First="1.6"/>
         <Constraint Path="ShapeCut" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ShapeCut/Material" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="ShapeCut/CutDepth" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ShapeCut/CutType" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ShapeCut/ShapeDepth" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ShapeCut/ShapeType" minOccurs="1" maxOccurs="1"/>
@@ -20488,6 +20680,7 @@
   <xs:attributeGroup name="ShapeCuttingIntentAttribs_r">
     <xs:attributeGroup ref="jdf:ShapeCuttingIntentAttribs_c"/>
   </xs:attributeGroup>
+  
   <xs:complexType name="ShapeCuttingIntent_ShapeCut_lr" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
@@ -20495,6 +20688,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="Material" type="jdf:StringSpan" minOccurs="0"/>
           <xs:element name="CutType" type="jdf:EnumerationSpan" minOccurs="0"/>
+          <xs:element name="CutDepth" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="ShapeDepth" type="jdf:NumberSpan" minOccurs="0"/>
           <xs:element name="ShapeType" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="TeethPerDimension" type="jdf:NumberSpan" minOccurs="0"/>
@@ -20503,6 +20697,7 @@
         <xs:attribute name="CutOut" type="jdftyp:boolean" default="false"/>
         <xs:attribute name="CutPath" type="jdftyp:PDFPath" use="optional"/>
         <xs:attribute name="Pages" type="jdftyp:IntegerRangeList" use="optional"/>
+        <xs:attribute name="ShapeTypeDetails" type="jdftyp:string" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -20535,6 +20730,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="SizeIntent" type="jdf:SizeIntent_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -20583,6 +20779,74 @@
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
         <xs:attributeGroup ref="jdf:SizeIntentAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
+    <xs:element name="VariableIntent" type="jdf:VariableIntent_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="." First="1.6"/>
+        <Constraint Path="Area" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="AveragePages" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="MaxPages" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="MinPages" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="NumberOfCopies" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="VariableType" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="VariableQuality" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="ColorsUsed" minOccurs="0" maxOccurs="1"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="VariableIntentRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="VariableIntentLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="VariableIntentAttribs_c"/>
+  <xs:attributeGroup name="VariableIntentAttribs_u">
+    <xs:attributeGroup ref="jdf:VariableIntentAttribs_c"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="VariableIntentAttribs_r">
+    <xs:attributeGroup ref="jdf:VariableIntentAttribs_c"/>
+  </xs:attributeGroup>
+  <xs:complexType name="VariableIntent_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:IntentResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="Area" type="jdf:NumberSpan" minOccurs="0"/>
+          <xs:element name="AveragePages" type="jdf:IntegerSpan" minOccurs="0"/>
+          <xs:element name="maxPages" type="jdf:IntegerSpan" minOccurs="0"/>
+          <xs:element name="MinPages" type="jdf:IntegerSpan" minOccurs="0"/>
+          <xs:element name="NumberOfCopies" type="jdf:IntegerSpan" minOccurs="0"/>
+          <xs:element name="VariableType" type="jdf:EnumerationSpan" minOccurs="0"/>
+          <xs:element name="VariableQuality" type="jdf:EnumerationSpan" minOccurs="0"/>
+          <xs:element name="ColorsUsed" type="jdf:SeparationList" minOccurs="0"/>
+          <xs:element name="VariableIntent" type="jdf:VariableIntent_rp" minOccurs="0"/>
+         </xs:sequence>
+        <xs:attributeGroup ref="jdf:VariableIntentAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="VariableIntent_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:IntentResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="Area" type="jdf:NumberSpan" minOccurs="0"/>
+          <xs:element name="AveragePages" type="jdf:IntegerSpan" minOccurs="0"/>
+          <xs:element name="maxPages" type="jdf:IntegerSpan" minOccurs="0"/>
+          <xs:element name="MinPages" type="jdf:IntegerSpan" minOccurs="0"/>
+          <xs:element name="NumberOfCopies" type="jdf:IntegerSpan" minOccurs="0"/>
+          <xs:element name="VariableType" type="jdf:EnumerationSpan" minOccurs="0"/>
+          <xs:element name="VariableQuality" type="jdf:EnumerationSpan" minOccurs="0"/>
+          <xs:element name="ColorsUsed" type="jdf:SeparationList" minOccurs="0"/>
+          <xs:element name="VariableIntent" type="jdf:VariableIntent_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:VariableIntentAttribs_u"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

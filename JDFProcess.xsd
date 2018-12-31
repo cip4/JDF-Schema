@@ -2,7 +2,7 @@
 <!--	The CIP4 Software License, Version 1.0
 	
 	
-	Copyright (c) 2001-2014 The International Cooperation for the Integration of
+	Copyright (c) 2001-2018 The International Cooperation for the Integration of
 	Processes in Prepress, Press and Postpress (CIP4). All rights reserved.
 	
 	Redistribution and use in source and binary forms, with or without modification,
@@ -59,7 +59,7 @@
 	Processes in Prepress, Press and Postpress , please see &lt;http://www.cip4.org/&gt;.
 	
  -->
-<!--JDF specification V 1.5-->
+<!--JDF specification V 1.6-->
 <xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_5_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.5-001">
 	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_5_Types" schemaLocation="JDFTypes.xsd"/>
 	<xs:include schemaLocation="JDFResource.xsd"/>
@@ -72,6 +72,8 @@
 				<Version Path="ResourceLinkPool/MiscConsumableLink" First="1.3"/>
 				<Version Path="ResourceLinkPool/NodeInfoLink" First="1.3"/>
 				<Version Path="ResourceLinkPool/UsageCounterLink" First="1.3"/>
+				<Version Path="ResourceLinkPool/ColorPoolLink" First="1.6"/>
+				<Constraint Path="ResourceLinkPool/ColorPoolLink" Usage="Input" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ResourceLinkPool/CustomerInfoLink" Usage="Input" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ResourceLinkPool/MiscConsumableLink" Usage="Input" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="ResourceLinkPool/NodeInfoLink" Usage="Input" minOccurs="0" maxOccurs="1"/>
@@ -85,6 +87,7 @@
 		</xs:annotation>
 		<xs:sequence>
 			<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+			<xs:element ref="jdf:ColorPoolLink" minOccurs="0"/>
 			<xs:element ref="jdf:ToolLink" minOccurs="0"/>
 			<xs:element ref="jdf:ApprovalSuccessLink" minOccurs="0"/>
 			<xs:element ref="jdf:CustomerInfoLink" minOccurs="0"/>
@@ -128,6 +131,7 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="ResourceLinkPool/SizeIntentIntentLink" Usage="Input" Last="1.1"/>
+				<Version Path="ResourceLinkPool/VariableIntentIntentLink" Usage="Input" First="1.6"/>
 				<Constraint Path="ResourceLinkPool/ComponentLink" Usage="Input" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="ResourceLinkPool/ComponentLink" Usage="Input" ProcessUsage="Cover" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ResourceLinkPool/ComponentLink" Usage="Input" ProcessUsage="Parent" minOccurs="0" maxOccurs="1"/>
@@ -150,6 +154,7 @@
 				<Constraint Path="ResourceLinkPool/ScreeningIntentLink" Usage="Input" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ResourceLinkPool/ShapeCuttingIntentLink" Usage="Input" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ResourceLinkPool/SizeIntentIntentLink" Usage="Input" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="ResourceLinkPool/VariableIntentIntentLink" Usage="Input" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ResourceLinkPool/ComponentLink" Usage="Output" minOccurs="1" maxOccurs="unbounded"/>
 				<!--Generic Process Elements-->
 				<Version Path="ResourceLinkPool/PreflightReportLink" First="1.2"/>
@@ -199,7 +204,9 @@
 					<xs:element ref="jdf:ScreeningIntentLink" minOccurs="0"/>
 					<xs:element ref="jdf:ShapeCuttingIntentLink" minOccurs="0"/>
 					<xs:element ref="jdf:SizeIntentLink" minOccurs="0"/>
+					<xs:element ref="jdf:VariableIntentLink" minOccurs="0"/>
 					<xs:element ref="jdf:ApprovalSuccessLink" minOccurs="0"/>
+					<xs:element ref="jdf:ColorPoolLink" minOccurs="0"/>
 					<xs:element ref="jdf:DeviceLink" minOccurs="0"/>
 					<xs:element ref="jdf:EmployeeLink" minOccurs="0"/>
 					<xs:element ref="jdf:PreviewLink" minOccurs="0"/>

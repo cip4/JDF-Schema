@@ -202,12 +202,14 @@
 		<xs:list itemType="jdftyp:IntegerAndSeparator_"/>
 	</xs:simpleType>
 	<xs:simpleType name="IntegerRange">
-		<xs:restriction base="jdftyp:IntegerAndSeparators_">
-			<xs:length value="3"/>
+		<xs:restriction base="jdftyp:string">
+		 	<xs:pattern value="([-+]?\d+|INF)(\s*\~\s*([-+]?\d+|INF))?"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="IntegerRangeList">
-		<xs:restriction base="jdftyp:IntegerAndSeparators_"/>
+		<xs:restriction base="jdftyp:string">
+		 	<xs:pattern value="(([-+]?\d+|INF)(\s*\~\s*([-+]?\d+|INF))?\s*)+"/>
+		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="Integer0To100">
 		<xs:restriction base="xs:integer">
@@ -762,6 +764,13 @@
 			<xs:enumeration value="Type20"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="eBoxType">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Box"/>
+			<xs:enumeration value="Carton"/>
+			<xs:enumeration value="Envelope"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="eBundleType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="BoundSet"/>
@@ -867,9 +876,10 @@
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="DieLine"/>
 			<xs:enumeration value="Normal"/>
-			<xs:enumeration value="Transparent"/>
 			<xs:enumeration value="Opaque"/>
 			<xs:enumeration value="OpaqueIgnore"/>
+			<xs:enumeration value="Primer"/>
+			<xs:enumeration value="Transparent"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eColorType1_">
@@ -1699,6 +1709,7 @@
 	<xs:simpleType name="eGrainDirection_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Any"/><!-- First in 1.5 -->
+			<xs:enumeration value="Both"/><!-- Last in 1.5 -->
 			<xs:enumeration value="ShortEdge"/><!-- Last in 1.4 -->
 			<xs:enumeration value="LongEdge"/><!-- Last in 1.4 -->
 			<xs:enumeration value="SameDirection"/><!-- First in 1.5 -->
@@ -1724,6 +1735,7 @@
 	</xs:simpleType>
 	<xs:simpleType name="eHoleType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Explicit"/>
 			<xs:enumeration value="R2-generic"/>
 			<xs:enumeration value="S1-generic"/>
 			<xs:enumeration value="S-generic"/>
@@ -2243,7 +2255,6 @@
 	</xs:simpleType>
 	<xs:simpleType name="eMediaType_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
-			<xs:enumeration value="Blanket"/>
 			<xs:enumeration value="CorrugatedBoard"/>
 			<xs:enumeration value="Disc"/>
 			<xs:enumeration value="EndBoard"/>
@@ -2696,6 +2707,13 @@
 			<xs:enumeration value="Top"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="ePreflightLevel_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Basic"/>
+			<xs:enumeration value="Extended"/>
+			<xs:enumeration value="Premium"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="ePreflightStatus_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="NotPerformed"/>
@@ -2993,10 +3011,10 @@
 	<xs:simpleType name="eResourceInfo_m_Level_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Empty"/>
-			<xs:enumeration value="Full"/>
-			<xs:enumeration value="High"/>
 			<xs:enumeration value="Low"/>
 			<xs:enumeration value="OK"/>
+			<xs:enumeration value="High"/>
+			<xs:enumeration value="Full"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eResourceStatus_">
@@ -3335,6 +3353,12 @@
 			<xs:enumeration value="NotSpawned"/>
 			<xs:enumeration value="SpawnedRO"/>
 			<xs:enumeration value="SpawnedRW"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="eSpreadType_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="SinglePage"/>
+			<xs:enumeration value="Spread"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eStapleShape_">
