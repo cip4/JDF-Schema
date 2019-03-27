@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <FileSpec Class="Parameter" Compression="Deflate" ID="F1"
+      MimeType="image/jpeg" Status="Available" URL="myFiles/myPicture.jpg">
+      <Container>
+        <FileSpec Compression="Deflate" MimeType="application/zip" URL="myNestedZip.zip">
+          <Container>
+            <FileSpec MimeType="application/zip" URL="ftp://www.any.com/c.zip"/>
+          </Container>
+        </FileSpec>
+      </Container>
+    </FileSpec>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+  <ResourceLinkPool>
+    <FileSpecLink Usage="Input" rRef="F1"/>
+  </ResourceLinkPool>
+</JDF>

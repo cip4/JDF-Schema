@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <RunList Class="Parameter" ID="MyVDPRunList"
+      IgnoreContext="SheetIndex" PartIDKeys="DocTags" Status="Available">
+      <!-- additional attributes and elements -->
+      <RunList DocTags="CoverLetter"/>
+      <RunList DocTags="Brochure"/>
+      <RunList DocTags="Postcard"/>
+    </RunList>
+  </ResourcePool>
+  <ResourceLinkPool>
+    <!-- START SNIPPET -->
+    <RunListLink ProcessUsage="Document" Usage="Input" rRef="MyVDPRunList">
+      <Part DocTags="CoverLetter" Metadata0="12"/>
+      <Part DocTags="Brochure" Metadata0="12"/>
+      <Part DocTags="Postcard" Metadata0="12"/>
+    </RunListLink>
+    <!-- END SNIPPET -->
+  </ResourceLinkPool>
+</JDF>

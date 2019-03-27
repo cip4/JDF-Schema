@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET -->
+<JMF MaxVersion="1.6" SenderID="MIS master A"
+  TimeStamp="2007-08-09T11:35:41+02:00" Version="1.6"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Signal ID="m18" Type="Status" xsi:type="SignalStatus">
+    <DeviceInfo DeviceStatus="Running">
+      <JobPhase JobID="jID" JobPartID="jpID"
+        PhaseStartTime="2007-08-09T11:35:40+02:00" Status="Setup"/>
+    </DeviceInfo>
+  </Signal>
+  <Signal ID="m19" Type="Status" xsi:type="SignalStatus">
+    <DeviceInfo DeviceStatus="Running">
+      <JobPhase JobID="jID" JobPartID="jpID"
+        PhaseStartTime="2007-08-09T11:35:41+02:00" Status="InProgress"/>
+    </DeviceInfo>
+  </Signal>
+</JMF>
+<!-- END SNIPPET -->

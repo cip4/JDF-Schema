@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="Bundle" JobPartID="ID20" Status="Waiting"
+  Type="CylinderLayoutPreparation" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <CylinderLayoutPreparationParams Class="Parameter" ID="CL002" Status="Available">
+      <ProductionPath/>
+    </CylinderLayoutPreparationParams>
+    <RunList Class="Parameter" ID="R-002" Status="Available"/>
+    <Device Class="Implementation" DeviceID="DEV-001" ID="DEV-001" Status="Available">
+      <Module ModelName="Folder 1" ModuleIndex="0" ModuleType="Folder">
+        <Module DescriptiveName="PU-1" ModuleIndex="1" ModuleType="PrintUnit">
+          <Module DescriptiveName="PM-1" ModuleIndex="2"
+            ModuleType="PrintModule" SubModuleIndex="0"/>
+          <Module DescriptiveName="PM-2" ModuleIndex="3"
+            ModuleType="PrintModule" SubModuleIndex="1"/>
+          <Module DescriptiveName="PM-3" ModuleIndex="4"
+            ModuleType="PrintModule" SubModuleIndex="2"/>
+          <Module DescriptiveName="PM-4" ModuleIndex="5"
+            ModuleType="PrintModule" SubModuleIndex="3"/>
+          <Module DescriptiveName="PM-5" ModuleIndex="6"
+            ModuleType="PrintModule" SubModuleIndex="4"/>
+          <Module DescriptiveName="PM-6" ModuleIndex="7"
+            ModuleType="PrintModule" SubModuleIndex="5"/>
+          <Module DescriptiveName="PM-7" ModuleIndex="8"
+            ModuleType="PrintModule" SubModuleIndex="6"/>
+          <Module DescriptiveName="PM-8" ModuleIndex="9"
+            ModuleType="PrintModule" SubModuleIndex="7"/>
+        </Module>
+      </Module>
+    </Device>
+    <Layout Class="Parameter" ID="L-001" Status="Available"/>
+    <!-- START SNIPPET -->
+    <CylinderLayout Class="Parameter" DeviceID="DEV-001" ID="CL-001"
+      PartIDKeys="WebSetup PlateLayout Separation" Status="Available">
+      <LayoutRef rRef="L-001"/>
+      <CylinderLayout WebSetup="Run-1">
+        <CylinderLayout PlateLayout="PL-001">
+          <CylinderLayout Separation="Yellow">
+            <!-- page 1 -->
+            <CylinderPosition DeviceModuleIndex="2" PlatePosition="0 0"
+              PlateType="Exposed" PlateUsage="Original"/>
+            <CylinderPosition DeviceModuleIndex="2" PlatePosition="0 1"
+              PlateType="Exposed" PlateUsage="Original"/>
+          </CylinderLayout>
+        </CylinderLayout>
+        <CylinderLayout PlateLayout="PL-002">
+          <CylinderLayout Separation="Yellow">
+            <!-- page 8 -->
+            <CylinderPosition DeviceModuleIndex="2" PlatePosition="1 0"
+              PlateType="Exposed" PlateUsage="Original"/>
+            <CylinderPosition DeviceModuleIndex="2" PlatePosition="1 1"
+              PlateType="Exposed" PlateUsage="Original"/>
+          </CylinderLayout>
+        </CylinderLayout>
+        <CylinderLayout PlateLayout="PL-003">
+          <CylinderLayout Separation="HKS57">
+            <!-- page 3 -->
+            <CylinderPosition DeviceModuleIndex="2" PlatePosition="2 0"
+              PlateType="Exposed" PlateUsage="Reuse"/>
+            <CylinderPosition DeviceModuleIndex="2" PlatePosition="2 1"
+              PlateType="Exposed" PlateUsage="Reuse"/>
+          </CylinderLayout>
+        </CylinderLayout>
+        <CylinderPosition DeviceModuleIndex="2" PlatePosition="3 0"
+          PlateType="Dummy" PlateUsage="Reuse"/>
+        <CylinderPosition DeviceModuleIndex="2" PlatePosition="3 1"
+          PlateType="Dummy" PlateUsage="Reuse"/>
+      </CylinderLayout>
+    </CylinderLayout>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+  <ResourceLinkPool>
+    <DeviceLink Usage="Input" rRef="DEV-001"/>
+    <LayoutLink Usage="Input" rRef="L-001"/>
+    <RunListLink Usage="Input" rRef="R-002"/>
+    <CylinderLayoutPreparationParamsLink Usage="Input" rRef="CL002"/>
+    <CylinderLayoutLink Usage="Output" rRef="CL-001"/>
+  </ResourceLinkPool>
+</JDF>

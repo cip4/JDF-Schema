@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<JDF xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" Type="Product" Status="Ready" ID="ID_001">
+  <ResourcePool>
+    <!-- Example Capabilities: DisplayGroupPool -->
+    <!-- START SNIPPET -->
+    <Device Class="Implementation" ID="Link0003" Status="Available">
+      <DeviceCap>
+        <DisplayGroupPool>
+          <DisplayGroup rRefs="btd cmp mag colorspace outputres">
+            <Loc HelpText="Parameters for scanning configuration" Lang="en"
+                      Value="ScanningParameters"/>
+          </DisplayGroup>
+        </DisplayGroupPool>
+      </DeviceCap>
+    </Device>
+    <!-- END SNIPPET -->
+    <Device ID="btd" Class="Implementation" Status="Incomplete"/>
+    <Device ID="cmp" Class="Implementation" Status="Incomplete"/>
+    <Device ID="mag" Class="Implementation" Status="Incomplete"/>
+    <Device ID="colorspace" Class="Implementation" Status="Incomplete"/>
+    <Device ID="outputres" Class="Implementation" Status="Incomplete"/>
+  </ResourcePool>
+</JDF>

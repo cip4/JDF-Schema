@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JMF MaxVersion="1.6" SenderID="ProductionSystem"
+  TimeStamp="2017-09-23T17:47:18-05:00" Version="1.6"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- START SNIPPET -->
+  <Signal ID="P172" Type="Resource" xsi:type="SignalResource">
+    <ResourceQuParams JobID="34028" JobPartID="_F05A84BD"/>
+    <ResourceInfo>
+      <Media Brand="Roll Stock" Class="Consumable"
+        Dimension="2520 8640000" ID="RI007" MediaType="Paper"
+        PartIDKeys="SheetName" ProductID="3002" Status="Available">
+      </Media>
+      <AmountPool>
+        <PartAmount ActualAmount="3230">
+            <Part SheetName="1" LotID="Lot01"/>
+        </PartAmount>
+        <PartAmount ActualAmount="1820">
+			<Part SheetName="1" LotID="Lot02"/>
+        </PartAmount>
+        <PartAmount ActualAmount="5050">
+			<Part SheetName="2" LotID="Lot02"/>
+        </PartAmount>
+      </AmountPool>
+    </ResourceInfo>
+  </Signal>
+  <!-- END SNIPPET -->
+</JMF>

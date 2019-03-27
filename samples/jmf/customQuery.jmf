@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET -->
+<JMF MaxVersion="1.6" SenderID="Circus"
+  TimeStamp="2005-07-25T12:32:48+02:00" Version="1.6"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:Circus="Circus Schema URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Query ID="Q1" Type="Circus:IsClownHappy" xsi:type="QueryIsClownHappy">
+    <Circus:ClownParams Gender="male"/>
+  </Query>
+</JMF>
+<!-- END SNIPPET -->

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" Type="Product" Status="Ready" ID="ID_001">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <StrippingParams ID="FoldCatalogSample" Class="Parameter" Status="Available" 
+          WorkStyle="WorkAndBack" PartIDKeys="SheetName">
+      <BinderySignature FoldCatalog="F16-6"/>
+      <StrippingParams SheetName="Sheet1"/>
+      <StrippingParams SheetName="Sheet2"/>
+      <StrippingParams SheetName="Sheet3"/>
+    </StrippingParams>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+</JDF>

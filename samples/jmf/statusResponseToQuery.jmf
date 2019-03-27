@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JMF MaxVersion="1.6" SenderID="A3 Printer"
+  TimeStamp="2005-07-25T12:32:48+02:00" Version="1.6"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- START SNIPPET -->
+  <Response ID="M1" Type="Status" refID="Q1" xsi:type="ResponseStatus">
+    <DeviceInfo DeviceStatus="Running" StatusDetails="Waste">
+      <JobPhase Amount="2560" DeadLine="InTime" JobID="678"
+        JobPartID="01" PercentCompleted="52" QueueEntryID="Job-05"
+        Status="InProgress" StatusDetails="Waste"/>
+      <JobPhase Amount="0" DeadLine="Warning" JobID="679" JobPartID="01"
+        PercentCompleted="0" QueueEntryID="Job-06" Status="Ready"/>
+      <ModuleStatus DeviceStatus="Running" ModuleIndex="0 ~ 3 6 ~ 8" ModuleType="PrintModule"/>
+      <ModuleStatus DeviceStatus="Idle" ModuleIndex="4" ModuleType="PrintModule"/>
+      <ModuleStatus DeviceStatus="Running" ModuleIndex="5" ModuleType="PerfectingModule"/>
+    </DeviceInfo>
+  </Response>
+  <!-- END SNIPPET -->
+</JMF>

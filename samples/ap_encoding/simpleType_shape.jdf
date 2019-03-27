@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jdf:JDF xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns="http://www.CIP4.org/EncodingExamples" Type="Product" Status="Ready" ID="ID_001">
+    <!-- START SNIPPET -->
+    <Example Dimensions="10 20 40"/>
+    <!-- END SNIPPET -->
+</jdf:JDF>
+

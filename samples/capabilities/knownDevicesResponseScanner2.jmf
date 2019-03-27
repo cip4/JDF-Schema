@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET -->
+<JMF DescriptiveName="Example from JDF 1.2 Spec Document"
+  MaxVersion="1.6" SenderID="Scanner" TimeStamp="2018-10-17T14:30:47Z"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Response ID="xyz" Type="KnownDevices" refID="DeviceQuery" xsi:type="ResponseKnownDevices">
+    <DeviceList>
+      <DeviceInfo DeviceStatus="Idle">
+        <Device DeviceID="Joe the Drum" ModelName="Bongo">
+          <DeviceCap
+            GenericAttributes="ID Class SettingsPolicy BestEffortExceptions OperatorInterventionExceptions MustHonorExceptions PartIDKeys DocIndex" Types="Scanning">
+            <Performance AverageAmount="120.0" Name="ExposedMedia"/>
+            <FeaturePool>
+              <EnumerationState
+                AllowedValueList="Mono ColorTransparency Photo" ID="sm"
+                MacroRefs="ScanModeMacro" Name="ScanMode"/>
+            </FeaturePool>
+            <DisplayGroupPool>
+              <DisplayGroup rRefs="btd cmp mag colorspace outputres">
+                <Loc HelpText="Parameters for scanning configuration"
+                  Lang="en" ShortValue="ScanningParameters"/>
+              </DisplayGroup>
+            </DisplayGroupPool>
+            <ActionPool>
+              <Action ID="BD-bw-action" TestRef="BD-bw">
+                <Loc
+                  HelpText="For 1 bit grayscale, please select CCITTFaxEncoding"
+                  Lang="en" ShortValue="Ouch!" Value="Flate and DCT Encoding not allowed on 1 bit images"/>
+              </Action>
+              <Action ID="ctcmp-action" TestRef="ctcmp">
+                <Loc
+                  HelpText="Only select CCITTFaxEncoding for 1 bit documents"
+                  Lang="en" ShortValue="Ouch!" Value="CCITTFaxEncoding not supported on grayscale images"/>
+              </Action>
+              <Action ID="cd-action" TestRef="cd">
+                <Loc
+                  HelpText="Choose a bit depth of 10 or less for color images"
+                  Lang="en" ShortValue="Ouch!" Value="Bit depths higher than 10 are not supported for color"/>
+              </Action>
+            </ActionPool>
+            <TestPool>
+              <Test ID="iscolor">
+                <EnumerationEvaluation ValueList="RGB LAB CMYK" rRef="colorspace"/>
+              </Test>
+              <Test ID="is1bit">
+                <IntegerEvaluation ValueList="1" rRef="btd"/>
+              </Test>
+              <Test ID="BD-bw">
+                <and>
+                  <TestRef rRef="is1bit"/>
+                  <EnumerationEvaluation
+                    ValueList="FlateEncode DCTEncode" rRef="cmp"/>
+                </and>
+              </Test>
+              <Test ID="ctcmp">
+                <and>
+                  <not>
+                    <TestRef rRef="is1bit"/>
+                  </not>
+                  <EnumerationEvaluation ValueList="CCITTFaxEncode" rRef="cmp"/>
+                </and>
+              </Test>
+              <Test ID="cd">
+                <and>
+                  <TestRef rRef="iscolor"/>
+                  <IntegerEvaluation ValueList="1 10" rRef="btd"/>
+                </and>
+              </Test>
+            </TestPool>
+            <MacroPool>
+              <macro ID="ScanModeMacro">
+                <choice>
+                  <when>
+                    <EnumerationEvaluation ValueList="Mono" rRef="sm"/>
+                    <set rRef="btd">
+                      <FeatureAttribute CurrentValue="1"/>
+                    </set>
+                    <set rRef="colorspace">
+                      <FeatureAttribute CurrentValue="GrayScale"/>
+                    </set>
+                    <set rRef="outputres">
+                      <FeatureAttribute CurrentValue="1200 1200"/>
+                    </set>
+                  </when>
+                  <when>
+                    <EnumerationEvaluation ValueList="ColorTransparency" rRef="sm"/>
+                    <set rRef="btd">
+                      <FeatureAttribute CurrentValue="8"/>
+                    </set>
+                    <set rRef="colorspace">
+                      <FeatureAttribute CurrentValue="RGB"/>
+                    </set>
+                    <set rRef="outputres">
+                      <FeatureAttribute CurrentValue="600 600"/>
+                    </set>
+                  </when>
+                  <when>
+                    <EnumerationEvaluation ValueList="Photo" rRef="sm"/>
+                    <set rRef="btd">
+                      <FeatureAttribute CurrentValue="10"/>
+                    </set>
+                    <set rRef="colorspace">
+                      <FeatureAttribute CurrentValue="LAB"/>
+                    </set>
+                    <set rRef="outputres">
+                      <FeatureAttribute CurrentValue="200 200"/>
+                    </set>
+                  </when>
+                </choice>
+              </macro>
+            </MacroPool>
+            <DevCaps Name="NodeInfo" ResourceUpdate="None">
+              <DevCap Name="NodeInfo">
+                <StringState Name="TargetRoute"/>
+                <IntegerState Name="JobPriority"/>
+              </DevCap>
+            </DevCaps>
+            <DevCaps Name="ExposedMedia" ResourceUpdate="None">
+              <DevCap Name="ExposedMedia">
+                <DevCap Name="Media">
+                  <NameState DefaultValue="Sheet" Name="MediaUnit"/>
+                  <XYPairState AllowedValueMax="600.0 1200.0"
+                    AllowedValueMin="0.0 0.0" Name="Dimension"/>
+                </DevCap>
+              </DevCap>
+            </DevCaps>
+            <DevCaps Name="ScanParams" ResourceUpdate="None">
+              <DevCap Name="ScanParams">
+                <IntegerState ActionRefs="BD-bw ctcmp cd"
+                  AllowedValueList="1 4 8 10 12" DefaultValue="1"
+                  ID="btd" Name="BitDepth" UserDisplay="Hide"/>
+                <EnumerationState ActionRefs="BD-bw ctcmp"
+                  AllowedValueList="CCITTFaxEncode FlateEncode DCTEncode None"
+                  ID="cmp" Name="CompressionFilter" UserDisplay="Hide"/>
+                <NumberState AllowedValueMax="100.0"
+                  AllowedValueMin="0.01" ID="mag" Name="Magnification"/>
+                <EnumerationState ActionRefs="cd"
+                  AllowedValueList="GrayScale CMYK RGB LAB"
+                  ID="colorspace" Name="OutputColorSpace"/>
+                <XYPairState
+                  AllowedValueList="100.0 100.0 300.0 300.0 600.0 600.0 1200.0 1200.0 2400.0 2400.0"
+                  DefaultValue="600.0 600.0" ID="outputres" Name="OutputResolution"/>
+              </DevCap>
+            </DevCaps>
+          </DeviceCap>
+        </Device>
+      </DeviceInfo>
+    </DeviceList>
+  </Response>
+</JMF>
+<!-- END SNIPPET -->

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET -->
+<JDF ID="J1" JobPartID="ID234" Status="Waiting" Type="Product"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourceLinkPool>
+    <MediaIntentLink Usage="Input" rRef="id">
+      <Part Option="Option2"/>
+    </MediaIntentLink>
+    <ComponentLink Usage="Output" rRef="R02"/>
+  </ResourceLinkPool>
+  <ResourcePool>
+    <MediaIntent ID="id" PartIDKeys="Option">
+      <!-- the common MediaIntent resource details -->
+      <MediaIntent Option="Option1">
+        <Weight DataType="NumberSpan" Preferred="80"/>
+      </MediaIntent>
+      <MediaIntent Option="Option2">
+        <Weight DataType="NumberSpan" Preferred="90"/>
+      </MediaIntent>
+    </MediaIntent>
+    <Component Class="Quantity" ComponentType="Sheet" ID="R02" Status="Unavailable"/>
+  </ResourcePool>
+  <AuditPool>
+    <ResourceAudit>
+      <!-- the actual MediaIntent ResourceLink -->
+      <MediaIntentLink Usage="Input" rRef="id">
+        <Part Option="Option2"/>
+      </MediaIntentLink>
+      <!-- the original MediaIntent ResourceLink -->
+      <MediaIntentLink Usage="Input" rRef="id">
+        <Part Option="Option1"/>
+      </MediaIntentLink>
+    </ResourceAudit>
+  </AuditPool>
+</JDF>
+<!-- END SNIPPET -->

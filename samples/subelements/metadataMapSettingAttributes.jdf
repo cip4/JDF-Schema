@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <RunList Class="Parameter" ID="r000004" Status="Available">
+      <MetadataMap DataType="integer" Name="DocCopies" ValueFormat="%d" ValueTemplate="ncopies">
+        <Expr Name="ncopies" Path="//record/document/@Copies"/>
+        <Expr Name="ncopies" Value="1"/>
+      </MetadataMap>
+    </RunList>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+  <ResourceLinkPool>
+    <RunListLink Usage="Input" rRef="r000004"/>
+  </ResourceLinkPool>
+</JDF>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <FileSpec Class="Parameter" ID="ID_005_TAR" MimeType="Tar"
+      Status="Available" URL="ftp://www.any.com/e.tar"/>
+    <FileSpec Class="Parameter" ID="ID_005_ZIPS"
+      MimeType="application/zip" PartIDKeys="PartVersion" Status="Available">
+      <Container>
+        <FileSpecRef rRef="ID_005_TAR"/>
+      </Container>
+      <FileSpec PartVersion="English" URL="c.zip"/>
+      <FileSpec PartVersion="German" URL="d.zip"/>
+    </FileSpec>
+    <FileSpec Class="Parameter" Compression="Deflate"
+      ID="A_ENGLISH_FILE" MimeType="application/pdf" Status="Available" URL="a.pdf">
+      <Container>
+        <FileSpecRef rRef="ID_005_ZIPS">
+          <Part PartVersion="English"/>
+        </FileSpecRef>
+      </Container>
+    </FileSpec>
+    <FileSpec Class="Parameter" Compression="Deflate"
+      ID="B_ENGLISH_FILE" MimeType="application/pdf" Status="Available" URL="b.pdf">
+      <Container>
+        <FileSpecRef rRef="ID_005_ZIPS">
+          <Part PartVersion="English"/>
+        </FileSpecRef>
+      </Container>
+    </FileSpec>
+    <FileSpec Class="Parameter" Compression="Deflate" ID="A_GERMAN_FILE"
+      MimeType="application/pdf" Status="Available" URL="a.pdf">
+      <Container>
+        <FileSpecRef rRef="ID_005_ZIPS">
+          <Part PartVersion="German"/>
+        </FileSpecRef>
+      </Container>
+    </FileSpec>
+    <FileSpec Class="Parameter" Compression="Deflate" ID="B_GERMAN_FILE"
+      MimeType="application/pdf" Status="Available" URL="b.pdf">
+      <Container>
+        <FileSpecRef rRef="ID_005_ZIPS">
+          <Part PartVersion="German"/>
+        </FileSpecRef>
+      </Container>
+    </FileSpec>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+  <ResourceLinkPool>
+    <FileSpecLink Usage="Input" rRef="A_ENGLISH_FILE"/>
+    <FileSpecLink Usage="Input" rRef="B_ENGLISH_FILE"/>
+    <FileSpecLink Usage="Input" rRef="A_GERMAN_FILE"/>
+    <FileSpecLink Usage="Input" rRef="B_GERMAN_FILE"/>
+  </ResourceLinkPool>
+</JDF>

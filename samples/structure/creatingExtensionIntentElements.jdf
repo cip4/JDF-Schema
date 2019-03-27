@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:foo="anotherNamespace" Type="Product" Status="Ready" ID="ID_001">
+    <!-- Example Creating Extension Intent Elements -->
+  <!-- START SNIPPET -->
+  <ResourcePool >
+    <foo:BarIntentroduct xmlns:foo="www.foo.com" attrib="myAttrib"/>
+  </ResourcePool>
+  <!-- END SNIPPET -->
+</JDF>

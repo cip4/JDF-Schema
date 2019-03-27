@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF Activation="Active" ID="JDF_c" JobID="Job1" JobPartID="345"
+  Status="Waiting" Type="Product" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <JDF ID="JDF-3" JobPartID="400" Status="Waiting" Type="DigitalPrinting">
+    <ResourceLinkPool>
+      <DigitalPrintingParamsLink Usage="Input" rRef="ID123"/>
+      <RunListLink Usage="Input" rRef="RunList4"/>
+      <ComponentLink Amount="3" Usage="Output" rRef="ID125"/>
+    </ResourceLinkPool>
+    <ResourcePool>
+      <DigitalPrintingParams Class="Parameter" ID="ID123" Status="Available"/>
+    </ResourcePool>
+  </JDF>
+  <ResourceLinkPool>
+    <ComponentLink Amount="3" Usage="Output" rRef="ID125"/>
+  </ResourceLinkPool>
+  <ResourcePool>
+    <Component Class="Quantity" ComponentType="Sheet" ID="ID125" Status="Unavailable"/>
+    <RunList Class="Parameter" ID="RunList4" Status="Available">
+      <LayoutElement ElementType="Document" HasBleeds="false" IsPrintable="true">
+        <FileSpec URL="cid:Asset01@hostname.com" UserFileName="Christmas Cards"/>
+      </LayoutElement>
+    </RunList>
+  </ResourcePool>
+</JDF>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET -->
+<!-- DieLayoutProduction Sample 
+    Date:Sept 2007 Version: 1.00 
+    2 Shapes is repeated on a continuous range of sheet sizes.
+-->
+<JDF DescriptiveName="Single shape versus a set of sheet sizes"
+  ID="n001" Status="Waiting" Type="DieLayoutProduction" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <ShapeDef Class="Parameter" ID="Shape1Up" Status="Available">
+      <FileSpec URL="file://myserver/myshare/beef.dd3"/>
+    </ShapeDef>
+    <ShapeDef Class="Parameter" ID="Shape1Up2" Status="Available">
+      <FileSpec URL="file://myserver/myshare/chicken.dd3"/>
+    </ShapeDef>
+    <!-- Layout can chose sheetsizes between 1200mm-1000mm wide and 
+        1000mm-800mm high. Layout is optimized for an order 
+        quantity of 300k boxes for beef and 700k boxes for chicken. 
+        Gutters are 5mm and cross flute/grain rotation is not allowed. 
+    -->
+    <DieLayoutProductionParams Class="Parameter" ID="LayParam" Status="Available">
+      <ConvertingConfig SheetHeight="2834.64 ~ 2267.72" SheetWidth="3401.57 ~ 2834.64"/>
+      <RepeatDesc AllowedRotate="None" GutterX="14.17" GutterY="14.17" OrderQuantity="300000"/>
+      <RepeatDesc AllowedRotate="None" GutterX="14.17" GutterY="14.17" OrderQuantity="700000"/>
+    </DieLayoutProductionParams>
+    <!-- The layout with minimum waste will be returned as the final 
+        result. -->
+    <DieLayout Class="Parameter" ID="DieLay" Status="Unavailable"/>
+  </ResourcePool>
+  <ResourceLinkPool>
+    <ShapeDefLink Usage="Input" rRef="Shape1Up"/>
+    <ShapeDefLink Usage="Input" rRef="Shape1Up2"/>
+    <DieLayoutProductionParamsLink Usage="Input" rRef="LayParam"/>
+    <DieLayoutLink Usage="Output" rRef="DieLay"/>
+  </ResourceLinkPool>
+</JDF>
+<!-- END SNIPPET -->

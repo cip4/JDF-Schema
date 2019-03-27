@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF Activation="Active" ID="JDF_c" JobID="Job1" JobPartID="345"
+  Status="Waiting" Type="Product" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <Device Class="Implementation" ID="Link0003" Status="Available">
+      <DeviceCap>
+        <ActionPool>
+          <Action ID="MyAction" TestRef="ctcmp">
+            <Loc
+              HelpText="Only select CCITTFaxEncoding for 1 bit documents"
+              Lang="en" ShortValue="Ouch!" Value="CCITTFaxEncoding not supported on grayscale images"/>
+          </Action>
+        </ActionPool>
+        <TestPool>
+          <Test ID="ctcmp">
+            <!-- Can't CCITT compress anything but 1 bit grayscale -->
+            <and>
+              <not>
+                <TestRef rRef="is1bit"/>
+              </not>
+              <EnumerationEvaluation ValueList="CCITTFaxEncode" rRef="cmp"/>
+            </and>
+          </Test>
+          <Test ID="is1bit">
+            <IntegerEvaluation ValueList="1" rRef="btd"/>
+          </Test>
+        </TestPool>
+      </DeviceCap>
+    </Device>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+</JDF>

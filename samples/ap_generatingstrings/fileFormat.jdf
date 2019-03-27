@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" Type="Product" Status="Ready" ID="ID_001">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <RunList Class="Parameter" ID="R1" Status="Available">
+      <LayoutElement>
+        <FileSpec FileFormat="file://myserver.mydomain.com/next/%s/%4.i/m%4.i.pdf" 
+            FileTemplate="JobID,i/100,i%100"/>
+      </LayoutElement>
+    </RunList>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+</JDF>

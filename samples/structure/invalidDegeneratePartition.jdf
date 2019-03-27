@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jdf:JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1/Invalid" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1">
+  <jdf:ResourcePool>
+    <!-- START SNIPPET -->
+    <Component Class="Quantity" ComponentType="Sheet" ID="c12"
+      PartIDKeys="SheetName" SheetName="Sheet 1" Status="Available"/>
+    <Component Class="Quantity" ComponentType="Sheet" ID="c22"
+      PartIDKeys="SheetName" SheetName="Sheet 2" Status="Available"/>
+    <FoldingParams Class="Parameter" ID="fold2" NoOp="true"
+      PartIDKeys="SheetName" Status="Available">
+      <FoldingParams NoOp="false"/>
+    </FoldingParams>
+    <!-- END SNIPPET -->
+  </jdf:ResourcePool>
+</jdf:JDF>

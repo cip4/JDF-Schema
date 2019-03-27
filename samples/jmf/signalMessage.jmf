@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET -->
+<JMF MaxVersion="1.6" SenderID="Press 45"
+  TimeStamp="2005-07-25T12:28:01+02:00" Version="1.6"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Signal ID="s123" Type="Status" xsi:type="SignalStatus">
+    <StatusQuParams JobID="42" JobPartID="66"/>
+    <DeviceInfo DeviceStatus="Setup"/>
+  </Signal>
+</JMF>
+<!-- END SNIPPET -->

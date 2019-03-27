@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="BadScan" JobPartID="ID300" Status="Waiting" Type="Scanning"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <Device Class="Implementation" ID="Link0003" Status="Available">
+      <DeviceCap>
+        <TestPool>
+          <Test ID="PT01">
+            <IsPresentEvaluation>
+              <BasicPreflightTest Name="TrappedKey"/>
+            </IsPresentEvaluation>
+          </Test>
+        </TestPool>
+      </DeviceCap>
+    </Device>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+</JDF>

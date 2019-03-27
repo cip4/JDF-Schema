@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF Activation="Active" ID="JDF_c" JobID="Job1" JobPartID="345"
+  Status="Waiting" Type="Product" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <Device Class="Implementation" ID="Link0003" Status="Available">
+      <DeviceCap>
+        <FeaturePool>
+          <EnumerationState
+            AllowedValueList="Mono ColorTransparency Photo"
+            HasDefault="false" ID="sm" MacroRefs="ScanModeMac"
+            Name="ScanMode" UserDisplay="Display"/>
+        </FeaturePool>
+      </DeviceCap>
+    </Device>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+</JDF>

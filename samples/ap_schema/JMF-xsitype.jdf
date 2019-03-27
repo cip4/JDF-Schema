@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET -->
+<JMF MaxVersion="1.6" SenderID="TestSender"
+  TimeStamp="2003-11-07T12:15:56Z" Version="1.6"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Query ID="Message_001Q" Type="Events" xsi:type="QueryEvents">
+    <NotificationFilter/>
+  </Query>
+  <Response ID="Message_001R" Type="Events" refID="Q001" xsi:type="ResponseEvents">
+    <NotificationDef Classes="Error" Type="Barcode"/>
+  </Response>
+</JMF>
+<!-- END SNIPPET -->

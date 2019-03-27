@@ -1,0 +1,71 @@
+buildscript {
+    // Workaround to generate samples:
+    //      ./gradlew --include-build ../sample-builder clean buildSamples
+    // (where "../sample-builder" points to the code of the sample builder repo)
+    try {
+        def sampleBuilder = gradle.includedBuild('sample-builder')
+        dependencies {
+            for (def module in sampleBuilder.availableModules) {
+                classpath((String) module.left)
+            }
+        }
+    } catch (UnknownDomainObjectException e) {
+        // nothing to do
+    }
+}
+
+plugins {
+    id 'groovy'
+}
+
+configurations.all {
+    resolutionStrategy {
+        failOnVersionConflict()
+        cacheDynamicVersionsFor 30, 'seconds'
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
+
+dependencies {
+    compile localGroovy()
+
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-api', version: '5.3.1'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: '5.3.1'
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.3.1'
+
+    testRuntime group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: '5.3.1'
+
+}
+
+test {
+    useJUnitPlatform()
+    maxParallelForks = Runtime.runtime.availableProcessors()
+}
+
+try {
+    Class.forName('org.cip4.samples.SamplesPlugin');
+    apply plugin: 'org.cip4.samples'
+
+    buildSamples {
+        inputDir = file("samples")
+        outputDir = file("build/generated-samples")
+    }
+
+    buildSamples.dependsOn test
+
+    gitPublish {
+        repoPath = file('../spec')
+        repoUri = 'ssh://git@bitbucket.cip4.org:7999/spec/jdf-specification.git'
+        relativeTargetPath = new File('FrameMaker/generated/examples/jdf')
+        username = project.property('gitUsername')
+        password = project.property('gitPassword')
+    }
+} catch (ClassNotFoundException e) {
+    // void
+}

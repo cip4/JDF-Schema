@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <FileSpec Class="Parameter" Compression="Gzip" ID="F1"
+      MimeType="application/pdf" Status="Available" URL="a.pdf">
+      <Container>
+        <FileSpec MimeType="Gzip" URL="ftp://www.any.com/a.gz"/>
+      </Container>
+    </FileSpec>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+  <ResourceLinkPool>
+    <FileSpecLink Usage="Input" rRef="F1"/>
+  </ResourceLinkPool>
+</JDF>

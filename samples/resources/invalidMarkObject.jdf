@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jdf:JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1/Invalid" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1">
+  <jdf:ResourcePool>
+    <!-- START SNIPPET -->
+    <Layout Class="Parameter" ID="L3"
+      PartIDKeys="SignatureName SheetName Side" Status="Available">
+      <!-- INVALID, this PlacedObject is not in a leaf partition and not used -->
+      <!-- since it is overwritten by <MarkObject Ord="1"> -->
+      <MarkObject CTM="0.0 1.0 -1.0 0.0 176.69 23.62" Ord="0">
+        <RegisterMark Center="0.0 0.0" MarkType="Cross" MarkUsage="PaperPath"/>
+      </MarkObject>
+      <Layout SignatureName="Sig00">
+        <!-- INVALID, this PlacedObject is not in a leaf partition -->
+        <MarkObject CTM="0.0 1.0 -1.0 0.0 176.69 23.62" Ord="1">
+          <RegisterMark Center="0.0 0.0" MarkType="Cross" MarkUsage="PaperPath"/>
+        </MarkObject>
+        <Layout SheetName="Sheet00">
+          <Layout Side="Front">
+            <MarkObject CTM="0.0 1.0 -1.0 0.0 176.69 23.62" Ord="2">
+              <RegisterMark Center="0.0 0.0" MarkType="Arc" MarkUsage="PaperPath"/>
+            </MarkObject>
+            <ContentObject CTM="0.0 1.0 -1.0 0.0 176.69 23.62" Ord="0"/>
+          </Layout>
+        </Layout>
+        <Layout SheetName="Sheet01">
+          <Layout Side="Front">
+            <!-- Not clear whether this is layered over or under <MarkObject Ord="0"> -->
+            <ContentObject CTM="0.0 1.0 -1.0 0.0 176.69 23.62" Ord="0"/>
+          </Layout>
+        </Layout>
+      </Layout>
+    </Layout>
+    <!-- END SNIPPET -->
+  </jdf:ResourcePool>
+</jdf:JDF>

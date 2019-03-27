@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JMF DeviceID="PressSystem" MaxVersion="1.6" SenderID="MIS"
+  TimeStamp="2000-07-25T12:32:48+02:00" Version="1.6"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <Response ID="M1001" Type="SubmitQueueEntry" refID="M170" xsi:type="ResponseSubmitQueueEntry">
+    <!-- START SNIPPET -->
+    <Queue DeviceID="Q12345" Status="Running">
+      <QueueEntry JobID="111" JobPartID="0" Priority="1"
+        QueueEntryID="111-0" Status="Completed"/>
+      <QueueEntry JobID="111" JobPartID="1" Priority="1"
+        QueueEntryID="111-1" Status="Running"/>
+      <QueueEntry JobID="111" JobPartID="2" Priority="1"
+        QueueEntryID="111-2" Status="Waiting"/>
+      <QueueEntry JobID="112" JobPartID="1" Priority="55"
+        QueueEntryID="112-1" Status="Held"/>
+    </Queue>
+    <!-- END SNIPPET -->
+  </Response>
+</JMF>

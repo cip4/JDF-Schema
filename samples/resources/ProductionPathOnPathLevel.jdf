@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="Bundle" JobPartID="ID20" Status="Waiting" Type="Product"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <ProductionPath Class="Parameter" ID="F1"
+      ProductionPathID="ID_2webproduction_64pages" Status="Available"/>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+</JDF>

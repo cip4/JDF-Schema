@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET -->
+<JDF ID="ID1" JobPartID="ID345" Status="Ready" Type="Product"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:foo="fooschema_URI">
+  <!-- ... -->
+  <ResourcePool>
+    <!-- Extending Device Resource ... -->
+    <Device Class="Implementation" ID="SomeID" ModelName="abc"
+      Status="Available" foo:specialname="cba">
+      <!-- ... -->
+      <foo:PrivateStuff type="privatetype"/>
+      <!-- ... -->
+    </Device>
+    <!-- ... -->
+  </ResourcePool>
+</JDF>
+<!-- END SNIPPET -->

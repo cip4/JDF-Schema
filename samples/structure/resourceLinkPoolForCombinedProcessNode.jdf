@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET -->
+<JDF ID="J1" JobPartID="ID200" Status="Waiting" Type="Combined"
+  Types="DigitalPrinting Gathering Stitching" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourceLinkPool>
+    <!-- digital printing input RunList -->
+    <RunListLink CombinedProcessIndex="0" Usage="Input" rRef="L1"/>
+    <!-- digital printing parameters -->
+    <DigitalPrintingParamsLink CombinedProcessIndex="0" Usage="Input" rRef="L2"/>
+    <!-- gathering parameters -->
+    <GatheringParamsLink CombinedProcessIndex="1" Usage="Input" rRef="L3"/>
+    <!-- Stitching parameters -->
+    <StitchingParamsLink CombinedProcessIndex="2" Usage="Input" rRef="L4"/>
+    <!-- input sheets -->
+    <MediaLink CombinedProcessIndex="0" Usage="Input" rRef="L5"/>
+    <!-- stitched output components -->
+    <ComponentLink CombinedProcessIndex="2" Usage="Output" rRef="L6"/>
+  </ResourceLinkPool>
+  <ResourcePool>
+    <RunList Class="Parameter" ID="L1" Status="Available"/>
+    <DigitalPrintingParams Class="Parameter" ID="L2" Status="Available"/>
+    <GatheringParams Class="Parameter" ID="L3" Status="Available"/>
+    <StitchingParams Class="Parameter" ID="L4" Status="Available"/>
+    <Media Class="Consumable" ID="L5" Status="Available"/>
+    <Component Class="Quantity" ComponentType="Sheet" ID="L6" Status="Unavailable"/>
+  </ResourcePool>
+</JDF>
+<!-- END SNIPPET -->

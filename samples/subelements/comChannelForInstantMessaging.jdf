@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <ComChannel ChannelType="InstantMessaging"
+      ChannelTypeDetails="MyIMService" ChannelUsage="Private"
+      Class="Parameter" ID="cc000004" Locator="123456789" Status="Available"/>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+  <ResourceLinkPool>
+    <ComChannelLink Usage="Input" rRef="cc000004"/>
+  </ResourceLinkPool>
+</JDF>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <ExposedMedia Class="Handling" ID="L21" PartIDKeys="Separation" Status="Available">
+      <Media MediaType="Film"/>
+      <ExposedMedia Separation="Cyan">
+        <Media Brand="foo"/>
+      </ExposedMedia>
+      <ExposedMedia Separation="Magenta">
+        <Media Brand="bar" Class="Consumable"/>
+      </ExposedMedia>
+    </ExposedMedia>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+  <ResourceLinkPool>
+    <ExposedMediaLink Usage="Output" rRef="L21"/>
+  </ResourceLinkPool>
+</JDF>

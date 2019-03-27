@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET -->
+<!-- Shape Sample for a label with a cut line 
+    Date: Jan 9, 2005 Version: 1.00 
+    A page with a certain size  -->
+<JDF DescriptiveName="Page sample for shape" ID="n001" JobPartID="ID400"
+  Status="Waiting" Type="LayoutElementProduction" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <LayoutElementProductionParams Class="Parameter" ID="LEPParams" Status="Available">
+      <ShapeDef>
+        <Shape CutPath="..." DDESCutType="101" ShapeType="Path"/>
+      </ShapeDef>
+    </LayoutElementProductionParams>
+    <LayoutElement Class="Parameter" ID="LayElOut"
+      SourceMediaBox="0 0 595.27 822.05"
+      SourceTrimBox="28.34 28.34 566.93 793.71" Status="Unavailable"/>
+  </ResourcePool>
+  <ResourceLinkPool>
+    <LayoutElementProductionParamsLink Usage="Input" rRef="LEPParams"/>
+    <LayoutElementLink Usage="Output" rRef="LayElOut"/>
+  </ResourceLinkPool>
+  <AuditPool>
+    <Created Author="ABC-Corporation" TimeStamp="2006-01-09T09:00:00+01:00"/>
+  </AuditPool>
+</JDF>
+<!-- END SNIPPET -->

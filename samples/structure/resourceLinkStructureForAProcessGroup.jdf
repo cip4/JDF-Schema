@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET -->
+<JDF ID="J1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <!--  the ResourceLink Elements in the ProcessGroup define the Input 
+      Resources that are to be available for the ProcessGroup to be 
+      submitted and the Output Resources that are produced by the ProcessGroup 
+  -->
+  <ResourcePool>
+    <DigitalPrintingParams Class="Parameter" ID="L1" Status="Available"/>
+    <Media Class="Consumable" ID="L2" Status="Available"/>
+    <RunList Class="Parameter" ID="L8" Status="Available"/>
+    <Component Class="Quantity" ComponentType="Sheet" ID="L3" Status="Unavailable"/>
+    <GatheringParams Class="Parameter" ID="L4" Status="Available"/>
+    <Component Class="Quantity" ComponentType="Sheet" ID="L5" Status="Unavailable"/>
+    <StitchingParams Class="Parameter" ID="L6" Status="Available"/>
+    <Component Class="Quantity" ComponentType="Sheet" ID="L7" Status="Unavailable"/>
+  </ResourcePool>
+  <ResourceLinkPool>
+    <!-- print input media -->
+    <MediaLink Usage="Input" rRef="L2"/>
+    <!-- gathered output components -->
+    <ComponentLink Usage="Output" rRef="L7"/>
+  </ResourceLinkPool>
+  <JDF ID="J2" JobPartID="ID301" Status="Waiting" Type="DigitalPrinting">
+    <ResourceLinkPool>
+      <!-- digital printing parameters -->
+      <DigitalPrintingParamsLink Usage="Input" rRef="L1"/>
+      <!-- input sheets -->
+      <MediaLink Usage="Input" rRef="L2"/>
+      <RunListLink Usage="Input" rRef="L8"/>
+      <!-- printed output components -->
+      <ComponentLink Usage="Output" rRef="L3"/>
+    </ResourceLinkPool>
+  </JDF>
+  <JDF ID="J3" JobPartID="ID302" Status="Waiting" Type="Gathering">
+    <ResourceLinkPool>
+      <!-- gathering parameters -->
+      <GatheringParamsLink Usage="Input" rRef="L4"/>
+      <!-- printed output components -->
+      <ComponentLink Usage="Input" rRef="L3"/>
+      <!-- gathered output components -->
+      <ComponentLink Usage="Output" rRef="L5"/>
+    </ResourceLinkPool>
+  </JDF>
+  <JDF ID="J4" JobPartID="ID303" Status="Waiting" Type="Stitching">
+    <ResourceLinkPool>
+      <!-- Stitching parameters -->
+      <StitchingParamsLink Usage="Input" rRef="L6"/>
+      <!-- gathered output components -->
+      <ComponentLink Usage="Input" rRef="L5"/>
+      <!-- stitched output components -->
+      <ComponentLink Usage="Output" rRef="L7"/>
+    </ResourceLinkPool>
+  </JDF>
+</JDF>
+<!-- END SNIPPET -->

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <!-- START SNIPPET -->
+  <ResourcePool>
+    <ExposedMedia Class="Handling" ID="L1" PartIDKeys="Location" Status="Available">
+      <ExposedMedia Amount="42" Location="dd1">
+        <Location LocID="PP_01234" LocationName="Desk Drawer 1"/>
+      </ExposedMedia>
+      <ExposedMedia Amount="100" Location="dd2">
+        <Location LocID="PP_01235" LocationName="Desk Drawer 2"/>
+      </ExposedMedia>
+      <Media/>
+    </ExposedMedia>
+  </ResourcePool>
+  <ResourceLinkPool>
+    <ExposedMediaLink Amount="50" Usage="Input" rRef="L1">
+      <Part Location="dd2"/>
+      <!-- Note that @Location can but need not match 
+        Location/@LocationName 
+      -->
+    </ExposedMediaLink>
+  </ResourceLinkPool>
+  <!-- END SNIPPET -->
+</JDF>

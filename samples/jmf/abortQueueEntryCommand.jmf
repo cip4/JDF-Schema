@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JMF DeviceID="A3 Printer" MaxVersion="1.6" SenderID="MIS master A"
+  TimeStamp="2005-07-25T12:32:48+02:00" Version="1.6"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- START SNIPPET -->
+  <Command ID="M009" Type="AbortQueueEntry" xsi:type="CommandAbortQueueEntry">
+    <QueueEntryDef QueueEntryID="job-0032"/>
+    <QueueFilter>
+      <QueueEntryDef QueueEntryID="job-0032"/>
+    </QueueFilter>
+  </Command>
+  <!-- END SNIPPET -->
+</JMF>

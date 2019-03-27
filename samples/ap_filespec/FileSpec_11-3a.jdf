@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <FileSpec Class="Parameter" ID="ID_005_TAR" MimeType="Tar"
+      Status="Available" URL="ftp://www.any.com/e.tar"/>
+    <FileSpec Class="Parameter" ID="ID_005_ZIP_C"
+      MimeType="application/zip" Status="Available" URL="c.zip">
+      <Container>
+        <FileSpecRef rRef="ID_005_TAR"/>
+      </Container>
+    </FileSpec>
+    <FileSpec Class="Parameter" ID="ID_005_ZIP_D"
+      MimeType="application/zip" Status="Available" URL="d.zip">
+      <Container>
+        <FileSpecRef rRef="ID_005_TAR"/>
+      </Container>
+    </FileSpec>
+    <FileSpec Class="Parameter" Compression="Deflate" ID="ALL_FILES"
+      MimeType="application/pdf" PartIDKeys="PartVersion DocIndex" Status="Available">
+      <!-- English Files -->
+      <FileSpec PartVersion="English">
+        <!-- English File A -->
+        <FileSpec DocIndex="1" URL="a.pdf">
+          <Container>
+            <FileSpecRef rRef="ID_005_ZIP_C"/>
+          </Container>
+        </FileSpec>
+        <!-- English File B -->
+        <FileSpec DocIndex="2" URL="a.pdf">
+          <Container>
+            <FileSpecRef rRef="ID_005_ZIP_D"/>
+          </Container>
+        </FileSpec>
+      </FileSpec>
+      <!-- German Files -->
+      <FileSpec PartVersion="German">
+        <!-- German File A -->
+        <FileSpec DocIndex="1" URL="b.pdf">
+          <Container>
+            <FileSpecRef rRef="ID_005_ZIP_C"/>
+          </Container>
+        </FileSpec>
+        <!-- German File B -->
+        <FileSpec DocIndex="2" URL="b.pdf">
+          <Container>
+            <FileSpecRef rRef="ID_005_ZIP_D"/>
+          </Container>
+        </FileSpec>
+      </FileSpec>
+    </FileSpec>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+  <ResourceLinkPool>
+    <FileSpecLink Usage="Input" rRef="ALL_FILES"/>
+  </ResourceLinkPool>
+</JDF>

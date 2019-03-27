@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="ID" JobPartID="ID34" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <LayoutPreparationParams BindingEdge="Left" Class="Parameter"
+      CreepValue="0 -5" FinishingOrder="FoldCollect" FoldCatalog="F8-7"
+      FoldCatalogOrientation="Flip270" FrontMarkList="CutMark"
+      Gutter="20 20" GutterMinimumLimit="5 5" ID="LPP_2" NumberUp="2 2"
+      PageDistributionScheme="Saddle" Sides="TwoSidedFlipY"
+      Status="Available" StepRepeat="1 1 1"
+      SurfaceContentsBox="0 0 612 792" VerticalCreep="0">
+      <!-- Note: the value of some attributes in LayoutPreparationParams and 
+        subElements relate to symbols in the above Figure: 
+          SurfaceContentsBox="SCBx0 SCBy0 SCBx1 SCBy1"
+          GutterMinimumLimit="hml vml" 
+          CreepValue="0 -vc" 
+          Gutter="hg vg"
+          TrimSize="m n"
+          ShiftFront="SFx SFy"
+      -->
+      <PageCell TrimSize="612 792">
+        <ImageShift PositionX="Spine" PositionY="Center"/>
+      </PageCell>
+      <ImageShift PositionX="Left" PositionY="Bottom" ShiftFront="20 20"/>
+    </LayoutPreparationParams>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+  <ResourceLinkPool>
+    <LayoutPreparationParamsLink Usage="Input" rRef="LPP_2"/>
+  </ResourceLinkPool>
+</JDF>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <Layout BaseOrdReset="PagePoolList" Class="Parameter" ID="L000004"
+      PartIDKeys="SheetName Side" Status="Available">
+      <PageCondition RestrictedContentObjects="1 -1">
+        <!-- 
+        This example assumes that the pages of a sequence of documents of the 
+        RunList are to be treated as an aggregate page pool, and the pages are 
+        to be saddle stitch imposed onto a continuous sequence of sheets. Some 
+        documents of the sequence represent a start of a new chapter where their 
+        DocTag is set to the value 'Chapter'. These chapter starts force the 
+        first page of each chapter to be placed on the right side finished page.
+      -->
+        <Part DocRunIndex="0" DocTags="Chapter"/>
+      </PageCondition>
+      <Layout SheetName="Mysheet">
+        <Layout Side="Front">
+          <ContentObject CTM="1 0 0 1 0 0" Ord="-1"/>
+          <!-- Outside left -->
+          <ContentObject CTM="1 0 0 1 595 0" Ord="0"/>
+          <!-- outside right -->
+        </Layout>
+        <Layout Side="Back">
+          <ContentObject CTM="1 0 0 1 0 0" Ord="1"/>
+          <!-- inside left-->
+          <ContentObject CTM="1 0 0 1 595 0" Ord="-2"/>
+          <!-- inside right-->
+        </Layout>
+      </Layout>
+    </Layout>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+  <ResourceLinkPool>
+    <LayoutLink Usage="Input" rRef="L000004"/>
+  </ResourceLinkPool>
+</JDF>

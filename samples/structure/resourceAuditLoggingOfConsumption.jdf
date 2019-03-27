@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- START SNIPPET -->
+<JDF ID="J1" JobPartID="ID234" Status="Waiting"
+  Type="ConventionalPrinting" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourceLinkPool>
+    <!-- Note that ActualAmount has been added to the ResourceLink -->
+    <MediaLink ActualAmount="421" Amount="400" Usage="Input" rRef="RLink"/>
+    <ConventionalPrintingParamsLink Usage="Input" rRef="R01"/>
+    <ComponentLink Usage="Output" rRef="R02"/>
+  </ResourceLinkPool>
+  <ResourcePool>
+    <Media Amount="400" Class="Consumable" ID="RPrev" Status="Available" Weight="80"/>
+    <!--Copy of the original resource-->
+    <Media Amount="421" Class="Consumable" ID="RLink" Status="Available" Weight="90"/>
+    <ConventionalPrintingParams Class="Parameter" ID="R01" Status="Available"/>
+    <Component Class="Quantity" ComponentType="Sheet" ID="R02" Status="Unavailable"/>
+    <!--modified resource-->
+  </ResourcePool>
+  <AuditPool>
+    <ResourceAudit TimeStamp="2008-08-28T18:20:00Z">
+      <MediaLink ActualAmount="421" Amount="400" Usage="Input" rRef="RLink"/>
+      <MediaLink Amount="400" Usage="Input" rRef="RPrev"/>
+    </ResourceAudit>
+  </AuditPool>
+</JDF>
+<!-- END SNIPPET -->

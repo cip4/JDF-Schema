@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jdf:JDF xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns="http://www.CIP4.org/EncodingExamples" Type="Product" Status="Ready" ID="ID_001">
+    <!-- START SNIPPET -->
+    <Example RectangleRangeList="1 2 3 4 ~ 5 6 7 8 9 10 11 12 13 14 15 16"/>
+    <!-- END SNIPPET -->
+</jdf:JDF>
+

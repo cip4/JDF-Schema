@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jdf:JDF xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns="http://www.CIP4.org/EncodingExamples" Type="Product" Status="Ready" ID="ID_001">
+    <!-- START SNIPPET -->
+    <Example list="-1 ~ -6 3.14 ~ 5.13 7 9 ~ 128 131 255 ~ INF"/>
+    <!-- END SNIPPET -->
+</jdf:JDF>
+

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jdf:JDF xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns="http://www.CIP4.org/EncodingExamples" Type="Product" Status="Ready" ID="ID_001">
+    <!-- START SNIPPET -->
+    <Example Language="de"/> <!-- German -->
+    <Example Language="de-CH"/> <!-- Swiss German -->
+    <Example Language="en"/> <!-- English -->
+    <Example Language="en-GB"/> <!-- British English -->
+    <!-- END SNIPPET -->
+</jdf:JDF>
+

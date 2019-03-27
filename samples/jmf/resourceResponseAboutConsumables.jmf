@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JMF DeviceID="A3 Printer" MaxVersion="1.6" SenderID="MIS master A"
+  TimeStamp="2005-07-25T12:32:48+02:00" Version="1.6"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <!-- START SNIPPET -->
+  <Response ID="M1" Type="Resource" refID="Q1" xsi:type="ResponseResource">
+    <ResourceInfo AvailableAmount="2120" Location="Paper Tray 1">
+      <Media Class="Consumable" ID="ID123" Status="Available">
+        <!-- Media resource defined in JDF -->
+      </Media>
+    </ResourceInfo>
+    <ResourceInfo AvailableAmount="0" Level="Empty" Location="Ink1" Unit="l">
+      <Ink Class="Consumable" ID="ID124" Status="Available">
+        <!-- Ink description resource defined in JDF -->
+      </Ink>
+    </ResourceInfo>
+  </Response>
+  <!-- END SNIPPET -->
+</JMF>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jdf:JDF ID="ID1" JobPartID="ID345" Status="Ready" Type="Product"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1_Illegal"
+  xmlns:HDM="HDM_namespace_URI" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1">
+  <jdf:ResourcePool>
+    <!-- START SNIPPET -->
+    <TrappingParams TrapEndStyle="HDM:FooBar"/>
+    <!-- END SNIPPET -->
+  </jdf:ResourcePool>
+</jdf:JDF>
