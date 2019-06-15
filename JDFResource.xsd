@@ -5808,6 +5808,7 @@
       <xs:appinfo>
         <Version Path="." First="1.1"/>
       	<Version Path="@ModuleIndex" First="1.4"/>
+        <Version Path="Emboss/@Face" First="1.6"/>
         <Version Path="Emboss/IdentifiationField" First="1.4"/>
         <Version Path="Emboss/IdentifiationFieldRef" First="1.4"/>
         <Version Path="Emboss/Media" First="1.4"/>
@@ -5852,6 +5853,7 @@
         <xs:attribute name="EdgeAngle" type="jdftyp:double" use="optional"/>
         <xs:attribute name="EdgeShape" type="jdftyp:eEmbossingEdgeShare" default="Rounded"/>
         <xs:attribute name="EmbossingType" type="jdftyp:eEmbossingType" use="required"/>
+        <xs:attribute name="Face" type="jdftyp:eFace_" use="optional"/>
         <xs:attribute name="Height" type="jdftyp:double" use="optional"/>
         <xs:attribute name="ImageSize" type="jdftyp:XYPair" use="optional"/>
         <xs:attribute name="Level" type="jdftyp:eEmbossingLevel" use="optional"/>
@@ -9143,7 +9145,7 @@
     <xs:attribute name="Application" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="CTM" type="jdftyp:matrix" use="optional"/>
     <xs:attribute name="Offset" type="jdftyp:XYPair" use="optional"/>
-    <xs:attribute name="Position" type="jdftyp:ePosition1_" use="optional"/>
+    <xs:attribute name="Position" type="jdftyp:eFace_" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="LabelingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:LabelingParamsAttribs_c"/>
@@ -19551,6 +19553,7 @@
         <Version Path="EmbossingItem/FoilColorDetails" First="1.4"/>
         <Version Path="EmbossingItem/@Separation" First="1.6"/>
         <Version Path="EmbossingItem/@ToolName" First="1.6"/>
+        <Version Path="EmbossingItem/@Location" First="1.6"/>
         <Constraint Path="EmbossingItem" minOccurs="1" maxOccurs="unbounded"/>
         <Constraint Path="EmbossingItem/Direction" minOccurs="1" maxOccurs="1"/>
         <Constraint Path="EmbossingItem/EdgeAngle" minOccurs="0" maxOccurs="1"/>
@@ -19590,6 +19593,7 @@
           <xs:element name="Level" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="Position" type="jdf:XYPairSpan" minOccurs="0"/>
         </xs:sequence>
+        <xs:attribute name="Location" type="jdftyp:eFace_" use="optional"/>
         <xs:attribute name="Separation" type="jdftyp:string" use="optional"/>
         <xs:attribute name="ToolName" type="jdftyp:NMTOKEN" use="optional"/>
       </xs:extension>

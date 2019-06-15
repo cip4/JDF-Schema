@@ -1556,6 +1556,16 @@
 			<xs:enumeration value="Page"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="eFace_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Top"/>
+			<xs:enumeration value="Bottom"/>
+			<xs:enumeration value="Left"/>
+			<xs:enumeration value="Right"/>
+			<xs:enumeration value="Front"/>
+			<xs:enumeration value="Back"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="eFeederSynchronization_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Alternate"/>
@@ -2666,16 +2676,6 @@
 			<xs:enumeration value="Front"/>
 			<xs:enumeration value="Back"/>
 			<xs:enumeration value="Any"/>
-		</xs:restriction>
-	</xs:simpleType>
-	<xs:simpleType name="ePosition1_">
-		<xs:restriction base="jdftyp:EnumerationBaseType">
-			<xs:enumeration value="Top"/>
-			<xs:enumeration value="Bottom"/>
-			<xs:enumeration value="Left"/>
-			<xs:enumeration value="Right"/>
-			<xs:enumeration value="Front"/>
-			<xs:enumeration value="Back"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="ePositionPolicy_">
