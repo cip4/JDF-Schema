@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--	The CIP4 Software License, Version 1.0
 	
+	JDF 1.6 compatible version
 	
 	Copyright (c) 2001-2019 The International Cooperation for the Integration of 
 	Processes in Prepress, Press and Postpress (CIP4). All rights reserved.
@@ -60,8 +61,8 @@
 	
 -->
 <!--JDF specification V 1.5-->
-<xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_5_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.5-001">
-	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_5_Types" schemaLocation="JDFTypes.xsd"/>
+<xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_6_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.6-001">
+	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_6_Types" schemaLocation="JDFTypes.xsd"/>
 	<xs:include schemaLocation="JDFCore.xsd"/>
 	<xs:complexType name="QueryNotification" mixed="false">
 		<xs:annotation>
