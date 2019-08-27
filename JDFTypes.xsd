@@ -60,7 +60,7 @@
 	
 -->
 <!--JDF specification V 1.5-->
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_5_Types" targetNamespace="http://www.CIP4.org/JDFSchema_1_5_Types" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.5-001">
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_7_Types" targetNamespace="http://www.CIP4.org/JDFSchema_1_7_Types" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.7-001">
 	<!--Simple Type Declarations-->
 	<xs:simpleType name="boolean">
 		<xs:restriction base="xs:boolean">
