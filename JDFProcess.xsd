@@ -64,7 +64,7 @@
 	Processes in Prepress, Press and Postpress , please see &lt;http://www.cip4.org/&gt;.
 	
  -->
-<xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_5_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.7-001">
+<xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_7_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.7-001">
 	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_7_Types" schemaLocation="JDFTypes.xsd"/>
 	<xs:include schemaLocation="JDFResource.xsd"/>
 	<xs:group name="ProcessInputResources_">

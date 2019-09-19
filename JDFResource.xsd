@@ -43,7 +43,7 @@
 <xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_7_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema"
   targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.7-001"
 >
-  <xs:import namespace="http://www.CIP4.org/JDFSchema_1_5_Types" schemaLocation="JDFTypes.xsd"/>
+  <xs:import namespace="http://www.CIP4.org/JDFSchema_1_7_Types" schemaLocation="JDFTypes.xsd"/>
   <xs:include schemaLocation="JDFCore.xsd"/>
   <xs:include schemaLocation="JDFCapability.xsd"/>
   <xs:element name="Resource" type="jdf:Resources" abstract="true">
