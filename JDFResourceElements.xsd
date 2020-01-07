@@ -113,6 +113,7 @@
 	<xs:complexType name="ConvertingConfig_re" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="CustBlock" First="1.7"/>
 				<Version Path="." First="1.4"/>
 				<Version Path="Media" First="1.5"/>
 				<Version Path="MediaRef" First="1.5"/>
@@ -127,6 +128,7 @@
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+					<xs:element name="CutBlock" type="jdf:CutBlock_re" minOccurs="0" />
 					<xs:element name="Device" type="jdf:Device_re" minOccurs="0"/>
 					<xs:element ref="jdf:DeviceRef" minOccurs="0"/>
 					<xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>

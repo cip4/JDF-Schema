@@ -3772,6 +3772,7 @@
       <xs:appinfo>
         <Version Path="@AssemblyIDs" First="1.3"/>
         <Version Path="@CutWidth" First="1.4"/>
+        <Version Path="@Operations" First="1.7"/>
         <Version Path="Assembly" First="1.3"/>
         <Version Path="AssemblyRef" First="1.3"/>
         <Constraint Path="Assembly" minOccurs="0" maxOccurs="1"/>
@@ -3783,9 +3784,10 @@
   <xs:element name="CutBlockLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="CutBlockAttribs_c">
     <xs:attribute name="AssemblyIDs" type="jdftyp:NMTOKENS" use="optional"/>
-    <xs:attribute name="CutWidth" type="jdftyp:double" use="optional"/>
     <xs:attribute name="BlockElementSize" type="jdftyp:XYPair" use="optional"/>
     <xs:attribute name="BlockElementType" type="jdftyp:eBlockElementType_" use="optional"/>
+    <xs:attribute name="CutWidth" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="Operations" type="jdftyp:NMTOKENS" use="optional" />
   </xs:attributeGroup>
   <xs:attributeGroup name="CutBlockAttribs_u">
     <xs:attributeGroup ref="jdf:CutBlockAttribs_c"/>
@@ -15750,6 +15752,7 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.5"/>
+        <Version Path="GangElement/@Operations" First="1.7"/>
         <Constraint Path="ConvertingConfig" minOccurs="1" maxOccurs="unbounded"/>
         <Constraint Path="GangElement" minOccurs="1" maxOccurs="unbounded"/>
         <Constraint Path="GangElement/SeparationListBack" minOccurs="0" maxOccurs="1"/>
@@ -15800,6 +15803,7 @@
 		<xs:attribute name="NumColors" type="jdftyp:XYPair" use="optional"/>
 		<xs:attribute name="NumberUp" type="jdftyp:XYPair" use="optional"/>
 		<xs:attribute name="OneSheet" type="jdftyp:NMTOKEN" use="optional"/>
+		<xs:attribute name="Operations" type="jdftyp:NMTOKENS" use="optional"/>
 		<xs:attribute name="OrderQuantity" type="jdftyp:Integer" use="required"/>
 		<xs:attribute name="PageDimension" type="jdftyp:XYPair" use="optional"/>
 		<xs:attribute name="Priority" type="jdftyp:Integer" use="optional"/>
