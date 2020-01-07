@@ -16545,6 +16545,7 @@
         <Version Path="@StackDepth" First="1.4"/>
         <Version Path="ExternalImpositionTemplate" First="1.3"/>
         <Version Path="ExternalImpositionTemplateRef" First="1.3"/>
+        <Version Path="FitPolicy" First="1.7"/>
         <Version Path="StripMark" First="1.3"/>
         <Version Path="StripMark/@AbsoluteHeight" First="1.4"/>
         <Version Path="StripMark/@AbsoluteWidth" First="1.4"/>
@@ -16628,12 +16629,14 @@
         <Version Path="@Mask" First="1.3"/>
         <Version Path="@MaskBleed" First="1.3"/>
         <Version Path="@MaskSeparation" First="1.3"/>
+        <Version Path="FitPolicy" First="1.7"/>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="BleedFace" type="jdftyp:double" use="optional"/>
         <xs:attribute name="BleedSpine" type="jdftyp:double" use="optional"/>
@@ -16709,6 +16712,7 @@
           <xs:element ref="jdf:DeviceRef" minOccurs="0"/>
           <xs:element name="ExternalImpositionTemplate" type="jdf:ExternalImpositionTemplate_re" minOccurs="0"/>
           <xs:element ref="jdf:ExternalImpositionTemplateRef" minOccurs="0"/>
+          <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
           <xs:element name="Position" type="jdf:StrippingParams_Position_lr" minOccurs="0"/>
@@ -16733,6 +16737,7 @@
           <xs:element ref="jdf:DeviceRef" minOccurs="0"/>
           <xs:element name="ExternalImpositionTemplate" type="jdf:ExternalImpositionTemplate_re" minOccurs="0"/>
           <xs:element ref="jdf:ExternalImpositionTemplateRef" minOccurs="0"/>
+          <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
           <xs:element ref="jdf:MediaRef" minOccurs="0"/>
           <xs:element name="Position" type="jdf:StrippingParams_Position_lr" minOccurs="0"/>
@@ -16756,6 +16761,7 @@
             <xs:element ref="jdf:DeviceRef" minOccurs="0"/>
             <xs:element name="ExternalImpositionTemplate" type="jdf:ExternalImpositionTemplate_re" minOccurs="0"/>
             <xs:element ref="jdf:ExternalImpositionTemplateRef" minOccurs="0"/>
+            <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0"/>
             <xs:element name="Media" type="jdf:Media_re" minOccurs="0"/>
             <xs:element ref="jdf:MediaRef" minOccurs="0"/>
             <xs:element name="Position" type="jdf:StrippingParams_Position_lr" minOccurs="0"/>
