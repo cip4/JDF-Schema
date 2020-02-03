@@ -8387,6 +8387,7 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="@ColorName" Last="1.3"/>
+      	<Version Path="Certification" First="1.7"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -8412,6 +8413,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:group ref="jdf:PhysicalResourceSubElements" minOccurs="0"/>
+          <xs:element name="Certification" type="jdf:Certification_re" minOccurs="0"/>
           <xs:element name="InkUpdate" type="jdf:Ink_re" minOccurs="0"/>
           <xs:element name="Ink" type="jdf:Ink_rp" minOccurs="0"/>
         </xs:sequence>
@@ -10860,7 +10862,7 @@
         <Version Path="@Color" First="1.6"/>
         <Version Path="@ColorDetails" First="1.6"/>
         <Version Path="@TypeDetails" First="1.6"/>
-        <Version Path="IdentificationField" First="1.6"/>
+      	<Version Path="Certification" First="1.7"/>
        </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -10885,6 +10887,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:group ref="jdf:PhysicalResourceSubElements" minOccurs="0"/>
+          <xs:element name="Certification" type="jdf:Certification_re" minOccurs="0"/>
           <xs:element name="MiscConsumableUpdate" type="jdf:MiscConsumable_re" minOccurs="0"/>
           <xs:element name="MiscConsumable" type="jdf:MiscConsumable_rp" minOccurs="0"/>
         </xs:sequence>
@@ -19216,6 +19219,7 @@
   <xs:element name="ColorIntent" type="jdf:ColorIntent_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
+      	<Version Path="Certification" First="1.7"/>
         <Version Path="ColorICCStandard" First="1.2"/>
         <Version Path="InkManufacturer" Last="1.1"/>
         <Version Path="ColorPool" First="1.1"/>
@@ -19250,6 +19254,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="Certification" type="jdf:Certification_re" minOccurs="0"/>
           <xs:element name="Coatings" type="jdf:StringSpan" minOccurs="0"/>
           <xs:element name="ColorStandard" type="jdf:NameSpan" minOccurs="0"/>
           <xs:element name="ColorICCStandard" type="jdf:StringSpan" minOccurs="0"/>
@@ -20428,6 +20433,7 @@
   <xs:element name="ProductionIntent" type="jdf:ProductionIntent_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
+      	<Version Path="Certification" First="1.7"/>
         <Constraint Path="PrintPreference" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="PrintProcess" minOccurs="0" maxOccurs="1"/>
       </xs:appinfo>
@@ -20447,6 +20453,7 @@
       <xs:extension base="jdf:IntentResource">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:element name="Certification" type="jdf:Certification_re" minOccurs="0"/>
           <xs:element name="PrintPreference" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="PrintProcess" type="jdf:NameSpan" minOccurs="0"/>
           <xs:element ref="jdf:Resource" minOccurs="0"/>
