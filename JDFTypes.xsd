@@ -3581,8 +3581,10 @@
 	</xs:simpleType>
 	<xs:simpleType name="eValueUsage_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
-			<xs:enumeration value="Present"/>
 			<xs:enumeration value="Allowed"/>
+			<xs:enumeration value="Estimate"/>
+			<xs:enumeration value="Job"/>
+			<xs:enumeration value="Present"/>
 		</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eVerticalFitPolicy_">
