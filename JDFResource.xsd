@@ -10576,6 +10576,7 @@
         <Version Path="@BackBrightness" First="1.5"/>
         <Version Path="@BackCoatingDetail" First="1.4"/>
         <Version Path="@BackGlossValue" First="1.2"/>
+        <Version Path="@BackSpectrum" First="1.7"/>
         <Version Path="@CIETint" First="1.2"/>
         <Version Path="@CIEWhiteness" First="1.2"/>
         <Version Path="@ColorName" First="1.1" Last="1.1"/>
@@ -10603,6 +10604,7 @@
         <Version Path="@ReliefThickness" First="1.4"/>
         <Version Path="@ShrinkIndex" First="1.1"/>
         <Version Path="@SleeveInterlock" First="1.4"/>
+        <Version Path="@Spectrum" First="1.7"/>
         <Version Path="@StockType" First="1.1"/>
         <Version Path="@Texture" First="1.1"/>
         <Version Path="@UserMediaType" Last="1.0"/>
@@ -10635,6 +10637,7 @@
     <xs:attribute name="BackCoatingDetail" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="BackCoatings" type="jdftyp:eCoatings_" use="optional"/>
     <xs:attribute name="BackGlossValue" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="BackSpectrum" type="jdftyp:double" use="optional"/>
     <xs:attribute name="Brightness" type="jdftyp:double" use="optional"/>
     <xs:attribute name="CIETint" type="jdftyp:double" use="optional"/>
     <xs:attribute name="CIEWhiteness" type="jdftyp:double" use="optional"/>
@@ -10673,6 +10676,7 @@
     <xs:attribute name="RollDiameter" type="jdftyp:double" use="optional"/>
     <xs:attribute name="ShrinkIndex" type="jdftyp:XYPair" use="optional"/>
     <xs:attribute name="SleeveInterlock" type="jdftyp:NMTOKEN" use="optional"/>
+	<xs:attribute name="Spectrum" type="jdftyp:double" use="optional"/>
     <xs:attribute name="StockType" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="Texture" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="Thickness" type="jdftyp:double" use="optional"/>
