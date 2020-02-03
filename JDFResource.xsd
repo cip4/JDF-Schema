@@ -14041,10 +14041,22 @@
   <xs:element name="QualityControlResultLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="QualityControlResultAttribs_c">
     <xs:attribute name="Failed" type="jdftyp:Integer" use="optional"/>
+    <xs:attribute name="MeasurementUsage" use="optional">
+    	<xs:simpleType>
+    		<xs:list>
+    			<xs:simpleType>
+    				<xs:restriction base="xs:string">
+    					<xs:enumeration value="Master"/>
+    					<xs:enumeration value="Standard"/>
+    				</xs:restriction>
+    			</xs:simpleType>
+    		</xs:list>
+    	</xs:simpleType>
+    </xs:attribute>
     <xs:attribute name="Passed" type="jdftyp:Integer" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="QualityControlResultAttribs_u">
-    <xs:attributeGroup ref="jdf:QualityControlResultAttribs_c"/>
+  <xs:attributeGroup ref="jdf:QualityControlResultAttribs_c"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="QualityControlResultAttribs_r">
     <xs:attributeGroup ref="jdf:QualityControlResultAttribs_c"/>
@@ -14123,6 +14135,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="RasterReadingParams" type="jdf:RasterReadingParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
