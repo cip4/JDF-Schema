@@ -143,7 +143,13 @@
   <xs:attributeGroup name="AddressAttribs_c">
     <xs:attribute name="City" type="jdftyp:string" use="optional"/>
     <xs:attribute name="Country" type="jdftyp:string" use="optional"/>
-    <xs:attribute name="CountryCode" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="CountryCode" use="optional">
+    	<xs:simpleType>
+    		<xs:restriction base="xs:NMTOKEN">
+    			<xs:pattern value="[A-Z][A-Z]"/>
+    		</xs:restriction>
+    	</xs:simpleType>
+    </xs:attribute>
     <xs:attribute name="PostBox" type="jdftyp:string" use="optional"/>
     <xs:attribute name="PostalCode" type="jdftyp:string" use="optional"/>
     <xs:attribute name="Region" type="jdftyp:string" use="optional"/>
