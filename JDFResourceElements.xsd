@@ -46,7 +46,30 @@
 	elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.7-001">
 	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_7_Types" schemaLocation="JDFTypes.xsd"/>
 	<xs:include schemaLocation="JDFCore.xsd"/>
-
+	
+	<xs:attributeGroup name="ColorMeasurement_c">
+	</xs:attributeGroup>
+	<xs:attributeGroup name="ColorMeasurement_r">
+		<xs:attributeGroup ref="jdf:ColorMeasurement_c"/>
+	</xs:attributeGroup>
+	<xs:complexType name="ColorMeasurement_re" mixed="false">
+		<xs:annotation>
+			<xs:appinfo>
+				<Constraint Path="ColorControlStrip" minOccurs="0" maxOccurs="1"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ResourceElement">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+					<xs:element name="ColorControlStrip" type="jdf:ColorControlStrip_re" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="jdf:ColorMeasurement_r"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	
 	<xs:attributeGroup name="ColorSpaceConversionOpAttribs_c">
 		<xs:attribute name="IgnoreEmbeddedICC" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="ObjectTags" type="jdftyp:NMTOKENS" use="optional"/>
