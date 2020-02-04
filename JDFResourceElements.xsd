@@ -316,6 +316,27 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+	
+	<xs:attributeGroup name="EventAttribs_c">
+		<xs:attribute name="EventID" type="jdftyp:NMTOKEN" use="required"/>
+		<xs:attribute name="EventValue" type="jdftyp:string" use="optional"/>
+	</xs:attributeGroup>
+	<xs:complexType name="Event_re" mixed="false">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="." First="1.7"/>
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:complexContent mixed="false">
+			<xs:extension base="jdf:ResourceElement">
+				<xs:sequence minOccurs="0" maxOccurs="unbounded">
+					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
+					<xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+				</xs:sequence>
+				<xs:attributeGroup ref="jdf:EventAttribs_c"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
 
 	<xs:attributeGroup name="GangSourceAttribs_c">
 		<xs:attribute name="AssemblyID" type="jdftyp:NMTOKEN" use="optional"/>

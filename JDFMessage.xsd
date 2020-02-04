@@ -1811,12 +1811,44 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="ResourceInfo_m" mixed="false">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="@ActualAmount" First="1.2"/>
+				<Version Path="@CommandResult" First="1.4"/>
+				<Version Path="@DeviceID" First="1.5"/>
+				<Version Path="@LotControlled" First="1.4"/>
+				<Version Path="@ModuleID" First="1.3"/>
+				<Version Path="@ModuleIndex" First="1.3"/>
+				<Version Path="@Orientation" First="1.5"/>
+				<Version Path="@ProductID" First="1.2"/>
+				<Version Path="@ResourceID" First="1.3"/>
+				<Version Path="@Scope" First="1.5"/>
+				<Version Path="@Speed" First="1.6"/>
+				<Version Path="@Status" First="1.2"/>
+				<Version Path="@TotalAmount" First="1.6"/>
+				<Version Path="@Transformation" First="1.6"/>
+				<Version Path="@Usage" First="1.3"/>
+				<Version Path="AmountPool" First="1.3"/>
+				<Version Path="Event" First="1.7"/>
+				<Version Path="Lot" First="1.4"/>
+				<Version Path="MISDetails" First="1.2"/>
+				<Version Path="Part" First="1.4"/>
+				<Constraint Path="AmountPool" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="CostCenter" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="Event" minOccurs="0" maxOccurs="unbounded"/>
+				<Constraint Path="Lot" minOccurs="0" maxOccurs="unbounded"/>
+				<Constraint Path="MISDetails" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="Part" minOccurs="0" maxOccurs="unbounded"/>
+				<Constraint Path="Resource" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:appinfo>
+		</xs:annotation>
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:ResponseTypeObj_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:element name="AmountPool" type="jdf:ResourceLink_AmountPool_l" minOccurs="0"/>
 					<xs:element name="CostCenter" type="jdf:CostCenter_re" minOccurs="0"/>
+					<xs:element name="Event" type="jdf:Event_re" minOccurs="0"/>
 					<xs:element name="Lot" type="jdf:Lot" minOccurs="0"/>
 					<xs:element name="MISDetails" type="jdf:MISDetails_re" minOccurs="0"/>
 					<xs:element name="Part" type="jdf:Part" minOccurs="0"/>
@@ -2146,10 +2178,12 @@
 				<Version Path="@DeviceOperationMode" First="1.2"/>
 				<Version Path="@IdleStartTime" First="1.4"/>
 				<Version Path="Activity" First="1.5"/>
+				<Version Path="Event" First="1.7"/>
 				<Version Path="ModuleStatus/Employee" Last="1.4"/>
 				<Constraint Path="Activity" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="Device" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Employee" minOccurs="0" maxOccurs="unbounded"/>
+				<Constraint Path="Event" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="JobPhase" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="ModuleStatus" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="ModuleStatus/Employee" minOccurs="0" maxOccurs="unbounded"/>
@@ -2211,6 +2245,7 @@
 					<xs:element name="Activity" type="jdf:PhaseTimeAudit_Activity" minOccurs="0"/>
 					<xs:element name="Device" type="jdf:Device_re" minOccurs="0"/>
 					<xs:element name="Employee" type="jdf:Employee_re" minOccurs="0"/>
+					<xs:element name="Event" type="jdf:Event_re" minOccurs="0"/>
 					<xs:element ref="jdf:JobPhase" minOccurs="0"/>
 					<xs:element name="ModuleStatus" type="jdf:DeviceInfo_ModuleStatus_" minOccurs="0"/>
 				</xs:sequence>
@@ -2224,9 +2259,11 @@
 				<Version Path="@DeviceCondition" First="1.2"/>
 				<Version Path="@DeviceOperationMode" First="1.2"/>
 				<Version Path="Activity" First="1.5"/>
+				<Version Path="Event" First="1.7"/>
 				<Version Path="ModuleStatus/Employee" Last="1.4"/>
 				<Constraint Path="Device" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="Employee" minOccurs="0" maxOccurs="unbounded"/>
+				<Constraint Path="Event" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="JobPhase" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="ModuleStatus" minOccurs="0" maxOccurs="unbounded"/>
 				<Constraint Path="ModuleStatus/Employee" minOccurs="0" maxOccurs="unbounded"/>
@@ -2239,6 +2276,7 @@
 					<xs:element name="Activity" type="jdf:PhaseTimeAudit_Activity" minOccurs="0" maxOccurs="unbounded"/>
 					<xs:element name="Device" type="jdf:Device_re" minOccurs="0"/>
 					<xs:element name="Employee" type="jdf:Employee_re" minOccurs="0"/>
+					<xs:element name="Event" type="jdf:Event_re" minOccurs="0"/>
 					<xs:element ref="jdf:JobPhase" minOccurs="0"/>
 					<xs:element name="ModuleStatus" type="jdf:DeviceInfo_ModuleStatus_" minOccurs="0"/>
 				</xs:sequence>
