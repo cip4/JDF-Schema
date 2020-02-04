@@ -5196,8 +5196,8 @@
         <Version Path="CutLines" First="1.6"/>
         <Constraint Path="Device" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="DeviceRef" minOccurs="0" maxOccurs="unbounded"/>
-        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="Media" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="MediaRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="CutLines" minOccurs="0" maxOccurs="1"/>
