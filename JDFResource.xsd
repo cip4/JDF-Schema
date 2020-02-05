@@ -556,6 +556,7 @@
         <Version Path="@AssemblyID" Last="1.2"/>
         <Version Path="@AssemblyIDs" First="1.3"/>
         <Version Path="@CommonFolds" First="1.7"/>
+        <Version Path="@Order" Last="1.4"/>
         <Version Path="PageAssignedList" First="1.3"/>
       </xs:appinfo>
     </xs:annotation>
