@@ -269,78 +269,79 @@
 		<xs:attribute name="PipePartIDKeys" type="jdftyp:ePartitionKeysList_" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="PartitionKeysAttribs">
-		<xs:attribute name="BinderySignatureName" type="jdftyp:pBinderySignatureName" use="optional"/>
-		<xs:attribute name="BinderySignaturePaginationIndex" type="jdftyp:pBinderySignaturePaginationIndex" use="optional"/>
-		<xs:attribute name="BlockName" type="jdftyp:pBlockName" use="optional"/>
-		<xs:attribute name="BundleItemIndex" type="jdftyp:pBundleItemIndex" use="optional"/>
-		<xs:attribute name="CellIndex" type="jdftyp:pCellIndex" use="optional"/>
-		<xs:attribute name="Condition" type="jdftyp:pCondition" use="optional"/>
-		<xs:attribute name="DeliveryUnit0" type="jdftyp:pDeliveryUnit" use="optional"/>
-		<xs:attribute name="DeliveryUnit1" type="jdftyp:pDeliveryUnit" use="optional"/>
-		<xs:attribute name="DeliveryUnit2" type="jdftyp:pDeliveryUnit" use="optional"/>
-		<xs:attribute name="DeliveryUnit3" type="jdftyp:pDeliveryUnit" use="optional"/>
-		<xs:attribute name="DeliveryUnit4" type="jdftyp:pDeliveryUnit" use="optional"/>
-		<xs:attribute name="DeliveryUnit5" type="jdftyp:pDeliveryUnit" use="optional"/>
-		<xs:attribute name="DeliveryUnit6" type="jdftyp:pDeliveryUnit" use="optional"/>
-		<xs:attribute name="DeliveryUnit7" type="jdftyp:pDeliveryUnit" use="optional"/>
-		<xs:attribute name="DeliveryUnit8" type="jdftyp:pDeliveryUnit" use="optional"/>
-		<xs:attribute name="DeliveryUnit9" type="jdftyp:pDeliveryUnit" use="optional"/>
-		<xs:attribute name="DocCopies" type="jdftyp:pDocCopies" use="optional"/>
-		<xs:attribute name="DocIndex" type="jdftyp:pDocIndex" use="optional"/>
-		<xs:attribute name="DocRunIndex" type="jdftyp:pDocRunIndex" use="optional"/>
-		<xs:attribute name="DocSheetIndex" type="jdftyp:pDocSheetIndex" use="optional"/>
-		<xs:attribute name="DocTags" type="jdftyp:pDocTags" use="optional"/>
-		<xs:attribute name="Edition" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="EditionVersion" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="FountainNumber" type="jdftyp:pFountainNumber" use="optional"/>
-		<xs:attribute name="ItemNames" type="jdftyp:pItemNames" use="optional"/>
-		<xs:attribute name="LayerIDs" type="jdftyp:pLayerIDs" use="optional"/>
-		<xs:attribute name="Location" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="LotID" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="Metadata0" type="jdftyp:NameRangeList" use="optional"/>
-		<xs:attribute name="Metadata1" type="jdftyp:NameRangeList" use="optional"/>
-		<xs:attribute name="Metadata2" type="jdftyp:NameRangeList" use="optional"/>
-		<xs:attribute name="Metadata3" type="jdftyp:NameRangeList" use="optional"/>
-		<xs:attribute name="Metadata4" type="jdftyp:NameRangeList" use="optional"/>
-		<xs:attribute name="Metadata5" type="jdftyp:NameRangeList" use="optional"/>
-		<xs:attribute name="Metadata6" type="jdftyp:NameRangeList" use="optional"/>
-		<xs:attribute name="Metadata7" type="jdftyp:NameRangeList" use="optional"/>
-		<xs:attribute name="Metadata8" type="jdftyp:NameRangeList" use="optional"/>
-		<xs:attribute name="Metadata9" type="jdftyp:NameRangeList" use="optional"/>
-		<xs:attribute name="Option" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="PageNumber" type="jdftyp:pPageNumber" use="optional"/>
-		<xs:attribute name="PageTags" type="jdftyp:pPageTags" use="optional"/>
-		<xs:attribute name="PartVersion" type="jdftyp:NMTOKENS" use="optional"/>
-		<xs:attribute name="PlateLayout" type="jdftyp:pPlateLayout" use="optional"/>
-		<xs:attribute name="PreflightRule" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="PreviewType" type="jdftyp:pPreviewType" use="optional"/>
-		<xs:attribute name="PrintCondition" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="ProductPart" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="RibbonName" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="Run" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="RunIndex" type="jdftyp:pRunIndex" use="optional"/>
-		<xs:attribute name="RunPage" type="jdftyp:pRunPage" use="optional"/>
-		<xs:attribute name="RunPageRange" type="jdftyp:pRunPageRange" use="optional"/>
-		<xs:attribute name="RunSet" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="RunTags" type="jdftyp:pRunTags" use="optional"/>
-		<xs:attribute name="SectionIndex" type="jdftyp:pSectionIndex" use="optional"/>
-		<xs:attribute name="Separation" type="jdftyp:pSeparation" use="optional"/>
-		<xs:attribute name="SetCopies" type="jdftyp:IntegerRangeList" use="optional"/>
-		<xs:attribute name="SetDocIndex" type="jdftyp:pSetDocIndex" use="optional"/>
-		<xs:attribute name="SetRunIndex" type="jdftyp:pSetRunIndex" use="optional"/>
-		<xs:attribute name="SetSheetIndex" type="jdftyp:pSetSheetIndex" use="optional"/>
-		<xs:attribute name="SetTags" type="jdftyp:pSetTags" use="optional"/>
-		<xs:attribute name="SetIndex" type="jdftyp:pSetIndex" use="optional"/>
-		<xs:attribute name="SheetIndex" type="jdftyp:pSheetIndex" use="optional"/>
-		<xs:attribute name="SheetName" type="jdftyp:pSheetName" use="optional"/>
-		<xs:attribute name="Side" type="jdftyp:pSide" use="optional"/>
-		<xs:attribute name="SignatureName" type="jdftyp:pSignatureName" use="optional"/>
-		<xs:attribute name="StationName" type="jdftyp:pStationName" use="optional"/>
-		<xs:attribute name="SubRun" type="jdftyp:pSubRun" use="optional"/>
-		<xs:attribute name="TileID" type="jdftyp:pTileID" use="optional"/>
-		<xs:attribute name="WebName" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="WebProduct" type="jdftyp:NMTOKEN" use="optional"/>
-		<xs:attribute name="WebSetup" type="jdftyp:NMTOKEN" use="optional"/>
+		<xs:attribute name="BinderySignatureName" type="jdftyp:pBinderySignatureName" use="optional" />
+		<xs:attribute name="BinderySignaturePaginationIndex" type="jdftyp:pBinderySignaturePaginationIndex" use="optional" />
+		<xs:attribute name="BlockName" type="jdftyp:pBlockName" use="optional" />
+		<xs:attribute name="BundleItemIndex" type="jdftyp:pBundleItemIndex" use="optional" />
+		<xs:attribute name="CellIndex" type="jdftyp:pCellIndex" use="optional" />
+		<xs:attribute name="Condition" type="jdftyp:pCondition" use="optional" />
+		<xs:attribute name="DeliveryUnit0" type="jdftyp:pDeliveryUnit" use="optional" />
+		<xs:attribute name="DeliveryUnit1" type="jdftyp:pDeliveryUnit" use="optional" />
+		<xs:attribute name="DeliveryUnit2" type="jdftyp:pDeliveryUnit" use="optional" />
+		<xs:attribute name="DeliveryUnit3" type="jdftyp:pDeliveryUnit" use="optional" />
+		<xs:attribute name="DeliveryUnit4" type="jdftyp:pDeliveryUnit" use="optional" />
+		<xs:attribute name="DeliveryUnit5" type="jdftyp:pDeliveryUnit" use="optional" />
+		<xs:attribute name="DeliveryUnit6" type="jdftyp:pDeliveryUnit" use="optional" />
+		<xs:attribute name="DeliveryUnit7" type="jdftyp:pDeliveryUnit" use="optional" />
+		<xs:attribute name="DeliveryUnit8" type="jdftyp:pDeliveryUnit" use="optional" />
+		<xs:attribute name="DeliveryUnit9" type="jdftyp:pDeliveryUnit" use="optional" />
+		<xs:attribute name="DocCopies" type="jdftyp:pDocCopies" use="optional" />
+		<xs:attribute name="DocIndex" type="jdftyp:pDocIndex" use="optional" />
+		<xs:attribute name="DocRunIndex" type="jdftyp:pDocRunIndex" use="optional" />
+		<xs:attribute name="DocSheetIndex" type="jdftyp:pDocSheetIndex" use="optional" />
+		<xs:attribute name="DocTags" type="jdftyp:pDocTags" use="optional" />
+		<xs:attribute name="Edition" type="jdftyp:NMTOKEN" use="optional" />
+		<xs:attribute name="EditionVersion" type="jdftyp:NMTOKEN" use="optional" />
+		<xs:attribute name="FountainNumber" type="jdftyp:pFountainNumber" use="optional" />
+		<xs:attribute name="ItemNames" type="jdftyp:pItemNames" use="optional" />
+		<xs:attribute name="LayerIDs" type="jdftyp:pLayerIDs" use="optional" />
+		<xs:attribute name="Location" type="jdftyp:NMTOKEN" use="optional" />
+		<xs:attribute name="LotID" type="jdftyp:NMTOKEN" use="optional" />
+		<xs:attribute name="Metadata0" type="jdftyp:NameRangeList" use="optional" />
+		<xs:attribute name="Metadata1" type="jdftyp:NameRangeList" use="optional" />
+		<xs:attribute name="Metadata2" type="jdftyp:NameRangeList" use="optional" />
+		<xs:attribute name="Metadata3" type="jdftyp:NameRangeList" use="optional" />
+		<xs:attribute name="Metadata4" type="jdftyp:NameRangeList" use="optional" />
+		<xs:attribute name="Metadata5" type="jdftyp:NameRangeList" use="optional" />
+		<xs:attribute name="Metadata6" type="jdftyp:NameRangeList" use="optional" />
+		<xs:attribute name="Metadata7" type="jdftyp:NameRangeList" use="optional" />
+		<xs:attribute name="Metadata8" type="jdftyp:NameRangeList" use="optional" />
+		<xs:attribute name="Metadata9" type="jdftyp:NameRangeList" use="optional" />
+		<xs:attribute name="Option" type="jdftyp:NMTOKEN" use="optional" />
+		<xs:attribute name="PageNumber" type="jdftyp:pPageNumber" use="optional" />
+		<xs:attribute name="PageTags" type="jdftyp:pPageTags" use="optional" />
+		<xs:attribute name="PartVersion" type="jdftyp:NMTOKENS" use="optional" />
+		<xs:attribute name="PlateLayout" type="jdftyp:pPlateLayout" use="optional" />
+		<xs:attribute name="PreflightRule" type="jdftyp:NMTOKEN" use="optional" />
+		<xs:attribute name="PreviewType" type="jdftyp:pPreviewType" use="optional" />
+		<xs:attribute name="PrintCondition" type="jdftyp:NMTOKEN" use="optional" />
+		<xs:attribute name="Product" type="jdftyp:NMTOKEN" use="optional"/>
+		<xs:attribute name="ProductPart" type="jdftyp:NMTOKEN" use="optional" />
+		<xs:attribute name="RibbonName" type="jdftyp:NMTOKEN" use="optional" />
+		<xs:attribute name="Run" type="jdftyp:NMTOKEN" use="optional" />
+		<xs:attribute name="RunIndex" type="jdftyp:pRunIndex" use="optional" />
+		<xs:attribute name="RunPage" type="jdftyp:pRunPage" use="optional" />
+		<xs:attribute name="RunPageRange" type="jdftyp:pRunPageRange" use="optional" />
+		<xs:attribute name="RunSet" type="jdftyp:NMTOKEN" use="optional" />
+		<xs:attribute name="RunTags" type="jdftyp:pRunTags" use="optional" />
+		<xs:attribute name="SectionIndex" type="jdftyp:pSectionIndex" use="optional" />
+		<xs:attribute name="Separation" type="jdftyp:pSeparation" use="optional" />
+		<xs:attribute name="SetCopies" type="jdftyp:IntegerRangeList" use="optional" />
+		<xs:attribute name="SetDocIndex" type="jdftyp:pSetDocIndex" use="optional" />
+		<xs:attribute name="SetRunIndex" type="jdftyp:pSetRunIndex" use="optional" />
+		<xs:attribute name="SetSheetIndex" type="jdftyp:pSetSheetIndex" use="optional" />
+		<xs:attribute name="SetTags" type="jdftyp:pSetTags" use="optional" />
+		<xs:attribute name="SetIndex" type="jdftyp:pSetIndex" use="optional" />
+		<xs:attribute name="SheetIndex" type="jdftyp:pSheetIndex" use="optional" />
+		<xs:attribute name="SheetName" type="jdftyp:pSheetName" use="optional" />
+		<xs:attribute name="Side" type="jdftyp:pSide" use="optional" />
+		<xs:attribute name="SignatureName" type="jdftyp:pSignatureName" use="optional" />
+		<xs:attribute name="StationName" type="jdftyp:pStationName" use="optional" />
+		<xs:attribute name="SubRun" type="jdftyp:pSubRun" use="optional" />
+		<xs:attribute name="TileID" type="jdftyp:pTileID" use="optional" />
+		<xs:attribute name="WebName" type="jdftyp:NMTOKEN" use="optional" />
+		<xs:attribute name="WebProduct" type="jdftyp:NMTOKEN" use="optional" />
+		<xs:attribute name="WebSetup" type="jdftyp:NMTOKEN" use="optional" />
 	</xs:attributeGroup>
 	<xs:attributeGroup name="PartitionPartAttribs">
 		<xs:attributeGroup ref="jdf:PartitionKeysAttribs"/>
@@ -1236,7 +1237,8 @@
 				<Version Path="@PreflightRule" First="1.2"/>
 				<Version Path="@PrintCondition" First="1.6"/>
 				<Version Path="@PreviewType" First="1.1"/>
-				<Version Path="@ProductPart" First="1.5"/>
+				<Version Path="@Product" First="1.7"/>
+				<Version Path="@ProductPart" First="1.5" Last="1.6"/>
 				<Version Path="@RunPage" First="1.1"/>
 				<Version Path="@RunPageRange" First="1.4"/>
 				<Version Path="@RunSet" First="1.3"/>
