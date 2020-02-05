@@ -16164,7 +16164,10 @@
         <Version Path="@LayerCompression" First="1.4"/>
         <Version Path="@MaxHeight" First="1.4"/>
         <Version Path="@Offset" Last="1.1"/>
+        <Version Path="@OutputBin" First="1.7"/>
         <Version Path="@PreStackAmount" First="1.4"/>
+        <Version Path="@PreStackMethod" First="1.4"/>
+        <Version Path="@StackAmount" First="1.7"/>
         <Version Path="@StackCompression" First="1.4"/>
         <Version Path="Disjointing" First="1.2"/>
         <Version Path="DisjointingRef" First="1.2"/>
@@ -16185,8 +16188,10 @@
     <xs:attribute name="MinAmount" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="MaxWeight" type="jdftyp:double" use="optional"/>
     <xs:attribute name="Offset" type="jdftyp:boolean" use="optional"/>
+    <xs:attribute name="OutputBin" type="jdftyp:NMTOKENS" use="optional"/>
     <xs:attribute name="PreStackAmount" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="PreStackMethod" type="jdftyp:ePreStackMethod_" use="optional"/>
+    <xs:attribute name="StackAmount" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="StackCompression" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="UnderLays" type="jdftyp:IntegerList" use="optional"/>
     <xs:attribute name="StandardAmount" type="jdftyp:Integer" use="optional"/>
