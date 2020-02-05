@@ -9207,7 +9207,7 @@
           <xs:sequence minOccurs="0" maxOccurs="unbounded">
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-  		    <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+            <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
             <xs:element name="LabelingParams" type="jdf:LabelingParams_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
@@ -10335,7 +10335,9 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-          <xs:element name="ShiftPoint" type="jdf:LayoutShift_ShiftPoint_lr" minOccurs="1"/>
+          <xs:element name="ShiftPoint" type="jdf:LayoutShift_ShiftPoint_lr" minOccurs="0"/>
+          <xs:element name="LayoutShiftUpdate" type="jdf:LayoutShift_re" minOccurs="0"/>
+          <xs:element name="LayoutShift" type="jdf:LayoutShift_rp" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:LayoutShiftAttribs_r"/>
       </xs:extension>
@@ -10360,7 +10362,8 @@
           <xs:sequence minOccurs="0" maxOccurs="unbounded">
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
-            <xs:element name="ShiftPoint" type="jdf:LayoutShift_ShiftPoint_lr" minOccurs="1" maxOccurs="unbounded"/>
+            <xs:element name="ShiftPoint" type="jdf:LayoutShift_ShiftPoint_lr" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="LayoutShift" type="jdf:LayoutShift_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
