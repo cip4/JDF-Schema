@@ -1582,6 +1582,8 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="@ChannelMode" First="1.4"/>
+				<Version Path="@ReplaceAfter" First="1.7"/>
+				<Version Path="@ReplaceBefore" First="1.7"/>
 				<Constraint Path="Trigger" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
@@ -1599,6 +1601,8 @@
 				<xs:attribute name="ChannelMode" type="jdftyp:eChannelMode_" default="FireAndForget"/>
 				<xs:attribute name="LastRepeat" type="jdftyp:boolean" default="false"/>
 				<xs:attribute name="refID" type="jdftyp:NMTOKEN" use="optional"/>
+				<xs:attribute name="ReplaceAfter" type="jdftyp:dateTime" use="optional"/>
+				<xs:attribute name="ReplaceBefore" type="jdftyp:dateTime" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
