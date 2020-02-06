@@ -496,6 +496,15 @@
 	<xs:simpleType name="eAcknowledgeTypeList_">
 		<xs:list itemType="jdftyp:eAcknowledgeType_"/>
 	</xs:simpleType>
+  	<xs:simpleType name="eMeasurementUsage_">
+    	<xs:restriction base="xs:string">
+    		<xs:enumeration value="Master"/>
+    		<xs:enumeration value="Standard"/>
+    	</xs:restriction>
+     </xs:simpleType>
+    <xs:simpleType name="eMeasurementUsages_">
+ 		<xs:list itemType="jdftyp:eMeasurementUsage_"/>
+    </xs:simpleType> 
 	<xs:simpleType name="eAction_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="LongFoldLeftToRight"/>
