@@ -8,7 +8,7 @@
   <ResourcePool>
     <LayoutElementProductionParams Class="Parameter" ID="LEPParams" Status="Available">
       <ShapeDef>
-        <Shape CutPath="..." DDESCutType="101" ShapeType="Path"/>
+        <Shape CutPath="0 0 m 10 10 l 20 20 l" DDESCutType="101" ShapeType="Path"/>
       </ShapeDef>
     </LayoutElementProductionParams>
     <LayoutElement Class="Parameter" ID="LayElOut"
