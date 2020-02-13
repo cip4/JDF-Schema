@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
   Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
-  <ResourcePool>&gt;
+  <ResourcePool>
     <!-- START SNIPPET -->
     <RunList Class="Parameter" ID="L3" PartIDKeys="Run" Status="Available">
       <RunList NPage="6" Pages="0 ~ 5" Run="1">
