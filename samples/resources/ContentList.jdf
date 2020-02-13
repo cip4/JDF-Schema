@@ -21,7 +21,7 @@ Writer Java 1.3 BLD 47-->
     </PageList>
     <ContentList Class="Parameter" ID="ContentList" Status="Available">
       <ContentData>
-        <ContentMetadata ISBN10="0123456789" Title="book thing">
+        <ContentMetadata ISBN="0123456789" Title="book thing">
           <Comment ID="c071030_022423109_000005" Name="Abstract">
                         Abstract of the book in english
           </Comment>
