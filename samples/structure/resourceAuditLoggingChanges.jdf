@@ -9,7 +9,7 @@
     <ComponentLink Usage="Output" rRef="R02"/>
   </ResourceLinkPool>
   <ResourcePool>
-    <MediaIntent ID="id" PartIDKeys="Option">
+    <MediaIntent ID="id" PartIDKeys="Option" Status="Complete" Class="Intent">
       <!-- the common MediaIntent resource details -->
       <MediaIntent Option="Option1">
         <Weight DataType="NumberSpan" Preferred="80"/>
@@ -21,7 +21,7 @@
     <Component Class="Quantity" ComponentType="Sheet" ID="R02" Status="Unavailable"/>
   </ResourcePool>
   <AuditPool>
-    <ResourceAudit>
+    <ResourceAudit TimeStamp="2020-01-01T14:42:00">
       <!-- the actual MediaIntent ResourceLink -->
       <MediaIntentLink Usage="Input" rRef="id">
         <Part Option="Option2"/>
