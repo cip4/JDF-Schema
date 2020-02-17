@@ -15,7 +15,7 @@
         <MediaLink Usage="Input" rRef="link001113"/>
       </RemoveLink>
       <MoveResource JobID="100" JobPartID="101" ResourceID="link000004"/>
-      <JDF JobPartID="200" Type="Cutting">
+      <JDF ID="NewJob42" Status="Ready" JobPartID="200" Type="Cutting">
         <AuditPool>
           <Created AgentName="MIS" AgentVersion="1.0" TimeStamp="2005-06-02T09:01:45+01:00"/>
         </AuditPool>

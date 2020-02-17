@@ -2479,6 +2479,10 @@
 		<xs:attribute name="ParentJobID" type="jdftyp:string" use="required"/>
 		<xs:attribute name="ParentJobPartID" type="jdftyp:string" use="required"/>
 	</xs:attributeGroup>
+	<xs:attributeGroup name="UpdateJDFCmdParamsChildAttribs">
+		<xs:attribute name="JobID" type="jdftyp:string" use="required"/>
+		<xs:attribute name="JobPartID" type="jdftyp:string" use="required"/>
+	</xs:attributeGroup>
 	<xs:complexType name="UpdateJDFCmdParams_m" mixed="false">
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:CommandOrQueryTypeObj_">
@@ -2490,7 +2494,7 @@
 								<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 								<xs:element ref="jdf:ResourceLink"/>
 							</xs:sequence>
-							<xs:attributeGroup ref="jdf:UpdateJDFCmdParamsAttribs"/>
+							<xs:attributeGroup ref="jdf:UpdateJDFCmdParamsChildAttribs"/>
 						</xs:complexType>
 					</xs:element>
 					<xs:element name="CreateResource" minOccurs="0">
@@ -2499,7 +2503,7 @@
 								<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 								<xs:element ref="jdf:Resource"/>
 							</xs:sequence>
-							<xs:attributeGroup ref="jdf:UpdateJDFCmdParamsAttribs"/>
+							<xs:attributeGroup ref="jdf:UpdateJDFCmdParamsChildAttribs"/>
 						</xs:complexType>
 					</xs:element>
 					<xs:element name="MoveResource" minOccurs="0">
@@ -2507,7 +2511,7 @@
 							<xs:sequence minOccurs="0" maxOccurs="unbounded">
 								<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 							</xs:sequence>
-							<xs:attributeGroup ref="jdf:UpdateJDFCmdParamsAttribs"/>
+							<xs:attributeGroup ref="jdf:UpdateJDFCmdParamsChildAttribs"/>
 							<xs:attribute name="ResourceID" type="jdftyp:NMTOKEN" use="required"/>
 						</xs:complexType>
 					</xs:element>
@@ -2517,11 +2521,12 @@
 								<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 								<xs:element ref="jdf:ResourceLink"/>
 							</xs:sequence>
-							<xs:attributeGroup ref="jdf:UpdateJDFCmdParamsAttribs"/>
+							<xs:attributeGroup ref="jdf:UpdateJDFCmdParamsChildAttribs"/>
 						</xs:complexType>
 					</xs:element>
 					<xs:element name="JDF" type="jdf:JDFProcessNode" minOccurs="0"/>
 				</xs:sequence>
+				<xs:attributeGroup ref="jdf:UpdateJDFCmdParamsAttribs"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
