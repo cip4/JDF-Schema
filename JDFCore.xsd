@@ -114,7 +114,7 @@
 	</xs:complexType>
 	<xs:complexType name="telem">
 		<xs:simpleContent>
-			<xs:extension base="jdftyp:string"/>
+			<xs:extension base="xs:string"/>
 		</xs:simpleContent>
 	</xs:complexType>
 	<xs:attributeGroup name="ResourceAttribs">
