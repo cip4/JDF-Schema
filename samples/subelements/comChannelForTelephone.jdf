@@ -2,7 +2,7 @@
 <JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
   Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
   <ResourcePool>
-	<Contact Class="Parameter" ID="cc000004" Status="Available">
+	<Contact Class="Parameter" ID="cc000004" Status="Available" ContactTypes="Accounting TelephoneSanitizer">
     <!-- START SNIPPET -->
       <ComChannel ChannelType="Mobile" ChannelUsage="Business" Locator="tel:+44-07808-907-919"/>
     <!-- END SNIPPET -->
