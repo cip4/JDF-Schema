@@ -795,7 +795,7 @@
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 					<xs:element name="Certificate" type="jdf:telem" minOccurs="0"/>
 				</xs:sequence>
-				<xs:attribute name="URL" type="jdftyp:URL" use="optional"/>
+				<xs:attribute name="SecureURL" type="jdftyp:URL" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -867,7 +867,7 @@
 				<xs:attribute name="AuthenticationType" type="jdftyp:eAuthenticationType_"/>
 				<xs:attribute name="Reason" type="jdftyp:eAuthenticationReason_"/>
 				<xs:attribute name="ReasonDetails" type="jdftyp:string" use="optional" />
-				<xs:attribute name="URL" type="jdftyp:URL" />
+				<xs:attribute name="SecureURL" type="jdftyp:URL" />
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
