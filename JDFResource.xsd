@@ -990,7 +990,7 @@
           <xs:element name="BinderySignatureUpdate" type="jdf:BinderySignature_re" minOccurs="0"/>
           <xs:element name="BinderySignature" type="jdf:BinderySignature_rp" minOccurs="0"/>
         </xs:sequence>
-        <xs:attributeGroup ref="jdf:BinderySignatureAttribs_u"/>
+        <xs:attributeGroup ref="jdf:BinderySignatureAttribs_r"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
