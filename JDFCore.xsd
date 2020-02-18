@@ -123,6 +123,7 @@
 		<xs:attribute name="Author" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="CatalogID" type="jdftyp:shortString" use="optional"/>
 		<xs:attribute name="CatalogDetails" type="jdftyp:string" use="optional"/>
+		<xs:attribute name="Expires" type="jdftyp:dateTime" use="optional"/>
 		<xs:attribute name="ID" type="jdftyp:ID" use="required"/>
 		<xs:attribute name="Locked" type="jdftyp:boolean" default="false"/>
 		<xs:attribute name="PartUsage" type="jdftyp:ePartUsage_" default="Explicit"/>
@@ -143,6 +144,7 @@
 		<xs:attribute name="Author" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="CatalogID" type="jdftyp:shortString" use="optional"/>
 		<xs:attribute name="CatalogDetails" type="jdftyp:string" use="optional"/>
+		<xs:attribute name="Expires" type="jdftyp:dateTime" use="optional"/>
 		<xs:attribute name="ID" type="jdftyp:ID" use="optional"/>
 		<xs:attribute name="Locked" type="jdftyp:boolean" use="optional"/>
 		<xs:attribute name="PipeID" type="jdftyp:shortString" use="optional"/>
@@ -224,6 +226,7 @@
 		<xs:attribute name="Author" type="jdftyp:string" use="optional"/>
 		<xs:attribute name="CatalogID" type="jdftyp:shortString" use="optional"/>
 		<xs:attribute name="CatalogDetails" type="jdftyp:string" use="optional"/>
+		<xs:attribute name="Expires" type="jdftyp:dateTime" use="optional"/>
 		<xs:attribute name="Status" type="jdftyp:eResourceStatus_" use="optional"/>
 	</xs:attributeGroup>
 	<xs:attributeGroup name="AuditAttribs">

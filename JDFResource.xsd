@@ -53,12 +53,13 @@
         <Version Path="@Author" First="1.2"/>
         <Version Path="@CatalogID" Last="1.3"/>
         <Version Path="@CatalogDetails" Last="1.3"/>
+        <Version Path="@Expires" First="1.7"/>
         <Version Path="@PartUsage" First="1.1"/>
         <Version Path="@PipeProtocol" First="1.2"/>
         <Version Path="@PipeURL" First="1.2" Last="1.4"/>
         <Version Path="@rRefs" Last="1.1"/>
         <Version Path="@SettingsPolicy" First="1.1"/>
-		<Version Path="@SkipIndex" First="1.5"/>
+        <Version Path="@SkipIndex" First="1.5"/>
         <Version Path="@SpawnIDs" First="1.1"/>
         <Version Path="@UpdateID" First="1.1" Last="1.2"/>
         <Version Path="GeneralID" First="1.3"/>
