@@ -20513,10 +20513,12 @@
         <Version Path="ProofItem/@PageIndex" First="1.1"/>
         <Version Path="ProofItem/ImageStrategy" First="1.2"/>
         <Version Path="ProofItem/@ProofName" First="1.1"/>
+        <version Path="ProofItem/@ProofTarget" Last="1.6"/>
         <Version Path="ProofItem/SeparationSpec" First="1.1"/>
         <Version Path="ProofItem/SeparationSpecRef" First="1.1"/>
         <Version Path="ProofItem/ApprovalParams" First="1.2"/>
         <Version Path="ProofItem/ApprovalParamsRef" First="1.2"/>
+        <Version Path="ProofItem/FileSpec" First="1.7"/>
         <Version Path="PreflightItem" First="1.6"/>
         <Version Path="PreflightItem/@PreflightLevel" First="1.6"/>
         <Constraint Path="ProofItem" minOccurs="0" maxOccurs="unbounded"/>
@@ -20527,10 +20529,10 @@
         <Constraint Path="ProofItem/ImageStrategy" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ProofItem/Technology" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ProofItem/ProofType" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path="ProofItem/SeparationSpec" minOccurs="0" maxOccurs="unbounded"/>
-        <Constraint Path="ProofItem/SeparationSpecRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="ProofItem/ApprovalParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ProofItem/ApprovalParamsRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="ProofItem/FileSpec" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="ProofItem/SeparationSpec" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="PreflightItem" minOccurs="0" maxOccurs="unbounded"/> 
       </xs:appinfo>
     </xs:annotation>
@@ -20557,9 +20559,10 @@
           <xs:element name="ImageStrategy" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="Technology" type="jdf:NameSpan" minOccurs="0"/>
           <xs:element name="ProofType" type="jdf:EnumerationSpan" minOccurs="0"/>
-          <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
           <xs:element name="ApprovalParams" type="jdf:ApprovalParams_re" minOccurs="0"/>
           <xs:element ref="jdf:ApprovalParamsRef" minOccurs="0"/>
+          <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+          <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
         </xs:sequence>
         <xs:attribute name="Contract" type="jdftyp:boolean" default="false"/>
         <xs:attribute name="PageIndex" type="jdftyp:IntegerRangeList" use="optional"/>
