@@ -6356,6 +6356,7 @@
   <xs:element name="FileSpec" type="jdf:FileSpec_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
+        <Version Path="@AppOS" Last="1.5"/>
         <Version Path="@CheckSum" First="1.1"/>
         <Version Path="@Disposition" Last="1.1"/>
         <Version Path="@Encoding" First="1.4"/>
@@ -6363,6 +6364,7 @@
         <Version Path="@FileVersion" First="1.1"/>
         <Version Path="@MimeType" First="1.0"/>
         <Version Path="@MimeTypeVersion" First="1.2"/>
+        <Version Path="@OVersionS" Last="1.5"/>
         <Version Path="@OverwritePolicy" First="1.2"/>
         <Version Path="@Password" First="1.3"/>
         <Version Path="@RequestQuality" First="1.3"/>
@@ -6370,12 +6372,14 @@
         <Version Path="@UID" First="1.1"/>
         <Version Path="@URL" First="1.0"/>
         <Version Path="Container" First="1.2"/>
+        <Version Path="ContainerRef" First="1.2"/>
         <Version Path="Disposition" First="1.2"/>
-        <Version Path="DispositionRef" First="1.2"/>
+        <Version Path="NetworkHeader" First="1.7"/>
         <Constraint Path="Container" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="ContainerRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="Disposition" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path="DispositionRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="FileAlias" minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="NetworkHeader" minOccurs="0" maxOccurs="unbounded"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -6461,6 +6465,21 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="FileSpec_NetworkHeader_lr" mixed="false">
+    <xs:annotation>
+      <xs:appinfo>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:BaseElement_">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="Name" type="jdftyp:string" use="required"/>
+        <xs:attribute name="Value" type="jdftyp:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:complexType name="FileSpec_r" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:ParameterResource">
@@ -6470,6 +6489,7 @@
           <xs:element name="Container" type="jdf:FileSpec_Container_lr" minOccurs="0"/>
           <xs:element name="Disposition" type="jdf:Disposition_re" minOccurs="0"/>
           <xs:element name="FileAlias" type="jdf:FileSpec_FileAlias_lr" minOccurs="0"/>
+          <xs:element name="NetworkHeader" type="jdf:FileSpec_NetworkHeader_lr" minOccurs="0"/>
           <xs:element name="FileSpecUpdate" type="jdf:FileSpec_re" minOccurs="0"/>
           <xs:element name="FileSpec" type="jdf:FileSpec_rp" minOccurs="0"/>
         </xs:sequence>
@@ -6486,6 +6506,7 @@
           <xs:element name="Container" type="jdf:FileSpec_Container_lr" minOccurs="0"/>
           <xs:element name="Disposition" type="jdf:Disposition_re" minOccurs="0"/>
           <xs:element name="FileAlias" type="jdf:FileSpec_FileAlias_lr" minOccurs="0"/>
+          <xs:element name="NetworkHeader" type="jdf:FileSpec_NetworkHeader_lr" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:FileSpecAttribs_r"/>
       </xs:extension>
@@ -6501,6 +6522,7 @@
             <xs:element name="Container" type="jdf:FileSpec_Container_lr" minOccurs="0"/>
             <xs:element name="Disposition" type="jdf:Disposition_re" minOccurs="0"/>
             <xs:element name="FileAlias" type="jdf:FileSpec_FileAlias_lr" minOccurs="0"/>
+	          <xs:element name="NetworkHeader" type="jdf:FileSpec_NetworkHeader_lr" minOccurs="0"/>
             <xs:element name="FileSpec" type="jdf:FileSpec_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
