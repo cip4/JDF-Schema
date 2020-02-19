@@ -2630,28 +2630,39 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.1"/>
+        <Version Path="Aperture" First="1.7"/>
+        <Version Path="IlluminationAngle" First="1.7"/>
+        <Version Path="Instrumentation" Last="1.6"/>
+        <Version Path="MeasurementAngle" First="1.7"/>
+        <Version Path="MeasurementMode" First="1.7"/>
+        <Version Path="SpectralResolution" First="1.7"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
   <xs:element name="ColorMeasurementConditionsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="ColorMeasurementConditionsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="ColorMeasurementConditionsAttribs_c">
-    <xs:attribute name="Instrumentation" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="Aperture" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="IlluminationAngle" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="InkState" type="jdftyp:eInkState_" use="optional"/>
+    <xs:attribute name="Instrumentation" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="MeasurementAngle" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="MeasurementFilter" type="jdftyp:eMeasurementFilter_" use="optional"/>
+    <xs:attribute name="MeasurementMode" type="jdftyp:NMTOKEN" use="optional"/>    
     <xs:attribute name="SampleBacking" type="jdftyp:eSampleBacking_" use="optional"/>
+    <xs:attribute name="SpectralResolution" type="jdftyp:double" use="optional"/>
     <xs:attribute name="WhiteBase" type="jdftyp:eWhiteBase_" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="ColorMeasurementConditionsAttribs_u">
     <xs:attributeGroup ref="jdf:ColorMeasurementConditionsAttribs_c"/>
     <xs:attribute name="DensityStandard" type="jdftyp:eDensityStandard_" use="optional"/>
-    <xs:attribute name="Illumination" type="jdftyp:eIllumination_" use="optional"/>
+    <xs:attribute name="Illumination" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="Observer" type="jdftyp:Integer" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="ColorMeasurementConditionsAttribs_r">
     <xs:attributeGroup ref="jdf:ColorMeasurementConditionsAttribs_c"/>
     <xs:attribute name="DensityStandard" type="jdftyp:eDensityStandard_" default="ANSIT"/>
-    <xs:attribute name="Illumination" type="jdftyp:eIllumination_" default="D50"/>
+    <xs:attribute name="Illumination" type="jdftyp:NMTOKEN" default="D50"/>
     <xs:attribute name="Observer" type="jdftyp:Integer" default="2"/>
   </xs:attributeGroup>
   <xs:complexType name="ColorMeasurementConditions_r" mixed="false">
