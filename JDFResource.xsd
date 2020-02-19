@@ -926,6 +926,7 @@
         <Version Path="@FoldLay" First="1.4"/>
         <Version Path="@JogEdge" First="1.3"/>
         <Version Path="@OutsideGutter" First="1.3"/>
+        <Version Path="@SpreadType" First="1.7"/>
         <Version Path="@StaggerColumns" First="1.3"/>
         <Version Path="@StaggerContinuous" First="1.3"/>
         <Version Path="@StaggerRows" First="1.3"/>
@@ -948,20 +949,21 @@
   <xs:attributeGroup name="BinderySignatureAttribs_c">
     <xs:attribute name="AlignmentReferenceWeb" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="BindingOrientation" type="jdftyp:Orientation" use="optional"/>
-	<xs:attribute name="BleedBottom" type="jdftyp:double" use="optional"/>
-	<xs:attribute name="BleedLeft" type="jdftyp:double" use="optional"/>
-	<xs:attribute name="BleedRight" type="jdftyp:double" use="optional"/>
-	<xs:attribute name="BleedTop" type="jdftyp:double" use="optional"/>
-	<xs:attribute name="FoldCatalog" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="BleedBottom" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="BleedLeft" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="BleedRight" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="BleedTop" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="FoldCatalog" type="jdftyp:string" use="optional"/>
     <xs:attribute name="FoldLay" type="jdftyp:Orientation" use="optional"/>
     <xs:attribute name="OutsideGutter" type="jdftyp:boolean" use="optional"/>
+    <xs:attribute name="SpreadType" type="jdftyp:eSpreadType_" use="optional"/>
     <xs:attribute name="StaggerColumns" type="jdftyp:DoubleList" use="optional"/>
     <xs:attribute name="StaggerContinuous" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="StaggerRows" type="jdftyp:DoubleList" use="optional"/>
-	<xs:attribute name="TrimBottom" type="jdftyp:double" use="optional"/>
-	<xs:attribute name="TrimLeft" type="jdftyp:double" use="optional"/>
-	<xs:attribute name="TrimRight" type="jdftyp:double" use="optional"/>
-	<xs:attribute name="TrimTop" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="TrimBottom" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="TrimLeft" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="TrimRight" type="jdftyp:double" use="optional"/>
+    <xs:attribute name="TrimTop" type="jdftyp:double" use="optional"/>
     <xs:attribute name="WebCellAlignment" type="jdftyp:XYPair" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="BinderySignatureAttribs_u">
