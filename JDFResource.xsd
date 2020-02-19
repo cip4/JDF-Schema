@@ -2064,6 +2064,7 @@
         <Version Path="@MappingSelection" First="1.2"/>
         <Version Path="@PrintingTechnology" First="1.5"/>
         <Version Path="@RawName" First="1.2"/>
+        <Version Path="@Spectrum" First="1.7"/>
         <Version Path="@UsePDLAlternateCS" Last="1.1"/>
         <Version Path="PrintConditionColor" First="1.2"/>
         <Version Path="ColorMeasurmentConditions" First="1.1"/>
@@ -2107,6 +2108,7 @@
     <xs:attribute name="NeutralDensity" type="jdftyp:double" use="optional"/>
     <xs:attribute name="PrintingTechnology" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="RawName" type="jdftyp:hexBinary" use="optional"/>
+    <xs:attribute name="Spectrum" type="jdftyp:TransferFunction" use="optional"/>
     <xs:attribute name="sRGB" type="jdftyp:sRGBColor" use="optional"/>
     <xs:attribute name="UsePDLAlternateCS" type="jdftyp:boolean" use="optional"/>
   </xs:attributeGroup>
