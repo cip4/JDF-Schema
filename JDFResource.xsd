@@ -6949,6 +6949,67 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="GangPreparationParams" type="jdf:GangPreparationParams_r" substitutionGroup="jdf:Resource">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="." First="1.7"/>
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
+  <xs:element name="GangPreparationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
+  <xs:element name="GangPreparationParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
+  <xs:attributeGroup name="GangPreparationParamsAttribs_c">
+    <xs:attribute name="GangName" type="jdftyp:NMTOKEN" use="optional"/>
+    <xs:attribute name="JobIDs" type="jdftyp:NMTOKENS" use="optional"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="GangPreparationParamsAttribs_u">
+    <xs:attributeGroup ref="jdf:GangPreparationParamsAttribs_c"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="GangPreparationParamsAttribs_r">
+    <xs:attributeGroup ref="jdf:GangPreparationParamsAttribs_c"/>
+  </xs:attributeGroup>
+  <xs:complexType name="GangPreparationParams_r" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResource">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="Disjointing" type="jdf:Disjointing_re" minOccurs="0"/>
+          <xs:element name="GangPreparationParamsUpdate" type="jdf:GangPreparationParams_re" minOccurs="0"/>
+          <xs:element name="GangPreparationParams" type="jdf:GangPreparationParams_rp" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:GangPreparationParamsAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GangPreparationParams_re" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+          <xs:element name="Disjointing" type="jdf:Disjointing_re" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attributeGroup ref="jdf:GangPreparationParamsAttribs_r"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GangPreparationParams_rp" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ParameterResourceLeaf">
+        <xs:choice>
+          <xs:sequence minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+            <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+            <xs:element name="Disjointing" type="jdf:Disjointing_re" minOccurs="0"/>
+            <xs:element name="GangPreparationParams" type="jdf:GangPreparationParams_rp" minOccurs="0"/>
+          </xs:sequence>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+        </xs:choice>
+        <xs:attributeGroup ref="jdf:GangPreparationParamsAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   <xs:element name="GatheringParams" type="jdf:GatheringParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -15814,6 +15875,7 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.5"/>
+        <Version Path="@Policy" First="1.7"/>
         <Version Path="GangElement/@Operations" First="1.7"/>
         <Constraint Path="ConvertingConfig" minOccurs="1" maxOccurs="unbounded"/>
         <Constraint Path="GangElement" minOccurs="1" maxOccurs="unbounded"/>
@@ -15829,6 +15891,7 @@
   <xs:element name="SheetOptimizingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef"/>
   <xs:element name="SheetOptimizingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink"/>
   <xs:attributeGroup name="SheetOptimizingParamsAttribs_c">
+    <xs:attribute name="Policy" type="jdftyp:eGangPolicy_"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="SheetOptimizingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:SheetOptimizingParamsAttribs_c"/>

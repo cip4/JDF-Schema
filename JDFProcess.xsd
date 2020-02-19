@@ -2550,6 +2550,38 @@
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
+  <xs:complexType name="GangPreparation" mixed="false">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="." First="1.7"/>
+        <Constraint Path="ResourceLinkPool/GangPreparationParams" Usage="Input" minOccurs="1" maxOccurs="1"/>
+        <Constraint Path="ResourceLinkPool/Assembly" Usage="Output" minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="ResourceLinkPool/BinderySignature" Usage="Output" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="ResourceLinkPool/SheetOptimizingParams" Usage="Output" minOccurs="1" maxOccurs="1"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:JDFAbstractNode">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:JDFChildElements_" minOccurs="0"/>
+          <xs:element name="ResourceLinkPool" type="jdf:GangPreparationResLinkPool_" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="GangPreparationResLinkPool_" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:ResourceLinkPool_">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:ProcessInputResources_" minOccurs="0"/>
+          <xs:element ref="jdf:AssemblyLink" minOccurs="0"/>
+          <xs:element ref="jdf:BinderySignatureLink" minOccurs="0"/>
+          <xs:element ref="jdf:GangPreparationParamsLink" minOccurs="0"/>
+          <xs:element ref="jdf:SheetOptimizingParamsLink" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
 	<xs:complexType name="Gathering" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
