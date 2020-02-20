@@ -14041,11 +14041,11 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  
   <xs:element name="QualityControlParams" type="jdf:QualityControlParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.2"/>
+        <Version Path="@Severity" First="1.7"/>
         <Version Path="ColorMeasurement" First="1.7"/>
         <Version Path="FileSpec" First="1.6"/>
         <Constraint Path="BindingQualityParams" minOccurs="0" maxOccurs="1"/>
@@ -14059,6 +14059,7 @@
   <xs:attributeGroup name="QualityControlParamsAttribs_c">
     <xs:attribute name="TimeInterval" type="jdftyp:duration" use="optional"/>
     <xs:attribute name="SampleInterval" type="jdftyp:Integer" use="optional"/>
+    <xs:attribute name="Severity" type="jdftyp:Integer" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="QualityControlParamsAttribs_u">
     <xs:attributeGroup ref="jdf:QualityControlParamsAttribs_c"/>
@@ -14133,6 +14134,7 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.2"/>
+        <Version Path="@Severity" First="1.7" />
         <Constraint Path="BindingQualityParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1"/>
@@ -14147,6 +14149,7 @@
     <xs:attribute name="Failed" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="MeasurementUsage" use="optional" type="jdftyp:eMeasurementUsages_"/>
      <xs:attribute name="Passed" type="jdftyp:Integer" use="optional"/>
+     <xs:attribute name="Severity" type="jdftyp:Integer" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="QualityControlResultAttribs_u">
   <xs:attributeGroup ref="jdf:QualityControlResultAttribs_c"/>

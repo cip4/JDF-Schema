@@ -376,7 +376,11 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.2"/>
+				<Version Path="ResourceLinkPool/ColorantControlLink" First="1.7"/>
+				<Version Path="ResourceLinkPool/LayoutLink" First="1.7"/>
 				<Constraint Path="ResourceLinkPool/*" Usage="Input" minOccurs="1" maxOccurs="1"/>
+				<Constraint Path="ResourceLinkPool/ColorantControlLink" Usage="Input" minOccurs="0" maxOccurs="1"/>
+				<Constraint Path="ResourceLinkPool/LayoutLink" Usage="Input" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ResourceLinkPool/QualityControlParamsLink" Usage="Input" minOccurs="1" maxOccurs="1"/>
 				<Constraint Path="ResourceLinkPool/QualityControlResultLink" Usage="Input" minOccurs="1" maxOccurs="1"/>
 				<Constraint Path="ResourceLinkPool/*" Usage="Output" minOccurs="1" maxOccurs="1"/>
@@ -3575,3 +3579,4 @@
 		</xs:complexContent>
 	</xs:complexType>
 </xs:schema>
+
