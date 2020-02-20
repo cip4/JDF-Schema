@@ -2598,6 +2598,14 @@
 			<xs:enumeration value="Sparse"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="ePatchUsage_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="Color"/>
+			<xs:enumeration value="Image"/>
+			<xs:enumeration value="Technical"/>
+			<xs:enumeration value="Ignore"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="ePDFXTrapped_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Unknown"/>

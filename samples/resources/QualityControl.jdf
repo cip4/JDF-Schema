@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="Brochure42" JobPartID="ID20" Status="Waiting" Type="QualityControl" Version="1.7" 
+  xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <QualityControlParams ID="QC_001" Status="Available" Class="Parameter">
+      <ColorMeasurement>
+        <ColorControlStrip Center="100 120" >
+          <Patch PatchUsage="Color">
+            <SeparationTint Name="Spot2" Tint="0.9"></SeparationTint>
+          </Patch>
+        </ColorControlStrip>
+      </ColorMeasurement>
+    </QualityControlParams>
+    <QualityControlResult ID="QR_002" Status="Incomplete" Class="Parameter">
+    </QualityControlResult>
+    <Component Class="Quantity" Status="Incomplete" ID="CO_003" 
+      ComponentType="FinalProduct" ProductType="Brochure">
+    </Component>
+  </ResourcePool>
+</JDF>

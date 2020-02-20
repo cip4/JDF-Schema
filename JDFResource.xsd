@@ -2436,11 +2436,14 @@
         <Version Path="CIELABMeasuringFieldRef" First="1.1"/>
         <Version Path="DensityMeasuringField" First="1.1"/>
         <Version Path="DensityMeasuringFieldRef" First="1.1"/>
+        <Version Path="Patch" First="1.7"/>
         <Version Path="SeparationSpec" First="1.4"/>
         <Constraint Path="CIELABMeasuringField" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="CIELABMeasuringFieldRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="DensityMeasuringField" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="DensityMeasuringFieldRef" minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="Patch" minOccurs="0" maxOccurs="unbounded"/>
+        <Constraint Path="Patch/SeparationTint" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="SeparationSpec" minOccurs="0" maxOccurs="unbounded"/>
       </xs:appinfo>
     </xs:annotation>
@@ -2466,9 +2469,9 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="CIELABMeasuringField" type="jdf:CIELABMeasuringField_re" minOccurs="0"/>
-          <xs:element ref="jdf:CIELABMeasuringFieldRef" minOccurs="0"/>
           <xs:element name="DensityMeasuringField" type="jdf:DensityMeasuringField_re" minOccurs="0"/>
           <xs:element ref="jdf:DensityMeasuringFieldRef" minOccurs="0"/>
+          <xs:element name="Patch" type="jdf:ColorControlStrip_Patch_lr" minOccurs="0"/>
           <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
           <xs:element name="ColorControlStripUpdate" type="jdf:ColorControlStrip_re" minOccurs="0"/>
           <xs:element name="ColorControlStrip" type="jdf:ColorControlStrip_rp" minOccurs="0"/>
@@ -2484,9 +2487,9 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
           <xs:element name="CIELABMeasuringField" type="jdf:CIELABMeasuringField_re" minOccurs="0"/>
-          <xs:element ref="jdf:CIELABMeasuringFieldRef" minOccurs="0"/>
           <xs:element name="DensityMeasuringField" type="jdf:DensityMeasuringField_re" minOccurs="0"/>
           <xs:element ref="jdf:DensityMeasuringFieldRef" minOccurs="0"/>
+          <xs:element name="Patch" type="jdf:ColorControlStrip_Patch_lr" minOccurs="0"/>
           <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ColorControlStripAttribs_r"/>
@@ -2501,15 +2504,44 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0"/>
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
             <xs:element name="CIELABMeasuringField" type="jdf:CIELABMeasuringField_re" minOccurs="0"/>
-            <xs:element ref="jdf:CIELABMeasuringFieldRef" minOccurs="0"/>
             <xs:element name="DensityMeasuringField" type="jdf:DensityMeasuringField_re" minOccurs="0"/>
             <xs:element ref="jdf:DensityMeasuringFieldRef" minOccurs="0"/>
-            <xs:element name="ColorControlStrip" type="jdf:ColorControlStrip_rp" minOccurs="0"/>
+            <xs:element name="Patch" type="jdf:ColorControlStrip_Patch_lr" minOccurs="0"/>
             <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
+            <xs:element name="ColorControlStrip" type="jdf:ColorControlStrip_rp" minOccurs="0"/>
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
         </xs:choice>
         <xs:attributeGroup ref="jdf:ColorControlStripAttribs_u"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ColorControlStrip_Patch_lr" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:BaseElement_">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:element name="SeparationTint" type="jdf:ColorControlStrip_Patch_SeparationTint_lr" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+        <xs:attribute name="Center" type="jdftyp:XYPair" use="optional"/>
+        <xs:attribute name="Density" type="jdftyp:double" use="optional"/>
+        <xs:attribute name="Lab" type="jdftyp:LabColor" use="optional"/>
+        <xs:attribute name="NeutralDensity" type="jdftyp:double" use="optional"/>
+        <xs:attribute name="PatchUsage" type="jdftyp:ePatchUsage_" use="required"/>
+        <xs:attribute name="RGB" type="jdftyp:sRGBColor" use="optional"/>
+        <xs:attribute name="Size" type="jdftyp:XYPair" use="optional"/>
+        <xs:attribute name="Spectrum" type="jdftyp:TransferFunction" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ColorControlStrip_Patch_SeparationTint_lr" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:BaseElement_">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="Name" type="jdftyp:NMTOKEN" use="required"/>
+        <xs:attribute name="Tint" type="jdftyp:double" use="required"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -3054,7 +3086,7 @@
   </xs:attributeGroup>
   <xs:attributeGroup name="ComponentAttribs_r">
     <xs:attributeGroup ref="jdf:ComponentAttribs_c"/>
-    <xs:attribute name="ComponentType" type="jdftyp:eComponentTypeList_" use="optional"/>
+    <xs:attribute name="ComponentType" type="jdftyp:eComponentTypeList_" use="required"/>
   </xs:attributeGroup>
   <xs:complexType name="Component_r" mixed="false">
     <xs:complexContent mixed="false">
