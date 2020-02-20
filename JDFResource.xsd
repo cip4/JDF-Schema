@@ -14875,7 +14875,7 @@
     <xs:attribute name="EndOfDocument" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="EndOfSet" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="FirstPage" type="jdftyp:Integer" use="optional"/>
-    <xs:attribute name="IgnoreContext" type="jdftyp:NMTOKENS" use="optional"/>
+    <xs:attribute name="IgnoreContext" type="jdftyp:ePartitionKeys_" use="optional"/>
     <xs:attribute name="LogicalPage" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="NDoc" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="NPage" type="jdftyp:Integer" use="optional"/>
