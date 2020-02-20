@@ -14079,6 +14079,7 @@
         <Version Path="." First="1.2"/>
         <Version Path="@Severity" First="1.7"/>
         <Version Path="ColorMeasurement" First="1.7"/>
+        <Version Path="Inspection" First="1.7"/>
         <Version Path="FileSpec" First="1.6"/>
         <Constraint Path="BindingQualityParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1"/>
@@ -14167,9 +14168,11 @@
       <xs:appinfo>
         <Version Path="." First="1.2"/>
         <Version Path="@Severity" First="1.7" />
+        <Version Path="Inspection" First="1.7"/>
         <Constraint Path="BindingQualityParams" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="Inspection" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="QualityMeasurement" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="QualityMeasurement/BindingQualityMeasurement" minOccurs="0" maxOccurs="1"/>
       </xs:appinfo>
@@ -14197,6 +14200,7 @@
           <xs:element name="BindingQualityParams" type="jdf:QualityControlParams_BindingQualityParams_lr" minOccurs="0"/>
            <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
           <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
+          <xs:element name="Inspection" type="jdf:QualityControlResult_Inspection_lr" minOccurs="0"/>
           <xs:element name="QualityMeasurement" type="jdf:QualityControlResult_QualityMeasurement_lr" minOccurs="0"/>
           <xs:element name="QualityControlResultUpdate" type="jdf:QualityControlResult_re" minOccurs="0"/>
           <xs:element name="QualityControlResult" type="jdf:QualityControlResult_rp" minOccurs="0"/>
@@ -14209,13 +14213,14 @@
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:ParameterResourceElement">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:element name="BindingQualityParams" type="jdf:QualityControlParams_BindingQualityParams_lr" minOccurs="0"/>
-         <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
-          <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
-          <xs:element name="QualityMeasurement" type="jdf:QualityControlResult_QualityMeasurement_lr" minOccurs="0"/>
+          <xs:group ref="jdf:GenericElements" minOccurs="0" />
+          <xs:element name="BindingQualityParams" type="jdf:QualityControlParams_BindingQualityParams_lr" minOccurs="0" />
+          <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0" />
+          <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
+          <xs:element name="Inspection" type="jdf:QualityControlResult_Inspection_lr" minOccurs="0" />
+          <xs:element name="QualityMeasurement" type="jdf:QualityControlResult_QualityMeasurement_lr" minOccurs="0" />
         </xs:sequence>
-        <xs:attributeGroup ref="jdf:QualityControlResultAttribs_r"/>
+        <xs:attributeGroup ref="jdf:QualityControlResultAttribs_r" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -14224,16 +14229,17 @@
       <xs:extension base="jdf:ParameterResourceLeaf">
         <xs:choice>
           <xs:sequence minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-           <xs:element name="BindingQualityParams" type="jdf:QualityControlParams_BindingQualityParams_lr" minOccurs="0"/>
-            <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
-            <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
-            <xs:element name="QualityMeasurement" type="jdf:QualityControlResult_QualityMeasurement_lr" minOccurs="0"/>
-            <xs:element name="QualityControlResult" type="jdf:QualityControlResult_rp" minOccurs="0"/>
+            <xs:group ref="jdf:GenericElements" minOccurs="0" />
+            <xs:element name="BindingQualityParams" type="jdf:QualityControlParams_BindingQualityParams_lr" minOccurs="0" />
+            <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0" />
+            <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
+            <xs:element name="Inspection" type="jdf:QualityControlResult_Inspection_lr" minOccurs="0" />
+            <xs:element name="QualityMeasurement" type="jdf:QualityControlResult_QualityMeasurement_lr" minOccurs="0" />
+            <xs:element name="QualityControlResult" type="jdf:QualityControlResult_rp" minOccurs="0" />
           </xs:sequence>
-          <xs:element name="Identical" type="jdf:Identical" minOccurs="0"/>
+          <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
         </xs:choice>
-        <xs:attributeGroup ref="jdf:QualityControlResultAttribs_u"/>
+        <xs:attributeGroup ref="jdf:QualityControlResultAttribs_u" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -14245,6 +14251,34 @@
         </xs:sequence>
         <xs:attribute name="FlexValue" type="jdftyp:double" use="optional"/>
         <xs:attribute name="PullOutValue" type="jdftyp:double" use="optional"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="QualityControlResult_Inspection_lr" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:BaseElement_">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:element name="Defect" type="jdf:QualityControlResult_Defect_lr" minOccurs="0"/>
+          <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="QualityControlResult_Defect_lr" mixed="false">
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:BaseElement_">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="Box" type="jdftyp:rectangle" use="optional"/>
+        <xs:attribute name="DefectReason" type="jdftyp:NMTOKEN" use="optional"/>
+        <xs:attribute name="DefectType" type="jdftyp:eDefectType_" use="optional"/>
+        <xs:attribute name="DefectTypeDetails" type="jdftyp:NMTOKEN" use="optional"/>
+        <xs:attribute name="Face" type="jdftyp:eFace_" use="optional"/>
+        <xs:attribute name="Severity" type="jdftyp:Integer" use="optional"/>
+        <xs:attribute name="Size" type="jdftyp:double" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

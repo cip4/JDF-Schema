@@ -1281,12 +1281,22 @@
 			<xs:enumeration value="DefaultJDF"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="eDefectType_">
+			<xs:restriction base="jdftyp:EnumerationBaseType">
+					<xs:enumeration value="FinishingDefect" />
+					<xs:enumeration value="ImageDefect" />
+					<xs:enumeration value="ImageFinishingDefect" />
+					<xs:enumeration value="Other" />
+					<xs:enumeration value="SheetDefect" />
+					<xs:enumeration value="SubstrateDefect" />
+			</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="eDeliveryMode_">
-		<xs:restriction base="jdftyp:EnumerationBaseType">
-			<xs:enumeration value="FullSheet"/>
-			<xs:enumeration value="RemoveGripperMargin"/>
-			<xs:enumeration value="SeparateBlanks"/>
-		</xs:restriction>
+			<xs:restriction base="jdftyp:EnumerationBaseType">
+					<xs:enumeration value="FullSheet" />
+					<xs:enumeration value="RemoveGripperMargin" />
+					<xs:enumeration value="SeparateBlanks" />
+			</xs:restriction>
 	</xs:simpleType>
 	<xs:simpleType name="eDeliveryTransfer_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
