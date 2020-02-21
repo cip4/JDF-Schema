@@ -13,7 +13,7 @@
       </ColorMeasurement>
     </QualityControlParams>
     <QualityControlResult ID="QR_002" Status="Incomplete" Class="Parameter">
-      <QualityControlResult>
+      <QualityControlResult Sample="4 ~ 2" Measurements="4">
         <RegistrationQuality Offset="4 2" Reference="Marvin"/>
       </QualityControlResult>
     </QualityControlResult>

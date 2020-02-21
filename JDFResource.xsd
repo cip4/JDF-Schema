@@ -14188,6 +14188,8 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.2" />
+        <Version Path="@Measurements" First="1.7" />
+        <Version Path="@Sample" First="1.7" />
         <Version Path="@Severity" First="1.7" />
         <Version Path="Inspection" First="1.7" />
         <Version Path="RegistrationQuality" First="1.7" />
@@ -14205,8 +14207,10 @@
   <xs:element name="QualityControlResultLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
   <xs:attributeGroup name="QualityControlResultAttribs_c">
     <xs:attribute name="Failed" type="jdftyp:Integer" use="optional" />
+    <xs:attribute name="Measurements" type="jdftyp:Integer" use="optional" />
     <xs:attribute name="MeasurementUsage" use="optional" type="jdftyp:eMeasurementUsages_" />
     <xs:attribute name="Passed" type="jdftyp:Integer" use="optional" />
+    <xs:attribute name="Sample" type="jdftyp:IntegerRange" use="optional" />
     <xs:attribute name="Severity" type="jdftyp:Integer" use="optional" />
   </xs:attributeGroup>
   <xs:attributeGroup name="QualityControlResultAttribs_u">
