@@ -14096,11 +14096,12 @@
         <Version Path="." First="1.2" />
         <Version Path="@Severity" First="1.7" />
         <Version Path="ColorMeasurement" First="1.7" />
-        <Version Path="Inspection" First="1.7" />
         <Version Path="FileSpec" First="1.6" />
+        <Version Path="ResistrationQuality" First="1.7"/>
         <Constraint Path="BindingQualityParams" minOccurs="0" maxOccurs="1" />
         <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1" />
         <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1" />
+        <Constraint Path="RegistrationQuality" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -14127,6 +14128,7 @@
           <xs:element name="ColorMeasurement" type="jdf:ColorMeasurement_re" minOccurs="0" />
           <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0" />
           <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
+          <xs:element name="RegistrationQuality" type="jdf:RegistrationQuality_re" minOccurs="0"/>
           <xs:element name="QualityControlParamsUpdate" type="jdf:QualityControlParams_re" minOccurs="0" />
           <xs:element name="QualityControlParams" type="jdf:QualityControlParams_rp" minOccurs="0" />
         </xs:sequence>
@@ -14140,10 +14142,11 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
-          <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0" />
-          <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
           <xs:element name="BindingQualityParams" type="jdf:QualityControlParams_BindingQualityParams_lr" minOccurs="0" />
           <xs:element name="ColorMeasurement" type="jdf:ColorMeasurement_re" minOccurs="0" />
+          <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0" />
+          <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
+          <xs:element name="RegistrationQuality" type="jdf:RegistrationQuality_re" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:QualityControlParamsAttribs_r" />
       </xs:extension>
@@ -14160,6 +14163,7 @@
             <xs:element name="ColorMeasurement" type="jdf:ColorMeasurement_re" minOccurs="0" />
             <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0" />
             <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
+            <xs:element name="RegistrationQuality" type="jdf:RegistrationQuality_re" minOccurs="0"/>
             <xs:element name="QualityControlParams" type="jdf:QualityControlParams_rp" minOccurs="0" />
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
@@ -14186,12 +14190,14 @@
         <Version Path="." First="1.2" />
         <Version Path="@Severity" First="1.7" />
         <Version Path="Inspection" First="1.7" />
+        <Version Path="RegistrationQuality" First="1.7" />
         <Constraint Path="BindingQualityParams" minOccurs="0" maxOccurs="1" />
         <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1" />
         <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="Inspection" minOccurs="0" maxOccurs="1" />
         <Constraint Path="QualityMeasurement" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="QualityMeasurement/BindingQualityMeasurement" minOccurs="0" maxOccurs="1" />
+        <Constraint Path="RegistrationQuality" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -14219,6 +14225,7 @@
           <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
           <xs:element name="Inspection" type="jdf:QualityControlResult_Inspection_lr" minOccurs="0" />
           <xs:element name="QualityMeasurement" type="jdf:QualityControlResult_QualityMeasurement_lr" minOccurs="0" />
+          <xs:element name="RegistrationQuality" type="jdf:RegistrationQuality_re" minOccurs="0"/>
           <xs:element name="QualityControlResultUpdate" type="jdf:QualityControlResult_re" minOccurs="0" />
           <xs:element name="QualityControlResult" type="jdf:QualityControlResult_rp" minOccurs="0" />
         </xs:sequence>
@@ -14236,6 +14243,7 @@
           <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
           <xs:element name="Inspection" type="jdf:QualityControlResult_Inspection_lr" minOccurs="0" />
           <xs:element name="QualityMeasurement" type="jdf:QualityControlResult_QualityMeasurement_lr" minOccurs="0" />
+          <xs:element name="RegistrationQuality" type="jdf:RegistrationQuality_re" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:QualityControlResultAttribs_r" />
       </xs:extension>
@@ -14252,6 +14260,7 @@
             <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
             <xs:element name="Inspection" type="jdf:QualityControlResult_Inspection_lr" minOccurs="0" />
             <xs:element name="QualityMeasurement" type="jdf:QualityControlResult_QualityMeasurement_lr" minOccurs="0" />
+            <xs:element name="RegistrationQuality" type="jdf:RegistrationQuality_re" minOccurs="0"/>
             <xs:element name="QualityControlResult" type="jdf:QualityControlResult_rp" minOccurs="0" />
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />

@@ -529,7 +529,25 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-
+  
+  <xs:complexType name="RegistrationQuality_re" mixed="false">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="." First="1.7"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="jdf:ResourceElement">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:group ref="jdf:GenericResourceElements" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="Offset" type="jdftyp:XYPair" use="required"/>
+        <xs:attribute name="Reference" type="jdftyp:NMTOKEN" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  
   <xs:attributeGroup name="ScreenSelectorAttribs_c">
     <xs:attribute name="Angle" type="jdftyp:double" use="optional" />
     <xs:attribute name="AngleMap" type="jdftyp:string" use="optional" />
@@ -546,6 +564,7 @@
     <xs:attribute name="Separation" type="jdftyp:string" default="All" />
     <xs:attribute name="SourceObjects" type="jdftyp:eSourceObjects_" default="All" />
   </xs:attributeGroup>
+  
   <xs:complexType name="ScreenSelector_re" mixed="false">
     <xs:annotation>
       <xs:appinfo>
