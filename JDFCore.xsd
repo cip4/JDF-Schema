@@ -905,12 +905,14 @@
   <xs:complexType name="PhaseTimeAudit_Activity" mixed="false">
     <xs:annotation>
       <xs:appinfo>
+        <Version Path="EndTime" First="1.7"/>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
         <xs:attribute name="ActivityID" type="jdftyp:shortString" use="optional" />
         <xs:attribute name="ActivityName" type="jdftyp:shortString" use="optional" />
+        <xs:attribute name="EndTime" type="jdftyp:dateTime" use="optional" />
         <xs:attribute name="PersonalID" type="jdftyp:shortString" use="optional" />
         <xs:attribute name="StartTime" type="jdftyp:dateTime" use="optional" />
       </xs:extension>

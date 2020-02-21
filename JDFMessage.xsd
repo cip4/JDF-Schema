@@ -2178,6 +2178,7 @@
         <Version Path="@DeviceCondition" First="1.2" />
         <Version Path="@DeviceID" First="1.3" />
         <Version Path="@DeviceOperationMode" First="1.2" />
+        <Version Path="@EndTime" First="1.7" />
         <Version Path="@IdleStartTime" First="1.4" />
         <Version Path="Activity" First="1.5" />
         <Version Path="Event" First="1.7" />
@@ -2215,6 +2216,7 @@
     <xs:attribute name="DeviceID" type="jdftyp:string" use="optional" />
     <xs:attribute name="DeviceOperationMode" type="jdftyp:eDeviceOperationMode_" use="optional" />
     <xs:attribute name="DeviceStatus" type="jdftyp:eDeviceStatus_" use="required" />
+    <xs:attribute name="EndTime" type="jdftyp:dateTime" use="optional" />
     <xs:attribute name="HourCounter" type="jdftyp:duration" use="optional" />
     <xs:attribute name="IdleStartTime" type="jdftyp:dateTime" use="optional" />
     <xs:attribute name="PowerOnTime" type="jdftyp:dateTime" use="optional" />
@@ -2874,6 +2876,7 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="@Activation" First="1.1" />
+        <Version Path="@EndTime" First="1.7" />
         <Version Path="@PhaseAmount" First="1.2" />
         <Version Path="@PhaseStartTime" First="1.2" />
         <Version Path="@PhaseWaste" First="1.2" />
@@ -2934,6 +2937,7 @@
         <xs:attribute name="Activation" type="jdftyp:eActivation_" use="optional" />
         <xs:attribute name="Amount" type="jdftyp:double" use="optional" />
         <xs:attribute name="DeadLine" type="jdftyp:eDeadLine_" use="optional" />
+        <xs:attribute name="EndTime" type="jdftyp:dateTime" use="optional" />
         <xs:attribute name="JobID" type="jdftyp:shortString" use="optional" />
         <xs:attribute name="JobPartID" type="jdftyp:shortString" use="optional" />
         <xs:attribute name="PercentCompleted" type="jdftyp:double" use="optional" />
