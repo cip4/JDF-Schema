@@ -1713,7 +1713,7 @@
   <xs:element name="ResourceQuParams" type="jdf:ResourceQuParams_m" substitutionGroup="jdf:QueryTypeObj">
     <xs:annotation>
       <xs:appinfo>
-        <Version Path="@Context" First="1.5" />
+        <Version Path="@Context" First="1.5" Last="1.5"/>
         <Version Path="@LotDetails" First="1.4" Last="1.5" />
         <Version Path="@LotID" First="1.4" Last="1.5" />
         <Version Path="@ProductID" First="1.2" />
@@ -4465,6 +4465,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
         </xs:sequence>
         <xs:attribute name="GangNames" type="jdftyp:NMTOKENS" use="optional" />
+        <xs:attribute name="Policy" type="jdftyp:eForceGangPolicy_" use="optional"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -4478,6 +4479,7 @@
   <xs:complexType name="GangInfo_m" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:ResponseTypeObj_">
+        <xs:attribute name="Amount" type="jdftyp:double" use="optional"/>
         <xs:attribute name="GangName" type="jdftyp:NMTOKEN" use="required" />
       </xs:extension>
     </xs:complexContent>
