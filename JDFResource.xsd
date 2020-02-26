@@ -147,6 +147,10 @@
   <xs:element name="Address" type="jdf:Address_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
+        <Version Path="@AddressUsage" First="1.6"/>
+        <Version Path="@CivicNumber" First="1.6"/>
+        <Version Path="AddressLine" First="1.6"/>
+        <Constraint Path="AddressLine" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="ExtendedAddress" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
@@ -154,7 +158,9 @@
   <xs:element name="AddressRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
   <xs:element name="AddressLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
   <xs:attributeGroup name="AddressAttribs_c">
+    <xs:attribute name="AddressUsage" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="City" type="jdftyp:string" use="optional" />
+    <xs:attribute name="CivicNumber" type="jdftyp:string"/>
     <xs:attribute name="Country" type="jdftyp:string" use="optional" />
     <xs:attribute name="CountryCode" use="optional">
       <xs:simpleType>
@@ -180,6 +186,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
+          <xs:element name="AddressLine" type="jdf:telem" minOccurs="0" />
           <xs:element name="ExtendedAddress" type="jdf:telem" minOccurs="0" />
           <xs:element name="AddressUpdate" type="jdf:Address_re" minOccurs="0" />
           <xs:element name="Address" type="jdf:Address_rp" minOccurs="0" />
@@ -7463,7 +7470,13 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="Hole" type="jdf:Hole_r" substitutionGroup="jdf:Resource" />
+  <xs:element name="Hole" type="jdf:Hole_r" substitutionGroup="jdf:Resource" >
+      <xs:annotation>
+      <xs:appinfo>
+        <Version Path="@Reinforcement" First="1.6" />
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>
   <xs:element name="HoleRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
   <xs:element name="HoleLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
   <xs:attributeGroup name="HoleAttribs_c" />
@@ -7471,6 +7484,7 @@
     <xs:attributeGroup ref="jdf:HoleAttribs_c" />
     <xs:attribute name="Center" type="jdftyp:XYPair" use="optional" />
     <xs:attribute name="Extent" type="jdftyp:XYPair" use="optional" />
+    <xs:attribute name="Reinforcement" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="Shape" type="jdftyp:eHoleShape_" use="optional" />
   </xs:attributeGroup>
   <xs:attributeGroup name="HoleAttribs_r">
