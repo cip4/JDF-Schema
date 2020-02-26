@@ -745,6 +745,13 @@
   <xs:simpleType name="eBooleanStateList_">
     <xs:list itemType="jdftyp:boolean" />
   </xs:simpleType>
+  <xs:simpleType name="eBottling_">
+    <xs:restriction base="jdftyp:EnumerationBaseType">
+      <xs:enumeration value="All" />
+      <xs:enumeration value="Last" />
+      <xs:enumeration value="None" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="eBottleAxis_">
     <xs:restriction base="jdftyp:EnumerationBaseType">
       <xs:enumeration value="SpineHead" />
@@ -1417,14 +1424,6 @@
       <xs:enumeration value="SystemSpecified" />
     </xs:restriction>
   </xs:simpleType>
-  <xs:simpleType name="eDirection_">
-    <xs:restriction base="jdftyp:EnumerationBaseType">
-      <xs:enumeration value="LongEdge" />
-      <xs:enumeration value="ShortEdge" />
-      <xs:enumeration value="XDirection" />
-      <xs:enumeration value="YDirection" />
-    </xs:restriction>
-  </xs:simpleType>
   <xs:simpleType name="eDisposition_">
     <xs:restriction base="jdftyp:EnumerationBaseType">
       <xs:enumeration value="Unlink" />
@@ -1745,17 +1744,6 @@
       <xs:enumeration value="SpineGluing" />
       <xs:enumeration value="SideGluingFront" />
       <xs:enumeration value="SideGluingBack" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="eGrainDirection_">
-    <xs:restriction base="jdftyp:EnumerationBaseType">
-      <xs:enumeration value="Any" /><!-- First in 1.5 -->
-      <xs:enumeration value="Both" /><!-- Last in 1.5 -->
-      <xs:enumeration value="ShortEdge" /><!-- Last in 1.4 -->
-      <xs:enumeration value="LongEdge" /><!-- Last in 1.4 -->
-      <xs:enumeration value="SameDirection" /><!-- First in 1.5 -->
-      <xs:enumeration value="XDirection" /><!-- First in 1.4 -->
-      <xs:enumeration value="YDirection" /><!-- First in 1.4 -->
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="eHoleReferenceEdge_">
@@ -2266,6 +2254,17 @@
       <xs:enumeration value="None" />
       <xs:enumeration value="Pol" />
       <xs:enumeration value="UV" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="eMediaDirection_">
+    <xs:restriction base="jdftyp:EnumerationBaseType">
+      <xs:enumeration value="Any" /><!-- First in 1.5 -->
+      <xs:enumeration value="Both" /><!-- Last in 1.5 -->
+      <xs:enumeration value="ShortEdge" /><!-- Last in 1.4 -->
+      <xs:enumeration value="LongEdge" /><!-- Last in 1.4 -->
+      <xs:enumeration value="SameDirection" /><!-- First in 1.5 -->
+      <xs:enumeration value="XDirection" /><!-- First in 1.4 -->
+      <xs:enumeration value="YDirection" /><!-- First in 1.4 -->
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="eMediaSide_">
@@ -3168,19 +3167,6 @@
       <xs:enumeration value="Round" />
       <xs:enumeration value="Path" />
       <xs:enumeration value="RoundedRectangle" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="eShapeDefFluteDirection_">
-    <xs:restriction base="jdftyp:EnumerationBaseType">
-      <xs:enumeration value="XDirection" />
-      <xs:enumeration value="YDirection" />
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="eShapeDefGrainDirection_">
-    <xs:restriction base="jdftyp:EnumerationBaseType">
-      <xs:enumeration value="XDirection" />
-      <xs:enumeration value="YDirection" />
-      <xs:enumeration value="Both" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="eSheetCondition_">

@@ -938,6 +938,7 @@
         <Version Path="@BleedLeft" First="1.5" />
         <Version Path="@BleedRight" First="1.5" />
         <Version Path="@BleedTop" First="1.5" />
+        <Version Path="@Bottling" First="1.6" />
         <Version Path="@FoldLay" First="1.4" />
         <Version Path="@JogEdge" First="1.3" />
         <Version Path="@OutsideGutter" First="1.3" />
@@ -968,6 +969,7 @@
     <xs:attribute name="BleedLeft" type="jdftyp:double" use="optional" />
     <xs:attribute name="BleedRight" type="jdftyp:double" use="optional" />
     <xs:attribute name="BleedTop" type="jdftyp:double" use="optional" />
+    <xs:attribute name="Bottling" type="jdftyp:eBottling_" use="optional" />
     <xs:attribute name="FoldCatalog" type="jdftyp:string" use="optional" />
     <xs:attribute name="FoldLay" type="jdftyp:Orientation" use="optional" />
     <xs:attribute name="OutsideGutter" type="jdftyp:boolean" use="optional" />
@@ -4522,7 +4524,10 @@
   <xs:element name="DeliveryParams" type="jdf:DeliveryParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
+        <Version Path="@DeliveryID" First="1.6" />
+        <version Path="@EarliestDuration" First="1.6"/>
         <Version Path="@Pickup" Last="1.1" />
+        <version Path="@RequiredDuration" First="1.6"/>
         <Version Path="@ServiceLevel" First="1.2" />
         <Version Path="@Transfer" First="1.2" />
         <Version Path="Company" Last="1.0" />
@@ -4542,10 +4547,13 @@
   <xs:element name="DeliveryParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
   <xs:element name="DeliveryParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
   <xs:attributeGroup name="DeliveryParamsAttribs_c">
+    <xs:attribute name="DeliveryID" type="jdftyp:string" use="optional"/>
     <xs:attribute name="Earliest" type="jdftyp:dateTime" use="optional" />
+    <xs:attribute name="EarliestDuration" type="jdftyp:duration" use="optional"/>
     <xs:attribute name="Method" type="jdftyp:string" use="optional" />
     <xs:attribute name="Pickup" type="jdftyp:boolean" use="optional" />
     <xs:attribute name="Required" type="jdftyp:dateTime" use="optional" />
+    <xs:attribute name="RequiredDuration" type="jdftyp:duration" use="optional"/>
     <xs:attribute name="ServiceLevel" type="jdftyp:string" use="optional" />
     <xs:attribute name="Transfer" type="jdftyp:eDeliveryTransfer_" use="optional" />
   </xs:attributeGroup>
@@ -4565,6 +4573,7 @@
         <Version Path="@TotalDimensions" First="1.3" />
         <Version Path="@TotalVolume" First="1.3" />
         <Version Path="@TotalWeight" First="1.3" />
+        <Version Path="@Unit" Last="1.5"/>
         <Constraint Path="*" minOccurs="0" maxOccurs="2" />
       </xs:appinfo>
     </xs:annotation>
@@ -4941,14 +4950,15 @@
         <Version Path="@ModelName" First="1.1" />
         <Version Path="@ModelNumber" First="1.1" />
         <Version Path="@ModelURL" First="1.1" />
-        <Version Path="Module" First="1.3" />
         <Version Path="@SecureJMFURL" First="1.3" />
         <Version Path="@SerialNumber" First="1.1" />
         <Version Path="@PresentationURL" First="1.1" />
+        <Version Path="@Revision" First="1.6"/> 
         <Version Path="@UPC" First="1.1" />
         <Version Path="DeviceCap" First="1.1" />
         <Version Path="IconList" First="1.1" />
         <Version Path="Location" First="1.4" />
+        <Version Path="Module" First="1.3" />
         <Constraint Path="CostCenter" minOccurs="0" maxOccurs="1" />
         <Constraint Path="DeviceCap" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="IconList" minOccurs="0" maxOccurs="1" />
@@ -4981,8 +4991,9 @@
     <xs:attribute name="ModelName" type="jdftyp:string" use="optional" />
     <xs:attribute name="ModelNumber" type="jdftyp:string" use="optional" />
     <xs:attribute name="ModelURL" type="jdftyp:string" use="optional" />
-    <xs:attribute name="SerialNumber" type="jdftyp:string" use="optional" />
     <xs:attribute name="PresentationURL" type="jdftyp:string" use="optional" />
+    <xs:attribute name="Revision" type="jdftyp:string" use="optional"/>
+    <xs:attribute name="SerialNumber" type="jdftyp:string" use="optional" />
     <xs:attribute name="SecureJMFURL" type="jdftyp:URL" use="optional" />
     <xs:attribute name="UPC" type="jdftyp:string" use="optional" />
   </xs:attributeGroup>
@@ -5031,6 +5042,7 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.3" />
+        <Version Path="@Revision" First="1.6"/>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
@@ -5049,6 +5061,7 @@
         <xs:attribute name="ModuleID" type="jdftyp:string" />
         <xs:attribute name="ModuleIndex" type="jdftyp:Integer" />
         <xs:attribute name="ModuleType" type="jdftyp:NMTOKEN" />
+        <xs:attribute name="Revision" type="jdftyp:string"/>
         <xs:attribute name="SerialNumber" type="jdftyp:string" />
         <xs:attribute name="SubModuleIndex" type="jdftyp:Integer" />
       </xs:extension>
@@ -5615,8 +5628,8 @@
         <Version Path="ApprovalParamsRef" First="1.2" />
         <Version Path="Component" First="1.1" />
         <Version Path="ComponentRef" First="1.1" />
-        <Version Path="Disjointing" First="1.1" />
-        <Version Path="DisjointingRef" First="1.1" />
+        <Version Path="Disjointing" First="1.1" Last="1.5"/>
+        <Version Path="DisjointingRef" First="1.1" Last="1.5"/>
         <Version Path="Ink" First="1.3" Last="1.3" />
         <Version Path="InkRef" First="1.3" Last="1.3" />
         <Version Path="Media" First="1.1" />
@@ -6427,7 +6440,7 @@
         <Version Path="@FileVersion" First="1.1" />
         <Version Path="@MimeType" First="1.0" />
         <Version Path="@MimeTypeVersion" First="1.2" />
-        <Version Path="@OVersionS" Last="1.5" />
+        <Version Path="@OSVersion" Last="1.5" />
         <Version Path="@OverwritePolicy" First="1.2" />
         <Version Path="@Password" First="1.3" />
         <Version Path="@RequestQuality" First="1.3" />
@@ -6667,10 +6680,11 @@
   <xs:element name="FoldingParams" type="jdf:FoldingParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
-        <Version Path="Fold" First="1.1" />
-        <Version Path="@FoldSheetIn" Last="1.0" />
-        <Version Path="FoldOperation" Last="1.0" />
         <Version Path="@DescriptionType" Last="1.1" />
+        <Version Path="@FoldingDetails" First="1.6"/>
+        <Version Path="@FoldSheetIn" Last="1.0" />
+        <Version Path="Fold" First="1.1" />
+        <Version Path="FoldOperation" Last="1.0" />
         <Constraint Path="Fold" minOccurs="0" maxOccurs="unbounded" />
       </xs:appinfo>
     </xs:annotation>
@@ -6680,6 +6694,7 @@
   <xs:attributeGroup name="FoldingParamsAttribs_c">
     <xs:attribute name="DescriptionType" type="jdftyp:eDescriptionType_" use="optional" />
     <xs:attribute name="FoldCatalog" type="jdftyp:string" use="optional" />
+    <xs:attribute name="FoldingDetails" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="FoldSheetIn" type="jdftyp:XYPair" use="optional" />
   </xs:attributeGroup>
   <xs:attributeGroup name="FoldingParamsAttribs_u">
@@ -7060,6 +7075,7 @@
   <xs:element name="GatheringParams" type="jdf:GatheringParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
+        <Version Path="Disjointing" Last="1.5"/>
         <Constraint Path="Disjointing" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
@@ -10735,6 +10751,7 @@
         <Version Path="@BackBrightness" First="1.5" />
         <Version Path="@BackCoatingDetail" First="1.4" />
         <Version Path="@BackGlossValue" First="1.2" />
+        <Version Path="@BackISOPaperSubstrate" First="1.6"/>
         <Version Path="@BackSpectrum" First="1.7" />
         <Version Path="@CIETint" First="1.2" />
         <Version Path="@CIEWhiteness" First="1.2" />
@@ -10744,6 +10761,7 @@
         <Version Path="@FluteDirection" First="1.3" />
         <Version Path="@FrontCoatingDetail" First="1.4" />
         <Version Path="@FrontGlossValue" First="1.2" />
+        <Version Path="@Grade" Last="1.5"/>
         <Version Path="@GrainDirection" First="1.1" />
         <Version Path="@HoleCount" Last="1.0" />
         <Version Path="@HoleType" First="1.1" />
@@ -10796,6 +10814,7 @@
     <xs:attribute name="BackCoatingDetail" type="jdftyp:NMTOKEN" use="optional" />
     <xs:attribute name="BackCoatings" type="jdftyp:eCoatings_" use="optional" />
     <xs:attribute name="BackGlossValue" type="jdftyp:double" use="optional" />
+    <xs:attribute name="BackISOPaperSubstrate" type="jdftyp:eMediaSubstrateType_" use="optional"/>
     <xs:attribute name="BackSpectrum" type="jdftyp:double" use="optional" />
     <xs:attribute name="Brightness" type="jdftyp:double" use="optional" />
     <xs:attribute name="CIETint" type="jdftyp:double" use="optional" />
@@ -10804,12 +10823,12 @@
     <xs:attribute name="CoreWeight" type="jdftyp:double" use="optional" />
     <xs:attribute name="Dimension" type="jdftyp:XYPair" use="optional" />
     <xs:attribute name="Flute" type="jdftyp:NMTOKEN" use="optional" />
-    <xs:attribute name="FluteDirection" type="jdftyp:eDirection_" use="optional" />
+    <xs:attribute name="FluteDirection" type="jdftyp:eMediaDirection_" use="optional" />
     <xs:attribute name="FrontCoatingDetail" type="jdftyp:NMTOKEN" use="optional" />
     <xs:attribute name="FrontCoatings" type="jdftyp:eCoatings_" use="optional" />
     <xs:attribute name="FrontGlossValue" type="jdftyp:double" use="optional" />
     <xs:attribute name="Grade" type="jdftyp:Integer" use="optional" />
-    <xs:attribute name="GrainDirection" type="jdftyp:eDirection_" use="optional" />
+    <xs:attribute name="GrainDirection" type="jdftyp:eMediaDirection_" use="optional" />
     <xs:attribute name="HoleCount" type="jdftyp:Integer" use="optional" />
     <xs:attribute name="ImagableSide" type="jdftyp:eImagableSide_" use="optional" />
     <xs:attribute name="InnerCoreDiameter" type="jdftyp:double" use="optional" />
@@ -11092,16 +11111,16 @@
       <xs:appinfo>
         <Version Path="@IPPVersion" First="1.1" />
         <Version Path="@JobPriority" First="1.1" />
-        <Version Path="@NaturalLang" First="1.1" />
+        <Version Path="@MergeTarget" Last="1.0" />
+        <Version Path="@NaturalLang" First="1.6" />
         <Version Path="@NodeStatus" First="1.3" />
         <Version Path="@NodeStatusDetails" First="1.3" />
-        <Version Path="@MergeTarget" Last="1.0" />
         <Version Path="@rRefs" Last="1.1" />
         <Version Path="@WorkStepID" First="1.4" />
+        <Version Path="BusinessInfo" Last="1.5" />
         <Version Path="GangSource" First="1.6" />
         <Version Path="JMF" Last="1.4" />
         <Version Path="MISDetails" First="1.2" />
-        <Version Path="BusinessInfo" Last="1.5" />
         <Version Path="NotificationFilter" Last="1.5" />
         <Constraint Path="BusniessInfo" minOccurs="0" maxOccurs="1" />
         <Constraint Path="Employee" minOccurs="0" maxOccurs="1" />
@@ -14102,8 +14121,8 @@
         <Version Path="FileSpec" First="1.6" />
         <Version Path="ResistrationQuality" First="1.7"/>
         <Constraint Path="BindingQualityParams" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1" />
+        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="2" />
+        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="2" />
         <Constraint Path="RegistrationQuality" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
@@ -14195,11 +14214,13 @@
       <xs:appinfo>
         <Version Path="." First="1.2" />
         <Version Path="@Box" First="1.7" />
+        <Version Path="@End" First="1.6"/>
         <Version Path="@Position" First="1.7" />
         <Version Path="@Measurements" First="1.7" />
         <Version Path="@Sample" First="1.7" />
         <Version Path="@Severity" First="1.7" />
         <Version Path="@SourceDeviceID" First="1.7" />
+        <Version Path="@Start" First="1.6"/>
         <Version Path="Inspection" First="1.7" />
         <Version Path="RegistrationQuality" First="1.7" />
         <Constraint Path="BindingQualityParams" minOccurs="0" maxOccurs="1" />
@@ -14216,14 +14237,16 @@
   <xs:element name="QualityControlResultLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
   <xs:attributeGroup name="QualityControlResultAttribs_c">
     <xs:attribute name="Box" type="jdftyp:rectangle" use="optional" />
-    <xs:attribute name="Position" type="jdftyp:eFace_" use="optional" />
+    <xs:attribute name="End" type="jdftyp:dateTime" use="optional"/>
     <xs:attribute name="Failed" type="jdftyp:Integer" use="optional" />
     <xs:attribute name="Measurements" type="jdftyp:Integer" use="optional" />
     <xs:attribute name="MeasurementUsage" use="optional" type="jdftyp:eMeasurementUsages_" />
+    <xs:attribute name="Position" type="jdftyp:eFace_" use="optional" />
     <xs:attribute name="Passed" type="jdftyp:Integer" use="optional" />
     <xs:attribute name="Sample" type="jdftyp:IntegerRange" use="optional" />
     <xs:attribute name="Severity" type="jdftyp:Integer" use="optional" />
     <xs:attribute name="SourceDeviceID" type="jdftyp:NMTOKEN" use="optional" />
+    <xs:attribute name="Start" type="jdftyp:dateTime" use="optional"/>
   </xs:attributeGroup>
   <xs:attributeGroup name="QualityControlResultAttribs_u">
     <xs:attributeGroup ref="jdf:QualityControlResultAttribs_c" />
@@ -14940,6 +14963,7 @@
         <Version Path="@DocPages" First="1.7" />
         <Version Path="@EndOfBundleItem" First="1.2" />
         <Version Path="@EndOfSet" First="1.1" />
+        <Version Path="@FinishedPages" First="1.6"/>
         <Version Path="@IgnoreContext" First="1.4" />
         <Version Path="@NDoc" First="1.1" Last="1.1" />
         <Version Path="@NSet" First="1.1" Last="1.1" />
@@ -14982,6 +15006,7 @@
     <xs:attribute name="EndOfBundleItem" type="jdftyp:boolean" use="optional" />
     <xs:attribute name="EndOfDocument" type="jdftyp:boolean" use="optional" />
     <xs:attribute name="EndOfSet" type="jdftyp:boolean" use="optional" />
+    <xs:attribute name="FinishedPages" type="jdftyp:Integer" use="optional" />
     <xs:attribute name="FirstPage" type="jdftyp:Integer" use="optional" />
     <xs:attribute name="IgnoreContext" type="jdftyp:ePartitionKeys_" use="optional" />
     <xs:attribute name="LogicalPage" type="jdftyp:Integer" use="optional" />
@@ -15722,8 +15747,8 @@
     <xs:attribute name="CutBox" type="jdftyp:rectangle" use="optional" />
     <xs:attribute name="Dimensions" type="jdftyp:shape" use="optional" />
     <xs:attribute name="FlatDimensions" type="jdftyp:shape" use="optional" />
-    <xs:attribute name="FluteDirection" type="jdftyp:eShapeDefFluteDirection_" use="optional" />
-    <xs:attribute name="GrainDirection" type="jdftyp:eShapeDefGrainDirection_" use="optional" />
+    <xs:attribute name="FluteDirection" type="jdftyp:eMediaDirection_" use="optional" />
+    <xs:attribute name="GrainDirection" type="jdftyp:eMediaDirection_" use="optional" />
     <xs:attribute name="MediaSide" type="jdftyp:eMediaSide_" use="optional" />
     <xs:attribute name="ResourceWeight" type="jdftyp:double" use="optional" />
   </xs:attributeGroup>
@@ -16030,7 +16055,7 @@
         <xs:attribute name="DueDate" type="jdftyp:dateTime" use="optional" />
         <xs:attribute name="FillPriority" type="jdftyp:Integer" use="optional" />
         <xs:attribute name="GangElementID" type="jdftyp:ID" use="required" />
-        <xs:attribute name="GrainDirection" type="jdftyp:eGrainDirection_" use="optional" />
+        <xs:attribute name="GrainDirection" type="jdftyp:eMediaDirection_" use="optional" />
         <xs:attribute name="GroupCode" type="jdftyp:string" use="optional" />
         <xs:attribute name="JobID" type="jdftyp:string" use="optional" />
         <xs:attribute name="MaxQuantity" type="jdftyp:Integer" use="optional" />
@@ -16223,6 +16248,7 @@
         <Version Path="." First="1.1" />
         <Version Path="@FlexValue" Last="1.1" />
         <Version Path="@PullOutValue" Last="1.1" />
+        <Version Path="@SealingTemperature" First="1.6"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -16235,6 +16261,7 @@
     <xs:attribute name="NotchingDistance" type="jdftyp:double" use="optional" />
     <xs:attribute name="Operations" type="jdftyp:NMTOKENS" use="optional" />
     <xs:attribute name="PullOutValue" type="jdftyp:double" use="optional" />
+    <xs:attribute name="SealingTemperature" type="jdftyp:Integer" use="optional"/>
     <xs:attribute name="WorkingLength" type="jdftyp:double" use="optional" />
   </xs:attributeGroup>
   <xs:attributeGroup name="SpinePreparationParamsAttribs_u">
@@ -17293,6 +17320,7 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.1" />
+        <Version Path="@SealingTemperature" Last="1.5"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -17355,6 +17383,7 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="@Offset" First="1.1" />
+        <Version Path="@Sealing" Last="1.5"/>
         <Constraint Path="GlueLine" minOccurs="0" maxOccurs="unbounded" />
       </xs:appinfo>
     </xs:annotation>
