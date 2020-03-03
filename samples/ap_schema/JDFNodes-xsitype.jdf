@@ -1,10 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <!-- START SNIPPET -->
-<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" ID="BackCover"
-      Status="InProgress" Type="DigitalPrinting" Version="1.6" JobPartID="345"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.CIP4.org/Schema/JDFSchema_1_1 http://www.CIP4.org/Schema/JDF/JDF1_6"
-      xsi:type="DigitalPrinting">
+<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" ID="BackCover" Status="InProgress"
+  Type="DigitalPrinting" Version="1.6" JobPartID="345"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.CIP4.org/Schema/JDFSchema_1_1
+                      http://www.CIP4.org/Schema/JDF/JDF1_6"
+  xsi:type="DigitalPrinting">
   <ResourceLinkPool>
     <DigitalPrintingParamsLink Usage="Input" rRef="ID123"/>
     <RunListLink Usage="Input" rRef="ID124"/>
