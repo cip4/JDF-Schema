@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
 <JMF MaxVersion="1.6" SenderID="Scanner"
-  TimeStamp="2018-06-05T16:45:43+02:00" Version="1.6"
-  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  TimeStamp="2018-06-05T16:45:43+02:00" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Response ID="xyz" Type="KnownDevices" refID="DeviceQuery" xsi:type="ResponseKnownDevices">
     <DeviceList>
       <DeviceInfo DeviceStatus="Idle">
         <Device Class="Implementation" DeviceID="Joe the Drum"
           KnownLocalizations="En Fre" ModelName="Bongo">
-          <DeviceCap
-            GenericAttributes="ID Class SettingsPolicy BestEffortExceptions OperatorInterventionExceptions MustHonorExceptions PartIDKeys DocIndex"
-            Lang="Fre" Type="Scanning">
+          <DeviceCap Lang="Fre" Type="Scanning"
+            GenericAttributes="ID Class SettingsPolicy BestEffortExceptions 
+                OperatorInterventionExceptions MustHonorExceptions PartIDKeys DocIndex">
             <!-- the scanner takes a minute to set up and scans an average of 2 sheets a min. -->
             <Performance AverageAmount="120" AverageSetup="PT2M" Name="ExposedMedia"/>
             <DevCaps Name="NodeInfo">
@@ -31,16 +31,16 @@
               </DevCap>
             </DevCaps>
             <DevCaps Name="ScanParams">
-              <Loc
-                HelpText="Les parametres pour commander le procede de balayage." Value="Les parametres de module de balayage"/>
+              <Loc HelpText="Les parametres pour commander le procede de balayage."
+                Value="Les parametres de module de balayage"/>
               <DevCap>
                 <!-- Black and white 1 bit mode -->
                 <IntegerState AllowedValueMax="1" AllowedValueMin="1"
                   DefaultValue="8" Name="BitDepth"/>
                 <EnumerationState AllowedValueList="CCITTFaxEncode None"
                   HasDefault="false" Name="CompressionFilter">
-                  <Loc
-                    HelpText="Choisissez la compression pour reduire la taille de donnees." Value="La compression de donnees"/>
+                  <Loc HelpText="Choisissez la compression pour reduire la taille de donnees."
+                    Value="La compression de donnees"/>
                   <ValueLoc Value="CCITTFaxEncode">
                     <Loc Value="Compression de CCITT Fax"/>
                   </ValueLoc>
@@ -52,9 +52,10 @@
                   AllowedValueMin="1.e-002" HasDefault="false" Name="Magnification">
                   <Loc ShortValue="Rapport optique" Value="Rapport de rapport optique d'image"/>
                 </NumberState>
-                <EnumerationState AllowedValueList="GrayScale"
-                  HasDefault="false" Name="OutputColorSpace">
-                  <Loc ShortValue="Format de couleur" Value="Configurez le format de couleur de module de balayage"/>
+                <EnumerationState AllowedValueList="GrayScale" HasDefault="false"
+                  Name="OutputColorSpace">
+                  <Loc ShortValue="Format de couleur"
+                    Value="Configurez le format de couleur de module de balayage"/>
                   <ValueLoc Value="GrayScale">
                     <Loc Value="echelle de gris"/>
                   </ValueLoc>
@@ -72,8 +73,8 @@
                 <EnumerationState
                   AllowedValueList="FlateEncode DCTEncode None"
                   HasDefault="false" Name="CompressionFilter">
-                  <Loc
-                    HelpText="Choisissez la compression pour reduire la taille de donnees." Value="La compression de donnees"/>
+                  <Loc HelpText="Choisissez la compression pour reduire la taille de donnees."
+                    Value="La compression de donnees"/>
                   <ValueLoc Value="FlateEncode">
                     <Loc Value="Compression de Flate"/>
                   </ValueLoc>
@@ -90,7 +91,8 @@
                 </NumberState>
                 <EnumerationState AllowedValueList="GrayScale"
                   HasDefault="false" Name="OutputColorSpace">
-                  <Loc ShortValue="Format de couleur" Value="Configurez le format de couleur de module de balayage"/>
+                  <Loc ShortValue="Format de couleur"
+                    Value="Configurez le format de couleur de module de balayage"/>
                   <ValueLoc Value="GrayScale">
                     <Loc Value="Echelle de gris"/>
                   </ValueLoc>
@@ -108,8 +110,8 @@
                 </IntegerState>
                 <EnumerationState
                   AllowedValueList="FlateEncode DCTEncode None" Name="CompressionFilter">
-                  <Loc
-                    HelpText="Choisissez la compression pour reduire la taille de donnees." Value="La compression de donnees"/>
+                  <Loc HelpText="Choisissez la compression pour reduire la taille de donnees."
+                  Value="La compression de donnees"/>
                   <ValueLoc Value="FlateEncode">
                     <Loc Value="Compression de Flate"/>
                   </ValueLoc>
@@ -125,7 +127,8 @@
                   <Loc ShortValue="Rapport optique" Value="Rapport de rapport optique d'image"/>
                 </NumberState>
                 <EnumerationState AllowedValueList="CMYK RGB LAB" Name="OutputColorSpace">
-                  <Loc ShortValue="Format de couleur" Value="Configurez le format de couleur de module de balayage"/>
+                  <Loc ShortValue="Format de couleur"
+                    Value="Configurez le format de couleur de module de balayage"/>
                   <ValueLoc Value="CMYK">
                     <Loc Value="Couleur de CMYK"/>
                   </ValueLoc>

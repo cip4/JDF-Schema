@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JMF DescriptiveName="Example from JDF 1.2 Spec Document"
-  MaxVersion="1.6" SenderID="Scanner" TimeStamp="2018-10-17T14:30:47Z"
-  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<JMF DescriptiveName="Example from JDF 1.2 Spec Document" MaxVersion="1.6" SenderID="Scanner"
+  TimeStamp="2018-10-17T14:30:47Z" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Response ID="xyz" Type="KnownDevices" refID="DeviceQuery" xsi:type="ResponseKnownDevices">
     <DeviceList>
       <DeviceInfo DeviceStatus="Idle">
         <Device DeviceID="Joe the Drum" ModelName="Bongo">
-          <DeviceCap
-            GenericAttributes="ID Class SettingsPolicy BestEffortExceptions OperatorInterventionExceptions MustHonorExceptions PartIDKeys DocIndex" Types="Scanning">
+          <DeviceCap PartIDKeys DocIndex" Types="Scanning"
+            GenericAttributes="ID Class SettingsPolicy BestEffortExceptions
+                OperatorInterventionExceptions MustHonorExceptions >
             <Performance AverageAmount="120.0" Name="ExposedMedia"/>
             <FeaturePool>
-              <EnumerationState
-                AllowedValueList="Mono ColorTransparency Photo" ID="sm"
+              <EnumerationState AllowedValueList="Mono ColorTransparency Photo" ID="sm"
                 MacroRefs="ScanModeMacro" Name="ScanMode"/>
             </FeaturePool>
             <DisplayGroupPool>
@@ -23,19 +23,19 @@
             </DisplayGroupPool>
             <ActionPool>
               <Action ID="BD-bw-action" TestRef="BD-bw">
-                <Loc
-                  HelpText="For 1 bit grayscale, please select CCITTFaxEncoding"
-                  Lang="en" ShortValue="Ouch!" Value="Flate and DCT Encoding not allowed on 1 bit images"/>
+                <Loc Lang="en" ShortValue="Ouch!"
+                HelpText="For 1 bit grayscale, please select CCITTFaxEncoding"
+                Value="Flate and DCT Encoding not allowed on 1 bit images"/>
               </Action>
               <Action ID="ctcmp-action" TestRef="ctcmp">
-                <Loc
-                  HelpText="Only select CCITTFaxEncoding for 1 bit documents"
-                  Lang="en" ShortValue="Ouch!" Value="CCITTFaxEncoding not supported on grayscale images"/>
+                <Loc Lang="en" ShortValue="Ouch!"
+                HelpText="Only select CCITTFaxEncoding for 1 bit documents"
+                Value="CCITTFaxEncoding not supported on grayscale images"/>
               </Action>
               <Action ID="cd-action" TestRef="cd">
-                <Loc
+                <Loc ShortValue="Ouch!" Lang="en"
                   HelpText="Choose a bit depth of 10 or less for color images"
-                  Lang="en" ShortValue="Ouch!" Value="Bit depths higher than 10 are not supported for color"/>
+                  Value="Bit depths higher than 10 are not supported for color"/>
               </Action>
             </ActionPool>
             <TestPool>
@@ -137,9 +137,9 @@
                 <EnumerationState ActionRefs="cd"
                   AllowedValueList="GrayScale CMYK RGB LAB"
                   ID="colorspace" Name="OutputColorSpace"/>
-                <XYPairState
-                  AllowedValueList="100.0 100.0 300.0 300.0 600.0 600.0 1200.0 1200.0 2400.0 2400.0"
-                  DefaultValue="600.0 600.0" ID="outputres" Name="OutputResolution"/>
+                <XYPairState DefaultValue="600.0 600.0" ID="outputres" Name="OutputResolution"
+                  AllowedValueList="100.0 100.0 300.0 300.0 600.0 600.0
+                        1200.0 1200.0 2400.0 2400.0"/>
               </DevCap>
             </DevCaps>
           </DeviceCap>

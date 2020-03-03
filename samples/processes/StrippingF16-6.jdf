@@ -3,7 +3,7 @@
   <ResourcePool>
     <!-- START SNIPPET -->
     <StrippingParams ID="FoldCatalogSample" Class="Parameter" Status="Available" 
-          WorkStyle="WorkAndBack" PartIDKeys="SheetName">
+      WorkStyle="WorkAndBack" PartIDKeys="SheetName">
       <BinderySignature FoldCatalog="F16-6"/>
       <StrippingParams SheetName="Sheet1"/>
       <StrippingParams SheetName="Sheet2"/>

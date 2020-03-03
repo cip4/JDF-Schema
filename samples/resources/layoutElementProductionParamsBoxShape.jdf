@@ -3,8 +3,8 @@
 <!-- Shape Sample for a box defined by a CAD file
     Date: Jan 9, 2005 Version: 1.00 
     A page with a certain size  -->
-<JDF DescriptiveName="Page sample for shape" ID="n001" JobPartID="ID100"
-  Status="Waiting" Type="LayoutElementProduction" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF DescriptiveName="Page sample for shape" ID="n001" JobPartID="ID100" Status="Waiting"
+  Type="LayoutElementProduction" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
   <ResourcePool>
     <LayoutElementProductionParams Class="Parameter" ID="LEPParams" Status="Available">
       <ShapeDef>

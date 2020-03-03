@@ -4,8 +4,8 @@
     Date:Sept 2007 Version: 1.00 
     2 Shapes is repeated on a continuous range of sheet sizes.
 -->
-<JDF DescriptiveName="Single shape versus a set of sheet sizes"
-  ID="n001" Status="Waiting" Type="DieLayoutProduction" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF DescriptiveName="Single shape versus a set of sheet sizes" ID="n001" Status="Waiting"
+  Type="DieLayoutProduction" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
   <ResourcePool>
     <ShapeDef Class="Parameter" ID="Shape1Up" Status="Available">
       <FileSpec URL="file://myserver/myshare/beef.dd3"/>

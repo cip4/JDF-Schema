@@ -15,7 +15,7 @@
       </ColorantParams>
       <ColorPoolRef rRef="r000005"/>
       <!--ColorantAlias that maps the additional representations 
-(               noir, schwarz) to the predefined separation Black-->
+               (noir, schwarz) to the predefined separation Black-->
       <ColorantAlias Class="Parameter"
         RawNames="6E6F6972 73636877E4727A" ReplacementColorantName="Black">
         <SeparationSpec Name="noir"/>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JDF ID="J1" JobPartID="ID200" Status="Waiting" Type="Combined"
-  Types="DigitalPrinting Gathering Stitching" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="J1" JobPartID="ID200" Status="Waiting" Type="Combined" Version="1.6"
+  Types="DigitalPrinting Gathering Stitching" xmlns="http://www.CIP4.org/JDFSchema_1_1">
   <ResourceLinkPool>
     <!-- digital printing input RunList -->
     <RunListLink CombinedProcessIndex="0" Usage="Input" rRef="L1"/>

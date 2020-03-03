@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JMF MaxVersion="1.6" SenderID="IFRA"
-  TimeStamp="2003-07-25T12:32:48+02:00" Version="1.6"
-  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:IFRA="IfraTrack URI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<JMF MaxVersion="1.6" SenderID="IFRA" Version="1.6" TimeStamp="2003-07-25T12:32:48+02:00"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:IFRA="IfraTrack URI"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Response ID="M1" Type="IFRA:IMF" refID="Q1" xsi:type="ResponseIMF">
     <imf:IMF xmlns:imf="IfraTrack URI">The appropriate IFRA response(s)</imf:IMF>
   </Response>

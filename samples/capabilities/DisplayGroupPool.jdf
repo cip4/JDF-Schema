@@ -8,7 +8,7 @@
         <DisplayGroupPool>
           <DisplayGroup rRefs="btd cmp mag colorspace outputres">
             <Loc HelpText="Parameters for scanning configuration" Lang="en"
-                      Value="ScanningParameters"/>
+              Value="ScanningParameters"/>
           </DisplayGroup>
         </DisplayGroupPool>
       </DeviceCap>
