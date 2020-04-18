@@ -7,9 +7,9 @@
     <DeviceList>
       <DeviceInfo DeviceStatus="Idle">
         <Device DeviceID="Joe the Drum" ModelName="Bongo">
-          <DeviceCap PartIDKeys DocIndex" Types="Scanning"
+          <DeviceCap Types="Scanning"
             GenericAttributes="ID Class SettingsPolicy BestEffortExceptions
-                OperatorInterventionExceptions MustHonorExceptions >
+                OperatorInterventionExceptions MustHonorExceptions">
             <Performance AverageAmount="120.0" Name="ExposedMedia"/>
             <FeaturePool>
               <EnumerationState AllowedValueList="Mono ColorTransparency Photo" ID="sm"
