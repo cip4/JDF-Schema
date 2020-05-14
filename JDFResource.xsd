@@ -902,6 +902,7 @@
         <Version Path="@BleedLeft" First="1.5"/>
         <Version Path="@BleedRight" First="1.5"/>
         <Version Path="@BleedTop" First="1.5"/>
+        <Version Path="@Bottling" First="1.6"/>
         <Version Path="@FoldLay" First="1.4"/>
         <Version Path="@JogEdge" First="1.3"/>
         <Version Path="@OutsideGutter" First="1.3"/>
@@ -927,11 +928,12 @@
   <xs:attributeGroup name="BinderySignatureAttribs_c">
     <xs:attribute name="AlignmentReferenceWeb" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="BindingOrientation" type="jdftyp:Orientation" use="optional"/>
-	<xs:attribute name="BleedBottom" type="jdftyp:double" use="optional"/>
-	<xs:attribute name="BleedLeft" type="jdftyp:double" use="optional"/>
-	<xs:attribute name="BleedRight" type="jdftyp:double" use="optional"/>
-	<xs:attribute name="BleedTop" type="jdftyp:double" use="optional"/>
-	<xs:attribute name="FoldCatalog" type="jdftyp:string" use="optional"/>
+		<xs:attribute name="BleedBottom" type="jdftyp:double" use="optional"/>
+		<xs:attribute name="BleedLeft" type="jdftyp:double" use="optional"/>
+		<xs:attribute name="BleedRight" type="jdftyp:double" use="optional"/>
+		<xs:attribute name="BleedTop" type="jdftyp:double" use="optional"/>
+		<xs:attribute name="Bottling" type="jdftyp:eBinderySignatureBottling_" use="optional"/>
+		<xs:attribute name="FoldCatalog" type="jdftyp:string" use="optional"/>
     <xs:attribute name="FoldLay" type="jdftyp:Orientation" use="optional"/>
     <xs:attribute name="OutsideGutter" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="StaggerColumns" type="jdftyp:DoubleList" use="optional"/>

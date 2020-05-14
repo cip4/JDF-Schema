@@ -685,6 +685,13 @@
 			<xs:enumeration value="Grid"/>
 		</xs:restriction>
 	</xs:simpleType>
+	<xs:simpleType name="eBinderySignatureBottling_">
+		<xs:restriction base="jdftyp:EnumerationBaseType">
+			<xs:enumeration value="All"/>
+			<xs:enumeration value="Last"/>
+			<xs:enumeration value="None"/>
+		</xs:restriction>
+	</xs:simpleType>
 	<xs:simpleType name="eBindingEdge_">
 		<xs:restriction base="jdftyp:EnumerationBaseType">
 			<xs:enumeration value="Left"/>
