@@ -18568,6 +18568,22 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:complexType name="BindingIntentAdhesiveNote" mixed="false">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="." First="1.6"/>
+        <Constraint Path="GlueLine" minOccurs="0" maxOccurs="1"/>
+      </xs:appinfo>
+    </xs:annotation>
+    <xs:complexContent mixed="false">
+      <xs:extension base="jdf:BaseElement_">
+        <xs:sequence minOccurs="0" maxOccurs="unbounded">
+          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
+          <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
   
   <xs:complexType name="BindingIntentBookCase" mixed="false">
     <xs:annotation>
@@ -19064,6 +19080,7 @@
         <Version Path="BackCoverColorDetails" First="1.4"/>
         <Version Path="@BindingOrder" First="1.1"/>
         <Version Path="AdhesiveBinding" Last="1.0"/>
+        <Version Path="AdhesiveNote" First="1.6"/>
         <Version Path="BindingColorDetails" First="1.4"/>
         <Version Path="BindList" First="1.1"/>
         <Version Path="BindingLength" Last="1.5"/>
@@ -19082,6 +19099,7 @@
         <Constraint Path="BindingType" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="CoverColor" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="AdhesiveBinding" minOccurs="0" maxOccurs="1"/>
+        <Constraint Path="AdhesiveNote" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="BindList" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="BookCase" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="ChannelBinding" minOccurs="0" maxOccurs="1"/>
@@ -19118,6 +19136,7 @@
           <xs:element name="CoverColor" type="jdf:EnumerationSpan" minOccurs="0"/>
           <xs:element name="CoverColorDetails" type="jdf:StringSpan" minOccurs="0"/>
           <xs:element name="AdhesiveBinding" type="jdf:BindingIntentAdhesiveBinding" minOccurs="0"/>
+          <xs:element name="AdhesiveNote" type="jdf:BindingIntentAdhesiveNote" minOccurs="0"/>
           <xs:element name="BindList" type="jdf:BindingIntent_BindList_lr" minOccurs="0"/>
           <xs:element name="BookCase" type="jdf:BindingIntentBookCase" minOccurs="0"/>
           <xs:element name="ChannelBinding" type="jdf:BindingIntentChannelBinding" minOccurs="0"/>
