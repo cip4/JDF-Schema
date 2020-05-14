@@ -1624,6 +1624,7 @@
 			<xs:appinfo>
 				<Version Path="." First="1.5"/>
 				<Constraint Path="ResourceLinkPool/AssemblyLink" Usage="Input" minOccurs="0" maxOccurs="unbounded"/>
+				<Constraint Path="ResourceLinkPool/BinderySignatureLink" Usage="Input" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ResourceLinkPool/SheetOptimizingParamsLink" Usage="Input" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ResourceLinkPool/StrippingParamsLink" Usage="Output" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
@@ -1638,11 +1639,17 @@
 		</xs:complexContent>
 	</xs:complexType>
 	<xs:complexType name="SheetOptimizingResLinkPool_" mixed="false">
+		<xs:annotation>
+			<xs:appinfo>
+				<Version Path="ResourceLinkPool/BinderySignature" First="1.6"/>
+			</xs:appinfo>
+		</xs:annotation>
 		<xs:complexContent mixed="false">
 			<xs:extension base="jdf:ResourceLinkPool_">
 				<xs:sequence minOccurs="0" maxOccurs="unbounded">
 					<xs:group ref="jdf:ProcessInputResources_" minOccurs="0"/>
 					<xs:element ref="jdf:AssemblyLink" minOccurs="0"/>
+					<xs:element ref="jdf:BinderySignatureLink" minOccurs="0"/>
 					<xs:element ref="jdf:SheetOptimizingParamsLink" minOccurs="0"/>
 					<xs:element ref="jdf:StrippingParamsLink" minOccurs="0"/>
 				</xs:sequence>
