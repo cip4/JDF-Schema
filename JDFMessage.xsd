@@ -4411,6 +4411,7 @@
 					<xs:group ref="jdf:GenericElements" minOccurs="0"/>
 				</xs:sequence>
 				<xs:attribute name="GangNames" type="jdftyp:NMTOKENS" use="optional"/>
+				<xs:attribute name="Policy" type="jdftyp:eGangCmdFilterPolicy_" use="optional"/>
 			</xs:extension>
 		</xs:complexContent>
 	</xs:complexType>
@@ -4431,6 +4432,7 @@
 	<xs:complexType name="CommandForceGang" mixed="false">
 		<xs:annotation>
 			<xs:appinfo>
+				<Version Path="GangCmdFilter/@Policy" First="1.6"/>			
 				<Constraint Path="QueueFilter" minOccurs="0" maxOccurs="1"/>
 			</xs:appinfo>
 		</xs:annotation>
