@@ -6337,6 +6337,7 @@
   <xs:element name="FileSpec" type="jdf:FileSpec_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
+        <Version Path="@AppOS" Last="1.5" />
         <Version Path="@CheckSum" First="1.1" />
         <Version Path="@Disposition" Last="1.1" />
         <Version Path="@Encoding" First="1.4" />
@@ -6345,6 +6346,7 @@
         <Version Path="@MimeType" First="1.0" />
         <Version Path="@MimeTypeVersion" First="1.2" />
         <Version Path="@OverwritePolicy" First="1.2" />
+        <Version Path="@OSVersion" Last="1.5" />
         <Version Path="@Password" First="1.3" />
         <Version Path="@RequestQuality" First="1.3" />
         <Version Path="@SearchDepth" First="1.2" />
