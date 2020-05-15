@@ -19366,6 +19366,7 @@
       <xs:appinfo>
         <Version Path="@AdditionalAmount" First="1.0" Last="1.2" />
         <Version Path="@Proof" First="1.1" />
+        <Version Path="@Unit" Last="1.5" />
         <Version Path="Pricing" Last="1.2" />
         <Constraint Path="Pricing" minOccurs="0" maxOccurs="1" />
         <Constraint Path="Component" minOccurs="0" maxOccurs="1" />
