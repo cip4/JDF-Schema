@@ -4949,6 +4949,7 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.3" />
+        <Version Path="@Revision" First="1.6"/>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
@@ -4967,6 +4968,7 @@
         <xs:attribute name="ModuleID" type="jdftyp:string" />
         <xs:attribute name="ModuleIndex" type="jdftyp:Integer" />
         <xs:attribute name="ModuleType" type="jdftyp:NMTOKEN" />
+        <xs:attribute name="Revision" type="jdftyp:string" />
         <xs:attribute name="SerialNumber" type="jdftyp:string" />
         <xs:attribute name="SubModuleIndex" type="jdftyp:Integer" />
       </xs:extension>
