@@ -103,7 +103,7 @@
         <Version Path="@rSubRef" Last="1.1" />
         <Version Path="@Transformation" First="1.1" />
         <Version Path="AmountPool" First="1.1" />
-        <Version Path="Lot" First="1.3" />
+        <Version Path="Lot" First="1.3" Last="1.5"/>
         <Constraint Path="AmountPool" minOccurs="0" maxOccurs="1" />
         <Constraint Path="AmountPool/PartAmount" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="AmountPool/PartAmount/Part" minOccurs="1" maxOccurs="1" />
