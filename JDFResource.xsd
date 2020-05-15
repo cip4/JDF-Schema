@@ -4432,14 +4432,18 @@
   <xs:element name="DeliveryParams" type="jdf:DeliveryParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
+        <Version Path="@DeliveryID" First="1.6"/>
+        <Version Path="@EarliestDuration" First="1.6"/>
         <Version Path="@Pickup" Last="1.1" />
+        <Version Path="@RequiredDuration" First="1.6"/>
         <Version Path="@ServiceLevel" First="1.2" />
         <Version Path="@Transfer" First="1.2" />
         <Version Path="Company" Last="1.0" />
         <Version Path="CompanyRef" Last="1.0" />
         <Version Path="Contact" First="1.1" />
         <Version Path="ContactRef" First="1.1" />
-        <Version Path="FileSpec" First="1.5" />
+        <Version Path='FileSpec[@ProcessUsage="DeliveryContents"]' First="1.6" />
+        <Version Path='FileSpec[@ProcessUsage="MailingList"]' First="1.5" />
         <Constraint Path="Company" minOccurs="0" maxOccurs="1" />
         <Constraint Path="CompanyRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="Contact" minOccurs="0" maxOccurs="unbounded" />
@@ -4452,10 +4456,13 @@
   <xs:element name="DeliveryParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
   <xs:element name="DeliveryParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
   <xs:attributeGroup name="DeliveryParamsAttribs_c">
+    <xs:attribute name="DeliveryID" type="jdftyp:string" use="optional" />
     <xs:attribute name="Earliest" type="jdftyp:dateTime" use="optional" />
+    <xs:attribute name="EarliestDuration" type="jdftyp:duration" use="optional" />
     <xs:attribute name="Method" type="jdftyp:string" use="optional" />
     <xs:attribute name="Pickup" type="jdftyp:boolean" use="optional" />
     <xs:attribute name="Required" type="jdftyp:dateTime" use="optional" />
+    <xs:attribute name="RequiredDuration" type="jdftyp:duration" use="optional" />
     <xs:attribute name="ServiceLevel" type="jdftyp:string" use="optional" />
     <xs:attribute name="Transfer" type="jdftyp:eDeliveryTransfer_" use="optional" />
   </xs:attributeGroup>
