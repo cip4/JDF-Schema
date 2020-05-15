@@ -3521,8 +3521,8 @@
 		<xs:annotation>
 			<xs:appinfo>
 				<Version Path="." First="1.1"/>
-				<Version Path='ResourceLinkPool/ComponentLink[@ProcessUsage="Component"]' First="1.6"
-				<Version Path="ResourceLinkPool/MiscConsumable" First="1.6"
+				<Version Path='ResourceLinkPool/ComponentLink[@ProcessUsage="Component"]' First="1.6"/>
+				<Version Path="ResourceLinkPool/MiscConsumable" First="1.6"/>
 				<Constraint Path="ResourceLinkPool/ComponentLink" Usage="Input" minOccurs="1" maxOccurs="2"/>
 				<Constraint Path="ResourceLinkPool/MediaLink" Usage="Input" minOccurs="0" maxOccurs="1"/>
 				<Constraint Path="ResourceLinkPool/MiscConsumableLink" Usage="Input" minOccurs="1" maxOccurs="1"/>
@@ -3546,7 +3546,6 @@
 					<xs:group ref="jdf:ProcessInputResources_" minOccurs="0"/>
 					<xs:element ref="jdf:ComponentLink" minOccurs="0" maxOccurs="2" />
 					<xs:element ref="jdf:MediaLink" minOccurs="0"/>
-					<xs:element ref="jdf:MiscConsumableLink" minOccurs="0"/>
 					<xs:element ref="jdf:WrappingParamsLink" minOccurs="0"/>
 				</xs:sequence>
 			</xs:extension>
