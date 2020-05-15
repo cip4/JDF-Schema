@@ -6897,6 +6897,7 @@
   <xs:element name="GatheringParams" type="jdf:GatheringParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
+        <Version Path="Disjointing" Last="1.5"/>
         <Constraint Path="Disjointing" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
