@@ -1774,7 +1774,7 @@
   <xs:complexType name="ResourceQuParams_m" mixed="false">
     <xs:annotation>
       <xs:appinfo>
-        <Version Path="@Context" First="1.5" />
+        <Version Path="@Context" First="1.5" Last="1.5" />
         <Version Path="@LotDetails" First="1.4" Last="1.5" />
         <Version Path="@LotID" First="1.4" Last="1.5" />
         <Version Path="@ProductID" First="1.2" />
