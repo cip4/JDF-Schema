@@ -3524,6 +3524,7 @@
       <xs:appinfo>
         <Version Path="." First="1.1" />
         <Version Path='ResourceLinkPool/ComponentLink[@ProcessUsage="Component"]' First="1.6" />
+        <Version Path="ResourceLinkPool/MediaLink" Last="1.5" />
         <Version Path="ResourceLinkPool/MiscConsumable" First="1.6" />
         <Constraint Path="ResourceLinkPool/ComponentLink" Usage="Input" minOccurs="1" maxOccurs="2" />
         <Constraint Path="ResourceLinkPool/MediaLink" Usage="Input" minOccurs="0" maxOccurs="1" />
