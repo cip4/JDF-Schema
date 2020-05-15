@@ -7573,6 +7573,8 @@
   <xs:element name="IdentificationFieldLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
   <xs:attributeGroup name="IdentificationFieldAttribs_c">
     <xs:attribute name="BoundingBox" type="jdftyp:rectangle" use="optional" />
+    <xs:attribute name="Encoding" type="jdftyp:eEncoding_" use="optional" />
+    <xs:attribute name="EncodingDetails" type="jdftyp:NMTOKEN" use="optional" />
     <xs:attribute name="Format" type="jdftyp:regExp" use="optional" />
     <xs:attribute name="Orientation" type="jdftyp:matrix" use="optional" />
     <xs:attribute name="Page" type="jdftyp:Integer" use="optional" />
@@ -7585,13 +7587,9 @@
   </xs:attributeGroup>
   <xs:attributeGroup name="IdentificationFieldAttribs_u">
     <xs:attributeGroup ref="jdf:IdentificationFieldAttribs_c" />
-    <xs:attribute name="Encoding" type="jdftyp:eEncoding_" use="optional" />
-    <xs:attribute name="EncodingDetails" type="jdftyp:NMTOKEN" use="optional" />
   </xs:attributeGroup>
   <xs:attributeGroup name="IdentificationFieldAttribs_r">
     <xs:attributeGroup ref="jdf:IdentificationFieldAttribs_c" />
-    <xs:attribute name="Encoding" type="jdftyp:eEncoding_" use="required" />
-    <xs:attribute name="EncodingDetails" type="jdftyp:NMTOKEN" use="required" />
   </xs:attributeGroup>
   <xs:complexType name="IdentificationField_r" mixed="false">
     <xs:complexContent mixed="false">
