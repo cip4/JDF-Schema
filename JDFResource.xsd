@@ -3328,6 +3328,8 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.3" />
+        <version Path="@CatalogDetails" Last="1.5"/>
+        <version Path="@CatalogID" Last="1.5"/>
         <Version Path="@ContentRefs" First="1.4" />
         <Version Path="@ID" First="1.4" />
         <Version Path="ContentMetaData" First="1.4" />
