@@ -7300,13 +7300,20 @@
   <xs:attributeGroup name="HoleAttribs_u">
     <xs:attributeGroup ref="jdf:HoleAttribs_c" />
     <xs:attribute name="Center" type="jdftyp:XYPair" use="optional" />
-    <xs:attribute name="Extent" type="jdftyp:XYPair" use="optional" />
+    <xs:attribute name="Extent" type="jdftyp:XYPair" use="optional">
+      <xs:annotation>
+        <xs:appinfo>
+          <Version Path="@Reinforcement" First="1.6"/>
+        </xs:appinfo>
+      </xs:annotation>
+    </xs:attribute>
     <xs:attribute name="Shape" type="jdftyp:eHoleShape_" use="optional" />
   </xs:attributeGroup>
   <xs:attributeGroup name="HoleAttribs_r">
     <xs:attributeGroup ref="jdf:HoleAttribs_c" />
     <xs:attribute name="Center" type="jdftyp:XYPair" use="required" />
     <xs:attribute name="Extent" type="jdftyp:XYPair" use="required" />
+    <xs:attribute name="Reinforcement" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="Shape" type="jdftyp:eHoleShape_" use="required" />
   </xs:attributeGroup>
   <xs:complexType name="Hole_r" mixed="false">
