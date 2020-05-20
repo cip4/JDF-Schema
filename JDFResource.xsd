@@ -13923,8 +13923,8 @@
         <Version Path="." First="1.2" />
         <Version Path="FileSpec" First="1.6" />
         <Constraint Path="BindingQualityParams" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1" />
+        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="2" />
+        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="2" />
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
