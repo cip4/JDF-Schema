@@ -15981,6 +15981,7 @@
         <Version Path="." First="1.1" />
         <Version Path="@FlexValue" Last="1.1" />
         <Version Path="@PullOutValue" Last="1.1" />
+        <Version Path="@SealingTemperature" First="1.6"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -15993,6 +15994,7 @@
     <xs:attribute name="NotchingDistance" type="jdftyp:double" use="optional" />
     <xs:attribute name="Operations" type="jdftyp:NMTOKENS" use="optional" />
     <xs:attribute name="PullOutValue" type="jdftyp:double" use="optional" />
+    <xs:attribute name="SealingTemperature" type="jdftyp:Integer" use="optional" />
     <xs:attribute name="WorkingLength" type="jdftyp:double" use="optional" />
   </xs:attributeGroup>
   <xs:attributeGroup name="SpinePreparationParamsAttribs_u">
