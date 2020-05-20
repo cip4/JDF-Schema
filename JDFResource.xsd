@@ -114,6 +114,8 @@
   <xs:element name="Address" type="jdf:Address_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
+        <Version Path="@AddressUsage" First="1.6"/>
+        <Version Path="@CivicNumber" First="1.6"/>
         <Version Path="AddressLine" First="1.6"/>
         <Constraint Path="ExtendedAddress" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
@@ -122,9 +124,11 @@
   <xs:element name="AddressRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
   <xs:element name="AddressLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
   <xs:attributeGroup name="AddressAttribs_c">
+    <xs:attribute name="AddressUsage" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="City" type="jdftyp:string" use="optional" />
+    <xs:attribute name="CivicNumber" type="jdftyp:string" use="optional" />
     <xs:attribute name="Country" type="jdftyp:string" use="optional" />
-    <xs:attribute name="CountryCode" type="jdftyp:string" use="optional" />
+    <xs:attribute name="CountryCode" type="jdftyp:NMTOKEN" use="optional" />
     <xs:attribute name="PostBox" type="jdftyp:string" use="optional" />
     <xs:attribute name="PostalCode" type="jdftyp:string" use="optional" />
     <xs:attribute name="Region" type="jdftyp:string" use="optional" />
