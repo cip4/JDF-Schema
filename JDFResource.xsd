@@ -10565,6 +10565,7 @@
         <Version Path="@BackBrightness" First="1.5" />
         <Version Path="@BackCoatingDetail" First="1.4" />
         <Version Path="@BackGlossValue" First="1.2" />
+        <Version Path="@BackISOPaperSubstrate" First="1.6"/>
         <Version Path="@CIETint" First="1.2" />
         <Version Path="@CIEWhiteness" First="1.2" />
         <Version Path="@ColorName" First="1.1" Last="1.1" />
@@ -10573,6 +10574,7 @@
         <Version Path="@FluteDirection" First="1.3" />
         <Version Path="@FrontCoatingDetail" First="1.4" />
         <Version Path="@FrontGlossValue" First="1.2" />
+        <Version Path="@Grade" Last="1.5"/>
         <Version Path="@GrainDirection" First="1.1" />
         <Version Path="@HoleCount" Last="1.0" />
         <Version Path="@HoleType" First="1.1" />
@@ -10624,6 +10626,7 @@
     <xs:attribute name="BackCoatingDetail" type="jdftyp:NMTOKEN" use="optional" />
     <xs:attribute name="BackCoatings" type="jdftyp:eCoatings_" use="optional" />
     <xs:attribute name="BackGlossValue" type="jdftyp:double" use="optional" />
+    <xs:attribute name="BackISOPaperSubstrate" type="jdftyp:eMediaSubstrateType_" use="optional" />
     <xs:attribute name="Brightness" type="jdftyp:double" use="optional" />
     <xs:attribute name="CIETint" type="jdftyp:double" use="optional" />
     <xs:attribute name="CIEWhiteness" type="jdftyp:double" use="optional" />
