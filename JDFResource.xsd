@@ -14701,6 +14701,7 @@
         <Version Path="@DocCopies" First="1.1" />
         <Version Path="@EndOfBundleItem" First="1.2" />
         <Version Path="@EndOfSet" First="1.1" />
+        <Version Path="@FinishedPages" First="1.6" />
         <Version Path="@IgnoreContext" First="1.4" />
         <Version Path="@NDoc" First="1.1" Last="1.1" />
         <Version Path="@NSet" First="1.1" Last="1.1" />
@@ -14742,6 +14743,7 @@
     <xs:attribute name="EndOfBundleItem" type="jdftyp:boolean" use="optional" />
     <xs:attribute name="EndOfDocument" type="jdftyp:boolean" use="optional" />
     <xs:attribute name="EndOfSet" type="jdftyp:boolean" use="optional" />
+    <xs:attribute name="FinishedPages" type="jdftyp:Integer" use="optional" />
     <xs:attribute name="FirstPage" type="jdftyp:Integer" use="optional" />
     <xs:attribute name="IgnoreContext" type="jdftyp:NMTOKENS" use="optional" />
     <xs:attribute name="LogicalPage" type="jdftyp:Integer" use="optional" />
