@@ -114,6 +114,7 @@
   <xs:element name="Address" type="jdf:Address_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
+        <Version Path="AddressLine" First="1.6"/>
         <Constraint Path="ExtendedAddress" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
@@ -141,6 +142,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
+          <xs:element name="AddressLine" type="jdf:telem" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element name="ExtendedAddress" type="jdf:telem" minOccurs="0" />
           <xs:element name="AddressUpdate" type="jdf:Address_re" minOccurs="0" />
           <xs:element name="Address" type="jdf:Address_rp" minOccurs="0" />
@@ -155,6 +157,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
+          <xs:element name="AddressLine" type="jdf:telem" minOccurs="0" maxOccurs="unbounded"/>
           <xs:element name="ExtendedAddress" type="jdf:telem" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:AddressAttribs_r" />
@@ -167,6 +170,7 @@
         <xs:choice>
           <xs:sequence maxOccurs="unbounded">
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
+            <xs:element name="AddressLine" type="jdf:telem" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="ExtendedAddress" type="jdf:telem" minOccurs="0" />
             <xs:element name="Address" type="jdf:Address_rp" minOccurs="0" />
             <xs:group ref="jdf:GenericElements" minOccurs="0" />
