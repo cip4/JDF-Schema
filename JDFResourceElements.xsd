@@ -67,7 +67,7 @@
         <Version Path="@SourceRenderingIntent" First="1.2" />
         <Version Path="DeviceNSpace" First="1.2" />
         <Version Path="DeviceNSpaceRef" First="1.2" />
-        <Version Path="FileSpec[@ResourceUsage='AbstractProfile']" First="1.2" />
+        <Version Path="FileSpec[@ResourceUsage='AbstractProfile']" First="1.2" Last="1.5"/>
         <Version Path="SeparationSpec" First="1.2" />
         <Constraint Path="DeviceNSpace" minOccurs="0" maxOccurs="1" />
         <Constraint Path="DeviceNSpaceRef" minOccurs="0" maxOccurs="1" />
