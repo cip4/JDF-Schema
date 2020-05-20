@@ -17105,6 +17105,7 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="@Offset" First="1.1" />
+        <Version Path="@Sealing" Last="1.5"/>
         <Constraint Path="GlueLine" minOccurs="0" maxOccurs="unbounded" />
       </xs:appinfo>
     </xs:annotation>
