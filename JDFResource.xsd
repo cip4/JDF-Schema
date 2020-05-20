@@ -18324,14 +18324,14 @@
   </xs:element>
   <xs:element name="WrappingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
   <xs:element name="WrappingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
-  <xs:attributeGroup name="WrappingParamsAttribs_c" />
+  <xs:attributeGroup name="WrappingParamsAttribs_c">
+    <xs:attribute name="WrappingKind" type="jdftyp:eWrappingKind_" use="optional" />
+  </xs:attributeGroup>
   <xs:attributeGroup name="WrappingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:WrappingParamsAttribs_c" />
-    <xs:attribute name="WrappingKind" type="jdftyp:eWrappingKind_" use="optional" />
   </xs:attributeGroup>
   <xs:attributeGroup name="WrappingParamsAttribs_r">
     <xs:attributeGroup ref="jdf:WrappingParamsAttribs_c" />
-    <xs:attribute name="WrappingKind" type="jdftyp:eWrappingKind_" use="required" />
   </xs:attributeGroup>
   <xs:complexType name="WrappingParams_r" mixed="false">
     <xs:complexContent mixed="false">
