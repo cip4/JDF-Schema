@@ -17042,6 +17042,7 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.1" />
+        <Version Path="SealingTemperature" Last="1.5"/>
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
