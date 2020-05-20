@@ -73,6 +73,7 @@
         <Version Path="@AgentVersion" First="1.3" />
         <Version Path="@Author" First="1.3" />
         <Version Path="@ID" First="1.3" />
+        <Version Path="@PersonalID" First="1.6"/>
         <Version Path="@TimeStamp" First="1.3" />
       </xs:appinfo>
     </xs:annotation>
@@ -87,6 +88,7 @@
         <xs:attribute name="Language" type="jdftyp:language" use="optional" />
         <xs:attribute name="Name" type="jdftyp:NMTOKEN" default="Description" />
         <xs:attribute name="Path" type="jdftyp:PDFPath" use="optional" />
+        <xs:attribute name="PersonalID" type="jdftyp:NMTOKEN" use="optional"/>
         <xs:attribute name="TimeStamp" type="jdftyp:dateTime" use="optional" />
         <xs:anyAttribute namespace="##other" processContents="lax" />
       </xs:extension>
