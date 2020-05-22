@@ -19398,8 +19398,8 @@
         <Version Path="BackCoverColor" First="1.1" />
         <Version Path="BackCoverColorDetails" First="1.4" />
         <Version Path="@BindingOrder" First="1.1" />
-        <Version Path="AdhesiveNote" First="1.6"/>
         <Version Path="AdhesiveBinding" Last="1.0" />
+        <Version Path="AdhesiveNote" First="1.6"/>
         <Version Path="BindingColorDetails" First="1.4" />
         <Version Path="BindList" First="1.1" />
         <Version Path="BindingLength" Last="1.5" />
@@ -19417,8 +19417,8 @@
         <Constraint Path="BindingSide" minOccurs="0" maxOccurs="1" />
         <Constraint Path="BindingType" minOccurs="0" maxOccurs="1" />
         <Constraint Path="CoverColor" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="AdhesiveNote" minOccurs="0" maxOccurs="1" />
         <Constraint Path="AdhesiveBinding" minOccurs="0" maxOccurs="1" />
+        <Constraint Path="AdhesiveNote" minOccurs="0" maxOccurs="1" />
         <Constraint Path="BindList" minOccurs="0" maxOccurs="1" />
         <Constraint Path="BookCase" minOccurs="0" maxOccurs="1" />
         <Constraint Path="ChannelBinding" minOccurs="0" maxOccurs="1" />
@@ -19454,8 +19454,8 @@
           <xs:element name="BindingSide" type="jdf:EnumerationSpan" minOccurs="0" />
           <xs:element name="CoverColor" type="jdf:EnumerationSpan" minOccurs="0" />
           <xs:element name="CoverColorDetails" type="jdf:StringSpan" minOccurs="0" />
-          <xs:element name="AdhesiveNote" type="jdf:BindingIntentAdhesiveNote" minOccurs="0"/>
           <xs:element name="AdhesiveBinding" type="jdf:BindingIntentAdhesiveBinding" minOccurs="0" />
+          <xs:element name="AdhesiveNote" type="jdf:BindingIntentAdhesiveNote" minOccurs="0"/>
           <xs:element name="BindList" type="jdf:BindingIntent_BindList_lr" minOccurs="0" />
           <xs:element name="BookCase" type="jdf:BindingIntentBookCase" minOccurs="0" />
           <xs:element name="ChannelBinding" type="jdf:BindingIntentChannelBinding" minOccurs="0" />
