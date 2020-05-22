@@ -19110,6 +19110,7 @@
       <xs:appinfo>
         <Version Path="StapleShape" First="1.6" />
         <Version Path="StitchNumber" First="1.1" />
+        <Constraint Path="StapleShape" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="StitchNumber" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
@@ -19139,6 +19140,7 @@
       <xs:appinfo>
         <Version Path="StapleShape" First="1.6" />
         <Version Path="StitchNumber" First="1.2" />
+        <Constraint Path="StapleShape" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="StitchNumber" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
