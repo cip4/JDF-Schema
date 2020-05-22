@@ -4457,8 +4457,13 @@
 
   <xs:element name="GangCmdFilter" type="jdf:GangCmdFilter_m" substitutionGroup="jdf:CommandTypeObj" />
   <xs:element name="GangQuFilter" type="jdf:GangQuFilter_m" substitutionGroup="jdf:QueryTypeObj" />
-  <xs:element name="GangInfo" type="jdf:GangInfo_m" substitutionGroup="jdf:ResponseTypeObj" />
-  <xs:complexType name="GangCmdFilter_m" mixed="false">
+  <xs:element name="GangInfo" type="jdf:GangInfo_m" substitutionGroup="jdf:ResponseTypeObj">
+    <xs:annotation>
+      <xs:appinfo>
+        <Version Path="@Amount" First="1.6"/>       
+      </xs:appinfo>
+    </xs:annotation>
+  </xs:element>  <xs:complexType name="GangCmdFilter_m" mixed="false">
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:CommandTypeObj_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
