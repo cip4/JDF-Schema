@@ -4545,7 +4545,8 @@
         <Version Path="CompanyRef" Last="1.0" />
         <Version Path="Contact" First="1.1" />
         <Version Path="ContactRef" First="1.1" />
-        <Version Path="FileSpec" First="1.5" />
+        <Version Path='FileSpec[@ProcessUsage="DeliveryContents"]' First="1.6" />
+        <Version Path='FileSpec[@ProcessUsage="MailingList"]' First="1.5" />
         <Constraint Path="Company" minOccurs="0" maxOccurs="1" />
         <Constraint Path="CompanyRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="Contact" minOccurs="0" maxOccurs="unbounded" />
