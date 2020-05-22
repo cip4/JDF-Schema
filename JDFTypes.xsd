@@ -3648,6 +3648,7 @@
   </xs:simpleType>
   <xs:simpleType name="eWrappingKind_">
     <xs:restriction base="jdftyp:EnumerationBaseType">
+      <xs:enumeration value="Band" />
       <xs:enumeration value="LooseWrap" />
       <xs:enumeration value="ShrinkWrap" />
     </xs:restriction>
