@@ -3564,7 +3564,7 @@
         <Version Path="." First="1.1" />
         <Version Path="ResourceLinkPool/MediaLink" Last="1.5" />
         <Version Path="ResourceLinkPool/MiscConsumableLink" First="1.6" />
-        <Constraint Path="ResourceLinkPool/ComponentLink" Usage="Input" minOccurs="1" maxOccurs="1" />
+        <Constraint Path="ResourceLinkPool/ComponentLink" Usage="Input" minOccurs="1" maxOccurs="2" />
         <Constraint Path="ResourceLinkPool/WrappingParamsLink" Usage="Input" minOccurs="1" maxOccurs="1" />
         <Constraint Path="ResourceLinkPool/MediaLink" Usage="Input" minOccurs="0" maxOccurs="1" />
         <Constraint Path="ResourceLinkPool/MiscConsumable" Usage="Input" minOccurs="0" maxOccurs="1" />
