@@ -16030,7 +16030,7 @@
         <Version Path="GangElement/@CustomerID" First="1.7" />
         <Version Path="GangElement/@Operations" First="1.7" />
         <Version Path="GangElement/@PlacedQuantity" First="1.7" />
-        <Constraint Path="ConvertingConfig" minOccurs="1" maxOccurs="unbounded" />
+        <Constraint Path="ConvertingConfig" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="GangElement" minOccurs="1" maxOccurs="unbounded" />
         <Constraint Path="GangElement/SeparationListBack" minOccurs="0" maxOccurs="1" />
         <Constraint Path="GangElement/SeparationListBack/SeparationSpec" minOccurs="1" maxOccurs="unbounded" />
