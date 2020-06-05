@@ -2008,6 +2008,13 @@
       <xs:enumeration value="Spread" />
     </xs:restriction>
   </xs:simpleType>
+  <xs:simpleType name="eIllumination_">
+    <xs:restriction base="jdftyp:EnumerationBaseType">
+      <xs:enumeration value="D50" />
+      <xs:enumeration value="D65" />
+      <xs:enumeration value="Unknown" />
+    </xs:restriction>
+  </xs:simpleType>
   <xs:simpleType name="eImagableSide_">
     <xs:restriction base="jdftyp:EnumerationBaseType">
       <xs:enumeration value="Front" />

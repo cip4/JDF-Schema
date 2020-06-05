@@ -2716,13 +2716,13 @@
   <xs:attributeGroup name="ColorMeasurementConditionsAttribs_u">
     <xs:attributeGroup ref="jdf:ColorMeasurementConditionsAttribs_c" />
     <xs:attribute name="DensityStandard" type="jdftyp:eDensityStandard_" use="optional" />
-    <xs:attribute name="Illumination" type="jdftyp:NMTOKEN" use="optional" />
+    <xs:attribute name="Illumination" type="jdftyp:eIllumination_" use="optional" />
     <xs:attribute name="Observer" type="jdftyp:Integer" use="optional" />
   </xs:attributeGroup>
   <xs:attributeGroup name="ColorMeasurementConditionsAttribs_r">
     <xs:attributeGroup ref="jdf:ColorMeasurementConditionsAttribs_c" />
     <xs:attribute name="DensityStandard" type="jdftyp:eDensityStandard_" default="ANSIT" />
-    <xs:attribute name="Illumination" type="jdftyp:NMTOKEN" default="D50" />
+    <xs:attribute name="Illumination" type="jdftyp:eIllumination_" default="D50" />
     <xs:attribute name="Observer" type="jdftyp:Integer" default="2" />
   </xs:attributeGroup>
   <xs:complexType name="ColorMeasurementConditions_r" mixed="false">
