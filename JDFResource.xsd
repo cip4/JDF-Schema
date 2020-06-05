@@ -16831,6 +16831,7 @@
         <Version Path="@GangElementID" First="1.5" />
         <Version Path="@InnermostShingling" First="1.4" />
         <Version Path="@OutermostShingling" First="1.4" />
+        <Version Path="@SheetLay" First="1.7" />
         <Version Path="@SheetNameFormat" First="1.4" />
         <Version Path="@SheetNameTemplate" First="1.4" />
         <Version Path="@StackDepth" First="1.4" />
@@ -16878,6 +16879,7 @@
     <xs:attribute name="JobID" type="jdftyp:shortString" use="optional" />
     <xs:attribute name="OutermostShingling" type="jdftyp:double" use="optional" />
     <xs:attribute name="SectionList" type="jdftyp:IntegerList" use="optional" />
+    <xs:attribute name="SheetLay" type="jdftyp:eSheetLay_" use="optional" />
     <xs:attribute name="SheetNameFormat" type="jdftyp:string" use="optional" />
     <xs:attribute name="SheetNameTemplate" type="jdftyp:string" use="optional" />
     <xs:attribute name="StackDepth" type="jdftyp:Integer" use="optional" />
