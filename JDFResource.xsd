@@ -16027,7 +16027,9 @@
       <xs:appinfo>
         <Version Path="." First="1.5" />
         <Version Path="@Policy" First="1.7" />
+        <Version Path="GangElement/@CustomerID" First="1.7" />
         <Version Path="GangElement/@Operations" First="1.7" />
+        <Version Path="GangElement/@PlacedQuantity" First="1.7" />
         <Constraint Path="ConvertingConfig" minOccurs="1" maxOccurs="unbounded" />
         <Constraint Path="GangElement" minOccurs="1" maxOccurs="unbounded" />
         <Constraint Path="GangElement/SeparationListBack" minOccurs="0" maxOccurs="1" />
@@ -16066,6 +16068,7 @@
         </xs:sequence>
         <xs:attribute name="AssemblyIDs" type="jdftyp:NMTOKENS" use="optional" />
         <xs:attribute name="CollapseBleeds" type="jdftyp:boolean" use="optional" />
+        <xs:attribute name="CustomerID" type="jdftyp:string" use="optional"/>
         <xs:attribute name="Dimension" type="jdftyp:XYPair" use="optional" />
         <xs:attribute name="DueDate" type="jdftyp:dateTime" use="optional" />
         <xs:attribute name="FillPriority" type="jdftyp:Integer" use="optional" />
@@ -16082,6 +16085,7 @@
         <xs:attribute name="Operations" type="jdftyp:NMTOKENS" use="optional" />
         <xs:attribute name="OrderQuantity" type="jdftyp:Integer" use="required" />
         <xs:attribute name="PageDimension" type="jdftyp:XYPair" use="optional" />
+        <xs:attribute name="PlacedQuantity" type="jdftyp:Integer" use="optional" />
         <xs:attribute name="Priority" type="jdftyp:Integer" use="optional" />
         <xs:attribute name="ProductID" type="jdftyp:string" use="optional" />
       </xs:extension>
