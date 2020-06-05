@@ -2881,12 +2881,16 @@
         <Version Path="@PhaseAmount" First="1.2" />
         <Version Path="@PhaseStartTime" First="1.2" />
         <Version Path="@PhaseWaste" First="1.2" />
+        <Version Path="@RelatedJobID" First="1.7" />
+        <Version Path="@RelatedJobPartID" First="1.7" />
         <Version Path="@RestTime" First="1.1" />
         <Version Path="@SpawnID" First="1.5" />
         <Version Path="@StartTime" First="1.1" />
+        <Version Path="@ToolIDs" First="1.7" />
         <Version Path="@TotalAmount" First="1.1" />
         <Version Path="@URL" First="1.4" />
         <Version Path="@Waste" First="1.1" />
+        <Version Path="@WorkStepID" First="1.7" />
         <Version Path="MISDetails" First="1.2" />
         <Version Path="ModuleStatus" First="1.3" />
         <Version Path="Activity" First="1.5" />
@@ -2946,15 +2950,19 @@
         <xs:attribute name="PhaseStartTime" type="jdftyp:dateTime" use="optional" />
         <xs:attribute name="PhaseWaste" type="jdftyp:double" use="optional" />
         <xs:attribute name="QueueEntryID" type="jdftyp:shortString" use="optional" />
+        <xs:attribute name="RelatedJobID" type="jdftyp:shortString" use="optional" />
+        <xs:attribute name="RelatedJobPartID" type="jdftyp:shortString" use="optional" />
         <xs:attribute name="RestTime" type="jdftyp:duration" use="optional" />
         <xs:attribute name="Speed" type="jdftyp:double" use="optional" />
         <xs:attribute name="SpawnID" type="jdftyp:NMTOKEN" use="optional" />
         <xs:attribute name="StartTime" type="jdftyp:dateTime" use="optional" />
         <xs:attribute name="Status" type="jdftyp:eNodeStatus_" use="required" />
         <xs:attribute name="StatusDetails" type="jdftyp:shortString" use="optional" />
+        <xs:attribute name="ToolIDs" type="jdftyp:NMTOKENS" use="optional" />
         <xs:attribute name="TotalAmount" type="jdftyp:double" use="optional" />
         <xs:attribute name="URL" type="jdftyp:URL" use="optional" />
         <xs:attribute name="Waste" type="jdftyp:double" use="optional" />
+        <xs:attribute name="WorkStepID" type="jdftyp:shortString" use="optional" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
