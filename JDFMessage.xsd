@@ -2181,6 +2181,7 @@
         <Version Path="@DeviceOperationMode" First="1.2" />
         <Version Path="@EndTime" First="1.7" />
         <Version Path="@IdleStartTime" First="1.4" />
+        <Version Path="@ToolIDs" First="1.7" />
         <Version Path="Activity" First="1.5" />
         <Version Path="Event" First="1.7" />
         <Version Path="ModuleStatus/Employee" Last="1.4" />
@@ -2224,6 +2225,7 @@
     <xs:attribute name="ProductionCounter" type="jdftyp:double" use="optional" />
     <xs:attribute name="Speed" type="jdftyp:double" use="optional" />
     <xs:attribute name="StatusDetails" type="jdftyp:shortString" use="optional" />
+    <xs:attribute name="ToolIDs" type="jdftyp:NMTOKENS" use="optional"/>
     <xs:attribute name="TotalProductionCounter" type="jdftyp:double" use="optional" />
   </xs:attributeGroup>
   <xs:complexType name="DeviceInfo_ModuleStatus_" mixed="false">
