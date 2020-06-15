@@ -323,7 +323,7 @@
   <xs:complexType name="Event_re" mixed="false">
     <xs:annotation>
       <xs:appinfo>
-        <Version Path="." First="1.7" />
+        <Version Path="." First="1.2" />
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
