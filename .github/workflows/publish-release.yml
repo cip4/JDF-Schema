@@ -16,7 +16,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Debug
-        run: echo ${GITHUB_REF}
+        run: echo ${GITHUB_REF##*JDF_}
 
       - name: Setup GCloud CLI
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
