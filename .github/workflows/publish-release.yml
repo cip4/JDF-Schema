@@ -15,9 +15,6 @@ jobs:
       - name: Check out sources...
         uses: actions/checkout@v2
 
-      - name: Debug
-        run: echo ${GITHUB_REF##*JDF_1.}
-
       - name: Setup GCloud CLI
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
@@ -25,5 +22,5 @@ jobs:
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
-     # - name: Copy files to GCloud Bucket
-     #   run: gsutil cp ./*.xsd  gs://schema.cip4.org/jdfschema_1_xx
+      - name: Copy files to GCloud Bucket
+        run: gsutil cp ./*.xsd  gs://schema.cip4.org/jdfschema_1_${GITHUB_REF##*JDF_1.}
