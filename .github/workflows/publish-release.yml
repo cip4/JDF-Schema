@@ -1,4 +1,4 @@
-name: Publish Snapshot (DEV Version)
+name: Publish Release
 
 on:
   push:
@@ -9,14 +9,14 @@ env:
   RUN_REGION: europe-west1
 
 jobs:
-  publish-samples:
+  publish-release:
     runs-on: ubuntu-latest
     steps:
       - name: Check out sources...
         uses: actions/checkout@v2
 
       - name: Debug
-        run: echo ${GITHUB_REF##*JDF_}
+        run: echo ${GITHUB_REF##*JDF_1.}
 
       - name: Setup GCloud CLI
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
