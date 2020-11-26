@@ -30,3 +30,9 @@ jobs:
 
       - name: Copy ZIP Archive to GCloud Bucket
         run: gsutil cp ./*.zip  gs://schema.cip4.org/
+
+      - name: Createa tar.gz Archive
+        run: tar -czvf jdfschema_1_${GITHUB_REF##*JDF_1.}.tar.gz *.xsd
+
+      - name: Copy tar.gz Archive to GCloud Bucket
+        run: gsutil cp ./*.tar.gz  gs://schema.cip4.org/
