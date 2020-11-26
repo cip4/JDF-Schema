@@ -3,6 +3,8 @@ name: Publish Samples
 on:
   push:
     branches: [ master ]
+    paths-ignore:
+    - '.github/**'
 
 jobs:
   publish-samples:
