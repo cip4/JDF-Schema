@@ -2319,6 +2319,7 @@
       <xs:enumeration value="SelfAdhesive" />
       <xs:enumeration value="Sleeve" />
       <xs:enumeration value="ShrinkFoil" />
+      <xs:enumeration value="Synthetic" />
       <xs:enumeration value="Textile" />
       <xs:enumeration value="Transparency" />
       <xs:enumeration value="Unknown" />
@@ -3277,8 +3278,10 @@
   <xs:simpleType name="eSides_">
     <xs:restriction base="jdftyp:EnumerationBaseType">
       <xs:enumeration value="OneSided" />
+      <xs:enumeration value="OneSidedBack" />
       <xs:enumeration value="TwoSidedHeadToHead" />
       <xs:enumeration value="TwoSidedHeadToFoot" />
+      <xs:enumeration value="Unprinted" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="eSides2_">
@@ -3299,14 +3302,6 @@
       <xs:enumeration value="TwoSided" />
       <xs:enumeration value="TwoSidedFlipX" /><!-- Last in 1.4 -->
       <xs:enumeration value="TwoSidedFlipY" /><!-- Last in 1.4 -->
-    </xs:restriction>
-  </xs:simpleType>
-  <xs:simpleType name="eSides3_">
-    <xs:restriction base="jdftyp:EnumerationBaseType">
-      <xs:enumeration value="OneSided" />
-      <xs:enumeration value="OneSidedBack" />
-      <xs:enumeration value="TwoSidedHeadToHead" />
-      <xs:enumeration value="TwoSidedHeadToFoot" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="eSides4_">

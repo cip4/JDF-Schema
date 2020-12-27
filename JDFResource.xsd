@@ -20326,7 +20326,7 @@
     <xs:attribute name="Orientation" type="jdftyp:Orientation" use="optional" />
     <xs:attribute name="RotatePolicy" type="jdftyp:eRotatePolicy_" use="optional" />
     <xs:attribute name="SpreadType" type="jdftyp:eSpreadType_" use="optional" />
-    <xs:attribute name="Sides" type="jdftyp:eSides3_" use="optional" />
+    <xs:attribute name="Sides" type="jdftyp:eSides_" use="optional" />
   </xs:attributeGroup>
   <xs:attributeGroup name="LayoutIntentAttribs_u">
     <xs:attributeGroup ref="jdf:LayoutIntentAttribs_c" />
