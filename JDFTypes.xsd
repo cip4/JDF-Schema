@@ -3645,6 +3645,7 @@
     <xs:restriction base="jdftyp:EnumerationBaseType">
       <xs:enumeration value="Absolute" />
       <xs:enumeration value="Paper" />
+      <xs:enumeration value="Substrate" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="eWorkingDirection_">
