@@ -5,7 +5,7 @@
   The CIP4 Software License, Version 1.0
 
 
-  Copyright (c) 2001-2020 The International Cooperation for the Integration of
+  Copyright (c) 2001-2021 The International Cooperation for the Integration of
   Processes in Prepress, Press and Postpress (CIP4). All rights reserved.
 
   Redistribution and use in source and binary forms, with or without modification, are permitted provided that the
@@ -15746,8 +15746,8 @@
         <Constraint Path="ColorPool" minOccurs="0" maxOccurs="1" />
         <Constraint Path="ColorPoolRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="CutLines" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="1" />
+        <Constraint Path="FileSpec" minOccurs="0" maxOccurs="unbounded" />
+        <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="Media" minOccurs="0" maxOccurs="1" />
         <Constraint Path="MediaRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="Shape" minOccurs="0" maxOccurs="1" />
