@@ -20394,7 +20394,7 @@
         <Version Path="GrainDirection" First="1.2" />
         <Version Path="HoleCount" Last="1.0" />
         <Version Path="HoleType" First="1.1" />
-        <Version Path="ISOPaperSubstrate" First="1.1" />
+        <Version Path="ISOPaperSubstrate" First="1.5" />
         <Version Path="MediaColorDetails" First="1.2" />
         <Version Path="MediaQuality" First="1.4" />
         <Version Path="MediaType" First="1.1" />
