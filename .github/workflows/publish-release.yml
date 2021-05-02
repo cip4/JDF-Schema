@@ -2,7 +2,7 @@ name: Publish Release
 
 on:
   push:
-    branches: [ release/* ]
+    branches: [ release/JDF_1* ]
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
@@ -15,6 +15,13 @@ jobs:
       - name: Check out sources...
         uses: actions/checkout@v2
 
+      - name: Update Parameters
+        run: |
+          NOW=$(TZ=GMT date +"%Y-%m-%d %H:%M:%SZ")
+          sed -i "s|@@branch@@|${GITHUB_REF#refs/heads/}|g" *.xsd
+          sed -i "s|@@version@@|${GITHUB_REF#refs/heads/release/JDF_}.${GITHUB_RUN_NUMBER}-${GITHUB_SHA:0:7}|g" *.xsd
+          sed -i "s|@@buildTime@@|${NOW}|g" *.xsd
+
       - name: Setup GCloud CLI
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
         with:
@@ -23,7 +30,7 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
       - name: Copy files to GCloud Bucket
-        run: gsutil cp ./*.xsd  gs://schema.cip4.org/jdfschema_1_${GITHUB_REF##*JDF_1.}
+        run: gsutil cp ./*.xsd  gs://schema.cip4.org/jdfschema_1_${GITHUB_REF##*JDF_1.}/
 
       - name: Create ZIP Archive
         run: zip jdfschema_1_${GITHUB_REF##*JDF_1.}.zip *.xsd
@@ -36,3 +43,9 @@ jobs:
 
       - name: Copy tar.gz Archive to GCloud Bucket
         run: gsutil cp ./*.tar.gz  gs://schema.cip4.org/
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: xsd-artifacts
+          path: '*.xsd'
