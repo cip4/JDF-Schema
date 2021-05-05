@@ -21,7 +21,7 @@ jobs:
           sed -i "s|@@branch@@|${GITHUB_REF#refs/heads/}|g" *.xsd
           sed -i "s|@@version@@|1.x.${GITHUB_RUN_NUMBER}-SNAPSHOT-${GITHUB_SHA:0:7}|g" *.xsd
           sed -i "s|@@buildTime@@|${NOW}|g" *.xsd
-          echo "{ \"buildtime\": \"${NOW}\" }" > version.json
+          echo "{ \"buildTime\": \"${NOW}\" }" > version.json
 
       - name: Setup GCloud CLI
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
