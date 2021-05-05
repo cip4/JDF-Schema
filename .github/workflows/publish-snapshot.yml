@@ -18,12 +18,12 @@ jobs:
       - name: Update Parameters
         run: |
           NOW=$(TZ=GMT date +"%Y-%m-%d %H:%M:%SZ")
-          JDF_VERSION=1.x
-          VERSION=${JDF_VERSION}.${GITHUB_RUN_NUMBER}-SNAPSHOT-${GITHUB_SHA:0:7}
+          SPEC_VERSION=1.x
+          VERSION=${SPEC_VERSION}.${GITHUB_RUN_NUMBER}-SNAPSHOT-${GITHUB_SHA:0:7}
           sed -i "s|@@branch@@|${GITHUB_REF#refs/heads/}|g" *.xsd
           sed -i "s|@@version@@|${VERSION}|g" *.xsd
           sed -i "s|@@buildTime@@|${NOW}|g" *.xsd
-          echo "{ \"buildTime\": \"${NOW}\", \"version\": \"${VERSION}\", \"jdfVersion\": \"${JDF_VERSION}\" }" > version.json
+          echo "{ \"buildTime\": \"${NOW}\", \"version\": \"${VERSION}\", \"specVersion\": \"${SPEC_VERSION}\" }" > version.json
 
       - name: Setup GCloud CLI
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
