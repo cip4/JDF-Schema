@@ -52,3 +52,6 @@ jobs:
         with:
           name: xsd-artifacts
           path: '*.xsd'
+
+      - name: Invalidate CDN Cache
+        run: gcloud compute url-maps invalidate-cdn-cache cip4-public-balancer --path "/jdfschema_1_x/*"
