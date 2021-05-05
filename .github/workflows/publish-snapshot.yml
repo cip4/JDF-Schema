@@ -21,6 +21,7 @@ jobs:
           sed -i "s|@@branch@@|${GITHUB_REF#refs/heads/}|g" *.xsd
           sed -i "s|@@version@@|1.x.${GITHUB_RUN_NUMBER}-SNAPSHOT-${GITHUB_SHA:0:7}|g" *.xsd
           sed -i "s|@@buildTime@@|${NOW}|g" *.xsd
+          echo '{ "buildTime": "${NOW}" }' > version.json
 
       - name: Setup GCloud CLI
         uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
@@ -30,7 +31,9 @@ jobs:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
       - name: Copy files to GCloud Bucket
-        run: gsutil cp ./*.xsd  gs://schema.cip4.org/jdfschema_1_x/
+        run: |
+          gsutil cp ./*.xsd  gs://schema.cip4.org/jdfschema_1_x/
+          gsutil cp ./version.json  gs://schema.cip4.org/jdfschema_1_x/
 
       - name: Create ZIP Archive
         run: zip jdfschema_1_x.zip *.xsd
