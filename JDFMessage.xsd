@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+    JDF Schema @@version@@ (@@buildTime@@)
+
+    CIP4 Organization
+    https://www.cip4.org
+    
+    Published on: https://schema.cip4.org
+    Issue Tracking: https://jira.cip4.org/projects/JDF
+    
+    License: https://github.com/cip4/JDF-Schema/blob/@@branch@@/LICENSE.md
+-->
 <xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_3_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.3-002">
 	<xs:import namespace="http://www.CIP4.org/JDFSchema_1_3_Types" schemaLocation="JDFTypes.xsd"/>
 	<xs:include schemaLocation="JDFCore.xsd"/>
