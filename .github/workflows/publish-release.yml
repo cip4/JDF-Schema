@@ -56,4 +56,4 @@ jobs:
           path: '*.xsd'
 
       - name: Invalidate CDN Cache
-        run: gcloud compute url-maps invalidate-cdn-cache cip4-public-balancer --path "/jdfschema_1_${GITHUB_REF##*JDF_1.}/*" --path "/jdfschema_1_${GITHUB_REF##*JDF_1.}*"
+        run: gcloud compute url-maps invalidate-cdn-cache cip4-public-balancer --path "/jdfschema_1_${GITHUB_REF##*JDF_1.}*"
