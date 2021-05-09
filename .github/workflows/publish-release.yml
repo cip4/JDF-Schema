@@ -18,10 +18,12 @@ jobs:
       - name: Update Parameters
         run: |
           NOW=$(TZ=GMT date +"%Y-%m-%d %H:%M:%SZ")
+          YEAR=$(TZ=GMT date +"%Y")
           JDF_VERSION=${GITHUB_REF#refs/heads/release/JDF_}
           VERSION=${JDF_VERSION}.${GITHUB_RUN_NUMBER}-${GITHUB_SHA:0:7}
           sed -i "s|@@branch@@|${GITHUB_REF#refs/heads/}|g" *.xsd
           sed -i "s|@@version@@|${VERSION}|g" *.xsd
+          sed -i "s|@@year@@|${YEAR}|g" *.xsd
           sed -i "s|@@buildTime@@|${NOW}|g" *.xsd
           echo "{ \"buildTime\": \"${NOW}\", \"version\": \"${VERSION}\", \"jdfVersion\": \"${JDF_VERSION}\" }" > version.json
 
