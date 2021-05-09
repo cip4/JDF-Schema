@@ -57,4 +57,6 @@ jobs:
 
       - name: Invalidate CDN Cache
         run: |
-          gcloud compute url-maps invalidate-cdn-cache cip4-public-balancer --path "/jdfschema_1_x/*" --path "/jdfschema_1_x.xsd" --path "/jdfschema_1_x.tar.gz"
+          gcloud compute url-maps invalidate-cdn-cache cip4-public-balancer --path "/jdfschema_1_x/*" 
+          gcloud compute url-maps invalidate-cdn-cache cip4-public-balancer --path "/jdfschema_1_x.xsd" 
+          gcloud compute url-maps invalidate-cdn-cache cip4-public-balancer --path "/jdfschema_1_x.tar.gz"
