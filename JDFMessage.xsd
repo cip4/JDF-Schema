@@ -1,18 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     JDF Schema @@version@@ (@@buildTime@@)
-    
+
     CIP4 Organization
     https://www.cip4.org
     
     Published on: https://schema.cip4.org
     Issue Tracking: https://jira.cip4.org/projects/JDF
     
+    Copyright (c) 2001-@@year@@. All rights reserved.
     License: https://github.com/cip4/JDF-Schema/blob/@@branch@@/LICENSE.md
 -->
 <xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_7_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1"
   xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified"
-  attributeFormDefault="unqualified" version="V1.7-001">
+  attributeFormDefault="unqualified" version="@@version@@">
   <xs:import namespace="http://www.CIP4.org/JDFSchema_1_7_Types" schemaLocation="JDFTypes.xsd" />
   <xs:include schemaLocation="JDFCore.xsd" />
   <xs:complexType name="QueryNotification" mixed="false">

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
     JDF Schema @@version@@ (@@buildTime@@)
-    
+
     CIP4 Organization
     https://www.cip4.org
     
     Published on: https://schema.cip4.org
     Issue Tracking: https://jira.cip4.org/projects/JDF
     
+    Copyright (c) 2001-@@year@@. All rights reserved.
     License: https://github.com/cip4/JDF-Schema/blob/@@branch@@/LICENSE.md
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_7_Types"
-  targetNamespace="http://www.CIP4.org/JDFSchema_1_7_Types" elementFormDefault="qualified" attributeFormDefault="unqualified" version="V1.7-001">
+  targetNamespace="http://www.CIP4.org/JDFSchema_1_7_Types" elementFormDefault="qualified" attributeFormDefault="unqualified" version="@@version@@">
   <!--Simple Type Declarations -->
   <xs:simpleType name="boolean">
     <xs:restriction base="xs:boolean">
