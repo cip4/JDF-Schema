@@ -26,25 +26,25 @@ jobs:
           echo "{ \"buildTime\": \"${NOW}\", \"version\": \"${VERSION}\", \"jdfVersion\": \"${JDF_VERSION}\" }" > version.json
 
       - name: Setup GCloud CLI
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@master
         with:
-          version: '298.0.0'
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           project_id: ${{ secrets.GCP_PROJECT_ID }}
+          export_default_credentials: true
 
       - name: Copy files to GCloud Bucket
         run: |
-          gsutil cp ./*.xsd  gs://schema.cip4.org/jdfschema_1_x/
-          gsutil cp ./version.json  gs://schema.cip4.org/jdfschema_1_x/
+          gsutil cp ./*.xsd gs://schema.cip4.org/jdfschema_1_x/
+          gsutil cp ./version.json gs://schema.cip4.org/jdfschema_1_x/
 
       - name: Create ZIP Archive
-        run: zip jdfschema_1_x.zip *.xsd
+        run: zip jdfschema_1_x.zip *.xsd *.json
 
       - name: Copy ZIP Archive to GCloud Bucket
         run: gsutil cp ./*.zip  gs://schema.cip4.org/
 
       - name: Createa tar.gz Archive
-        run: tar -czvf jdfschema_1_x.tar.gz *.xsd
+        run: tar -czvf jdfschema_1_x.tar.gz *.xsd *.json
 
       - name: Copy tar.gz Archive to GCloud Bucket
         run: gsutil cp ./*.tar.gz  gs://schema.cip4.org/
