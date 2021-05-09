@@ -2,7 +2,7 @@ name: Publish Release
 
 on:
   push:
-    branches: [ release/* ]
+    branches: [ release/JDF_1* ]
 
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
@@ -15,24 +15,45 @@ jobs:
       - name: Check out sources...
         uses: actions/checkout@v2
 
+      - name: Update Parameters
+        run: |
+          NOW=$(TZ=GMT date +"%Y-%m-%d %H:%M:%SZ")
+          JDF_VERSION=${GITHUB_REF#refs/heads/release/JDF_}
+          VERSION=${JDF_VERSION}.${GITHUB_RUN_NUMBER}-${GITHUB_SHA:0:7}
+          sed -i "s|@@branch@@|${GITHUB_REF#refs/heads/}|g" *.xsd
+          sed -i "s|@@version@@|${VERSION}|g" *.xsd
+          sed -i "s|@@buildTime@@|${NOW}|g" *.xsd
+          echo "{ \"buildTime\": \"${NOW}\", \"version\": \"${VERSION}\", \"jdfVersion\": \"${JDF_VERSION}\" }" > version.json
+
       - name: Setup GCloud CLI
-        uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+        uses: google-github-actions/setup-gcloud@master
         with:
-          version: '298.0.0'
           service_account_key: ${{ secrets.GCP_SA_KEY }}
           project_id: ${{ secrets.GCP_PROJECT_ID }}
+          export_default_credentials: true
 
       - name: Copy files to GCloud Bucket
-        run: gsutil cp ./*.xsd  gs://schema.cip4.org/jdfschema_1_${GITHUB_REF##*JDF_1.}
+        run: |
+          gsutil cp ./*.xsd gs://schema.cip4.org/jdfschema_1_${GITHUB_REF##*JDF_1.}/
+          gsutil cp ./version.json gs://schema.cip4.org/jdfschema_1_${GITHUB_REF##*JDF_1.}/
 
       - name: Create ZIP Archive
-        run: zip jdfschema_1_${GITHUB_REF##*JDF_1.}.zip *.xsd
+        run: zip jdfschema_1_${GITHUB_REF##*JDF_1.}.zip *.xsd *.json
 
       - name: Copy ZIP Archive to GCloud Bucket
         run: gsutil cp ./*.zip  gs://schema.cip4.org/
 
       - name: Createa tar.gz Archive
-        run: tar -czvf jdfschema_1_${GITHUB_REF##*JDF_1.}.tar.gz *.xsd
+        run: tar -czvf jdfschema_1_${GITHUB_REF##*JDF_1.}.tar.gz *.xsd *.json
 
       - name: Copy tar.gz Archive to GCloud Bucket
         run: gsutil cp ./*.tar.gz  gs://schema.cip4.org/
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: xsd-artifacts
+          path: '*.xsd'
+
+      - name: Invalidate CDN Cache
+        run: gcloud compute url-maps invalidate-cdn-cache cip4-public-balancer --path "/jdfschema_1_${GITHUB_REF##*JDF_1.}/*"
