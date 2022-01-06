@@ -51,6 +51,8 @@
   </xs:attributeGroup>
   <xs:attributeGroup name="ColorSpaceConversionOpAttribs_r">
     <xs:attributeGroup ref="jdf:ColorSpaceConversionOpAttribs_c" />
+    <xs:attribute name="BlackPointCompensation" type="jdftyp:boolean" use="optional"/>
+    <xs:attribute name="BlackPointCompensationDetails" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="PreserveBlack" type="jdftyp:boolean" default="false" />
     <xs:attribute name="RenderingIntent" type="jdftyp:eRenderingIntent1_" default="ColorSpaceDependent" />
     <xs:attribute name="RGBGray2Black" type="jdftyp:boolean" default="false" />
@@ -61,6 +63,8 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="@IgnoreEmbeddedICC" Last="1.3" />
+        <Version Path="@BlackPointCompensation" First="1.8" />
+        <Version Path="@BlackPointCompensationDetails" First="1.8" />
         <Version Path="@ObjectTags" First="1.4" />
         <Version Path="@PreserveBlack" First="1.1" />
         <Version Path="@RGBGray2BlackThreshold" First="1.2" />
