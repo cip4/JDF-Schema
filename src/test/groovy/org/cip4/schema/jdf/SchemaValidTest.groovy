@@ -13,7 +13,7 @@ class SchemaValidTest {
 
     @ParameterizedTest
     @MethodSource('schemas')
-    void productGetChildrenRawIsEmptyByDefault(File schema) {
+    void schemaFileIsValidXml(File schema) {
         def xsdUrl = new URL("https://www.w3.org/2001/XMLSchema.xsd")
 
         xsdUrl.withInputStream { xsd ->
