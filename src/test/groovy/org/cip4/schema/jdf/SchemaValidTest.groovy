@@ -1,5 +1,7 @@
 package org.cip4.schema.jdf
 
+import org.junit.jupiter.api.Assertions
+import org.junit.jupiter.api.Test
 import org.junit.jupiter.params.ParameterizedTest
 import org.junit.jupiter.params.provider.MethodSource
 
@@ -22,6 +24,11 @@ class SchemaValidTest {
                         .validate(new StreamSource(xml, schema.name))
             }
         }
+    }
+
+    @Test
+    void schemaFilesAreLocated() {
+        Assertions.assertTrue(schemas().size() == 8)
     }
 
     static Collection<File> schemas() {
