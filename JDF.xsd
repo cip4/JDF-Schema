@@ -13,7 +13,7 @@
     Copyright (c) 2001-@@year@@. All rights reserved.
     License: https://github.com/cip4/JDF-Schema/blob/@@branch@@/LICENSE.md
 -->
-<xs:schema xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_7_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1"
+<xs:sche ma xmlns:jdftyp="http://www.CIP4.org/JDFSchema_1_7_Types" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1"
   xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.CIP4.org/JDFSchema_1_1" elementFormDefault="qualified"
   attributeFormDefault="unqualified" version="@@version@@">
   <xs:import namespace="http://www.CIP4.org/JDFSchema_1_7_Types" schemaLocation="JDFTypes.xsd" />
