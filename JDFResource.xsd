@@ -5920,7 +5920,7 @@
           <xs:element ref="jdf:IdentificationFieldRef" minOccurs="0" />
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
-          <xs:element name="Tool" type="jdf:Media_re" minOccurs="0" />
+          <xs:element name="Tool" type="jdf:Tool_re" minOccurs="0" />
           <xs:element ref="jdf:ToolRef" minOccurs="0" />
         </xs:sequence>
         <xs:attribute name="Direction" type="jdftyp:eEmbossingDirection" use="required" />
@@ -17527,12 +17527,14 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="Tool" type="jdf:Tool_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.1" />
         <Version Path="@ToolAmount" Last="1.2" />
         <Version Path="@ToolID" Last="1.2" />
+        <Version Path="@SerialNumber" First="1.8" />
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -17544,11 +17546,13 @@
   </xs:attributeGroup>
   <xs:attributeGroup name="ToolAttribs_u">
     <xs:attributeGroup ref="jdf:ToolAttribs_c" />
+    <xs:attribute name="SerialNumber" type="jdftyp:shortString" use="optional" />
     <xs:attribute name="ToolID" type="jdftyp:shortString" use="optional" />
   </xs:attributeGroup>
   <xs:attributeGroup name="ToolAttribs_r">
     <xs:attributeGroup ref="jdf:ToolAttribs_c" />
     <xs:attribute name="ToolID" type="jdftyp:shortString" use="optional" />
+    <xs:attribute name="SerialNumber" type="jdftyp:shortString" use="optional" />
   </xs:attributeGroup>
   <xs:complexType name="Tool_r" mixed="false">
     <xs:complexContent mixed="false">
