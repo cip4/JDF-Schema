@@ -5920,7 +5920,7 @@
           <xs:element ref="jdf:IdentificationFieldRef" minOccurs="0" />
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
-          <xs:element name="Tool" type="jdf:Media_re" minOccurs="0" />
+          <xs:element name="Tool" type="jdf:Tool_re" minOccurs="0" />
           <xs:element ref="jdf:ToolRef" minOccurs="0" />
         </xs:sequence>
         <xs:attribute name="Direction" type="jdftyp:eEmbossingDirection" use="required" />
