@@ -13,7 +13,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out sources...
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
+
+      - name: Setup JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin'
+          java-version: 11
+          cache: 'gradle'
+
+      - name: Verify
+        run: ./gradlew test --no-daemon
 
       - name: Update Parameters
         run: |
