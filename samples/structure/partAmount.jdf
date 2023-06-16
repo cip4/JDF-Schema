@@ -5,11 +5,11 @@
   <ResourcePool>
     <Ink Brand="NoName" Class="Consumable" ID="Link0015"
       PartIDKeys="Separation" Status="Available">
-      <Ink ColorName="Cyan" Separation="Cyan"/>
-      <Ink ColorName="Magenta" Separation="Magenta"/>
-      <Ink ColorName="Yellow" Separation="Yellow"/>
-      <Ink ColorName="Black" Separation="Black"/>
-      <Ink ColorName="Heidelberg Spot Blau" Separation="Heidelberg Spot Blau"/>
+      <Ink Separation="Cyan"/>
+      <Ink Separation="Magenta"/>
+      <Ink Separation="Yellow"/>
+      <Ink Separation="Black"/>
+      <Ink Separation="Heidelberg Spot Blau"/>
     </Ink>
   </ResourcePool>
   <ResourceLinkPool>
