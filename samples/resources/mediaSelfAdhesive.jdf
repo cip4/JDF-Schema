@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<XJDF xmlns="http://www.CIP4.org/JDFSchema_2_0" JobID="Converting"
-  JobPartID="Corrugated" Types="ConventionalPrinting" Version="2.1">
-  <!-- START SNIPPET -->
-  <!-- END SNIPPET -->
-  <AuditPool>
-    <AuditCreated>
-      <Header AgentName="CIP4 JDF Writer Java" AgentVersion="2.1.7.37"
-        DeviceID="CIP4_JDF_Writer_Java" Time="2023-07-25T19:31:00+02:00"/>
-    </AuditCreated>
-  </AuditPool>
-  <ResourceSet Name="NodeInfo" Usage="Input">
-    <Resource>
-      <NodeInfo/>
-    </Resource>
-  </ResourceSet>
-  <!-- START SNIPPET -->
-  <ResourceSet Name="Media" Usage="Input">
-    <Resource>
-      <Media Dimension="1190.5511811 0" MediaType="SelfAdhesive"
-        MediaUnit="Roll" Thickness="900">
-        <MediaLayers>
-          <Media MediaType="Paper" Weight="90"/>
-          <Glue AreaGlue="true" GlueType="Removable"/>
-          <Media MediaType="Paper" Weight="60"/>
-        </MediaLayers>
-      </Media>
-    </Resource>
-  </ResourceSet>
-  <!-- END SNIPPET -->
-</XJDF>
+<JDF ID="ID" JobPartID="ID34" Status="Waiting" Type="ProcessGroup"
+  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <Media Class="Consumable"
+      DescriptiveName="40# Fasson coated label stock"
+      Dimension="1134.0 0" ID="M123456" MediaType="SelfAdhesive"
+      MediaUnit="Roll" ProductID="7890123" Status="Available"
+      Thickness="1000.0" Weight="150">
+      <MediaLayers>
+        <!-- Front -->
+        <Media DescriptiveName="Antique Cream Smooth WS IL"
+          MediaType="Paper" Weight="90"/>
+        <!-- Glue -->
+        <GlueLine AreaGlue="true" DescriptiveName="Permanent 91A"
+          GlueBrand="Uhu" GlueType="Hotmelt"/>
+        <!-- Back -->
+        <Media DescriptiveName="Blue Glassine 50" MediaType="Paper" Weight="50"/>
+      </MediaLayers>
+    </Media>
+    <!-- END SNIPPET -->
+  </ResourcePool>
+  <ResourceLinkPool>
+    <MediaLink Usage="Input" rRef="M123456"/>
+  </ResourceLinkPool>
+</JDF>
