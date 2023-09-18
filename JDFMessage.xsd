@@ -496,7 +496,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
         </xs:sequence>
-        <xs:attribute name="ChannelMode" type="jdftyp:eChannelMode_" />
+        <xs:attribute name="ChannelMode" type="jdftyp:eChannelModeList_" />
         <xs:attribute name="Exact" type="jdftyp:boolean" default="false" />
         <xs:attribute name="ListCommands" type="jdftyp:boolean" default="true" />
         <xs:attribute name="ListQueries" type="jdftyp:boolean" default="true" />
@@ -519,7 +519,7 @@
           <xs:element name="TestPool" type="jdf:TestPool" minOccurs="0" />
         </xs:sequence>
         <xs:attribute name="Acknowledge" type="jdftyp:boolean" default="false" />
-        <xs:attribute name="ChannelMode" type="jdftyp:eChannelMode_" />
+        <xs:attribute name="ChannelMode" type="jdftyp:eChannelModeList_" />
         <xs:attribute name="Command" type="jdftyp:boolean" default="false" />
         <xs:attribute name="GenericAttributes" type="jdftyp:NMTOKENS" use="optional" />
         <xs:attribute name="JMFRole" type="jdftyp:eJMFRole_" use="optional" />

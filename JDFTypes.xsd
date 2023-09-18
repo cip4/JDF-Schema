@@ -787,6 +787,9 @@
       <xs:enumeration value="RegistrationMark" />
     </xs:restriction>
   </xs:simpleType>
+   <xs:simpleType name="eChannelModeList_">
+    <xs:list itemType="jdftyp:eChannelMode_" />
+  </xs:simpleType>
   <xs:simpleType name="eChannelMode_">
     <xs:restriction base="jdftyp:EnumerationBaseType">
       <xs:enumeration value="FireAndForget" />
