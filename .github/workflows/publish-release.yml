@@ -37,12 +37,15 @@ jobs:
           sed -i "s|@@buildTime@@|${NOW}|g" *.xsd
           echo "{ \"buildTime\": \"${NOW}\", \"version\": \"${VERSION}\", \"jdfVersion\": \"${JDF_VERSION}\" }" > version.json
 
-      - name: Setup GCloud CLI
-        uses: google-github-actions/setup-gcloud@master
+      - name: 'Authenticate to Google Cloud'
+        uses: 'google-github-actions/auth@v1'
         with:
-          service_account_key: ${{ secrets.GCP_SA_KEY }}
+          credentials_json: '${{ secrets.GCP_SA_KEY }}'
+
+      - name: Setup GCloud CLI
+        uses: google-github-actions/setup-gcloud@v1
+        with:
           project_id: ${{ secrets.GCP_PROJECT_ID }}
-          export_default_credentials: true
 
       - name: Copy files to GCloud Bucket
         run: |
@@ -61,14 +64,14 @@ jobs:
       - name: Copy tar.gz Archive to GCloud Bucket
         run: gsutil cp ./*.tar.gz  gs://schema.cip4.org/
 
-      - name: Upload Artifact
+      - name: Upload Artifacts
         uses: actions/upload-artifact@v2
         with:
           name: xsd-artifacts
           path: '*.xsd'
 
       - name: Invalidate CDN Cache
-        run: | 
+        run: |
           gcloud compute url-maps invalidate-cdn-cache cip4-public-balancer --async --path "/jdfschema_1_${GITHUB_REF##*JDF_1.}.zip" 
           gcloud compute url-maps invalidate-cdn-cache cip4-public-balancer --async --path "/jdfschema_1_${GITHUB_REF##*JDF_1.}.tar.gz"
           gcloud compute url-maps invalidate-cdn-cache cip4-public-balancer --path "/jdfschema_1_${GITHUB_REF##*JDF_1.}/*"
