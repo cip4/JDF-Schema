@@ -3561,7 +3561,7 @@
     <xs:restriction base="jdftyp:EnumerationBaseType">
       <xs:enumeration value="Blanket" />
       <xs:enumeration value="Plate" />
-      <xs:enumeration value="Method" />
+      <xs:enumeration value="Independent" />
     </xs:restriction>
   </xs:simpleType>
   <xs:simpleType name="eValueUsage_">
