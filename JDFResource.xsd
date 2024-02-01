@@ -6421,6 +6421,7 @@
         <Version Path="@FileVersion" First="1.1" />
         <Version Path="@MimeType" First="1.0" />
         <Version Path="@MimeTypeVersion" First="1.2" />
+        <Version Path="@NPage" First="1.8" />
         <Version Path="@OSVersion" Last="1.5" />
         <Version Path="@OverwritePolicy" First="1.2" />
         <Version Path="@Password" First="1.3" />
@@ -6457,6 +6458,7 @@
     <xs:attribute name="FileVersion" type="jdftyp:string" use="optional" />
     <xs:attribute name="MimeType" type="jdftyp:string" use="optional" />
     <xs:attribute name="MimeTypeVersion" type="jdftyp:string" use="optional" />
+    <xs:attribute name="NPage" type="jdftyp:Integer" use="optional" />
     <xs:attribute name="OverwritePolicy" type="jdftyp:eOverwritePolicy_" use="optional" />
     <xs:attribute name="OSVersion" type="jdftyp:string" use="optional" />
     <xs:attribute name="PageOrder" type="jdftyp:ePageOrder_" use="optional" />
