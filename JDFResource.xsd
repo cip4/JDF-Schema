@@ -12271,6 +12271,8 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="@Languages" First="1.4" />
+        <Version Path="@PhoneticFirstName" First="1.5" />
+        <Version Path="@PhoneticLastName" First="1.5" />
         <Version Path="Address" First="1.2" />
         <Version Path="AddressRef" First="1.2" />
         <Constraint Path="Address" minOccurs="0" maxOccurs="1" />
@@ -12285,7 +12287,9 @@
   <xs:attributeGroup name="PersonAttribs_c">
     <xs:attribute name="AdditionalNames" type="jdftyp:string" use="optional" />
     <xs:attribute name="FamilyName" type="jdftyp:string" use="optional" />
+    <xs:attribute name="PhoneticLastName" type="jdftyp:string" use="optional" />
     <xs:attribute name="FirstName" type="jdftyp:string" use="optional" />
+    <xs:attribute name="PhoneticFirstName" type="jdftyp:string" use="optional" />
     <xs:attribute name="JobTitle" type="jdftyp:string" use="optional" />
     <xs:attribute name="Languages" type="jdftyp:languages" use="optional" />
     <xs:attribute name="NamePrefix" type="jdftyp:string" use="optional" />
