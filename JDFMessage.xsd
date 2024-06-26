@@ -587,8 +587,13 @@
   </xs:complexType>
   <xs:element name="SubscriptionFilter" type="jdf:SubscriptionFilter_m" substitutionGroup="jdf:QueryTypeObj">
     <xs:annotation>
-      <xs:appinfo />
-    </xs:annotation>
+      <xs:appinfo>
+	         <Version Path="@JobID" Last="1.4" />
+	         <Version Path="@JobPartID" Last="1.4" />
+	         <Version Path="@QueueEntryID" Last="1.4" />
+			<Version Path="Part" Last="1.4" />
+       </xs:appinfo>
+   </xs:annotation>
   </xs:element>
   <xs:element name="SubscriptionInfo" type="jdf:SubscriptionInfo_m" substitutionGroup="jdf:ResponseTypeObj">
     <xs:annotation>

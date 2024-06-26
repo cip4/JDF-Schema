@@ -1250,7 +1250,7 @@
         <Version Path="@ActualAmount" First="1.1" />
         <Version Path="@CombinedProcessIndex" First="1.1" />
         <Version Path="@CombinedProcessType" Last="1.1" />
-        <Version Path="@DraftOK" Last="1.1" />
+        <Version Path="@DraftOK" Last="1.2" />
         <Version Path="@MaxAmount" First="1.3" />
         <Version Path="@MinAmount" First="1.3" />
         <Version Path="@MinLateStatus" First="1.3" />
