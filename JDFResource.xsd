@@ -10803,7 +10803,7 @@
     <xs:attribute name="BackCoatings" type="jdftyp:eCoatings_" use="optional" />
     <xs:attribute name="BackGlossValue" type="jdftyp:double" use="optional" />
     <xs:attribute name="BackISOPaperSubstrate" type="jdftyp:eMediaSubstrateType_" use="optional"/>
-    <xs:attribute name="BackSpectrum" type="jdftyp:double" use="optional" />
+    <xs:attribute name="BackSpectrum" type="jdftyp:TransferFunction" use="optional" />
     <xs:attribute name="Brightness" type="jdftyp:double" use="optional" />
     <xs:attribute name="CIETint" type="jdftyp:double" use="optional" />
     <xs:attribute name="CIEWhiteness" type="jdftyp:double" use="optional" />
@@ -10842,7 +10842,7 @@
     <xs:attribute name="RollDiameter" type="jdftyp:double" use="optional" />
     <xs:attribute name="ShrinkIndex" type="jdftyp:XYPair" use="optional" />
     <xs:attribute name="SleeveInterlock" type="jdftyp:NMTOKEN" use="optional" />
-    <xs:attribute name="Spectrum" type="jdftyp:double" use="optional" />
+    <xs:attribute name="Spectrum" type="jdftyp:TransferFunction" use="optional" />
     <xs:attribute name="StockType" type="jdftyp:NMTOKEN" use="optional" />
     <xs:attribute name="Texture" type="jdftyp:NMTOKEN" use="optional" />
     <xs:attribute name="Thickness" type="jdftyp:double" use="optional" />
