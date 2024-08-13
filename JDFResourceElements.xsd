@@ -19,10 +19,7 @@
   <xs:import namespace="http://www.CIP4.org/JDFSchema_1_7_Types" schemaLocation="JDFTypes.xsd" />
   <xs:include schemaLocation="JDFCore.xsd" />
 
-  <xs:attributeGroup name="ColorMeasurement_c">
-  </xs:attributeGroup>
-  <xs:attributeGroup name="ColorMeasurement_r">
-    <xs:attributeGroup ref="jdf:ColorMeasurement_c" />
+  <xs:attributeGroup name="ColorMeasurement">
   </xs:attributeGroup>
   <xs:complexType name="ColorMeasurement_re" mixed="false">
     <xs:annotation>
@@ -31,26 +28,22 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
-          <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
-          <xs:element name="ColorControlStrip" type="jdf:ColorControlStrip_re" minOccurs="0" />
+           <xs:element name="ColorControlStrip" type="jdf:ColorControlStrip_re" minOccurs="0" />
         </xs:sequence>
-        <xs:attributeGroup ref="jdf:ColorMeasurement_r" />
+        <xs:attributeGroup ref="jdf:ColorMeasurement" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:attributeGroup name="ColorSpaceConversionOpAttribs_c">
+  <xs:attributeGroup name="ColorSpaceConversionOpAttribs">
     <xs:attribute name="IgnoreEmbeddedICC" type="jdftyp:boolean" use="optional" />
     <xs:attribute name="ObjectTags" type="jdftyp:NMTOKENS" use="optional" />
     <xs:attribute name="Operation" type="jdftyp:eOperation_" use="optional" />
     <xs:attribute name="SourceCS" type="jdftyp:eSourceCSs_" use="optional" />
     <xs:attribute name="SourceRenderingIntent" type="jdftyp:eRenderingIntent1_" use="optional" />
-  </xs:attributeGroup>
-  <xs:attributeGroup name="ColorSpaceConversionOpAttribs_r">
-    <xs:attributeGroup ref="jdf:ColorSpaceConversionOpAttribs_c" />
     <xs:attribute name="BlackPointCompensation" type="jdftyp:boolean" use="optional"/>
     <xs:attribute name="BlackPointCompensationDetails" type="jdftyp:NMTOKEN" use="optional"/>
     <xs:attribute name="PreserveBlack" type="jdftyp:boolean" default="false" />
@@ -82,22 +75,20 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
-          <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_re" minOccurs="0" />
-          <!-- <xs:element ref="jdf:DeviceNSpaceRef" minOccurs="0"/> -->
           <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0" />
           <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
           <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0" />
         </xs:sequence>
-        <xs:attributeGroup ref="jdf:ColorSpaceConversionOpAttribs_r" />
+        <xs:attributeGroup ref="jdf:ColorSpaceConversionOpAttribs" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:attributeGroup name="ConvertingConfigAttribs_c">
+  <xs:attributeGroup name="ConvertingConfigAttribs">
     <xs:attribute name="MarginBottom" type="jdftyp:double" use="optional" />
     <xs:attribute name="MarginLeft" type="jdftyp:double" use="optional" />
     <xs:attribute name="MarginRight" type="jdftyp:double" use="optional" />
@@ -105,13 +96,10 @@
     <xs:attribute name="SheetHeight" type="jdftyp:DoubleRange" use="optional" />
     <xs:attribute name="SheetWidth" type="jdftyp:DoubleRange" use="optional" />
   </xs:attributeGroup>
-  <xs:attributeGroup name="ConvertingConfigAttribs_r">
-    <xs:attributeGroup ref="jdf:ConvertingConfigAttribs_c" />
-  </xs:attributeGroup>
-  <xs:complexType name="ConvertingConfig_re" mixed="false">
-    <xs:annotation>
+   <xs:complexType name="ConvertingConfig_re" mixed="false">
+   <xs:annotation>
       <xs:appinfo>
-        <Version Path="CustBlock" First="1.7" />
+        <Version Path="CutBlock" First="1.7" />
         <Version Path="." First="1.4" />
         <Version Path="Media" First="1.5" />
         <Version Path="MediaRef" First="1.5" />
@@ -122,36 +110,30 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
-          <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="CutBlock" type="jdf:CutBlock_re" minOccurs="0" />
           <xs:element name="Device" type="jdf:Device_re" minOccurs="0" />
           <xs:element ref="jdf:DeviceRef" minOccurs="0" />
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
         </xs:sequence>
-        <xs:attributeGroup ref="jdf:ConvertingConfigAttribs_r" />
+        <xs:attributeGroup ref="jdf:ConvertingConfigAttribs" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
 
-  <xs:attributeGroup name="CostCenterAttribs_c">
+  <xs:attributeGroup name="CostCenterAttribs">
     <xs:attribute name="Name" type="jdftyp:string" use="optional" />
   </xs:attributeGroup>
-  <xs:attributeGroup name="CostCenterAttribs_r">
-    <xs:attributeGroup ref="jdf:CostCenterAttribs_c" />
-    <xs:attribute name="CostCenterID" type="jdftyp:shortString" use="required" />
-  </xs:attributeGroup>
-  <xs:complexType name="CostCenter_re" mixed="false">
+   <xs:complexType name="CostCenter_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
-          <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
         </xs:sequence>
-        <xs:attributeGroup ref="jdf:CostCenterAttribs_r" />
+        <xs:attributeGroup ref="jdf:CostCenterAttribs" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

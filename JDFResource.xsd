@@ -672,77 +672,37 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="BarcodeCompParams" type="jdf:BarcodeCompParams_r" substitutionGroup="jdf:Resource">
+  <xs:element name="BarcodeCompParams" type="jdf:BarcodeCompParams_re">
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.3" />
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BarcodeCompParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
-  <xs:element name="BarcodeCompParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
-  <xs:attributeGroup name="BarcodeCompParamsAttribs_c">
+   <xs:attributeGroup name="BarcodeCompParamsAttribs">
     <xs:attribute name="CompensationValue" type="jdftyp:double" use="optional" />
+   <xs:attribute name="CompensationProcess" type="jdftyp:eCompensationProcess_" use="required" />
   </xs:attributeGroup>
-  <xs:attributeGroup name="BarcodeCompParamsAttribs_u">
-    <xs:attributeGroup ref="jdf:BarcodeCompParamsAttribs_c" />
-    <xs:attribute name="CompensationProcess" type="jdftyp:eCompensationProcess_" use="optional" />
-  </xs:attributeGroup>
-  <xs:attributeGroup name="BarcodeCompParamsAttribs_r">
-    <xs:attributeGroup ref="jdf:BarcodeCompParamsAttribs_c" />
-    <xs:attribute name="CompensationProcess" type="jdftyp:eCompensationProcess_" use="required" />
-  </xs:attributeGroup>
-  <xs:complexType name="BarcodeCompParams_r" mixed="false">
+   <xs:complexType name="BarcodeCompParams_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResource">
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0" />
-          <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
-          <xs:element name="BarcodeCompParamsUpdate" type="jdf:BarcodeCompParams_re" minOccurs="0" />
-          <xs:element name="BarcodeCompParams" type="jdf:BarcodeCompParams_rp" minOccurs="0" />
-        </xs:sequence>
-        <xs:attributeGroup ref="jdf:BarcodeCompParamsAttribs_r" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="BarcodeCompParams_re" mixed="false">
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
         </xs:sequence>
-        <xs:attributeGroup ref="jdf:BarcodeCompParamsAttribs_r" />
+        <xs:attributeGroup ref="jdf:BarcodeCompParamsAttribs" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="BarcodeCompParams_rp" mixed="false">
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResourceLeaf">
-        <xs:choice>
-          <xs:sequence minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="jdf:GenericElements" minOccurs="0" />
-            <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
-            <xs:element name="BarcodeCompParams" type="jdf:BarcodeCompParams_rp" minOccurs="0" />
-          </xs:sequence>
-          <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
-        </xs:choice>
-        <xs:attributeGroup ref="jdf:BarcodeCompParamsAttribs_u" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="BarcodeReproParams" type="jdf:BarcodeReproParams_r" substitutionGroup="jdf:Resource">
+  <xs:element name="BarcodeReproParams" type="jdf:BarcodeReproParams_re">
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.3" />
         <Constraint Path="BarcodeCompParams" minOccurs="0" maxOccurs="unbounded" />
-        <Constraint Path="BarcodeCompParamsRef" minOccurs="0" maxOccurs="unbounded" />
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
-  <xs:element name="BarcodeReproParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
-  <xs:element name="BarcodeReproParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
-  <xs:attributeGroup name="BarcodeReproParamsAttribs_c">
+  <xs:attributeGroup name="BarcodeReproParamsAttribs">
     <xs:attribute name="BearerBars" type="jdftyp:eBearerBars_" use="optional" />
     <xs:attribute name="Height" type="jdftyp:double" use="optional" />
     <xs:attribute name="Magnification" type="jdftyp:double" use="optional" />
@@ -751,54 +711,15 @@
     <xs:attribute name="ModuleWidth" type="jdftyp:double" use="optional" />
     <xs:attribute name="Ratio" type="jdftyp:double" use="optional" />
   </xs:attributeGroup>
-  <xs:attributeGroup name="BarcodeReproParamsAttribs_u">
-    <xs:attributeGroup ref="jdf:BarcodeReproParamsAttribs_c" />
-  </xs:attributeGroup>
-  <xs:attributeGroup name="BarcodeReproParamsAttribs_r">
-    <xs:attributeGroup ref="jdf:BarcodeReproParamsAttribs_c" />
-  </xs:attributeGroup>
-  <xs:complexType name="BarcodeReproParams_r" mixed="false">
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResource">
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0" />
-          <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
-          <xs:element name="BarcodeCompParams" type="jdf:BarcodeCompParams_re" minOccurs="0" />
-          <xs:element ref="jdf:BarcodeCompParamsRef" minOccurs="0" />
-          <xs:element name="BarcodeReproParamsUpdate" type="jdf:BarcodeReproParams_re" minOccurs="0" />
-          <xs:element name="BarcodeReproParams" type="jdf:BarcodeReproParams_rp" minOccurs="0" />
-        </xs:sequence>
-        <xs:attributeGroup ref="jdf:BarcodeReproParamsAttribs_r" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="BarcodeReproParams_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="BarcodeCompParams" type="jdf:BarcodeCompParams_re" minOccurs="0" />
-          <xs:element ref="jdf:BarcodeCompParamsRef" minOccurs="0" />
-        </xs:sequence>
-        <xs:attributeGroup ref="jdf:BarcodeReproParamsAttribs_r" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="BarcodeReproParams_rp" mixed="false">
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResourceLeaf">
-        <xs:choice>
-          <xs:sequence minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="jdf:GenericElements" minOccurs="0" />
-            <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
-            <xs:element name="BarcodeCompParams" type="jdf:BarcodeCompParams_re" minOccurs="0" />
-            <xs:element ref="jdf:BarcodeCompParamsRef" minOccurs="0" />
-            <xs:element name="BarcodeReproParams" type="jdf:BarcodeReproParams_rp" minOccurs="0" />
-          </xs:sequence>
-          <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
-        </xs:choice>
-        <xs:attributeGroup ref="jdf:BarcodeReproParamsAttribs_u" />
+         </xs:sequence>
+        <xs:attributeGroup ref="jdf:BarcodeReproParamsAttribs" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -2523,7 +2444,7 @@
   <xs:attributeGroup name="ColorCorrectionParamsAttribs_r">
     <xs:attributeGroup ref="jdf:ColorCorrectionParamsAttribs_c" />
   </xs:attributeGroup>
-  <xs:complexType name="ColorCorrectionParams_ColorCorrectionOp_lr" mixed="false">
+  <xs:complexType name="ColorCorrectionOp_re" mixed="false">
     <xs:annotation>
       <xs:appinfo>
         <Version Path="@AdjustCyanRed" First="1.2" />
@@ -2577,7 +2498,7 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0" />
           <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
-          <xs:element name="ColorCorrectionOp" type="jdf:ColorCorrectionParams_ColorCorrectionOp_lr" minOccurs="0" />
+          <xs:element name="ColorCorrectionOp" type="jdf:ColorCorrectionOp_re" minOccurs="0" />
           <xs:element name="ColorCorrectionParamsUpdate" type="jdf:ColorCorrectionParams_re" minOccurs="0" />
           <xs:element name="ColorCorrectionParams" type="jdf:ColorCorrectionParams_rp" minOccurs="0" />
         </xs:sequence>
@@ -2593,7 +2514,7 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0" />
           <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
-          <xs:element name="ColorCorrectionOp" type="jdf:ColorCorrectionParams_ColorCorrectionOp_lr" minOccurs="0" />
+          <xs:element name="ColorCorrectionOp" type="jdf:ColorCorrectionOp_re" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ColorCorrectionParamsAttribs_r" />
       </xs:extension>
@@ -2608,7 +2529,7 @@
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
             <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0" />
             <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
-            <xs:element name="ColorCorrectionOp" type="jdf:ColorCorrectionParams_ColorCorrectionOp_lr" minOccurs="0" />
+            <xs:element name="ColorCorrectionOp" type="jdf:ColorCorrectionOp_re" minOccurs="0" />
             <xs:element name="ColorCorrectionParams" type="jdf:ColorCorrectionParams_rp" minOccurs="0" />
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
@@ -5062,6 +4983,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  
   <xs:element name="DeviceMark" type="jdf:DeviceMark_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -5078,9 +5000,7 @@
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DeviceMarkRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
-  <xs:element name="DeviceMarkLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
-  <xs:attributeGroup name="DeviceMarkAttribs_c">
+  <xs:attributeGroup name="DeviceMarkAttribs">
     <xs:attribute name="Anchor" type="jdftyp:eAnchor_" use="optional" />
     <xs:attribute name="Font" type="jdftyp:NMTOKEN" use="optional" />
     <xs:attribute name="FontSize" type="jdftyp:double" use="optional" />
@@ -5091,116 +5011,42 @@
     <xs:attribute name="MarkPosition" type="jdftyp:eMarkPosition_" use="optional" />
     <xs:attribute name="VerticalFitPolicy" type="jdftyp:eVerticalFitPolicy_" use="optional" />
   </xs:attributeGroup>
-  <xs:attributeGroup name="DeviceMarkAttribs_u">
-    <xs:attributeGroup ref="jdf:DeviceMarkAttribs_c" />
-  </xs:attributeGroup>
-  <xs:attributeGroup name="DeviceMarkAttribs_r">
-    <xs:attributeGroup ref="jdf:DeviceMarkAttribs_c" />
-  </xs:attributeGroup>
-  <xs:complexType name="DeviceMark_r" mixed="false">
+  <xs:complexType name="DeviceMark_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResource">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="BarcodeReproParams" type="jdf:BarcodeReproParams_re" minOccurs="0" />
-          <xs:element ref="jdf:BarcodeReproParamsRef" minOccurs="0" />
-          <xs:element name="DeviceMarkUpdate" type="jdf:DeviceMark_re" minOccurs="0" />
-          <xs:element name="DeviceMark" type="jdf:DeviceMark_rp" minOccurs="0" />
-        </xs:sequence>
-        <xs:attributeGroup ref="jdf:DeviceMarkAttribs_r" />
+         </xs:sequence>
+        <xs:attributeGroup ref="jdf:DeviceMarkAttribs" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="DeviceMark_re" mixed="false">
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResourceElement">
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0" />
-          <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
-        </xs:sequence>
-        <xs:attributeGroup ref="jdf:DeviceMarkAttribs_r" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:complexType name="DeviceMark_rp" mixed="false">
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResourceLeaf">
-        <xs:choice>
-          <xs:sequence minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="jdf:GenericElements" minOccurs="0" />
-            <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
-            <xs:element name="DeviceMark" type="jdf:DeviceMark_rp" minOccurs="0" />
-          </xs:sequence>
-          <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
-        </xs:choice>
-        <xs:attributeGroup ref="jdf:DeviceMarkAttribs_u" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_r" substitutionGroup="jdf:Resource">
+  
+  <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_re" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
         <Constraint Path="SeparationSpec" minOccurs="0" maxOccurs="unbounded" />
-        <Constraint Path="SeparationSpecRef" minOccurs="0" maxOccurs="unbounded" />
-      </xs:appinfo>
+       </xs:appinfo>
     </xs:annotation>
   </xs:element>
-  <xs:element name="DeviceNSpaceRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
-  <xs:element name="DeviceNSpaceLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
-  <xs:attributeGroup name="DeviceNSpaceAttribs_c">
+  <xs:attributeGroup name="DeviceNSpaceAttribs">
     <xs:attribute name="Name" type="jdftyp:string" use="optional" />
-  </xs:attributeGroup>
-  <xs:attributeGroup name="DeviceNSpaceAttribs_u">
-    <xs:attributeGroup ref="jdf:DeviceNSpaceAttribs_c" />
-    <xs:attribute name="N" type="jdftyp:Integer" use="optional" />
-  </xs:attributeGroup>
-  <xs:attributeGroup name="DeviceNSpaceAttribs_r">
-    <xs:attributeGroup ref="jdf:DeviceNSpaceAttribs_c" />
     <xs:attribute name="N" type="jdftyp:Integer" use="required" />
   </xs:attributeGroup>
-  <xs:complexType name="DeviceNSpace_r" mixed="false">
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResource">
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0" />
-          <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
-          <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0" />
-          <xs:element name="DeviceNSpaceUpdate" type="jdf:DeviceNSpace_re" minOccurs="0" />
-          <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_rp" minOccurs="0" />
-        </xs:sequence>
-        <xs:attributeGroup ref="jdf:DeviceNSpaceAttribs_r" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   <xs:complexType name="DeviceNSpace_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
-          <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0" />
         </xs:sequence>
-        <xs:attributeGroup ref="jdf:DeviceNSpaceAttribs_r" />
+        <xs:attributeGroup ref="jdf:DeviceNSpaceAttribs" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:complexType name="DeviceNSpace_rp" mixed="false">
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ParameterResourceLeaf">
-        <xs:choice>
-          <xs:sequence minOccurs="0" maxOccurs="unbounded">
-            <xs:group ref="jdf:GenericElements" minOccurs="0" />
-            <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
-            <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0" />
-            <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_rp" minOccurs="0" />
-          </xs:sequence>
-          <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
-        </xs:choice>
-        <xs:attributeGroup ref="jdf:DeviceNSpaceAttribs_u" />
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
+
   <xs:element name="DieLayout" type="jdf:DieLayout_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
@@ -5759,7 +5605,6 @@
         <Constraint Path="ColorantAliasRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="ColorCorrectionOp" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="ColorSpaceConversionOp" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="ColorSpaceConversionOpRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="FileSpec[@ResourceUsage='ActualOutputProfile']" minOccurs="0" maxOccurs="1" />
         <Constraint Path="FileSpec[@ResourceUsage='ReferenceOutputProfile']" minOccurs="0" maxOccurs="1" />
         <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="2" />
@@ -5787,7 +5632,7 @@
           <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0" />
            <xs:element name="ColorantAlias" type="jdf:ColorantAlias_re" minOccurs="0" />
           <xs:element ref="jdf:ColorantAliasRef" minOccurs="0" />
-          <xs:element name="ColorCorrectionOp" type="jdf:ColorCorrectionParams_ColorCorrectionOp_lr" minOccurs="0" />
+          <xs:element name="ColorCorrectionOp" type="jdf:ColorCorrectionOp_re" minOccurs="0" />
           <xs:element name="ColorSpaceConversionOp" type="jdf:ColorSpaceConversionOp_re" minOccurs="0" />
           <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0" />
           <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
@@ -17025,7 +16870,6 @@
         <Version Path="MarkObject/@Type" Last="1.0" />
         <Version Path="MarkObject/@LayoutElementPageNum" First="1.1" />
         <Version Path="MarkObject/DeviceMark" First="1.1" />
-        <Version Path="MarkObject/DeviceMarkRef" First="1.1" />
         <Version Path="MarkObject/JobField" First="1.1" />
         <Version Path="MarkObject/JobFieldRef" First="1.1" />
         <Version Path="MarkObject/ScavengerArea" First="1.1" />
@@ -17039,7 +16883,6 @@
         <Constraint Path="MarkObject/DensityMeasuringField" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="MarkObject/DensityMeasuringFieldRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="MarkObject/DeviceMark" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="MarkObject/DeviceMarkRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="MarkObject/DynamicField" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="MarkObject/IdentificationField" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="MarkObject/IdentificationFieldRef" minOccurs="0" maxOccurs="unbounded" />
@@ -17054,10 +16897,8 @@
         <!--Surface/MarkObject/DynamicField -->
         <Version Path="MarkObject/DynamicField/@InputField" Last="1.0" />
         <Version Path="MarkObject/DynamicField/DeviceMark" First="1.1" />
-        <Version Path="MarkObject/DynamicField/DeviceMarkRef" First="1.2" />
         <Constraint Path="MarkObject/DynamicField/DeviceMark" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="MarkObject/DynamicField/DeviceMarkRef" minOccurs="0" maxOccurs="1" />
-      </xs:appinfo>
+       </xs:appinfo>
     </xs:annotation>
   </xs:element>
   <xs:element name="SurfaceRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
@@ -17115,7 +16956,6 @@
           <xs:element name="DensityMeasuringField" type="jdf:DensityMeasuringField_re" minOccurs="0" />
           <xs:element ref="jdf:DensityMeasuringFieldRef" minOccurs="0" />
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0" />
-          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0" />
           <xs:element name="DynamicField" type="jdf:Surface_DynamicField_lr" minOccurs="0" />
           <xs:element name="IdentificationField" type="jdf:IdentificationField_re" minOccurs="0" />
           <xs:element ref="jdf:IdentificationFieldRef" minOccurs="0" />
@@ -17139,8 +16979,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0" />
-          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0" />
-        </xs:sequence>
+         </xs:sequence>
         <xs:attribute name="Format" type="jdftyp:string" use="required" />
         <xs:attribute name="InputField" type="jdftyp:string" use="optional" />
         <xs:attribute name="Ord" type="jdftyp:Integer" use="optional" />
