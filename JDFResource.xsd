@@ -10770,7 +10770,7 @@
         <Version Path="@RecycledPercentage" First="1.2" />
         <Version Path="@ReliefThickness" First="1.4" />
         <Version Path="@ShrinkIndex" First="1.1" />
-        <Version Path="@SleeveInterlock" First="1.4" />
+        <Version Path="@SleeveInterlock" First="1.4" Last="1.8" />
         <Version Path="@Spectrum" First="1.7" />
         <Version Path="@StockType" First="1.1" />
         <Version Path="@Texture" First="1.1" />
