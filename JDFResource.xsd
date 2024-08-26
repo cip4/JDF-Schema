@@ -861,7 +861,6 @@
         <Constraint Path="BoxApplication" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="BoxFoldAction" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="GlueLine" minOccurs="0" maxOccurs="unbounded" />
-        <Constraint Path="GlueLineRef" minOccurs="0" maxOccurs="unbounded" />
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -886,8 +885,7 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="BoxFoldAction" type="jdf:BoxFoldingParams_BoxFoldAction_lr" minOccurs="0" />
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-          <xs:element name="BoxApplication" type="jdf:BoxFoldingParams_BoxApplication_lr" minOccurs="0" />
+                    <xs:element name="BoxApplication" type="jdf:BoxFoldingParams_BoxApplication_lr" minOccurs="0" />
           <xs:element name="BoxFoldingParamsUpdate" type="jdf:BoxFoldingParams_re" minOccurs="0" />
           <xs:element name="BoxFoldingParams" type="jdf:BoxFoldingParams_rp" minOccurs="0" />
         </xs:sequence>
@@ -903,7 +901,6 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="BoxFoldAction" type="jdf:BoxFoldingParams_BoxFoldAction_lr" minOccurs="0" />
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
           <xs:element name="BoxApplication" type="jdf:BoxFoldingParams_BoxApplication_lr" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:BoxFoldingParamsAttribs_r" />
@@ -920,7 +917,6 @@
             <xs:element name="BoxApplication" type="jdf:BoxFoldingParams_BoxApplication_lr" minOccurs="0" />
             <xs:element name="BoxFoldAction" type="jdf:BoxFoldingParams_BoxFoldAction_lr" minOccurs="0" />
             <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-            <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
             <xs:element name="BoxFoldingParams" type="jdf:BoxFoldingParams_rp" minOccurs="0" />
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
@@ -937,8 +933,7 @@
           <xs:element name="Component" type="jdf:Component_re" minOccurs="0" />
           <xs:element ref="jdf:ComponentRef" minOccurs="0" />
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-        </xs:sequence>
+         </xs:sequence>
         <xs:attribute name="ApplicationArea" type="jdftyp:rectangle" use="optional" />
       </xs:extension>
     </xs:complexContent>
@@ -949,8 +944,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-        </xs:sequence>
+                  </xs:sequence>
         <xs:attribute name="FoldIndex" type="jdftyp:XYPair" use="required" />
         <xs:attribute name="Action" type="jdftyp:eAction_" use="optional" />
       </xs:extension>
@@ -1358,7 +1352,6 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="." First="1.1" />
-        <Constraint Path="GlueLineRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="GlueLine" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
@@ -1388,8 +1381,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-          <xs:element name="CaseMakingParamsUpdate" type="jdf:CaseMakingParams_re" minOccurs="0" />
+                    <xs:element name="CaseMakingParamsUpdate" type="jdf:CaseMakingParams_re" minOccurs="0" />
           <xs:element name="CaseMakingParams" type="jdf:CaseMakingParams_rp" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:CaseMakingParamsAttribs_r" />
@@ -1403,8 +1395,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-        </xs:sequence>
+                  </xs:sequence>
         <xs:attributeGroup ref="jdf:CaseMakingParamsAttribs_r" />
       </xs:extension>
     </xs:complexContent>
@@ -1417,8 +1408,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0" />
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
             <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-            <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-            <xs:element name="CaseMakingParams" type="jdf:CaseMakingParams_rp" minOccurs="0" />
+                        <xs:element name="CaseMakingParams" type="jdf:CaseMakingParams_rp" minOccurs="0" />
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
         </xs:choice>
@@ -1435,8 +1425,7 @@
         <Version Path="GlueApplication" First="1.4" />
         <Version Path="GlueApplicationRef" First="1.4" />
         <Version Path="GlueLine" Last="1.3" />
-        <Version Path="GlueLineRef" Last="1.3" />
-        <Constraint Path="GlueApplication" minOccurs="0" maxOccurs="unbounded" />
+         <Constraint Path="GlueApplication" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="GlueApplicationRef" minOccurs="0" maxOccurs="unbounded" />
       </xs:appinfo>
     </xs:annotation>
@@ -1463,8 +1452,7 @@
           <xs:element name="GlueApplication" type="jdf:GlueApplication_re" minOccurs="0" />
           <xs:element ref="jdf:GlueApplicationRef" minOccurs="0" />
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-          <xs:element name="CasingInParamsUpdate" type="jdf:CasingInParams_re" minOccurs="0" />
+                    <xs:element name="CasingInParamsUpdate" type="jdf:CasingInParams_re" minOccurs="0" />
           <xs:element name="CasingInParams" type="jdf:CasingInParams_rp" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:CasingInParamsAttribs_r" />
@@ -1480,8 +1468,7 @@
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
           <xs:element name="GlueApplication" type="jdf:GlueApplication_re" minOccurs="0" />
           <xs:element ref="jdf:GlueApplicationRef" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-        </xs:sequence>
+                  </xs:sequence>
         <xs:attributeGroup ref="jdf:CasingInParamsAttribs_r" />
       </xs:extension>
     </xs:complexContent>
@@ -1496,8 +1483,7 @@
             <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
             <xs:element name="GlueApplication" type="jdf:GlueApplication_re" minOccurs="0" />
             <xs:element ref="jdf:GlueApplicationRef" minOccurs="0" />
-            <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-            <xs:element name="CasingInParams" type="jdf:CasingInParams_rp" minOccurs="0" />
+                        <xs:element name="CasingInParams" type="jdf:CasingInParams_rp" minOccurs="0" />
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
         </xs:choice>
@@ -2015,8 +2001,6 @@
     <xs:annotation>
       <xs:appinfo>
         <Version Path="ColorantConvertProcess" First="1.4" />
-        <Version Path="DeviceNSpaceRef" Last="1.4" />
-        <Version Path="DeviceNSpaceRef" Last="1.5" />
         <Version Path="@InternalColorModel" First="1.5" />
         <Version Path="@MappingSelection" First="1.5" />
         <Constraint Path="ColorantAlias" minOccurs="0" maxOccurs="unbounded" />
@@ -2032,7 +2016,6 @@
         <Constraint Path="DeviceColorantOrder/SeparationSpec" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="ColorSpaceSubstitute" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="DeviceNSpace" minOccurs="0" maxOccurs="unbounded" />
-        <Constraint Path="DeviceNSpaceRef" minOccurs="0" maxOccurs="unbounded" />
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -2096,7 +2079,6 @@
           <xs:element name="ColorSpaceSubstitute" type="jdf:ColorantControl_ColorSpaceSubstitute_lr" minOccurs="0" />
           <xs:element name="DeviceColorantOrder" type="jdf:SeparationList" minOccurs="0" />
           <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_re" minOccurs="0" />
-          <xs:element ref="jdf:DeviceNSpaceRef" minOccurs="0" />
           <xs:element name="ColorantControlUpdate" type="jdf:ColorantControl_re" minOccurs="0" />
           <xs:element name="ColorantControl" type="jdf:ColorantControl_rp" minOccurs="0" />
         </xs:sequence>
@@ -2120,7 +2102,6 @@
           <xs:element name="ColorSpaceSubstitute" type="jdf:ColorantControl_ColorSpaceSubstitute_lr" minOccurs="0" />
           <xs:element name="DeviceColorantOrder" type="jdf:SeparationList" minOccurs="0" />
           <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_re" minOccurs="0" />
-          <xs:element ref="jdf:DeviceNSpaceRef" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ColorantControlAttribs_r" />
       </xs:extension>
@@ -2143,7 +2124,6 @@
             <xs:element name="ColorSpaceSubstitute" type="jdf:ColorantControl_ColorSpaceSubstitute_lr" minOccurs="0" />
             <xs:element name="DeviceColorantOrder" type="jdf:SeparationList" minOccurs="0" />
             <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_re" minOccurs="0" />
-            <xs:element ref="jdf:DeviceNSpaceRef" minOccurs="0" />
             <xs:element name="ColorantControl" type="jdf:ColorantControl_rp" minOccurs="0" />
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
@@ -2866,14 +2846,12 @@
         <Version Path="Company" First="1.1" />
         <Version Path="CompanyRef" First="1.1" />
         <Constraint Path="Address" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="AddressRef" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="ComChannel" minOccurs="0" maxOccurs="unbounded" />
+         <Constraint Path="ComChannel" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="ComChannelRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="Company" minOccurs="0" maxOccurs="1" />
         <Constraint Path="CompanyRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="Person" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="PersonRef" minOccurs="0" maxOccurs="1" />
-      </xs:appinfo>
+       </xs:appinfo>
     </xs:annotation>
   </xs:element>
   <xs:element name="ContactRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
@@ -2897,13 +2875,11 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="Address" type="jdf:Address_re" minOccurs="0" />
-          <xs:element ref="jdf:AddressRef" minOccurs="0" />
           <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0" />
           <xs:element ref="jdf:ComChannelRef" minOccurs="0" />
           <xs:element name="Company" type="jdf:Company_re" minOccurs="0" />
           <xs:element ref="jdf:CompanyRef" minOccurs="0" />
           <xs:element name="Person" type="jdf:Person_re" minOccurs="0" />
-          <xs:element ref="jdf:PersonRef" minOccurs="0" />
           <xs:element name="ContactUpdate" type="jdf:Contact_re" minOccurs="0" />
           <xs:element name="Contact" type="jdf:Contact_rp" minOccurs="0" />
         </xs:sequence>
@@ -2918,13 +2894,11 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="Address" type="jdf:Address_re" minOccurs="0" />
-          <xs:element ref="jdf:AddressRef" minOccurs="0" />
-          <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0" />
+           <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0" />
           <xs:element ref="jdf:ComChannelRef" minOccurs="0" />
           <xs:element name="Company" type="jdf:Company_re" minOccurs="0" />
           <xs:element ref="jdf:CompanyRef" minOccurs="0" />
           <xs:element name="Person" type="jdf:Person_re" minOccurs="0" />
-          <xs:element ref="jdf:PersonRef" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ContactAttribs_r" />
       </xs:extension>
@@ -2938,13 +2912,11 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0" />
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
             <xs:element name="Address" type="jdf:Address_re" minOccurs="0" />
-            <xs:element ref="jdf:AddressRef" minOccurs="0" />
-            <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0" />
+             <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0" />
             <xs:element ref="jdf:ComChannelRef" minOccurs="0" />
             <xs:element name="Company" type="jdf:Company_re" minOccurs="0" />
             <xs:element ref="jdf:CompanyRef" minOccurs="0" />
             <xs:element name="Person" type="jdf:Person_re" minOccurs="0" />
-            <xs:element ref="jdf:PersonRef" minOccurs="0" />
             <xs:element name="Contact" type="jdf:Contact_rp" minOccurs="0" />
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
@@ -5338,8 +5310,7 @@
         <Version Path="." First="1.2" />
         <Version Path="ColorCorrectionOp" First="1.5" />
         <Constraint Path="AutomatedOverPrintParams" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="AutomatedOverPrintParamsRef" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="ColorantAlias" minOccurs="0" maxOccurs="unbounded" />
+         <Constraint Path="ColorantAlias" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="ColorantAliasRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="ColorCorrectionOp" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="ColorSpaceConversionOp" minOccurs="0" maxOccurs="1" />
@@ -5525,7 +5496,6 @@
         <Version Path="@Roles" First="1.2" />
         <Constraint Path="CostCenter" minOccurs="0" maxOccurs="1" />
         <Constraint Path="Person" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="PersonRef" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -5550,7 +5520,6 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="CostCenter" type="jdf:CostCenter_re" minOccurs="0" />
           <xs:element name="Person" type="jdf:Person_re" minOccurs="0" />
-          <xs:element ref="jdf:PersonRef" minOccurs="0" />
           <xs:element name="EmployeeUpdate" type="jdf:Employee_re" minOccurs="0" />
           <xs:element name="Employee" type="jdf:Employee_rp" minOccurs="0" />
         </xs:sequence>
@@ -5566,7 +5535,6 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="CostCenter" type="jdf:CostCenter_re" minOccurs="0" />
           <xs:element name="Person" type="jdf:Person_re" minOccurs="0" />
-          <xs:element ref="jdf:PersonRef" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:EmployeeAttribs_r" />
       </xs:extension>
@@ -5581,7 +5549,6 @@
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
             <xs:element name="CostCenter" type="jdf:CostCenter_re" minOccurs="0" />
             <xs:element name="Person" type="jdf:Person_re" minOccurs="0" />
-            <xs:element ref="jdf:PersonRef" minOccurs="0" />
             <xs:element name="Employee" type="jdf:Employee_rp" minOccurs="0" />
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
@@ -6606,8 +6573,7 @@
       <xs:appinfo>
         <Version Path="." First="1.1" />
         <Constraint Path="GlueLine" minOccurs="1" maxOccurs="1" />
-        <Constraint Path="GlueLineRef" minOccurs="1" maxOccurs="1" />
-      </xs:appinfo>
+       </xs:appinfo>
     </xs:annotation>
   </xs:element>
   <xs:element name="GlueApplicationRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
@@ -6628,8 +6594,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-          <xs:element name="GlueApplicationUpdate" type="jdf:GlueApplication_re" minOccurs="0" />
+                    <xs:element name="GlueApplicationUpdate" type="jdf:GlueApplication_re" minOccurs="0" />
           <xs:element name="GlueApplication" type="jdf:GlueApplication_rp" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:GlueApplicationAttribs_r" />
@@ -6643,8 +6608,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-        </xs:sequence>
+                  </xs:sequence>
         <xs:attributeGroup ref="jdf:GlueApplicationAttribs_r" />
       </xs:extension>
     </xs:complexContent>
@@ -6657,8 +6621,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0" />
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
             <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-            <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-            <xs:element name="GlueApplication" type="jdf:GlueApplication_rp" minOccurs="0" />
+                        <xs:element name="GlueApplication" type="jdf:GlueApplication_rp" minOccurs="0" />
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
         </xs:choice>
@@ -6693,8 +6656,7 @@
         <Constraint Path="GlueApplication" minOccurs="0" maxOccurs="1" />
         <Constraint Path="GlueApplicationRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="GlueLine" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="GlueLineRef" minOccurs="0" maxOccurs="1" />
-      </xs:appinfo>
+       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
@@ -6703,8 +6665,7 @@
           <xs:element name="GlueApplication" type="jdf:GlueApplication_re" minOccurs="0" />
           <xs:element ref="jdf:GlueApplicationRef" minOccurs="0" />
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-        </xs:sequence>
+                  </xs:sequence>
         <xs:attribute name="WorkingDirection" type="jdftyp:eWorkingDirection_" use="optional" />
       </xs:extension>
     </xs:complexContent>
@@ -6759,8 +6720,7 @@
         <Version Path="BottomColorDetails" First="1.4" />
         <Version Path="TopColorDetails" First="1.4" />
         <Constraint Path="GlueLine" minOccurs="0" maxOccurs="unbounded" />
-        <Constraint Path="GlueLineRef" minOccurs="0" maxOccurs="unbounded" />
-      </xs:appinfo>
+       </xs:appinfo>
     </xs:annotation>
   </xs:element>
   <xs:element name="HeadBandApplicationParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
@@ -6790,8 +6750,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-          <xs:element name="HeadBandApplicationParamsUpdate" type="jdf:HeadBandApplicationParams_re" minOccurs="0" />
+                    <xs:element name="HeadBandApplicationParamsUpdate" type="jdf:HeadBandApplicationParams_re" minOccurs="0" />
           <xs:element name="HeadBandApplicationParams" type="jdf:HeadBandApplicationParams_rp" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:HeadBandApplicationParamsAttribs_r" />
@@ -6805,8 +6764,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-        </xs:sequence>
+                  </xs:sequence>
         <xs:attributeGroup ref="jdf:HeadBandApplicationParamsAttribs_r" />
       </xs:extension>
     </xs:complexContent>
@@ -6819,8 +6777,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0" />
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
             <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-            <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-            <xs:element name="HeadBandApplicationParams" type="jdf:HeadBandApplicationParams_rp" minOccurs="0" />
+                        <xs:element name="HeadBandApplicationParams" type="jdf:HeadBandApplicationParams_rp" minOccurs="0" />
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
         </xs:choice>
@@ -6834,9 +6791,7 @@
       <xs:appinfo>
         <Version Path="." First="1.2" />
         <Constraint Path="Hole" minOccurs="1" maxOccurs="unbounded" />
-        <Constraint Path="HoleRef" minOccurs="1" maxOccurs="unbounded" />
         <Constraint Path="HoleLine" minOccurs="1" maxOccurs="unbounded" />
-        <Constraint Path="HoleLineRef" minOccurs="1" maxOccurs="unbounded" />
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -6856,9 +6811,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="Hole" type="jdf:Hole_re" minOccurs="0" />
-          <xs:element ref="jdf:HoleRef" minOccurs="0" />
           <xs:element name="HoleLine" type="jdf:HoleLine_re" minOccurs="0" />
-          <xs:element ref="jdf:HoleLineRef" minOccurs="0" />
           <xs:element name="HoleListUpdate" type="jdf:HoleList_re" minOccurs="0" />
           <xs:element name="HoleList" type="jdf:HoleList_rp" minOccurs="0" />
         </xs:sequence>
@@ -7712,11 +7665,9 @@
         <Version Path="@Sides" First="1.2" />
         <Version Path="@SourceWorkStyle" First="1.2" />
         <Version Path="FitPolicy" First="1.2" />
-        <Version Path="FitPolicyRef" First="1.2" />
         <Constraint Path="Media" minOccurs="0" maxOccurs="1" />
         <Constraint Path="MediaRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="FitPolicy" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="FitPolicyRef" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -7760,8 +7711,7 @@
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
-          <xs:element ref="jdf:FitPolicyRef" minOccurs="0" />
-          <xs:element name="ImageSetterParamsUpdate" type="jdf:ImageSetterParams_re" minOccurs="0" />
+           <xs:element name="ImageSetterParamsUpdate" type="jdf:ImageSetterParams_re" minOccurs="0" />
           <xs:element name="ImageSetterParams" type="jdf:ImageSetterParams_rp" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ImageSetterParamsAttribs_r" />
@@ -7777,7 +7727,6 @@
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
-          <xs:element ref="jdf:FitPolicyRef" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ImageSetterParamsAttribs_r" />
       </xs:extension>
@@ -7793,7 +7742,6 @@
             <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
             <xs:element ref="jdf:MediaRef" minOccurs="0" />
             <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
-            <xs:element ref="jdf:FitPolicyRef" minOccurs="0" />
             <xs:element name="ImageSetterParams" type="jdf:ImageSetterParams_rp" minOccurs="0" />
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
@@ -8001,7 +7949,6 @@
         <Version Path="@SheetOffset" Last="1.0" />
         <Version Path="@FinishedPage" First="1.2" />
         <Constraint Path="GlueLine" minOccurs="0" maxOccurs="unbounded" />
-        <Constraint Path="GlueLineRef" minOccurs="0" maxOccurs="unbounded" />
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -8028,8 +7975,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-          <xs:element name="InsertingParamsUpdate" type="jdf:InsertingParams_re" minOccurs="0" />
+                    <xs:element name="InsertingParamsUpdate" type="jdf:InsertingParams_re" minOccurs="0" />
           <xs:element name="InsertingParams" type="jdf:InsertingParams_rp" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:InsertingParamsAttribs_r" />
@@ -8043,8 +7989,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-          <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
-        </xs:sequence>
+         </xs:sequence>
         <xs:attributeGroup ref="jdf:InsertingParamsAttribs_r" />
       </xs:extension>
     </xs:complexContent>
@@ -8057,7 +8002,6 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0" />
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
             <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0" />
-            <xs:element ref="jdf:GlueLineRef" minOccurs="0" />
             <xs:element name="InsertingParams" type="jdf:InsertingParams_rp" minOccurs="0" />
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
@@ -8221,16 +8165,13 @@
         <Version Path="@Poster" Last="1.4" />
         <Version Path="@PosterOverlap" Last="1.4" />
         <Version Path="FitPolicy" First="1.1" />
-        <Version Path="FitPolicyRef" First="1.1" />
         <Version Path="Media" First="1.1" />
         <Version Path="MediaRef" First="1.1" />
         <Version Path="PDFInterpretingParams" First="1.1" />
         <Version Path="PDFInterpretingParamsRef" First="1.1" />
         <Constraint Path="ObjectResolution" minOccurs="0" maxOccurs="unbounded" />
-        <Constraint Path="ObjectResolutionRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="FitPolicy" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="FitPolicyRef" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="Media" minOccurs="0" maxOccurs="unbounded" />
+         <Constraint Path="Media" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="MediaRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="PDFInterpretingParams" minOccurs="0" maxOccurs="1" />
         <Constraint Path="PDFInterpretingParamsRef" minOccurs="0" maxOccurs="1" />
@@ -8333,9 +8274,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0" />
-          <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0" />
-          <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
-          <xs:element ref="jdf:FitPolicyRef" minOccurs="0" />
+           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
           <xs:element name="InterpretingDetails" type="jdf:InterpretingParams_InterpretingDetails_lr" minOccurs="0" />
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
@@ -8354,9 +8293,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0" />
-          <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0" />
-          <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
-          <xs:element ref="jdf:FitPolicyRef" minOccurs="0" />
+           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
           <xs:element name="InterpretingDetails" type="jdf:InterpretingParams_InterpretingDetails_lr" minOccurs="0" />
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
@@ -8374,9 +8311,7 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0" />
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
             <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0" />
-            <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0" />
-            <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
-            <xs:element ref="jdf:FitPolicyRef" minOccurs="0" />
+             <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
             <xs:element name="InterpretingDetails" type="jdf:InterpretingParams_InterpretingDetails_lr" minOccurs="0" />
             <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
             <xs:element ref="jdf:MediaRef" minOccurs="0" />
@@ -8740,9 +8675,7 @@
         <Version Path="@ContentRef" First="1.4" />
         <Version Path="@LayoutElementPageNum" First="1.1" Last="1.3" />
         <Version Path="DeviceMark" First="1.1" />
-        <Version Path="DeviceMarkRef" First="1.1" />
         <Version Path="JobField" First="1.1" />
-        <Version Path="JobFieldRef" First="1.1" />
         <Version Path="FillMark" First="1.5" />
         <Version Path="LayoutElement" Last="1.3" />
         <Version Path="LayoutElementRef" Last="1.3" />
@@ -8759,12 +8692,10 @@
         <Constraint Path="DensityMeasuringField" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="DensityMeasuringFieldRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="DeviceMark" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="DeviceMarkRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="DynamicField" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="IdentificationField" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="IdentificationFieldRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="JobField" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="JobFieldRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="LayoutElement" minOccurs="0" maxOccurs="1" />
         <Constraint Path="LayoutElementRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="MarkActivation" minOccurs="0" maxOccurs="unbounded" />
@@ -8781,9 +8712,7 @@
       <xs:appinfo>
         <Version Path="@InputField" Last="1.0" />
         <Version Path="DeviceMark" First="1.1" />
-        <Version Path="DeviceMarkRef" First="1.2" />
         <Constraint Path="DeviceMark" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="DeviceMarkRef" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
   </xs:element>
@@ -8962,13 +8891,11 @@
           <xs:element name="DensityMeasuringField" type="jdf:DensityMeasuringField_re" minOccurs="0" />
           <xs:element ref="jdf:DensityMeasuringFieldRef" minOccurs="0" />
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0" />
-          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0" />
-          <xs:element name="DynamicField" type="jdf:Layout_DynamicField_lr" minOccurs="0" />
+           <xs:element name="DynamicField" type="jdf:Layout_DynamicField_lr" minOccurs="0" />
           <xs:element name="FillMark" type="jdf:Layout_FillMark_lr" minOccurs="0" />
           <xs:element name="IdentificationField" type="jdf:IdentificationField_re" minOccurs="0" />
           <xs:element ref="jdf:IdentificationFieldRef" minOccurs="0" />
           <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0" />
-          <xs:element ref="jdf:JobFieldRef" minOccurs="0" />
           <xs:element name="LayoutElement" type="jdf:LayoutElement_re" minOccurs="0" />
           <xs:element ref="jdf:LayoutElementRef" minOccurs="0" />
           <xs:element name="MarkActivation" type="jdf:Layout_MarkObject_MarkActivation_lr" minOccurs="0" />
@@ -8990,8 +8917,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0" />
-          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0" />
-        </xs:sequence>
+         </xs:sequence>
         <xs:attribute name="Format" type="jdftyp:string" use="required" />
         <xs:attribute name="InputField" type="jdftyp:string" use="optional" />
         <xs:attribute name="Ord" type="jdftyp:Integer" use="optional" />
@@ -9431,11 +9357,8 @@
         <Constraint Path="InsertSheet" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="InsertSheetRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="DeviceMark" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="DeviceMarkRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="FitPolicy" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="FitPolicyRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="JobField" minOccurs="0" maxOccurs="unbounded" />
-        <Constraint Path="JobFieldRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="Media" minOccurs="0" maxOccurs="1" />
         <Constraint Path="MediaRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="PageCell" minOccurs="0" maxOccurs="1" />
@@ -9488,9 +9411,7 @@
         <Constraint Path="Color" minOccurs="0" maxOccurs="1" />
         <Constraint Path="ColorRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="DeviceMark" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="DeviceMarkRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="FitPolicy" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="FitPolicyRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="ImageShift" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
@@ -9501,9 +9422,7 @@
           <xs:element name="Color" type="jdf:Color_re" minOccurs="0" />
           <xs:element ref="jdf:ColorRef" minOccurs="0" />
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0" />
-          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0" />
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
-          <xs:element ref="jdf:FitPolicyRef" minOccurs="0" />
           <xs:element name="ImageShift" type="jdf:LayoutPreparationParams_ImageShift_lr" minOccurs="0" />
         </xs:sequence>
         <xs:attribute name="Border" type="jdftyp:double" use="optional" />
@@ -9537,13 +9456,10 @@
           <xs:element name="InsertSheet" type="jdf:InsertSheet_re" minOccurs="0" />
           <xs:element ref="jdf:InsertSheetRef" minOccurs="0" />
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0" />
-          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0" />
           <xs:element name="ExternalImpositionTemplate" type="jdf:ExternalImpositionTemplate_re" minOccurs="0" />
           <xs:element ref="jdf:ExternalImpositionTemplateRef" minOccurs="0" />
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
-          <xs:element ref="jdf:FitPolicyRef" minOccurs="0" />
-          <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0" />
-          <xs:element ref="jdf:JobFieldRef" minOccurs="0" />
+           <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0" />
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
           <xs:element name="PageCell" type="jdf:LayoutPreparationParams_PageCell_lr" minOccurs="0" />
@@ -9564,13 +9480,10 @@
           <xs:element name="InsertSheet" type="jdf:InsertSheet_re" minOccurs="0" />
           <xs:element ref="jdf:InsertSheetRef" minOccurs="0" />
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0" />
-          <xs:element ref="jdf:DeviceMarkRef" minOccurs="0" />
-          <xs:element name="ExternalImpositionTemplate" type="jdf:ExternalImpositionTemplate_re" minOccurs="0" />
+           <xs:element name="ExternalImpositionTemplate" type="jdf:ExternalImpositionTemplate_re" minOccurs="0" />
           <xs:element ref="jdf:ExternalImpositionTemplateRef" minOccurs="0" />
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
-          <xs:element ref="jdf:FitPolicyRef" minOccurs="0" />
           <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0" />
-          <xs:element ref="jdf:JobFieldRef" minOccurs="0" />
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
           <xs:element name="PageCell" type="jdf:LayoutPreparationParams_PageCell_lr" minOccurs="0" />
@@ -9590,14 +9503,11 @@
             <xs:element name="InsertSheet" type="jdf:InsertSheet_re" minOccurs="0" />
             <xs:element ref="jdf:InsertSheetRef" minOccurs="0" />
             <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0" />
-            <xs:element ref="jdf:DeviceMarkRef" minOccurs="0" />
             <xs:element name="ExternalImpositionTemplate" type="jdf:ExternalImpositionTemplate_re" minOccurs="0" />
             <xs:element ref="jdf:ExternalImpositionTemplateRef" minOccurs="0" />
             <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
-            <xs:element ref="jdf:FitPolicyRef" minOccurs="0" />
-            <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0" />
-            <xs:element ref="jdf:JobFieldRef" minOccurs="0" />
-            <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
+             <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0" />
+             <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
             <xs:element ref="jdf:MediaRef" minOccurs="0" />
             <xs:element name="PageCell" type="jdf:LayoutPreparationParams_PageCell_lr" minOccurs="0" />
             <xs:element name="LayoutPreparationParams" type="jdf:LayoutPreparationParams_rp" minOccurs="0" />
@@ -9699,7 +9609,6 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="Address" type="jdf:Address_re" minOccurs="0" />
-          <xs:element ref="jdf:AddressRef" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:LocationAttribs_r" />
       </xs:extension>
@@ -13369,11 +13278,9 @@
         <Version Path="@Poster" Last="1.4" />
         <Version Path="@PosterOverlap" Last="1.4" />
         <Version Path="FitPolicy" First="1.1" />
-        <Version Path="FitPolicyRef" First="1.1" />
         <Version Path="Media" First="1.1" />
         <Version Path="MediaRef" First="1.1" />
         <Constraint Path="FitPolicy" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="FitPolicyRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="Media" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="MediaRef" minOccurs="0" maxOccurs="unbounded" />
       </xs:appinfo>
@@ -13406,7 +13313,6 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
-          <xs:element ref="jdf:FitPolicyRef" minOccurs="0" />
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
           <xs:element name="RasterReadingParamsUpdate" type="jdf:RasterReadingParams_re" minOccurs="0" />
@@ -13423,7 +13329,6 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
-          <xs:element ref="jdf:FitPolicyRef" minOccurs="0" />
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
         </xs:sequence>
@@ -13439,7 +13344,6 @@
             <xs:group ref="jdf:GenericElements" minOccurs="0" />
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
             <xs:element name="FitPolicy" type="jdf:FitPolicy_re" minOccurs="0" />
-            <xs:element ref="jdf:FitPolicyRef" minOccurs="0" />
             <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
             <xs:element ref="jdf:MediaRef" minOccurs="0" />
           </xs:sequence>
@@ -13591,7 +13495,6 @@
         <Constraint Path="AutomatedOverPrintParams" minOccurs="0" maxOccurs="1" />
         <Constraint Path="TIFFFormatParams" minOccurs="0" maxOccurs="1" />
         <Constraint Path="ObjectResolution" minOccurs="0" maxOccurs="unbounded" />
-        <Constraint Path="ObjectResolutionRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="Media" minOccurs="0" maxOccurs="1" />
         <Constraint Path="MediaRef" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
@@ -13621,7 +13524,6 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0" />
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0" />
-          <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0" />
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
           <xs:element name="TIFFFormatParams" type="jdf:RenderingParams_TIFFFormatParams_lr" minOccurs="0" />
@@ -13639,9 +13541,7 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0" />
-          <xs:element ref="jdf:AutomatedOverPrintParamsRef" minOccurs="0" />
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0" />
-          <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0" />
           <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
           <xs:element name="TIFFFormatParams" type="jdf:RenderingParams_TIFFFormatParams_lr" minOccurs="0" />
@@ -13659,7 +13559,6 @@
             <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
             <xs:element name="AutomatedOverPrintParams" type="jdf:AutomatedOverPrintParams_re" minOccurs="0" />
             <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0" />
-            <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0" />
             <xs:element name="Media" type="jdf:Media_re" minOccurs="0" />
             <xs:element ref="jdf:MediaRef" minOccurs="0" />
             <xs:element name="TIFFFormatParams" type="jdf:RenderingParams_TIFFFormatParams_lr" minOccurs="0" />
@@ -14471,7 +14370,6 @@
   <xs:element name="SeparationControlParams" type="jdf:SeparationControlParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
-        <Constraint Path="AutomatedOverPrintParams AutomatedOverPrintParamsRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="TransferFunctionControl TransferFunctionControlRef" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
     </xs:annotation>
@@ -14481,7 +14379,6 @@
     <xs:annotation>
       <xs:appinfo>
         <Constraint Path="AutomatedOverPrintParams" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="AutomatedOverPrintParamsRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="TransferFunctionControl" minOccurs="0" maxOccurs="1" />
         <Constraint Path="TransferFunctionControlRef" minOccurs="0" maxOccurs="1" />
       </xs:appinfo>
@@ -15940,8 +15837,7 @@
         <Constraint Path="MarkColor" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="Position" minOccurs="0" maxOccurs="1" />
         <Constraint Path="JobField" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="JobFieldRef" minOccurs="0" maxOccurs="1" />
-      </xs:appinfo>
+       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
       <xs:extension base="jdf:BaseElement_">
@@ -15950,7 +15846,6 @@
           <xs:element name="MarkColor" type="jdf:MarkColor_re" minOccurs="0" />
           <xs:element name="Position" type="jdf:StrippingParams_Position_lr" minOccurs="0" />
           <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0" />
-          <xs:element ref="jdf:JobFieldRef" minOccurs="0" />
           <xs:element name="RefAnchor" type="jdf:RefAnchor_re" minOccurs="0" maxOccurs="1" />
         </xs:sequence>
         <xs:attribute name="AbsoluteHeight" type="jdftyp:double" use="optional" />
@@ -16072,8 +15967,7 @@
         <Version Path="MarkObject/@LayoutElementPageNum" First="1.1" />
         <Version Path="MarkObject/DeviceMark" First="1.1" />
         <Version Path="MarkObject/JobField" First="1.1" />
-        <Version Path="MarkObject/JobFieldRef" First="1.1" />
-        <Version Path="MarkObject/ScavengerArea" First="1.1" />
+         <Version Path="MarkObject/ScavengerArea" First="1.1" />
         <Version Path="MarkObject/ScavengerAreaRef" First="1.1" />
         <Constraint Path="MarkObject/CIELABMeasuringField" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="MarkObject/CIELABMeasuringFieldRef" minOccurs="0" maxOccurs="unbounded" />
@@ -16088,7 +15982,6 @@
         <Constraint Path="MarkObject/IdentificationField" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="MarkObject/IdentificationFieldRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="MarkObject/JobField" minOccurs="0" maxOccurs="unbounded" />
-        <Constraint Path="MarkObject/JobFieldRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="MarkObject/LayoutElement" minOccurs="0" maxOccurs="1" />
         <Constraint Path="MarkObject/LayoutElementRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="MarkObject/RegisterMark" minOccurs="0" maxOccurs="unbounded" />
@@ -16161,7 +16054,6 @@
           <xs:element name="IdentificationField" type="jdf:IdentificationField_re" minOccurs="0" />
           <xs:element ref="jdf:IdentificationFieldRef" minOccurs="0" />
           <xs:element name="JobField" type="jdf:JobField_re" minOccurs="0" />
-          <xs:element ref="jdf:JobFieldRef" minOccurs="0" />
           <xs:element name="LayoutElement" type="jdf:LayoutElement_re" minOccurs="0" />
           <xs:element ref="jdf:LayoutElementRef" minOccurs="0" />
           <xs:element name="RegisterMark" type="jdf:RegisterMark_re" minOccurs="0" />
@@ -16875,12 +16767,10 @@
         <Version Path="@Trapping" Last="1.1" />
         <Version Path="@TrappingType" Last="1.1" />
         <Version Path="ObjectResolution" First="1.1" />
-        <Version Path="ObjectResolutionRef" First="1.1" />
         <Constraint Path="TrappingOrder" minOccurs="0" maxOccurs="1" />
         <Constraint Path="TrappingParams" minOccurs="0" maxOccurs="1" />
         <Constraint Path="TrappingParamsRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="ObjectResolution" minOccurs="0" maxOccurs="unbounded" />
-        <Constraint Path="ObjectResolutionRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="TrapRegion" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="TrapRegionRef" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="TrappingOrder/SeparationSpec" minOccurs="0" maxOccurs="unbounded" />
@@ -16922,8 +16812,7 @@
           <xs:element name="TrappingParams" type="jdf:TrappingParams_re" minOccurs="0" />
           <xs:element ref="jdf:TrappingParamsRef" minOccurs="0" />
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0" />
-          <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0" />
-          <xs:element name="TrapRegion" type="jdf:TrapRegion_re" minOccurs="0" />
+           <xs:element name="TrapRegion" type="jdf:TrapRegion_re" minOccurs="0" />
           <xs:element ref="jdf:TrapRegionRef" minOccurs="0" />
           <xs:element name="TrappingDetailsUpdate" type="jdf:TrappingDetails_re" minOccurs="0" />
           <xs:element name="TrappingDetails" type="jdf:TrappingDetails_rp" minOccurs="0" />
@@ -16942,7 +16831,6 @@
           <xs:element name="TrappingParams" type="jdf:TrappingParams_re" minOccurs="0" />
           <xs:element ref="jdf:TrappingParamsRef" minOccurs="0" />
           <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0" />
-          <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0" />
           <xs:element name="TrapRegion" type="jdf:TrapRegion_re" minOccurs="0" />
           <xs:element ref="jdf:TrapRegionRef" minOccurs="0" />
         </xs:sequence>
@@ -16961,7 +16849,6 @@
             <xs:element name="TrappingParams" type="jdf:TrappingParams_re" minOccurs="0" />
             <xs:element ref="jdf:TrappingParamsRef" minOccurs="0" />
             <xs:element name="ObjectResolution" type="jdf:ObjectResolution_re" minOccurs="0" />
-            <xs:element ref="jdf:ObjectResolutionRef" minOccurs="0" />
             <xs:element name="TrapRegion" type="jdf:TrapRegion_re" minOccurs="0" />
             <xs:element ref="jdf:TrapRegionRef" minOccurs="0" />
             <xs:element name="TrappingDetails" type="jdf:TrappingDetails_rp" minOccurs="0" />

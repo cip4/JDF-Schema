@@ -125,7 +125,7 @@
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
         </xs:sequence>
-        <xs:attributeGroup ref="CertificationAttribs"/>
+        <xs:attributeGroup ref="jdf:CertificationAttribs"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -166,7 +166,7 @@
           <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0" />
           <xs:element ref="jdf:FileSpecRef" minOccurs="0" />
         </xs:sequence>
-        <xs:attributeGroup ref="ColorCorrectionOpAttribs"/>
+        <xs:attributeGroup ref="jdf:ColorCorrectionOpAttribs"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -215,11 +215,9 @@
         <Version Path="@RGBGray2BlackThreshold" First="1.2"/>
         <Version Path="@SourceRenderingIntent" First="1.2"/>
         <Version Path="DeviceNSpace" First="1.2"/>
-        <Version Path="DeviceNSpaceRef" First="1.2"/>
         <Version Path="FileSpec[@ResourceUsage='AbstractProfile']" First="1.2" Last="1.5"/>
         <Version Path="SeparationSpec" First="1.2"/>
         <Constraint Path="DeviceNSpace" minOccurs="0" maxOccurs="1"/>
-        <Constraint Path="DeviceNSpaceRef" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="FileSpec[@ResourceUsage='AbstractProfile']" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="FileSpec[@ResourceUsage='SourceProfile']" minOccurs="0" maxOccurs="1"/>
         <Constraint Path="FileSpecRef" minOccurs="0" maxOccurs="2"/>
@@ -233,7 +231,7 @@
           <xs:element name="DeviceNSpace" type="jdf:DeviceNSpace_re" minOccurs="0"/>
           <xs:element name="FileSpec" type="jdf:FileSpec_re" minOccurs="0"/>
           <xs:element ref="jdf:FileSpecRef" minOccurs="0"/>
-          <xs:element ref="jdf:ScreenSelector_re" minOccurs="0"/>
+          <xs:element name="ScreenSelector" ref="jdf:ScreenSelector_re" minOccurs="0"/>
           <xs:element name="SeparationSpec" type="jdf:SeparationSpec_re" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ColorSpaceConversionOpAttribs"/>
@@ -436,7 +434,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="IdentificationField" type="jdf:IdentificationField_re" minOccurs="0"/>
@@ -463,7 +461,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
         </xs:sequence>
@@ -483,7 +481,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
         </xs:sequence>
@@ -499,9 +497,9 @@
     <xs:attribute name="RotatePolicy" type="jdftyp:eFitPolicyRotatePolicy_" use="optional" />
     <xs:attribute name="SizePolicy" type="jdftyp:eFitPolicySizePolicy_" use="optional" />
   </xs:attributeGroup>
-  <xs:complexType name="FitPolicy_r" mixed="false">
+  <xs:complexType name="FitPolicy_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
         </xs:sequence>
@@ -525,7 +523,7 @@
   </xs:attributeGroup>
   <xs:complexType name="Fold_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
         </xs:sequence>
@@ -546,7 +544,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
         </xs:sequence>
@@ -568,7 +566,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
         </xs:sequence>
@@ -591,7 +589,7 @@
   </xs:attributeGroup>
   <xs:complexType name="GlueLine_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseeElement">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
         </xs:sequence>
@@ -608,11 +606,11 @@
   </xs:attributeGroup>
   <xs:complexType name="Hole_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
         </xs:sequence>
-        <xs:attributeGroup ref="jdf:HoleAttribs_r" />
+        <xs:attributeGroup ref="jdf:HoleAttribs" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -623,7 +621,7 @@
   </xs:attributeGroup>
   <xs:complexType name="HoleLine_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:element name="Hole" type="jdf:Hole_re" minOccurs="0" />
@@ -642,7 +640,7 @@
   </xs:attributeGroup>
   <xs:complexType name="JobField_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:element name="DeviceMark" type="jdf:DeviceMark_re" minOccurs="0" />
@@ -664,7 +662,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
         </xs:sequence>
@@ -680,13 +678,12 @@
       <xs:appinfo>
         <Version Path="." First="1.3"/>
         <Constraint Path="GlueLine" minOccurs="0" maxOccurs="unbounded"/>
-        <Constraint Path="GlueLineRef" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="Media" minOccurs="0" maxOccurs="unbounded"/>
         <Constraint Path="MediaRef" minOccurs="0" maxOccurs="unbounded"/>
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="GlueLine" type="jdf:GlueLine_re" minOccurs="0"/>
@@ -713,7 +710,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
           <xs:element name="Expr" type="jdf:MetaDataMap_Expr_lr" minOccurs="1" maxOccurs="unbounded"/>
@@ -750,7 +747,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
         </xs:sequence>
@@ -767,7 +764,7 @@
   </xs:attributeGroup>
   <xs:complexType name="ObjectResolution_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
         </xs:sequence>
@@ -791,7 +788,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
         </xs:sequence>
@@ -818,7 +815,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
         </xs:sequence>
@@ -845,15 +842,13 @@
         <Version Path="@PhoneticFirstName" First="1.5" />
         <Version Path="@PhoneticLastName" First="1.5" />
         <Version Path="Address" First="1.2" />
-        <Version Path="AddressRef" First="1.2" />
         <Constraint Path="Address" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="AddressRef" minOccurs="0" maxOccurs="1" />
         <Constraint Path="ComChannel" minOccurs="0" maxOccurs="unbounded" />
         <Constraint Path="ComChannelRef" minOccurs="0" maxOccurs="unbounded" />
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:element name="Address" type="jdf:Address_re" minOccurs="0" />
@@ -871,7 +866,7 @@
   </xs:attributeGroup>
   <xs:complexType name="RefAnchor_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
         </xs:sequence>
@@ -891,7 +886,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
         </xs:sequence>
@@ -906,11 +901,11 @@
   </xs:attributeGroup>
   <xs:complexType name="RuleLength_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
         </xs:sequence>
-        <xs:attributeGroup ref="RuleLengthAttribs"/>
+        <xs:attributeGroup ref="jdf:RuleLengthAttribs"/>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -937,7 +932,7 @@
       </xs:appinfo>
     </xs:annotation>
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
         </xs:sequence>
@@ -951,7 +946,7 @@
   </xs:attributeGroup>
   <xs:complexType name="SeparationSpec_re" mixed="false">
     <xs:complexContent mixed="false">
-      <xs:extension base="jdf:ResourceElement">
+      <xs:extension base="jdf:BaseElement_">
         <xs:sequence minOccurs="0" maxOccurs="unbounded">
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
         </xs:sequence>
