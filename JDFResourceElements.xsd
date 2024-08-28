@@ -18,36 +18,6 @@
            attributeFormDefault="unqualified" version="@@version@@">
   <xs:import namespace="http://www.CIP4.org/JDFSchema_1_7_Types" schemaLocation="JDFTypes.xsd"/>
   <xs:include schemaLocation="JDFCore.xsd"/>
-
-  <xs:attributeGroup name="AddressAttribs">
-    <xs:attribute name="AddressUsage" type="jdftyp:NMTOKEN" use="optional"/>
-    <xs:attribute name="City" type="jdftyp:string" use="optional"/>
-    <xs:attribute name="CivicNumber" type="jdftyp:string"/>
-    <xs:attribute name="Country" type="jdftyp:string" use="optional"/>
-    <xs:attribute name="CountryCode" use="optional">
-      <xs:simpleType>
-        <xs:restriction base="xs:NMTOKEN">
-          <xs:pattern value="[A-Z][A-Z]"/>
-        </xs:restriction>
-      </xs:simpleType>
-    </xs:attribute>
-    <xs:attribute name="PostBox" type="jdftyp:string" use="optional"/>
-    <xs:attribute name="PostalCode" type="jdftyp:string" use="optional"/>
-    <xs:attribute name="Region" type="jdftyp:string" use="optional"/>
-    <xs:attribute name="Street" type="jdftyp:string" use="optional"/>
-  </xs:attributeGroup>
-  <xs:complexType name="Address_re" mixed="false">
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:BaseElement_">
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0"/>
-          <xs:element name="AddressLine" type="jdf:telem" minOccurs="0"/>
-          <xs:element name="ExtendedAddress" type="jdf:telem" minOccurs="0"/>
-        </xs:sequence>
-        <xs:attributeGroup ref="jdf:AddressAttribs"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
   
   <xs:attributeGroup name="AutomatedOverPrintParamsAttribs">
     <xs:attribute name="KnockOutCMYKWhite" type="jdftyp:boolean" default="false"/>
@@ -820,41 +790,6 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0"/>
         </xs:sequence>
         <xs:attributeGroup ref="jdf:PerforateAttribs"/>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-
-  <xs:attributeGroup name="PersonAttribs">
-    <xs:attribute name="AdditionalNames" type="jdftyp:string" use="optional" />
-    <xs:attribute name="FamilyName" type="jdftyp:string" use="optional" />
-    <xs:attribute name="FirstName" type="jdftyp:string" use="optional" />
-    <xs:attribute name="JobTitle" type="jdftyp:string" use="optional" />
-    <xs:attribute name="Languages" type="jdftyp:languages" use="optional" />
-    <xs:attribute name="NamePrefix" type="jdftyp:string" use="optional" />
-    <xs:attribute name="NameSuffix" type="jdftyp:string" use="optional" />
-    <xs:attribute name="PhoneticFirstName" type="jdftyp:string" use="optional" />
-    <xs:attribute name="PhoneticLastName" type="jdftyp:string" use="optional" />
-  </xs:attributeGroup>
-  <xs:complexType name="Person_re" mixed="false">
-    <xs:annotation>
-      <xs:appinfo>
-        <Version Path="@Languages" First="1.4" />
-        <Version Path="@PhoneticFirstName" First="1.5" />
-        <Version Path="@PhoneticLastName" First="1.5" />
-        <Version Path="Address" First="1.2" />
-        <Constraint Path="Address" minOccurs="0" maxOccurs="1" />
-        <Constraint Path="ComChannel" minOccurs="0" maxOccurs="unbounded" />
-        <Constraint Path="ComChannelRef" minOccurs="0" maxOccurs="unbounded" />
-      </xs:appinfo>
-    </xs:annotation>
-    <xs:complexContent mixed="false">
-      <xs:extension base="jdf:BaseElement_">
-        <xs:sequence minOccurs="0" maxOccurs="unbounded">
-          <xs:group ref="jdf:GenericElements" minOccurs="0" />
-          <xs:element name="Address" type="jdf:Address_re" minOccurs="0" />
-          <xs:element name="ComChannel" type="jdf:ComChannel_re" minOccurs="0" />
-        </xs:sequence>
-        <xs:attributeGroup ref="jdf:PersonAttribs" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
