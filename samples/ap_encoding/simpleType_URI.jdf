@@ -1,7 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<jdf:JDF xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns="http://www.CIP4.org/EncodingExamples" Type="Product" Status="Ready" ID="ID_001">
-    <!-- START SNIPPET -->
-    <Example URI="http://www.w3.org/1999/XMLSchema"/>
-    <!-- END SNIPPET -->
+<?xml version="1.0" encoding="UTF-8"?>
+<jdf:JDF ID="ID_001" JobID="n_000042" JobPartID="P_n_000042"
+  MaxVersion="1.9" Status="Ready" Type="Product" Version="1.9"
+  xmlns="http://www.CIP4.org/EncodingExamples"
+  xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jdf:Product">
+  <!-- START SNIPPET -->
+  <Example URI="http://www.w3.org/1999/XMLSchema"/>
+  <!-- END SNIPPET -->
 </jdf:JDF>
-

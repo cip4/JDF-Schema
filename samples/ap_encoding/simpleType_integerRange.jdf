@@ -1,9 +1,12 @@
-<?xml version="1.0" encoding="utf-8"?>
-<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" Type="Product" Status="Ready" ID="ID_001">
-    <ResourcePool>
-        <!-- START SNIPPET -->
-        <RunList ID="RL1" Class="Parameter" Status="Available" Pages="-3 ~ -5"/>
-        <RunList ID="RL2" Class="Parameter" Status="Available" Pages="-1 ~ -5"/>
-        <!-- END SNIPPET -->
-    </ResourcePool>
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="ID_001" JobID="n_000022" JobPartID="P_n_000022"
+  MaxVersion="1.9" Status="Ready" Type="Product" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Product">
+  <ResourcePool>
+    <!-- START SNIPPET -->
+    <RunList Class="Parameter" ID="RL1" Pages="-3 ~ -5" Status="Available"/>
+    <RunList Class="Parameter" ID="RL2" Pages="-1 ~ -5" Status="Available"/>
+    <!-- END SNIPPET -->
+  </ResourcePool>
 </JDF>

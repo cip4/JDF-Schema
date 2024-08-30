@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JMF MaxVersion="1.6" SenderID="RIP-1" Version="1.6"
-  TimeStamp="2000-07-25T11:38:25+02:00" xmlns="http://www.CIP4.org/JDFSchema_1_1" 
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<JMF MaxVersion="1.9" SenderID="RIP-1"
+  TimeStamp="2024-07-25T11:38:25+02:00" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Response ID="M107" Type="KnownDevices" refID="M007" xsi:type="ResponseKnownDevices">
     <DeviceList>
       <DeviceInfo DeviceStatus="Unknown">

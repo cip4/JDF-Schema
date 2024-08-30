@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JDF ID="ID" JobPartID="ID345" Status="Waiting" Type="Combined"
-  Types="Collecting Gathering Folding" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="ID" JobID="n_000152" JobPartID="ID345" MaxVersion="1.9"
+  Status="Waiting" Type="Combined"
+  Types="Collecting Gathering Folding" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Combined">
   <ResourcePool>
     <GatheringParams Class="Parameter" ID="gp1" Status="Available"/>
     <FoldingParams Class="Parameter" ID="fp1" Status="Available"/>

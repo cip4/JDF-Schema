@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JDF ID="CombinedStitch" JobID="Stitching special" JobPartID="ID123"
-  Status="Ready" Type="Combined" Types="Stitching Stitching"
-  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="CombinedStitch" JobID="Stitching special"
+  JobPartID="ID123" MaxVersion="1.9" Status="Ready"
+  Type="Combined" Types="Stitching Stitching" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Combined">
   <ResourcePool>
-    <StitchingParams Class="Parameter" ID="Stitch1" NumberOfStitches="2"
-      StapleShape="Butted" Status="Available" StitchPositions="100 700"
+    <StitchingParams Class="Parameter" ID="Stitch1"
+      NumberOfStitches="2" StapleShape="Butted"
+      Status="Available" StitchPositions="100 700"
       StitchWidth="28.3" WireBrand="Steel" WireGauge="2.3"/>
-    <StitchingParams Class="Parameter" ID="Stitch2" NumberOfStitches="2"
-      StapleShape="Eyelet" Status="Available" StitchPositions="300 500"
+    <StitchingParams Class="Parameter" ID="Stitch2"
+      NumberOfStitches="2" StapleShape="Eyelet"
+      Status="Available" StitchPositions="300 500"
       StitchWidth="42.5" WireBrand="Steel" WireGauge="2.3"/>
     <Component Class="Quantity" ComponentType="Sheet" ID="Comp1" Status="Available"/>
     <Component Class="Quantity" ComponentType="Sheet" ID="Comp2" Status="Unavailable"/>

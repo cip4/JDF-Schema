@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JMF SenderID="WorkflowController" TimeStamp="2005-07-25T12:32:48+02:00" Version="1.6"
-  xmlns="http://www.CIP4.org/JDFSchema_1_1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<JMF MaxVersion="1.9" SenderID="WorkflowController"
+  TimeStamp="2024-07-25T12:32:48+02:00" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Signal ID="S1" Type="Notification" xsi:type="SignalNotification">
-    <Notification Class="Event" JobID="myJobID"
-      TimeStamp="2005-05-25T12:32:48+02:00" Type="Milestone">
-      <Comment>All Proofs sent to customer</Comment>
+    <Notification Class="Event" ID="a.8891._000002"
+      JobID="myJobID" TimeStamp="2024-05-25T12:32:48+02:00" Type="Milestone">
+      <Comment ID="c.8891._000003">All Proofs sent to customer</Comment>
       <Milestone MilestoneType="ProofSent" TypeAmount="24"/>
     </Notification>
   </Signal>

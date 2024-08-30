@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
-  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="A1" JobID="n_000058" JobPartID="ID300" MaxVersion="1.9"
+  Status="Waiting" Type="ProcessGroup" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ProcessGroup">
   <ResourcePool>
     <!-- START SNIPPET -->
     <FileSpec Class="Parameter" ID="ID_005_TAR" MimeType="Tar"
@@ -13,8 +15,8 @@
       <FileSpec PartVersion="English" URL="c.zip"/>
       <FileSpec PartVersion="German" URL="d.zip"/>
     </FileSpec>
-    <FileSpec Class="Parameter" Compression="Deflate" ID="ALL_FILES"
-      PartIDKeys="PartVersion DocIndex" Status="Available">
+    <FileSpec Class="Parameter" Compression="Deflate"
+      ID="ALL_FILES" PartIDKeys="PartVersion DocIndex" Status="Available">
       <!-- English Files -->
       <FileSpec PartVersion="English">
         <Container>

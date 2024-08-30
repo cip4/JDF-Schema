@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JDF ID="J1" JobPartID="ID200" Status="Waiting" Type="Combined" Version="1.6"
-  Types="DigitalPrinting Gathering Stitching" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="J1" JobID="n_000192" JobPartID="ID200" MaxVersion="1.9"
+  Status="Waiting" Type="Combined"
+  Types="DigitalPrinting Gathering Stitching" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Combined">
   <ResourceLinkPool>
     <!-- digital printing input RunList -->
     <RunListLink CombinedProcessIndex="0" Usage="Input" rRef="L1"/>
     <!-- digital printing parameters -->
-    <DigitalPrintingParamsLink CombinedProcessIndex="0" Usage="Input" rRef="L2"/>
+    <DigitalPrintingParamsLink CombinedProcessIndex="0"
+      Usage="Input" rRef="L2"/>
     <!-- gathering parameters -->
     <GatheringParamsLink CombinedProcessIndex="1" Usage="Input" rRef="L3"/>
     <!-- Stitching parameters -->

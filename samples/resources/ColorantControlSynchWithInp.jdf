@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JDF ID="Bundle" JobPartID="ID20" Status="Waiting" Type="Product"
-  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="Bundle" JobID="n_000100" JobPartID="ID20"
+  MaxVersion="1.9" Status="Waiting" Type="Product" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Product">
   <ResourcePool>
     <!-- START SNIPPET -->
     <!--ColorantControl after prepress has correctly set ActualColorName based 
@@ -19,8 +21,10 @@
       <!--Color that maps the predefined separation Black
                 ActualColorName is the new attribute that replaces 
                 ExposedMedia/@DescriptiveName as the "Main" PDL color-->
-      <Color ActualColorName="Schwarz" CMYK="0 0 0 1" Class="Parameter" Name="Black"/>
-      <Color ActualColorName="Gelb" CMYK="0 0 1 0" Class="Parameter" Name="Yellow"/>
+      <Color ActualColorName="Schwarz" CMYK="0 0 0 1"
+        Class="Parameter" Name="Black"/>
+      <Color ActualColorName="Gelb" CMYK="0 0 1 0"
+        Class="Parameter" Name="Yellow"/>
       <!--ActualColorName defaults to Name if not specified-->
       <Color CMYK="1 0 0 0" Class="Parameter" Name="Cyan"/>
       <Color Class="Parameter" Name="Magenta"/>

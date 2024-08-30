@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JDF ID="ID" JobPartID="ID34" Status="Waiting" Type="ProcessGroup"
-  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="ID" JobID="n_000125" JobPartID="ID34" MaxVersion="1.9"
+  Status="Waiting" Type="ProcessGroup" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ProcessGroup">
   <ResourcePool>
     <!-- START SNIPPET -->
-    <Media BatchID="Batch 12345" Brand="BrandB" Class="Consumable"
-      DescriptiveName="" Dimension="2551.181 3401.574" ID="M123456"
+    <Media BatchID="Batch 12345" Brand="BrandB"
+      Class="Consumable" DescriptiveName=""
+      Dimension="2551.181 3401.574" ID="M123456"
       Manufacturer="PlateManufactererA" MediaType="Plate"
-      PlateTechnology="FlexoDigitalThermal" ProductID="FlexoPlate"
-      ReliefThickness="500" Status="Available" Thickness="1143">
+      PlateTechnology="FlexoDigitalThermal"
+      ProductID="FlexoPlate" ReliefThickness="500"
+      Status="Available" Thickness="1143">
       <!--  MediaLayers contains 2 items: the base layer and the 
           photopolymer layer of the flexo plate -->
       <MediaLayers>
         <Media DescriptiveName="Base" MediaType="Plate"
           MediaTypeDetails="FlexoPlateBase" Thickness="177"/>
-        <Media DescriptiveName="Photopolymer Layer" MediaType="Plate"
+        <Media DescriptiveName="Photopolymer Layer"
+          MediaType="Plate"
           MediaTypeDetails="FlexoPlatePhotopolymer" Thickness="966"/>
       </MediaLayers>
     </Media>

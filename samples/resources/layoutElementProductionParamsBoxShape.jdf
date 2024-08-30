@@ -3,10 +3,14 @@
 <!-- Shape Sample for a box defined by a CAD file
     Date: Jan 9, 2005 Version: 1.00 
     A page with a certain size  -->
-<JDF DescriptiveName="Page sample for shape" ID="n001" JobPartID="ID100" Status="Waiting"
-  Type="LayoutElementProduction" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF DescriptiveName="Page sample for shape" ID="n001"
+  JobID="n_000110" JobPartID="ID100" MaxVersion="1.9"
+  Status="Waiting" Type="LayoutElementProduction" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="LayoutElementProduction">
   <ResourcePool>
-    <LayoutElementProductionParams Class="Parameter" ID="LEPParams" Status="Available">
+    <LayoutElementProductionParams Class="Parameter"
+      ID="LEPParams" Status="Available">
       <ShapeDef>
         <FileSpec URL="file://myserver/myshare/olive.dd3"/>
       </ShapeDef>
@@ -18,7 +22,9 @@
     <LayoutElementLink Usage="Output" rRef="LayElOut"/>
   </ResourceLinkPool>
   <AuditPool>
-    <Created Author="ZYX Corporation" TimeStamp="2006-01-09T09:00:00+01:00"/>
+    <Created ID="a_000111" TimeStamp="2024-01-09T09:00:00+01:00">
+      <Employee DescriptiveName="ZYX Corporation"/>
+    </Created>
   </AuditPool>
 </JDF>
 <!-- END SNIPPET -->

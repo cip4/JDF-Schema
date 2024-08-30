@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JMF MaxVersion="1.6" SenderID="Controller"
-  TimeStamp="2005-04-05T16:45:43+02:00" Version="1.6"
+<JMF MaxVersion="1.9" SenderID="Controller"
+  TimeStamp="2024-04-05T16:45:43+02:00" Version="1.9"
   xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Query ID="DeviceQuery" Type="KnownDevices" xsi:type="QueryKnownDevices">
     <DeviceFilter DeviceDetails="Capability" Localization="fre"/>

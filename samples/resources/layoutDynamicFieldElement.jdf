@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
-  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="A1" JobID="n_000109" JobPartID="ID300" MaxVersion="1.9"
+  Status="Waiting" Type="ProcessGroup" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ProcessGroup">
   <ResourcePool>
     <!-- START SNIPPET -->
     <RunList Class="Parameter" ID="L3" PartIDKeys="Run" Status="Available">
@@ -17,13 +19,11 @@
       <!--The MarkObject in the Layout hierarchy: -->
       <ContentObject CTM="1 0 0 1 0 0" Ord="0"/>
       <MarkObject CTM="1 0 0 1 10 10">
-        <LayoutElement ElementType="Graphic">
-          <FileSpec URL="File:///MyReplace.pdf"/>
-        </LayoutElement>
         <DynamicField
           Format="Replacement Text for %s goes in here at %s on %s"
           Ord="0" ReplaceField="___xxx___" Template="i1,Time,Date"/>
-        <DynamicField Format="More Replacement Text for %s go in here"
+        <DynamicField
+          Format="More Replacement Text for %s go in here"
           Ord="0" ReplaceField="___yyy___" Template="SignatureName"/>
       </MarkObject>
     </Layout>

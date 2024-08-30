@@ -1,12 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JDF ID="Bundle" JobPartID="ID20" Status="Waiting"
-  Type="CylinderLayoutPreparation" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="Bundle" JobID="n_000105" JobPartID="ID20"
+  MaxVersion="1.9" Status="Waiting"
+  Type="CylinderLayoutPreparation" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CylinderLayoutPreparation">
   <ResourcePool>
-    <CylinderLayoutPreparationParams Class="Parameter" ID="CL002" Status="Available">
+    <CylinderLayoutPreparationParams Class="Parameter"
+      ID="CL002" Status="Available">
       <ProductionPath/>
     </CylinderLayoutPreparationParams>
     <RunList Class="Parameter" ID="R-002" Status="Available"/>
-    <Device Class="Implementation" DeviceID="DEV-001" ID="DEV-001" Status="Available">
+    <Device Class="Implementation" DeviceID="DEV-001"
+      ID="DEV-001" Status="Available">
       <Module ModelName="Folder 1" ModuleIndex="0" ModuleType="Folder">
         <Module DescriptiveName="PU-1" ModuleIndex="1" ModuleType="PrintUnit">
           <Module DescriptiveName="PM-1" ModuleIndex="2"
@@ -30,41 +35,41 @@
     </Device>
     <Layout Class="Parameter" ID="L-001" Status="Available"/>
     <!-- START SNIPPET -->
-    <CylinderLayout Class="Parameter" DeviceID="DEV-001" ID="CL-001"
-      PartIDKeys="WebSetup PlateLayout Separation" Status="Available">
+    <CylinderLayout Class="Parameter" DeviceID="DEV-001"
+      ID="CL-001" PartIDKeys="WebSetup PlateLayout Separation" Status="Available">
       <LayoutRef rRef="L-001"/>
       <CylinderLayout WebSetup="Run-1">
         <CylinderLayout PlateLayout="PL-001">
           <CylinderLayout Separation="Yellow">
             <!-- page 1 -->
-            <CylinderPosition DeviceModuleIndex="2" PlatePosition="0 0"
-              PlateType="Exposed" PlateUsage="Original"/>
-            <CylinderPosition DeviceModuleIndex="2" PlatePosition="0 1"
-              PlateType="Exposed" PlateUsage="Original"/>
+            <CylinderPosition DeviceModuleIndex="2"
+              PlatePosition="0 0" PlateType="Exposed" PlateUsage="Original"/>
+            <CylinderPosition DeviceModuleIndex="2"
+              PlatePosition="0 1" PlateType="Exposed" PlateUsage="Original"/>
           </CylinderLayout>
         </CylinderLayout>
         <CylinderLayout PlateLayout="PL-002">
           <CylinderLayout Separation="Yellow">
             <!-- page 8 -->
-            <CylinderPosition DeviceModuleIndex="2" PlatePosition="1 0"
-              PlateType="Exposed" PlateUsage="Original"/>
-            <CylinderPosition DeviceModuleIndex="2" PlatePosition="1 1"
-              PlateType="Exposed" PlateUsage="Original"/>
+            <CylinderPosition DeviceModuleIndex="2"
+              PlatePosition="1 0" PlateType="Exposed" PlateUsage="Original"/>
+            <CylinderPosition DeviceModuleIndex="2"
+              PlatePosition="1 1" PlateType="Exposed" PlateUsage="Original"/>
           </CylinderLayout>
         </CylinderLayout>
         <CylinderLayout PlateLayout="PL-003">
           <CylinderLayout Separation="HKS57">
             <!-- page 3 -->
-            <CylinderPosition DeviceModuleIndex="2" PlatePosition="2 0"
-              PlateType="Exposed" PlateUsage="Reuse"/>
-            <CylinderPosition DeviceModuleIndex="2" PlatePosition="2 1"
-              PlateType="Exposed" PlateUsage="Reuse"/>
+            <CylinderPosition DeviceModuleIndex="2"
+              PlatePosition="2 0" PlateType="Exposed" PlateUsage="Reuse"/>
+            <CylinderPosition DeviceModuleIndex="2"
+              PlatePosition="2 1" PlateType="Exposed" PlateUsage="Reuse"/>
           </CylinderLayout>
         </CylinderLayout>
-        <CylinderPosition DeviceModuleIndex="2" PlatePosition="3 0"
-          PlateType="Dummy" PlateUsage="Reuse"/>
-        <CylinderPosition DeviceModuleIndex="2" PlatePosition="3 1"
-          PlateType="Dummy" PlateUsage="Reuse"/>
+        <CylinderPosition DeviceModuleIndex="2"
+          PlatePosition="3 0" PlateType="Dummy" PlateUsage="Reuse"/>
+        <CylinderPosition DeviceModuleIndex="2"
+          PlatePosition="3 1" PlateType="Dummy" PlateUsage="Reuse"/>
       </CylinderLayout>
     </CylinderLayout>
     <!-- END SNIPPET -->

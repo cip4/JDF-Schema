@@ -1,5 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" Type="Product" Status="Ready" ID="ID_001">
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="ID_001" JobID="n_000073" JobPartID="P_n_000073"
+  MaxVersion="1.9" Status="Ready" Type="Product" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Product">
   <ResourcePool>
     <!-- Example Capabilities: DisplayGroupPool -->
     <!-- START SNIPPET -->
@@ -7,17 +10,18 @@
       <DeviceCap>
         <DisplayGroupPool>
           <DisplayGroup rRefs="btd cmp mag colorspace outputres">
-            <Loc HelpText="Parameters for scanning configuration" Lang="en"
-              Value="ScanningParameters"/>
+            <Loc
+              HelpText="Parameters for scanning configuration"
+              Lang="en" Value="ScanningParameters"/>
           </DisplayGroup>
         </DisplayGroupPool>
       </DeviceCap>
     </Device>
     <!-- END SNIPPET -->
-    <Device ID="btd" Class="Implementation" Status="Incomplete"/>
-    <Device ID="cmp" Class="Implementation" Status="Incomplete"/>
-    <Device ID="mag" Class="Implementation" Status="Incomplete"/>
-    <Device ID="colorspace" Class="Implementation" Status="Incomplete"/>
-    <Device ID="outputres" Class="Implementation" Status="Incomplete"/>
+    <Device Class="Implementation" ID="btd" Status="Incomplete"/>
+    <Device Class="Implementation" ID="cmp" Status="Incomplete"/>
+    <Device Class="Implementation" ID="mag" Status="Incomplete"/>
+    <Device Class="Implementation" ID="colorspace" Status="Incomplete"/>
+    <Device Class="Implementation" ID="outputres" Status="Incomplete"/>
   </ResourcePool>
 </JDF>

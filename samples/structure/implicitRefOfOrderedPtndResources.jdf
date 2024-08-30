@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JDF ID="Link0037" JobPartID="ID345" Status="Waiting" Type="Gathering"
-  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="Link0037" JobID="n_000164" JobPartID="ID345"
+  MaxVersion="1.9" Status="Waiting" Type="Gathering"
+  Version="1.9" xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Gathering">
   <ResourcePool>
-    <GatheringParams Class="Parameter" ID="Gath01" Locked="false" Status="Available"/>
+    <GatheringParams Class="Parameter" ID="Gath01"
+      Locked="false" Status="Available"/>
     <Component Class="Quantity" ComponentType="Sheet"
       DescriptiveName="printed insert sheets" ID="Sheets01"
       PartIDKeys="SheetName" Status="Available">
@@ -11,7 +14,8 @@
       <Component SheetName="Sheet2"/>
       <Component SheetName="Sheet3"/>
     </Component>
-    <Component Class="Quantity" ComponentType="Sheet" ID="SheetsOut" Status="Available"/>
+    <Component Class="Quantity" ComponentType="Sheet"
+      ID="SheetsOut" Status="Available"/>
   </ResourcePool>
   <ResourceLinkPool>
     <GatheringParamsLink Usage="Input" rRef="Gath01"/>

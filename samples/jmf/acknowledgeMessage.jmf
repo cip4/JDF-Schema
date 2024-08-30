@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JMF MaxVersion="1.6" SenderID="A3 Printer" Version="1.6"
-  TimeStamp="2000-07-25T12:32:48+02:00" xmlns="http://www.CIP4.org/JDFSchema_1_1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<JMF MaxVersion="1.9" SenderID="A3 Printer"
+  TimeStamp="2024-07-25T12:32:48+02:00" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Acknowledge ID="M109" Type="PipePush" refID="M010" xsi:type="AcknowledgePipePush">
     <JobPhase JobID="J1" JobPartID="1" Status="InProgress"/>
   </Acknowledge>

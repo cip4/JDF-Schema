@@ -5,8 +5,10 @@
     Single Shape is repeated on a range of alternative sheet sizes. 
 -->
 <JDF DescriptiveName="Single shape versus a set of sheet sizes"
-  ID="n001" JobPartID="ID234" Status="Waiting"
-  Type="DieLayoutProduction" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  ID="n001" JobID="n_000090" JobPartID="ID234" MaxVersion="1.9"
+  Status="Waiting" Type="DieLayoutProduction" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DieLayoutProduction">
   <ResourcePool>
     <ShapeDef Class="Parameter" ID="Shape1Up" Status="Available">
       <FileSpec URL="file://myserver/myshare/olive.dd3"/>
@@ -18,7 +20,8 @@
     <DieLayoutProductionParams Class="Parameter" ID="LayParam" Status="Available">
       <ConvertingConfig SheetHeight="2267.72 ~ 2267.72" SheetWidth="2834.64 ~ 2834.64"/>
       <ConvertingConfig SheetHeight="2834.64 ~ 2834.64" SheetWidth="3401.57 ~ 3401.57"/>
-      <RepeatDesc AllowedRotate="None" GutterY="0.0" GutterY2="14.17" LayoutStyle="Reverse2ndRow"/>
+      <RepeatDesc AllowedRotate="None" GutterY="0"
+        GutterY2="14.17" LayoutStyle="Reverse2ndRow"/>
     </DieLayoutProductionParams>
     <!-- The layout with minimum waste will be returned as the final result. -->
     <DieLayout Class="Parameter" ID="DieLay" Status="Unavailable"/>

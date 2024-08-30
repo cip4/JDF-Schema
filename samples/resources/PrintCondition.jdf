@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JDF ID="Bundle" JobPartID="ID20" Status="Waiting" Type="Product"
-  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="Bundle" JobID="n_000134" JobPartID="ID20"
+  MaxVersion="1.9" Status="Waiting" Type="Product" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Product">
   <ResourcePool>
     <!-- START SNIPPET -->
-    <ColorMeasurementConditions Class="Parameter" ID="MyColorMeasCond" Status="Available"/>
+    <ColorMeasurementConditions Class="Parameter"
+      ID="MyColorMeasCond" Status="Available"/>
     <PrintCondition Class="Parameter" ID="PC" Name="Standard"
       PartIDKeys="Side Separation" Status="Available">
       <ColorMeasurementConditionsRef rRef="MyColorMeasCond"/>

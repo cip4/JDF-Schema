@@ -1,15 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JDF ID="ID" JobPartID="ID34" Status="Waiting" Type="ProcessGroup"
-  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="ID" JobID="n_000118" JobPartID="ID34" MaxVersion="1.9"
+  Status="Waiting" Type="ProcessGroup" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ProcessGroup">
   <ResourcePool>
     <!-- START SNIPPET -->
-    <LayoutPreparationParams BindingEdge="Left" Class="Parameter"
-      CreepValue="0 -5" FinishingOrder="FoldCollect" FoldCatalog="F8-7"
+    <LayoutPreparationParams BindingEdge="Left"
+      Class="Parameter" CreepValue="0 -5"
+      FinishingOrder="FoldCollect" FoldCatalog="F8-7"
       FoldCatalogOrientation="Flip270" FrontMarkList="CutMark"
-      Gutter="20 20" GutterMinimumLimit="5 5" ID="LPP_2" NumberUp="2 2"
-      PageDistributionScheme="Saddle" Sides="TwoSidedFlipY"
-      Status="Available" StepRepeat="1 1 1"
-      SurfaceContentsBox="0 0 612 792" VerticalCreep="0">
+      Gutter="20 20" GutterMinimumLimit="5 5" ID="LPP_2"
+      NumberUp="2 2" PageDistributionScheme="Saddle"
+      Sides="TwoSidedFlipY" Status="Available"
+      StepRepeat="1 1 1" SurfaceContentsBox="0 0 612 792" VerticalCreep="0">
       <!-- Note: the value of some attributes in LayoutPreparationParams and 
         subElements relate to symbols in the above Figure: 
           SurfaceContentsBox="SCBx0 SCBy0 SCBx1 SCBy1"

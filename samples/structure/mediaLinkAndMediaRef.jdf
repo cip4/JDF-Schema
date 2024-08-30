@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JDF ID="n20020626134204" JobPartID="ID345" Status="Waiting"
-  Type="DigitalPrinting" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="n20020626134204" JobID="n_000172" JobPartID="ID345"
+  MaxVersion="1.9" Status="Waiting" Type="DigitalPrinting"
+  Version="1.9" xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DigitalPrinting">
   <ResourcePool>
     <!-- Media is partitioned so that it can be referenced 
       from the AmountPool

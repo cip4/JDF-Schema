@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JDF DescriptiveName="Barcode Creation" ID="n001" JobPartID="ID34"
-  Status="Waiting" Type="LayoutElementProduction" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF DescriptiveName="Barcode Creation" ID="n001"
+  JobID="n_000096" JobPartID="ID34" MaxVersion="1.9"
+  Status="Waiting" Type="LayoutElementProduction" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="LayoutElementProduction">
   <ResourcePool>
     <!-- START SNIPPET -->
-    <LayoutElementProductionParams Class="Parameter" ID="BarcodeParams" Status="Available">
+    <LayoutElementProductionParams Class="Parameter"
+      ID="BarcodeParams" Status="Available">
       <LayoutElementPart>
         <BarcodeProductionParams>
           <IdentificationField Encoding="Barcode"
             EncodingDetails="EAN_13" Purpose="Label"
             PurposeDetails="ProductIdentification" Value="0123456789128"/>
-          <BarcodeReproParams Height="73.50" Magnification="1.0">
-            <BarcodeCompParams CompensationProcess="Printing" CompensationValue="10.0"/>
+          <BarcodeReproParams Height="73.5" Magnification="1">
+            <BarcodeCompParams CompensationProcess="Printing" CompensationValue="10"/>
           </BarcodeReproParams>
         </BarcodeProductionParams>
       </LayoutElementPart>

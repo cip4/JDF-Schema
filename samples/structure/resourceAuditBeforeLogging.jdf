@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JDF ID="J1" JobPartID="ID234" Status="Waiting"
-  Type="ConventionalPrinting" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="J1" JobID="n_000187" JobPartID="ID234" MaxVersion="1.9"
+  Status="Waiting" Type="ConventionalPrinting" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ConventionalPrinting">
   <ResourceLinkPool>
     <MediaLink Amount="400" Usage="Input" rRef="RLink"/>
     <ConventionalPrintingParamsLink Usage="Input" rRef="R01"/>
     <ComponentLink Usage="Output" rRef="R02"/>
   </ResourceLinkPool>
   <ResourcePool>
-    <Media Amount="400" Class="Consumable" ID="RLink" Status="Available" Weight="80"/>
+    <Media Amount="400" Class="Consumable" ID="RLink"
+      Status="Available" Weight="80"/>
     <ConventionalPrintingParams Class="Parameter" ID="R01" Status="Available"/>
     <Component Class="Quantity" ComponentType="Sheet" ID="R02" Status="Unavailable"/>
   </ResourcePool>

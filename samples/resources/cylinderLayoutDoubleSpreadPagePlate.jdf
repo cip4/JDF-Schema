@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JDF ID="Bundle" JobPartID="ID20" Status="Waiting"
-  Type="CylinderLayoutPreparation" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="Bundle" JobID="n_000106" JobPartID="ID20"
+  MaxVersion="1.9" Status="Waiting"
+  Type="CylinderLayoutPreparation" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="CylinderLayoutPreparation">
   <ResourcePool>
     <!-- START SNIPPET -->
-    <CylinderLayout Class="Parameter" DeviceID="DEV-001" ID="CL-001"
-      PartIDKeys="WebSetup PlateLayout Separation" Status="Available">
+    <CylinderLayout Class="Parameter" DeviceID="DEV-001"
+      ID="CL-001" PartIDKeys="WebSetup PlateLayout Separation" Status="Available">
       <!-- ... -->
       <!-- PlatePosition (XYPairRangeList)-->
-      <CylinderPosition DeviceModuleIndex="2" PlatePosition="0 0 ~ 1 0"
-        PlateType="Exposed" PlateUsage="Original"/>
+      <CylinderPosition DeviceModuleIndex="2"
+        PlatePosition="0 0 ~ 1 0" PlateType="Exposed" PlateUsage="Original"/>
       <!-- ... -->
     </CylinderLayout>
     <!-- END SNIPPET -->

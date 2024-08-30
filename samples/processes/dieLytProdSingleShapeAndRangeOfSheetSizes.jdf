@@ -4,8 +4,10 @@
     Date:Sept 2007 Version: 1.00 
     Single Shape is repeated on a continuous range of sheet sizes. -->
 <JDF DescriptiveName="Single shape versus a set of sheet sizes"
-  ID="n001" JobPartID="ID400" Status="Waiting"
-  Type="DieLayoutProduction" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+  ID="n001" JobID="n_000089" JobPartID="ID400" MaxVersion="1.9"
+  Status="Waiting" Type="DieLayoutProduction" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="DieLayoutProduction">
   <ResourcePool>
     <ShapeDef Class="Parameter" ID="Shape1Up" Status="Available">
       <FileSpec URL="file://myserver/myshare/olive.dd3"/>
@@ -17,7 +19,8 @@
     -->
     <DieLayoutProductionParams Class="Parameter" ID="LayParam" Status="Available">
       <ConvertingConfig SheetHeight="2834.64 ~ 2267.72" SheetWidth="3401.57 ~ 2834.64"/>
-      <RepeatDesc AllowedRotate="None" GutterX="14.17" GutterY="14.17" OrderQuantity="1000000"/>
+      <RepeatDesc AllowedRotate="None" GutterX="14.17"
+        GutterY="14.17" OrderQuantity="1000000"/>
     </DieLayoutProductionParams>
     <!-- The layout with minimum waste will be returned as the 
         final result. -->

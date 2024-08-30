@@ -1,20 +1,19 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" ID="BackCover" Status="InProgress"
-  Type="DigitalPrinting" Version="1.6" JobPartID="345"
+<JDF ID="BackCover" JobID="n_000071" JobPartID="345"
+  MaxVersion="1.9" Status="InProgress" Type="DigitalPrinting"
+  Version="1.9" xmlns="http://www.CIP4.org/JDFSchema_1_1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://www.CIP4.org/Schema/JDFSchema_1_1
-                      http://www.CIP4.org/Schema/JDF/JDF1_6"
-  xsi:type="DigitalPrinting">
+  xsi:schemaLocation="http://www.CIP4.org/Schema/JDFSchema_1_1                       http://www.CIP4.org/Schema/JDF/JDF1_6" xsi:type="DigitalPrinting">
   <ResourceLinkPool>
     <DigitalPrintingParamsLink Usage="Input" rRef="ID123"/>
     <RunListLink Usage="Input" rRef="ID124"/>
     <ComponentLink Usage="Output" rRef="ID125"/>
   </ResourceLinkPool>
   <ResourcePool>
-    <DigitalPrintingParams ID="ID123" Class="Parameter" Status="Available" />
-    <RunList ID="ID124" Class="Parameter" Status="Available" />
-    <Component ID="ID125" Class="Quantity" Status="Unavailable" ComponentType="Sheet" />
+    <DigitalPrintingParams Class="Parameter" ID="ID123" Status="Available"/>
+    <RunList Class="Parameter" ID="ID124" Status="Available"/>
+    <Component Class="Quantity" ComponentType="Sheet" ID="ID125" Status="Unavailable"/>
   </ResourcePool>
 </JDF>
 <!-- END SNIPPET -->

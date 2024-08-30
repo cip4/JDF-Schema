@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JMF DeviceID="A3 Printer" MaxVersion="1.6" SenderID="MIS master A" Version="1.6"
-  TimeStamp="2000-07-25T12:32:48+02:00" xmlns="http://www.CIP4.org/JDFSchema_1_1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<JMF DeviceID="A3 Printer" MaxVersion="1.9"
+  SenderID="MIS master A" TimeStamp="2024-07-25T12:32:48+02:00"
+  Version="1.9" xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Command ID="M009" Type="ResumeQueueEntry" xsi:type="CommandResumeQueueEntry">
-    <QueueEntryDef QueueEntryID="job-0032"/>
+    <ResumeQueueEntryParams>
+      <QueueFilter>
+        <QueueEntryDef QueueEntryID="job-0032"/>
+      </QueueFilter>
+    </ResumeQueueEntryParams>
   </Command>
 </JMF>
 <!-- END SNIPPET -->

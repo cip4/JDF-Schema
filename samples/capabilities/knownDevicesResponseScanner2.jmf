@@ -1,41 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JMF DescriptiveName="Example from JDF 1.2 Spec Document" MaxVersion="1.6" SenderID="Scanner"
-  TimeStamp="2018-10-17T14:30:47Z" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<JMF DescriptiveName="Example from JDF 1.2 Spec Document"
+  MaxVersion="1.9" SenderID="Scanner"
+  TimeStamp="2024-10-17T14:30:47+00:00" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <Response ID="xyz" Type="KnownDevices" refID="DeviceQuery" xsi:type="ResponseKnownDevices">
     <DeviceList>
       <DeviceInfo DeviceStatus="Idle">
         <Device DeviceID="Joe the Drum" ModelName="Bongo">
-          <DeviceCap Types="Scanning"
-            GenericAttributes="ID Class SettingsPolicy BestEffortExceptions
-                OperatorInterventionExceptions MustHonorExceptions">
-            <Performance AverageAmount="120.0" Name="ExposedMedia"/>
+          <DeviceCap
+            GenericAttributes="ID Class SettingsPolicy BestEffortExceptions                 OperatorInterventionExceptions MustHonorExceptions" Types="Scanning">
+            <Performance AverageAmount="120"/>
             <FeaturePool>
-              <EnumerationState AllowedValueList="Mono ColorTransparency Photo" ID="sm"
-                MacroRefs="ScanModeMacro" Name="ScanMode"/>
+              <EnumerationState
+                AllowedValueList="Mono ColorTransparency Photo"
+                ID="sm" MacroRefs="ScanModeMacro" Name="ScanMode"/>
             </FeaturePool>
             <DisplayGroupPool>
               <DisplayGroup rRefs="btd cmp mag colorspace outputres">
-                <Loc HelpText="Parameters for scanning configuration"
+                <Loc
+                  HelpText="Parameters for scanning configuration"
                   Lang="en" ShortValue="ScanningParameters"/>
               </DisplayGroup>
             </DisplayGroupPool>
             <ActionPool>
               <Action ID="BD-bw-action" TestRef="BD-bw">
-                <Loc Lang="en" ShortValue="Ouch!"
-                HelpText="For 1 bit grayscale, please select CCITTFaxEncoding"
-                Value="Flate and DCT Encoding not allowed on 1 bit images"/>
+                <Loc
+                  HelpText="For 1 bit grayscale, please select CCITTFaxEncoding"
+                  Lang="en" ShortValue="Ouch!" Value="Flate and DCT Encoding not allowed on 1 bit images"/>
               </Action>
               <Action ID="ctcmp-action" TestRef="ctcmp">
-                <Loc Lang="en" ShortValue="Ouch!"
-                HelpText="Only select CCITTFaxEncoding for 1 bit documents"
-                Value="CCITTFaxEncoding not supported on grayscale images"/>
+                <Loc
+                  HelpText="Only select CCITTFaxEncoding for 1 bit documents"
+                  Lang="en" ShortValue="Ouch!" Value="CCITTFaxEncoding not supported on grayscale images"/>
               </Action>
               <Action ID="cd-action" TestRef="cd">
-                <Loc ShortValue="Ouch!" Lang="en"
+                <Loc
                   HelpText="Choose a bit depth of 10 or less for color images"
-                  Value="Bit depths higher than 10 are not supported for color"/>
+                  Lang="en" ShortValue="Ouch!" Value="Bit depths higher than 10 are not supported for color"/>
               </Action>
             </ActionPool>
             <TestPool>
@@ -57,7 +59,8 @@
                   <not>
                     <TestRef rRef="is1bit"/>
                   </not>
-                  <EnumerationEvaluation ValueList="CCITTFaxEncode" rRef="cmp"/>
+                  <EnumerationEvaluation
+                    ValueList="CCITTFaxEncode" rRef="cmp"/>
                 </and>
               </Test>
               <Test ID="cd">
@@ -83,7 +86,8 @@
                     </set>
                   </when>
                   <when>
-                    <EnumerationEvaluation ValueList="ColorTransparency" rRef="sm"/>
+                    <EnumerationEvaluation
+                      ValueList="ColorTransparency" rRef="sm"/>
                     <set rRef="btd">
                       <FeatureAttribute CurrentValue="8"/>
                     </set>
@@ -109,37 +113,35 @@
                 </choice>
               </macro>
             </MacroPool>
-            <DevCaps Name="NodeInfo" ResourceUpdate="None">
+            <DevCaps Name="NodeInfo">
               <DevCap Name="NodeInfo">
                 <StringState Name="TargetRoute"/>
                 <IntegerState Name="JobPriority"/>
               </DevCap>
             </DevCaps>
-            <DevCaps Name="ExposedMedia" ResourceUpdate="None">
+            <DevCaps Name="ExposedMedia">
               <DevCap Name="ExposedMedia">
                 <DevCap Name="Media">
                   <NameState DefaultValue="Sheet" Name="MediaUnit"/>
-                  <XYPairState AllowedValueMax="600.0 1200.0"
-                    AllowedValueMin="0.0 0.0" Name="Dimension"/>
+                  <XYPairState Name="Dimension"/>
                 </DevCap>
               </DevCap>
             </DevCaps>
-            <DevCaps Name="ScanParams" ResourceUpdate="None">
+            <DevCaps Name="ScanParams">
               <DevCap Name="ScanParams">
                 <IntegerState ActionRefs="BD-bw ctcmp cd"
-                  AllowedValueList="1 4 8 10 12" DefaultValue="1"
-                  ID="btd" Name="BitDepth" UserDisplay="Hide"/>
+                  AllowedValueList="1 4 8 10 12"
+                  DefaultValue="1" ID="btd" Name="BitDepth" UserDisplay="Hide"/>
                 <EnumerationState ActionRefs="BD-bw ctcmp"
                   AllowedValueList="CCITTFaxEncode FlateEncode DCTEncode None"
                   ID="cmp" Name="CompressionFilter" UserDisplay="Hide"/>
-                <NumberState AllowedValueMax="100.0"
-                  AllowedValueMin="0.01" ID="mag" Name="Magnification"/>
+                <NumberState ID="mag" Name="Magnification"/>
                 <EnumerationState ActionRefs="cd"
                   AllowedValueList="GrayScale CMYK RGB LAB"
                   ID="colorspace" Name="OutputColorSpace"/>
-                <XYPairState DefaultValue="600.0 600.0" ID="outputres" Name="OutputResolution"
-                  AllowedValueList="100.0 100.0 300.0 300.0 600.0 600.0
-                        1200.0 1200.0 2400.0 2400.0"/>
+                <XYPairState
+                  AllowedValueList="100.0 100.0 300.0 300.0 600.0 600.0 1200.0 1200.0 2400.0 2400.0"
+                  DefaultValue="600 600" ID="outputres" Name="OutputResolution"/>
               </DevCap>
             </DevCaps>
           </DeviceCap>

@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
-  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="A1" JobID="n_000094" JobPartID="ID300" MaxVersion="1.9"
+  Status="Waiting" Type="ProcessGroup" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ProcessGroup">
   <ResourcePool>
     <!-- START SNIPPET -->
     <BinderySignature Class="Parameter" ID="B2x4" NumberUp="4 2" Status="Available">
-      <SignatureCell BackPages="14 1 2 13" FrontPages="15 0 3 12" Orientation="Up"/>
+      <SignatureCell BackPages="14 1 2 13"
+        FrontPages="15 0 3 12" Orientation="Up"/>
       <SignatureCell BackPages="9 6 5 10" FrontPages="8 7 4 11" Orientation="Down"/>
     </BinderySignature>
     <BinderySignature Class="Parameter" ID="B2x2" NumberUp="2 2" Status="Available">
       <SignatureCell BackPages="6 1" FrontPages="7 0" Orientation="Up"/>
       <SignatureCell BackPages="5 2" FrontPages="4 3" Orientation="Down"/>
     </BinderySignature>
-    <StrippingParams Class="Parameter" ID="L1" PartIDKeys="SheetName"
-      Status="Available" WorkStyle="WorkAndBack">
+    <StrippingParams Class="Parameter" ID="L1"
+      PartIDKeys="SheetName" Status="Available" WorkStyle="WorkAndBack">
       <StrippingParams SheetName="Sheet1">
         <BinderySignatureRef rRef="B2x4"/>
       </StrippingParams>

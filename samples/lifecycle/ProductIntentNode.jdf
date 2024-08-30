@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JDF ID="Job1" JobID="J1" JobPartID="P1" Status="Waiting" Type="Product"
-  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="Job1" JobID="J1" JobPartID="P1" MaxVersion="1.9"
+  Status="Waiting" Type="Product" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Product">
   <ResourcePool>
-    <Component Amount="10000" Class="Quantity" ComponentType="Sheet"
+    <Component Amount="10000" Class="Quantity"
+      ComponentType="Sheet"
       DescriptiveName="Complete 16-page Brochure" ID="Link0003" Status="Unavailable"/>
     <LayoutIntent Class="Intent" ID="Link0004" Status="Available">
       <Dimensions DataType="XYPairSpan" Preferred="612 792" Range="576 720 ~ 648 864"/>
       <Pages DataType="IntegerSpan" Preferred="16"/>
     </LayoutIntent>
-    <MediaIntent Class="Intent" ID="Link0005" PartIDKeys="Option" Status="Available">
+    <MediaIntent Class="Intent" ID="Link0005"
+      PartIDKeys="Option" Status="Available">
       <FrontCoatings DataType="EnumerationSpan" Preferred="None"/>
       <MediaIntent Option="1">
         <FrontCoatings DataType="EnumerationSpan" Preferred="Glossy"/>

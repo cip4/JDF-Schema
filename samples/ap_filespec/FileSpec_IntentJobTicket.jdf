@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JDF ID="FileSpecProposal01" JobID="bookJob" JobPartID="bookJob-1"
-  Status="Waiting" Type="Product" Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="FileSpecProposal01" JobID="bookJob"
+  JobPartID="bookJob-1" MaxVersion="1.9" Status="Waiting"
+  Type="Product" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Product">
   <ResourcePool>
     <ArtDeliveryIntent Class="Intent" ID="FileSpecProposal02" Status="Draft">
       <ArtDelivery ArtDeliveryType="DigitalMedia">
@@ -18,12 +21,12 @@
       </LayoutElement>
     </RunList>
     <Component Amount="100" Class="Quantity"
-      ComponentType="FinalProduct" DescriptiveName="FileSpec Test"
-      ID="FileSpecProposal03" Status="Unavailable"/>
-    <FileSpec Class="Parameter" ID="ID_001" MimeType="application/zip"
-      Status="Available" URL="http://www.CIP4.org/myZip.zip"/>
-    <FileSpec Class="Parameter" Compression="Deflate" ID="ID_002"
-      MimeType="application/zip" Status="Available" URL="myNestedZip.zip">
+      ComponentType="FinalProduct"
+      DescriptiveName="FileSpec Test" ID="FileSpecProposal03" Status="Unavailable"/>
+    <FileSpec Class="Parameter" ID="ID_001"
+      MimeType="application/zip" Status="Available" URL="http://www.CIP4.org/myZip.zip"/>
+    <FileSpec Class="Parameter" Compression="Deflate"
+      ID="ID_002" MimeType="application/zip" Status="Available" URL="myNestedZip.zip">
       <Container>
         <FileSpecRef rRef="ID_001"/>
       </Container>

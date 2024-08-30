@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JDF ID="A1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
-  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="A1" JobID="n_000055" JobPartID="ID300" MaxVersion="1.9"
+  Status="Waiting" Type="ProcessGroup" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ProcessGroup">
   <ResourcePool>
     <!-- START SNIPPET -->
     <FileSpec Class="Parameter" ID="ID_005_TAR" MimeType="Tar"
@@ -14,7 +16,8 @@
       <FileSpec PartVersion="German" URL="d.zip"/>
     </FileSpec>
     <FileSpec Class="Parameter" Compression="Deflate"
-      ID="A_ENGLISH_FILE" MimeType="application/pdf" Status="Available" URL="a.pdf">
+      ID="A_ENGLISH_FILE" MimeType="application/pdf"
+      Status="Available" URL="a.pdf">
       <Container>
         <FileSpecRef rRef="ID_005_ZIPS">
           <Part PartVersion="English"/>
@@ -22,23 +25,26 @@
       </Container>
     </FileSpec>
     <FileSpec Class="Parameter" Compression="Deflate"
-      ID="B_ENGLISH_FILE" MimeType="application/pdf" Status="Available" URL="b.pdf">
+      ID="B_ENGLISH_FILE" MimeType="application/pdf"
+      Status="Available" URL="b.pdf">
       <Container>
         <FileSpecRef rRef="ID_005_ZIPS">
           <Part PartVersion="English"/>
         </FileSpecRef>
       </Container>
     </FileSpec>
-    <FileSpec Class="Parameter" Compression="Deflate" ID="A_GERMAN_FILE"
-      MimeType="application/pdf" Status="Available" URL="a.pdf">
+    <FileSpec Class="Parameter" Compression="Deflate"
+      ID="A_GERMAN_FILE" MimeType="application/pdf"
+      Status="Available" URL="a.pdf">
       <Container>
         <FileSpecRef rRef="ID_005_ZIPS">
           <Part PartVersion="German"/>
         </FileSpecRef>
       </Container>
     </FileSpec>
-    <FileSpec Class="Parameter" Compression="Deflate" ID="B_GERMAN_FILE"
-      MimeType="application/pdf" Status="Available" URL="b.pdf">
+    <FileSpec Class="Parameter" Compression="Deflate"
+      ID="B_GERMAN_FILE" MimeType="application/pdf"
+      Status="Available" URL="b.pdf">
       <Container>
         <FileSpecRef rRef="ID_005_ZIPS">
           <Part PartVersion="German"/>

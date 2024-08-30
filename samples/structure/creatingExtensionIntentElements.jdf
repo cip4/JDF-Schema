@@ -1,9 +1,13 @@
-<?xml version="1.0" encoding="utf-8"?>
-<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:foo="anotherNamespace" Type="Product" Status="Ready" ID="ID_001">
-    <!-- Example Creating Extension Intent Elements -->
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="ID_001" JobID="n_000153" JobPartID="P_n_000153"
+  MaxVersion="1.9" Status="Ready" Type="Product" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:foo="anotherNamespace"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Product">
+  <!-- Example Creating Extension Intent Elements -->
   <!-- START SNIPPET -->
-  <ResourcePool >
-    <foo:BarIntentroduct xmlns:foo="www.foo.com" attrib="myAttrib"/>
+  <ResourcePool>
+    <foo:BarIntentroduct attrib="myAttrib" xmlns:foo="www.foo.com"/>
   </ResourcePool>
   <!-- END SNIPPET -->
 </JDF>

@@ -1,41 +1,45 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<JDF xmlns="http://www.CIP4.org/JDFSchema_1_1" Type="Product" Status="Ready" ID="ID_001">
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="ID_001" JobID="n_000135" JobPartID="P_n_000135"
+  MaxVersion="1.9" Status="Ready" Type="Product" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Product">
   <ResourcePool>
     <!-- Example Resource: PRItem  -->
     <!-- START SNIPPET -->
-    <PreflightReport Class="Parameter" ID="PP001" Status="Available" ErrorCount="0" WarningCount="0" >
-      <PRItem Occurrences="4" ActionRef="A001">
+    <PreflightReport Class="Parameter" ErrorCount="0" ID="PP001"
+      Status="Available" WarningCount="0">
+      <PRItem ActionRef="A001" Occurrences="4">
         <PRGroup Occurrences="1">
-          <PRGroupOccurrence PageNumber="1"/>
+          <PRGroupOccurrence/>
           <PROccurrence Occurrences="20">
             <PRGroup Occurrences="5">
               <PRGroupOccurrence/>
-              <PROccurrence TextSize="12"/>
+              <PROccurrence/>
             </PRGroup>
             <PRGroup Occurrences="15">
               <PRGroupOccurrence/>
-              <PROccurrence EffectiveResolution="300 300"/>
+              <PROccurrence/>
             </PRGroup>
           </PROccurrence>
         </PRGroup>
         <PRGroup Occurrences="1">
-          <PRGroupOccurrence PageNumber="4"/>
+          <PRGroupOccurrence/>
           <PROccurrence Occurrences="20">
             <PRGroup Occurrences="7">
               <PRGroupOccurrence/>
-              <PROccurrence NumberOfPathPoints="4"/>
+              <PROccurrence/>
             </PRGroup>
             <PRGroup Occurrences="13">
               <PRGroupOccurrence/>
-              <PROccurrence EffectiveResolution="300 300"/>
+              <PROccurrence/>
             </PRGroup>
           </PROccurrence>
         </PRGroup>
         <PRGroup Occurrences="1">
-          <PRGroupOccurrence PageNumber="8"/>
+          <PRGroupOccurrence/>
         </PRGroup>
         <PRGroup Occurrences="1">
-          <PRGroupOccurrence PageNumber="12"/>
+          <PRGroupOccurrence/>
         </PRGroup>
       </PRItem>
       <PreflightParams>

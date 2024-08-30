@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JMF DeviceID="MIS master A" MaxVersion="1.6" SenderID="A3 Printer"
-  TimeStamp="2000-07-25T12:32:48+02:00" Version="1.6"
-  xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+<JMF DeviceID="MIS master A" MaxVersion="1.9"
+  SenderID="A3 Printer" TimeStamp="2024-07-25T12:32:48+02:00"
+  Version="1.9" xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <!-- START SNIPPET -->
-  <Response ID="M101" ReturnCode="304" Type="RequestForAuthentication"
-    refID="M001" xsi:type="ResponseRequestForAuthentication">
+  <Response ID="M101" ReturnCode="304"
+    Type="RequestForAuthentication" refID="M001" xsi:type="ResponseRequestForAuthentication">
     <AuthenticationResp SecureURL="https://printserver.mycompany.com/A3Printer">
       <Certificate>=====BEGIN CERTIFICATE=====
   uYKi64QL8Fgc9QKBgQD34aCF1ps93su8q1w2uFe5eZSvu/o66oL5V0wLPQeCZ1FZV4661FlP5nEH

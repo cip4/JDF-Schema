@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JDF ID="Brochure42" JobPartID="ID20" Status="Waiting" Type="QualityControl" Version="1.7" 
-  xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="Brochure42" JobID="n_000138" JobPartID="ID20"
+  MaxVersion="1.9" Status="Waiting" Type="QualityControl"
+  Version="1.9" xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="QualityControl">
   <ResourcePool>
-    <QualityControlParams ID="QC_001" Status="Available" Class="Parameter">
+    <QualityControlParams Class="Parameter" ID="QC_001" Status="Available">
       <RegistrationQuality Offset="100 42" Reference="Zaphod"/>
       <ColorMeasurement>
-        <ColorControlStrip Center="100 120" >
+        <ColorControlStrip Center="100 120">
           <Patch PatchUsage="Color">
-            <SeparationTint Name="Spot2" Tint="0.9"></SeparationTint>
+            <SeparationTint Name="Spot2" Tint="0.9"/>
           </Patch>
         </ColorControlStrip>
       </ColorMeasurement>
     </QualityControlParams>
-    <QualityControlResult ID="QR_002" Status="Incomplete" Class="Parameter">
-      <QualityControlResult Sample="4 ~ 2" Measurements="4">
+    <QualityControlResult Class="Parameter" ID="QR_002" Status="Incomplete">
+      <QualityControlResult Measurements="4" Sample="4 ~ 2">
         <RegistrationQuality Offset="4 2" Reference="Marvin"/>
       </QualityControlResult>
     </QualityControlResult>
-    <Component Class="Quantity" Status="Incomplete" ID="CO_003" 
-      ComponentType="FinalProduct" ProductType="Brochure">
-    </Component>
+    <Component Class="Quantity" ComponentType="FinalProduct"
+      ID="CO_003" ProductType="Brochure" Status="Incomplete"/>
   </ResourcePool>
 </JDF>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JMF MaxVersion="1.6" SenderID="A3 Printer"
-  TimeStamp="2005-07-25T12:32:48+02:00" Version="1.6"
+<JMF MaxVersion="1.9" SenderID="A3 Printer"
+  TimeStamp="2024-07-25T12:32:48+02:00" Version="1.9"
   xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <!-- START SNIPPET -->
   <Signal ID="S1" Type="Notification" xsi:type="SignalNotification">
-    <Notification Class="Event" TimeStamp="2005-07-25T12:32:48+02:00" Type="Barcode">
-      <Comment>Palette completed</Comment>
+    <Notification Class="Event" ID="a.2680._000081"
+      TimeStamp="2024-07-25T12:32:48+02:00" Type="Barcode">
+      <Comment ID="c.2680._000082">Palette completed</Comment>
       <Barcode Code="99923AAA123"/>
     </Notification>
   </Signal>

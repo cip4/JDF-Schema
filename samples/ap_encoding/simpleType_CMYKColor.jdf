@@ -1,10 +1,15 @@
-<?xml version="1.0" encoding="utf-8"?>
-<jdf:JDF xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1" xmlns="http://www.CIP4.org/EncodingExamples" Type="Product" Status="Ready" ID="ID_001">
-    <!-- START SNIPPET -->
-    <Color CMYK="0.3 0.6 0.8 0.1"/><!-- brick red -->
-    <!-- END SNIPPET -->
-    <jdf:ResourcePool> 
-        <jdf:Color ID="ID_42" Class="Parameter" Status="Available" Name="BrickRed"
-            CMYK="0.3 0.6 0.8 0.1"/>
-    </jdf:ResourcePool>
+<?xml version="1.0" encoding="UTF-8"?>
+<jdf:JDF ID="ID_001" JobID="n_000005" JobPartID="P_n_000005"
+  MaxVersion="1.9" Status="Ready" Type="Product" Version="1.9"
+  xmlns="http://www.CIP4.org/EncodingExamples"
+  xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jdf:Product">
+  <!-- START SNIPPET -->
+  <Color CMYK="0.3 0.6 0.8 0.1"/>
+  <!-- brick red -->
+  <!-- END SNIPPET -->
+  <jdf:ResourcePool>
+    <jdf:Color CMYK="0.3 0.6 0.8 0.1" Class="Parameter"
+      ID="ID_42" Name="BrickRed" Status="Available"/>
+  </jdf:ResourcePool>
 </jdf:JDF>

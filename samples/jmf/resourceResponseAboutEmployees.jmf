@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JMF DeviceID="PressSystem" MaxVersion="1.6" SenderID="MIS"
-  TimeStamp="2000-07-25T12:32:48+02:00" Version="1.6"
+<JMF DeviceID="PressSystem" MaxVersion="1.9" SenderID="MIS"
+  TimeStamp="2024-07-25T12:32:48+02:00" Version="1.9"
   xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <!-- START SNIPPET -->
   <Response ID="M1001" Type="Resource" refID="M170" xsi:type="ResponseResource">
     <ResourceInfo>
-      <Employee Class="Implementation" DescriptiveName="John Allen"
-        ID="E01" PersonalID="1034" Status="Available"/>
+      <Employee Class="Implementation"
+        DescriptiveName="John Allen" ID="E01" PersonalID="1034"
+        ProductID="1034" Status="Available"/>
     </ResourceInfo>
     <ResourceInfo>
-      <Employee Class="Implementation" DescriptiveName="Sally Brown"
-        ID="E02" PersonalID="1057" Status="Available"/>
+      <Employee Class="Implementation"
+        DescriptiveName="Sally Brown" ID="E02" PersonalID="1057"
+        ProductID="1057" Status="Available"/>
     </ResourceInfo>
     <ResourceInfo>
-      <Employee Class="Implementation" DescriptiveName="Mike Davison"
-        ID="E03" PersonalID="2105" Status="Available"/>
+      <Employee Class="Implementation"
+        DescriptiveName="Mike Davison" ID="E03"
+        PersonalID="2105" ProductID="2105" Status="Available"/>
     </ResourceInfo>
     <!-- ... -->
     <ResourceInfo>
-      <Employee Class="Implementation" DescriptiveName="Will Smith"
-        ID="E04" PersonalID="6410" Status="Available"/>
+      <Employee Class="Implementation"
+        DescriptiveName="Will Smith" ID="E04" PersonalID="6410"
+        ProductID="6410" Status="Available"/>
     </ResourceInfo>
   </Response>
   <!-- END SNIPPET -->

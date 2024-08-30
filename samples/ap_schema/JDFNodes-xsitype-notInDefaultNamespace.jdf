@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<jdf:JDF ID="BackCover" JobPartID="345" Status="InProgress"
-  Type="DigitalPrinting" Version="1.6"
-  xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1"
+<jdf:JDF ID="BackCover" JobID="n_000070" JobPartID="345"
+  MaxVersion="1.9" Status="InProgress" Type="DigitalPrinting"
+  Version="1.9" xmlns:jdf="http://www.CIP4.org/JDFSchema_1_1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jdf:DigitalPrinting">
   <jdf:ResourceLinkPool>
     <jdf:DigitalPrintingParamsLink Usage="Input" rRef="ID123"/>
@@ -12,7 +12,8 @@
   <jdf:ResourcePool>
     <jdf:DigitalPrintingParams Class="Parameter" ID="ID123" Status="Available"/>
     <jdf:RunList Class="Parameter" ID="ID124" Status="Available"/>
-    <jdf:Component Class="Quantity" ComponentType="Sheet" ID="ID125" Status="Unavailable"/>
+    <jdf:Component Class="Quantity" ComponentType="Sheet"
+      ID="ID125" Status="Unavailable"/>
   </jdf:ResourcePool>
 </jdf:JDF>
 <!-- END SNIPPET -->

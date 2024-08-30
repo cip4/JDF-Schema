@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<JMF DeviceID="AnyDevice" MaxVersion="1.6" SenderID="JDFMaster"
-  TimeStamp="2005-07-25T12:32:48+02:00" Version="1.6"
+<JMF DeviceID="AnyDevice" MaxVersion="1.9" SenderID="JDFMaster"
+  TimeStamp="2024-07-25T12:32:48+02:00" Version="1.9"
   xmlns="http://www.CIP4.org/JDFSchema_1_1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <!-- START SNIPPET -->
   <Command ID="ID1" Type="UpdateJDF" xsi:type="CommandUpdateJDF">
@@ -9,15 +9,18 @@
         <MediaLink Usage="Input" rRef="link001111"/>
       </CreateLink>
       <CreateResource JobID="100" JobPartID="110">
-        <Component rRef="link001112"/>
+        <Component/>
       </CreateResource>
       <RemoveLink JobID="100" JobPartID="111">
         <MediaLink Usage="Input" rRef="link001113"/>
       </RemoveLink>
       <MoveResource JobID="100" JobPartID="101" ResourceID="link000004"/>
-      <JDF ID="NewJob42" Status="Ready" JobPartID="200" Type="Cutting">
+      <JDF ID="NewJob42" JobID="n_000085" JobPartID="200"
+        MaxVersion="1.9" Status="Ready" Type="Cutting"
+        Version="1.9" xsi:type="Cutting">
         <AuditPool>
-          <Created AgentName="MIS" AgentVersion="1.0" TimeStamp="2005-06-02T09:01:45+01:00"/>
+          <Created AgentName="MIS" AgentVersion="1.0"
+            ID="a.9406._000086" TimeStamp="2024-06-02T09:01:45+01:00"/>
         </AuditPool>
         <ResourcePool>
           <Component Class="Quantity" ComponentType="Sheet"

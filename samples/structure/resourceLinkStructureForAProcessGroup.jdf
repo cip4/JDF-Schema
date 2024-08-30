@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- START SNIPPET -->
-<JDF ID="J1" JobPartID="ID300" Status="Waiting" Type="ProcessGroup"
-  Version="1.6" xmlns="http://www.CIP4.org/JDFSchema_1_1">
+<JDF ID="J1" JobID="n_000193" JobPartID="ID300" MaxVersion="1.9"
+  Status="Waiting" Type="ProcessGroup" Version="1.9"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="ProcessGroup">
   <!--  the ResourceLink Elements in the ProcessGroup define the Input 
       Resources that are to be available for the ProcessGroup to be 
       submitted and the Output Resources that are produced by the ProcessGroup 
@@ -22,7 +24,8 @@
     <!-- gathered output components -->
     <ComponentLink Usage="Output" rRef="L7"/>
   </ResourceLinkPool>
-  <JDF ID="J2" JobPartID="ID301" Status="Waiting" Type="DigitalPrinting">
+  <JDF ID="J2" JobPartID="ID301" MaxVersion="1.9"
+    Status="Waiting" Type="DigitalPrinting" Version="1.9" xsi:type="DigitalPrinting">
     <ResourceLinkPool>
       <!-- digital printing parameters -->
       <DigitalPrintingParamsLink Usage="Input" rRef="L1"/>
@@ -33,7 +36,8 @@
       <ComponentLink Usage="Output" rRef="L3"/>
     </ResourceLinkPool>
   </JDF>
-  <JDF ID="J3" JobPartID="ID302" Status="Waiting" Type="Gathering">
+  <JDF ID="J3" JobPartID="ID302" MaxVersion="1.9"
+    Status="Waiting" Type="Gathering" Version="1.9" xsi:type="Gathering">
     <ResourceLinkPool>
       <!-- gathering parameters -->
       <GatheringParamsLink Usage="Input" rRef="L4"/>
@@ -43,7 +47,8 @@
       <ComponentLink Usage="Output" rRef="L5"/>
     </ResourceLinkPool>
   </JDF>
-  <JDF ID="J4" JobPartID="ID303" Status="Waiting" Type="Stitching">
+  <JDF ID="J4" JobPartID="ID303" MaxVersion="1.9"
+    Status="Waiting" Type="Stitching" Version="1.9" xsi:type="Stitching">
     <ResourceLinkPool>
       <!-- Stitching parameters -->
       <StitchingParamsLink Usage="Input" rRef="L6"/>
