@@ -5606,7 +5606,7 @@
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="CostCenter" type="jdf:CostCenter_re" minOccurs="0" />
           <xs:element name="Person" type="jdf:Person_re" minOccurs="0" />
-           <xs:element ref="jdf:PersonRef" minOccurs="0" />
+          <xs:element ref="jdf:PersonRef" minOccurs="0" />
           <xs:element name="EmployeeUpdate" type="jdf:Employee_re" minOccurs="0" />
           <xs:element name="Employee" type="jdf:Employee_rp" minOccurs="0" />
         </xs:sequence>
@@ -9696,12 +9696,13 @@
           <xs:group ref="jdf:GenericElements" minOccurs="0" />
           <xs:group ref="jdf:GenericResourceElements" minOccurs="0" />
           <xs:element name="Address" type="jdf:Address_re" minOccurs="0" />
-        </xs:sequence>
+          <xs:element ref="jdf:AddressRef" minOccurs="0" />
+       </xs:sequence>
         <xs:attributeGroup ref="jdf:LocationAttribs_r" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <!-- Exported as a top level element for resue by the Printtalk schema -->
+  <!-- Exported as a top level element for reuse by the Printtalk schema -->
   <xs:element name="Location" type="jdf:Location_re" />
 
   <xs:element name="LongitudinalRibbonOperationParams" type="jdf:LongitudinalRibbonOperationParams_r" substitutionGroup="jdf:Resource">
