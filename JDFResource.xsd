@@ -8423,15 +8423,15 @@
   <xs:element name="JacketingParamsRef" type="jdf:ResourceRef" substitutionGroup="jdf:ResourceRef" />
   <xs:element name="JacketingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
   <xs:attributeGroup name="JacketingParamsAttribs_c" >
-     <xs:attribute name="FoldingWidth" type="jdftyp:double" use="optional" />
-     <xs:attribute name="FoldingDistance" type="jdftyp:double" use="optional" />
-  </xs:attributeGroup>
+    <xs:attribute name="FoldingDistance" type="jdftyp:double" use="optional" />
+    <xs:attribute name="FoldingWidth" type="jdftyp:double" use="optional" />
+ </xs:attributeGroup>
   
   <xs:attributeGroup name="JacketingParamsAttribs_u">
     <xs:attributeGroup ref="jdf:JacketingParamsAttribs_c" />
   </xs:attributeGroup>
   <xs:attributeGroup name="JacketingParamsAttribs_r">
-    <xs:attributeGroup ref="jdf:JacketingParamsAttribs_c" />
+     <xs:attribute name="FoldingDistance" type="jdftyp:double" use="optional" />
     <xs:attribute name="FoldingWidth" type="jdftyp:double" use="required" />
   </xs:attributeGroup>
   <xs:complexType name="JacketingParams_r" mixed="false">
