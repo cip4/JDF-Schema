@@ -5,15 +5,18 @@
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Stripping">
   <AuditPool>
     <Created AgentName="CIP4 JDF Writer Java"
-      AgentVersion="2.1.8" ID="a_000003" TimeStamp="2025-01-23T21:03:23+01:00"/>
+      AgentVersion="2.1.8" ID="a_000003" TimeStamp="2025-02-04T11:56:10+01:00"/>
   </AuditPool>
+  <!-- START SNIPPET -->
   <ResourcePool>
     <StrippingParams Class="Parameter" ID="r_000005"
       PartIDKeys="SignatureName SheetName BinderySignatureName" Status="Available">
       <StrippingParams SignatureName="Sig1">
         <StrippingParams SheetName="Sheet1">
-          <StrippingParams AssemblyIDs="BS2" BinderySignatureName="BS1">
+          <StrippingParams AssemblyIDs="BS1" BinderySignatureName="BS1">
             <Position RelativeBox="0 0 0.5 1"/>
+          </StrippingParams>
+          <StrippingParams AssemblyIDs="BS2" BinderySignatureName="BS2">
             <Position RelativeBox="0.5 0 1 1"/>
           </StrippingParams>
           <BinderySignatureRef rRef="r_000007"/>
@@ -27,9 +30,12 @@
     <Layout Class="Parameter" DescriptiveName="dummy layout"
       ID="r_000008" Status="Unavailable"/>
   </ResourcePool>
+  <!-- END SNIPPET -->
+  <!-- START SNIPPET -->
   <ResourceLinkPool>
     <StrippingParamsLink Usage="Input" rRef="r_000005"/>
     <AssemblyLink Usage="Input" rRef="r_000006"/>
     <LayoutLink Usage="Output" rRef="r_000008"/>
   </ResourceLinkPool>
+  <!-- END SNIPPET -->
 </JDF>
