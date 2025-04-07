@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<JDF ID="n_000000" JobID="JobID" JobPartID="n_000002" MaxVersion="1.8"
+  Status="Waiting" Type="Combined"
+  Types="Interpreting Rendering DigitalPrinting Stitching" Version="1.8"
+  xmlns="http://www.CIP4.org/JDFSchema_1_1"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Combined">
+  <!-- END SNIPPET -->
+  <AuditPool>
+    <Created AgentName="" AgentVersion="" ID="a_000001" TimeStamp="2025-04-07T14:06:17+01:00"/>
+  </AuditPool>
+  <!-- START SNIPPET -->
+  <ResourcePool>
+    <Component Class="Quantity" ComponentType="FinalProduct"
+      ID="r_000003" PartIDKeys="SignatureName SheetName" Status="Unavailable">
+      <Component SignatureName="cover">
+        <Component SheetName="cover"/>
+      </Component>
+      <Component SignatureName="body">
+        <Component SheetName="body"/>
+      </Component>
+    </Component>
+    <DigitalPrintingParams Class="Parameter" ID="r_000004" Status="Available"/>
+    <Media Class="Consumable" ID="r_000005" Status="Available"/>
+    <RunList Class="Parameter" ID="r_000006" Status="Unavailable"/>
+  </ResourcePool>
+  <ResourceLinkPool>
+    <ComponentLink CombinedProcessIndex="3"
+      DescriptiveName="The link points to 20 planned and 20 good + 2 Waste brochures"
+      Usage="Output" rRef="r_000003">
+      <AmountPool>
+        <PartAmount Amount="10">
+          <Part SheetName="cover" SignatureName="cover"/>
+        </PartAmount>
+        <PartAmount Amount="100">
+          <Part SheetName="body" SignatureName="body"/>
+        </PartAmount>
+      </AmountPool>
+    </ComponentLink>
+    <DigitalPrintingParamsLink CombinedProcessIndex="2" Usage="Input" rRef="r_000004"/>
+    <MediaLink CombinedProcessIndex="1 2" Usage="Input" rRef="r_000005"/>
+    <RunListLink CombinedProcessIndex="0 2" Usage="Input" rRef="r_000006"/>
+  </ResourceLinkPool>
+</JDF>
