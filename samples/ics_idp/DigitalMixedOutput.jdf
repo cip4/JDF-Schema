@@ -5,17 +5,13 @@
   xmlns="http://www.CIP4.org/JDFSchema_1_1"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="Combined">
   <AuditPool>
-    <Created AgentName="" AgentVersion="" ID="a_000001" TimeStamp="2025-04-11T10:25:51+01:00"/>
+    <Created AgentName="" AgentVersion="" ID="a_000001" TimeStamp="2025-04-11T10:41:52+01:00"/>
   </AuditPool>
   <ResourcePool>
     <Component Class="Quantity" ComponentType="FinalProduct"
-      ID="r_000003" PartIDKeys="SignatureName SheetName" Status="Unavailable">
-      <Component SignatureName="cover">
-        <Component SheetName="cover"/>
-      </Component>
-      <Component SignatureName="body">
-        <Component SheetName="body"/>
-      </Component>
+      ID="r_000003" PartIDKeys="DocIndex" Status="Unavailable">
+      <Component DocIndex="0"/>
+      <Component DocIndex="1"/>
     </Component>
     <DigitalPrintingParams Class="Parameter" ID="r_000004" Status="Available"/>
     <Media Class="Consumable" ID="r_000005" Status="Available"/>
@@ -24,14 +20,14 @@
   <!-- START SNIPPET -->
   <ResourceLinkPool>
     <ComponentLink CombinedProcessIndex="3"
-      DescriptiveName="The link points to 10 covers and 100 body parts"
+      DescriptiveName="The link points to 10 copies of the first document and 100 copies of the second document"
       Usage="Output" rRef="r_000003">
       <AmountPool>
         <PartAmount Amount="10">
-          <Part SheetName="cover" SignatureName="cover"/>
+          <Part DocIndex="0"/>
         </PartAmount>
         <PartAmount Amount="100">
-          <Part SheetName="body" SignatureName="body"/>
+          <Part DocIndex="1"/>
         </PartAmount>
       </AmountPool>
     </ComponentLink>
