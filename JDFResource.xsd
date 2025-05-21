@@ -5448,7 +5448,7 @@
         <xs:attribute name="GutterY2" type="jdftyp:double" use="optional" />
         <xs:attribute name="LayoutStyle" type="jdftyp:NMTOKENS" use="optional" />
         <xs:attribute name="OrderQuantity" type="jdftyp:Integer" use="optional" />
-        <xs:attribute name="UseBleeds" type="jdftyp:boolean" use="optional" />
+        <xs:attribute name="UseBleed" type="jdftyp:boolean" use="optional" />
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
