@@ -3227,7 +3227,8 @@
   <xs:element name="ConventionalPrintingParams" type="jdf:ConventionalPrintingParams_r" substitutionGroup="jdf:Resource">
     <xs:annotation>
       <xs:appinfo>
-        <Version Path="@ModuleAvailableIndex" First="1.1" Last="1.3" />
+        <Version Path="@FeedSheetLay" First="1.9" />
+       <Version Path="@ModuleAvailableIndex" First="1.1" Last="1.3" />
         <Version Path="@ModuleIndex" Last="1.3" />
         <Version Path="@NonPrintableMarginLeft" First="1.3" />
         <Version Path="@NonPrintableMarginRight" First="1.3" />
@@ -3247,6 +3248,7 @@
   <xs:element name="ConventionalPrintingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
   <xs:attributeGroup name="ConventionalPrintingParamsAttribs_c">
     <xs:attribute name="Drying" type="jdftyp:eDrying_" use="optional" />
+    <xs:attribute name="FeedSheetLay" type="jdftyp:eFeedSheetLay_" use="optional" />
     <xs:attribute name="FirstSurface" type="jdftyp:eFirstSurface_" use="optional" />
     <xs:attribute name="FountainSolution" type="jdftyp:eFountainSolution_" use="optional" />
     <xs:attribute name="MediaLocation" type="jdftyp:string" use="optional" />
@@ -5198,6 +5200,7 @@
       <xs:appinfo>
         <Version Path="@Collate" First="1.1" />
         <Version Path="@DirectProofAmount" First="1.2" />
+		<Version Path="@FeedSheetLay" First="1.9" />
         <Version Path="@ManualFeed" First="1.1" />
         <Version Path="@NonPrintableMarginBottom" First="1.2" />
         <Version Path="@NonPrintableMarginLeft" First="1.2" />
@@ -5238,6 +5241,7 @@
   <xs:element name="DigitalPrintingParamsLink" type="jdf:ResourceLink" substitutionGroup="jdf:ResourceLink" />
   <xs:attributeGroup name="DigitalPrintingParamsAttribs_c">
     <xs:attribute name="Collate" type="jdftyp:eDigitalPrintingCollate_" use="optional" />
+    <xs:attribute name="FeedSheetLay" type="jdftyp:eFeedSheetLay_" use="optional" />
     <xs:attribute name="NonPrintableMarginBottom" type="jdftyp:double" use="optional" />
     <xs:attribute name="NonPrintableMarginLeft" type="jdftyp:double" use="optional" />
     <xs:attribute name="NonPrintableMarginRight" type="jdftyp:double" use="optional" />
@@ -15885,6 +15889,7 @@
         <Version Path="@GangElementID" First="1.5" />
         <Version Path="@InnermostShingling" First="1.4" />
         <Version Path="@OutermostShingling" First="1.4" />
+        <Version Path="@FeedSheetLay" First="1.9" />
         <Version Path="@SheetLay" First="1.7" />
         <Version Path="@SheetNameFormat" First="1.4" />
         <Version Path="@SheetNameTemplate" First="1.4" />
@@ -15934,6 +15939,7 @@
     <xs:attribute name="OutermostShingling" type="jdftyp:double" use="optional" />
     <xs:attribute name="SectionList" type="jdftyp:IntegerList" use="optional" />
     <xs:attribute name="SheetLay" type="jdftyp:eSheetLay_" use="optional" />
+    <xs:attribute name="FeedSheetLay" type="jdftyp:eFeedSheetLay_" use="optional" />
     <xs:attribute name="SheetNameFormat" type="jdftyp:string" use="optional" />
     <xs:attribute name="SheetNameTemplate" type="jdftyp:string" use="optional" />
     <xs:attribute name="StackDepth" type="jdftyp:Integer" use="optional" />
