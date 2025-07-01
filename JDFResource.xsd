@@ -2786,6 +2786,7 @@
         <Version Path="Media" First="1.4" />
         <Version Path="MediaRef" First="1.4" />
         <Version Path="PageList" First="1.3" />
+        <Version Path="SurfaceMark" First="1.9" />
         <Version Path="PageListRef" First="1.3" />
         <Constraint Path="Assembly" minOccurs="0" maxOccurs="1" />
         <Constraint Path="AssemblyRef" minOccurs="0" maxOccurs="1" />
@@ -2857,7 +2858,8 @@
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
           <xs:element name="PageList" type="jdf:PageList_re" minOccurs="0" />
           <xs:element ref="jdf:PageListRef" minOccurs="0" />
-          <xs:element name="ComponentUpdate" type="jdf:Component_re" minOccurs="0" />
+          <xs:element name="SurfaceMark" type="jdf:SurfaceMark_re" minOccurs="0" />
+         <xs:element name="ComponentUpdate" type="jdf:Component_re" minOccurs="0" />
           <xs:element name="Component" type="jdf:Component_rp" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ComponentAttribs_r" />
@@ -2884,6 +2886,7 @@
           <xs:element ref="jdf:MediaRef" minOccurs="0" />
           <xs:element name="PageList" type="jdf:PageList_re" minOccurs="0" />
           <xs:element ref="jdf:PageListRef" minOccurs="0" />
+          <xs:element name="SurfaceMark" type="jdf:SurfaceMark_re" minOccurs="0" />
         </xs:sequence>
         <xs:attributeGroup ref="jdf:ComponentAttribs_r" />
       </xs:extension>
@@ -2910,7 +2913,8 @@
             <xs:element ref="jdf:MediaRef" minOccurs="0" />
             <xs:element name="PageList" type="jdf:PageList_re" minOccurs="0" />
             <xs:element ref="jdf:PageListRef" minOccurs="0" />
-            <xs:element name="Component" type="jdf:Component_rp" minOccurs="0" />
+           <xs:element name="SurfaceMark" type="jdf:SurfaceMark_re" minOccurs="0" />
+             <xs:element name="Component" type="jdf:Component_rp" minOccurs="0" />
           </xs:sequence>
           <xs:element name="Identical" type="jdf:Identical" minOccurs="0" />
         </xs:choice>
