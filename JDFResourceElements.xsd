@@ -173,7 +173,7 @@
           <xs:element name="ScavengerArea" type="jdf:ScavengerArea_re" minOccurs="0" />
           <xs:element ref="jdf:ScavengerAreaRef" minOccurs="0" />
         </xs:sequence>
-        <xs:attribute name="Face" type="jdftyp:eFace_" use="required" />
+        <xs:attribute name="Surface" type="jdftyp:eFace_" use="required" />
  	   </xs:extension>
    </xs:complexContent>
   </xs:complexType>
